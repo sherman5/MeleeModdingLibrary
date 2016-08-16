@@ -1,7 +1,7 @@
 CC = powerpc-eabi-gcc
 AR = powerpc-eabi-ar
 CFLAGS = -c
-ARFLAGS = -cvq
+ARFLAGS = -cvr
 
 OBJECTS = build/Controller.o build/MeleeMath.o
 
