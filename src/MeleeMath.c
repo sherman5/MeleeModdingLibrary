@@ -4,7 +4,7 @@
 //x in degrees
 float mml_sin(float x) {
 
-    x *= PI / 180.0;
+    x *= MML_PI / 180.0;
 
     signed int neg = 1;
 
