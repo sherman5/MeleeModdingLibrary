@@ -1,3 +1,6 @@
+#ifndef CONTROLLER_H
+#define CONTROLLER_H
+
 #include <stdint.h>
 
 static uint32_t* button_addr = (uint32_t*) 0x80003FF0;
@@ -12,3 +15,4 @@ void Release();
 void SetStick(float);
 void WriteControllerState();
 
+#endif
