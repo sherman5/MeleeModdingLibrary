@@ -1,49 +1,51 @@
-#include "MeleeMath.h"
+#include "Math.h"
 #include "Controller.h"
 
-void Press(char button) {
+void initController(Controller* contr, uint8_t player) {
 
-    if (button == 'A') {*button_addr = 0x00000100;}
-    else if (button == 'B') {*button_addr = 0x00000200;}
-    else if (button == 'X') {*button_addr = 0x00000400;}
-    else if (button == 'Z') {*button_addr = 0x00000010;}
-    else {*button_addr = 0x00000040;} 
+    contr->player_num = player;
 
 }
 
-void Release() {
+void press(Controller* contr, char button) {
 
-    *button_addr = 0;
+    if (button == 'A') {contr->buttons = 0x00000100;}
+    else if (button == 'B') {contr->buttons = 0x00000200;}
+    else if (button == 'X') {contr->buttons = 0x00000400;}
+    else if (button == 'Z') {contr->buttons = 0x00000010;}
+    else {contr->buttons = 0x00000040;}
+
+}
+
+void release(Controller* contr) {
+
+    contr->buttons = 0;
 
 }
 
 
-void SetStick(float ang) {
+void setStick(Controller* contr, float rad, float ang) {
 
-    *stick_x_addr = mml_cos(ang);
-    *stick_y_addr = mml_sin(ang);
-
-}
-
-void ResetStick() {
-
-    *stick_x_addr = 0.0;
-    *stick_y_addr = 0.0;
+    contr->stick_x = rad * cos(ang);
+    contr->stick_y = rad * sin(ang);
 
 }
 
-void WriteControllerState() {
+void writeControllerState(Controller* contr) {
 
-    //not stored in a static block of memory
-    float* p2_controller_data_2 = (float*) P2_CONTROLLER_DATA_2_ADDR;
+    void* controller_data_1 =
+        (void*) (0x804C1FAC + 0x44 * (contr->player_num - 1));
+
+    float* controller_data_2 = 
+        (float*) (*((uint32_t*) (0x80453130 + 0xE90 * 
+                                    (contr->player_num - 1))) + 0x680);
+
+    *((uint32_t*) controller_data_1) = contr->buttons;
+    *((float*) controller_data_1 + 8) = contr->stick_x;
+    *((float*) controller_data_1 + 9) = contr->stick_y;
     
-    *((uint32_t*) p2_controller_data_1) = *button_addr;
-    *((float*) p2_controller_data_1 + 8) = *stick_x_addr;
-    *((float*) p2_controller_data_1 + 9) = *stick_y_addr;
-    
-    p2_controller_data_2[0] = *stick_x_addr;
-    p2_controller_data_2[1] = *stick_y_addr;
+    controller_data_2[0] = contr->stick_x;
+    controller_data_2[1] = contr->stick_y;
     
 }
-
 

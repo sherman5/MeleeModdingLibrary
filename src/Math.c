@@ -1,10 +1,22 @@
-#include "MeleeMath.h"
+#include "Math.h"
+
+float abs(float x) {
+
+    return (x < 0 ? -x : x);
+
+}
+
+int8_t sign(float x) {
+
+    return ((x >= 0) - (x < 0));
+
+}
 
 //error within 0.001
 //x in degrees
-float mml_sin(float x) {
+float sin(float x) {
 
-    x *= MML_PI / 180.0;
+    x *= M_PI / 180.0;
 
     signed int neg = 1;
 
@@ -35,9 +47,9 @@ float mml_sin(float x) {
 
 //error within 0.001
 //x in degrees
-float mml_cos(float x) {
+float cos(float x) {
 
-    return mml_sin(x + 90);
+    return sin(x + 90);
 
 }
 
