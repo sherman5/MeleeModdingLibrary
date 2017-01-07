@@ -1,5 +1,5 @@
-#include "Math.h"
-#include "Controller.h"
+#include "math.h"
+#include "controller.h"
 
 void initController(Controller* contr, uint8_t player) {
 

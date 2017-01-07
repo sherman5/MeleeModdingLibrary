@@ -1,4 +1,4 @@
-#include "EventQueue.h"
+#include "event.h"
 
 //TODO: don't waste first block
 

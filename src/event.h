@@ -1,5 +1,5 @@
-#ifndef EVENT_QUEUE_H
-#define EVENT_QUEUE_H
+#ifndef EVENT_H
+#define EVENT_H
 
 #include <stdint.h>
 #include <stddef.h>

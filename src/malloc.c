@@ -1,4 +1,4 @@
-#include "Malloc.h"
+#include "malloc.h"
 
 void init_heap(Heap* heap, void* mem_address, size_t size) {
 

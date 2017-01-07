@@ -1,4 +1,4 @@
-#include "Random.h"
+#include "random.h"
 
 #define RAND_ADDRESS 0x804D5F90
 
@@ -27,7 +27,6 @@ uint32_t randUint32()
 
     /* return random value */
     return rand;
-
 }
 
 float rand()
