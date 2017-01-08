@@ -14,10 +14,6 @@ float intToFloat(uint32_t n)
 #define MAKE_PTR(x) ((uint32_t*) (x))
 #define DREF_PTR(x) (*MAKE_PTR(x))
 
-/* random 32-bit integer */
-
-#define RANDOM_U32BIT    DREF_PTR(0x804D5F90)
-
 /* player information */
 
 #define PLAYER_BLOCK(x)     (0x804521F0 + 0xE90 * x)
@@ -68,6 +64,10 @@ float intToFloat(uint32_t n)
 #define P3_CHAR     DREF_PTR(0x803F0E50) 
 #define P4_CHAR     DREF_PTR(0x803F0E74)
 
+/* character codes */
+
+#define FALCO 
+
 /* player type (0x00 - human, 0x01 - cpu, 0x02 - demo) */
 
 #define PLAYER_TYPE(x)      DREF_PTR(PLAYER_BLOCK(x) + 0x08)
@@ -97,23 +97,17 @@ float intToFloat(uint32_t n)
 
 /* player coordinates */
 
-/*#define P1_X    intToFloat(DREF_PTR(0x80453090))
-#define P1_Y    intToFloat(DREF_PTR(0x80453094))
-#define P2_X    intToFloat(DREF_PTR(0x80453F20))
-#define P2_Y    intToFloat(DREF_PTR(0x80453F24))
-#define P3_X    intToFloat(DREF_PTR(0x80454DB0))
-#define P3_Y    intToFloat(DREF_PTR(0x80454DB4))
-#define P4_X    intToFloat(DREF_PTR(0x80455C40))
-#define P4_Y    intToFloat(DREF_PTR(0x80455C44))*/
+#define PLAYER_X(x) (intToFloat(DREF_PTR(PLAYER_DATA(x) + 0xB0)))
+#define PLAYER_Y(x) (intToFloat(DREF_PTR(PLAYER_DATA(x) + 0xB4)))
 
-#define P1_X    intToFloat(DREF_PTR(P1_DATA + 0xB0))
-#define P1_Y    intToFloat(DREF_PTR(P1_DATA + 0xB4))
-#define P2_X    intToFloat(DREF_PTR(P2_DATA + 0xB0))
-#define P2_Y    intToFloat(DREF_PTR(P2_DATA + 0xB4))
-#define P3_X    intToFloat(DREF_PTR(P3_DATA + 0xB0))
-#define P3_Y    intToFloat(DREF_PTR(P3_DATA + 0xB4))
-#define P4_X    intToFloat(DREF_PTR(P4_DATA + 0xB0))
-#define P4_Y    intToFloat(DREF_PTR(P4_DATA + 0xB4))
+#define P1_X    (intToFloat(DREF_PTR(P1_DATA + 0xB0)))
+#define P1_Y    (intToFloat(DREF_PTR(P1_DATA + 0xB4)))
+#define P2_X    (intToFloat(DREF_PTR(P2_DATA + 0xB0)))
+#define P2_Y    (intToFloat(DREF_PTR(P2_DATA + 0xB4)))
+#define P3_X    (intToFloat(DREF_PTR(P3_DATA + 0xB0)))
+#define P3_Y    (intToFloat(DREF_PTR(P3_DATA + 0xB4)))
+#define P4_X    (intToFloat(DREF_PTR(P4_DATA + 0xB0)))
+#define P4_Y    (intToFloat(DREF_PTR(P4_DATA + 0xB4)))
 
 /* hitlag frames remaining */
 

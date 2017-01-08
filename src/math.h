@@ -5,6 +5,11 @@
 
 #define M_PI 3.14159265359
 
+typedef struct point
+{
+    float x, y;
+} Point;
+
 float abs(float);
 int8_t sign(float);
 float sin(float);
