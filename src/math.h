@@ -11,5 +11,7 @@ float sin(float);
 float cos(float);
 int ipow(int, uint32_t);
 float sqrt(float);
+int32_t imax(int32_t ra[]);
+int32_t imin(int32_t ra[]);
 
 #endif

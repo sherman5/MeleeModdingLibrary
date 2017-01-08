@@ -22,8 +22,8 @@ void testUniform01(uint32_t numRuns)
     /* should be close to uniform after 1000 runs */
     if (numRuns > 1000)
     {
-        float mx = max(buckets);
-        float mn = min(buckets);
+        uint32_t mx = imax(buckets);
+        uint32_t mn = imin(buckets);
 
         REQUIRE((mx - mn) / (float) numRuns < 0.05);
     }
