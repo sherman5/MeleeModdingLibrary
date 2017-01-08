@@ -1,33 +1,35 @@
+#include "testing.h"
 #include <random.h>
+#include <math.h>
 
-int _main()
+/* buckets */
+static uint32_t buckets[20] = {0};
+
+void testUniform01(uint32_t numRuns)
 {
-    /* output test results starting here */
-    uint32_t* outputAddress = (uint32_t*) 0x80001800;
-
-    /* initialize memory to zero */
-    if (*outputAddress != 0xabcdabcd)
-    {
-        for (unsigned i = 1; i <= 20; ++i)
-        {
-            *(outputAddress + i) = 0;
-        }
-
-        *outputAddress = 0xabcdabcd;
-    }
-
     /* store results of random values */
     float f = rand();
 
     /* put random numbers into buckets */
-    /* buckets range from 80001804-80001850 */
-    unsigned index = 0;
-    while (index < 20)
+    for (int i = 0; i < 20; ++i)
     {
-        if (f >= (float) index / 20 && f < (float) (index + 1) / 20)
+        if (f >= (float) i / 20 && f < (float) (i + 1) / 20)
         {
-            *(outputAddress + 1 + index) += 1;
+            buckets[i] += 1;
         }
-        ++index;
     }
+
+    /* should be close to uniform after 1000 runs */
+    if (numRuns > 1000)
+    {
+        float mx = max(buckets);
+        float mn = min(buckets);
+
+        REQUIRE((mx - mn) / (float) numRuns < 0.05);
+    }
+}
+
+void testRandom(uint32_t numRuns)
+{
+    testUniform01(numRuns);
 }

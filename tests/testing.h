@@ -3,22 +3,22 @@
 
 #include <stdint.h>
 
-const uint32_t* testAddress = (uint32_t*) 0x80001800;
-int numTestCases = 0;
+uint32_t* outputAddress = (uint32_t*) 0x80001804;
 
-#define TEST_CASE(x) \
-    void testFunction
-    do { \
-    
+#define REQ_CT __COUNTER__
 
-#define REQUIRE(x) \
+#define CHECK_COND(x, c) \
     do { \
-        if (!x) { \
-            *testAddress = 0xFFFFFFFF; \
-        } else { \
-            *testAddress = 0xAAAAAAAA; \
+        if (!(x)) { \
+            *(outputAddress + c) = 0xFFFF0000; \
+        } else if (*(outputAddress + c) != 0xFFFF0000) { \
+            *(outputAddress + c) = 0x0000AAAA; \
         } \
-        testAddress += 0x04; \
     } while (0)
 
+#define REQUIRE(x) CHECK_COND(x, REQ_CT)
+
+#define APPROX_EQ(a,b,tol) ((a) < (b) ? (b) - (a) < tol : (a) - (b) < tol)
+    
 #endif
+

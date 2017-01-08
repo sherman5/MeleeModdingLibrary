@@ -1,55 +1,71 @@
 #include "math.h"
 
-float abs(float x) {
-
+float abs(float x)
+{
     return (x < 0 ? -x : x);
-
 }
 
-int8_t sign(float x) {
-
+int8_t sign(float x)
+{
     return ((x >= 0) - (x < 0));
-
 }
 
-//error within 0.001
-//x in degrees
-float sin(float x) {
-
+/* return sin(x), x is given in degress, error within 0.001 */
+float sin(float x)
+{
     x *= M_PI / 180.0;
 
     signed int neg = 1;
 
-    if (x < 0) {
-    
+    if (x < 0)
+    {
         x = -x;
         neg = -1;
-
     }
 
-    while (x > 180) {
-    
+    while (x > 180)
+    {
         x -= 360;
-
     }
 
-    if (x < 0) {
-
+    if (x < 0)
+    {
         x = -x;
         neg *= -1;
-
     }
 
     float value = 1.27323954 * x - 0.405284735 * x * x;
     return neg * 0.225 * (value * value - value) + value;    
-
 }
 
-//error within 0.001
-//x in degrees
-float cos(float x) {
-
+/* return cos(x), x is given in degress, error within 0.001 */
+float cos(float x)
+{
     return sin(x + 90);
-
 }
 
+int ipow(int base, uint32_t exp)
+{
+    int result = 1;
+    while (exp)
+    {
+        if (exp & 1)
+        {
+            result *= base;
+        }
+        exp >>= 1;
+        base *= base;
+    }
+    return result;
+}
+
+/* shitty sqrt, http://bits.stephan-brumme.com/squareRoot.html */
+float sqrt(float x)
+{
+    unsigned int i = *(unsigned int*) &x; 
+    // adjust bias
+    i  += 127 << 23;
+    // approximation of square root
+    i >>= 1; 
+    return *(float*) &i;
+} 

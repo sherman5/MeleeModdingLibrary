@@ -9,5 +9,7 @@ float abs(float);
 int8_t sign(float);
 float sin(float);
 float cos(float);
+int ipow(int, uint32_t);
+float sqrt(float);
 
 #endif
