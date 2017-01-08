@@ -8,9 +8,9 @@ int _main()
     /* initialize memory to zero */
     if (*outputAddress != 0xabcdabcd)
     {
-        for (unsigned i = 1; i <= 10; ++i)
+        for (unsigned i = 1; i <= 20; ++i)
         {
-            *(outputAddress + i) = 0;
+            *(outputAddress + i * 0x04) = 0;
         }
 
         *outputAddress = 0xabcdabcd;
@@ -28,5 +28,5 @@ int _main()
             *((uint32_t*) (0x80001804 + 0x04 * index)) += 1;
         }
         ++index;
-    }    
+    }
 }

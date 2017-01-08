@@ -1,6 +1,5 @@
 mml.tar.gz
 mml.zip
-makeDist
 libmml.a
-Melee102.iso
-vanilla_melee.data
+*.iso
+*.data
