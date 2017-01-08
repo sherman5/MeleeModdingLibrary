@@ -10,7 +10,7 @@ int _main()
     {
         for (unsigned i = 1; i <= 20; ++i)
         {
-            *(outputAddress + i * 0x04) = 0;
+            *(outputAddress + i) = 0;
         }
 
         *outputAddress = 0xabcdabcd;
@@ -20,12 +20,13 @@ int _main()
     float f = rand();
 
     /* put random numbers into buckets */
+    /* buckets range from 80001804-80001850 */
     unsigned index = 0;
     while (index < 20)
     {
-        if (f > index / 20 && f < (index + 1) / 20)
+        if (f >= (float) index / 20 && f < (float) (index + 1) / 20)
         {
-            *((uint32_t*) (0x80001804 + 0x04 * index)) += 1;
+            *(outputAddress + 1 + index) += 1;
         }
         ++index;
     }
