@@ -14,10 +14,6 @@ void _main()
     {
         init_key = 1;
 
-        /* unlock characters and stages */
-        *((uint32_t*) 0x8045bf28) = 0xFFFFFFFF;
-        *((uint32_t*) 0x8045bf2c) = 0xFFFFFFFF;
-
         //do setup
     }
 
