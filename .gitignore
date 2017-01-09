@@ -3,3 +3,4 @@ mml.zip
 libmml.a
 *.iso
 *.data
+examples/FalcoLaserSimple/*.o

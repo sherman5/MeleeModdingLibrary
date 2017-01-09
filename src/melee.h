@@ -57,16 +57,16 @@ float intToFloat(uint32_t n)
 
 /* character select */
 
-#define PLAYER_CHAR(x)  DREF_PTR(0x803F0DE4 + 0x24 * x)
+#define PLAYER_CHAR(x)  (DREF_PTR(0x803F0DE4 + 0x24 * x) & 0x000000FF)
 
-#define P1_CHAR     DREF_PTR(0x803F0E08)
-#define P2_CHAR     DREF_PTR(0x803F0E2C)
-#define P3_CHAR     DREF_PTR(0x803F0E50) 
-#define P4_CHAR     DREF_PTR(0x803F0E74)
+#define P1_CHAR     (DREF_PTR(0x803F0E08) & 0x000000FF)
+#define P2_CHAR     (DREF_PTR(0x803F0E2C) & 0x000000FF)
+#define P3_CHAR     (DREF_PTR(0x803F0E50) & 0x000000FF)
+#define P4_CHAR     (DREF_PTR(0x803F0E74) & 0x000000FF)
 
 /* character codes */
 
-#define FALCO 
+#define FALCO 0x09
 
 /* player type (0x00 - human, 0x01 - cpu, 0x02 - demo) */
 
