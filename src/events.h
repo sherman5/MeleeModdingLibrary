@@ -8,7 +8,8 @@ typedef enum event_t
 {
     OFFSTAGE,
     HITSTUN,
-    AIRBORNE
+    AIRBORNE,
+    FUNCTION
 
 } Event;
 

@@ -1,5 +1,5 @@
-#ifndef MELEE_H
-#define MELEE_H
+#ifndef MELEE_102_H
+#define MELEE_102_H
 
 #include <stdint.h>
 
