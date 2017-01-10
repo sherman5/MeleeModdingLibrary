@@ -17,8 +17,13 @@
 #include <stddef.h>
 #include <stdbool.h>
 
-bool initialized = 0;
+/** records once the heap has been initialized */
+static bool initialized = false;
 
+/**
+ * @brief A single block of memory 
+ *
+ */
 typedef struct block {
 
     size_t size;
@@ -28,12 +33,24 @@ typedef struct block {
 
 } Block;
 
+/**
+ * @brief Initialize the heap
+ */
 static void initMalloc();
 
+/**
+ * @brief Defragment the heap
+ */
 static void defragment();
 
+/**
+ * @brief Standard call to @c malloc.
+ */
 void* malloc(size_t);
 
+/**
+ * @brief Standard call to @c free.
+ */
 void free(void*);
 
 #endif

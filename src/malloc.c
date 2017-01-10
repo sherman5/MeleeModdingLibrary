@@ -8,46 +8,33 @@ void initMalloc()
     b.next = NULL;
 
     *((Block*) HEAP_ADDRESS) = b;
+    initialized = true;
 }
 
 void* malloc(size_t size)
 {
-    if (!initialized)
-    {
-        initMalloc();
-    }
+    if (!initialized) { initMalloc();}
+
+    defragment();
 
     Block* current = (Block*) HEAP_ADDRESS;
-    bool defragged = false;
     
     while (current && (current->size < size || !current->free))
     {
         current = current->next;
-
-        if (current == NULL && !defragged)
-        {
-            defragment();
-            current = Block* HEAP_ADDRESS;
-            defragged = true;
-        }            
     }
 
-    if (current != NULL)
+    if (current)
     {
-        
         Block leftover;
         leftover.size = current->size - size - sizeof(Block);
         leftover.free = true;
         leftover.next = current->next;
-        *((void*) (current + size + sizeof(Block))) = leftover;
+        *((Block*) (current + size + sizeof(Block))) = leftover;
 
         current->size = size;
-        current->free = 0;
+        current->free = false;
         current->next = (void*) (current + size + sizeof(Block));
-    }
-    else
-    {
-        //malloc fails
     }
 
     return current;
