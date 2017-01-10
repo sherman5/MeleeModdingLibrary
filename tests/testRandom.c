@@ -2,6 +2,8 @@
 #include <random.h>
 #include <math.h>
 
+#define NUM_RANDOM_TESTS 1
+
 /* buckets */
 static uint32_t buckets[20] = {0};
 
@@ -26,6 +28,10 @@ void testUniform01(uint32_t numRuns)
         uint32_t mn = imin(buckets);
 
         REQUIRE((mx - mn) / (float) numRuns < 0.05);
+    }
+    else
+    {
+        REQUIRE(1); //jank, need to increment address
     }
 }
 

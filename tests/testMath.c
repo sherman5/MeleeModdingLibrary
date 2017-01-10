@@ -1,6 +1,8 @@
 #include "testing.h"
 #include <math.h>
 
+#define NUM_MATH_TESTS 2
+
 void testTrig(uint32_t numRuns)
 {
     REQUIRE(APPROX_EQ(sin(0.0), 0.0, 0.001));
