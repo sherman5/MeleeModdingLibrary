@@ -1,75 +1,77 @@
 #include "malloc.h"
 
-void init_heap(Heap* heap, void* mem_address, size_t size) {
+void initMalloc()
+{
+    Block b;
+    b.size = HEAP_SIZE - sizeof(Block);
+    b.free = true;
+    b.next = NULL;
 
-    heap->blockLL = mem_address;
-    heap->blockLL->size = size - sizeof(struct block);
-    heap->blockLL->free = 1;
-    heap->blockLL->next = NULL;
-
+    *((Block*) HEAP_ADDRESS) = b;
 }
 
-void* malloc(Heap* heap, size_t size) {
-
-    struct block* current = heap->blockLL;
-    int defragged = 0;
-    
-    while (current->size < size || !current->free) {
-
-        current = current->next;
-
-        if (current == NULL && defragged == 0) {
-
-            defragment(heap);
-            current = heap->blockLL;
-            defragged = 1;
-
-        }            
-
+void* malloc(size_t size)
+{
+    if (!initialized)
+    {
+        initMalloc();
     }
 
-    if (current != NULL) {
+    Block* current = (Block*) HEAP_ADDRESS;
+    bool defragged = false;
+    
+    while (current && (current->size < size || !current->free))
+    {
+        current = current->next;
 
-        struct block* new_block;
-        new_block = (void*) ((void*) current + size + sizeof(struct block));
+        if (current == NULL && !defragged)
+        {
+            defragment();
+            current = Block* HEAP_ADDRESS;
+            defragged = true;
+        }            
+    }
 
-        new_block->size = current->size - size - sizeof(struct block);
-        new_block->free = 1;
-        new_block->next = current->next;
+    if (current != NULL)
+    {
+        
+        Block leftover;
+        leftover.size = current->size - size - sizeof(Block);
+        leftover.free = true;
+        leftover.next = current->next;
+        *((void*) (current + size + sizeof(Block))) = leftover;
 
         current->size = size;
         current->free = 0;
-        current->next = new_block;
-
+        current->next = (void*) (current + size + sizeof(Block));
+    }
+    else
+    {
+        //malloc fails
     }
 
     return current;
-
 }
 
-void free(void* ptr) {
-
-    ((struct block*) ptr)->free = 1;
-
+void free(void* ptr)
+{
+    ((Block*) ptr)->free = true;
 }
 
-void defragment(Heap* heap) {
+void defragment()
+{
+    Block* current = (Block*) HEAP_ADDRESS;
 
-    struct block* current = heap->blockLL;
-
-    while (current->next != NULL) {
-
-        if (current->free && current->next->free) {
-
+    while (current->next)
+    {
+        if (current->free && current->next->free)
+        {
             current->size += current->next->size + sizeof(struct block);
             current->next = current->next->next;
-
-        } else {
-
-            current = current->next;
-
         }
-
+        else
+        {
+            current = current->next;
+        }
     }
-
 }

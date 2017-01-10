@@ -1,33 +1,39 @@
 #ifndef MALLOC_H
 #define MALLOC_H
 
+#ifndef HEAP_ADDRESS
+
+    #define HEAP_ADDRESS 0x80001800
+
+#endif
+
+#ifndef HEAP_SIZE
+
+    #define HEAP_SIZE 0x17f0
+
+#endif
+
 #include <stdint.h>
 #include <stddef.h>
+#include <stdbool.h>
 
-//#define NULL 0
+bool initialized = 0;
 
-struct block {
+typedef struct block {
 
     size_t size;
-    int8_t free;
+    bool free;
 
     struct block* next;
 
-};
+} Block;
 
-typedef struct heap {
+static void initMalloc();
 
-    struct block* blockLL;
-    size_t size;
+static void defragment();
 
-} Heap;
-
-void init_heap(Heap*, void*, size_t);
-
-void* malloc(Heap*, size_t);
+void* malloc(size_t);
 
 void free(void*);
-
-void defragment(Heap*);
 
 #endif
