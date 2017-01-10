@@ -51,3 +51,15 @@ void clearQueue(EventQueue* eq) {
 
 }*/
 
+/*
+
+typedef struct input_queue
+{
+    Controller* controller;
+    Queue* queue;
+
+} InputQueue;
+
+
+typedef struct 
+

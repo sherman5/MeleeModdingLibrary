@@ -7,22 +7,15 @@ void initController(Controller* contr, uint8_t player) {
 
 }
 
-void press(Controller* contr, char button) {
-
-    if (button == 'A') {contr->buttons = 0x00000100;}
-    else if (button == 'B') {contr->buttons = 0x00000200;}
-    else if (button == 'X') {contr->buttons = 0x00000400;}
-    else if (button == 'Z') {contr->buttons = 0x00000010;}
-    else {contr->buttons = 0x00000040;}
-
+void press(Controller* controller, char button)
+{
+    if (button == 'A') {contr->buttons = 0x0100;}
+    else if (button == 'B') {contr->buttons = 0x0200;}
+    else if (button == 'X') {contr->buttons = 0x0400;}
+    else if (button == 'Z') {contr->buttons = 0x0010;}
+    else if (button == 'L') {contr->buttons = 0x0040;}
+    else {controller->buttons = 0;}
 }
-
-void release(Controller* contr) {
-
-    contr->buttons = 0;
-
-}
-
 
 void setStick(Controller* contr, float rad, float ang) {
 

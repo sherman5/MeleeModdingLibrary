@@ -1,33 +1,63 @@
 #ifndef MALLOC_H
 #define MALLOC_H
 
+#ifndef HEAP_ADDRESS
+
+    #define HEAP_ADDRESS 0x80001800
+
+#endif
+
+#ifndef HEAP_SIZE
+
+    #define HEAP_SIZE 0x17f0
+
+#endif
+
 #include <stdint.h>
 #include <stddef.h>
+#include <stdbool.h>
 
-//#define NULL 0
+/** records once the heap has been initialized */
+static bool initialized = false;
 
-struct block {
+/**
+ * @brief A single block of memory 
+ *
+ */
+typedef struct block {
 
     size_t size;
-    int8_t free;
+    bool free;
 
     struct block* next;
 
-};
+} Block;
 
-typedef struct heap {
+/**
+ * @brief Initialize the heap
+ */
+static void initMalloc();
 
-    struct block* blockLL;
-    size_t size;
+/**
+ * @brief Defragment the heap
+ */
+static void defragment();
 
-} Heap;
+/**
+ * @brief Standard call to @c malloc.
+ * Allocates a block of @p size bytes of memory, returning a pointer
+ * to the beginning of the block. The content of the newly allocated
+ * block of memory is not initialized. If @c malloc fails to allocate
+ * the memory, a @c NULL pointer is returned.
+ *
+ * @param size Size of memory block in bytes.
+ * @return 
+ */
+void* malloc(size_t size);
 
-void init_heap(Heap*, void*, size_t);
-
-void* malloc(Heap*, size_t);
-
-void free(void*);
-
-void defragment(Heap*);
+/**
+ * @brief Standard call to @c free.
+ */
+void free(void* ptr);
 
 #endif
