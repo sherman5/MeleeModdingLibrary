@@ -6,7 +6,7 @@ void initMalloc()
     b.size = HEAP_SIZE - sizeof(Block);
     b.free = true;
     b.next = NULL;
-
+    
     *((Block*) HEAP_ADDRESS) = b;
     initialized = true;
 }
@@ -26,12 +26,11 @@ void* malloc(size_t size)
 
     if (current)
     {
-        Block leftover;
-        leftover.size = current->size - size - sizeof(Block);
-        leftover.free = true;
-        leftover.next = current->next;
-        *((Block*) (current + size + sizeof(Block))) = leftover;
-
+        Block* leftover = (Block*) (current + size + sizeof(Block));
+        leftover->size = current->size - size - sizeof(Block);
+        leftover->free = true;
+        leftover->next = current->next;
+        
         current->size = size;
         current->free = false;
         current->next = (void*) (current + size + sizeof(Block));

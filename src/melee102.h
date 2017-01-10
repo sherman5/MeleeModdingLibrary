@@ -3,16 +3,16 @@
 
 #include <stdint.h>
 
-/* convert 32-bit int to float */
-float intToFloat(uint32_t n)
-{
-    return *((float*) &n);
-}
-
 /* macro functions for handling raw address values */
 
-#define MAKE_PTR(x) ((uint32_t*) (x))
-#define DREF_PTR(x) (*MAKE_PTR(x))
+#define UINT_PTR(x) ((uint32_t*) (x))
+#define DREF_UINT(x) (*UINT_PTR(x))
+
+#define INT_PTR(x) ((int32_t*) (x))
+#define DREF_INT(x) (*INT_PTR(x))
+
+#define FLT_PTR(x) ((float*) (x))
+#define DREF_FLT(x) (*FLT_PTR(x))
 
 /* player information */
 
@@ -23,32 +23,32 @@ float intToFloat(uint32_t n)
 #define P3_BLOCK    0x80454DA0
 #define P4_BLOCK    0x80455C30
 
-#define PLAYER_ENTITY(x)    DREF_PTR(PLAYER_BLOCK(x) + 0xB0)
+#define PLAYER_ENTITY(x)    DREF_UINT(PLAYER_BLOCK(x) + 0xB0)
 
-#define P1_ENTITY   DREF_PTR(0x80453130)
-#define P2_ENTITY   DREF_PTR(0x80453FC0)
-#define P3_ENTITY   DREF_PTR(0x80454E50)
-#define P4_ENTITY   DREF_PTR(0x80455CE0)
+#define P1_ENTITY   DREF_UINT(0x80453130)
+#define P2_ENTITY   DREF_UINT(0x80453FC0)
+#define P3_ENTITY   DREF_UINT(0x80454E50)
+#define P4_ENTITY   DREF_UINT(0x80455CE0)
 
-#define PLAYER_DATA(x)      DREF_PTR(PLAYER_ENTITY(x) + 0x2C)
+#define PLAYER_DATA(x)      DREF_UINT(PLAYER_ENTITY(x) + 0x2C)
 
-#define P1_DATA     DREF_PTR(P1_ENTITY + 0x2C)
-#define P2_DATA     DREF_PTR(P2_ENTITY + 0x2C)
-#define P3_DATA     DREF_PTR(P3_ENTITY + 0x2C)
-#define P4_DATA     DREF_PTR(P4_ENTITY + 0x2C)
+#define P1_DATA     DREF_UINT(P1_ENTITY + 0x2C)
+#define P2_DATA     DREF_UINT(P2_ENTITY + 0x2C)
+#define P3_DATA     DREF_UINT(P3_ENTITY + 0x2C)
+#define P4_DATA     DREF_UINT(P4_ENTITY + 0x2C)
 
 /* remaining stocks */
 
-#define PLAYER_STOCKS(x)    DREF_PTR(PLAYER_BLOCK(x) + 0x8E)
+#define PLAYER_STOCKS(x)    DREF_UINT(PLAYER_BLOCK(x) + 0x8E)
 
-#define P1_STOCKS   DREF_PTR(0x8045310E)
-#define P2_STOCKS   DREF_PTR(0x80453F9E)
-#define P3_STOCKS   DREF_PTR(0x80454E2E)
-#define P4_STOCKS   DREF_PTR(0x80455CBE)
+#define P1_STOCKS   DREF_UINT(0x8045310E)
+#define P2_STOCKS   DREF_UINT(0x80453F9E)
+#define P3_STOCKS   DREF_UINT(0x80454E2E)
+#define P4_STOCKS   DREF_UINT(0x80455CBE)
 
 /* current damage percent */
 
-#define PLAYER_PERCENT(x)   DREF_PTR(PLAYER_BLOCK(x) + 0x60)
+#define PLAYER_PERCENT(x)   DREF_UINT(PLAYER_BLOCK(x) + 0x60)
 
 #define P1_PERCENT       DREF_PTR(0x804530E0)
 #define P2_PERCENT       DREF_PTR(0x80453F70)
@@ -97,17 +97,17 @@ float intToFloat(uint32_t n)
 
 /* player coordinates */
 
-#define PLAYER_X(x) (intToFloat(DREF_PTR(PLAYER_DATA(x) + 0xB0)))
-#define PLAYER_Y(x) (intToFloat(DREF_PTR(PLAYER_DATA(x) + 0xB4)))
+#define PLAYER_X(x) DREF_FLT(PLAYER_DATA(x) + 0xB0)
+#define PLAYER_Y(x) DREF_FLT(PLAYER_DATA(x) + 0xB4)
 
-#define P1_X    (intToFloat(DREF_PTR(P1_DATA + 0xB0)))
-#define P1_Y    (intToFloat(DREF_PTR(P1_DATA + 0xB4)))
-#define P2_X    (intToFloat(DREF_PTR(P2_DATA + 0xB0)))
-#define P2_Y    (intToFloat(DREF_PTR(P2_DATA + 0xB4)))
-#define P3_X    (intToFloat(DREF_PTR(P3_DATA + 0xB0)))
-#define P3_Y    (intToFloat(DREF_PTR(P3_DATA + 0xB4)))
-#define P4_X    (intToFloat(DREF_PTR(P4_DATA + 0xB0)))
-#define P4_Y    (intToFloat(DREF_PTR(P4_DATA + 0xB4)))
+#define P1_X    DREF_FLT(P1_DATA + 0xB0)
+#define P1_Y    DREF_FLT(P1_DATA + 0xB4)
+#define P2_X    DREF_FLT(P2_DATA + 0xB0)
+#define P2_Y    DREF_FLT(P2_DATA + 0xB4)
+#define P3_X    DREF_FLT(P3_DATA + 0xB0)
+#define P3_Y    DREF_FLT(P3_DATA + 0xB4)
+#define P4_X    DREF_FLT(P4_DATA + 0xB0)
+#define P4_Y    DREF_FLT(P4_DATA + 0xB4)
 
 /* hitlag frames remaining */
 
@@ -120,7 +120,7 @@ float intToFloat(uint32_t n)
 
 /* hitstun frames remaining */
 
-#define PLAYER_HITSTUN(x)    DREF_PTR(PLAYER_DATA(x) + 0x2340)
+#define PLAYER_HITSTUN(x)    DREF_FLT(PLAYER_DATA(x) + 0x2340)
 
 #define P1_HITSTUN   DREF_PTR(P1_DATA + 0x2340)
 #define P2_HITSTUN   DREF_PTR(P2_DATA + 0x2340)
@@ -147,7 +147,7 @@ float intToFloat(uint32_t n)
 
 /* whether or not player is in air */
 
-#define PLAYER_IN_AIR(x)    DREF_PTR(PLAYER_DATA(x) + 0xE0)
+#define PLAYER_IN_AIR(x)    DREF_UINT(PLAYER_DATA(x) + 0xE0)
 
 #define P1_IN_AIR   DREF_PTR(P1_DATA + 0xE0)
 #define P2_IN_AIR   DREF_PTR(P2_DATA + 0xE0)

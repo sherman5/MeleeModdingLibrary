@@ -45,12 +45,19 @@ static void defragment();
 
 /**
  * @brief Standard call to @c malloc.
+ * Allocates a block of @p size bytes of memory, returning a pointer
+ * to the beginning of the block. The content of the newly allocated
+ * block of memory is not initialized. If @c malloc fails to allocate
+ * the memory, a @c NULL pointer is returned.
+ *
+ * @param size Size of memory block in bytes.
+ * @return 
  */
-void* malloc(size_t);
+void* malloc(size_t size);
 
 /**
  * @brief Standard call to @c free.
  */
-void free(void*);
+void free(void* ptr);
 
 #endif

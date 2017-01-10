@@ -11,6 +11,7 @@ typedef struct input
     char button;
     uint8_t radius; // divide by 255
     int16_t angle; // integer precision is good enough
+
 } Input;
 
 #define DEFAULT_INPUT {0,0,0,0,0};
