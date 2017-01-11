@@ -4,4 +4,3 @@ libmml.a
 *.iso
 *.data
 examples/FalcoLaserSimple/*.o
-docs/html/*

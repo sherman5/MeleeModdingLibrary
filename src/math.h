@@ -198,6 +198,7 @@ typedef struct point
  * @return arc tangent of @p y / @p x, in interval [-pi, +pi] radians
  *
  * @see http://www.cplusplus.com/reference/cmath/atan2/
+ * @see http://www.embedded.com/design/other/4216719/Performing-efficient-arctangent-approximation
  */
 float atan2(float y, float x);
 
