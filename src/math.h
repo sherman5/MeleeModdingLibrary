@@ -9,15 +9,8 @@
 
 #include <stdint.h>
 
-<<<<<<< HEAD
-#define M_PI 3.14159265359f
-
-/* Converts degrees to radians. used for trigonometric approxs */
-inline float deg2Rad(float deg) { return deg * M_PI / 180.f; }
-=======
 /** approximate value of pi */
 #define M_PI 3.14159265359f
->>>>>>> f1127e9b7a9d2d56f79a1abe1bb826e782e26f73
 
 /** approximate value of pi / 180 */
 #define DEG_TO_RAD(x) ((x) * 0.01745329251f)
@@ -28,8 +21,6 @@ inline float deg2Rad(float deg) { return deg * M_PI / 180.f; }
 /** returns 1 or -1 depending on the sign of x */
 #define SIGN(x) (((x) >= 0) - ((x) < 0))
 
-<<<<<<< HEAD
-=======
 /** @cond */
 extern float (*sin)(float x);
 extern float (*cos)(float x);
@@ -187,7 +178,6 @@ float sqrt(float x);
 /**
  * @brief Struct containing the coordinates of a point 
  */
->>>>>>> f1127e9b7a9d2d56f79a1abe1bb826e782e26f73
 typedef struct point
 {
     float x; /**< X-coordinate of point */
