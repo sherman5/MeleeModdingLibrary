@@ -3,6 +3,20 @@
 
 #include <stdint.h>
 
+/* function addreses */
+
+/** address of the sin() function in Melee v102 */
+#define SINE_ADDRESS 0x80326220
+
+/** address of the cos() function in Melee v102 */
+#define COSINE_ADDRESS 0x80326200
+
+/** address of the tan() function in Melee v102 */
+#define TANGENT_ADDRESS  0x803261bc
+
+/** address of the fabs() function in Melee v102 */
+#define ABS_VAL_ADDRESS 0x803261b4
+
 /* macro functions for handling raw address values */
 
 #define UINT_PTR(x) ((uint32_t*) (x))

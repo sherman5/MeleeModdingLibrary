@@ -1,54 +1,86 @@
 #include "math.h"
+#include "melee102.h"
+#include <stdint.h>
 
-int pmod (int a, int b)
+float (*sin)(float x) = (void*) SINE_ADDRESS;
+float (*cos)(float x) = (void*) COSINE_ADDRESS;
+float (*tan)(float x) = (void*) TANGENT_ADDRESS;
+float (*fabs)(float x) = (void*) ABS_VAL_ADDRESS;
+
+int32_t imax_array(int32_t ra[])
 {
-   int ret = a % b;
-   if(ret < 0)
-     ret+=b;
-   return ret;
+    int32_t max = ra[0];
+    for (unsigned int i = 0; i < sizeof(ra) / sizeof(ra[0]); ++i)
+    {
+        if (max < ra[i]) {max = ra[i];}
+    }
 }
 
-float sin(float deg) 
+int32_t imin_array(int32_t ra[])
 {
-    deg = pmod(deg, 360);
-    rad = deg2Rad(pmod(deg, 90));
-    float value = 1.27323954 * rad - 0.405284735 * rad * rad;
-    if (deg > 180) return value * -1.0f
-    return neg * 0.225 * (rad * rad - rad) + rad;        
+    int32_t min = ra[0];
+    for (unsigned int i = 0; i < sizeof(ra) / sizeof(ra[0]); ++i)
+    {
+        if (min > ra[i]) { min = ra[i];}        
+    }
 }
 
-
-#if 0
-
-float abs(float x) { return (x < 0 ? -x : x); }
-
-int pmod (int a, int b)
+int32_t imax(int32_t a, int32_t b)
 {
-   int ret = a % b;
-   if(ret < 0)
-     ret+=b;
-   return ret;
+    return (a > b ? a : b);
 }
 
-int8_t sign(float x) 
+int32_t imin(int32_t a, int32_t b)
 {
-    return ((x >= 0) - (x < 0));
+    return (a < b ? a : b);
 }
 
-
-float cos(float x)
+float fmax_array(float ra[])
 {
-    return sin(x + 90);
+    float max = ra[0];
+    for (unsigned int i = 0; i < sizeof(ra) / sizeof(ra[0]); ++i)
+    {
+        if (max < ra[i]) {max = ra[i];}
+    }
 }
 
-float atan(point relDist) 
+float fmin_array(float ra[])
 {
-   
+    float min = ra[0];
+    for (unsigned int i = 0; i < sizeof(ra) / sizeof(ra[0]); ++i)
+    {
+        if (min > ra[i]) { min = ra[i];}        
+    }
 }
 
-int ipow(int base, uint32_t exp)
+float fmax(float a, float b)
 {
-    int result = 1;
+    return (a > b ? a : b);
+}
+
+float fmin(float a, float b)
+{
+    return (a < b ? a : b);
+}
+
+int32_t ipow(int16_t base, uint8_t exp)
+{
+    int32_t result = 1;
+    while (exp)
+    {
+        if (exp & 1)
+        {
+            result *= base;
+        }
+        exp >>= 1;
+        base *= base;
+    }
+    return result;
+}
+
+float fpow(float base, uint8_t exp)
+{
+    float result = 1;
     while (exp)
     {
         if (exp & 1)
@@ -63,49 +95,42 @@ int ipow(int base, uint32_t exp)
 
 float sqrt(float x)
 {
-    unsigned int i = *(unsigned int*) &x; 
-    // adjust bias
-    i  += 127 << 23;
-    // approximation of square root
-    i >>= 1; 
-    return *(float*) &i;
-} 
+    __asm__ __volatile__ ("fsqrt %0, %1" : "=r" (x) : "r" (x));
+    return x;
+}
 
-int32_t imax(int32_t ra[])
+float atan2(float y, float x)
 {
-    int32_t max = ra[0];
-    for (unsigned int i = 0; i < sizeof(ra) / sizeof(ra[0]); ++i)
+    float ax = fabs(x);
+    float ay = fabs(y);
+    float result;
+
+    if (ay < ax) //first octant
     {
-        if (max < ra[i]) { max = ra[i];}
+        result = (ax * ay) / (ax * ax + 0.28125f * ay * ay);
     }
-}
-
-int32_t imin(int32_t ra[])
-{
-    int32_t min = ra[0];
-    for (unsigned int i = 0; i < sizeof(ra) / sizeof(ra[0]); ++i)
+    else //second octant
     {
-        if (min > ra[i]) { min = ra[i];}        
+        result = M_PI / 2 - (ax * ay) / (ay * ay + 0.28125f * ax * ax);
     }
+
+    if (x < 0) { result = M_PI - result;} //reflect around y-axis
+    if (y < 0) { result *= -1;} //reflect around x-axis
 }
 
-point relativeTo(point a, point b)
+float magnitude(Point pt)
 {
-    point new;
-    new.x = a.x - b.x;
-    new.y = a.y - b.y
-    return new;
+    return sqrt((pt.x * pt.x) + (pt.y * pt.y));
 }
 
-float mag(point)
+float distance(Point a, Point b) 
 {
-    return sqrt((point.x * point.x) + (point.y * point.y));
+    b.x -= a.x;
+    b.y -= a.y;
+    return magnitude(a);
 }
 
-float distance(point a, point b) 
+float angle(Point a, Point b)
 {
-    return mag(relativeTo(a, b));
+    return atan2(b.y - a.y, b.x - a.x);
 }
-
-
-#endif

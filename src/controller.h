@@ -1,6 +1,5 @@
 /**
  * @file controller.h
- * @author Tom Sherman
  * @brief Emulate a player's controller.
  *
  */
