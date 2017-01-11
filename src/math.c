@@ -1,47 +1,49 @@
 #include "math.h"
 
-float abs(float x)
+int pmod (int a, int b)
 {
-    return (x < 0 ? -x : x);
+   int ret = a % b;
+   if(ret < 0)
+     ret+=b;
+   return ret;
 }
 
-int8_t sign(float x)
+float sin(float deg) 
+{
+    deg = pmod(deg, 360);
+    rad = deg2Rad(pmod(deg, 90));
+    float value = 1.27323954 * rad - 0.405284735 * rad * rad;
+    if (deg > 180) return value * -1.0f
+    return neg * 0.225 * (rad * rad - rad) + rad;        
+}
+
+
+#if 0
+
+float abs(float x) { return (x < 0 ? -x : x); }
+
+int pmod (int a, int b)
+{
+   int ret = a % b;
+   if(ret < 0)
+     ret+=b;
+   return ret;
+}
+
+int8_t sign(float x) 
 {
     return ((x >= 0) - (x < 0));
 }
 
-/* return sin(x), x is given in degress, error within 0.001 */
-float sin(float x)
-{
-    x *= M_PI / 180.0;
 
-    signed int neg = 1;
-
-    if (x < 0)
-    {
-        x = -x;
-        neg = -1;
-    }
-
-    while (x > 180)
-    {
-        x -= 360;
-    }
-
-    if (x < 0)
-    {
-        x = -x;
-        neg *= -1;
-    }
-
-    float value = 1.27323954 * x - 0.405284735 * x * x;
-    return neg * 0.225 * (value * value - value) + value;    
-}
-
-/* return cos(x), x is given in degress, error within 0.001 */
 float cos(float x)
 {
     return sin(x + 90);
+}
+
+float atan(point relDist) 
+{
+   
 }
 
 int ipow(int base, uint32_t exp)
@@ -59,7 +61,6 @@ int ipow(int base, uint32_t exp)
     return result;
 }
 
-/* shitty sqrt, http://bits.stephan-brumme.com/squareRoot.html */
 float sqrt(float x)
 {
     unsigned int i = *(unsigned int*) &x; 
@@ -87,3 +88,24 @@ int32_t imin(int32_t ra[])
         if (min > ra[i]) { min = ra[i];}        
     }
 }
+
+point relativeTo(point a, point b)
+{
+    point new;
+    new.x = a.x - b.x;
+    new.y = a.y - b.y
+    return new;
+}
+
+float mag(point)
+{
+    return sqrt((point.x * point.x) + (point.y * point.y));
+}
+
+float distance(point a, point b) 
+{
+    return mag(relativeTo(a, b));
+}
+
+
+#endif
