@@ -1,4 +1,8 @@
 @echo ON
+SETLOCAL ENABLEDELAYEDEXPANSION
 
-wiimake-ar -std=c99 libmml.a src\random.c src\math.c
-del src\*.o
+del libmml.a
+
+wiimake-ar -std=c99 libmml.a src\math\*.c src\random\*.c src\controller\*.c
+
+del src\math\*.o src\random\*.o src\controller\*.o

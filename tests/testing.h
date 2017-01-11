@@ -2,20 +2,20 @@
 #define TESTING_H
 
 #include <stdint.h>
+#include <math.h>
 
-extern uint32_t* outputAddress;
+extern uint32_t* output;
+extern int numTests;
 
-#define REQUIRE(x) \
-    do { \
-        if (!(x)) { \
-            *outputAddress = 0xFFFF0000; \
-        } else if (*outputAddress != 0xFFFF0000) { \
-            *outputAddress = 0x0000AAAA; \
-        }\
-        outputAddress++;\
-    } while (0)
+#define AZERO(diff, tol) (diff > 0 ? diff < tol : -diff < tol)
 
-#define APPROX_EQ(a,b,tol) ((a) < (b) ? (b) - (a) < tol : (a) - (b) < tol)
-    
+#define REQUIRE_FLT_EQ(L, R) fltEq(L, R); __COUNTER__;
+#define REQUIRE_INT_EQ(L, R) intEq(L, R); __COUNTER__;
+
+#define END_TEST int numTests = __COUNTER__;
+
+extern void fltEq(float L, float R);
+extern void intEq(uint32_t L, uint32_t R);
+
 #endif
 

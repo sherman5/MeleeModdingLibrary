@@ -5,6 +5,8 @@
 
 /* macro functions for handling raw address values */
 
+#define VOID_PTR(x) ((void*) (x))
+
 #define UINT_PTR(x) ((uint32_t*) (x))
 #define DREF_UINT(x) (*UINT_PTR(x))
 
@@ -13,6 +15,23 @@
 
 #define FLT_PTR(x) ((float*) (x))
 #define DREF_FLT(x) (*FLT_PTR(x))
+
+#define PRIMARY_CONTROLLER(x) VOID_PTR(0x804C1FAC + 0x44 * ((x) - 1))
+#define SECONDARY_CONTROLLER(x) VOID_PTR(DREF_UINT(0x80453130 + 0xE90 * ((x) - 1)) + 0x680)
+
+/* function addreses */
+
+/** address of the sin() function in Melee v102 */
+#define SINE_ADDRESS 0x80326220
+
+/** address of the cos() function in Melee v102 */
+#define COSINE_ADDRESS 0x80326200
+
+/** address of the tan() function in Melee v102 */
+#define TANGENT_ADDRESS  0x803261bc
+
+/** address of the fabs() function in Melee v102 */
+#define ABS_VAL_ADDRESS 0x803261b4
 
 /* player information */
 

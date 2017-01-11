@@ -1,32 +1,49 @@
 #include "testing.h"
+#include <stdbool.h>
 
-#define NUM_TESTS 3 //jank
-
-/* declare test functions */
-void testRandom(uint32_t);
-void testMath(uint32_t);
-
-static uint32_t runs = 0;
-static uint32_t* init_key = (uint32_t*) 0x80001800;
-uint32_t* outputAddress = 0; //need to initialize extern variable (sbss)
-
-int _main()
+void fltEq(float L, float R)
 {
-    if (*init_key != 0xabcdabcd)
-    {
-        /* zero out memory for test results */
-        for (uint32_t i = 1; i <= NUM_TESTS; ++i)
-        {
-            *(init_key + i) = 0x000EEEE000;
-        }
+    float val = L - R;
+    if (!AZERO(val, 0.001)) {*((float*) output) = L;}
+    ++output;
+}
 
-        /* store key value */
-        *init_key = 0xabcdabcd;
+void intEq(uint32_t L, uint32_t R)
+{
+    if (L != R) {*output = L;}
+    ++output;
+}
+
+void runTest(int);
+
+uint32_t* output = (uint32_t*) 0x80001804;
+bool init = false;
+static int runs = 0;
+
+void _main()
+{
+    /* intialize memory */
+    if (!init)
+    {
+        *((uint32_t*) 0x80001800) = 0xAAAAAAAA;
+        for (int i = 0; i < numTests; ++i)
+        {
+            *(output++) = 0xAAAA0000;
+        }
+        init = true;
     }
 
     /* run tests, reset output address */
-    outputAddress = (uint32_t*) 0x80001804;
-    //testRandom(runs);
-    testMath(runs);
-    runs++;
+    output = (uint32_t*) 0x80001804;
+    runTest(runs++);
+
+    /* check if all tests are passing */
+    output = (uint32_t*) 0x80001804;
+    for (int i = 0; i < numTests; ++i)
+    {
+        if (*(output++) != 0xAAAA0000)
+        {
+            *((uint32_t*) 0x80001800) = 0xFFFFFFFF;
+        }   
+    }
 }
