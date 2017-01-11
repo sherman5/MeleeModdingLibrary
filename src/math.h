@@ -13,10 +13,10 @@
 #define M_PI 3.14159265359f
 
 /** approximate value of pi / 180 */
-#define DEG_TO_RAD 0.01745329251f
+#define DEG_TO_RAD(x) ((x) * 0.01745329251f)
 
 /** approximate value of 180 / pi */
-#define RAD_TO_DEG 57.2957795131f
+#define RAD_TO_DEG(x) ((x) * 57.2957795131f)
 
 /** returns 1 or -1 depending on the sign of x */
 #define SIGN(x) (((x) >= 0) - ((x) < 0))

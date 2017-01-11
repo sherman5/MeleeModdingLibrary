@@ -3,6 +3,22 @@
 
 #include <stdint.h>
 
+/* macro functions for handling raw address values */
+
+#define VOID_PTR(x) ((void*) (x))
+
+#define UINT_PTR(x) ((uint32_t*) (x))
+#define DREF_UINT(x) (*UINT_PTR(x))
+
+#define INT_PTR(x) ((int32_t*) (x))
+#define DREF_INT(x) (*INT_PTR(x))
+
+#define FLT_PTR(x) ((float*) (x))
+#define DREF_FLT(x) (*FLT_PTR(x))
+
+#define PRIMARY_CONTROLLER(x) VOID_PTR(0x804C1FAC + 0x44 * ((x) - 1))
+#define SECONDARY_CONTROLLER(x) VOID_PTR(DREF_UINT(0x80453130 + 0xE90 * ((x) - 1)) + 0x680)
+
 /* function addreses */
 
 /** address of the sin() function in Melee v102 */
@@ -16,17 +32,6 @@
 
 /** address of the fabs() function in Melee v102 */
 #define ABS_VAL_ADDRESS 0x803261b4
-
-/* macro functions for handling raw address values */
-
-#define UINT_PTR(x) ((uint32_t*) (x))
-#define DREF_UINT(x) (*UINT_PTR(x))
-
-#define INT_PTR(x) ((int32_t*) (x))
-#define DREF_INT(x) (*INT_PTR(x))
-
-#define FLT_PTR(x) ((float*) (x))
-#define DREF_FLT(x) (*FLT_PTR(x))
 
 /* player information */
 

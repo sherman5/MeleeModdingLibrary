@@ -12,6 +12,9 @@
 /** address that holds a random 32-bit seed in melee */
 #define RAND_ADDRESS 0x804D5F90
 
+//extern float (*rand)();
+extern uint32_t (*randu)();
+
 /**
  * @brief Generate random 32-bit value.
  *
