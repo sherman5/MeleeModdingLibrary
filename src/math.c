@@ -11,10 +11,11 @@ int pmod (int a, int b)
 float sin(float deg) 
 {
     deg = pmod(deg, 360);
-    rad = deg2Rad(pmod(deg, 90));
+    float rad = deg2Rad(pmod(deg, 90));
     float value = 1.27323954 * rad - 0.405284735 * rad * rad;
-    if (deg > 180) return value * -1.0f
-    return neg * 0.225 * (rad * rad - rad) + rad;        
+    value = 0.225 * (rad * rad - rad) + rad; 
+    if (deg > 180) return value * -1.0f;
+    return value;       
 }
 
 

@@ -3,8 +3,10 @@
 
 #include <stdint.h>
 
+#define M_PI 3.14159265359f
+
 /* Converts degrees to radians. used for trigonometric approxs */
-inline float deg2Rad(float) { return deg * M_PI / 180.f; }
+inline float deg2Rad(float deg) { return deg * M_PI / 180.f; }
 
 /* Returns degrees converted to the first quadrant. b > 0. used for trigonometric approxs*/
 int pmod(int, int);
@@ -13,8 +15,6 @@ int pmod(int, int);
 float sin(float deg);
 
 #if 0
-
-#define M_PI 3.14159265359f
 
 typedef struct point
 {
