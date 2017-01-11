@@ -23,11 +23,11 @@ bool randomChance()
 {
     /* once every two seconds */
     return rand() < (float) 1 / 120;
-)
+}
 
 void _main()
 {
-    if (IN_GAME && P1_CHAR == FALCO)
+    if (IN_GAME && P2_CHAR == FALCO)
     {
         /* if entering game, reinitialize player 2 */
         if (notInGame)
