@@ -40,7 +40,7 @@ void _main()
         {
             /* load up event */
             EventListener listener = {.event = FUNCTION, .func = randomChance, .player = 2, .callback = SHlaser()};
-                
+
             /* add event to player */
             addEventListener(&player, listener);
         }

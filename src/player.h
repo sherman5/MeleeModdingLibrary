@@ -12,9 +12,15 @@ typedef struct player
     
 } Player;
 
+/**
+ * @brief Initialize all player information, called at beginning of match
+ */
 void initPlayer(Player* player, uint8_t number);
 
-void addEventListener(Player* player, EventListener listener[]);
+/**
+ * @brief Add an event listener to this players queue.
+ */
+void addEventListener(Player* player, EventListener* listener);
 
 void addInput(Player* player, Input input[]);
 
@@ -26,4 +32,5 @@ void needInstruction(Player* player);
  * @brief Get local copy of @p input, modified for this specific player.
  */
 Input parseFlags(Player* player, Input* input);
+
 #endif
