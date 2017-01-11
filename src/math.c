@@ -19,6 +19,7 @@ float sin(float deg)
 
 
 #if 0
+
 float abs(float x) { return (x < 0 ? -x : x); }
 
 int pmod (int a, int b)

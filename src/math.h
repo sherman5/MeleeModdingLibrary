@@ -3,6 +3,9 @@
 
 #include <stdint.h>
 
+/* Converts degrees to radians. used for trigonometric approxs */
+inline float deg2Rad(float) { return deg * M_PI / 180.f; }
+
 /* Returns degrees converted to the first quadrant. b > 0. used for trigonometric approxs*/
 int pmod(int, int);
 
@@ -18,9 +21,6 @@ typedef struct point
     float x, y;
 
 } Point;
-
-/* Converts degrees to radians. used for trigonometric approxs */
-inline float deg2Rad(float) { return deg * M_PI / 180.f; }
 
 float abs(float);
 
