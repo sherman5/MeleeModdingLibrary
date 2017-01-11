@@ -1,0 +1,57 @@
+SECTIONS {
+gci_1 :
+{
+	testMath.o (text)
+}
+_sizeof_gci_1=SIZEOF(gci_1);
+gci_2 :
+{
+	testMath.o (rodata)
+}
+_sizeof_gci_2=SIZEOF(gci_2);
+gci_3 :
+{
+	testMath.o (attr)
+}
+_sizeof_gci_3=SIZEOF(gci_3);
+gci_4 :
+{
+	testRunner.o (text)
+}
+_sizeof_gci_4=SIZEOF(gci_4);
+gci_5 :
+{
+	testRunner.o (data)
+}
+_sizeof_gci_5=SIZEOF(gci_5);
+gci_6 :
+{
+	../libmml.a (text0)
+}
+_sizeof_gci_6=SIZEOF(gci_6);
+gci_7 :
+{
+	../libmml.a (rodata0)
+}
+_sizeof_gci_7=SIZEOF(gci_7);
+gci_8 :
+{
+	../libmml.a (attr0)
+}
+_sizeof_gci_8=SIZEOF(gci_8);
+gci_9 :
+{
+	../libmml.a (text1)
+}
+_sizeof_gci_9=SIZEOF(gci_9);
+gci_10 :
+{
+	../libmml.a (rodata1)
+}
+_sizeof_gci_10=SIZEOF(gci_10);
+gci_11 :
+{
+	../libmml.a (attr1)
+}
+_sizeof_gci_11=SIZEOF(gci_11);
+}
