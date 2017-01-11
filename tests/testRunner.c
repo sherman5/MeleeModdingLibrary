@@ -26,7 +26,7 @@ int _main()
 
     /* run tests, reset output address */
     outputAddress = (uint32_t*) 0x80001804;
-    testRandom(runs);
+    //testRandom(runs);
     testMath(runs);
     runs++;
 }
