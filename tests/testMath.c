@@ -1,17 +1,56 @@
 #include "testing.h"
 #include <math.h>
 
-#define NUM_MATH_TESTS 2
-
-#define DEG_TO_RAD(x) (x * M_PI / 180.f)
-
-void testTrig(uint32_t numRuns)
+void runTest(int numTests)
 {
-    REQUIRE_AEQ(sin(DEG_TO_RAD(0.0)), 0, 0.001);
-    REQUIRE_AEQ(sin(DEG_TO_RAD(90.0)), 0, 0.001);
+    /** TEST SIN **/
+    REQUIRE_FLT_EQ(sin(DEG_TO_RAD(0.0)), 0); //1800
+    REQUIRE_FLT_EQ(sin(DEG_TO_RAD(30.0)), 0.5);
+    REQUIRE_FLT_EQ(sin(DEG_TO_RAD(45.0)), 0.707);
+    REQUIRE_FLT_EQ(sin(DEG_TO_RAD(60.0)), 0.866);
+    REQUIRE_FLT_EQ(sin(DEG_TO_RAD(90.0)), 1.0); //1810
+    REQUIRE_FLT_EQ(sin(DEG_TO_RAD(135.0)), 0.707);
+    REQUIRE_FLT_EQ(sin(DEG_TO_RAD(225.0)), -0.707);
+    REQUIRE_FLT_EQ(sin(DEG_TO_RAD(315.0)), -0.707);
+    REQUIRE_FLT_EQ(sin(DEG_TO_RAD(405.0)), 0.707);//1820
+    REQUIRE_FLT_EQ(sin(DEG_TO_RAD(-45.0)), -0.707);
+
+    /** TEST COSINE **/
+    REQUIRE_FLT_EQ(cos(DEG_TO_RAD(0.0)), 1.0); 
+    REQUIRE_FLT_EQ(cos(DEG_TO_RAD(30.0)), 0.866);
+    REQUIRE_FLT_EQ(cos(DEG_TO_RAD(45.0)), 0.707); //1830
+    REQUIRE_FLT_EQ(cos(DEG_TO_RAD(60.0)), 0.5);
+    REQUIRE_FLT_EQ(cos(DEG_TO_RAD(90.0)), 0); 
+
+    /** TEST TANGENT **/
+    REQUIRE_FLT_EQ(tan(DEG_TO_RAD(0.0)), 0.0); 
+    REQUIRE_FLT_EQ(tan(DEG_TO_RAD(30.0)), 0.577); //1840
+    REQUIRE_FLT_EQ(tan(DEG_TO_RAD(45.0)), 1.0);
+    REQUIRE_FLT_EQ(tan(DEG_TO_RAD(60.0)), 1.732);
+
+    /** TEST FABS **/
+
+    /** TEST IMAX **/
+
+    /** TEST IMIN **/
+    
+    /** TEST FMAX **/
+    
+    /** TEST FMIN **/
+
+    /** TEST IPOW **/
+
+    /** TEST FPOW **/
+
+    /** TEST SQRT **/
+
+    /** TEST ATAN2 **/
+
+    /** TEST MAGNITUDE **/
+
+    /** TEST DISTANCE **/
+
+    /** TEST ANGLE **/
 }
 
-void testMath(uint32_t numRuns)
-{
-    testTrig(numRuns);
-}
+END_TEST

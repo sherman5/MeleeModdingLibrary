@@ -2,30 +2,20 @@
 #define TESTING_H
 
 #include <stdint.h>
+#include <math.h>
 
 extern uint32_t* output;
+extern int numTests;
 
-#define REQUIRE_EQ(L, R) \
-    do { \
-        if ((L) != (R)) { \
-            *output = (L); \
-        } else if (*output == 0xEEEE0000 || *output == 0x0000AAAA) { \
-            *output = 0x0000AAAA; \
-        }\
-        output++;\
-    } while (0)
+#define AZERO(diff, tol) (diff > 0 ? diff < tol : -diff < tol)
 
-#define REQUIRE_AEQ(L, R, T) \
-    do { \
-        if (!APPROX_EQ(L, R, T)) { \
-            *output = (L); \
-        } else if (*output == 0xEEEE0000 || *output == 0x0000AAAA) { \
-            *output = 0x0000AAAA; \
-        }\
-        output++;\
-    } while (0)
+#define REQUIRE_FLT_EQ(L, R) fltEq(L, R); __COUNTER__;
+#define REQUIRE_INT_EQ(L, R) intEq(L, R); __COUNTER__;
 
-#define APPROX_EQ(a,b,tol) ((a) < (b) ? (b) - (a) < tol : (a) - (b) < tol)
-    
+#define END_TEST int numTests = __COUNTER__;
+
+extern void fltEq(float L, float R);
+extern void intEq(uint32_t L, uint32_t R);
+
 #endif
 
