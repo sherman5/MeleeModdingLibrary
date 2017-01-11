@@ -12,7 +12,7 @@ void runTest(int numTests)
     REQUIRE_FLT_EQ(sin(DEG_TO_RAD(135.0)), 0.707);
     REQUIRE_FLT_EQ(sin(DEG_TO_RAD(225.0)), -0.707);
     REQUIRE_FLT_EQ(sin(DEG_TO_RAD(315.0)), -0.707);
-    REQUIRE_FLT_EQ(sin(DEG_TO_RAD(405.0)), 0.707);//1820
+    REQUIRE_FLT_EQ(sin(DEG_TO_RAD(405.0)), 0.707); //1820
     REQUIRE_FLT_EQ(sin(DEG_TO_RAD(-45.0)), -0.707);
 
     /** TEST COSINE **/
