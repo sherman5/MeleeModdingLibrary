@@ -14,6 +14,18 @@ void intEq(uint32_t L, uint32_t R)
     ++output;
 }
 
+void intNeq(uint32_t L, uint32_t R)
+{
+    if (L == R) {*output = L;}
+    ++output;
+}
+
+void fltLess(float L, float R)
+{
+    if (L > R) {*output = L;}
+    ++output;
+}
+
 void runTest(int);
 
 uint32_t* output = (uint32_t*) 0x80001804;
@@ -41,7 +53,7 @@ void _main()
     output = (uint32_t*) 0x80001804;
     for (int i = 0; i < numTests; ++i)
     {
-        if (*(output++) != 0xAAAA0000)
+        if (*(output++) & 0xFFFF0000 != 0xAAAA0000)
         {
             *((uint32_t*) 0x80001800) = 0xFFFFFFFF;
         }   

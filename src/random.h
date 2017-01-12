@@ -12,17 +12,11 @@
 /** address that holds a random 32-bit seed in melee */
 #define RAND_ADDRESS 0x804D5F90
 
-//extern float (*rand)();
-extern uint32_t (*randu)();
+/** function that changes the value in RAND_ADDRESS */
+#define RANDU_FPTR ((void*) 0x80380580)
 
 /**
  * @brief Generate random 32-bit value.
- *
- * Generate random 32-bit value using a linear-feedback shift
- * register. The internal random value of the game is used as a
- * seed. A second random value is generated and written to the 
- * address of the internal random random value. This ensures that
- * no random number is used twice.
  *
  * @return Random 32-bit @c integer    
 */

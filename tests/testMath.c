@@ -1,7 +1,7 @@
 #include "testing.h"
 #include <math.h>
 
-void runTest(int numTests)
+void runTest(int numRuns)
 {
     /** TEST SIN **/
     REQUIRE_FLT_EQ(sin(DEG_TO_RAD(0.0)), 0); //1800

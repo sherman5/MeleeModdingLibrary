@@ -12,10 +12,16 @@ extern int numTests;
 #define REQUIRE_FLT_EQ(L, R) fltEq(L, R); __COUNTER__;
 #define REQUIRE_INT_EQ(L, R) intEq(L, R); __COUNTER__;
 
+#define REQUIRE_INT_NEQ(L, R) intNeq(L, R); __COUNTER__;
+
+#define REQUIRE_FLT_LESS(L, R) fltLess(L, R); __COUNTER__;
+
 #define END_TEST int numTests = __COUNTER__;
 
 extern void fltEq(float L, float R);
 extern void intEq(uint32_t L, uint32_t R);
+extern void intNeq(uint32_t L, uint32_t R);
+extern void fltLess(float L, float R);
 
 #endif
 
