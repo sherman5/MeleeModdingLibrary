@@ -1,7 +1,10 @@
 *.iso
 *.data
-examples/FalcoLaserSimple/*.o
-release/*
 *.zip
 *.tar.gz
-libmml.a
+*.a
+
+tutorials/*/*.o
+tests/*.o
+src/*/*.o
+release/*
