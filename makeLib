@@ -1,0 +1,4 @@
+#!/bin/bash
+
+wiimake-ar -std=c99 libmml.a src/math/*.c src/random/*.c src/controller/*.c
+rm src/*/*.o

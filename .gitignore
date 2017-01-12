@@ -1,7 +1,7 @@
-mml.tar.gz
-mml.zip
-libmml.a
 *.iso
 *.data
 examples/FalcoLaserSimple/*.o
 release/*
+*.zip
+*.tar.gz
+libmml.a

@@ -1,0 +1,23 @@
+#!/bin/bash
+
+VERSION="beta"
+
+./makeLib
+
+rm mml-$VERSION.tar.gz
+rm mml-$VERSION.zip
+
+tar --transform='s|src|include/mml|' -czf mml-$VERSION.tar.gz src/*.h src/melee/*.h tutorials/ libmml.a
+rm -rf release
+mkdir release
+tar -xvzf mml-$VERSION.tar.gz -C release/
+
+zip mml-$VERSION.zip -r src/*.h src/melee/*.h tutorials libmml.a 
+
+declare -a headers=("controller.h" "events.h" "inputs.h" "malloc.h" "math.h" "melee.h" "moves.h" "player.h" "random.h" "melee/melee102.h" "melee/meleePAL.h")
+
+for f in "${headers[@]}"
+do
+    printf "@ src/$f\n@=include/mml/$f" | zipnote -w mml-$VERSION.zip
+
+done
