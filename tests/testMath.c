@@ -43,7 +43,11 @@ void runTest(int numRuns)
     /** TEST FPOW **/
 
     /** TEST SQRT **/
-    REQUIRE_FLT_EQ(sqrt(2), 1.414); //1850
+    REQUIRE_FLT_EQ(sqrt(2.0), 1.414); //1850
+    REQUIRE_FLT_EQ(sqrt(0.0), 0.0);
+    REQUIRE_FLT_EQ(sqrt(0.005), 0.0707);
+    REQUIRE_FLT_EQ(sqrt(88.0), 9.3808);
+    REQUIRE_FLT_EQ(sqrt(54610.0), 233.6878); //1860
 
     /** TEST ATAN2 **/
 

@@ -26,6 +26,7 @@ extern float (*sin)(float x);
 extern float (*cos)(float x);
 extern float (*tan)(float x);
 extern float (*fabs)(float x);
+extern float (*recipSqrt)(float x);
 
 #if 0
 /// @endcond
@@ -173,7 +174,8 @@ float fpow(float base, uint8_t exp);
  * 
  * @return the square root of @p x
  */
-float sqrt(float x);
+__inline__ __attribute__((always_inline)) float sqrt(float x)
+    {return x == 0 ? 0 : 1 / recipSqrt(x);}
 
 /**
  * @brief Struct containing the coordinates of a point 

@@ -1,5 +1,5 @@
 #!/bin/bash
 
-echo wiimake ../Melee.iso test$1.ini
-wiimake ../Melee.iso test$1.ini
+echo wiimake ../Melee.iso test$1.ini $2
+wiimake ../Melee.iso test$1.ini $2
 rm *.o
