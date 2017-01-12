@@ -1,7 +1,3 @@
-//#include <random.h>
-//#include <melee.h>
-//#include <moves.h>
-
 #include <mml/player.h>
 #include <mml/events.h>
 #include <mml/moves.h>
