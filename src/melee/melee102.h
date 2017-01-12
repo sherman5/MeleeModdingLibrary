@@ -3,6 +3,12 @@
 
 #include <stdint.h>
 
+/** address that holds a random 32-bit seed in melee */
+#define RAND_ADDRESS 0x804D5F90
+
+/** function that changes the value in RAND_ADDRESS */
+#define RANDU_FPTR ((void*) 0x80380580)
+
 /* macro functions for handling raw address values */
 
 #define VOID_PTR(x) ((void*) (x))

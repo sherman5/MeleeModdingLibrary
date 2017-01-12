@@ -9,12 +9,6 @@
 
 #include <stdint.h>
 
-/** address that holds a random 32-bit seed in melee */
-#define RAND_ADDRESS 0x804D5F90
-
-/** function that changes the value in RAND_ADDRESS */
-#define RANDU_FPTR ((void*) 0x80380580)
-
 /**
  * @brief Generate random 32-bit value.
  *
@@ -28,5 +22,12 @@ uint32_t randUint32();
  * @return random floating point number in [0,1]
  */
 float rand();
+
+/**
+ * @brief Sample uniformly from [@p a,@p b]
+ *
+ * @return random floating point number in [@p a, @p b]
+ */
+float uniform(float a, float b);
 
 #endif

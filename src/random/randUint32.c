@@ -1,4 +1,5 @@
 #include "../random.h"
+#include "../melee.h"
 
 uint32_t randUint32()
 {
