@@ -2,15 +2,14 @@
 #include <random.h>
 #include <math.h>
 
-#define NUM_RANDOM_TESTS 1
-
 /* buckets */
 static uint32_t buckets[20] = {0};
 
-void testUniform01(uint32_t numRuns)
+void runTest(int numTests)
 {
-    /* store results of random values */
-    float f = rand();
+    if (numRuns <= 1000) // gather data
+    {
+        float f = rand(); // store results of random values 
 
     /* put random numbers into buckets */
     for (int i = 0; i < 20; ++i)
@@ -19,6 +18,14 @@ void testUniform01(uint32_t numRuns)
         {
             buckets[i] += 1;
         }
+    }
+
+
+    }
+    else // test data
+    {
+
+
     }
 
     /* should be close to uniform after 1000 runs */
@@ -35,7 +42,4 @@ void testUniform01(uint32_t numRuns)
     }
 }
 
-void testRandom(uint32_t numRuns)
-{
-    testUniform01(numRuns);
-}
+END_TEST
