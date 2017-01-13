@@ -5,8 +5,13 @@
 #include <stdint.h>
 #include <stdbool.h>
 
-static bool notInGame = true;
-static Player player = DEFAULT_PLAYER;
+/* set player properties */
+static const Logic default_logic[] = {  };
+
+Player player2;
+player2->port = 2;
+player2->defaultLogic = &default_logic;
+player2->possibleCharacters = {FOX, FALCO, MARTH};
 
 void SHLaser()
 {
@@ -23,6 +28,14 @@ bool randomChance()
 
 void _main()
 {
+    if (playerLogicEmpty(&player2))
+    {
+        setDefaultLogic(&player2, &default_logic);
+    }  
+    playOneFrame(&player2);
+}
+
+    #if 0
     if (IN_GAME && P2_CHAR == FALCO)
     {
         /* if entering game, reinitialize player 2 */
@@ -48,5 +61,5 @@ void _main()
     {
         notInGame = true;
     }
-}
+    #endif
  
