@@ -1,7 +1,7 @@
 #include "testing.h"
 #include <math.h>
 
-void runTest(int numRuns)
+TEST_CASE("math.h")
 {
     /** TEST SIN **/
     REQUIRE_FLT_EQ(sin(DEG_TO_RAD(0.0)), 0); //1804
@@ -57,5 +57,4 @@ void runTest(int numRuns)
 
     /** TEST ANGLE **/
 }
-
 END_TEST

@@ -6,5 +6,7 @@
 
 tutorials/*/*.o
 tests/*.o
-src/*/*.o
 release/*
+counter_test/*
+.d/*
+build/*

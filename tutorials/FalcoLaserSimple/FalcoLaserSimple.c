@@ -35,7 +35,24 @@ void _main()
     playOneFrame(&player2);
 }
 
-    #if 0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     if (IN_GAME && P2_CHAR == FALCO)
     {
         /* if entering game, reinitialize player 2 */
@@ -61,5 +78,4 @@ void _main()
     {
         notInGame = true;
     }
-    #endif
  

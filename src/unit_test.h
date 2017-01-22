@@ -1,5 +1,5 @@
-#ifndef TESTING_H
-#define TESTING_H
+#ifndef UNIT_TESTS_H
+#define UNIT_TESTS_H
 
 #include <stdint.h>
 #include <math.h>
@@ -10,12 +10,12 @@ extern int numTests;
 #define AZERO(diff, tol) (diff > 0 ? diff < tol : -diff < tol)
 
 #define REQUIRE_FLT_EQ(L, R) fltEq(L, R); __COUNTER__;
-#define REQUIRE_INT_EQ(L, R) intEq(L, R); __COUNTER__;
-
-#define REQUIRE_INT_NEQ(L, R) intNeq(L, R); __COUNTER__;
-
 #define REQUIRE_FLT_LESS(L, R) fltLess(L, R); __COUNTER__;
 
+#define REQUIRE_INT_EQ(L, R) intEq(L, R); __COUNTER__;
+#define REQUIRE_INT_NEQ(L, R) intNeq(L, R); __COUNTER__;
+
+#define TEST_CASE(x) void runTest(int numRuns) 
 #define END_TEST int numTests = __COUNTER__;
 
 extern void fltEq(float L, float R);

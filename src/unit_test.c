@@ -1,4 +1,4 @@
-#include "testing.h"
+#include "../unittests.h"
 #include <stdbool.h>
 
 void fltEq(float L, float R)
@@ -29,7 +29,7 @@ void fltLess(float L, float R)
 void runTest(int);
 
 uint32_t* output = (uint32_t*) 0x80001804;
-bool init = false;
+static bool init = false;
 static int runs = 0;
 
 void _main()
