@@ -1,10 +1,11 @@
-#include "../math.h"
+#include "math.h"
+#include "melee.h"
 
-float (*sin)(float x) = (void*) SINE_ADDRESS;
-float (*cos)(float x) = (void*) COSINE_ADDRESS;
-float (*tan)(float x) = (void*) TANGENT_ADDRESS;
-float (*recipSqrt)(float x) = (void*) 0x80022df8;
-float (*fabs)(float x) = (void*) ABS_VAL_ADDRESS;
+float (*sin)(float x) = SINE_FPTR;
+float (*cos)(float x) = COSINE_FPTR;
+float (*tan)(float x) = TANGENT_FPTR;
+float (*recipSqrt)(float x) = RECIP_SQRT_FPTR;
+float (*fabs)(float x) = ABS_VAL_FPTR;
 
 float angle(Point a, Point b)
 {
@@ -28,6 +29,8 @@ float atan2(float y, float x)
 
     if (x < 0) { result = M_PI - result;} //reflect around y-axis
     if (y < 0) { result *= -1;} //reflect around x-axis
+
+    return result;
 }
 
 float magnitude(Point pt)
@@ -57,6 +60,7 @@ int32_t imin_array(int32_t ra[])
     {
         if (min > ra[i]) { min = ra[i];}        
     }
+    return min;
 }
 
 int32_t imin(int32_t a, int32_t b)
@@ -71,6 +75,7 @@ int32_t imax_array(int32_t ra[])
     {
         if (max < ra[i]) {max = ra[i];}
     }
+    return max;
 }
 
 int32_t imax(int32_t a, int32_t b)
@@ -100,6 +105,7 @@ float fmin_array(float ra[])
     {
         if (min > ra[i]) { min = ra[i];}        
     }
+    return min;
 }
 
 float fmin(float a, float b)
@@ -114,6 +120,7 @@ float fmax_array(float ra[])
     {
         if (max < ra[i]) {max = ra[i];}
     }
+    return max;
 }
 
 float fmax(float a, float b)

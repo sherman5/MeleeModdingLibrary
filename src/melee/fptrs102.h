@@ -27,16 +27,19 @@
 
 /************************** math.h ****************************/
 
-/** address of the sin() function in Melee v102 */
+/** pointer to sin() function in Melee v102 */
 #define SINE_FPTR       VOID_PTR(0x80326220)
 
-/** address of the cos() function in Melee v102 */
+/** pointer to cos() function in Melee v102 */
 #define COSINE_FPTR     VOID_PTR(0x80326200)
 
-/** poitan() function in Melee v102 */
+/** pointer to tan() function in Melee v102 */
 #define TANGENT_FPTR    VOID_PTR(0x803261bc)
 
 /** pointer to fabs() function in Melee v102 */
 #define ABS_VAL_FPTR    VOID_PTR(0x803261b4)
+
+/** pointer to 1/sqrt() function in Melee v102 */
+#define RECIP_SQRT_FPTR VOID_PTR(0x80022df8);
 
 #endif

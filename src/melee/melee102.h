@@ -176,6 +176,6 @@
 
 #define STAGE_ID          (DREF_PTR(0x804D6CAC) >> 8)
 #define CURRENT_FRAME     DREF_PTR(0x80479D60)
-#define IN_GAME           (((DREF_PTR(0x8065CC14) >> 20) & 0x0F) == 0x0D)
+#define IN_GAME           (((DREF_UINT(0x8065CC14) >> 20) & 0x0F) == 0x0D)
 
 #endif

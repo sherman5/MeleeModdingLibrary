@@ -7,7 +7,7 @@ AR = powerpc-eabi-ar
 OBJCPY = powerpc-eabi-objcopy
 
 # sources and header files (included in distribution)
-SRCS = src/random.c
+SRCS = src/random.c src/math.c src/controller.c
 HEADERS = $(SRCS:.c=.h) src/melee.h src/melee/melee102.h \
 src/melee/meleePAL.h src/melee/fptrs102.h
 
@@ -26,7 +26,7 @@ LIBS = libmml.a libmml_O1.a libmml_O2.a libmml_O3.a
 # link, archive, and compile flags
 LDFLAGS = 
 AFLAGS = -cvr
-CFLAGS = -Wall -Wextra -pedantic -std=c99 -fno-builtin \
+CFLAGS = -Wall -Wextra -std=c99 -fno-builtin \
 -fdata-sections -ffunction-sections
 
 # sections to remove from object files
@@ -80,10 +80,16 @@ zip :
 		printf "@ src/$$h\n@=include/mml/$$h" | zipnote -w $(VERSION).zip ; \
 	done
 
-# clean targets
-.PHONY : clean clean_libs clean_deps clean_objects clean_dist
+# test targets
+.PHONY : test_random test_math test_system
 
-clean : clean_libs clean_deps clean_objects clean_dist
+test_math : 
+	wiimake Melee.iso tests/testMath.ini
+
+# clean targets
+.PHONY : clean clean_libs clean_deps clean_objects clean_dist clean_tests
+
+clean : clean_libs clean_deps clean_objects clean_dist clean_tests
 
 clean_deps :
 	rm -f $(DEP)
@@ -92,9 +98,12 @@ clean_libs :
 	rm -f $(LIBS)
 
 clean_objects :
-	rm -f $(OBJS)
+	rm -f $(OBJS) tests/*.o
 
 clean_dist :
 	rm -f $(VERSION).tar.gz $(VERSION).zip
+
+clean_tests : 
+	rm -f tests/*.o
 
 

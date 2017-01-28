@@ -1,32 +1,24 @@
-#include "../unittests.h"
+#include "unit_test.h"
 #include <stdbool.h>
 
-void fltEq(float L, float R)
+bool AZERO(float diff, float tol)
 {
-    float val = L - R;
-    if (!AZERO(val, 0.001)) {*((float*) output) = L;}
+    return a > b ? a - b < tol : b - a < tol;
+}
+
+void requireInt(bool cond, int value)
+{
+    if (!cond) {*output = value;}
     ++output;
 }
 
-void intEq(uint32_t L, uint32_t R)
+void requireFloat(bool cond, float value)
 {
-    if (L != R) {*output = L;}
+    if (!cond) {*output = value;}
     ++output;
 }
 
-void intNeq(uint32_t L, uint32_t R)
-{
-    if (L == R) {*output = L;}
-    ++output;
-}
-
-void fltLess(float L, float R)
-{
-    if (L > R) {*output = L;}
-    ++output;
-}
-
-void runTest(int);
+void runTest();
 
 uint32_t* output = (uint32_t*) 0x80001804;
 static bool init = false;
@@ -47,13 +39,14 @@ void _main()
 
     /* run tests, reset output address */
     output = (uint32_t*) 0x80001804;
-    runTest(runs++);
-
+    runTest();
+    runs++;
+ 
     /* check if all tests are passing */
     output = (uint32_t*) 0x80001804;
     for (int i = 0; i < numTests; ++i)
     {
-        if (*(output++) & 0xFFFF0000 != 0xAAAA0000)
+        if ((*(output++) & 0xFFFF0000) != 0xAAAA0000)
         {
             *((uint32_t*) 0x80001800) = 0xFFFFFFFF;
         }   

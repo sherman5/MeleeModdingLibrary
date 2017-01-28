@@ -1,5 +1,6 @@
-#include "../controller.h"
-#include "../math.h"
+#include "controller.h"
+#include "math.h"
+#include "melee.h"
 
 #define BUTTON_BITS 0b0000000000011111
 #define RADIUS_BITS 0b0000000011100000

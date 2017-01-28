@@ -2,26 +2,21 @@
 #define UNIT_TESTS_H
 
 #include <stdint.h>
-#include <math.h>
+#include <stdbool.h>
 
 extern uint32_t* output;
 extern int numTests;
 
-#define AZERO(diff, tol) (diff > 0 ? diff < tol : -diff < tol)
+bool AZERO(float diff, float tol);
 
-#define REQUIRE_FLT_EQ(L, R) fltEq(L, R); __COUNTER__;
-#define REQUIRE_FLT_LESS(L, R) fltLess(L, R); __COUNTER__;
+#define REQUIRE_INT(cond, value) requireInt(cond, value); __COUNTER__;
+void requireInt(bool cond, int value);
 
-#define REQUIRE_INT_EQ(L, R) intEq(L, R); __COUNTER__;
-#define REQUIRE_INT_NEQ(L, R) intNeq(L, R); __COUNTER__;
+#define REQUIRE_FLOAT(cond, value) requireFloat(cond, value); __COUNTER__;
+void requireFloat(bool cond, float value);
 
-#define TEST_CASE(x) void runTest(int numRuns) 
-#define END_TEST int numTests = __COUNTER__;
-
-extern void fltEq(float L, float R);
-extern void intEq(uint32_t L, uint32_t R);
-extern void intNeq(uint32_t L, uint32_t R);
-extern void fltLess(float L, float R);
+#define START_TEST void runTest()
+#define END_TEST numTests = __COUNTER__;
 
 #endif
 

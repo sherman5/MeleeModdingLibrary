@@ -1,15 +1,12 @@
 #include "random.h"
 #include "melee.h"
 
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wpedantic"
 uint32_t randUint32()
 {
     void (*randu)() = RANDU_FPTR;    
     randu();
     return *((uint32_t*) RAND_ADDRESS);
 }
-#pragma GCC diagnostic pop
 
 float rand()
 {
