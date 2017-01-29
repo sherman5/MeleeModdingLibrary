@@ -1,10 +1,6 @@
 #include "../system.h"
 #include "../melee.h"
 
-void* (*memset)(void*, int, size_t) = MEM_SET_FPTR;
-void* (*memcpy)(void*, const void*, size_t) = MEM_CPY_FPTR;
-void* (*memchr)(const void*, int, size_t) = MEM_CHR_FPTR;
-
 /*
 80003220   memcpy (void *dest, void *src, int len)
 800031F4   memmove (void *dest, void *src, int len)
