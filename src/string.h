@@ -5,19 +5,18 @@
 #include <stdint.h>
 
 /** @cond */
-extern void* (*memchr)(const void* ptr, int value, size_t num);
-extern int (*memcmp)(const void* ptr1, const void* ptr2, size_t num);
-extern void* (*memcpy)(void* destination, const void* source, size_t num);
-extern void* (*memset)(void* ptr, int value, size_t num);
-extern char* (*strchr)(const char* str, int character);
-extern int (*strcmp)(const char* str1, const char* str2);
-extern int (*strncmp)(const char* str1, const char* str2, size_t num);
-extern char* (*strcpy)(char* destination, const char* source);
-extern char* (*strncpy)(char* destination, const char* source, size_t num);
-extern size_t (*strlen)(const char* str);
-extern uint32_t (*strtoul)(const char* str, char** endptr, int base);
-extern char* (*itoa)(int32_t value, char* str, int base);
-
+extern void*    (*memchr)  (const void*, int, size_t);
+extern int      (*memcmp)  (const void*, const void*, size_t);
+extern void*    (*memcpy)  (void*, const void*, size_t);
+extern void*    (*memset)  (void*, int, size_t);
+extern char*    (*strchr)  (const char*, int);
+extern int      (*strcmp)  (const char*, const char*);
+extern int      (*strncmp) (const char*, const char*, size_t);
+extern char*    (*strcpy)  (char*, const char*);
+extern char*    (*strncpy) (char*, const char*, size_t);
+extern size_t   (*strlen)  (const char*);
+extern uint32_t (*strtoul) (const char*, char**, int);
+extern char*    (*itoa)    (int32_t, char*, int);
 #if 0
 /// @endcond
 
@@ -336,11 +335,11 @@ void print(const char* str);
 /**
  * @brief provide stream for output
  *
- * @param stream - char[] to store all output
+ * @param mem - block of memory to store output in, need at least 156 bytes
  * @param size - size of the array @p stream
  *
  * @return none
  */
-void initStream(char* stream, unsigned size);
+void initStream(char* mem, unsigned size);
 
 #endif

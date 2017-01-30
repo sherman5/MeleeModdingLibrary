@@ -84,7 +84,7 @@ zip :
 .PHONY : test_math
 
 test_math : libmml.a
-	wiimake Melee.iso tests/testMath.ini
+	wiimake Melee.iso tests/testMath.ini --save-temps
 
 # clean targets
 .PHONY : clean clean_libs clean_deps clean_objects clean_dist clean_tests
@@ -104,6 +104,6 @@ clean_dist :
 	rm -f $(VERSION).tar.gz $(VERSION).zip
 
 clean_tests : 
-	rm -f tests/*.o
+	rm -f tests/*.o final.txt *.o *.s linker_script.txt size_linker_script.txt sizes.out sizes.txt final.out
 
 

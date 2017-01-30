@@ -2,9 +2,14 @@
 #include <melee.h>
 #include <string.h>
 
+static char stream[250];
+
 void _main()
 {
-    print("this is a test string");
+    memset(stream, 0, sizeof(stream));
+    initStream(stream, 100);
+    print("this is a test sentence to see how many characters fit");
+    print("this is a test of multiple calls to print");
 }
 
 #if 0   
