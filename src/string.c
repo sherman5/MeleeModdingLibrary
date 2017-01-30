@@ -17,6 +17,14 @@ uint32_t (*strtoul) (const char*, char**, int)         = STR_TO_UL_FPTR;
 char*    (*itoa)    (int32_t, char*, int)              = ITOA_FPTR;
 /*************************************************************************/
 
+char* strcat(char* destination, const char* source)
+{
+    char* originalDestination = destination;
+    while (*destination) {destination++;}
+    while ((*destination++ = *source++)) {}
+    return originalDestination;
+}
+
 
 /* variables needed for print stream */
 static bool initialized = false;
@@ -36,7 +44,7 @@ void initStream(char* mem, unsigned size)
 
     /* set addresses of menu and stream, initialize to zero */
     menu = (uint32_t*) mem;
-    stream = mem + 0x4 * menuBytes;
+    stream = mem + menuBytes;
     memset(menu, 0, menuBytes);
     memset(stream, 0, totalBytes - menuBytes);
     menuPos = 0;
@@ -45,7 +53,7 @@ void initStream(char* mem, unsigned size)
     for (unsigned i = 0; i < menuSize - 1; ++i)
     {
         menu[8 * i + 0] = 1;
-        menu[8 * i + 2] = (uint32_t) stream + CHAR_PER_LINE * i;
+        menu[8 * i + 2] = (uint32_t) stream + (4 + CHAR_PER_LINE) * i;
     }
     menu[8 * (menuSize - 1)] = 9; //mark the end of the menu
 
@@ -56,8 +64,15 @@ void print(const char* str)
 {
     if (initialized)
     {
-        strcpy(stream + CHAR_PER_LINE * menuPos, str);
-        menuPos++;
+        unsigned len = strlen(str);
+        unsigned lines = 0;
+        while (CHAR_PER_LINE * lines < len)
+        {
+            strncpy(stream + (4 + CHAR_PER_LINE) * menuPos,
+                str + CHAR_PER_LINE * lines, CHAR_PER_LINE);
+            menuPos++;
+            lines++;
+        }
     }
 }
 

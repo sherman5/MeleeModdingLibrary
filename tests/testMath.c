@@ -1,15 +1,27 @@
 #include <math.h>
 #include <melee.h>
 #include <string.h>
+#include <stdbool.h>
 
-static char stream[250];
+static char stream[600];
+static bool init = false;
+static char str[100];
 
+void initStr()
+{
+    memset(str, 0, sizeof(str));
+    strcat(str, "this is a test of how strings are wrapped when they are");
+    strcat(str, " too long for a single line");
+}
+ 
 void _main()
 {
+    if (!init) {initStr(); init = true;}
     memset(stream, 0, sizeof(stream));
-    initStream(stream, 100);
+    initStream(stream, 600);
     print("this is a test sentence to see how many characters fit");
     print("this is a test of multiple calls to print");
+    print(str);
 }
 
 #if 0   

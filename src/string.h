@@ -316,6 +316,8 @@ char* itoa(int32_t value, char* str, int base);
 #endif
 /** @endcond */
 
+char* strcat(char* destination, const char* source);
+
 /**
  * @brief print a string to the output stream
  * 
