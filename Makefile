@@ -7,7 +7,7 @@ AR = powerpc-eabi-ar
 OBJCPY = powerpc-eabi-objcopy
 
 # sources and header files (included in distribution)
-SRCS = src/random.c src/math.c src/controller.c src/string.c
+SRCS = src/math.c src/random.c src/string.c src/system.c src/print.c
 HEADERS = $(SRCS:.c=.h) src/melee.h src/melee/melee102.h \
 src/melee/meleePAL.h src/melee/fptrs102.h
 
@@ -83,8 +83,15 @@ zip :
 # test targets
 .PHONY : test_math
 
+# iso file to inject test code into
+
+ISO_FILE = Melee.iso
+
 test_math : libmml.a
-	wiimake Melee.iso tests/testMath.ini --save-temps
+	wiimake $(ISO_FILE) tests/testMath.ini $(MAKE_FLAGS)
+
+test_string : libmml.a
+	wiimake $(ISO_FILE) tests/testString.ini $(MAKE_FLAGS)
 
 # clean targets
 .PHONY : clean clean_libs clean_deps clean_objects clean_dist clean_tests

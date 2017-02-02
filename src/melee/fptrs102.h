@@ -11,7 +11,33 @@
 /************************** system.h **************************/
 
 /** void* malloc(size_t size); */
-#define MALLOC_FPTR     VOID_PTR(0x8037f1e4)
+//#define MALLOC_FPTR     VOID_PTR(0x8037f1e4)
+
+#define OS_CREATE_HEAP_FPTR         VOID_PTR(0x803440e8)
+
+#define OS_ALLOC_FROM_HEAP_FPTR     VOID_PTR(0x80343ef0)
+
+#define OS_FREE_TO_HEAP_FPTR        VOID_PTR(0x80343fec)
+
+#define OS_GET_ARENA_HI_FPTR        VOID_PTR(0x803444c8)
+
+#define OS_GET_ARENA_LO_FPTR        VOID_PTR(0x803444d0)
+
+#define OS_ROUND_UP_32B_FPTR        VOID_PTR()
+
+#define OS_ROUND_DOWN_32B_FPTR      VOID_PTR()
+
+#define OS_INIT_ALLOC_FPTR          VOID_PTR(0x80344078)
+
+#define OS_SET_ARENA_HI_FPTR        VOID_PTR(0x803444d8)
+
+#define OS_SET_ARENA_LO_FPTR        VOID_PTR(0x803444e0)
+
+#define OS_SET_CURRENT_HEAP_FPTR    VOID_PTR(0x8034508c) // ?
+    
+#define OS_ADD_TO_HEAP_FPTR         VOID_PTR()
+
+#define OS_DUMP_HEAP_FPTR           VOID_PTR(0x80345334) // ?
 
 /************************** string.h **************************/
 

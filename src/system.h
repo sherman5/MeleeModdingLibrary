@@ -2,14 +2,17 @@
 #define SYSTEM_H
 
 #include <stddef.h>
-
+#include <stdint.h>
 
 /** @cond */
-extern void* (*malloc)(size_t size);
+extern int (*OSCreateHeap)(void*, void*);
+extern void* (*OSAllocFromHeap)(int, size_t);
+extern void (*OSFreeToHeap)(int, void*);
+extern void* (*OSGetArenaHi)();
+extern void* (*OSGetArenaLo)();
 
 #if 0
 /** @endcond */
-
 
 /** @cond */
 #endif
@@ -33,6 +36,8 @@ extern void* (*malloc)(size_t size);
  */
 void* malloc(size_t size);
 
+void* calloc(size_t num, size_t size);
+
 /**
  * @brief Reallocate memory block
  *
@@ -55,7 +60,7 @@ void* malloc(size_t size);
  *
  * @see http://www.cplusplus.com/reference/cstdlib/realloc/
  */
-void* realloc(void* ptr, size_t size);
+void* realloc(void* ptr, size_t old_size, size_t new_size);
 
 /**
  * @brief Deallocate memory block
