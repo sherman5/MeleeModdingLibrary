@@ -72,6 +72,34 @@ float fabs(float x);
 /** @endcond */
 
 /**
+ * @brief Round down value
+ *
+ * Rounds @p x downward, returning the largest integral value that is
+ * not greater than @ x
+ *
+ * @param x - Value to round down
+ *
+ * @return The value of @x rounded downward (as a floating-point value)
+ *
+ * @see http://www.cplusplus.com/reference/cmath/floor/
+ */
+float floor(float x);
+
+/**
+ * @brief Round up value
+ *
+ * Rounds @p x upward, returning the smallest integral value that is
+ * not less than @ x
+ *
+ * @param x - Value to round up
+ *
+ * @return The value of @x rounded upward (as a floating-point value)
+ *
+ * @see http://www.cplusplus.com/reference/cmath/floor/
+ */
+float ceil(float x);
+
+/**
  * @brief Returns maximum value of array.
  *
  * @param ra[] - an array of 32-bit @c signed @c ints

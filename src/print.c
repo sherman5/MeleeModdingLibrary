@@ -2,111 +2,80 @@
 #include "string.h"
 #include "system.h"
 #include "print.h"
+#include "math.h"
 
-#define CHAR_PER_LINE 60
-#define SIZEOF_MENU_ITEM (8 * sizeof(uint32_t))
+#define LINE_SIZE 60
+#define MAX_LINES 27
 
-/* variables needed for print stream */
-static int user_init = 0;
-static char* stream;
-static uint32_t* menu;
-static unsigned streamSize, menuSize = 0, menuPos;
-
-void menuSetup()
+typedef struct menu_line
 {
-    /* add stream pointer to each menu "struct" */
-    for (unsigned i = 0; i < menuSize - 1; ++i)
-    {
-        menu[8 * i + 0] = 1;
-        menu[8 * i + 2] = (uint32_t) stream + (4 + CHAR_PER_LINE) * i;
-    }
-    menu[8 * (menuSize - 1)] = 9; //mark the end of the menu
-}
+    char text[LINE_SIZE];
+    uint32_t pad;
+} MenuLine;
 
-void initStream(char* mem, unsigned size)
+typedef struct debug_menu_slot
 {
-    /* find portion for menu and stream (1 : 2 ratio) */
-    unsigned menuBytes = 32 + (int) (size - 32) / 3;
-    menuSize = menuBytes / 32;    
-    menuBytes = 32 * menuSize;
-    streamSize = size - menuBytes;
+    uint32_t type;
+    uint32_t garbage1;
+    MenuLine* line;
+    uint32_t garbage2, garbage3, garbage4, garbage5, garbage6;
+} DebugMenuSlot;
 
-    /* set addresses of menu and stream, initialize to zero */
-    menu = (uint32_t*) mem;
-    stream = mem + menuBytes;
-    memset(menu, 0, menuBytes);
-    memset(stream, 0, size - menuBytes);
-    menuPos = 0;
-
-    /* setup menu and record that initialization has occured */
-    menuSetup();
-    user_init = 1;
-}
-
-void initWithMalloc()
-{
-    menuSize = 10;
-    menuPos = 0;
-    streamSize = (4 + CHAR_PER_LINE) * (menuSize - 1 + 2);
-
-    stream = calloc(1, streamSize);
-    menu = calloc(menuSize, SIZEOF_MENU_ITEM);
-    
-    menuSetup();
-}
+static MenuLine* stream = NULL;
+static DebugMenuSlot* menu = NULL;
+static unsigned numLines = 0, maxLines = 0;
 
 void print(const char* str)
 {
-    if (user_init)
+    /* calculate number of lines this string will use */
+    unsigned strLines = 1 + strlen(str) / LINE_SIZE;
+
+    /* calculate max lines */
+    maxLines = (getHeapSize() / 1)
+        / (sizeof(MenuLine) + sizeof(DebugMenuSlot));
+    maxLines = imin(maxLines, MAX_LINES);
+
+    /* discard extra lines */
+    if (numLines + strLines > maxLines)
     {
-        unsigned len = strlen(str);
-        unsigned lines = 0;
-        while (CHAR_PER_LINE * lines < len && menuPos < menuSize - 1)
-        {
-            strncpy(stream + (4 + CHAR_PER_LINE) * menuPos,
-                str + CHAR_PER_LINE * lines, CHAR_PER_LINE);
-            menuPos++;
-            lines++;
-        }
+        unsigned discard = numLines + strLines - maxLines;
+        numLines -= discard;
+
+        memcpy(menu, menu + discard, numLines * sizeof(DebugMenuSlot));
+        memcpy(stream, stream + discard, numLines * sizeof(MenuLine));
     }
-    else
+
+    /* resize menu and stream arrays */
+    menu = realloc(menu, (numLines + strLines + 1) * sizeof(DebugMenuSlot));
+    stream = realloc(stream, (numLines + strLines) * sizeof(MenuLine));
+
+    /* copy string to stream */
+    for (unsigned i = 0; i < strLines; ++i)
     {
-        if (menuSize == 0) {initWithMalloc();}
+        memset(stream + numLines, 0, sizeof(MenuLine));
+        strncpy((char*) (stream + numLines), str + LINE_SIZE * i, LINE_SIZE);
+        numLines++;
+    }
 
-        unsigned len = strlen(str);
-        unsigned lines = 0;
-
-        if (menuPos + 1 + len / CHAR_PER_LINE >= menuSize)
-        {
-            size_t new_size = menuPos + len / CHAR_PER_LINE + 2;
-            menu = realloc(menu, menuSize * SIZEOF_MENU_ITEM,
-                new_size * SIZEOF_MENU_ITEM);
-            menuSize = new_size;
-            menuSetup();
-        }
-
-        if ((CHAR_PER_LINE + 4) * (menuSize - 1) > streamSize)
-        {
-            size_t new_size = (CHAR_PER_LINE + 4) * (menuSize - 1);
-            stream = realloc(stream, streamSize, new_size);
-            streamSize = new_size;
-        }
-
-        while (CHAR_PER_LINE * lines < len)
-        {
-            strncpy(stream + (4 + CHAR_PER_LINE) * menuPos,
-                str + CHAR_PER_LINE * lines, CHAR_PER_LINE);
-            menuPos++;
-            lines++;
-        }
+    /* create debug menu */
+    for (unsigned i = 0; i < numLines; ++i)
+    {
+        DebugMenuSlot tempSlot = {1, 0, stream + i, 0, 0, 0, 0, 0};
+        memcpy(menu + i, &tempSlot, sizeof(DebugMenuSlot));
     }        
+
+    /* mark the end of the menu */
+    DebugMenuSlot tempSlot = {9, 0, NULL, 0, 0, 0, 0, 0};
+    memcpy(menu + numLines, &tempSlot, sizeof(DebugMenuSlot));
 }
 
-/* create the display where print sends output, should never 
-   be called by user. Instead, user branches to this symbol
-   when display should be shown (i.e. tournament mode is selected) */
+/*
+    create the display where print sends output, should never 
+    be called by user. Instead, user branches to this symbol
+    at 0x801a633c
+*/
 void CreateDisplay()
 {
-    if (menuSize > 0) {*((uint32_t**) 0x804d6890) = menu;}
+    if (numLines > 0) {*((DebugMenuSlot**) 0x804d6890) = menu;}
 }
 

@@ -5,34 +5,51 @@
 #include <system.h>
 #include <print.h>
 
-static char stream[600];
+static char heap[15000];
 static int init = 0;
 static char str[100];
-static char* allocStr;
 
-void initTestString()
-{
-    memset(str, 0, sizeof(str));
-    strcat(str, "this is a test of how strings are wrapped when they are");
-    strcat(str, " too long for a single line");
-
-    char* temp = "this string is stored on the heap"; 
-    allocStr = malloc(40);
-    memset(allocStr, 0, 40);
-    strncpy(allocStr, temp, 40 - 1);
-}
- 
 void _main()
 {
-//    if (!init) {initTestString(); init = true;}
-//    memset(stream, 0, sizeof(stream));
-//    initStream(stream, 600);
     if (!init) {
-    print("this is a test sentence to see how many characters fit");
-    print("this is a test of multiple calls to print");
-    init = 1;
+
+        initHeap(heap, heap + sizeof(heap));
+
+        memset(str, 0, sizeof(str));
+        strcat(str, "this is a test of how strings are wrapped when");
+        strcat(str, " they are too long for a single line");
+
+        print("this is a test sentence to see how many characters fit");
+        print("this is a test of multiple calls to print");
+        print(str);
+        print("print first extra string");
+        print("print second extra string");
+        print("print third extra string");
+        print("print fourth");
+        print("print fifth");
+        print("line 10");
+        print("line 11");
+        print("line 12");
+        print("line 13");
+        print("line 14");
+        print("line 15");
+        print("line 16");
+        print("line 17");
+        print("line 18");
+        print("line 19");
+        print("line 20");
+        print("line 21");
+        print("line 22");
+        print("line 23");
+        print("line 24");
+        print("line 25");
+        print("line 26");
+        print("line 27");
+        print("line 28");
+        print("line 29");
+        print("line 30");
+        print("line 31");
+        init = 1;
     }
-//    print(str);
-//    print(allocStr);
 }
 

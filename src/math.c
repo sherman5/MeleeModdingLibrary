@@ -7,6 +7,25 @@ float (*tan)(float x) = TANGENT_FPTR;
 float (*recipSqrt)(float x) = RECIP_SQRT_FPTR;
 float (*fabs)(float x) = ABS_VAL_FPTR;
 
+// see http://stackoverflow.com/a/6437076
+float floor(float x)
+{
+    if (x >= 0)
+    {
+        return (int) x;
+    } 
+    else
+    {
+        int y = (int) x;
+        return ((float) y == x) ? y : y - 1;
+    }
+}
+
+float ceil(float x)
+{
+    return -floor(-x);
+}
+
 float angle(Point a, Point b)
 {
     return atan2(b.y - a.y, b.x - a.x);
@@ -36,6 +55,13 @@ float atan2(float y, float x)
 float magnitude(Point pt)
 {
     return sqrt((pt.x * pt.x) + (pt.y * pt.y));
+}
+
+float distance(Point a, Point b) 
+{
+    b.x -= a.x;
+    b.y -= a.y;
+    return magnitude(a);
 }
 
 int32_t ipow(int16_t base, uint8_t exp)
@@ -128,10 +154,3 @@ float fmax(float a, float b)
     return (a > b ? a : b);
 }
 
-
-float distance(Point a, Point b) 
-{
-    b.x -= a.x;
-    b.y -= a.y;
-    return magnitude(a);
-}

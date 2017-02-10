@@ -1,15 +1,37 @@
 #include <unit_tests.h>
 #include <system.h>
 #include <math.h>
+#include <stdbool.h>
 
-TEST_CASE("<system.h>")
+static initialized = false;
+static char test_heap[1000];
+
+void init(void)
 {
-    uint32_t* ra_1 = (uint32_t*) 0x80002200;
-    uint32_t* ra_2 = (uint32_t*) 0x80002220;
+    initHeap(&test_heap, &test_heap + 1000);
 
-    memset(ra_1, 0xCC, 16);
-    memcpy(ra_2, ra_1, 16);
-    REQUIRE_INT_EQ((uint32_t) memchr(ra_2 + 1, 0xC, 12), 0x80002224);
+    testHeap();
 
+    initHeap(0x80001800, 0x80002700);
 
-} END_TEST
+    testHeap();
+
+    limitGameMemory(0x81710000);
+    initHeap(0x81710000, HIGH_MEM_ADDR);
+
+    testHeap();
+}
+
+void testHeap(void)
+{
+    int* int_ra = malloc(10 * sizeof(int));
+    int_ra[9] = 7;
+    MML_ASSERT("malloc broken", int_ra[9] == 7);
+
+}
+
+void testSystem(void)
+{
+    if (!initialized) {init(); initialized = true;}
+}
+

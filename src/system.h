@@ -4,12 +4,13 @@
 #include <stddef.h>
 #include <stdint.h>
 
+#define HIGH_MEM_ADDR 0x817ffff8
+
 /** @cond */
+
 extern int (*OSCreateHeap)(void*, void*);
 extern void* (*OSAllocFromHeap)(int, size_t);
 extern void (*OSFreeToHeap)(int, void*);
-extern void* (*OSGetArenaHi)();
-extern void* (*OSGetArenaLo)();
 
 #if 0
 /** @endcond */
@@ -17,6 +18,10 @@ extern void* (*OSGetArenaLo)();
 /** @cond */
 #endif
 /** @endcond */
+
+void initHeap(void* lo, void* hi);
+
+size_t getHeapSize();
 
 /**
  * @brief Allocate memory block
@@ -26,7 +31,7 @@ extern void* (*OSGetArenaLo)();
  * block of memory is not initialized. If @c malloc fails to allocate
  * the memory, a @c NULL pointer is returned.
  *
- * @param size Size of memory block in bytes.
+ * @param size - Size of memory block in bytes.
  *
  * @return On success, a pointer to the memory block allocated by
  * the function. If the function failed to allocate the requested
@@ -36,6 +41,24 @@ extern void* (*OSGetArenaLo)();
  */
 void* malloc(size_t size);
 
+/**
+ * @brief Allocate and zero-initialize array
+ *
+ * Allocates a block of memory for an array of @p num elements, each of
+ * them @p size bytes long, and initializes all its bits to zero.
+ *
+ * The effective result is the allocation of a zero-initialized memory
+ * block of @c (num*size) bytes.
+ *
+ * @param num - Number of elements to allocate
+ * @param size - Size of each element
+ *
+ * @return On success, a pointer to the memory block allocated by
+ * the function. If the function failed to allocate the requested
+ * block of memory, a null pointer is returned.
+ *
+ * @see http://www.cplusplus.com/reference/cstdlib/calloc/
+ */
 void* calloc(size_t num, size_t size);
 
 /**
@@ -47,10 +70,10 @@ void* calloc(size_t num, size_t size);
  * the lesser of the new and old sizes, even if the block is moved to a
  * new location. 
  *
- * @param ptr Pointer to a memory block previously allocated with
+ * @param ptr - Pointer to a memory block previously allocated with
  * @c malloc or @c realloc. Alternatively, this can be a null pointer,
  * in which case a new block is allocated (as if @c malloc was called).
- * @param size New size for the memory block, in bytes.
+ * @param size - New size for the memory block, in bytes.
  *
  * @return A pointer to the reallocated memory block, which may be
  * either the same as @p ptr or a new location. A null-pointer indicates
@@ -60,7 +83,7 @@ void* calloc(size_t num, size_t size);
  *
  * @see http://www.cplusplus.com/reference/cstdlib/realloc/
  */
-void* realloc(void* ptr, size_t old_size, size_t new_size);
+void* realloc(void* ptr, size_t new_size);
 
 /**
  * @brief Deallocate memory block
@@ -69,7 +92,7 @@ void* realloc(void* ptr, size_t old_size, size_t new_size);
  * or @c realloc is deallocated, making it available again for
  * further allocations.
  *
- * @param ptr Pointer to a memory block previously allocated with
+ * @param ptr - Pointer to a memory block previously allocated with
  * @c malloc or @c realloc.
  *
  * @return none

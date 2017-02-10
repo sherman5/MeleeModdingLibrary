@@ -23,10 +23,6 @@
 
 #define OS_GET_ARENA_LO_FPTR        VOID_PTR(0x803444d0)
 
-#define OS_ROUND_UP_32B_FPTR        VOID_PTR()
-
-#define OS_ROUND_DOWN_32B_FPTR      VOID_PTR()
-
 #define OS_INIT_ALLOC_FPTR          VOID_PTR(0x80344078)
 
 #define OS_SET_ARENA_HI_FPTR        VOID_PTR(0x803444d8)
