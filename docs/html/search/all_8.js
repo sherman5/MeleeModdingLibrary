@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['player',['player',['../structplayer.html',1,'']]],
-  ['point',['point',['../structpoint.html',1,'point'],['../math_8h.html#a71d6707709e94a1b5dcd9af6c9672606',1,'Point():&#160;math.h']]]
+  ['limitgamememory',['limitGameMemory',['../system_8h.html#a3602498b5d35b0248468801ffb7b3c92',1,'system.c']]]
 ];

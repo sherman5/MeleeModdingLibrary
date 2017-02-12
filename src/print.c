@@ -31,7 +31,7 @@ void print(const char* str)
     unsigned strLines = 1 + strlen(str) / LINE_SIZE;
 
     /* calculate max lines */
-    maxLines = (getHeapSize() / 1)
+    maxLines = (getHeapSize() / 5)
         / (sizeof(MenuLine) + sizeof(DebugMenuSlot));
     maxLines = imin(maxLines, MAX_LINES);
 
@@ -45,6 +45,7 @@ void print(const char* str)
         memcpy(stream, stream + discard, numLines * sizeof(MenuLine));
     }
 
+    //TODO: handle malloc fail 
     /* resize menu and stream arrays */
     menu = realloc(menu, (numLines + strLines + 1) * sizeof(DebugMenuSlot));
     stream = realloc(stream, (numLines + strLines) * sizeof(MenuLine));
@@ -69,13 +70,30 @@ void print(const char* str)
     memcpy(menu + numLines, &tempSlot, sizeof(DebugMenuSlot));
 }
 
+void clear()
+{
+    numLines = 0;
+}
+
 /*
     create the display where print sends output, should never 
     be called by user. Instead, user branches to this symbol
     at 0x801a633c
 */
-void CreateDisplay()
+void _display()
 {
-    if (numLines > 0) {*((DebugMenuSlot**) 0x804d6890) = menu;}
+    if (numLines == 0)
+    {
+        stream = malloc(sizeof(MenuLine));
+        memset(stream, 0, sizeof(MenuLine));
+ 
+        menu = malloc(sizeof(DebugMenuSlot));   
+        DebugMenuSlot tempSlot_1 = {1, 0, stream, 0, 0, 0, 0, 0};
+        DebugMenuSlot tempSlot_2 = {9, 0, NULL, 0, 0, 0, 0, 0};
+
+        memcpy(menu, &tempSlot_1, sizeof(DebugMenuSlot));
+        memcpy(menu + 1, &tempSlot_2, sizeof(DebugMenuSlot));
+    }    
+    *((DebugMenuSlot**) 0x804d6890) = menu;
 }
 

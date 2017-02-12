@@ -93,6 +93,9 @@ test_math : libmml.a
 test_string : libmml.a
 	wiimake $(ISO_FILE) tests/testString.ini $(MAKE_FLAGS)
 
+test_system : libmml.a
+	wiimake $(ISO_FILE) tests/testSystem.ini $(MAKE_FLAGS)
+
 # clean targets
 .PHONY : clean clean_libs clean_deps clean_objects clean_dist clean_tests
 

@@ -1,3 +1,9 @@
+/**
+ * @file print.h
+ * @brief Print output
+ *
+ */
+
 #ifndef PRINT_H
 #define PRINT_H
 
@@ -13,5 +19,14 @@
  * @return none
  */
 void print(const char* str);
+
+/**
+ * @brief clear the output stream
+ *
+ * This function clears any text on the output stream
+ *
+ * @return none
+ */
+void clear();
 
 #endif

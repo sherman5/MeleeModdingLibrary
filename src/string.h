@@ -1,3 +1,9 @@
+/**
+ * @file string.h
+ * @brief Handle all string operations.
+ *
+ */
+
 #ifndef _MML_STRING_H
 #define _MML_STRING_H
 
@@ -317,6 +323,26 @@ char* itoa(int32_t value, char* str, int base);
 #endif
 /** @endcond */
 
+/**
+ * @brief Concatenate strings
+ *
+ * Appends a copy of the @p source string to the @p destination string.
+ * The terminating null character in @p destination is overwritten by the
+ * first character of source, and a null-character is included at the
+ * end of the new string formed by the concatenation of both 
+ * in @p destination.
+ *
+ * @p destination and @p source shall not overlap.
+ *
+ * @param destination - Pointer to the destination array, which should
+ *      contain a C string, and be large enough to contain the
+ *      resulting string.
+ * @param source - C string to be appended
+ *
+ * @return @p destination is returned.
+ *
+ * @see http://www.cplusplus.com/reference/cstring/strcat/
+ */
 char* strcat(char* destination, const char* source);
 
 #endif

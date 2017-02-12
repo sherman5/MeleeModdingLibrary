@@ -28,6 +28,9 @@ extern float (*tan)(float x);
 extern float (*fabs)(float x);
 extern float (*recipSqrt)(float x);
 
+__inline__ __attribute__((always_inline)) float sqrt(float x)
+    {return x == 0 ? 0 : 1 / recipSqrt(x);}
+
 #if 0
 /// @endcond
 
@@ -66,6 +69,15 @@ float tan(float x);
  * @return The absolute value of @p x.
  */
 float fabs(float x);
+
+/**
+ * @brief Returns the square root of @p x
+ *
+ * @param x - a floating point number
+ * 
+ * @return the square root of @p x
+ */
+float sqrt(float x);
 
 /** @cond */
 #endif
@@ -106,7 +118,7 @@ float ceil(float x);
  * 
  * @return The maximum value of @p ra[]
  */
-int32_t imax_array(int32_t ra[]);
+int32_t imax_array(const int32_t ra[]);
 
 /**
  * @brief Returns minimum value of array.
@@ -115,7 +127,7 @@ int32_t imax_array(int32_t ra[]);
  * 
  * @return The minimum value of @p ra[]
  */
-int32_t imin_array(int32_t ra[]);
+int32_t imin_array(const int32_t ra[]);
 
 /**
  * @brief Returns the maximum of two numbers.
@@ -144,7 +156,7 @@ int32_t imin(int32_t a, int32_t b);
  * 
  * @return The maximum value of @p ra[]
  */
-float fmax_array(float ra[]);
+float fmax_array(const float ra[]);
 
 /**
  * @brief Returns minimum value of array.
@@ -153,7 +165,7 @@ float fmax_array(float ra[]);
  * 
  * @return The minimum value of @p ra[]
  */
-float fmin_array(float ra[]);
+float fmin_array(const float ra[]);
 
 /**
  * @brief Returns the maximum of two numbers.
@@ -194,16 +206,6 @@ int32_t ipow(int16_t base, uint8_t exp);
  * @return @p base raised to the power of @p exp
  */
 float fpow(float base, uint8_t exp);
-
-/**
- * @brief Returns the square root of @p x
- *
- * @param x - a floating poin number
- * 
- * @return the square root of @p x
- */
-__inline__ __attribute__((always_inline)) float sqrt(float x)
-    {return x == 0 ? 0 : 1 / recipSqrt(x);}
 
 /**
  * @brief Struct containing the coordinates of a point 

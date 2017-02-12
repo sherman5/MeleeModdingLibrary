@@ -1,6 +1,9 @@
 var searchData=
 [
-  ['setcontroller',['setController',['../controller_8h.html#af45755953f1854b2b83735ad0b5096dc',1,'setController.c']]],
-  ['sin',['sin',['../math_8h.html#a15876915492b5aff219d1dd03ad66def',1,'math.h']]],
-  ['sqrt',['sqrt',['../math_8h.html#a592e5b536e9e1b69f4520e9566521a17',1,'sqrt.c']]]
+  ['magnitude',['magnitude',['../math_8h.html#aa472be54ff4dd70c96b82dbdf24331f5',1,'math.c']]],
+  ['malloc',['malloc',['../system_8h.html#a7ac38fce3243a7dcf448301ee9ffd392',1,'system.c']]],
+  ['memchr',['memchr',['../string_8h.html#a276c5d14b4ca8ffa447a0b30333074f1',1,'string.h']]],
+  ['memcmp',['memcmp',['../string_8h.html#a1e7d61eb280250fb55dce370ba1a1709',1,'string.h']]],
+  ['memcpy',['memcpy',['../string_8h.html#a756c9204a58aa6f5c4923377c89f7088',1,'string.h']]],
+  ['memset',['memset',['../string_8h.html#a4cb469bec7b722064b97a406346acb61',1,'string.h']]]
 ];

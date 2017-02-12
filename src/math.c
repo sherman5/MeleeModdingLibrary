@@ -79,7 +79,7 @@ int32_t ipow(int16_t base, uint8_t exp)
     return result;
 }
 
-int32_t imin_array(int32_t ra[])
+int32_t imin_array(const int32_t ra[])
 {
     int32_t min = ra[0];
     for (unsigned int i = 0; i < sizeof(ra) / sizeof(ra[0]); ++i)
@@ -94,7 +94,7 @@ int32_t imin(int32_t a, int32_t b)
     return (a < b ? a : b);
 }
 
-int32_t imax_array(int32_t ra[])
+int32_t imax_array(const int32_t ra[])
 {
     int32_t max = ra[0];
     for (unsigned int i = 0; i < sizeof(ra) / sizeof(ra[0]); ++i)
@@ -124,7 +124,7 @@ float fpow(float base, uint8_t exp)
     return result;
 }
 
-float fmin_array(float ra[])
+float fmin_array(const float ra[])
 {
     float min = ra[0];
     for (unsigned int i = 0; i < sizeof(ra) / sizeof(ra[0]); ++i)
@@ -139,7 +139,7 @@ float fmin(float a, float b)
     return (a < b ? a : b);
 }
 
-float fmax_array(float ra[])
+float fmax_array(const float ra[])
 {
     float max = ra[0];
     for (unsigned int i = 0; i < sizeof(ra) / sizeof(ra[0]); ++i)

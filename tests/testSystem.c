@@ -1,37 +1,36 @@
-#include <unit_tests.h>
+#include <unit_test.h>
 #include <system.h>
 #include <math.h>
 #include <stdbool.h>
 
-static initialized = false;
-static char test_heap[1000];
+UNIT_TEST;
 
-void init(void)
+static int init = 0;
+static char heap[5000];
+
+static int tests_run = 0;
+
+void _boot(void)
 {
-    initHeap(&test_heap, &test_heap + 1000);
-
-    testHeap();
-
-    initHeap(0x80001800, 0x80002700);
-
-    testHeap();
-
-    limitGameMemory(0x81710000);
-    initHeap(0x81710000, HIGH_MEM_ADDR);
-
-    testHeap();
+    limitGameMemory((void*) 0x81780000);
 }
 
-void testHeap(void)
+void _init(void)
 {
-    int* int_ra = malloc(10 * sizeof(int));
-    int_ra[9] = 7;
-    MML_ASSERT("malloc broken", int_ra[9] == 7);
-
+    initHeap(heap, heap + sizeof(heap));
 }
 
-void testSystem(void)
+void _main(void)
 {
-    if (!initialized) {init(); initialized = true;}
+    if (!init) { _init(); init = 1;}
+
+    if (!tests_run)
+    {
+        MML_ASSERT(getHeapSize() == sizeof(heap));
+
+        tests_run = 1;
+        END_TEST;
+    }
 }
+
 

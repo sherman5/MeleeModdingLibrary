@@ -1,10 +1,14 @@
+/**
+ * @file system.h
+ * @brief System level functions.
+ *
+ */
+
 #ifndef SYSTEM_H
 #define SYSTEM_H
 
 #include <stddef.h>
 #include <stdint.h>
-
-#define HIGH_MEM_ADDR 0x817ffff8
 
 /** @cond */
 
@@ -19,9 +23,44 @@ extern void (*OSFreeToHeap)(int, void*);
 #endif
 /** @endcond */
 
+/**
+ * Initialize heap
+ *
+ * Initializes the heap that is used for all calls to @c malloc,
+ * @c calloc, and @c realloc. 
+ *
+ * @param lo - lower address of the heap
+ * @param hi - upper address of the heap
+ *
+ * @return none 
+ */
 void initHeap(void* lo, void* hi);
 
+/**
+ * Get the size of the heap
+ *
+ * Returns the size (in bytes) of the heap that was allocated 
+ * with @c initHeap.
+ *
+ * @return size of the heap in bytes.
+ */
 size_t getHeapSize();
+
+/**
+ * @brief limit size of game heap
+ *
+ * Restricts the size of the heap that the game can use. The game will
+ * not touch any memory between @p limit and 0x817f8ab0. This is not
+ * guaranteed to be stable. 
+ *
+ * @param limit - address that marks the top of the game heap.
+ *
+ * @return none
+ *
+ * @note 0x81780000 seems to be reasonably stable - recommended that
+ *      values less than this are not used
+ */
+void limitGameMemory(void* limit);
 
 /**
  * @brief Allocate memory block

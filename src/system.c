@@ -10,28 +10,22 @@ void* (*OSAllocFromHeap)(int, size_t) = OS_ALLOC_FROM_HEAP_FPTR;
 void (*OSFreeToHeap)(int, void*) = OS_FREE_TO_HEAP_FPTR;
 /*************************************************************************/
 
+#define ARENA_HI_ADDRESS 0x80000034
+
 static int heap_handle;
 static int init = 0;
 static uint32_t heapSize = 0;
 
 void initHeap(void* lo, void* hi)
 {
-    heapSize = (uint32_t) hi - (unsigned) lo;
+    heapSize = (unsigned) hi - (unsigned) lo;
     heap_handle = OSCreateHeap(lo, hi);
     init = 1;
 }
 
-// 0x81710000 seems safe
-void limitGameMemory(uint32_t limit)
+void limitGameMemory(void* limit)
 {
-    uint32_t FST_location = *((uint32_t*) 0x80000038);
-    uint32_t FST_size = *((uint32_t*) 0x8000003c);
-    uint32_t new_FST_location = limit - FST_size;
-
-    *((uint32_t*) 0x80000034) = (uint32_t) new_FST_location;
-    *((uint32_t*) 0x80000038) = (uint32_t) new_FST_location;
-
-    memcpy((void*) new_FST_location, (void*) FST_location, FST_size);
+    *((void**) ARENA_HI_ADDRESS) = limit;
 }
 
 void* malloc(size_t size)
@@ -47,8 +41,6 @@ void* calloc(size_t num, size_t size)
     return ptr;
 }
 
-// TODO: does this fail if new_size is used for copying?
-// could remove old_size requirement if not
 void* realloc(void* ptr, size_t new_size)
 {
     if (!ptr) {return malloc(new_size);}
