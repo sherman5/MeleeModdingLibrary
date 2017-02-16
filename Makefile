@@ -7,9 +7,11 @@ AR = powerpc-eabi-ar
 OBJCPY = powerpc-eabi-objcopy
 
 # sources and header files (included in distribution)
-SRCS = src/math.c src/random.c src/string.c src/system.c src/print.c \
-src/controller.c src/inputs.c src/gamestate.c
-HEADERS = $(SRCS:.c=.h) src/bool.h src/native_functions.h \
+SRCS = src/AI.c src/controller.c src/gamestate.c src/inputs.c \
+src/logic.c src/math.c src/print.c src/random.c src/statecheck.c \
+src/string.c src/system.c
+
+HEADERS = $(SRCS:.c=.h) src/bool.h src/native_functions.h src/gctypes.h \
 src/unit_test.h
 
 # object files and their dependencies
@@ -67,7 +69,7 @@ build/%_O3.o : src/%.c
 
 # target for building the distribution
 .PHONY : tar zip
-dist : | clean_dist libs tar zip
+dist : | clean_dist libs tar zip untar
 
 # build the tar.gz version of the distribution
 tar : 
@@ -80,6 +82,11 @@ zip :
 	for h in $(HEADERS:src/%.h=%.h) ; do \
 	  printf "@ src/$$h\n@=include/mml/$$h" | zipnote -w $(VERSION).zip ; \
 	done
+
+# extract dist to folder
+untar : 
+	mkdir -p $(VERSION) && \
+	tar -xf $(VERSION).tar.gz -C $(VERSION)
 
 # test targets
 .PHONY : test_controller test_gamestate test_inputs test_math \
@@ -132,6 +139,7 @@ clean_objects :
 
 clean_dist :
 	rm -f $(VERSION).tar.gz $(VERSION).zip
+	rm -rf  $(VERSION)
 
 clean_tests : 
 	rm -f tests/*.o final.txt *.o *.s linker_script.txt \

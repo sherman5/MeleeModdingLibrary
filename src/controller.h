@@ -12,7 +12,7 @@
 /**
  * @brief Represents the state of a controller.
  */
-typedef struct controller
+typedef struct
 {
     uint32_t buttons; /**< A-0100, B-0200, X-0400, Z-0010, L-0040 */
 

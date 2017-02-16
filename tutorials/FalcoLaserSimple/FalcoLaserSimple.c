@@ -1,37 +1,22 @@
-#include <mml/player.h>
-#include <mml/events.h>
-#include <mml/moves.h>
+#include <mml/AI.h>
 
-#include <stdint.h>
+AI player2;
+player2.initialized = false;
+player2.port = 2;
+player2.characters = FALCO || FOX;
 
-/* set player properties */
-static const Logic default_logic[] = {  };
-
-Player player2;
-player2->port = 2;
-player2->defaultLogic = &default_logic;
-player2->possibleCharacters = {FOX, FALCO, MARTH};
-
-void SHLaser()
+void loadDefaultLogic()
 {
-    Input shLaser = parseFlags(&player, SH_LASER);   
-    clearEvents(&player);
-    addInput(&player, shLaser);
-}
-
-bool randomChance()
-{
-    /* once every two seconds */
-    return rand() < (float) 1 / 120;
+    addLogic(&player2, {&chance, 0.01}, {&addMove, &player2, &shNeutralB});
 }
 
 void _main()
 {
-    if (playerLogicEmpty(&player2))
-    {
-        setDefaultLogic(&player2, &default_logic);
-    }  
-    playOneFrame(&player2);
+    if (!player2.initialized) { initAI(&player2);}
+
+    if (needLogic(&player2)) { loadDefaultLogic();}
+
+    updateAI(&player2);
 }
 
 
@@ -52,29 +37,4 @@ void _main()
 
 
 
-    if (IN_GAME && P2_CHAR == FALCO)
-    {
-        /* if entering game, reinitialize player 2 */
-        if (notInGame)
-        {
-            initPlayer(&player, 2);
-        }
 
-        /* if player has no instructions */
-        if (needInstruction(&player))
-        {
-            /* load up event */
-            EventListener listener = {.event = FUNCTION, .func = randomChance, .player = 2, .callback = SHlaser()};
-
-            /* add event to player */
-            addEventListener(&player, listener);
-        }
-        
-        /* check if any event happened */
-        checkEvents(player);
-    }
-    else
-    {
-        notInGame = true;
-    }
- 

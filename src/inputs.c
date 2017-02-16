@@ -1,6 +1,6 @@
 #include "inputs.h"
 
-const Input shNeutralB[5] = 
+RawInput raw_shNeutralB[5] = 
 {
     {0, NO_FLAGS, X_PRESS},
     {1, JUMPSQUAT, RELEASE},
@@ -9,3 +9,4 @@ const Input shNeutralB[5] =
     {15, JUMPSQUAT, RELEASE}
 };
 
+const Move shNeutralB = {&raw_shNeutralB, 5};

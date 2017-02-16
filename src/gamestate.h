@@ -51,28 +51,31 @@ typedef struct
     char pad4[0xc8 - 0xb0 - sizeof(Point)];
     Point deltaCoordinates;
 
-    char pad5[0xe0 - 0xc8 - sizeof(Point)];
+    char pad5[0xe3 - 0xc8 - sizeof(Point)];
     bool inAir;
 
-    char pad6[0x1830 - 0xe0 - sizeof(bool)];
+    char pad6[0x148 - 0xe3 - sizeof(bool)];
+    float jumpSquat;
+
+    char pad7[0x1830 - 0xe3 - sizeof(float)];
     float percent;
 
-    char pad7[0x1848 - 0x1830 - sizeof(float)];
+    char pad8[0x1848 - 0x1830 - sizeof(float)];
     uint32_t knockbackAngle;
 
-    char pad8[0x195c - 0x1848 - sizeof(uint32_t)];
+    char pad9[0x195c - 0x1848 - sizeof(uint32_t)];
     float hitlag;
 
-    char pad9[0x1968 - 0x195c - sizeof(float)];
+    char pad10[0x1968 - 0x195c - sizeof(float)];
     uint8_t jumpsUsed;
 
-    char pad10[0x1998 - 0x1968 - sizeof(uint8_t)];
+    char pad11[0x1998 - 0x1968 - sizeof(uint8_t)];
     float shieldSize;
     
-    char pad11[0x1a9b - 0x1998 - sizeof(float)];
-    float aiLevel;
+    char pad12[0x1a9b - 0x1998 - sizeof(float)];
+    uint8_t aiLevel;
 
-    char pad12[0x2340 - 0x1a9b - sizeof(float)];
+    char pad13[0x2340 - 0x1a9b - sizeof(uint8_t)];
     float hitstun;
 
 } PlayerData;

@@ -1,15 +1,22 @@
 #ifndef INPUT_QUEUE_H
 #define INPUT_QUEUE_H
 
-#include <stdint.h>
+#include "gctpyes.h"
 
 // want this to be small
-typedef struct input
+typedef struct
 {
-    uint8_t frameOffset;
-    uint8_t flags; //0b01 - jumpsquat
-    uint16_t controller;
-} Input;
+    s8 frameOffset;
+    u8 flags;
+    u16 controller;
+
+} RawInput;
+
+typedef struct
+{
+    RawInput* inputs;
+    u8 size;
+} Move;
 
 /** flags */
 #define NO_FLAGS    0b00000000
@@ -28,12 +35,10 @@ typedef struct input
 
 #define STICK_ANGLE(x) ((((int) (((x) / 360.f) * 255.f)) << 8) && 0xFF00)
 
-/** moves */
-
 /**
  * @brief Short Hop Neutral B.
  */
-extern const Input shNeutralB[5];
-#define SH_LASER shNeutralB
+extern RawInput raw_shNeutralB[5];
+extern const Move shNeutralB;
 
 #endif
