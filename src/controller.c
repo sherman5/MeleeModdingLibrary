@@ -1,6 +1,12 @@
 #include "controller.h"
 #include "math.h"
-#include "melee.h"
+#include "native_functions.h"
+
+void* (*playerData)(unsigned) = PLAYER_DATA_FPTR;
+
+#define PRIMARY_CONTROLLER(x)   ((void*) (0x804C1FAC + 0x44 * ((x) - 1)))
+#define SECONDARY_CONTROLLER(x) ((void*) ((char*) playerData(x) + 0x620))
+
 
 #define BUTTON_BITS 0b0000000000011111
 #define RADIUS_BITS 0b0000000011100000

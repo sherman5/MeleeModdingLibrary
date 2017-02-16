@@ -1,9 +1,11 @@
 #include "inputs.h"
 
-const Input shNeutralB[5] = {
-    JUMP(0, NO_FLAGS),
-    RELEASE_BUTTONS(1, JUMPSQUAT),
-    NEUTRAL_B(5, JUMPSQUAT),
-    SET_STICK(10, 255, -90, JUMPSQUAT),
-    RELEASE_STICK(15, JUMPSQUAT)
+const Input shNeutralB[5] = 
+{
+    {0, NO_FLAGS, X_PRESS},
+    {1, JUMPSQUAT, RELEASE},
+    {5, JUMPSQUAT, B_PRESS},
+    {10, JUMPSQUAT, FULL_STICK || STICK_ANGLE(270)},
+    {15, JUMPSQUAT, RELEASE}
 };
+

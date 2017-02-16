@@ -13,8 +13,6 @@
 /** @cond */
 extern void*    (*memchr)  (const void*, int, size_t);
 extern int      (*memcmp)  (const void*, const void*, size_t);
-extern void*    (*memcpy)  (void*, const void*, size_t);
-extern void*    (*memset)  (void*, int, size_t);
 extern char*    (*strchr)  (const char*, int);
 extern int      (*strcmp)  (const char*, const char*);
 extern int      (*strncmp) (const char*, const char*, size_t);
@@ -77,51 +75,6 @@ void* memchr(const void* ptr, int value, size_t num);
  * @see http://www.cplusplus.com/reference/cstring/memcmp/
  */
 int memcmp(const void* ptr1, const void* ptr2, size_t num);
-
-/**
- * @brief Copy block of memory
- *
- * Copies the values of @p num bytes from the location pointed to by
- * @p source directly to the memory block pointed to by @p destination.
- *
- * The underlying type of the objects pointed to by both the source
- * and destination pointers are irrelevant for this function; The
- * result is a binary copy of the data.
- *
- * To avoid overflows, the size of the arrays pointed to by both the
- * destination and source parameters, shall be at least num bytes, and
- * should not overlap (for overlapping memory blocks, memmove is a safer
- * approach).
- *
- * @param destination - Pointer to the destination array where the content
- *      is to be copied, type-casted to a pointer of type @c void*.
- * @param source - Pointer to the source of data to be copied,
- *      type-casted to a pointer of type @c const @c void*.
- * @param num - Number of bytes to copy.
- *
- * @return @p destination is returned.
- *
- * @see http://www.cplusplus.com/reference/cstring/memcpy/
- */
-void* memcpy (void* destination, const void* source, size_t num);
-
-/**
- * @brief Fill block of memory
- *
- * Sets the first @p num bytes of the block of memory pointed by
- * @p ptr to the specified @p value (interpreted as an @c unsigned @c char).
- *
- * @param ptr - Pointer to the block of memory to fill.
- * @param value - Value to be set. The value if passed as an @c int, but the
- *      function fills the block of memory using the @c unsigned @c char
- *      conversion of this value.
- * @param num - Number of bytes to be set to the @p value
- * 
- * @return @p ptr is returned
- *
- * @see http://www.cplusplus.com/reference/cstring/memset/
- */
-void* memset (void* ptr, int value, size_t num);
 
 /**
  * @brief Locate first occurrence of character in string
@@ -322,6 +275,51 @@ char* itoa(int32_t value, char* str, int base);
 /** @cond */
 #endif
 /** @endcond */
+
+/**
+ * @brief Copy block of memory
+ *
+ * Copies the values of @p num bytes from the location pointed to by
+ * @p source directly to the memory block pointed to by @p destination.
+ *
+ * The underlying type of the objects pointed to by both the source
+ * and destination pointers are irrelevant for this function; The
+ * result is a binary copy of the data.
+ *
+ * To avoid overflows, the size of the arrays pointed to by both the
+ * destination and source parameters, shall be at least num bytes, and
+ * should not overlap (for overlapping memory blocks, memmove is a safer
+ * approach).
+ *
+ * @param destination - Pointer to the destination array where the content
+ *      is to be copied, type-casted to a pointer of type @c void*.
+ * @param source - Pointer to the source of data to be copied,
+ *      type-casted to a pointer of type @c const @c void*.
+ * @param num - Number of bytes to copy.
+ *
+ * @return @p destination is returned.
+ *
+ * @see http://www.cplusplus.com/reference/cstring/memcpy/
+ */
+void* memcpy (void* destination, const void* source, size_t num);
+
+/**
+ * @brief Fill block of memory
+ *
+ * Sets the first @p num bytes of the block of memory pointed by
+ * @p ptr to the specified @p value (interpreted as an @c unsigned @c char).
+ *
+ * @param ptr - Pointer to the block of memory to fill.
+ * @param value - Value to be set. The value if passed as an @c int, but the
+ *      function fills the block of memory using the @c unsigned @c char
+ *      conversion of this value.
+ * @param num - Number of bytes to be set to the @p value
+ * 
+ * @return @p ptr is returned
+ *
+ * @see http://www.cplusplus.com/reference/cstring/memset/
+ */
+void* memset (void* ptr, int value, size_t num);
 
 /**
  * @brief Concatenate strings

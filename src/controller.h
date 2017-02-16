@@ -12,13 +12,12 @@
 /**
  * @brief Represents the state of a controller.
  */
-typedef struct controller {
- 
+typedef struct controller
+{
     uint32_t buttons; /**< A-0100, B-0200, X-0400, Z-0010, L-0040 */
 
     float stickX; /**< x coordinate of control stick */
     float stickY; /**< y coordinate of control stick */
-    
 } Controller;
 
 /**

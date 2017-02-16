@@ -112,24 +112,6 @@ float floor(float x);
 float ceil(float x);
 
 /**
- * @brief Returns maximum value of array.
- *
- * @param ra[] - an array of 32-bit @c signed @c ints
- * 
- * @return The maximum value of @p ra[]
- */
-int32_t imax_array(const int32_t ra[]);
-
-/**
- * @brief Returns minimum value of array.
- *
- * @param ra[] - an array of 32-bit @c signed @c ints
- * 
- * @return The minimum value of @p ra[]
- */
-int32_t imin_array(const int32_t ra[]);
-
-/**
  * @brief Returns the maximum of two numbers.
  *
  * @param a - 32-bit @c signed @c int
@@ -148,24 +130,6 @@ int32_t imax(int32_t a, int32_t b);
  * @return The smaller value of @p a and @p b.
  */
 int32_t imin(int32_t a, int32_t b);
-
-/**
- * @brief Returns maximum value of array.
- *
- * @param ra[] - an array of @c floats
- * 
- * @return The maximum value of @p ra[]
- */
-float fmax_array(const float ra[]);
-
-/**
- * @brief Returns minimum value of array.
- *
- * @param ra[] - an array of @c floats
- * 
- * @return The minimum value of @p ra[]
- */
-float fmin_array(const float ra[]);
 
 /**
  * @brief Returns the maximum of two numbers.
@@ -227,7 +191,7 @@ typedef struct point
  * @param y - Y-coordinate relative to (0,0)
  * @param x - X-coordinate relative to (0,0)
  *
- * @return arc tangent of @p y / @p x, in interval [-pi, +pi] radians
+ * @return arc tangent of @p y / @p x, in interval (-pi, +pi] radians
  *
  * @see http://www.cplusplus.com/reference/cmath/atan2/
  * @see http://www.embedded.com/design/other/4216719/Performing-efficient-arctangent-approximation
@@ -261,7 +225,7 @@ float distance(Point a, Point b);
  * @param a - A Point struct
  * @param b - A Point struct
  *
- * @return The angle between @p a and @p b
+ * @return The angle between @p a and @p b in interval (-pi, +pi] radians
  */
 float angle(Point a, Point b);
 

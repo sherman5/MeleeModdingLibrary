@@ -1,10 +1,10 @@
-#include <stdbool.h>
 #include "system.h"
-#include "melee.h"
+#include "native_functions.h"
 #include "string.h"
 #include "math.h"
+#include "bool.h"
 
-/*************************** built in functions **************************/
+/*************************** native functions **************************/
 int (*OSCreateHeap)(void*, void*) = OS_CREATE_HEAP_FPTR;
 void* (*OSAllocFromHeap)(int, size_t) = OS_ALLOC_FROM_HEAP_FPTR;
 void (*OSFreeToHeap)(int, void*) = OS_FREE_TO_HEAP_FPTR;
@@ -13,14 +13,14 @@ void (*OSFreeToHeap)(int, void*) = OS_FREE_TO_HEAP_FPTR;
 #define ARENA_HI_ADDRESS 0x80000034
 
 static int heap_handle;
-static int init = 0;
+static bool init = 0;
 static uint32_t heapSize = 0;
 
 void initHeap(void* lo, void* hi)
 {
     heapSize = (unsigned) hi - (unsigned) lo;
     heap_handle = OSCreateHeap(lo, hi);
-    init = 1;
+    init = true;
 }
 
 void limitGameMemory(void* limit)

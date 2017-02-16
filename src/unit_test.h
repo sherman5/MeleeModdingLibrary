@@ -9,8 +9,9 @@
 
 #include "print.h"
 #include "math.h"
+#include "bool.h"
 
-#define UNIT_TEST static int tests_passed = 1
+#define UNIT_TEST static bool tests_passed = true
 
 #define STRINGIFY(x) #x
 #define TOSTRING(x) STRINGIFY(x)

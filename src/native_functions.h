@@ -3,10 +3,14 @@
 
 #define VOID_PTR(x) ((void*) (x))
 
+/************************* gamestate.h ************************/
+
+#define PLAYER_DATA_FPTR            VOID_PTR(0x80034110)
+
 /************************** random.h **************************/
 
 /** function that changes the value in RAND_ADDRESS */
-#define RANDU_FPTR      VOID_PTR(0x80380580e) 
+#define RANDU_FPTR                  VOID_PTR(0x80380580) 
 
 /************************** system.h **************************/
 

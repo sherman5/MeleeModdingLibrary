@@ -1,5 +1,5 @@
 #include "math.h"
-#include "melee.h"
+#include "native_functions.h"
 
 float (*sin)(float x) = SINE_FPTR;
 float (*cos)(float x) = COSINE_FPTR;
@@ -61,7 +61,7 @@ float distance(Point a, Point b)
 {
     b.x -= a.x;
     b.y -= a.y;
-    return magnitude(a);
+    return magnitude(b);
 }
 
 int32_t ipow(int16_t base, uint8_t exp)
@@ -79,32 +79,22 @@ int32_t ipow(int16_t base, uint8_t exp)
     return result;
 }
 
-int32_t imin_array(const int32_t ra[])
-{
-    int32_t min = ra[0];
-    for (unsigned int i = 0; i < sizeof(ra) / sizeof(ra[0]); ++i)
-    {
-        if (min > ra[i]) { min = ra[i];}        
-    }
-    return min;
-}
-
 int32_t imin(int32_t a, int32_t b)
 {
     return (a < b ? a : b);
 }
 
-int32_t imax_array(const int32_t ra[])
+int32_t imax(int32_t a, int32_t b)
 {
-    int32_t max = ra[0];
-    for (unsigned int i = 0; i < sizeof(ra) / sizeof(ra[0]); ++i)
-    {
-        if (max < ra[i]) {max = ra[i];}
-    }
-    return max;
+    return (a > b ? a : b);
 }
 
-int32_t imax(int32_t a, int32_t b)
+float fmin(float a, float b)
+{
+    return (a < b ? a : b);
+}
+
+float fmax(float a, float b)
 {
     return (a > b ? a : b);
 }
@@ -124,33 +114,5 @@ float fpow(float base, uint8_t exp)
     return result;
 }
 
-float fmin_array(const float ra[])
-{
-    float min = ra[0];
-    for (unsigned int i = 0; i < sizeof(ra) / sizeof(ra[0]); ++i)
-    {
-        if (min > ra[i]) { min = ra[i];}        
-    }
-    return min;
-}
 
-float fmin(float a, float b)
-{
-    return (a < b ? a : b);
-}
-
-float fmax_array(const float ra[])
-{
-    float max = ra[0];
-    for (unsigned int i = 0; i < sizeof(ra) / sizeof(ra[0]); ++i)
-    {
-        if (max < ra[i]) {max = ra[i];}
-    }
-    return max;
-}
-
-float fmax(float a, float b)
-{
-    return (a > b ? a : b);
-}
 

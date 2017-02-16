@@ -3,7 +3,6 @@
 #include <mml/moves.h>
 
 #include <stdint.h>
-#include <stdbool.h>
 
 /* set player properties */
 static const Logic default_logic[] = {  };

@@ -1,33 +1,61 @@
-#include "testing.h"
-#include <random.h>
+#include <unit_test.h>
+#include <system.h>
 #include <math.h>
+#include <string.h>
+#include <random.h>
 
-/* buckets */
-static uint32_t buckets[20] = {0};
+UNIT_TEST;
 
-void runTest(int numRuns)
+static bool init = false;
+static char heap[21000];
+
+static int tests_run = 0;
+
+void _init(void)
 {
-    if (numRuns <= 1000) // gather data
-    {
-        float f = rand(); // store results of random values 
+    initHeap(heap, heap + sizeof(heap));
+}
 
-        /* put random numbers into buckets */
-        for (int i = 0; i < 20; ++i)
+void _main(void)
+{
+    if (!init) { _init(); init = 1;}
+
+    if (!tests_run)
+    {
+        float min1 = 1.0, max1 = 0.0;
+        float min2 = 9.5, max2 = 9.3;
+        int min3 = 4, max3 = 0, sum = 0;
+        float probs[5] = {0.1, 0.3, 0.4, 0.1, 0.1};
+
+        for (unsigned i = 0; i < 10000; ++i)
         {
-            if (f >= (float) i / 20 && f < (float) (i + 1) / 20)
-            {
-                buckets[i] += 1;
-            }
-        }
-    }
-    else // test data
-    {
-        *((uint32_t*) 0x80001804) = *((uint32_t*) 0x80001804) | 0x0E;
-        uint32_t mx = imax_array(buckets);
-        uint32_t mn = imin_array(buckets);
+            min1 = fmin(rand(), min1);
+            max1 = fmax(rand(), max1);
 
-        REQUIRE_FLT_LESS((mx - mn) / (float) numRuns, 0.05);
+            min2 = fmin(uniform(9.3, 9.5), min2);
+            max2 = fmax(uniform(9.3, 9.5), max2);
+
+            min3 = imin(sample(probs, 5), min3);
+            max3 = imax(sample(probs, 5), max3);
+            sum += sample(probs, 5);
+        }
+        
+        REQUIRE(min1 >= 0);
+        REQUIRE(max1 <= 1); 
+
+        REQUIRE(min2 >= 9.3);
+        REQUIRE(max2 <= 9.5);
+
+        REQUIRE(min3 == 0);
+        REQUIRE(max3 == 4);
+
+        REQUIRE(sum > 17650);
+        REQUIRE(sum < 18350);
+
+        END_TEST;
+        tests_run = 1;
     }
 }
 
-END_TEST
+
+

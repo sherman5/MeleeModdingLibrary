@@ -8,6 +8,10 @@
 #define RANDOM_H
 
 #include <stdint.h>
+#include <stddef.h>
+
+/** address that holds a random 32-bit seed in melee */
+#define RAND_ADDRESS 0x804D5F90
 
 /**
  * @brief Generate random 32-bit value.
@@ -37,6 +41,6 @@ float uniform(float a, float b);
  *
  * @return index of array
  */
-unsigned sample(float probs[]);
+unsigned sample(const float* probs, size_t size);
 
 #endif

@@ -7,9 +7,10 @@ AR = powerpc-eabi-ar
 OBJCPY = powerpc-eabi-objcopy
 
 # sources and header files (included in distribution)
-SRCS = src/math.c src/random.c src/string.c src/system.c src/print.c
-HEADERS = $(SRCS:.c=.h) src/melee.h src/melee/melee102.h \
-src/melee/meleePAL.h src/melee/fptrs102.h
+SRCS = src/math.c src/random.c src/string.c src/system.c src/print.c \
+src/controller.c src/inputs.c src/gamestate.c
+HEADERS = $(SRCS:.c=.h) src/bool.h src/native_functions.h \
+src/unit_test.h
 
 # object files and their dependencies
 OBJS_O0 = $(SRCS:src/%.c=build/%_O0.o)
@@ -77,18 +78,37 @@ tar :
 zip : 
 	zip $(VERSION).zip -r $(HEADERS) tutorials/ $(LIBS)
 	for h in $(HEADERS:src/%.h=%.h) ; do \
-		printf "@ src/$$h\n@=include/mml/$$h" | zipnote -w $(VERSION).zip ; \
+	  printf "@ src/$$h\n@=include/mml/$$h" | zipnote -w $(VERSION).zip ; \
 	done
 
 # test targets
-.PHONY : test_math
+.PHONY : test_controller test_gamestate test_inputs test_math \
+test_player test_print test_random test_string test_system
 
 # iso file to inject test code into
 
 ISO_FILE = Melee.iso
 
+test_controller : libmml.a
+	wiimake $(ISO_FILE) tests/testController.ini $(MAKE_FLAGS)
+
+test_gamestate : libmml.a
+	wiimake $(ISO_FILE) tests/testGameState.ini $(MAKE_FLAGS)
+
+test_inputs : libmml.a
+	wiimake $(ISO_FILE) tests/testInputs.ini $(MAKE_FLAGS)
+
 test_math : libmml.a
 	wiimake $(ISO_FILE) tests/testMath.ini $(MAKE_FLAGS)
+
+test_player : libmml.a
+	wiimake $(ISO_FILE) tests/testPlayer.ini $(MAKE_FLAGS)
+
+test_print : libmml.a
+	wiimake $(ISO_FILE) tests/testPrint.ini $(MAKE_FLAGS)
+
+test_random : libmml.a
+	wiimake $(ISO_FILE) tests/testRandom.ini $(MAKE_FLAGS)
 
 test_string : libmml.a
 	wiimake $(ISO_FILE) tests/testString.ini $(MAKE_FLAGS)
@@ -114,6 +134,7 @@ clean_dist :
 	rm -f $(VERSION).tar.gz $(VERSION).zip
 
 clean_tests : 
-	rm -f tests/*.o final.txt *.o *.s linker_script.txt size_linker_script.txt sizes.out sizes.txt final.out
+	rm -f tests/*.o final.txt *.o *.s linker_script.txt \
+	size_linker_script.txt sizes.out sizes.txt final.out
 
 
