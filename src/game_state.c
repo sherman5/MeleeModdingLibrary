@@ -1,5 +1,5 @@
 #include "native_functions.h"
-#include "gamestate.h"
+#include "game_state.h"
 #include "gctypes.h"
 
 static u32 _end_frame = 0xffffffff;

@@ -1,4 +1,4 @@
-#include "meleeinfo.h"
+#include "melee_info.h"
 
 const u8 _sh_length[25] = 
 {

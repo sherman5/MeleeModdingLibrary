@@ -1,6 +1,6 @@
 #include "controller.h"
 #include "math.h"
-#include "gamestate.h"
+#include "game_state.h"
 
 #define PRIMARY_CONTROLLER(x)   ((void*) (0x804C1FAC + 0x44 * ((x) - 1)))
 #define SECONDARY_CONTROLLER(x) ((void*) ((char*) playerData(x) + 0x620))

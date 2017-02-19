@@ -1,8 +1,8 @@
 #include "AI.h"
 #include "gctypes.h"
 #include "system.h"
-#include "gamestate.h"
-#include "meleeinfo.h"
+#include "game_state.h"
+#include "melee_info.h"
 
 static ControllerInput processRawInput(u8 port, RawInput input)
 {

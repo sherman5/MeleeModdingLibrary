@@ -7,9 +7,9 @@ AR = powerpc-eabi-ar
 OBJCPY = powerpc-eabi-objcopy
 
 # sources and header files (included in distribution)
-SRCS = src/AI.c src/controller.c src/gamestate.c src/inputs.c \
-src/math.c src/print.c src/random.c src/statecheck.c \
-src/string.c src/system.c src/meleeinfo.c
+SRCS = src/AI.c src/controller.c src/game_state.c src/inputs.c \
+src/math.c src/print.c src/random.c src/state_check.c \
+src/string.c src/system.c src/melee_info.c
 
 HEADERS = $(SRCS:.c=.h) src/gctypes.h src/native_functions.h \
 src/unit_test.h src/logic.h

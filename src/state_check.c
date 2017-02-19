@@ -1,7 +1,7 @@
-#include "statecheck.h"
+#include "state_check.h"
 #include "math.h"
 #include "random.h"
-#include "gamestate.h"
+#include "game_state.h"
 #include "gctypes.h"
 #include "logic.h"
 
