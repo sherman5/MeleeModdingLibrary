@@ -4,8 +4,8 @@
  *
  */
 
-#ifndef SYSTEM_H
-#define SYSTEM_H
+#ifndef MML_SYSTEM_H
+#define MML_SYSTEM_H
 
 #include "gctypes.h"
 
@@ -26,7 +26,7 @@ extern void (*OSFreeToHeap)(u32, void*);
  * Initialize heap
  *
  * Initializes the heap that is used for all calls to @c malloc,
- * @c calloc, and @c realloc. 
+ * @c calloc, @c realloc, and @c free.
  *
  * @param lo - lower address of the heap
  * @param hi - upper address of the heap

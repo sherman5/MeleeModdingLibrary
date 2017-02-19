@@ -19,12 +19,13 @@ OBJS_O0 = $(SRCS:src/%.c=build/%_O0.o)
 OBJS_O1 = $(OBJS_O0:%_O0.o=%_O1.o)
 OBJS_O2 = $(OBJS_O0:%_O0.o=%_O2.o)
 OBJS_O3 = $(OBJS_O0:%_O0.o=%_O3.o)
+OBJS_Os = $(OBJS_O0:%_O0.o=%_Os.o)
 
-OBJS = $(OBJS_O0) $(OBJS_O1) $(OBJS_O2) $(OBJS_O3)
+OBJS = $(OBJS_O0) $(OBJS_O1) $(OBJS_O2) $(OBJS_O3) $(OBJS_Os)
 DEP = $(OBJS:.o=.d)
 
 # names of the libraries (one for each -O flag)
-LIBS = libmml.a libmml_O1.a libmml_O2.a libmml_O3.a
+LIBS = libmml.a libmml_O1.a libmml_O2.a libmml_O3.a libmml_Os.a
 
 # link, archive, and compile flags
 LDFLAGS = 
@@ -40,6 +41,7 @@ libmml.a : $(OBJS_O0)
 libmml_O1.a : $(OBJS_O1)
 libmml_O2.a : $(OBJS_O2)
 libmml_O3.a : $(OBJS_O3)
+libmml_Os.a : $(OBJS_Os)
 
 libs : $(LIBS)
 
@@ -65,6 +67,10 @@ build/%_O2.o : src/%.c
 
 build/%_O3.o : src/%.c
 	$(CC) $(CFLAGS) -O3 -c -MMD $< -o $@
+	$(OBJCPY) -R $(SECTIONS) $@
+
+build/%_Os.o : src/%.c
+	$(CC) $(CFLAGS) -Os -c -MMD $< -o $@
 	$(OBJCPY) -R $(SECTIONS) $@
 
 # target for building the distribution
@@ -96,31 +102,34 @@ test_player test_print test_random test_string test_system
 
 ISO_FILE = Melee.iso
 
-test_controller : libmml.a
+test_ai : $(LIBS)
+	wiimake $(ISO_FILE) tests/testAI.ini $(MAKE_FLAGS)
+
+test_controller : $(LIBS)
 	wiimake $(ISO_FILE) tests/testController.ini $(MAKE_FLAGS)
 
-test_gamestate : libmml.a
+test_gamestate : $(LIBS)
 	wiimake $(ISO_FILE) tests/testGameState.ini $(MAKE_FLAGS)
 
-test_inputs : libmml.a
+test_inputs : $(LIBS)
 	wiimake $(ISO_FILE) tests/testInputs.ini $(MAKE_FLAGS)
 
-test_math : libmml.a
+test_math : $(LIBS)
 	wiimake $(ISO_FILE) tests/testMath.ini $(MAKE_FLAGS)
 
-test_player : libmml.a
-	wiimake $(ISO_FILE) tests/testPlayer.ini $(MAKE_FLAGS)
+test_meleeinfo : $(LIBS)
+	wiimake $(ISO_FILE) tests/testMeleeInfo.ini $(MAKE_FLAGS)
 
-test_print : libmml.a
+test_print : $(LIBS)
 	wiimake $(ISO_FILE) tests/testPrint.ini $(MAKE_FLAGS)
 
-test_random : libmml.a
+test_random : $(LIBS)
 	wiimake $(ISO_FILE) tests/testRandom.ini $(MAKE_FLAGS)
 
-test_string : libmml.a
+test_string : $(LIBS)
 	wiimake $(ISO_FILE) tests/testString.ini $(MAKE_FLAGS)
 
-test_system : libmml.a
+test_system : $(LIBS)
 	wiimake $(ISO_FILE) tests/testSystem.ini $(MAKE_FLAGS)
 
 # clean targets

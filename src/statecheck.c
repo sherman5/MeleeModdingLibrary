@@ -5,9 +5,9 @@
 #include "gctypes.h"
 #include "logic.h"
 
-bool offstage(u8 player)
+bool offstage(FunctionArg player)
 {
-    return fabs(gameState.playerData[player]->coordinates.x)
+    return fabs(gameState.playerData[player.u]->coordinates.x)
         > gameState.stage.ledge;        
 }
 

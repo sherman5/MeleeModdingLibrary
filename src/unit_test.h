@@ -4,8 +4,8 @@
  *
  */
 
-#ifndef UNIT_TESTS_H
-#define UNIT_TESTS_H
+#ifndef MML_UNIT_TEST_H
+#define MML_UNIT_TEST_H
 
 #include "print.h"
 #include "math.h"
@@ -18,7 +18,7 @@
 #define ASSERT_MSG "assert failed: " __FILE__ ":" TOSTRING(__LINE__)
 
 #define REQUIRE(condition) do { if (!(condition)) \
-    {print(ASSERT_MSG); tests_passed = 0;}} while (0)
+    {print(ASSERT_MSG); tests_passed = false;}} while (0)
 
 #define APPROX_ZERO(x, tol) (fabs(x) < tol)
 

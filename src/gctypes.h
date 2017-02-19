@@ -34,6 +34,7 @@ typedef volatile double vf64;
 typedef u32 size_t;
 
 typedef u32 bool;
+typedef volatile bool vbool;
 
 #define true 1
 #define false 0

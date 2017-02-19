@@ -2,9 +2,10 @@
 #include <string.h>
 #include <system.h>
 #include <print.h>
+#include <gctypes.h>
 
 static char heap[15000];
-static uint8_t init = 0;
+static bool init = false;
 static char str[100];
 
 void _main()
@@ -19,8 +20,8 @@ void _main()
 
         print("this is a test sentence to see how many characters fit");
         print("this is a test of multiple calls to print");
-/*        print(str);
-        print("print first extra string");
+        print(str);
+/*        print("print first extra string");
         print("print second extra string");
         print("print third extra string");
         print("print fourth");
@@ -47,7 +48,7 @@ void _main()
         print("line 29");
         print("line 30");
         print("line 31");*/
-        init = 1;
+        init = true;
     }
 }
 

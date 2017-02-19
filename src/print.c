@@ -11,6 +11,7 @@ typedef struct menu_line
 {
     char text[LINE_SIZE];
     u32 pad;
+
 } MenuLine;
 
 typedef struct debug_menu_slot
@@ -26,12 +27,17 @@ typedef struct debug_menu_slot
 
 static MenuLine* stream = NULL;
 static DebugMenuSlot* menu = NULL;
-static u8 numLines = 0, maxLines = 0;
+static size_t numLines = 0, maxLines = 0;
+
+/* guarantees menu exists even if malloc fails */
+static MenuLine defaultLine = {{0}, 0};
+static DebugMenuSlot defaultMenu[2] =
+    {MENU_SLOT(1, &defaultLine), MENU_SLOT(9, NULL)};
 
 void print(const char* str)
 {
     /* calculate number of lines this string will use */
-    u8 strLines = 1 + strlen(str) / LINE_SIZE;
+    size_t strLines = 1 + strlen(str) / LINE_SIZE;
 
     /* calculate max lines */
     maxLines = (getHeapSize() / 5)
@@ -41,36 +47,41 @@ void print(const char* str)
     /* discard extra lines */
     if (numLines + strLines > maxLines)
     {
-        u8 discard = numLines + strLines - maxLines;
+        size_t discard = numLines + strLines - maxLines;
         numLines -= discard;
 
         memcpy(menu, menu + discard, numLines * sizeof(DebugMenuSlot));
         memcpy(stream, stream + discard, numLines * sizeof(MenuLine));
     }
 
-    //TODO: handle malloc fail 
     /* resize menu and stream arrays */
     menu = realloc(menu, (numLines + strLines + 1) * sizeof(DebugMenuSlot));
     stream = realloc(stream, (numLines + strLines) * sizeof(MenuLine));
-
-    /* copy string to stream */
-    for (unsigned i = 0; i < strLines; ++i)
+    if (!menu || !stream)
     {
-        memset(stream + numLines, 0, sizeof(MenuLine));
-        strncpy((char*) (stream + numLines), str + LINE_SIZE * i, LINE_SIZE);
-        numLines++;
+        clear();
     }
-
-    /* create debug menu */
-    for (unsigned i = 0; i < numLines; ++i)
+    else
     {
-        DebugMenuSlot tempSlot = MENU_SLOT(1, stream + i);
-        memcpy(menu + i, &tempSlot, sizeof(DebugMenuSlot));
-    }        
+        /* copy string to stream */
+        for (unsigned i = 0; i < strLines; ++i)
+        {
+            memset(stream + numLines, 0, sizeof(MenuLine));
+            strncpy((char*) (stream + numLines), str + LINE_SIZE * i, LINE_SIZE);
+            numLines++;
+        }
 
-    /* mark the end of the menu */
-    DebugMenuSlot tempSlot = MENU_SLOT(9, NULL);
-    memcpy(menu + numLines, &tempSlot, sizeof(DebugMenuSlot));
+        /* create debug menu */
+        for (unsigned i = 0; i < numLines; ++i)
+        {
+            DebugMenuSlot tempSlot = MENU_SLOT(1, stream + i);
+            memcpy(menu + i, &tempSlot, sizeof(DebugMenuSlot));
+        }        
+
+        /* mark the end of the menu */
+        DebugMenuSlot tempSlot = MENU_SLOT(9, NULL);
+        memcpy(menu + numLines, &tempSlot, sizeof(DebugMenuSlot));
+    }
 }
 
 void clear()
@@ -87,15 +98,7 @@ void _display()
 {
     if (numLines == 0)
     {
-        stream = malloc(sizeof(MenuLine));
-        memset(stream, 0, sizeof(MenuLine));
- 
-        menu = malloc(sizeof(DebugMenuSlot));   
-        DebugMenuSlot tempSlot_1 = MENU_SLOT(1, stream);
-        DebugMenuSlot tempSlot_2 = MENU_SLOT(9, NULL);
-
-        memcpy(menu, &tempSlot_1, sizeof(DebugMenuSlot));
-        memcpy(menu + 1, &tempSlot_2, sizeof(DebugMenuSlot));
+        menu = defaultMenu;
     }    
     *((DebugMenuSlot**) 0x804d6890) = menu;
 }

@@ -13,11 +13,11 @@ float floor(float x)
 {
     if (x >= 0)
     {
-        return (int) x;
+        return (u32) x;
     } 
     else
     {
-        int y = (int) x;
+        s32 y = (s32) x;
         return ((float) y == x) ? y : y - 1;
     }
 }

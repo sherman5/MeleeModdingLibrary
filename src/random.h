@@ -4,8 +4,8 @@
  *
  */
 
-#ifndef RANDOM_H
-#define RANDOM_H
+#ifndef MML_RANDOM_H
+#define MML_RANDOM_H
 
 #include "gctypes.h"
 

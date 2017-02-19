@@ -4,8 +4,8 @@
 
 u32 randUint32(void)
 {
-    void (*randu)() = RANDU_FPTR;    
-    randu();
+    void (*rng)() = RAND_INT_FPTR;    
+    rng();
     return *((u32*) RAND_ADDRESS);
 }
 

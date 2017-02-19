@@ -4,8 +4,8 @@
  *
  */
 
-#ifndef MATH_H
-#define MATH_H
+#ifndef MML_MATH_H
+#define MML_MATH_H
 
 #include "gctypes.h"
 

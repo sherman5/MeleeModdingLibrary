@@ -4,8 +4,8 @@
  *
  */
 
-#ifndef _MML_STRING_H
-#define _MML_STRING_H
+#ifndef MML_STRING_H
+#define MML_STRING_H
 
 #include "gctypes.h"
 
@@ -18,7 +18,7 @@ extern int      (*strncmp) (const char*, const char*, size_t);
 extern char*    (*strcpy)  (char*, const char*);
 extern char*    (*strncpy) (char*, const char*, size_t);
 extern size_t   (*strlen)  (const char*);
-extern uint32_t (*strtoul) (const char*, char**, int);
+extern u32      (*strtoul) (const char*, char**, int);
 extern char*    (*itoa)    (int32_t, char*, int);
 
 #if 0

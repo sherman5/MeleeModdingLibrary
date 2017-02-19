@@ -4,8 +4,8 @@
  *
  */
 
-#ifndef PRINT_H
-#define PRINT_H
+#ifndef MML_PRINT_H
+#define MML_PRINT_H
 
 /**
  * @brief print a string to the output stream

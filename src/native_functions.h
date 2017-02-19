@@ -1,20 +1,28 @@
-#ifndef FPTRS_102_H
-#define FPTRS_102_H
+/**
+ * @file native_functions.h
+ * @brief Pointers to in game functions
+ *
+ */
+
+#ifndef MML_NATIVE_FUNCTIONS_H
+#define MML_NATIVE_FUNCTIONS_H
 
 #define VOID_PTR(x) ((void*) (x))
 
+#ifdef PAL
+
+#else
+
 /************************* gamestate.h ************************/
 
-#define PLAYER_DATA_FPTR            VOID_PTR(0x80034110)
+#define PLAYER_ENTITY_FPTR          VOID_PTR(0x80034110)
 
 /************************** random.h **************************/
 
-/** function that changes the value in RAND_ADDRESS */
-#define RANDU_FPTR                  VOID_PTR(0x80380580) 
+#define RAND_INT_FPTR                  VOID_PTR(0x80380580) 
 
 /************************** system.h **************************/
 
-/** void* malloc(size_t size); */
 //#define MALLOC_FPTR     VOID_PTR(0x8037f1e4)
 
 #define OS_CREATE_HEAP_FPTR         VOID_PTR(0x803440e8)
@@ -33,11 +41,11 @@
 
 #define OS_SET_ARENA_LO_FPTR        VOID_PTR(0x803444e0)
 
-#define OS_SET_CURRENT_HEAP_FPTR    VOID_PTR(0x8034508c) // ?
+//#define OS_SET_CURRENT_HEAP_FPTR    VOID_PTR(0x8034508c) // ?
     
-#define OS_ADD_TO_HEAP_FPTR         VOID_PTR()
+//#define OS_ADD_TO_HEAP_FPTR         VOID_PTR()
 
-#define OS_DUMP_HEAP_FPTR           VOID_PTR(0x80345334) // ?
+//#define OS_DUMP_HEAP_FPTR           VOID_PTR(0x80345334) // ?
 
 /************************** string.h **************************/
 
@@ -79,19 +87,20 @@
 
 /************************** math.h ****************************/
 
-/** pointer to sin() function in Melee v102 */
+/** float sin(float x) */
 #define SINE_FPTR       VOID_PTR(0x80326220)
 
-/** pointer to cos() function in Melee v102 */
+/** float cosine(float x) */
 #define COSINE_FPTR     VOID_PTR(0x80326200)
 
-/** pointer to tan() function in Melee v102 */
+/** float tan(float x) */
 #define TANGENT_FPTR    VOID_PTR(0x803261bc)
 
-/** pointer to fabs() function in Melee v102 */
+/** float fabs(float x) */
 #define ABS_VAL_FPTR    VOID_PTR(0x803261b4)
 
-/** pointer to 1/sqrt() function in Melee v102 */
+/** float recipSqrt(float x) */
 #define RECIP_SQRT_FPTR VOID_PTR(0x80022df8);
 
-#endif
+#endif // #ifdef PAL
+#endif // #ifndef MML_NATIVE_FUNCTIONS_H

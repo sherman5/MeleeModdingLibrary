@@ -4,16 +4,18 @@
 #include "math.h"
 #include "gctypes.h"
 
+typedef u32 handle_t;
+
 /*************************** native functions **************************/
-u32 (*OSCreateHeap)(void*, void*) = OS_CREATE_HEAP_FPTR;
-void* (*OSAllocFromHeap)(u32, size_t) = OS_ALLOC_FROM_HEAP_FPTR;
-void (*OSFreeToHeap)(u32, void*) = OS_FREE_TO_HEAP_FPTR;
+handle_t (*OSCreateHeap)(void*, void*)     = OS_CREATE_HEAP_FPTR;
+void* (*OSAllocFromHeap)(handle_t, size_t) = OS_ALLOC_FROM_HEAP_FPTR;
+void (*OSFreeToHeap)(handle_t, void*)      = OS_FREE_TO_HEAP_FPTR;
 /*************************************************************************/
 
 #define ARENA_HI_ADDRESS 0x80000034
 
-static u32 heapHandle;
-static bool init = 0;
+static handle_t heapHandle;
+static bool init = false;
 static size_t heapSize = 0;
 
 void initHeap(void* lo, void* hi)

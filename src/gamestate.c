@@ -24,7 +24,7 @@ bool inGame()
 
 GameState gameState = DEFAULT_GAMESTATE;
 
-u32 (*playerEntity)(unsigned) = PLAYER_DATA_FPTR;
+u32 (*playerEntity)(unsigned) = PLAYER_ENTITY_FPTR;
 
 PlayerData* playerData(unsigned id)
 {
