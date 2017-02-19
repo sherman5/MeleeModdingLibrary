@@ -7,31 +7,31 @@
 #ifndef MML_AI_H
 #define MML_AI_H
 
-#define DR_MARIO        0b00000000000000000000000000000001
-#define MARIO           0b00000000000000000000000000000010
-#define LUIGI           0b00000000000000000000000000000100
-#define BOWSER          0b00000000000000000000000000001000
-#define PEACH           0b00000000000000000000000000010000
-#define YOSHI           0b00000000000000000000000000100000
-#define DK              0b00000000000000000000000001000000
-#define FALCON          0b00000000000000000000000010000000
-#define GANON           0b00000000000000000000000100000000 
-#define FALCO           0b00000000000000000000001000000000
-#define FOX             0b00000000000000000000010000000000
-#define NESS            0b00000000000000000000100000000000
-#define ICE_CLIMBERS    0b00000000000000000001000000000000
-#define KIRBY           0b00000000000000000010000000000000
-#define SAMUS           0b00000000000000000100000000000000
-#define ZELDA           0b00000000000000001000000000000000
-#define LINK            0b00000000000000010000000000000000
-#define YOUNG_LINK      0b00000000000000100000000000000000
-#define PICHU           0b00000000000001000000000000000000
-#define PIKACHU         0b00000000000010000000000000000000
-#define PUFF            0b00000000000100000000000000000000
-#define MEWTWO          0b00000000001000000000000000000000
-#define MR_GNW          0b00000000010000000000000000000000
-#define MARTH           0b00000000100000000000000000000000
-#define ROY             0b00000001000000000000000000000000
+#define DR_MARIO        (1 << 0)
+#define MARIO           (1 << 1)
+#define LUIGI           (1 << 2)
+#define BOWSER          (1 << 3)
+#define PEACH           (1 << 4)
+#define YOSHI           (1 << 5)
+#define DK              (1 << 6)
+#define FALCON          (1 << 7)
+#define GANON           (1 << 8)
+#define FALCO           (1 << 9)
+#define FOX             (1 << 10)
+#define NESS            (1 << 11)
+#define ICE_CLIMBERS    (1 << 12)
+#define KIRBY           (1 << 13)
+#define SAMUS           (1 << 14)
+#define ZELDA           (1 << 15)
+#define LINK            (1 << 16)
+#define YOUNG_LINK      (1 << 17)
+#define PICHU           (1 << 18)
+#define PIKACHU         (1 << 19)
+#define PUFF            (1 << 20)
+#define MEWTWO          (1 << 21)
+#define MR_GNW          (1 << 22)
+#define MARTH           (1 << 23)
+#define ROY             (1 << 24)
 
 #include "logic.h"
 #include "inputs.h"

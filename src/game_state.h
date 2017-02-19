@@ -1,5 +1,11 @@
-#ifndef GAME_STATE_H
-#define GAME_STATE_H
+/**
+ * @file game_state.h
+ * @brief Track the state of in game variables.
+ *
+ */
+
+#ifndef MML_GAME_STATE_H
+#define MML_GAME_STATE_H
 
 #include "gctypes.h"
 #include "math.h"

@@ -1,3 +1,9 @@
+/**
+ * @file logic.h
+ * @brief Defines structs for AI logic.
+ *
+ */
+
 #ifndef MML_LOGIC_H
 #define MML_LOGIC_H
 

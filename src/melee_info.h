@@ -1,5 +1,5 @@
 /**
- * @file meleeinfo.h
+ * @file melee_info.h
  * @brief Game Information
  *
  */
