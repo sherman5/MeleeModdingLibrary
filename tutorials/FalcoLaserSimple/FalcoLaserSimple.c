@@ -1,20 +1,32 @@
 #include <mml/AI.h>
+#include <mml/system.h>
+#include <mml/statecheck.h>
+#include <mml/inputs.h>
+#include <mml/gctypes.h>
 
-AI player2;
-player2.initialized = false;
-player2.port = 2;
-player2.characters = FALCO || FOX;
+static char heap[10000];
+static bool initialized = false;
+
+AI player2 = {.port = 2, .active = false, .characters = FALCO};
+
+void _init()
+{
+    initHeap(heap, heap + sizeof(heap));
+    initialized = true;
+}
 
 void loadDefaultLogic()
 {
-    addLogic(&player2, {&chance, 0.01}, {&addMove, &player2, &shNeutralB});
+    addLogic(&player2,
+        (Function) {&chance, .arg1.f = 0.01, 0},
+        (Function) {&addMove, .arg1.p = &player2, .arg2.p = &shNeutralB});
 }
 
 void _main()
 {
-    if (!player2.initialized) { initAI(&player2);}
+    if (!initialized) { _init();}
 
-    if (needLogic(&player2)) { loadDefaultLogic();}
+    if (player2.active && needLogic(&player2)) { loadDefaultLogic();}
 
     updateAI(&player2);
 }

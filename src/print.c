@@ -1,8 +1,8 @@
-#include <stdint.h>
 #include "string.h"
 #include "system.h"
 #include "print.h"
 #include "math.h"
+#include "gctypes.h"
 
 #define LINE_SIZE 60
 #define MAX_LINES 27
@@ -10,25 +10,28 @@
 typedef struct menu_line
 {
     char text[LINE_SIZE];
-    uint32_t pad;
+    u32 pad;
 } MenuLine;
 
 typedef struct debug_menu_slot
 {
-    uint32_t type;
-    uint32_t garbage1;
+    u32 type;
+    char pad1[0x04];
     MenuLine* line;
-    uint32_t garbage2, garbage3, garbage4, garbage5, garbage6;
+    char pad2[0x14];
+
 } DebugMenuSlot;
+
+#define MENU_SLOT(t, l) {(t), {0}, (l), {0}}
 
 static MenuLine* stream = NULL;
 static DebugMenuSlot* menu = NULL;
-static unsigned numLines = 0, maxLines = 0;
+static u8 numLines = 0, maxLines = 0;
 
 void print(const char* str)
 {
     /* calculate number of lines this string will use */
-    unsigned strLines = 1 + strlen(str) / LINE_SIZE;
+    u8 strLines = 1 + strlen(str) / LINE_SIZE;
 
     /* calculate max lines */
     maxLines = (getHeapSize() / 5)
@@ -38,7 +41,7 @@ void print(const char* str)
     /* discard extra lines */
     if (numLines + strLines > maxLines)
     {
-        unsigned discard = numLines + strLines - maxLines;
+        u8 discard = numLines + strLines - maxLines;
         numLines -= discard;
 
         memcpy(menu, menu + discard, numLines * sizeof(DebugMenuSlot));
@@ -61,12 +64,12 @@ void print(const char* str)
     /* create debug menu */
     for (unsigned i = 0; i < numLines; ++i)
     {
-        DebugMenuSlot tempSlot = {1, 0, stream + i, 0, 0, 0, 0, 0};
+        DebugMenuSlot tempSlot = MENU_SLOT(1, stream + i);
         memcpy(menu + i, &tempSlot, sizeof(DebugMenuSlot));
     }        
 
     /* mark the end of the menu */
-    DebugMenuSlot tempSlot = {9, 0, NULL, 0, 0, 0, 0, 0};
+    DebugMenuSlot tempSlot = MENU_SLOT(9, NULL);
     memcpy(menu + numLines, &tempSlot, sizeof(DebugMenuSlot));
 }
 
@@ -88,8 +91,8 @@ void _display()
         memset(stream, 0, sizeof(MenuLine));
  
         menu = malloc(sizeof(DebugMenuSlot));   
-        DebugMenuSlot tempSlot_1 = {1, 0, stream, 0, 0, 0, 0, 0};
-        DebugMenuSlot tempSlot_2 = {9, 0, NULL, 0, 0, 0, 0, 0};
+        DebugMenuSlot tempSlot_1 = MENU_SLOT(1, stream);
+        DebugMenuSlot tempSlot_2 = MENU_SLOT(9, NULL);
 
         memcpy(menu, &tempSlot_1, sizeof(DebugMenuSlot));
         memcpy(menu + 1, &tempSlot_2, sizeof(DebugMenuSlot));

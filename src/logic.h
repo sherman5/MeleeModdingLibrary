@@ -10,7 +10,7 @@ typedef union
     f32 f;
     void* p;
 
-} FunctionArg;
+} FunctionArg __attribute__((__transparent_union__));
 
 typedef struct
 {
@@ -18,13 +18,13 @@ typedef struct
     FunctionArg arg1;
     FunctionArg arg2;
     
-} FunctionCall;
+} Function;
 
 
 typedef struct
 {
-    FunctionCall condition;
-    FunctionCall action;
+    Function condition;
+    Function action;
 
 } Logic;
 

@@ -1,13 +1,34 @@
 #include "native_functions.h"
 #include "gamestate.h"
+#include "gctypes.h"
+
+static u32 _end_frame = 0xffffffff;
+static bool _in_game = false;
+
+#define IN_GAME (((*((u32*) (0x8065CC14)) >> 20) & 0x0F) == 0x0D)
+
+void _endGame()
+{
+    _in_game = false;
+    _end_frame = CURRENT_FRAME;
+}
+
+bool inGame()
+{
+    if (!_in_game && IN_GAME && CURRENT_FRAME < _end_frame)
+    {
+        _in_game = true;    
+    }
+    return _in_game;
+}
 
 GameState gameState = DEFAULT_GAMESTATE;
 
-uint32_t (*playerEntity)(unsigned) = PLAYER_DATA_FPTR;
+u32 (*playerEntity)(unsigned) = PLAYER_DATA_FPTR;
 
 PlayerData* playerData(unsigned id)
 {
-    uint32_t entity = playerEntity(id - 1);
+    u32 entity = playerEntity(id - 1);
     if (entity > 0)
     {
         return *((PlayerData**) (entity + 0x2c));
@@ -103,12 +124,12 @@ void updateGameState()
             gameState.stage.top.height = 51.43;
 
             break;
+
+        default:
+
+            gameState.stage.ledge = 0.0;
+            break;
     }
 }
 
-bool inGame()
-{
-    return PLAYER_STATE(1) + PLAYER_STATE(2) + PLAYER_STATE(3)
-        + PLAYER_STATE(4) > 0;
-}
 

@@ -1,6 +1,7 @@
 #include "string.h"
 #include "native_functions.h"
 #include "system.h"
+#include "gctypes.h"
 
 /*************************** built in functions **************************/
 void*    (*memchr)  (const void*, int, size_t)         = MEM_CHR_FPTR;

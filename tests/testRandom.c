@@ -3,13 +3,18 @@
 #include <math.h>
 #include <string.h>
 #include <random.h>
+#include <gctypes.h>
 
 UNIT_TEST;
 
 static bool init = false;
 static char heap[21000];
 
-static int tests_run = 0;
+static bool tests_run = false;
+
+static float min1 = 1.0, max1 = 0.0;
+static float min2 = 9.5, max2 = 9.3;
+static int min3 = 4, max3 = 0, sum = 0;
 
 void _init(void)
 {
@@ -18,13 +23,10 @@ void _init(void)
 
 void _main(void)
 {
-    if (!init) { _init(); init = 1;}
+    if (!init) { _init(); init = true;}
 
     if (!tests_run)
     {
-        float min1 = 1.0, max1 = 0.0;
-        float min2 = 9.5, max2 = 9.3;
-        int min3 = 4, max3 = 0, sum = 0;
         float probs[5] = {0.1, 0.3, 0.4, 0.1, 0.1};
 
         for (unsigned i = 0; i < 10000; ++i)
@@ -53,9 +55,8 @@ void _main(void)
         REQUIRE(sum < 18350);
 
         END_TEST;
-        tests_run = 1;
+        tests_run = true;
     }
 }
-
 
 

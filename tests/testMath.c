@@ -17,7 +17,7 @@ void _init(void)
 
 void _main(void)
 {
-    if (!init) { _init(); init = 1;}
+    if (!init) { _init(); init = true;}
 
     if (!tests_run)
     {

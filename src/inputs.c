@@ -1,12 +1,19 @@
 #include "inputs.h"
 
-RawInput raw_shNeutralB[5] = 
+RawInput raw_shNeutralB[4] = 
 {
     {0, NO_FLAGS, X_PRESS},
-    {1, JUMPSQUAT, RELEASE},
-    {5, JUMPSQUAT, B_PRESS},
-    {10, JUMPSQUAT, FULL_STICK || STICK_ANGLE(270)},
-    {15, JUMPSQUAT, RELEASE}
+    {-1, JUMPSQUAT, RELEASE},
+    {11, JUMPSQUAT, B_PRESS},
+    {0, JUMPSQUAT | SH_LENGTH, RELEASE}
 };
 
-const Move shNeutralB = {&raw_shNeutralB, 5};
+Move shNeutralB = {.inputs = raw_shNeutralB, .size = 4};
+
+RawInput raw_shortHop[2] = 
+{
+    {0, NO_FLAGS, X_PRESS},
+    {-1, JUMPSQUAT, RELEASE}
+};
+
+Move shortHop = {.inputs = raw_shortHop, .size = 2};

@@ -2,24 +2,24 @@
 #include "native_functions.h"
 #include "string.h"
 #include "math.h"
-#include "bool.h"
+#include "gctypes.h"
 
 /*************************** native functions **************************/
-int (*OSCreateHeap)(void*, void*) = OS_CREATE_HEAP_FPTR;
-void* (*OSAllocFromHeap)(int, size_t) = OS_ALLOC_FROM_HEAP_FPTR;
-void (*OSFreeToHeap)(int, void*) = OS_FREE_TO_HEAP_FPTR;
+u32 (*OSCreateHeap)(void*, void*) = OS_CREATE_HEAP_FPTR;
+void* (*OSAllocFromHeap)(u32, size_t) = OS_ALLOC_FROM_HEAP_FPTR;
+void (*OSFreeToHeap)(u32, void*) = OS_FREE_TO_HEAP_FPTR;
 /*************************************************************************/
 
 #define ARENA_HI_ADDRESS 0x80000034
 
-static int heap_handle;
+static u32 heapHandle;
 static bool init = 0;
-static uint32_t heapSize = 0;
+static size_t heapSize = 0;
 
 void initHeap(void* lo, void* hi)
 {
-    heapSize = (unsigned) hi - (unsigned) lo;
-    heap_handle = OSCreateHeap(lo, hi);
+    heapSize = (u32) hi - (u32) lo;
+    heapHandle = OSCreateHeap(lo, hi);
     init = true;
 }
 
@@ -31,7 +31,7 @@ void limitGameMemory(void* limit)
 void* malloc(size_t size)
 {
     if (!init) {return NULL;}
-    return OSAllocFromHeap(heap_handle, size);
+    return OSAllocFromHeap(heapHandle, size);
 }
 
 void* calloc(size_t num, size_t size)
@@ -55,7 +55,7 @@ void* realloc(void* ptr, size_t new_size)
 
 void free(void* ptr)
 {
-    OSFreeToHeap(heap_handle, ptr);
+    OSFreeToHeap(heapHandle, ptr);
 }
 
 size_t getHeapSize()

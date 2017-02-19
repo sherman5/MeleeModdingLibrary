@@ -36,12 +36,12 @@
 #include "logic.h"
 #include "inputs.h"
 #include "controller.h"
-#include "bool.h"
+#include "gctypes.h"
 
 typedef struct
 {
-    uint32_t frame;
-    uint16_t controller;
+    u32 frame;
+    u16 controller;
 
 } ControllerInput;
 
@@ -51,20 +51,22 @@ typedef struct player
     Logic* logicQueue;
     size_t logicSize, inputSize;
     size_t logicCapacity;
-    uint32_t characters;
-    uint8_t port;
-    bool initialized;
+    u32 characters;
+    u8 port;
     Controller controller;
+    bool active;
         
 } AI;
 
-void addLogic(AI* ai, FunctionCall condition, FunctionCall action);
+void addLogic(AI* ai, Function condition, Function action);
 
 void addMove(AI* ai, Move* move);
 
-void updatePlayer(AI* ai);
+void updateAI(AI* ai);
 
-void initPlayer(AI* ai);
+void initAI(AI* ai);
+
+void endGame(AI* ai);
 
 bool needLogic(AI* ai);
 

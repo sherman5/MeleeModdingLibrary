@@ -1,10 +1,11 @@
 #ifndef MML_STATE_CHECK_H
 #define MML_STATE_CHECK_H
 
-#include "bool.h"
+#include "gctypes.h"
+#include "logic.h"
 
-bool offstage(uint8_t player);
+bool offstage(u8 player);
 
-bool chance(float prob);
+bool chance(FunctionArg prob);
 
 #endif

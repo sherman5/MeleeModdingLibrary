@@ -8,11 +8,11 @@ OBJCPY = powerpc-eabi-objcopy
 
 # sources and header files (included in distribution)
 SRCS = src/AI.c src/controller.c src/gamestate.c src/inputs.c \
-src/logic.c src/math.c src/print.c src/random.c src/statecheck.c \
-src/string.c src/system.c
+src/math.c src/print.c src/random.c src/statecheck.c \
+src/string.c src/system.c src/meleeinfo.c
 
-HEADERS = $(SRCS:.c=.h) src/bool.h src/native_functions.h src/gctypes.h \
-src/unit_test.h
+HEADERS = $(SRCS:.c=.h) src/gctypes.h src/native_functions.h \
+src/unit_test.h src/logic.h
 
 # object files and their dependencies
 OBJS_O0 = $(SRCS:src/%.c=build/%_O0.o)

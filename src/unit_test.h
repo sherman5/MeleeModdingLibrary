@@ -9,7 +9,7 @@
 
 #include "print.h"
 #include "math.h"
-#include "bool.h"
+#include "gctypes.h"
 
 #define UNIT_TEST static bool tests_passed = true
 

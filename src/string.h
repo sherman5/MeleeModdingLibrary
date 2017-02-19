@@ -7,8 +7,7 @@
 #ifndef _MML_STRING_H
 #define _MML_STRING_H
 
-#include <stddef.h>
-#include <stdint.h>
+#include "gctypes.h"
 
 /** @cond */
 extern void*    (*memchr)  (const void*, int, size_t);

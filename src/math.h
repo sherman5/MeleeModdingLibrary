@@ -7,7 +7,7 @@
 #ifndef MATH_H
 #define MATH_H
 
-#include <stdint.h>
+#include "gctypes.h"
 
 /** approximate value of pi */
 #define M_PI 3.14159265359f
@@ -119,7 +119,7 @@ float ceil(float x);
  * 
  * @return The larger value of @p a and @p b.
  */
-int32_t imax(int32_t a, int32_t b);
+s32 imax(s32 a, s32 b);
 
 /**
  * @brief Returns the minimum of two numbers.
@@ -129,7 +129,7 @@ int32_t imax(int32_t a, int32_t b);
  * 
  * @return The smaller value of @p a and @p b.
  */
-int32_t imin(int32_t a, int32_t b);
+s32 imin(s32 a, s32 b);
 
 /**
  * @brief Returns the maximum of two numbers.
@@ -159,7 +159,7 @@ float fmin(float a, float b);
  * 
  * @return @p base raised to the power of @p exp
  */
-int32_t ipow(int16_t base, uint8_t exp);
+s32 ipow(s16 base, u8 exp);
 
 /**
  * @brief Returns @p base raised to the power of @p exp
@@ -169,7 +169,7 @@ int32_t ipow(int16_t base, uint8_t exp);
  * 
  * @return @p base raised to the power of @p exp
  */
-float fpow(float base, uint8_t exp);
+float fpow(float base, u8 exp);
 
 /**
  * @brief Struct containing the coordinates of a point 

@@ -7,17 +7,18 @@
 #ifndef CONTROLLER_H
 #define CONTROLLER_H
 
-#include <stdint.h>
+#include "gctypes.h"
 
 /**
  * @brief Represents the state of a controller.
  */
 typedef struct
 {
-    uint32_t buttons; /**< A-0100, B-0200, X-0400, Z-0010, L-0040 */
+    u32 buttons; /**< A-0100, B-0200, X-0400, Z-0010, L-0040 */
 
-    float stickX; /**< x coordinate of control stick */
-    float stickY; /**< y coordinate of control stick */
+    f32 stickX; /**< x coordinate of control stick */
+    f32 stickY; /**< y coordinate of control stick */
+
 } Controller;
 
 /**
@@ -31,7 +32,7 @@ typedef struct
  *
  * @return None.
  */
-void setController(Controller* controller, uint16_t state);
+void setController(Controller* controller, u16 state);
 
 /**
  * @brief Write the state of @p controller to the memory addresses read
@@ -42,6 +43,6 @@ void setController(Controller* controller, uint16_t state);
  *
  * @return None
  */
-void writeController(Controller* controller, uint8_t port);
+void writeController(Controller* controller, u8 port);
 
 #endif

@@ -1,5 +1,6 @@
 #include "math.h"
 #include "native_functions.h"
+#include "gctypes.h"
 
 float (*sin)(float x) = SINE_FPTR;
 float (*cos)(float x) = COSINE_FPTR;
@@ -64,9 +65,9 @@ float distance(Point a, Point b)
     return magnitude(b);
 }
 
-int32_t ipow(int16_t base, uint8_t exp)
+s32 ipow(s16 base, u8 exp)
 {
-    int32_t result = 1;
+    s32 result = 1;
     while (exp)
     {
         if (exp & 1)
@@ -79,12 +80,12 @@ int32_t ipow(int16_t base, uint8_t exp)
     return result;
 }
 
-int32_t imin(int32_t a, int32_t b)
+s32 imin(s32 a, s32 b)
 {
     return (a < b ? a : b);
 }
 
-int32_t imax(int32_t a, int32_t b)
+s32 imax(s32 a, s32 b)
 {
     return (a > b ? a : b);
 }
@@ -99,7 +100,7 @@ float fmax(float a, float b)
     return (a > b ? a : b);
 }
 
-float fpow(float base, uint8_t exp)
+float fpow(float base, u8 exp)
 {
     float result = 1;
     while (exp)

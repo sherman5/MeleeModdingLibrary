@@ -1,11 +1,10 @@
 #include <math.h>
-#include <melee.h>
 #include <string.h>
 #include <system.h>
 #include <print.h>
 
 static char heap[15000];
-static int init = 0;
+static uint8_t init = 0;
 static char str[100];
 
 void _main()
@@ -20,7 +19,7 @@ void _main()
 
         print("this is a test sentence to see how many characters fit");
         print("this is a test of multiple calls to print");
-        print(str);
+/*        print(str);
         print("print first extra string");
         print("print second extra string");
         print("print third extra string");
@@ -47,7 +46,7 @@ void _main()
         print("line 28");
         print("line 29");
         print("line 30");
-        print("line 31");
+        print("line 31");*/
         init = 1;
     }
 }

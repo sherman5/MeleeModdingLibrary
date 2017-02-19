@@ -1,16 +1,18 @@
 #include "random.h"
 #include "native_functions.h"
+#include "gctypes.h"
 
-uint32_t randUint32()
+u32 randUint32(void)
 {
     void (*randu)() = RANDU_FPTR;    
     randu();
-    return *((uint32_t*) RAND_ADDRESS);
+    return *((u32*) RAND_ADDRESS);
 }
 
-float rand()
+float rand(void)
 {
-    return (float) randUint32() / 0xFFFFFFFF;
+//    return (((float) 0xaabbccdd) / ((float) 0xffffffff));
+    return (float) randUint32() / 0xffffffff;
 }
 
 float uniform(float a, float b)

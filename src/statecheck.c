@@ -2,14 +2,16 @@
 #include "math.h"
 #include "random.h"
 #include "gamestate.h"
+#include "gctypes.h"
+#include "logic.h"
 
-bool offstage(uint8_t player)
+bool offstage(u8 player)
 {
     return fabs(gameState.playerData[player]->coordinates.x)
         > gameState.stage.ledge;        
 }
 
-bool chance(float prob)
+bool chance(FunctionArg prob)
 {
-    return rand() < prob;
+    return randUint32() < prob.u;
 }

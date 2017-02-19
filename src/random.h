@@ -7,8 +7,7 @@
 #ifndef RANDOM_H
 #define RANDOM_H
 
-#include <stdint.h>
-#include <stddef.h>
+#include "gctypes.h"
 
 /** address that holds a random 32-bit seed in melee */
 #define RAND_ADDRESS 0x804D5F90
@@ -18,14 +17,14 @@
  *
  * @return Random 32-bit @c integer    
 */
-uint32_t randUint32();
+u32 randUint32(void);
 
 /**
  * @brief Generate random number in [0,1].
  *
  * @return - Random floating point number in [0,1]
  */
-float rand();
+float rand(void);
 
 /**
  * @brief Sample uniformly from [@p a,@p b].

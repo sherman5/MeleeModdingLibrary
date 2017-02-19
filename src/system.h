@@ -7,14 +7,13 @@
 #ifndef SYSTEM_H
 #define SYSTEM_H
 
-#include <stddef.h>
-#include <stdint.h>
+#include "gctypes.h"
 
 /** @cond */
 
-extern int (*OSCreateHeap)(void*, void*);
-extern void* (*OSAllocFromHeap)(int, size_t);
-extern void (*OSFreeToHeap)(int, void*);
+extern u32 (*OSCreateHeap)(void*, void*);
+extern void* (*OSAllocFromHeap)(u32, size_t);
+extern void (*OSFreeToHeap)(u32, void*);
 
 #if 0
 /** @endcond */
