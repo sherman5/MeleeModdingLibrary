@@ -102,13 +102,15 @@ PlayerData* playerData(unsigned id);
 
 #ifdef PAL
 
+#error game_state.h not compatible with PAL
+
 #else
     
-    #define PLAYER_BLOCK(x) (0x804521F0 + 0xE90 * (x))
-    #define CHAR_SELECT(x)  (*((u8*) (0x803F0DE6 + 0x24 * (x))))
+#define PLAYER_BLOCK(x) (0x804521F0 + 0xE90 * (x))
+#define CHAR_SELECT(x)  (*((u8*) (0x803F0DE6 + 0x24 * (x))))
 
-    #define STAGE_ID        (*((u16*) 0x804D6CAD))
-    #define CURRENT_FRAME   (*((u32*) 0x80479D60))
+#define STAGE_ID        (*((u16*) 0x804D6CAD))
+#define CURRENT_FRAME   (*((u32*) 0x80479D60))
 
 #endif
 

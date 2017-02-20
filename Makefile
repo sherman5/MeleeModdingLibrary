@@ -20,12 +20,13 @@ OBJS_O1 = $(OBJS_O0:%_O0.o=%_O1.o)
 OBJS_O2 = $(OBJS_O0:%_O0.o=%_O2.o)
 OBJS_O3 = $(OBJS_O0:%_O0.o=%_O3.o)
 OBJS_Os = $(OBJS_O0:%_O0.o=%_Os.o)
+OBJS_PAL = $(OBJS_O0:%_O0.o=%_PAL.o)
 
-OBJS = $(OBJS_O0) $(OBJS_O1) $(OBJS_O2) $(OBJS_O3) $(OBJS_Os)
+OBJS = $(OBJS_O0) $(OBJS_O1) $(OBJS_O2) $(OBJS_O3) $(OBJS_Os) $(OBJS_PAL)
 DEP = $(OBJS:.o=.d)
 
 # names of the libraries (one for each -O flag)
-LIBS = libmml.a libmml_O1.a libmml_O2.a libmml_O3.a libmml_Os.a
+LIBS = libmml.a libmml_O1.a libmml_O2.a libmml_O3.a libmml_Os.a libmml_PAL.a
 
 # link, archive, and compile flags
 LDFLAGS = 
@@ -42,6 +43,7 @@ libmml_O1.a : $(OBJS_O1)
 libmml_O2.a : $(OBJS_O2)
 libmml_O3.a : $(OBJS_O3)
 libmml_Os.a : $(OBJS_Os)
+libmml_PAL.a : $(OBJS_PAL)
 
 libs : $(LIBS)
 
@@ -71,6 +73,10 @@ build/%_O3.o : src/%.c
 
 build/%_Os.o : src/%.c
 	$(CC) $(CFLAGS) -Os -c -MMD $< -o $@
+	$(OBJCPY) -R $(SECTIONS) $@
+
+build/%_PAL.o : src/%.c
+	$(CC) $(CFLAGS) -O1 -DPAL -c -MMD $< -o $@
 	$(OBJCPY) -R $(SECTIONS) $@
 
 # target for building the distribution

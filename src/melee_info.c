@@ -1,5 +1,11 @@
 #include "melee_info.h"
 
+#ifdef PAL
+
+#error melee_info.c not compatible with PAL
+
+#else
+
 const u8 _sh_length[25] = 
 {
     0, //DR_MARIO
@@ -29,3 +35,4 @@ const u8 _sh_length[25] =
     0  //ROY
 };
 
+#endif

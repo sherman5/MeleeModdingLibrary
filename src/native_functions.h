@@ -11,6 +11,8 @@
 
 #ifdef PAL
 
+#error native_functions.h not compatible with PAL
+
 #else
 
 /************************* gamestate.h ************************/

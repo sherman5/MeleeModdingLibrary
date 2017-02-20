@@ -2,10 +2,18 @@
 #include "game_state.h"
 #include "gctypes.h"
 
-static u32 _end_frame = 0xffffffff;
-static bool _in_game = false;
+#ifdef PAL
+
+#error game_state.c not compatible with PAL
+
+#else
 
 #define IN_GAME (((*((u32*) (0x8065CC14)) >> 20) & 0x0F) == 0x0D)
+
+#endif
+
+static u32 _end_frame = 0xffffffff;
+static bool _in_game = false;
 
 void _endGame()
 {
