@@ -174,7 +174,7 @@ float fpow(float base, u8 exp);
 /**
  * @brief Struct containing the coordinates of a point 
  */
-typedef struct point
+typedef struct
 {
     float x; /**< X-coordinate of point */
     float y; /**< Y-coordinate of point */

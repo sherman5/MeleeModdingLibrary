@@ -89,7 +89,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#nested-classes">Data Structures</a> &#124;
 <a href="#define-members">Macros</a> &#124;
-<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">math.h File Reference</div>  </div>
@@ -104,8 +103,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Data Structures</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpoint.html">point</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Struct containing the coordinates of a point.  <a href="structpoint.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_point.html">Point</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Struct containing the coordinates of a point.  <a href="struct_point.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
@@ -118,13 +117,6 @@ Macros</h2></td></tr>
 <tr class="separator:a77dd57594a038f87051b324cee42c531"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8c5ff70b6b28cd0157c50a22406f92c4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="math_8h.html#a8c5ff70b6b28cd0157c50a22406f92c4">SIGN</a>(x)&#160;&#160;&#160;(((x) &gt;= 0) - ((x) &lt; 0))</td></tr>
 <tr class="separator:a8c5ff70b6b28cd0157c50a22406f92c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:a71d6707709e94a1b5dcd9af6c9672606"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a71d6707709e94a1b5dcd9af6c9672606"></a>
-typedef struct <a class="el" href="structpoint.html">point</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="math_8h.html#a71d6707709e94a1b5dcd9af6c9672606">Point</a></td></tr>
-<tr class="memdesc:a71d6707709e94a1b5dcd9af6c9672606"><td class="mdescLeft">&#160;</td><td class="mdescRight">Struct containing the coordinates of a point. <br /></td></tr>
-<tr class="separator:a71d6707709e94a1b5dcd9af6c9672606"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -170,13 +162,13 @@ Functions</h2></td></tr>
 <tr class="memitem:aaf4b636b09041878e1542054c73d81e9"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="math_8h.html#aaf4b636b09041878e1542054c73d81e9">atan2</a> (float y, float x)</td></tr>
 <tr class="memdesc:aaf4b636b09041878e1542054c73d81e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute arc tangent with two parameters.  <a href="#aaf4b636b09041878e1542054c73d81e9">More...</a><br /></td></tr>
 <tr class="separator:aaf4b636b09041878e1542054c73d81e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa472be54ff4dd70c96b82dbdf24331f5"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="math_8h.html#aa472be54ff4dd70c96b82dbdf24331f5">magnitude</a> (<a class="el" href="math_8h.html#a71d6707709e94a1b5dcd9af6c9672606">Point</a> pt)</td></tr>
+<tr class="memitem:aa472be54ff4dd70c96b82dbdf24331f5"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="math_8h.html#aa472be54ff4dd70c96b82dbdf24331f5">magnitude</a> (<a class="el" href="struct_point.html">Point</a> pt)</td></tr>
 <tr class="memdesc:aa472be54ff4dd70c96b82dbdf24331f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the magnitude of <code>pt</code> (i.e. distance from (0,0)  <a href="#aa472be54ff4dd70c96b82dbdf24331f5">More...</a><br /></td></tr>
 <tr class="separator:aa472be54ff4dd70c96b82dbdf24331f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad0f5356ed3a5123428bb77ae4c003200"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="math_8h.html#ad0f5356ed3a5123428bb77ae4c003200">distance</a> (<a class="el" href="math_8h.html#a71d6707709e94a1b5dcd9af6c9672606">Point</a> a, <a class="el" href="math_8h.html#a71d6707709e94a1b5dcd9af6c9672606">Point</a> b)</td></tr>
+<tr class="memitem:ad0f5356ed3a5123428bb77ae4c003200"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="math_8h.html#ad0f5356ed3a5123428bb77ae4c003200">distance</a> (<a class="el" href="struct_point.html">Point</a> a, <a class="el" href="struct_point.html">Point</a> b)</td></tr>
 <tr class="memdesc:ad0f5356ed3a5123428bb77ae4c003200"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the distance between two points.  <a href="#ad0f5356ed3a5123428bb77ae4c003200">More...</a><br /></td></tr>
 <tr class="separator:ad0f5356ed3a5123428bb77ae4c003200"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7873f9bf36a252b150a02b8d04942990"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="math_8h.html#a7873f9bf36a252b150a02b8d04942990">angle</a> (<a class="el" href="math_8h.html#a71d6707709e94a1b5dcd9af6c9672606">Point</a> a, <a class="el" href="math_8h.html#a71d6707709e94a1b5dcd9af6c9672606">Point</a> b)</td></tr>
+<tr class="memitem:a7873f9bf36a252b150a02b8d04942990"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="math_8h.html#a7873f9bf36a252b150a02b8d04942990">angle</a> (<a class="el" href="struct_point.html">Point</a> a, <a class="el" href="struct_point.html">Point</a> b)</td></tr>
 <tr class="memdesc:a7873f9bf36a252b150a02b8d04942990"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the angle between two points.  <a href="#a7873f9bf36a252b150a02b8d04942990">More...</a><br /></td></tr>
 <tr class="separator:a7873f9bf36a252b150a02b8d04942990"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -255,13 +247,13 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">float angle </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="math_8h.html#a71d6707709e94a1b5dcd9af6c9672606">Point</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="struct_point.html">Point</a>&#160;</td>
           <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="math_8h.html#a71d6707709e94a1b5dcd9af6c9672606">Point</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="struct_point.html">Point</a>&#160;</td>
           <td class="paramname"><em>b</em>&#160;</td>
         </tr>
         <tr>
@@ -275,8 +267,8 @@ Functions</h2></td></tr>
 <p>Returns the angle between two points. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">a</td><td>- A Point struct </td></tr>
-    <tr><td class="paramname">b</td><td>- A Point struct</td></tr>
+    <tr><td class="paramname">a</td><td>- A <a class="el" href="struct_point.html" title="Struct containing the coordinates of a point. ">Point</a> struct </td></tr>
+    <tr><td class="paramname">b</td><td>- A <a class="el" href="struct_point.html" title="Struct containing the coordinates of a point. ">Point</a> struct</td></tr>
   </table>
   </dd>
 </dl>
@@ -383,13 +375,13 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">float distance </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="math_8h.html#a71d6707709e94a1b5dcd9af6c9672606">Point</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="struct_point.html">Point</a>&#160;</td>
           <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="math_8h.html#a71d6707709e94a1b5dcd9af6c9672606">Point</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="struct_point.html">Point</a>&#160;</td>
           <td class="paramname"><em>b</em>&#160;</td>
         </tr>
         <tr>
@@ -403,8 +395,8 @@ Functions</h2></td></tr>
 <p>Returns the distance between two points. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">a</td><td>- A Point struct </td></tr>
-    <tr><td class="paramname">b</td><td>- A Point struct</td></tr>
+    <tr><td class="paramname">a</td><td>- A <a class="el" href="struct_point.html" title="Struct containing the coordinates of a point. ">Point</a> struct </td></tr>
+    <tr><td class="paramname">b</td><td>- A <a class="el" href="struct_point.html" title="Struct containing the coordinates of a point. ">Point</a> struct</td></tr>
   </table>
   </dd>
 </dl>
@@ -687,7 +679,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">float magnitude </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="math_8h.html#a71d6707709e94a1b5dcd9af6c9672606">Point</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="struct_point.html">Point</a>&#160;</td>
           <td class="paramname"><em>pt</em></td><td>)</td>
           <td></td>
         </tr>
@@ -697,7 +689,7 @@ Functions</h2></td></tr>
 <p>Returns the magnitude of <code>pt</code> (i.e. distance from (0,0) </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pt</td><td>- A Point struct</td></tr>
+    <tr><td class="paramname">pt</td><td>- A <a class="el" href="struct_point.html" title="Struct containing the coordinates of a point. ">Point</a> struct</td></tr>
   </table>
   </dd>
 </dl>
