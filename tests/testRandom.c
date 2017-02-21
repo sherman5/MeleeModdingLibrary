@@ -31,6 +31,9 @@ void _main(void)
 
         for (unsigned i = 0; i < 10000; ++i)
         {
+            REQUIRE(rand() >= 0);
+            REQUIRE(rand() <= 1);
+
             min1 = fmin(rand(), min1);
             max1 = fmax(rand(), max1);
 

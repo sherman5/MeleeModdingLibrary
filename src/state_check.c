@@ -13,5 +13,8 @@ bool offstage(FunctionArg player)
 
 bool chance(FunctionArg prob)
 {
-    return randUint32() < prob.u;
+    //return rand() < prob.f;
+//    return prob.f < 0.01;    
+//    return rand() < 1.0f / 180.0f;
+    return true;
 }

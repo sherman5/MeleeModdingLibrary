@@ -2,17 +2,12 @@
 #include "native_functions.h"
 #include "gctypes.h"
 
-u32 randUint32(void)
-{
-    void (*rng)() = RAND_INT_FPTR;    
-    rng();
-    return *((u32*) RAND_ADDRESS);
-}
+#define RAND_PRECISION 10000
 
 float rand(void)
 {
-//    return (((float) 0xaabbccdd) / ((float) 0xffffffff));
-    return (float) randUint32() / 0xffffffff;
+    u32 (*rng)(u32) = RAND_INT_FPTR;
+    return (float) rng(RAND_PRECISION) / RAND_PRECISION;
 }
 
 float uniform(float a, float b)

@@ -1,5 +1,8 @@
 # version of library
-VERSION = mml-beta
+MAJOR = 1
+MINOR = 0
+REVISION = 0
+VERSION = mml-$(MAJOR).$(MINOR).$(REVISION)
 
 # GNU tools
 CC = powerpc-eabi-gcc
@@ -9,7 +12,7 @@ OBJCPY = powerpc-eabi-objcopy
 # sources and header files (included in distribution)
 SRCS = src/AI.c src/controller.c src/game_state.c src/inputs.c \
 src/math.c src/print.c src/random.c src/state_check.c \
-src/string.c src/system.c src/melee_info.c
+src/string.c src/system.c src/melee_info.c src/version.c
 
 HEADERS = $(SRCS:.c=.h) src/gctypes.h src/native_functions.h \
 src/unit_test.h src/logic.h
@@ -26,13 +29,15 @@ OBJS = $(OBJS_O0) $(OBJS_O1) $(OBJS_O2) $(OBJS_O3) $(OBJS_Os) $(OBJS_PAL)
 DEP = $(OBJS:.o=.d)
 
 # names of the libraries (one for each -O flag)
-LIBS = libmml.a libmml_O1.a libmml_O2.a libmml_O3.a libmml_Os.a libmml_PAL.a
+LIBS = libmml.a libmml_O1.a libmml_O2.a libmml_O3.a libmml_Os.a \
+#libmml_PAL.a
 
 # link, archive, and compile flags
 LDFLAGS = 
 AFLAGS = -cvr
 CFLAGS = -Wall -Wextra -std=c99 -fno-builtin \
--fdata-sections -ffunction-sections
+-fdata-sections -ffunction-sections \
+-DMAJOR=$(MAJOR) -DMINOR=$(MINOR) -DREVISION=$(REVISION)
 
 # sections to remove from object files
 SECTIONS = .comment

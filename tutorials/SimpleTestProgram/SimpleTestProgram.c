@@ -1,6 +1,6 @@
 #include <mml/AI.h>
 #include <mml/system.h>
-#include <mml/statecheck.h>
+#include <mml/state_check.h>
 #include <mml/inputs.h>
 #include <mml/gctypes.h>
 
@@ -18,7 +18,7 @@ void _init()
 void loadDefaultLogic()
 {
     addLogic(&player2,
-        (Function) {&chance, .arg1.f = 0.01, 0},
+        (Function) {&chance, .arg1.f = 1.f / 180.f, 0},
         (Function) {&addMove, .arg1.p = &player2, .arg2.p = &shNeutralB});
 }
 

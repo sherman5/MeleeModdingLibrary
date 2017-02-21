@@ -9,24 +9,6 @@
 
 #include "gctypes.h"
 
-#ifdef PAL
-    
-#error random.h not compatible with PAL
-
-#else
-
-/** address that holds a random 32-bit seed in melee */
-#define RAND_ADDRESS 0x804D5F90
-
-#endif
-
-/**
- * @brief Generate random 32-bit value.
- *
- * @return Random 32-bit @c integer    
-*/
-u32 randUint32(void);
-
 /**
  * @brief Generate random number in [0,1].
  *

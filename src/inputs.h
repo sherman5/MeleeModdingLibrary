@@ -26,9 +26,9 @@ typedef struct
 } Move;
 
 /** flags */
-#define NO_FLAGS    0b00000000
-#define JUMPSQUAT   0b00000001
-#define SH_LENGTH   0b00000010
+#define NO_FLAGS    0
+#define JUMPSQUAT   (1 << 0)
+#define SH_LENGTH   (1 << 1)
 
 #define RELEASE 0x0000
 #define STICK_ANGLE(x) ((((u8) (((x) / 360.f) * 255.f)) << 8) & 0xFF00)
