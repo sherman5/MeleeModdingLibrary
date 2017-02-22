@@ -67,7 +67,8 @@ void print(const char* str)
         for (unsigned i = 0; i < strLines; ++i)
         {
             memset(stream + numLines, 0, sizeof(MenuLine));
-            strncpy((char*) (stream + numLines), str + LINE_SIZE * i, LINE_SIZE);
+            strncpy((char*) (stream + numLines), str + LINE_SIZE * i,
+                LINE_SIZE);
             numLines++;
         }
 

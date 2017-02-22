@@ -54,6 +54,7 @@ char* itoa(s32 n, char* s)
     if (sign < 0) {s[i++] = '-';}
     s[i] = '\0';
     reverse(s);
+    return s;
 }
 
 /*

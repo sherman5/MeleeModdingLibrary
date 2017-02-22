@@ -43,12 +43,23 @@ CFLAGS = -Wall -Wextra -std=c99 -fno-builtin \
 SECTIONS = .comment
 
 # library targets (need to set optimizer flag)
-libmml.a : $(OBJS_O0)
+libmml.a : $(OBJS_O0) 
 libmml_O1.a : $(OBJS_O1)
 libmml_O2.a : $(OBJS_O2)
-libmml_O3.a : $(OBJS_O3)
-libmml_Os.a : $(OBJS_Os)
+libmml_O3.a : $(OBJS_O3) 
+libmml_Os.a : $(OBJS_Os) 
 libmml_PAL.a : $(OBJS_PAL)
+
+$(OBJS_O0) : | build_dir
+$(OBJS_O1) : | build_dir
+$(OBJS_O2) : | build_dir
+$(OBJS_O3) : | build_dir
+$(OBJS_Os) : | build_dir
+$(OBJS_PAL) : | build_dir
+
+.PHONY : build_dir
+build_dir : 
+	mkdir -p build
 
 libs : $(LIBS)
 
@@ -63,26 +74,38 @@ libs : $(LIBS)
 build/%_O0.o : src/%.c
 	$(CC) $(CFLAGS) -O0 -c -MMD $< -o $@
 	$(OBJCPY) -R $(SECTIONS) $@
+	$(OBJCPY) --rename-section .rodata=$*.rodata $@
+	$(OBJCPY) --rename-section .gnu.attributes=$*.gnu.attributes $@
 
 build/%_O1.o : src/%.c
 	$(CC) $(CFLAGS) -O1 -c -MMD $< -o $@
 	$(OBJCPY) -R $(SECTIONS) $@
+	$(OBJCPY) --rename-section .rodata=$*.rodata $@
+	$(OBJCPY) --rename-section .gnu.attributes=$*.gnu.attributes $@
 
 build/%_O2.o : src/%.c
 	$(CC) $(CFLAGS) -O2 -c -MMD $< -o $@
 	$(OBJCPY) -R $(SECTIONS) $@
+	$(OBJCPY) --rename-section .rodata=$*.rodata $@
+	$(OBJCPY) --rename-section .gnu.attributes=$*.gnu.attributes $@
 
 build/%_O3.o : src/%.c
 	$(CC) $(CFLAGS) -O3 -c -MMD $< -o $@
 	$(OBJCPY) -R $(SECTIONS) $@
+	$(OBJCPY) --rename-section .rodata=$*.rodata $@
+	$(OBJCPY) --rename-section .gnu.attributes=$*.gnu.attributes $@
 
 build/%_Os.o : src/%.c
 	$(CC) $(CFLAGS) -Os -c -MMD $< -o $@
 	$(OBJCPY) -R $(SECTIONS) $@
+	$(OBJCPY) --rename-section .rodata=$*.rodata $@
+	$(OBJCPY) --rename-section .gnu.attributes=$*.gnu.attributes $@
 
 build/%_PAL.o : src/%.c
 	$(CC) $(CFLAGS) -O1 -DPAL -c -MMD $< -o $@
 	$(OBJCPY) -R $(SECTIONS) $@
+	$(OBJCPY) --rename-section .rodata=$*.rodata $@
+	$(OBJCPY) --rename-section .gnu.attributes=$*.gnu.attributes $@
 
 # target for building the distribution
 .PHONY : tar zip
@@ -102,7 +125,7 @@ zip :
 
 # extract dist to folder
 untar : 
-	mkdir -p $(VERSION) && \
+	mkdir -p $(VERSION)
 	tar -xf $(VERSION).tar.gz -C $(VERSION)
 
 # test targets
@@ -145,6 +168,14 @@ test_string : $(LIBS)
 
 test_system : $(LIBS)
 	wiimake $(ISO_FILE) tests/testSystem.ini $(MAKE_FLAGS)
+
+# tutorial targets
+.PHONY : tutorial_SimpleTestProgram
+
+tutorial_SimpleTestProgram : dist
+	cd $(VERSION)/tutorials/SimpleTestProgram && \
+	wiimake ../../../$(ISO_FILE) SimpleTestProgram.ini $(MAKE_FLAGS) && \
+	cd ../../..
 
 # clean targets
 .PHONY : clean clean_libs clean_deps clean_objects clean_dist clean_tests

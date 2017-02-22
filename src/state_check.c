@@ -5,8 +5,6 @@
 #include "gctypes.h"
 #include "logic.h"
 
-static float* fptr = (float*) 0x80001800;
-
 bool offstage(FunctionArg player)
 {
     return fabs(gameState.playerData[player.u]->coordinates.x)
@@ -15,13 +13,5 @@ bool offstage(FunctionArg player)
 
 bool chance(FunctionArg prob)
 {
-/*    if (fptr < (float*) 0x80002400)
-    {
-        *fptr = rand();
-        return *(fptr++) < prob.f;
-    }
-    else
-    {*/
-        return rand() < prob.f;
-    //}
+    return rand() < prob.f;
 }

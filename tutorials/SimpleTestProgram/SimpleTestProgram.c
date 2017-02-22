@@ -4,29 +4,29 @@
 #include <mml/inputs.h>
 #include <mml/gctypes.h>
 
-static char heap[10000];
-static bool initialized = false;
+static char heap[15000];
+static bool init_run = false;
 
-AI player2 = {.port = 2, .active = false, .characters = FALCO};
+AI player2 = {.port = 2, .active = false, .characters = FALCO | FOX};
 
-void _init()
+void init()
 {
     initHeap(heap, heap + sizeof(heap));
-    initialized = true;
+    init_run = true;
 }
 
 void loadDefaultLogic()
 {
     addLogic(&player2,
-        (Function) {&chance, .arg1.f = 1.f / 180.f, 0},
+        (Function) {&chance, .arg1.f = 1.f / 120.f, 0},
         (Function) {&addMove, .arg1.p = &player2, .arg2.p = &shNeutralB});
 }
 
 void _main()
 {
-    if (!initialized) { _init();}
+    if (!init_run) { init(); }
 
-    if (player2.active && needLogic(&player2)) { loadDefaultLogic();}
+    if (player2.active && needLogic(&player2)) { loadDefaultLogic(); }
 
     updateAI(&player2);
 }
