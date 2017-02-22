@@ -25,6 +25,5 @@ var searchData=
   ['strn_5fcpy_5ffptr',['STRN_CPY_FPTR',['../native__functions_8h.html#a3954c00ea816922953bb6501aff5c128',1,'native_functions.h']]],
   ['strncmp',['strncmp',['../string_8h.html#a6666865e6caf66fd05d4b8bd6c074cd2',1,'string.h']]],
   ['strncpy',['strncpy',['../string_8h.html#ac25b4990403370b02ac7f8403a6b3230',1,'string.h']]],
-  ['strtoul',['strtoul',['../string_8h.html#ae1add8692c1c51bc8b456e762a8195e6',1,'string.h']]],
   ['system_2eh',['system.h',['../system_8h.html',1,'']]]
 ];

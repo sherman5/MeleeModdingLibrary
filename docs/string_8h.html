@@ -124,10 +124,8 @@ Functions</h2></td></tr>
 <tr class="memitem:a008e171a518fe0e0352f31b245e03875"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8h.html#a008e171a518fe0e0352f31b245e03875">strlen</a> (const char *str)</td></tr>
 <tr class="memdesc:a008e171a518fe0e0352f31b245e03875"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get string length.  <a href="#a008e171a518fe0e0352f31b245e03875">More...</a><br /></td></tr>
 <tr class="separator:a008e171a518fe0e0352f31b245e03875"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae1add8692c1c51bc8b456e762a8195e6"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8h.html#ae1add8692c1c51bc8b456e762a8195e6">strtoul</a> (const char *str, char **endptr, int base)</td></tr>
-<tr class="separator:ae1add8692c1c51bc8b456e762a8195e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac69eff0f5bcf633536d841d2b6ae432e"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8h.html#ac69eff0f5bcf633536d841d2b6ae432e">itoa</a> (int32_t value, char *str, int base)</td></tr>
-<tr class="separator:ac69eff0f5bcf633536d841d2b6ae432e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35421824dcbf91c218555d394466a4cc"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8h.html#a35421824dcbf91c218555d394466a4cc">itoa</a> (s32 n, char *s)</td></tr>
+<tr class="separator:a35421824dcbf91c218555d394466a4cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a756c9204a58aa6f5c4923377c89f7088"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8h.html#a756c9204a58aa6f5c4923377c89f7088">memcpy</a> (void *destination, const void *source, size_t num)</td></tr>
 <tr class="memdesc:a756c9204a58aa6f5c4923377c89f7088"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy block of memory.  <a href="#a756c9204a58aa6f5c4923377c89f7088">More...</a><br /></td></tr>
 <tr class="separator:a756c9204a58aa6f5c4923377c89f7088"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -141,27 +139,21 @@ Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Handle all string operations. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="ac69eff0f5bcf633536d841d2b6ae432e"></a>
+<a class="anchor" id="a35421824dcbf91c218555d394466a4cc"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">char* itoa </td>
           <td>(</td>
-          <td class="paramtype">int32_t&#160;</td>
-          <td class="paramname"><em>value</em>, </td>
+          <td class="paramtype">s32&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>str</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>base</em>&#160;</td>
+          <td class="paramname"><em>s</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -171,14 +163,12 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Convert integer to string</p>
-<p>Converts an integer value to a null-terminated string using the specified <code>base</code> and stores the result in the array given by <code>str</code>.</p>
-<p>If <code>base</code> is 10 and value is negative, the resulting string is preceded with a minus sign (-). With any other base, value is always considered <code>unsigned</code>.</p>
+<p>Converts an integer value to a null-terminated string using base 10 and stores the result in the array given by <code>str</code>.</p>
 <p><code>str</code> should be an array long enough to contain any possible value, i.e. 33 bits in a 32-bit platform.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">value</td><td>- Value to be converted to a string. </td></tr>
-    <tr><td class="paramname">str</td><td>- Array in memory where to store the resulting null-terminated string. </td></tr>
-    <tr><td class="paramname">base</td><td>- Numerical base used to represent the value as a string, between 2 and 36, where 10 means decimal base, 16 hexadecimal, 8 octal, and 2 binary.</td></tr>
+    <tr><td class="paramname">str</td><td>- Array in memory where to store the resulting null-terminated string.</td></tr>
   </table>
   </dd>
 </dl>
@@ -645,50 +635,6 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>destination is returned.</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a href="http://www.cplusplus.com/reference/cstring/strncpy/">http://www.cplusplus.com/reference/cstring/strncpy/</a> </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ae1add8692c1c51bc8b456e762a8195e6"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint32_t strtoul </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>str</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char **&#160;</td>
-          <td class="paramname"><em>endptr</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>base</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>@ brief Convert string to unsigned long integer</p>
-<p>Parses the C-string <code>str</code>, interpreting its content as an integral number of the specified <code>base</code>, which is returned as an value of type <code>unsigned</code> <code>long</code> <code>int</code>.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">str</td><td>- C-string containing the representation of an integral number. </td></tr>
-    <tr><td class="paramname">endptr</td><td>- Reference to an object of type <code>char*</code>, whose value is set by the function to the next character in <code>str</code> after the numerical value. This parameter can also be a null pointer, in which case it is not used. </td></tr>
-    <tr><td class="paramname">base</td><td>- Numerical base (radix) that determines the valid characters and their interpretation.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>On success, the function returns the converted integral number as an unsigned long int value. If no valid conversion could be performed, a zero value is returned.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a href="http://www.cplusplus.com/reference/cstdlib/strtoul/">http://www.cplusplus.com/reference/cstdlib/strtoul/</a> </dd></dl>
 
 </div>
 </div>

@@ -10,6 +10,5 @@ var searchData=
   ['strcpy',['strcpy',['../string_8h.html#ac137d536ff0037b3856083cb8a1c19a7',1,'string.h']]],
   ['strlen',['strlen',['../string_8h.html#a008e171a518fe0e0352f31b245e03875',1,'string.h']]],
   ['strncmp',['strncmp',['../string_8h.html#a6666865e6caf66fd05d4b8bd6c074cd2',1,'string.h']]],
-  ['strncpy',['strncpy',['../string_8h.html#ac25b4990403370b02ac7f8403a6b3230',1,'string.h']]],
-  ['strtoul',['strtoul',['../string_8h.html#ae1add8692c1c51bc8b456e762a8195e6',1,'string.h']]]
+  ['strncpy',['strncpy',['../string_8h.html#ac25b4990403370b02ac7f8403a6b3230',1,'string.h']]]
 ];

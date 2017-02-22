@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['x',['x',['../struct_point.html#ad0da36b2558901e21e7a30f6c227a45e',1,'Point']]]
+  ['writecontroller',['writeController',['../controller_8h.html#a37af68e9661fd3ccc38a42f000d3f763',1,'controller.c']]]
 ];

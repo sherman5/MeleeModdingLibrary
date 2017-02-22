@@ -177,6 +177,11 @@ tutorial_SimpleTestProgram : dist
 	wiimake ../../../$(ISO_FILE) SimpleTestProgram.ini $(MAKE_FLAGS) && \
 	cd ../../..
 
+# documentation target
+.PHONY : docs
+docs :
+	doxygen doxygen.ini
+
 # clean targets
 .PHONY : clean clean_libs clean_deps clean_objects clean_dist clean_tests
 
