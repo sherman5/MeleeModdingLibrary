@@ -29,6 +29,12 @@ void _main(void)
     {
         float probs[5] = {0.1, 0.3, 0.4, 0.1, 0.1};
 
+        f32* a = (f32*) 0x80001800;
+        for (; a < (f32*) 0x80002400; a++)
+        {
+            *a = rand();
+        }
+
         for (unsigned i = 0; i < 10000; ++i)
         {
             REQUIRE(rand() >= 0);

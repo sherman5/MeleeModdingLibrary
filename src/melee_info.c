@@ -17,7 +17,7 @@ const u8 _sh_length[25] =
     0, //DK
     32, //FALCON
     0, //GANON
-    30, //FALCO
+    32, //FALCO
     23, //FOX
     0, //NESS
     0, //ICE_CLIMBERS

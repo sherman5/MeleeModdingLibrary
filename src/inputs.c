@@ -2,18 +2,18 @@
 
 RawInput raw_shNeutralB[4] = 
 {
-    {0, NO_FLAGS, X_BUTTON},
-    {-1, JUMPSQUAT, RELEASE},
-    {11, JUMPSQUAT, B_BUTTON},
-    {0, JUMPSQUAT | SH_LENGTH, RELEASE}
+    {X_BUTTON, 0, NO_FLAGS},
+    {RELEASE, -1, JUMPSQUAT},
+    {B_BUTTON, 11, JUMPSQUAT},
+    {RELEASE, 0, JUMPSQUAT | SH_LENGTH}
 };
 
 Move shNeutralB = {.inputs = raw_shNeutralB, .size = 4};
 
 RawInput raw_shortHop[2] = 
 {
-    {0, NO_FLAGS, X_BUTTON},
-    {-1, JUMPSQUAT, RELEASE}
+    {X_BUTTON, 0, NO_FLAGS},
+    {RELEASE, -1, JUMPSQUAT}
 };
 
 Move shortHop = {.inputs = raw_shortHop, .size = 2};

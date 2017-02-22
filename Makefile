@@ -119,7 +119,7 @@ test_ai : $(LIBS)
 test_controller : $(LIBS)
 	wiimake $(ISO_FILE) tests/testController.ini $(MAKE_FLAGS)
 
-test_gamestate : $(LIBS)
+test_game_state : $(LIBS)
 	wiimake $(ISO_FILE) tests/testGameState.ini $(MAKE_FLAGS)
 
 test_inputs : $(LIBS)
@@ -128,7 +128,7 @@ test_inputs : $(LIBS)
 test_math : $(LIBS)
 	wiimake $(ISO_FILE) tests/testMath.ini $(MAKE_FLAGS)
 
-test_meleeinfo : $(LIBS)
+test_melee_info : $(LIBS)
 	wiimake $(ISO_FILE) tests/testMeleeInfo.ini $(MAKE_FLAGS)
 
 test_print : $(LIBS)
@@ -136,6 +136,9 @@ test_print : $(LIBS)
 
 test_random : $(LIBS)
 	wiimake $(ISO_FILE) tests/testRandom.ini $(MAKE_FLAGS)
+
+test_state_check : $(LIBS)
+	wiimake $(ISO_FILE) tests/testStateCheck.ini $(MAKE_FLAGS)
 
 test_string : $(LIBS)
 	wiimake $(ISO_FILE) tests/testString.ini $(MAKE_FLAGS)

@@ -47,13 +47,13 @@ typedef struct
 
 typedef struct player
 {
+    Controller controller;
     ControllerInput* inputQueue;
     Logic* logicQueue;
     size_t logicSize, inputSize;
     size_t logicCapacity;
     u32 characters;
-    u8 port;
-    Controller controller;
+    u32 port;
     bool active;
         
 } AI;

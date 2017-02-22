@@ -36,11 +36,11 @@ static void checkLogic(AI* ai)
         {
             ai->logicSize = 0;
 
-            void (*a)(u32, u32)
+            void (*a)(FunctionArg, FunctionArg)
                 = ai->logicQueue[i].action.function;
 
-            a(ai->logicQueue[i].action.arg1.u,
-                ai->logicQueue[i].action.arg2.u);
+            a(ai->logicQueue[i].action.arg1,
+                ai->logicQueue[i].action.arg2);
 
             return;
         }

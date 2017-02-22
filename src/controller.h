@@ -69,6 +69,6 @@ void setController(Controller* controller, u16 state);
  *
  * @return None
  */
-void writeController(Controller* controller, u8 port);
+void writeController(Controller* controller, u32 port);
 
 #endif

@@ -18,8 +18,6 @@ extern int      (*strncmp) (const char*, const char*, size_t);
 extern char*    (*strcpy)  (char*, const char*);
 extern char*    (*strncpy) (char*, const char*, size_t);
 extern size_t   (*strlen)  (const char*);
-extern u32      (*strtoul) (const char*, char**, int);
-extern char*    (*itoa)    (int32_t, char*, int);
 
 #if 0
 /// @endcond
@@ -219,40 +217,16 @@ char* strncpy(char* destination, const char* source, size_t num);
  */
 size_t strlen(const char* str);
 
-/**
- * @ brief Convert string to unsigned long integer
- *
- * Parses the C-string @p str, interpreting its content as an integral
- * number of the specified @p base, which is returned as an value of type
- * @c unsigned @c long @c int.
- *
- * @param str - C-string containing the representation of an integral
- * number.
- * @param endptr - Reference to an object of type @c char*, whose value is
- *  set by the function to the next character in @p str after the numerical
- * value. This parameter can also be a null pointer, in which case it is
- * not used.
- * @param base - Numerical base (radix) that determines the valid
- * characters and their interpretation.
- *
- * @return On success, the function returns the converted integral number
- * as an unsigned long int value. If no valid conversion could be
- * performed, a zero value is returned. 
- *
- * @see http://www.cplusplus.com/reference/cstdlib/strtoul/
- */
-uint32_t strtoul(const char* str, char** endptr, int base);
+/** @cond */
+#endif
+/** @endcond */
 
 /**
  * Convert integer to string
  * 
- * Converts an integer value to a null-terminated string using the
- * specified @p base and stores the result in the array given
+ * Converts an integer value to a null-terminated string using
+ * base 10 and stores the result in the array given
  * by @p str.
- *
- * If @p base is 10 and value is negative, the resulting string is
- * preceded with a minus sign (-). With any other base, value is
- * always considered @c unsigned.
  *
  * @p str should be an array long enough to contain any possible value, 
  * i.e. 33 bits in a 32-bit platform.
@@ -260,20 +234,13 @@ uint32_t strtoul(const char* str, char** endptr, int base);
  * @param value - Value to be converted to a string.
  * @param str - Array in memory where to store the resulting
  * null-terminated string.
- * @param base - Numerical base used to represent the value as a string,
- * between 2 and 36, where 10 means decimal base, 16 hexadecimal,
- * 8 octal, and 2 binary.
  *
  * @return A pointer to the resulting null-terminated string,
  * same as parameter @p str. 
  *
  * @see http://www.cplusplus.com/reference/cstdlib/itoa/
  */
-char* itoa(int32_t value, char* str, int base);
-
-/** @cond */
-#endif
-/** @endcond */
+char* itoa(s32 n, char* s);
 
 /**
  * @brief Copy block of memory

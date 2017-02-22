@@ -48,7 +48,7 @@ void setController(Controller* controller, u16 state)
     }
 }
 
-void writeController(Controller* controller, u8 port)
+void writeController(Controller* controller, u32 port)
 {
     void* primary = PRIMARY_CONTROLLER(port);
     float* secondary = (float*) SECONDARY_CONTROLLER(port);
