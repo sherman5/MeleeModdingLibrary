@@ -9,6 +9,7 @@
 
 #include "gctypes.h"
 #include "math.h"
+#include "action_state.h"
 
 typedef enum
 {
@@ -56,31 +57,34 @@ typedef struct
     char pad4[0xc8 - 0xb0 - sizeof(Point)];
     Point deltaCoordinates;
 
-    char pad5[0xe3 - 0xc8 - sizeof(Point)];
+    char pad5[0xe0 - 0xc8 - sizeof(Point)];
     bool inAir;
 
-    char pad6[0x148 - 0xe3 - sizeof(bool)];
+    char pad6[0x148 - 0xe0 - sizeof(bool)];
     float jumpSquat;
 
-    char pad7[0x1830 - 0xe3 - sizeof(float)];
+    char pad7[0x1830 - 0x148 - sizeof(float)];
     float percent;
 
-    char pad8[0x1848 - 0x1830 - sizeof(float)];
+    char pad8[0x1844 - 0x1830 - sizeof(float)];
+    float damageDirection;
+
+    char pad9[0x1848 - 0x1844 - sizeof(float)];
     u32 knockbackAngle;
 
-    char pad9[0x195c - 0x1848 - sizeof(u32)];
+    char pad10[0x195c - 0x1848 - sizeof(u32)];
     float hitlag;
 
-    char pad10[0x1968 - 0x195c - sizeof(float)];
+    char pad11[0x1968 - 0x195c - sizeof(float)];
     u8 jumpsUsed;
 
-    char pad11[0x1998 - 0x1968 - sizeof(u8)];
+    char pad12[0x1998 - 0x1968 - sizeof(u8)];
     float shieldSize;
     
-    char pad12[0x1a9b - 0x1998 - sizeof(float)];
+    char pad13[0x1a9b - 0x1998 - sizeof(float)];
     u8 aiLevel;
 
-    char pad13[0x2340 - 0x1a9b - sizeof(u8)];
+    char pad14[0x2340 - 0x1a9b - sizeof(u8)];
     float hitstun;
 
 } PlayerData;
@@ -94,7 +98,7 @@ typedef struct
 
 #define DEFAULT_GAMESTATE {{0, 0, 0, 0, 0}, DEFAULT_STAGE}
 
-extern GameState gameState;
+extern GameState _gameState;
 
 bool inGame();
 void updateGameState();

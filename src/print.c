@@ -25,6 +25,8 @@ typedef struct debug_menu_slot
 
 #define MENU_SLOT(t, l) {(t), {0}, (l), {0}}
 
+bool _errorState = false;
+
 static MenuLine* stream = NULL;
 static DebugMenuSlot* menu = NULL;
 static size_t numLines = 0, maxLines = 0;
@@ -35,7 +37,9 @@ static DebugMenuSlot defaultMenu[2] =
     {MENU_SLOT(1, &defaultLine), MENU_SLOT(9, NULL)};
 
 void print(const char* str)
-{
+{   
+    if (_errorState) { return; }
+
     /* calculate number of lines this string will use */
     size_t strLines = 1 + strlen(str) / LINE_SIZE;
 
@@ -83,6 +87,13 @@ void print(const char* str)
         DebugMenuSlot tempSlot = MENU_SLOT(9, NULL);
         memcpy(menu + numLines, &tempSlot, sizeof(DebugMenuSlot));
     }
+}
+
+void error(const char* errMessage)
+{
+    _errorState = true;
+    strncpy(defaultLine.text, errMessage, LINE_SIZE);
+    numLines = 0;
 }
 
 void clear()

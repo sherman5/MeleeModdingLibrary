@@ -26,12 +26,14 @@ typedef struct
     
 } Function;
 
-
+//TODO: add random option to condition
 typedef struct
 {
     Function condition;
     Function action;
 
 } Logic;
+
+#define LOGIC(c, a) (Logic) {(Function) c, (Function) a}
 
 #endif

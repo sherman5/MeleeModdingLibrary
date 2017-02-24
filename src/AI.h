@@ -58,7 +58,7 @@ typedef struct player
         
 } AI;
 
-void addLogic(AI* ai, Function condition, Function action);
+void addLogic(AI* ai, Logic* logic);
 
 void addMove(AI* ai, Move* move);
 
@@ -69,5 +69,7 @@ void initAI(AI* ai);
 void endGame(AI* ai);
 
 bool needLogic(AI* ai);
+
+void clearAI(AI* ai);
 
 #endif

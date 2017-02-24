@@ -28,7 +28,6 @@
 #define CSTICK_DOWN   0x0c
 #define CSTICK_LEFT   0x0d
 #define CSTICK_RIGHT  0x0e
-
 #define NO_STICK      0x00
 #define TILT_STICK    0x10
 #define FULL_STICK    0x20
@@ -44,6 +43,9 @@ typedef struct
 
     f32 stickX; /**< x coordinate of control stick */
     f32 stickY; /**< y coordinate of control stick */
+
+    f32 CstickX; /**< x coordinate of c-stick */
+    f32 CstickY; /**< y coordinate of c-stick */
 
 } Controller;
 
@@ -69,6 +71,6 @@ void setController(Controller* controller, u16 state);
  *
  * @return None
  */
-void writeController(Controller* controller, u32 port);
+void writeController(Controller* controller, u32 port, bool pData);
 
 #endif

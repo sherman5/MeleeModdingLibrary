@@ -15,7 +15,7 @@ src/math.c src/print.c src/random.c src/state_check.c \
 src/string.c src/system.c src/melee_info.c src/version.c
 
 HEADERS = $(SRCS:.c=.h) src/gctypes.h src/native_functions.h \
-src/unit_test.h src/logic.h
+src/unit_test.h src/logic.h src/action_state.h
 
 # object files and their dependencies
 OBJS_O0 = $(SRCS:src/%.c=build/%_O0.o)
@@ -50,17 +50,6 @@ libmml_O3.a : $(OBJS_O3)
 libmml_Os.a : $(OBJS_Os) 
 libmml_PAL.a : $(OBJS_PAL)
 
-$(OBJS_O0) : | build_dir
-$(OBJS_O1) : | build_dir
-$(OBJS_O2) : | build_dir
-$(OBJS_O3) : | build_dir
-$(OBJS_Os) : | build_dir
-$(OBJS_PAL) : | build_dir
-
-.PHONY : build_dir
-build_dir : 
-	mkdir -p build
-
 libs : $(LIBS)
 
 # command to build the libraries
@@ -72,44 +61,53 @@ libs : $(LIBS)
 
 # rule to build object files and remove unneccesary sections
 build/%_O0.o : src/%.c
+	mkdir -p build
 	$(CC) $(CFLAGS) -O0 -c -MMD $< -o $@
 	$(OBJCPY) -R $(SECTIONS) $@
 	$(OBJCPY) --rename-section .rodata=$*.rodata $@
 	$(OBJCPY) --rename-section .gnu.attributes=$*.gnu.attributes $@
 
 build/%_O1.o : src/%.c
+	mkdir -p build
 	$(CC) $(CFLAGS) -O1 -c -MMD $< -o $@
 	$(OBJCPY) -R $(SECTIONS) $@
 	$(OBJCPY) --rename-section .rodata=$*.rodata $@
 	$(OBJCPY) --rename-section .gnu.attributes=$*.gnu.attributes $@
 
 build/%_O2.o : src/%.c
+	mkdir -p build
 	$(CC) $(CFLAGS) -O2 -c -MMD $< -o $@
 	$(OBJCPY) -R $(SECTIONS) $@
 	$(OBJCPY) --rename-section .rodata=$*.rodata $@
 	$(OBJCPY) --rename-section .gnu.attributes=$*.gnu.attributes $@
 
 build/%_O3.o : src/%.c
+	mkdir -p build
 	$(CC) $(CFLAGS) -O3 -c -MMD $< -o $@
 	$(OBJCPY) -R $(SECTIONS) $@
 	$(OBJCPY) --rename-section .rodata=$*.rodata $@
 	$(OBJCPY) --rename-section .gnu.attributes=$*.gnu.attributes $@
 
 build/%_Os.o : src/%.c
+	mkdir -p build
 	$(CC) $(CFLAGS) -Os -c -MMD $< -o $@
 	$(OBJCPY) -R $(SECTIONS) $@
 	$(OBJCPY) --rename-section .rodata=$*.rodata $@
 	$(OBJCPY) --rename-section .gnu.attributes=$*.gnu.attributes $@
 
 build/%_PAL.o : src/%.c
+	mkdir -p build
 	$(CC) $(CFLAGS) -O1 -DPAL -c -MMD $< -o $@
 	$(OBJCPY) -R $(SECTIONS) $@
 	$(OBJCPY) --rename-section .rodata=$*.rodata $@
 	$(OBJCPY) --rename-section .gnu.attributes=$*.gnu.attributes $@
 
 # target for building the distribution
-.PHONY : tar zip
-dist : | clean_dist libs tar zip untar
+.PHONY : dist tar zip untar
+dist : libs
+	$(MAKE) clean_dist
+	$(MAKE) tar
+	$(MAKE) untar
 
 # build the tar.gz version of the distribution
 tar : 
@@ -175,6 +173,16 @@ test_system : $(LIBS)
 tutorial_SimpleTestProgram : dist
 	cd $(VERSION)/tutorials/SimpleTestProgram && \
 	wiimake ../../../$(ISO_FILE) SimpleTestProgram.ini $(MAKE_FLAGS) && \
+	cd ../../..
+
+tutorial_Teching : dist
+	cd $(VERSION)/tutorials/Teching && \
+	wiimake ../../../$(ISO_FILE) TechingTutorial.ini $(MAKE_FLAGS) && \
+	cd ../../..
+
+tutorial_DI : dist
+	cd $(VERSION)/tutorials/DI && \
+	wiimake ../../../$(ISO_FILE) DITutorial.ini $(MAKE_FLAGS) && \
 	cd ../../..
 
 # documentation target

@@ -30,7 +30,7 @@ bool inGame()
     return _in_game;
 }
 
-GameState gameState = DEFAULT_GAMESTATE;
+GameState _gameState = DEFAULT_GAMESTATE;
 
 u32 (*playerEntity)(unsigned) = PLAYER_ENTITY_FPTR;
 
@@ -49,93 +49,93 @@ PlayerData* playerData(unsigned id)
 
 void updateGameState()
 {
-    gameState.playerData[1] = playerData(1);
-    gameState.playerData[2] = playerData(2);
-    gameState.playerData[3] = playerData(3);
-    gameState.playerData[4] = playerData(4);
+    _gameState.playerData[1] = playerData(1);
+    _gameState.playerData[2] = playerData(2);
+    _gameState.playerData[3] = playerData(3);
+    _gameState.playerData[4] = playerData(4);
 
-    gameState.stage.name = STAGE_ID;
-    switch (gameState.stage.name)
+    _gameState.stage.name = STAGE_ID;
+    switch (_gameState.stage.name)
     {
         case YOSHIS:
 
-            gameState.stage.ledge = 57.92;
+            _gameState.stage.ledge = 56.f;
 
-            gameState.stage.side.left = 28.0;
-            gameState.stage.side.right = 59.5;
-            gameState.stage.side.height = 23.45;
+            _gameState.stage.side.left = 28.f;
+            _gameState.stage.side.right = 59.5f;
+            _gameState.stage.side.height = 23.45f;
 
-            gameState.stage.top.left = -15.75;
-            gameState.stage.top.right = 15.75;
-            gameState.stage.top.height = 42.0;
+            _gameState.stage.top.left = -15.75f;
+            _gameState.stage.top.right = 15.75f;
+            _gameState.stage.top.height = 42.f;
 
             break;
 
         case FOUNTAIN:
 
-            gameState.stage.ledge = 65.23;
+            _gameState.stage.ledge = 63.34f;
 
-            gameState.stage.side.height = 0.0;
+            _gameState.stage.side.height = 0.f;
 
-            gameState.stage.top.left = -14.25;            
-            gameState.stage.top.right = 14.25;
-            gameState.stage.top.height = 42.75;
+            _gameState.stage.top.left = -14.25f;            
+            _gameState.stage.top.right = 14.25f;
+            _gameState.stage.top.height = 42.75f;
 
             break;
 
         case STADIUM:
 
-            gameState.stage.ledge = 89.67;
+            _gameState.stage.ledge = 87.75f;
 
-            gameState.stage.side.left = 25.0;
-            gameState.stage.side.right = 55.0;
-            gameState.stage.side.height = 25.00;
+            _gameState.stage.side.left = 25.f;
+            _gameState.stage.side.right = 55.f;
+            _gameState.stage.side.height = 25.f;
 
-            gameState.stage.top.height = 0.0;
+            _gameState.stage.top.height = 0.f;
 
             break;
 
         case BATTLEFIELD:
 
-            gameState.stage.ledge = 70.32;
+            _gameState.stage.ledge = 68.4f;
 
-            gameState.stage.side.left = 20.0;
-            gameState.stage.side.right = 57.60;
-            gameState.stage.side.height = 27.20;
+            _gameState.stage.side.left = 20.f;
+            _gameState.stage.side.right = 57.6f;
+            _gameState.stage.side.height = 27.2f;
 
-            gameState.stage.top.left = -18.80;
-            gameState.stage.top.right = 18.80;
-            gameState.stage.top.height = 54.40;
+            _gameState.stage.top.left = -18.8f;
+            _gameState.stage.top.right = 18.8f;
+            _gameState.stage.top.height = 54.4f;
 
             break;
 
         case FINAL:
 
-            gameState.stage.ledge = 88.02;
+            _gameState.stage.ledge = 85.57f;
 
-            gameState.stage.side.height = 0.0;
+            _gameState.stage.side.height = 0.f;
 
-            gameState.stage.top.height = 0.0;
+            _gameState.stage.top.height = 0.f;
 
             break;
 
         case DREAMLAND:
 
-            gameState.stage.ledge = 79.72;
+            _gameState.stage.ledge = 77.27f;
 
-            gameState.stage.side.left = 31.73;
-            gameState.stage.side.right = 61.39;
-            gameState.stage.side.height = 30.14;
+            _gameState.stage.side.left = 31.7f;
+            _gameState.stage.side.right = 63.07f;
+            _gameState.stage.side.height = 30.24f;
 
-            gameState.stage.top.left = -19.02;
-            gameState.stage.top.right = 19.02;
-            gameState.stage.top.height = 51.43;
+            _gameState.stage.top.left = -19.02f;
+            _gameState.stage.top.right = 19.02f;
+            _gameState.stage.top.height = 51.43f;
 
             break;
 
         default:
 
-            gameState.stage.ledge = 0.0;
+            _gameState.stage.ledge = 0.f;
             break;
     }
 }
