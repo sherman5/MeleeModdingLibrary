@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['stickx',['stickX',['../struct_controller.html#ab543b39d52e35c1b2ac483c306974038',1,'Controller']]],
-  ['sticky',['stickY',['../struct_controller.html#a5bf14dfa90edd895ebfbab452f8a955e',1,'Controller']]]
+  ['cstickx',['CstickX',['../struct_controller.html#a7429e9bcd7b9ca314227695941ec3d69',1,'Controller']]],
+  ['csticky',['CstickY',['../struct_controller.html#a1562d14c5ef143bfdff66199226f7b9d',1,'Controller']]]
 ];

@@ -36,7 +36,7 @@ LIBS = libmml.a libmml_O1.a libmml_O2.a libmml_O3.a libmml_Os.a \
 LDFLAGS = 
 AFLAGS = -cvr
 CFLAGS = -Wall -Wextra -std=c99 -fno-builtin \
--fdata-sections -ffunction-sections \
+-fdata-sections -ffunction-sections -Werror \
 -DMAJOR=$(MAJOR) -DMINOR=$(MINOR) -DREVISION=$(REVISION)
 
 # sections to remove from object files
@@ -127,8 +127,9 @@ untar :
 	tar -xf $(VERSION).tar.gz -C $(VERSION)
 
 # test targets
-.PHONY : test_controller test_gamestate test_inputs test_math \
-test_player test_print test_random test_string test_system
+.PHONY : test_ai test_controller test_game_state test_inputs test_math \
+test_melee_info test_print test_random test_state_check test_string \
+test_system
 
 # iso file to inject test code into
 

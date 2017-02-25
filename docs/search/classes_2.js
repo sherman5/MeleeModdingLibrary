@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['function',['Function',['../struct_function.html',1,'']]],
-  ['functionarg',['FunctionArg',['../union_function_arg.html',1,'']]]
+  ['debug_5fmenu_5fslot',['debug_menu_slot',['../structdebug__menu__slot.html',1,'']]]
 ];

@@ -27,5 +27,7 @@ bool hitlagFrames(FunctionArg port, FunctionArg frames);
 bool recoverySituation(FunctionArg port);
 bool fallenDown(FunctionArg port);
 bool hitlagFrame(FunctionArg port, FunctionArg frame);
+bool breakoutFrame(FunctionArg port, FunctionArg frame);
+bool pastFrame(FunctionArg frame);
 
 #endif

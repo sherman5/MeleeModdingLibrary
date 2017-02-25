@@ -15,8 +15,12 @@
 
 extern u32 _mml_version;
 
+#define MML_VERSION_MAJOR       ((_mml_version & MAJOR_MASK) >> 24)
+#define MML_VERSION_MINOR       ((_mml_version & MINOR_MASK) >> 16)
+#define MML_VERSION_REVISION    (_mml_version & REVISION_MASK)
+
 #define MML_VERSION_CHECK(maj, min)) \
-    ((maj == ((_mml_version & MAJOR_MASK) >> 24) \
-    && (min <= ((_mml_version & MINOR_MASK) >> 16))
+    ((maj == MML_VERSION_MAJOR) \
+    && (min <= MML_VERSION_MINOR))
 
 #endif

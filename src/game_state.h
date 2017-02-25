@@ -68,8 +68,6 @@ typedef struct
 
     char pad8[0x1844 - 0x1830 - sizeof(float)];
     float damageDirection;
-
-    char pad9[0x1848 - 0x1844 - sizeof(float)];
     u32 knockbackAngle;
 
     char pad10[0x195c - 0x1848 - sizeof(u32)];
@@ -81,10 +79,13 @@ typedef struct
     char pad12[0x1998 - 0x1968 - sizeof(u8)];
     float shieldSize;
     
-    char pad13[0x1a9b - 0x1998 - sizeof(float)];
+    char pad13[0x1a4c - 0x1998 - sizeof(float)];    
+    float breakoutCountdown;
+
+    char pad14[0x1a9b - 0x1a4c - sizeof(float)];
     u8 aiLevel;
 
-    char pad14[0x2340 - 0x1a9b - sizeof(u8)];
+    char pad15[0x2340 - 0x1a9b - sizeof(u8)];
     float hitstun;
 
 } PlayerData;

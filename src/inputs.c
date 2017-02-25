@@ -39,12 +39,18 @@ RawInput _raw_aPress[2] =
 Move _mv_getUpAttack = {.inputs = _raw_aPress, .size = 2};
 Move _mv_jab = {.inputs = _raw_aPress, .size = 2};
 
-RawInput _raw_DI[2] = 
+RawInput _raw_hitDI[2] = 
 {
     {0, 0, 0},
     {RELEASE, 1, NO_FLAGS}
 };
-Move _mv_DI = {.inputs = _raw_DI, .size = 2};
+Move _mv_hitDI = {.inputs = _raw_hitDI, .size = 2};
+
+RawInput _raw_throwDI[1] = 
+{
+    {0, 0, 0},
+};
+Move _mv_throwDI = {.inputs = _raw_throwDI, .size = 1};
 
 
 

@@ -21,6 +21,7 @@
 #define JUMPS_USED(p)       (_gameState.playerData[p]->jumpsUsed)
 #define SHIELD_SIZE(p)      (_gameState.playerData[p]->shieldSize)
 #define HITSTUN(p)          (_gameState.playerData[p]->hitstun)
+#define BREAKOUT(p)         (_gameState.playerData[p]->breakoutCountdown)
 
 bool offstage(FunctionArg port)
 {
@@ -30,6 +31,11 @@ bool offstage(FunctionArg port)
 bool inHitstun(FunctionArg port)
 {
     return (u32) HITSTUN(port.u) > 0;
+}
+
+bool pastFrame(FunctionArg frame)
+{
+    return CURRENT_FRAME >= frame.u;
 }
 
 bool inHitlag(FunctionArg port)
@@ -123,6 +129,13 @@ bool hitlagFrames(FunctionArg port, FunctionArg frames)
 
 bool recoverySituation(FunctionArg port)
 {
-    return offstage(port) && !inHitstun(port)
-        && !actionStateEq(port, _AS_CliffWait);
+    return offstage(port.u) && !inHitstun(port.u)
+        && !actionStateEq(port.u, _AS_CliffWait);
 }
+
+bool breakoutFrame(FunctionArg port, FunctionArg frame)
+{
+    return (u32) BREAKOUT(port.u) == frame.u;
+}
+
+

@@ -66,10 +66,16 @@ extern Move _mv_getUpAttack;
 extern Move _mv_jab;
 
 /**
- * @brief Input DI
+ * @brief DI from hit
  */
-extern RawInput _raw_DI[2];
-extern Move _mv_DI;
-#define SET_DI_DIR(x) _raw_DI[0] = (RawInput) {FULL_STICK | STICK_ANGLE(x), 0, NO_FLAGS}
+extern RawInput _raw_hitDI[2];
+extern Move _mv_hitDI;
+#define SET_HIT_DI_DIR(x) _raw_hitDI[0] = (RawInput) {FULL_STICK | STICK_ANGLE((x)), 0, NO_FLAGS}
+/**
+ * @brief DI from hit
+ */
+extern RawInput _raw_throwDI[1];
+extern Move _mv_throwDI;
+#define SET_THROW_DI_DIR(x) _raw_throwDI[0] = (RawInput) {FULL_STICK | STICK_ANGLE((x)), 0, NO_FLAGS}
 
 #endif

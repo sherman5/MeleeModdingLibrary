@@ -181,9 +181,9 @@ Functions</h2></td></tr>
 <tr class="memitem:aa98966014bf874807f17e60760047fb9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controller_8h.html#aa98966014bf874807f17e60760047fb9">setController</a> (<a class="el" href="struct_controller.html">Controller</a> *controller, u16 state)</td></tr>
 <tr class="memdesc:aa98966014bf874807f17e60760047fb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the state of the controller.  <a href="#aa98966014bf874807f17e60760047fb9">More...</a><br /></td></tr>
 <tr class="separator:aa98966014bf874807f17e60760047fb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a37af68e9661fd3ccc38a42f000d3f763"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controller_8h.html#a37af68e9661fd3ccc38a42f000d3f763">writeController</a> (<a class="el" href="struct_controller.html">Controller</a> *controller, u32 port)</td></tr>
-<tr class="memdesc:a37af68e9661fd3ccc38a42f000d3f763"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write the state of <code>controller</code> to the memory addresses read by the game.  <a href="#a37af68e9661fd3ccc38a42f000d3f763">More...</a><br /></td></tr>
-<tr class="separator:a37af68e9661fd3ccc38a42f000d3f763"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9bba595c4ae3917ede7a4567147da4c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controller_8h.html#aa9bba595c4ae3917ede7a4567147da4c">writeController</a> (<a class="el" href="struct_controller.html">Controller</a> *controller, u32 port, bool pData)</td></tr>
+<tr class="memdesc:aa9bba595c4ae3917ede7a4567147da4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write the state of <code>controller</code> to the memory addresses read by the game.  <a href="#aa9bba595c4ae3917ede7a4567147da4c">More...</a><br /></td></tr>
+<tr class="separator:aa9bba595c4ae3917ede7a4567147da4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Emulate a player's controller. </p>
@@ -224,7 +224,7 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a37af68e9661fd3ccc38a42f000d3f763"></a>
+<a class="anchor" id="aa9bba595c4ae3917ede7a4567147da4c"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -238,7 +238,13 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">u32&#160;</td>
-          <td class="paramname"><em>port</em>&#160;</td>
+          <td class="paramname"><em>port</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>pData</em>&#160;</td>
         </tr>
         <tr>
           <td></td>

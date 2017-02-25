@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['debug_5fmenu_5fslot',['debug_menu_slot',['../structdebug__menu__slot.html',1,'']]]
+  ['controller',['Controller',['../struct_controller.html',1,'']]],
+  ['controllerinput',['ControllerInput',['../struct_controller_input.html',1,'']]]
 ];

@@ -89,7 +89,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#nested-classes">Data Structures</a> &#124;
 <a href="#define-members">Macros</a> &#124;
-<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">AI.h File Reference</div>  </div>
@@ -109,7 +108,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_controller_input.html">ControllerInput</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structplayer.html">player</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_a_i.html">AI</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
@@ -190,32 +189,23 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>ROY</b>&#160;&#160;&#160;(1 &lt;&lt; 24)</td></tr>
 <tr class="separator:aef8fac1ff47c93ea245a83fb380fbfec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:a1edfe1638f545e6209fa58217d902b46"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1edfe1638f545e6209fa58217d902b46"></a>
-typedef struct <a class="el" href="structplayer.html">player</a>&#160;</td><td class="memItemRight" valign="bottom"><b>AI</b></td></tr>
-<tr class="separator:a1edfe1638f545e6209fa58217d902b46"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a4aee6ec2478962dc7b6286815585ab76"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4aee6ec2478962dc7b6286815585ab76"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>addLogic</b> (<a class="el" href="structplayer.html">AI</a> *ai, <a class="el" href="struct_function.html">Function</a> condition, <a class="el" href="struct_function.html">Function</a> action)</td></tr>
-<tr class="separator:a4aee6ec2478962dc7b6286815585ab76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9388b5a26180841861bd5945e975f09d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9388b5a26180841861bd5945e975f09d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>addLogic</b> (<a class="el" href="struct_a_i.html">AI</a> *ai, <a class="el" href="struct_logic.html">Logic</a> *logic)</td></tr>
+<tr class="separator:a9388b5a26180841861bd5945e975f09d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0b9c97be952c9ff965114fd4e94d8ec7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0b9c97be952c9ff965114fd4e94d8ec7"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>addMove</b> (<a class="el" href="structplayer.html">AI</a> *ai, <a class="el" href="struct_move.html">Move</a> *move)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>addMove</b> (<a class="el" href="struct_a_i.html">AI</a> *ai, <a class="el" href="struct_move.html">Move</a> *move)</td></tr>
 <tr class="separator:a0b9c97be952c9ff965114fd4e94d8ec7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab5787b889bc2bd27dcd837ab0def78b6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab5787b889bc2bd27dcd837ab0def78b6"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>updateAI</b> (<a class="el" href="structplayer.html">AI</a> *ai)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>updateAI</b> (<a class="el" href="struct_a_i.html">AI</a> *ai)</td></tr>
 <tr class="separator:ab5787b889bc2bd27dcd837ab0def78b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a26407f362e6f04fb1950180cde1b2339"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a26407f362e6f04fb1950180cde1b2339"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>initAI</b> (<a class="el" href="structplayer.html">AI</a> *ai)</td></tr>
-<tr class="separator:a26407f362e6f04fb1950180cde1b2339"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa08d926173695e7f3dc600753639fe40"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa08d926173695e7f3dc600753639fe40"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>endGame</b> (<a class="el" href="structplayer.html">AI</a> *ai)</td></tr>
-<tr class="separator:aa08d926173695e7f3dc600753639fe40"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa5c64df07994a7d0514d1bcc36190b4d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa5c64df07994a7d0514d1bcc36190b4d"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>needLogic</b> (<a class="el" href="structplayer.html">AI</a> *ai)</td></tr>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>needLogic</b> (<a class="el" href="struct_a_i.html">AI</a> *ai)</td></tr>
 <tr class="separator:aa5c64df07994a7d0514d1bcc36190b4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4f9a635021c4118c4254b8d49c3b4e0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae4f9a635021c4118c4254b8d49c3b4e0"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>clearAI</b> (<a class="el" href="struct_a_i.html">AI</a> *ai)</td></tr>
+<tr class="separator:ae4f9a635021c4118c4254b8d49c3b4e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Automated player. </p>

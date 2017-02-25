@@ -45,15 +45,16 @@ typedef struct
 
 } ControllerInput;
 
-typedef struct player
+typedef struct
 {
     Controller controller;
     ControllerInput* inputQueue;
     Logic* logicQueue;
     size_t logicSize, inputSize;
-    size_t logicCapacity;
+    size_t logicCapacity, inputCapacity;
     u32 characters;
     u32 port;
+    u32 opponent;
     bool active;
         
 } AI;
@@ -63,10 +64,6 @@ void addLogic(AI* ai, Logic* logic);
 void addMove(AI* ai, Move* move);
 
 void updateAI(AI* ai);
-
-void initAI(AI* ai);
-
-void endGame(AI* ai);
 
 bool needLogic(AI* ai);
 
