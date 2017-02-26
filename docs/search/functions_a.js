@@ -2,7 +2,7 @@ var searchData=
 [
   ['sample',['sample',['../random_8h.html#a0d581c89e06d94c05ede295477b8be9d',1,'random.c']]],
   ['setcontroller',['setController',['../controller_8h.html#aa98966014bf874807f17e60760047fb9',1,'controller.c']]],
-  ['sin',['sin',['../math_8h.html#a15876915492b5aff219d1dd03ad66def',1,'math.h']]],
+  ['sin',['sin',['../math_8h.html#a15876915492b5aff219d1dd03ad66def',1,'math.c']]],
   ['sqrt',['sqrt',['../math_8h.html#a592e5b536e9e1b69f4520e9566521a17',1,'math.h']]],
   ['strcat',['strcat',['../string_8h.html#afca62bf1b7f91b44ba5c2ada54444fc9',1,'string.c']]],
   ['strchr',['strchr',['../string_8h.html#a6f9b74a78f52900b76ed77c50e0c8b3a',1,'string.h']]],

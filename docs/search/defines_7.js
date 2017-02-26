@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['sign',['SIGN',['../math_8h.html#a8c5ff70b6b28cd0157c50a22406f92c4',1,'math.h']]],
   ['sine_5ffptr',['SINE_FPTR',['../native__functions_8h.html#a1c62f1c04c0dc63c640e24773f4c7d9c',1,'native_functions.h']]],
   ['str_5fchr_5ffptr',['STR_CHR_FPTR',['../native__functions_8h.html#a285e91adfc855d47ed5738972772e3ed',1,'native_functions.h']]],
   ['str_5fcmp_5ffptr',['STR_CMP_FPTR',['../native__functions_8h.html#a7efbb06250fce07610cf3c0e93fc1e32',1,'native_functions.h']]],
