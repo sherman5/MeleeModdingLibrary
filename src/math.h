@@ -20,6 +20,9 @@
 /** approximate value of 180 / pi */
 #define RAD_TO_DEG(x) ((x) * 57.2957795131f)
 
+/** sign of value **/
+#define SIGN(x) ((x) < 0 ? -1 : 1)
+
 /**
  * @brief Struct containing the coordinates of a point 
  */

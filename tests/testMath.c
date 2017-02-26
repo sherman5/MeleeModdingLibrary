@@ -5,141 +5,210 @@
 
 UNIT_TEST;
 
-static bool init = false;
-static char heap[21000];
+#define RA_SIZE(x) (sizeof(x) / sizeof(x[0]))
 
-static int tests_run = 0;
+static bool init_run = false;
+static bool tests_run = false;
+static char heap[13000];
 
-void _init(void)
+static float angles[16] = 
+{
+    0.f,
+    30.f,
+    45.f,
+    60.f,
+    90.f,
+    120.f,
+    135.f,
+    150.f,
+    180.f,
+    210.f,
+    225.f,
+    240.f,
+    270.f,
+    300.f,
+    315.f,
+    330.f
+};
+
+static Point pts[16] = 
+{
+    {2.f,     0.f},
+    {1.732f,  1.f},
+    {1.414f,  1.414f},
+    {1.f,     1.732f},
+    {0.f,     2.f},
+    {-1.f,    1.732f},
+    {-1.414f, 1.414f},
+    {-1.732f, 1.f},
+    {-2.f,    0.f},
+    {-1.732f, -1.f},
+    {-1.414f, -1.414f},
+    {-1.f,    -1.732f},
+    {0.f,     -2.f},
+    {1.f,     -1.732f},
+    {1.414f,  -1.414f},
+    {1.732f,  -1.f}
+};
+
+static int tan_indices[14] = {0, 1, 2, 3, 5, 6, 7, 8, 9,
+    10, 11, 13, 14, 15};
+static int asin_indices[8] = {1, 2, 3, 4, 12, 13, 14, 15};
+static int acos_indices[9] = {0, 1, 2, 3, 4, 5, 6, 7, 8};
+static int atan_indices[4] = {0, 1, 2, 3};
+
+static void init(void)
 {
     initHeap(heap, heap + sizeof(heap));
 }
 
 void _main(void)
 {
-    if (!init) { _init(); init = true;}
+    if (!init_run) { init(); init_run = true;}
 
     if (!tests_run)
     {
-        /** TEST SIN **/
-        REQUIRE_FLT_EQ(sin(DEG_TO_RAD(0.0)), 0.0, 0.001);
-        REQUIRE_FLT_EQ(sin(DEG_TO_RAD(30.0)), 0.5, 0.001);
-        REQUIRE_FLT_EQ(sin(DEG_TO_RAD(45.0)), 0.707, 0.001);
-        REQUIRE_FLT_EQ(sin(DEG_TO_RAD(60.0)), 0.866, 0.001);
-        REQUIRE_FLT_EQ(sin(DEG_TO_RAD(90.0)), 1.0, 0.001);
-        REQUIRE_FLT_EQ(sin(DEG_TO_RAD(135.0)), 0.707, 0.001);
-        REQUIRE_FLT_EQ(sin(DEG_TO_RAD(225.0)), -0.707, 0.001);
-        REQUIRE_FLT_EQ(sin(DEG_TO_RAD(315.0)), -0.707, 0.001);
-        REQUIRE_FLT_EQ(sin(DEG_TO_RAD(405.0)), 0.707, 0.001);
-        REQUIRE_FLT_EQ(sin(DEG_TO_RAD(-45.0)), -0.707, 0.001);
-
-        /** TEST COSINE **/
-        REQUIRE_FLT_EQ(cos(DEG_TO_RAD(0.0)), 1.0, 0.001); 
-        REQUIRE_FLT_EQ(cos(DEG_TO_RAD(30.0)), 0.866, 0.001);
-        REQUIRE_FLT_EQ(cos(DEG_TO_RAD(45.0)), 0.707, 0.001);
-        REQUIRE_FLT_EQ(cos(DEG_TO_RAD(60.0)), 0.5, 0.001);
-        REQUIRE_FLT_EQ(cos(DEG_TO_RAD(90.0)), 0.0, 0.001);
-        REQUIRE_FLT_EQ(cos(DEG_TO_RAD(225.0)), -0.707, 0.001); 
-        REQUIRE_FLT_EQ(cos(DEG_TO_RAD(-135.0)), -0.707, 0.001);  
-
-        /** TEST TANGENT **/
-        REQUIRE_FLT_EQ(tan(DEG_TO_RAD(0.0)), 0.0, 0.001); 
-        REQUIRE_FLT_EQ(tan(DEG_TO_RAD(30.0)), 0.577, 0.001);
-        REQUIRE_FLT_EQ(tan(DEG_TO_RAD(45.0)), 1.0, 0.001);
-        REQUIRE_FLT_EQ(tan(DEG_TO_RAD(60.0)), 1.732, 0.001);
-        REQUIRE_FLT_EQ(tan(DEG_TO_RAD(225.0)), 1.0, 0.001);
-        REQUIRE_FLT_EQ(tan(DEG_TO_RAD(-405.0)), -1.0, 0.001);
+        /** TEST SIGN **/
+        REQUIRE(SIGN(-1.5f) == -1);
+        REQUIRE(SIGN(2.4f)  ==  1);
+        REQUIRE(SIGN(-55)   == -1);
+        REQUIRE(SIGN(32)    ==  1);
 
         /** TEST FABS **/
-        REQUIRE_FLT_EQ(fabs(-5.5), 5.5, 0.0001);
-        REQUIRE_FLT_EQ(fabs(17.2), 17.2, 0.0001);
-        REQUIRE_FLT_EQ(fabs(0.0), 0.0, 0.0001);
+        REQUIRE(fabs(-5.5f) == 5.5f);
+        REQUIRE(fabs(17.2f) == 17.2f);
+        REQUIRE(fabs(0.f)   == 0.f);
+
+        /** TEST SQRT (and recipSqrt) **/
+        REQUIRE_FLT_EQ(sqrt(2.f),     1.414f,    0.001f);
+        REQUIRE_FLT_EQ(sqrt(0.f),     0.f,       0.001f);
+        REQUIRE_FLT_EQ(sqrt(0.005f),  0.0707f,   0.001f);
+        REQUIRE_FLT_EQ(sqrt(88.f),    9.3808f,   0.001f);
+        REQUIRE_FLT_EQ(sqrt(54610.f), 233.6878f, 0.001f);
 
         /** TEST FLOOR **/
-        REQUIRE_FLT_EQ(floor(-5.5), -6.0, 0.0001);
-        REQUIRE_FLT_EQ(floor(8.95), 8.0, 0.0001);
-        REQUIRE_FLT_EQ(floor(-0.7), -1.0, 0.0001);
-        REQUIRE_FLT_EQ(floor(0.02), 0.0, 0.0001);
+        REQUIRE(floor(-5.5f) == -6.0f);
+        REQUIRE(floor(8.95f) == 8.f);
+        REQUIRE(floor(-0.7f) == -1.f);
+        REQUIRE(floor(0.02f) == 0.f);
         
         /** TEST CEIL **/
-        REQUIRE_FLT_EQ(ceil(-5.5), -5.0, 0.0001);
-        REQUIRE_FLT_EQ(ceil(8.95), 9.0, 0.0001);
-        REQUIRE_FLT_EQ(ceil(-0.7), 0.0, 0.0001);
-        REQUIRE_FLT_EQ(ceil(0.02), 1.0, 0.0001);
+        REQUIRE(ceil(-5.5f) == -5.f);
+        REQUIRE(ceil(8.95f) == 9.f);
+        REQUIRE(ceil(-0.7f) == 0.f);
+        REQUIRE(ceil(0.02f) == 1.f);
 
         /** TEST IMAX **/
-        REQUIRE(imax(2, 2) == 2);
-        REQUIRE(imax(0, 4) == 4);
-        REQUIRE(imax(-3, 0) == 0);
-        REQUIRE(imax(-1, 1) == 1);
+        REQUIRE(imax(2, 2)   ==  2);
+        REQUIRE(imax(0, 4)   ==  4);
+        REQUIRE(imax(-3, 0)  ==  0);
+        REQUIRE(imax(-1, 1)  ==  1);
         REQUIRE(imax(-4, -1) == -1);
-        REQUIRE(imax(7, 23) == 23);
+        REQUIRE(imax(7, 23)  ==  23);
 
         /** TEST IMIN **/
-        REQUIRE(imin(2, 2) == 2);
-        REQUIRE(imin(0, 4) == 0);
-        REQUIRE(imin(-3, 0) == -3);
-        REQUIRE(imin(-1, 1) == -1);
+        REQUIRE(imin(2, 2)   ==  2);
+        REQUIRE(imin(0, 4)   ==  0);
+        REQUIRE(imin(-3, 0)  == -3);
+        REQUIRE(imin(-1, 1)  == -1);
         REQUIRE(imin(-4, -1) == -4);
-        REQUIRE(imin(7, 23) == 7);
+        REQUIRE(imin(7, 23)  ==  7);
 
         /** TEST FMAX **/
-        REQUIRE_FLT_EQ(fmax(2.3, 2.3), 2.3, 0.001);
-        REQUIRE_FLT_EQ(fmax(0.0, 4.1), 4.1, 0.001);
-        REQUIRE_FLT_EQ(fmax(-3.6, 0.0), 0.0, 0.001);
-        REQUIRE_FLT_EQ(fmax(-1.4, 1.4), 1.4, 0.001);
-        REQUIRE_FLT_EQ(fmax(-4.6, -1.7), -1.7, 0.001);
-        REQUIRE_FLT_EQ(fmax(7.4, 23.4), 23.4, 0.001);
-
+        REQUIRE(fmax(2.3f, 2.3f)   == 2.3f);
+        REQUIRE(fmax(0.f, 4.1f)    == 4.1f);
+        REQUIRE(fmax(7.4f, 23.4f)  == 23.4f);
+        REQUIRE(fmax(-3.6f, 0.f)   == 0.f);
+        REQUIRE(fmax(-1.4f, 1.4f)  == 1.4f);
+        REQUIRE(fmax(-4.6f, -1.7f) == -1.7f);
+        
         /** TEST FMIN **/
-        REQUIRE_FLT_EQ(fmin(2.3, 2.3), 2.3, 0.001);
-        REQUIRE_FLT_EQ(fmin(0.0, 4.1), 0.0, 0.001);
-        REQUIRE_FLT_EQ(fmin(-3.6, 0.0), -3.6, 0.001);
-        REQUIRE_FLT_EQ(fmin(-1.4, 1.4), -1.4, 0.001);
-        REQUIRE_FLT_EQ(fmin(-4.6, -1.7), -4.6, 0.001);
-        REQUIRE_FLT_EQ(fmin(7.4, 23.4), 7.4, 0.001);
+        REQUIRE(fmin(2.3f, 2.3f)   == 2.3f);
+        REQUIRE(fmin(-4.6f, -1.7f) == -4.6f);
+        REQUIRE(fmin(0.f, 4.1f)    == 0.f);
+        REQUIRE(fmin(-3.6f, 0.f)   == -3.6f);
+        REQUIRE(fmin(-1.4f, 1.4f)  == -1.4f);
+        REQUIRE(fmin(7.4f, 23.4f)  == 7.4f);
 
         /** TEST IPOW **/
-        REQUIRE(ipow(0, 5) == 0);
-        REQUIRE(ipow(1, 14) == 1);
-        REQUIRE(ipow(2, 2) == 4);
-        REQUIRE(ipow(3, 3) == 27);
-        REQUIRE(ipow(25, 2) == 625);
-        REQUIRE(ipow(-1, 3) == -1);
-        REQUIRE(ipow(-2, 2) == 4);
+        REQUIRE(ipow(0, 5)   ==  0);
+        REQUIRE(ipow(1, 14)  ==  1);
+        REQUIRE(ipow(2, 2)   ==  4);
+        REQUIRE(ipow(3, 3)   ==  27);
+        REQUIRE(ipow(25, 2)  ==  625);
+        REQUIRE(ipow(-1, 3)  == -1);
+        REQUIRE(ipow(-2, 2)  ==  4);
 
         /** TEST FPOW **/
-        REQUIRE_FLT_EQ(fpow(0.0, 2), 0.0, 0.001);
-        REQUIRE_FLT_EQ(fpow(0.5, 2), 0.25, 0.001);
-        REQUIRE_FLT_EQ(fpow(-1.3, 2), 1.69, 0.001);
-        REQUIRE_FLT_EQ(fpow(-3.4, 3), -39.304, 0.001);
-        REQUIRE_FLT_EQ(fpow(7.2, 4), 2687.3856, 0.001);
-        REQUIRE_FLT_EQ(fpow(1.2, 2.3), 1.44, 0.001);
+        REQUIRE_FLT_EQ(fpow(0.f, 2),     0.f,        0.001f);
+        REQUIRE_FLT_EQ(fpow(0.5f, 2),    0.25f,      0.001f);
+        REQUIRE_FLT_EQ(fpow(-1.3f, 2),   1.69f,      0.001f);
+        REQUIRE_FLT_EQ(fpow(-3.4f, 3),  -39.304f,    0.001f);
+        REQUIRE_FLT_EQ(fpow(7.2f, 4),    2687.3856f, 0.001f);
+        REQUIRE_FLT_EQ(fpow(1.2f, 2.3f), 1.44f,      0.001f);
 
-        /** TEST SQRT **/
-        REQUIRE_FLT_EQ(sqrt(2.0), 1.414, 0.001);
-        REQUIRE_FLT_EQ(sqrt(0.0), 0.0, 0.001);
-        REQUIRE_FLT_EQ(sqrt(0.005), 0.0707, 0.001);
-        REQUIRE_FLT_EQ(sqrt(88.0), 9.3808, 0.001);
-        REQUIRE_FLT_EQ(sqrt(54610.0), 233.6878, 0.001);
+        /** TEST SIN **/
+        float sinERR = 0.f;
+        for (unsigned i = 0; i < RA_SIZE(angles); ++i)
+        {
+            sinERR = fmax(sinERR, fabs(sin(angles[i]) - pts[i].y / 2.f));
+        }
+        REQUIRE(sinERR < 0.01f);
+
+        /** TEST COSINE **/
+        float cosERR = 0.f;
+        for (unsigned i = 0; i < RA_SIZE(angles); ++i)
+        {
+            cosERR = fmax(cosERR, fabs(cos(angles[i]) - pts[i].x / 2.f));
+        }
+        REQUIRE(cosERR < 0.01f);
+
+        /** TEST TANGENT **/
+        float tanERR = 0.f;
+        for (unsigned i = 0; i < RA_SIZE(tan_indices); ++i)
+        {
+            int j = tan_indices[i];
+            float val = pts[j].y / pts[j].x;
+            tanERR = fmax(tanERR, fabs(tan(angles[j]) - val));
+        }
+        REQUIRE(tanERR < 0.01f);
+
+        /** TEST ASIN **/
+        float asinERR = 0.f;
+        for (unsigned i = 0; i < RA_SIZE(asin_indices); ++i)
+        {
+            int j = asin_indices[i];
+            asinERR = fmax(asinERR, fabs(asin(pts[j].y / 2.f) - angles[j]));
+        }
+        REQUIRE(asinERR < 0.1f);
+
+        /** TEST ACOS **/
+        float acosERR = 0.f;
+        for (unsigned i = 0; i < RA_SIZE(acos_indices); ++i)
+        {
+            int j = acos_indices[i];
+            acosERR = fmax(acosERR, fabs(acos(pts[j].x / 2.f) - angles[j]));
+        }
+        REQUIRE(acosERR < 0.1f);
+
+        /** TEST ATAN **/
+        float atanERR = 0.f;
+        for (unsigned i = 0; i < RA_SIZE(atan_indices); ++i)
+        {
+            int j = atan_indices[i];
+            float val = pts[j].y / pts[j].x;
+            atanERR = fmax(atanERR, fabs(atan(val) - angles[j]));
+        }
+        REQUIRE(atanERR < 0.3f);
 
         /** TEST ATAN2 **/
-        REQUIRE_FLT_EQ(atan2(0, -2), DEG_TO_RAD(180.0), 0.01);
-        REQUIRE_FLT_EQ(atan2(1, -sqrt(3)), DEG_TO_RAD(150.0), 0.01);
-        REQUIRE_FLT_EQ(atan2(sqrt(2), -sqrt(2)), DEG_TO_RAD(135.0), 0.01);
-        REQUIRE_FLT_EQ(atan2(sqrt(3), -1), DEG_TO_RAD(120.0), 0.01);
-        REQUIRE_FLT_EQ(atan2(2, 0), DEG_TO_RAD(90.0), 0.01);
-        REQUIRE_FLT_EQ(atan2(sqrt(3), 1), DEG_TO_RAD(60.0), 0.01);
-        REQUIRE_FLT_EQ(atan2(sqrt(2), sqrt(2)), DEG_TO_RAD(45.0), 0.01);
-        REQUIRE_FLT_EQ(atan2(sqrt(1), sqrt(3)), DEG_TO_RAD(30.0), 0.01);
-        REQUIRE_FLT_EQ(atan2(0, 2), DEG_TO_RAD(0.0), 0.01);
-        REQUIRE_FLT_EQ(atan2(-1, sqrt(3)), DEG_TO_RAD(-30.0), 0.01);
-        REQUIRE_FLT_EQ(atan2(-sqrt(2), sqrt(2)), DEG_TO_RAD(-45.0), 0.01);
-        REQUIRE_FLT_EQ(atan2(-sqrt(3), 1), DEG_TO_RAD(-60.0), 0.01);
-        REQUIRE_FLT_EQ(atan2(-2, 0), DEG_TO_RAD(-90.0), 0.01);
-        REQUIRE_FLT_EQ(atan2(-sqrt(3), -1), DEG_TO_RAD(-120.0), 0.01);
-        REQUIRE_FLT_EQ(atan2(-sqrt(2),-sqrt(2)), DEG_TO_RAD(-135.0), 0.01);
-        REQUIRE_FLT_EQ(atan2(-1, -sqrt(3)), DEG_TO_RAD(-150.0), 0.01);
+        float atan2ERR = 0.f;
+        for (unsigned i = 0; i < RA_SIZE(angles); ++i)
+        {
+            atan2ERR = fmax(atan2ERR,
+                fabs(atan2(pts[i].y, pts[i].x) - angles[i]));
+        }
+        REQUIRE(atan2ERR < 0.3f);
 
         /** TEST POINTS **/
         Point origin = {0.0, 0.0};
@@ -155,17 +224,12 @@ void _main(void)
         REQUIRE_FLT_EQ(distance(origin, b), magnitude(b), 0.001);
     
         /** TEST ANGLE **/
-        REQUIRE_FLT_EQ(angle(a, b), -(M_PI - .3805), 0.01);
-        REQUIRE_FLT_EQ(angle(b, a), .3805, 0.01);
+        REQUIRE_FLT_EQ(angle(a, b), 201.93, 0.01);
+        REQUIRE_FLT_EQ(angle(b, a), 21.93, 0.01);
 
-        /** TEST POINTS **/
-        REQUIRE_FLT_EQ(a.x, 3.0, 0.001);
-        REQUIRE_FLT_EQ(a.y, 4.0, 0.001);
-        REQUIRE_FLT_EQ(b.x, -2.0, 0.001);
-        REQUIRE_FLT_EQ(b.y, 2.0, 0.001);
-
+        /** ALL TESTS RUN **/
         END_TEST;
-        tests_run = 1;
+        tests_run = true;
     }
 }
 

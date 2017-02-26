@@ -43,7 +43,7 @@ typedef struct
     u32 frame;
     u16 controller;
 
-} ControllerInput;
+} ControllerInput; // 8 bytes with padding
 
 typedef struct
 {

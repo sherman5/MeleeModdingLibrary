@@ -24,17 +24,12 @@ float ceil(float x)
     return -floor(-x);
 }
 
-s32 imin(s32 a, s32 b)
-{
-    return (a < b ? a : b);
-}
-
 s32 imax(s32 a, s32 b)
 {
     return (a > b ? a : b);
 }
 
-float fmin(float a, float b)
+s32 imin(s32 a, s32 b)
 {
     return (a < b ? a : b);
 }
@@ -42,6 +37,11 @@ float fmin(float a, float b)
 float fmax(float a, float b)
 {
     return (a > b ? a : b);
+}
+
+float fmin(float a, float b)
+{
+    return (a < b ? a : b);
 }
 
 s32 ipow(s16 base, u8 exp)
@@ -74,20 +74,40 @@ float fpow(float base, u8 exp)
     return result;
 }
 
+float sin(float x)
+{
+    float (*native)(float) = SINE_FPTR;
+    return native(DEG_TO_RAD(x));
+}
+
+float cos(float x)
+{
+    float (*native)(float) = COSINE_FPTR;
+    return native(DEG_TO_RAD(x));
+}
+
+float tan(float x)
+{
+    float (*native)(float) = TANGENT_FPTR;
+    return native(DEG_TO_RAD(x));
+}
+
 //http://http.developer.nvidia.com/Cg/asin.html
 float asin(float x)
 {
     float negate = x < 0.f ? 1.f : 0.f;
     x = fabs(x);
-    float ret = -0.0187293;
+    float ret = -0.0187293f;
     ret *= x;
-    ret += 0.0742610;
+    ret += 0.0742610f;
     ret *= x;
-    ret -= 0.2121144;
+    ret -= 0.2121144f;
     ret *= x;
     ret += M_HALF_PI;
-    ret = M_PI * 0.5 - sqrt(1.0 - x) * ret;
-    return ret - 2 * negate * ret;
+    ret = M_PI * 0.5f - sqrt(1.f - x) * ret;
+    ret -= 2 * negate * ret;
+    ret = RAD_TO_DEG(ret);
+    return ret < 0 ? ret + 360.f : ret;
 }
 
 //http://http.developer.nvidia.com/Cg/acos.html
@@ -104,7 +124,7 @@ float acos(float x)
     ret += M_HALF_PI;
     ret *= sqrt(1.f - x);
     ret -= 2 * negate * ret;
-    return negate * M_PI + ret;
+    return RAD_TO_DEG(negate * M_PI + ret);
 }
 
 float atan(float x)
@@ -112,30 +132,26 @@ float atan(float x)
     return atan2(x, 1);
 }
 
-float (*sin)(float x) = SINE_FPTR;
-float (*cos)(float x) = COSINE_FPTR;
-float (*tan)(float x) = TANGENT_FPTR;
-
-
 float atan2(float y, float x)
 {
     float ax = fabs(x);
     float ay = fabs(y);
-    float result;
+    float ret;
 
     if (ay < ax) //first octant
     {
-        result = (ax * ay) / (ax * ax + 0.28125f * ay * ay);
+        ret = (ax * ay) / (ax * ax + 0.28125f * ay * ay);
     }
     else //second octant
     {
-        result = M_PI / 2 - (ax * ay) / (ay * ay + 0.28125f * ax * ax);
+        ret = M_PI / 2 - (ax * ay) / (ay * ay + 0.28125f * ax * ax);
     }
 
-    if (x < 0) { result = M_PI - result;} //reflect around y-axis
-    if (y < 0) { result *= -1;} //reflect around x-axis
+    ret = RAD_TO_DEG(ret);
+    if (x < 0) { ret = 180.f - ret;} //reflect around y-axis
+    if (y < 0) { ret = 360.f - ret;} //reflect around x-axis
 
-    return result;
+    return ret;
 }
 
 float angle(Point a, Point b)

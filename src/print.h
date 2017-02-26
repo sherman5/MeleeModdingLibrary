@@ -31,7 +31,7 @@ void print(const char* str);
  */
 void clear();
 
-void erro(const char* errMessage);
+void error(const char* errMessage);
 
 extern bool _error_state;
 

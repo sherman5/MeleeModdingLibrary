@@ -3,6 +3,7 @@
 #include "print.h"
 #include "math.h"
 #include "gctypes.h"
+#include "error.h"
 
 #define LINE_SIZE 60
 #define MAX_LINES 27
@@ -48,6 +49,8 @@ void print(const char* str)
         / (sizeof(MenuLine) + sizeof(DebugMenuSlot));
     maxLines = imin(maxLines, MAX_LINES);
 
+    if (strLines > maxLines) { return;}
+
     /* discard extra lines */
     if (numLines + strLines > maxLines)
     {
@@ -63,6 +66,7 @@ void print(const char* str)
     stream = realloc(stream, (numLines + strLines) * sizeof(MenuLine));
     if (!menu || !stream)
     {
+        error("malloc failed");
         clear();
     }
     else

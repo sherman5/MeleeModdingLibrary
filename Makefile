@@ -15,7 +15,7 @@ src/math.c src/print.c src/random.c src/state_check.c \
 src/string.c src/system.c src/melee_info.c src/version.c
 
 HEADERS = $(SRCS:.c=.h) src/gctypes.h src/native_functions.h \
-src/unit_test.h src/logic.h src/action_state.h
+src/unit_test.h src/logic.h src/action_state.h src/error.h
 
 # object files and their dependencies
 OBJS_O0 = $(SRCS:src/%.c=build/%_O0.o)
@@ -150,9 +150,6 @@ test_inputs : $(LIBS)
 test_math : $(LIBS)
 	wiimake $(ISO_FILE) tests/testMath.ini $(MAKE_FLAGS)
 
-test_melee_info : $(LIBS)
-	wiimake $(ISO_FILE) tests/testMeleeInfo.ini $(MAKE_FLAGS)
-
 test_print : $(LIBS)
 	wiimake $(ISO_FILE) tests/testPrint.ini $(MAKE_FLAGS)
 
@@ -184,6 +181,16 @@ tutorial_Teching : dist
 tutorial_DI : dist
 	cd $(VERSION)/tutorials/DI && \
 	wiimake ../../../$(ISO_FILE) DITutorial.ini $(MAKE_FLAGS) && \
+	cd ../../..
+
+tutorial_Recovery : dist
+	cd $(VERSION)/tutorials/Recovery && \
+	wiimake ../../../$(ISO_FILE) RecoveryTutorial.ini $(MAKE_FLAGS) && \
+	cd ../../..
+
+tutorial_DefensiveAI : dist
+	cd $(VERSION)/tutorials/DefensiveAI && \
+	wiimake ../../../$(ISO_FILE) DefensiveAITutorial.ini $(MAKE_FLAGS) && \
 	cd ../../..
 
 # documentation target
