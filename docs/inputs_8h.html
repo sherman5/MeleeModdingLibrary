@@ -105,8 +105,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Data Structures</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_move.html">Move</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:struct_move"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="inputs_8h.html#struct_move">Move</a></td></tr>
+<tr class="separator:struct_move"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
@@ -124,20 +124,21 @@ Macros</h2></td></tr>
 <tr class="memitem:a5f46cfcb78eee5fa165fda297ba865f5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5f46cfcb78eee5fa165fda297ba865f5"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>STICK_ANGLE</b>(x)&#160;&#160;&#160;((((u8) (((x) / 360.f) * 255.f)) &lt;&lt; 8) &amp; 0xFF00)</td></tr>
 <tr class="separator:a5f46cfcb78eee5fa165fda297ba865f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac1c6c817e3e46bd27a8ce5c8d1d0100d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac1c6c817e3e46bd27a8ce5c8d1d0100d"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>SET_TECH_DIR</b>(x)&#160;&#160;&#160;<a class="el" href="inputs_8h.html#a7389025ca6c92ad3d141037dc74c8288">_raw_tech</a>[0] = (RawInput) {L_BUTTON | FULL_STICK | STICK_ANGLE(x), 0, <a class="el" href="inputs_8h.html#a9cfcd032e38e55938e02821e97fe3660">NO_FLAGS</a>}</td></tr>
+<tr class="memitem:aa90d04d1863ff9017f3ead6539c15fa1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa90d04d1863ff9017f3ead6539c15fa1"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>OVERWRITE</b>&#160;&#160;&#160;{0, 0, 0}</td></tr>
+<tr class="separator:aa90d04d1863ff9017f3ead6539c15fa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1c6c817e3e46bd27a8ce5c8d1d0100d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="inputs_8h.html#ac1c6c817e3e46bd27a8ce5c8d1d0100d">SET_TECH_DIR</a>(x)&#160;&#160;&#160;_raw_tech[0] = (RawInput) {<a class="el" href="controller_8h.html#a78883cb33621a5e24f4e56bcf8732020">L_BUTTON</a> | <a class="el" href="controller_8h.html#aa4bf290c42e5626f586f84d41be94cdb">FULL_STICK</a> | STICK_ANGLE(x), 0, <a class="el" href="inputs_8h.html#a9cfcd032e38e55938e02821e97fe3660">NO_FLAGS</a>}</td></tr>
 <tr class="separator:ac1c6c817e3e46bd27a8ce5c8d1d0100d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a4e71e45acbce3879557f2b5e5b7384"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1a4e71e45acbce3879557f2b5e5b7384"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>SET_HIT_DI_DIR</b>(x)&#160;&#160;&#160;<a class="el" href="inputs_8h.html#a0af906bf2b7ff045e1fa8797a116e13b">_raw_hitDI</a>[0] = (RawInput) {FULL_STICK | STICK_ANGLE((x)), 0, <a class="el" href="inputs_8h.html#a9cfcd032e38e55938e02821e97fe3660">NO_FLAGS</a>}</td></tr>
+<tr class="memitem:a1a4e71e45acbce3879557f2b5e5b7384"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="inputs_8h.html#a1a4e71e45acbce3879557f2b5e5b7384">SET_HIT_DI_DIR</a>(x)&#160;&#160;&#160;_raw_hitDI[0] = (RawInput) {<a class="el" href="controller_8h.html#aa4bf290c42e5626f586f84d41be94cdb">FULL_STICK</a> | STICK_ANGLE((x)), 0, <a class="el" href="inputs_8h.html#a9cfcd032e38e55938e02821e97fe3660">NO_FLAGS</a>}</td></tr>
 <tr class="separator:a1a4e71e45acbce3879557f2b5e5b7384"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab974adb14eef7e7ed46d7276b125f9cd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab974adb14eef7e7ed46d7276b125f9cd"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>SET_THROW_DI_DIR</b>(x)&#160;&#160;&#160;<a class="el" href="inputs_8h.html#a6b1dba836557ab31c8d8c381c7de95a8">_raw_throwDI</a>[0] = (RawInput) {FULL_STICK | STICK_ANGLE((x)), 0, <a class="el" href="inputs_8h.html#a9cfcd032e38e55938e02821e97fe3660">NO_FLAGS</a>}</td></tr>
+<tr class="memitem:ab974adb14eef7e7ed46d7276b125f9cd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="inputs_8h.html#ab974adb14eef7e7ed46d7276b125f9cd">SET_THROW_DI_DIR</a>(x)&#160;&#160;&#160;_raw_throwDI[0] = (RawInput) {<a class="el" href="controller_8h.html#aa4bf290c42e5626f586f84d41be94cdb">FULL_STICK</a> | STICK_ANGLE((x)), 0, <a class="el" href="inputs_8h.html#a9cfcd032e38e55938e02821e97fe3660">NO_FLAGS</a>}</td></tr>
 <tr class="separator:ab974adb14eef7e7ed46d7276b125f9cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a988a9244d27e14509b879430047a48bc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="inputs_8h.html#a988a9244d27e14509b879430047a48bc">SET_UP_B_DIR</a>(x)&#160;&#160;&#160;_raw_UpB[1] = (RawInput) {<a class="el" href="controller_8h.html#aa4bf290c42e5626f586f84d41be94cdb">FULL_STICK</a> | STICK_ANGLE((x)), 2, <a class="el" href="inputs_8h.html#a9cfcd032e38e55938e02821e97fe3660">NO_FLAGS</a>}</td></tr>
+<tr class="separator:a988a9244d27e14509b879430047a48bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ab898071398b359603a35c202e9c65f3b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab898071398b359603a35c202e9c65f3b"></a>
-struct&#160;</td><td class="memItemRight" valign="bottom"><b>__attribute__</b> ((packed))</td></tr>
+<tr class="memitem:ab898071398b359603a35c202e9c65f3b"><td class="memItemLeft" align="right" valign="top">struct&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="inputs_8h.html#ab898071398b359603a35c202e9c65f3b">__attribute__</a> ((packed))</td></tr>
 <tr class="separator:ab898071398b359603a35c202e9c65f3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
@@ -145,62 +146,56 @@ Variables</h2></td></tr>
 <tr class="memitem:aa00d147191c32dbd45d50b852bee4a9b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa00d147191c32dbd45d50b852bee4a9b"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>RawInput</b></td></tr>
 <tr class="separator:aa00d147191c32dbd45d50b852bee4a9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3614606f9713e31918f70c3acef90324"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3614606f9713e31918f70c3acef90324"></a>
-RawInput&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="inputs_8h.html#a3614606f9713e31918f70c3acef90324">_raw_shNeutralB</a> [4]</td></tr>
-<tr class="memdesc:a3614606f9713e31918f70c3acef90324"><td class="mdescLeft">&#160;</td><td class="mdescRight">Short Hop Neutral B. <br /></td></tr>
-<tr class="separator:a3614606f9713e31918f70c3acef90324"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae435f5d1efaa48b3fb6473dc2f781d32"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae435f5d1efaa48b3fb6473dc2f781d32"></a>
-<a class="el" href="struct_move.html">Move</a>&#160;</td><td class="memItemRight" valign="bottom"><b>_mv_shNeutralB</b></td></tr>
+<tr class="memitem:ae435f5d1efaa48b3fb6473dc2f781d32"><td class="memItemLeft" align="right" valign="top"><a class="el" href="inputs_8h.html#struct_move">Move</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="inputs_8h.html#ae435f5d1efaa48b3fb6473dc2f781d32">_mv_shNeutralB</a></td></tr>
 <tr class="separator:ae435f5d1efaa48b3fb6473dc2f781d32"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a24c3f4d35b9edced6e17ab32d462058b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a24c3f4d35b9edced6e17ab32d462058b"></a>
-RawInput&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="inputs_8h.html#a24c3f4d35b9edced6e17ab32d462058b">_raw_shortHop</a> [2]</td></tr>
-<tr class="memdesc:a24c3f4d35b9edced6e17ab32d462058b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Short Hop. <br /></td></tr>
-<tr class="separator:a24c3f4d35b9edced6e17ab32d462058b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad6c68aa112655205810a8bfc2954c380"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad6c68aa112655205810a8bfc2954c380"></a>
-<a class="el" href="struct_move.html">Move</a>&#160;</td><td class="memItemRight" valign="bottom"><b>_mv_shortHop</b></td></tr>
+<tr class="memitem:ad6c68aa112655205810a8bfc2954c380"><td class="memItemLeft" align="right" valign="top"><a class="el" href="inputs_8h.html#struct_move">Move</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="inputs_8h.html#ad6c68aa112655205810a8bfc2954c380">_mv_shortHop</a></td></tr>
 <tr class="separator:ad6c68aa112655205810a8bfc2954c380"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7389025ca6c92ad3d141037dc74c8288"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7389025ca6c92ad3d141037dc74c8288"></a>
-RawInput&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="inputs_8h.html#a7389025ca6c92ad3d141037dc74c8288">_raw_tech</a> [2]</td></tr>
-<tr class="memdesc:a7389025ca6c92ad3d141037dc74c8288"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hit standard tech. <br /></td></tr>
-<tr class="separator:a7389025ca6c92ad3d141037dc74c8288"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8cd2c43ef342c9c8c27a0dae5660ddc8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8cd2c43ef342c9c8c27a0dae5660ddc8"></a>
-<a class="el" href="struct_move.html">Move</a>&#160;</td><td class="memItemRight" valign="bottom"><b>_mv_tech</b></td></tr>
+<tr class="memitem:a8cd2c43ef342c9c8c27a0dae5660ddc8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="inputs_8h.html#struct_move">Move</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="inputs_8h.html#a8cd2c43ef342c9c8c27a0dae5660ddc8">_mv_tech</a></td></tr>
 <tr class="separator:a8cd2c43ef342c9c8c27a0dae5660ddc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae4ad52889cc8cacedaef770b3f86860e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae4ad52889cc8cacedaef770b3f86860e"></a>
-RawInput&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="inputs_8h.html#ae4ad52889cc8cacedaef770b3f86860e">_raw_spotDodge</a> [3]</td></tr>
-<tr class="memdesc:ae4ad52889cc8cacedaef770b3f86860e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Spot Dodge. <br /></td></tr>
-<tr class="separator:ae4ad52889cc8cacedaef770b3f86860e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a04ba9c7f575708c7415f0422b4f64d63"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a04ba9c7f575708c7415f0422b4f64d63"></a>
-<a class="el" href="struct_move.html">Move</a>&#160;</td><td class="memItemRight" valign="bottom"><b>_mv_spotDodge</b></td></tr>
+<tr class="memitem:a04ba9c7f575708c7415f0422b4f64d63"><td class="memItemLeft" align="right" valign="top"><a class="el" href="inputs_8h.html#struct_move">Move</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="inputs_8h.html#a04ba9c7f575708c7415f0422b4f64d63">_mv_spotDodge</a></td></tr>
 <tr class="separator:a04ba9c7f575708c7415f0422b4f64d63"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4dc919dcce2cbba7b8c0ddac369f0665"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4dc919dcce2cbba7b8c0ddac369f0665"></a>
-RawInput&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="inputs_8h.html#a4dc919dcce2cbba7b8c0ddac369f0665">_raw_aPress</a> [2]</td></tr>
-<tr class="memdesc:a4dc919dcce2cbba7b8c0ddac369f0665"><td class="mdescLeft">&#160;</td><td class="mdescRight">Press A. <br /></td></tr>
-<tr class="separator:a4dc919dcce2cbba7b8c0ddac369f0665"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ce5e4b23a999064ddf6790cf8b2e3c9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0ce5e4b23a999064ddf6790cf8b2e3c9"></a>
-<a class="el" href="struct_move.html">Move</a>&#160;</td><td class="memItemRight" valign="bottom"><b>_mv_getUpAttack</b></td></tr>
+<tr class="memitem:a0ce5e4b23a999064ddf6790cf8b2e3c9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="inputs_8h.html#struct_move">Move</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="inputs_8h.html#a0ce5e4b23a999064ddf6790cf8b2e3c9">_mv_getUpAttack</a></td></tr>
 <tr class="separator:a0ce5e4b23a999064ddf6790cf8b2e3c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a920ef7bca88d74811e2973a8aa7ef887"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a920ef7bca88d74811e2973a8aa7ef887"></a>
-<a class="el" href="struct_move.html">Move</a>&#160;</td><td class="memItemRight" valign="bottom"><b>_mv_jab</b></td></tr>
+<tr class="memitem:a920ef7bca88d74811e2973a8aa7ef887"><td class="memItemLeft" align="right" valign="top"><a class="el" href="inputs_8h.html#struct_move">Move</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="inputs_8h.html#a920ef7bca88d74811e2973a8aa7ef887">_mv_jab</a></td></tr>
 <tr class="separator:a920ef7bca88d74811e2973a8aa7ef887"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0af906bf2b7ff045e1fa8797a116e13b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0af906bf2b7ff045e1fa8797a116e13b"></a>
-RawInput&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="inputs_8h.html#a0af906bf2b7ff045e1fa8797a116e13b">_raw_hitDI</a> [2]</td></tr>
-<tr class="memdesc:a0af906bf2b7ff045e1fa8797a116e13b"><td class="mdescLeft">&#160;</td><td class="mdescRight">DI from hit. <br /></td></tr>
-<tr class="separator:a0af906bf2b7ff045e1fa8797a116e13b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab798d679abc310c88f95753218550ee2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab798d679abc310c88f95753218550ee2"></a>
-<a class="el" href="struct_move.html">Move</a>&#160;</td><td class="memItemRight" valign="bottom"><b>_mv_hitDI</b></td></tr>
+<tr class="memitem:ab798d679abc310c88f95753218550ee2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="inputs_8h.html#struct_move">Move</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="inputs_8h.html#ab798d679abc310c88f95753218550ee2">_mv_hitDI</a></td></tr>
 <tr class="separator:ab798d679abc310c88f95753218550ee2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6b1dba836557ab31c8d8c381c7de95a8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6b1dba836557ab31c8d8c381c7de95a8"></a>
-RawInput&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="inputs_8h.html#a6b1dba836557ab31c8d8c381c7de95a8">_raw_throwDI</a> [1]</td></tr>
-<tr class="memdesc:a6b1dba836557ab31c8d8c381c7de95a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">DI from hit. <br /></td></tr>
-<tr class="separator:a6b1dba836557ab31c8d8c381c7de95a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7ee049dcd16e5b9594437cc291c5d405"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7ee049dcd16e5b9594437cc291c5d405"></a>
-<a class="el" href="struct_move.html">Move</a>&#160;</td><td class="memItemRight" valign="bottom"><b>_mv_throwDI</b></td></tr>
+<tr class="memitem:a7ee049dcd16e5b9594437cc291c5d405"><td class="memItemLeft" align="right" valign="top"><a class="el" href="inputs_8h.html#struct_move">Move</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="inputs_8h.html#a7ee049dcd16e5b9594437cc291c5d405">_mv_throwDI</a></td></tr>
 <tr class="separator:a7ee049dcd16e5b9594437cc291c5d405"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa63d63b5d0ed7a502a682fb82d3bc11a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="inputs_8h.html#struct_move">Move</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="inputs_8h.html#aa63d63b5d0ed7a502a682fb82d3bc11a">_mv_UpB</a></td></tr>
+<tr class="separator:aa63d63b5d0ed7a502a682fb82d3bc11a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Common input sequences. </p>
-</div><h2 class="groupheader">Macro Definition Documentation</h2>
+</div><hr/><h2 class="groupheader">Data Structure Documentation</h2>
+<a name="struct_move" id="struct_move"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct Move</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="textblock"></div><table class="fieldtable">
+<tr><th colspan="3">Data Fields</th></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a43199d6a818bc32724e5c002b2cbbf19"></a>RawInput *</td>
+<td class="fieldname">
+inputs</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="acfd6273064c5acdcfc39a23a69dd4343"></a>u32</td>
+<td class="fieldname">
+size</td>
+<td class="fielddoc">
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Macro Definition Documentation</h2>
 <a class="anchor" id="a9cfcd032e38e55938e02821e97fe3660"></a>
 <div class="memitem">
 <div class="memproto">
@@ -211,6 +206,210 @@ RawInput&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="
       </table>
 </div><div class="memdoc">
 <p>flags </p>
+
+</div>
+</div>
+<a class="anchor" id="a1a4e71e45acbce3879557f2b5e5b7384"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SET_HIT_DI_DIR</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x</td><td>)</td>
+          <td>&#160;&#160;&#160;_raw_hitDI[0] = (RawInput) {<a class="el" href="controller_8h.html#aa4bf290c42e5626f586f84d41be94cdb">FULL_STICK</a> | STICK_ANGLE((x)), 0, <a class="el" href="inputs_8h.html#a9cfcd032e38e55938e02821e97fe3660">NO_FLAGS</a>}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set the direction of DI for normal hits </p>
+
+</div>
+</div>
+<a class="anchor" id="ac1c6c817e3e46bd27a8ce5c8d1d0100d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SET_TECH_DIR</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x</td><td>)</td>
+          <td>&#160;&#160;&#160;_raw_tech[0] = (RawInput) {<a class="el" href="controller_8h.html#a78883cb33621a5e24f4e56bcf8732020">L_BUTTON</a> | <a class="el" href="controller_8h.html#aa4bf290c42e5626f586f84d41be94cdb">FULL_STICK</a> | STICK_ANGLE(x), 0, <a class="el" href="inputs_8h.html#a9cfcd032e38e55938e02821e97fe3660">NO_FLAGS</a>}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set tech direction </p>
+
+</div>
+</div>
+<a class="anchor" id="ab974adb14eef7e7ed46d7276b125f9cd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SET_THROW_DI_DIR</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x</td><td>)</td>
+          <td>&#160;&#160;&#160;_raw_throwDI[0] = (RawInput) {<a class="el" href="controller_8h.html#aa4bf290c42e5626f586f84d41be94cdb">FULL_STICK</a> | STICK_ANGLE((x)), 0, <a class="el" href="inputs_8h.html#a9cfcd032e38e55938e02821e97fe3660">NO_FLAGS</a>}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set the direction of DI for throws </p>
+
+</div>
+</div>
+<a class="anchor" id="a988a9244d27e14509b879430047a48bc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SET_UP_B_DIR</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x</td><td>)</td>
+          <td>&#160;&#160;&#160;_raw_UpB[1] = (RawInput) {<a class="el" href="controller_8h.html#aa4bf290c42e5626f586f84d41be94cdb">FULL_STICK</a> | STICK_ANGLE((x)), 2, <a class="el" href="inputs_8h.html#a9cfcd032e38e55938e02821e97fe3660">NO_FLAGS</a>}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set the direction for the Up B </p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="ab898071398b359603a35c202e9c65f3b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct __attribute__ </td>
+          <td>(</td>
+          <td class="paramtype">(packed)&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>represent an input in its minimal form </p>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a class="anchor" id="a0ce5e4b23a999064ddf6790cf8b2e3c9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="inputs_8h.html#struct_move">Move</a> _mv_getUpAttack</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get Up Attack </p>
+
+</div>
+</div>
+<a class="anchor" id="ab798d679abc310c88f95753218550ee2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="inputs_8h.html#struct_move">Move</a> _mv_hitDI</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>DI from hit </p>
+
+</div>
+</div>
+<a class="anchor" id="a920ef7bca88d74811e2973a8aa7ef887"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="inputs_8h.html#struct_move">Move</a> _mv_jab</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Jab </p>
+
+</div>
+</div>
+<a class="anchor" id="ae435f5d1efaa48b3fb6473dc2f781d32"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="inputs_8h.html#struct_move">Move</a> _mv_shNeutralB</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Short Hop Neutral B. </p>
+
+</div>
+</div>
+<a class="anchor" id="ad6c68aa112655205810a8bfc2954c380"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="inputs_8h.html#struct_move">Move</a> _mv_shortHop</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Short Hop </p>
+
+</div>
+</div>
+<a class="anchor" id="a04ba9c7f575708c7415f0422b4f64d63"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="inputs_8h.html#struct_move">Move</a> _mv_spotDodge</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Spot Dodge </p>
+
+</div>
+</div>
+<a class="anchor" id="a8cd2c43ef342c9c8c27a0dae5660ddc8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="inputs_8h.html#struct_move">Move</a> _mv_tech</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Hit standard tech </p>
+
+</div>
+</div>
+<a class="anchor" id="a7ee049dcd16e5b9594437cc291c5d405"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="inputs_8h.html#struct_move">Move</a> _mv_throwDI</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>DI from throw </p>
+
+</div>
+</div>
+<a class="anchor" id="aa63d63b5d0ed7a502a682fb82d3bc11a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="inputs_8h.html#struct_move">Move</a> _mv_UpB</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Up B </p>
 
 </div>
 </div>

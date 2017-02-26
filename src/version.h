@@ -17,12 +17,16 @@
 
 extern u32 _mml_version;
 
+/** Major (x.*.*) version number of @c libmml **/
 #define MML_VERSION_MAJOR       (((_mml_version & MAJOR_MASK) >> 24) & 0xFF)
+
+/** Minor (*.x.*) version number of @c libmml **/
 #define MML_VERSION_MINOR       (((_mml_version & MINOR_MASK) >> 16) & 0xFF)
+
+/** Revision (*.*.x) version number of @c libmml **/
 #define MML_VERSION_REVISION    (_mml_version & REVISION_MASK)
 
-#define MML_VERSION_CHECK(maj, min)) \
-    ((maj == MML_VERSION_MAJOR) \
-    && (min <= MML_VERSION_MINOR))
+/** Check if version of library is compatible **/
+#define MML_VERSION_CHECK(maj, min)) ((maj == MML_VERSION_MAJOR) && (min <= MML_VERSION_MINOR))
 
 #endif

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['function',['Function',['../struct_function.html',1,'']]],
-  ['functionarg',['FunctionArg',['../union_function_arg.html',1,'']]]
+  ['gamestate',['GameState',['../game__state_8h.html#struct_game_state',1,'']]]
 ];

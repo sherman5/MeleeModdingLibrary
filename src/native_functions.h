@@ -7,6 +7,7 @@
 #ifndef MML_NATIVE_FUNCTIONS_H
 #define MML_NATIVE_FUNCTIONS_H
 
+/** Cast address to @c void* - make it a function pointer **/
 #define VOID_PTR(x) ((void*) (x))
 
 #ifdef PAL

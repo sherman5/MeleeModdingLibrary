@@ -9,6 +9,7 @@
 
 #include "gctypes.h"
 
+/** Function Argument **/
 typedef union
 {
     u32 u;
@@ -18,6 +19,7 @@ typedef union
 
 } FunctionArg __attribute__((__transparent_union__));
 
+/** Function **/
 typedef struct
 {
     void* function;
@@ -26,14 +28,12 @@ typedef struct
     
 } Function;
 
-//TODO: add random option to condition
+/** Logic **/
 typedef struct
 {
     Function condition;
     Function action;
 
 } Logic;
-
-#define LOGIC(c, a) (Logic) {(Function) c, (Function) a}
 
 #endif

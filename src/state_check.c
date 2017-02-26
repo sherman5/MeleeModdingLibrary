@@ -129,8 +129,8 @@ bool hitlagFrames(FunctionArg port, FunctionArg frames)
 
 bool recoverySituation(FunctionArg port)
 {
-    return offstage(port.u) && !inHitstun(port.u)
-        && !actionStateEq(port.u, _AS_CliffWait);
+    return offstage(port) && !inHitstun(port)
+        && !actionStateEq(port, _AS_CliffWait);
 }
 
 bool breakoutFrame(FunctionArg port, FunctionArg frame)

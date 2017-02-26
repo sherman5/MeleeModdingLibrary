@@ -5,8 +5,6 @@
 #include "melee_info.h"
 #include "string.h"
 
-static u32 stockCount;
-
 static ControllerInput processRawInput(u8 port, RawInput input)
 {
     ControllerInput processed = {.controller = input.controller,
@@ -140,12 +138,6 @@ void updateAI(AI* ai)
 
     if (ai->active)
     {
-        if (STOCKS(ai->port) < stockCount)
-        {
-            stockCount = STOCKS(ai->port);
-            clearAI(ai);
-        }
-
         checkLogic(ai);
         if (ai->inputSize > 0) {checkInput(ai);}
 

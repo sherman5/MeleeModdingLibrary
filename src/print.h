@@ -31,8 +31,16 @@ void print(const char* str);
  */
 void clear();
 
+/**
+ * @brief clear the output stream
+ *
+ * This function clears any text on the output stream
+ *
+ * @return none
+ */
 void error(const char* errMessage);
 
+/** Only @c true if @c error has never been called **/
 extern bool _error_state;
 
 #endif

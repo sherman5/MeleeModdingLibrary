@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['platform',['Platform',['../struct_platform.html',1,'']]],
-  ['playerdata',['PlayerData',['../struct_player_data.html',1,'']]],
-  ['point',['Point',['../struct_point.html',1,'']]]
+  ['stage',['Stage',['../game__state_8h.html#struct_stage',1,'']]]
 ];

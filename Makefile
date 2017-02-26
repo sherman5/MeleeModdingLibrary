@@ -196,6 +196,7 @@ tutorial_DefensiveAI : dist
 # documentation target
 .PHONY : docs
 docs :
+	echo "PROJECT_NUMBER =" $(MAJOR).$(MINOR).$(REVISION) >> doxygen.ini
 	doxygen doxygen.ini
 
 # clean targets

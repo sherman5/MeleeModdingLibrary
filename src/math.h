@@ -125,7 +125,7 @@ s32 imin(s32 a, s32 b);
 /**
  * @brief Maximum of two floating-point values
  *
- * @param a - floating-point value
+ * @param a - floating-point value 
  * @param b - floating-point value
  * 
  * @return The larger value of @p a and @p b

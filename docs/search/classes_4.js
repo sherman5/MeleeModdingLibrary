@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['gamestate',['GameState',['../struct_game_state.html',1,'']]]
+  ['logic',['Logic',['../logic_8h.html#struct_logic',1,'']]]
 ];

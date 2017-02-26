@@ -11,6 +11,7 @@
 #include "math.h"
 #include "action_state.h"
 
+/** name of stage **/
 typedef enum
 {
     YOSHIS = 0x06,

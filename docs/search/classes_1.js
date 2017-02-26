@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['controller',['Controller',['../struct_controller.html',1,'']]],
-  ['controllerinput',['ControllerInput',['../struct_controller_input.html',1,'']]]
+  ['controller',['Controller',['../controller_8h.html#struct_controller',1,'']]],
+  ['controllerinput',['ControllerInput',['../_a_i_8h.html#struct_controller_input',1,'']]]
 ];

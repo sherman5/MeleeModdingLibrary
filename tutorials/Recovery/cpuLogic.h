@@ -12,6 +12,7 @@ extern Logic hitDiLogic;
 extern Logic throwDiLogic;
 extern Logic stopThrowDiLogic;
 extern Logic stopThrowDiLogic_2;
+extern Logic recoveryStartLogic;
 
 extern AI cpuPlayer;
 

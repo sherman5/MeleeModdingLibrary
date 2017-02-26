@@ -8,14 +8,14 @@
 #define LINE_SIZE 60
 #define MAX_LINES 27
 
-typedef struct menu_line
+typedef struct
 {
     char text[LINE_SIZE];
     u32 pad;
 
 } MenuLine;
 
-typedef struct debug_menu_slot
+typedef struct
 {
     u32 type;
     char pad1[0x04];

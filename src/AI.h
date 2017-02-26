@@ -38,12 +38,16 @@
 #include "controller.h"
 #include "gctypes.h"
 
+/**
+ * @brief A single controller input made by the AI 
+ * @note size = 8 bytes (accounting for padding)
+ */
 typedef struct
 {
-    u32 frame;
-    u16 controller;
+    u32 frame;          /**< Frame on which to execute input */
+    u16 controller;     /**< State of controller */
 
-} ControllerInput; // 8 bytes with padding
+} ControllerInput;
 
 typedef struct
 {

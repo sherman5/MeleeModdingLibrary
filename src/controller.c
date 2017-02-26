@@ -54,9 +54,9 @@ void setController(Controller* controller, u16 state)
             break;
     }
 
-    float radians = 2 * M_PI * (float) angle / 0xFF;
-    controller->stickX = cos(radians);
-    controller->stickY = sin(radians);
+    float degrees = 360.f * (float) angle / 0xFF;
+    controller->stickX = cos(degrees);
+    controller->stickY = sin(degrees);
 
     switch (radius)
     {

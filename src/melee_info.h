@@ -9,7 +9,9 @@
 
 #include "gctypes.h"
 
-#define DR_MARIO_ID        0
+//@{
+/** Character Code */
+#define DR_MARIO_ID        0    
 #define MARIO_ID           1
 #define LUIGI_ID           2
 #define BOWSER_ID          3
@@ -34,7 +36,13 @@
 #define MR_GNW_ID          22
 #define MARTH_ID           23
 #define ROY_ID             24
+//@}
 
+/** list of short hop lengths (i.e. number of frames before landing) **/
 extern const u8 _sh_length[25];
+
+extern const u8 _dj_horizontal[25];
+
+extern const u8 _dj_vertical[25];
 
 #endif

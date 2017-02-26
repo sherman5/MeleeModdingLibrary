@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['rad_5fto_5fdeg',['RAD_TO_DEG',['../math_8h.html#a77dd57594a038f87051b324cee42c531',1,'math.h']]],
-  ['rand',['rand',['../random_8h.html#ac7e7cfbc148e66c78d60faa816c76399',1,'random.c']]],
-  ['random_2eh',['random.h',['../random_8h.html',1,'']]],
-  ['realloc',['realloc',['../system_8h.html#a8703cc44a683e2d87a2bd765b8ec2adb',1,'system.c']]],
-  ['recip_5fsqrt_5ffptr',['RECIP_SQRT_FPTR',['../native__functions_8h.html#ac70f0540ee7d4b5655eda1d4e08dcaf4',1,'native_functions.h']]],
-  ['recipsqrt',['recipSqrt',['../math_8h.html#a989820d8d92331f09a5f344cfcdd62f2',1,'math.h']]]
+  ['native_5ffunctions_2eh',['native_functions.h',['../native__functions_8h.html',1,'']]],
+  ['nearsurface',['nearSurface',['../state__check_8h.html#a44e1e6f7798c6415155bac244f7693ab',1,'state_check.c']]],
+  ['ness_5fid',['NESS_ID',['../melee__info_8h.html#a2089c7a06c0fb486f4b295372bf9396a',1,'melee_info.h']]],
+  ['no_5fbutton',['NO_BUTTON',['../controller_8h.html#adb8526f5c97746625152403b857b0b11',1,'controller.h']]],
+  ['no_5fflags',['NO_FLAGS',['../inputs_8h.html#a9cfcd032e38e55938e02821e97fe3660',1,'inputs.h']]],
+  ['no_5fstick',['NO_STICK',['../controller_8h.html#aa06ff46d876b6da90d2f58456fc524ff',1,'controller.h']]]
 ];

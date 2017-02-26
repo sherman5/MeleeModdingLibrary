@@ -103,27 +103,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a68f824d33c675c8bb6e1337a14812a8d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a68f824d33c675c8bb6e1337a14812a8d"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>UNIT_TEST</b>&#160;&#160;&#160;static bool tests_passed = true</td></tr>
-<tr class="separator:a68f824d33c675c8bb6e1337a14812a8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6df1d22fb5f09eccc23b9f399670cfd7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6df1d22fb5f09eccc23b9f399670cfd7"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>STRINGIFY</b>(x)&#160;&#160;&#160;#x</td></tr>
-<tr class="separator:a6df1d22fb5f09eccc23b9f399670cfd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9063e80f8777300c93afde6e6f4c9cea"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9063e80f8777300c93afde6e6f4c9cea"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>TOSTRING</b>(x)&#160;&#160;&#160;STRINGIFY(x)</td></tr>
-<tr class="separator:a9063e80f8777300c93afde6e6f4c9cea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8635eaaecd4ea91787a3f6e5352d93f0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8635eaaecd4ea91787a3f6e5352d93f0"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>ASSERT_MSG</b>&#160;&#160;&#160;&quot;assert failed: &quot; __FILE__ &quot;:&quot; TOSTRING(__LINE__)</td></tr>
-<tr class="separator:a8635eaaecd4ea91787a3f6e5352d93f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f02e40d250ab819c515702c0e59373c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><b>REQUIRE</b>(condition)</td></tr>
+<tr class="memitem:a3f02e40d250ab819c515702c0e59373c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unit__test_8h.html#a3f02e40d250ab819c515702c0e59373c">REQUIRE</a>(condition)</td></tr>
 <tr class="separator:a3f02e40d250ab819c515702c0e59373c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed0d7dd4d7db85c294a937ce99a0ca52"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aed0d7dd4d7db85c294a937ce99a0ca52"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>APPROX_ZERO</b>(x,  tol)&#160;&#160;&#160;(<a class="el" href="math_8h.html#a0bc70d364c7f180aece2381faae7eafc">fabs</a>(x) &lt; tol)</td></tr>
-<tr class="separator:aed0d7dd4d7db85c294a937ce99a0ca52"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a857490021cba81bf64a150aaedf6d84a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a857490021cba81bf64a150aaedf6d84a"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>REQUIRE_FLT_EQ</b>(L,  R,  tol)&#160;&#160;&#160;REQUIRE(APPROX_ZERO((L) - (R), tol))</td></tr>
+<tr class="memitem:a857490021cba81bf64a150aaedf6d84a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unit__test_8h.html#a857490021cba81bf64a150aaedf6d84a">REQUIRE_FLT_EQ</a>(L,  R,  tol)&#160;&#160;&#160;<a class="el" href="unit__test_8h.html#a3f02e40d250ab819c515702c0e59373c">REQUIRE</a>(APPROX_ZERO((L) - (R), tol))</td></tr>
 <tr class="separator:a857490021cba81bf64a150aaedf6d84a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aefcd1ca1799d2395f7bbe3c50bcc8ff8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><b>END_TEST</b></td></tr>
+<tr class="memitem:a68f824d33c675c8bb6e1337a14812a8d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unit__test_8h.html#a68f824d33c675c8bb6e1337a14812a8d">UNIT_TEST</a>&#160;&#160;&#160;static bool tests_passed = true</td></tr>
+<tr class="separator:a68f824d33c675c8bb6e1337a14812a8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aefcd1ca1799d2395f7bbe3c50bcc8ff8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unit__test_8h.html#aefcd1ca1799d2395f7bbe3c50bcc8ff8">END_TEST</a></td></tr>
 <tr class="separator:aefcd1ca1799d2395f7bbe3c50bcc8ff8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -139,7 +125,8 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> { <span class="keywordflow">if</span> (tests_passed) \</div><div class="line">    {<a class="code" href="print_8h.html#a85d50a09cb925cd08d803c5a8fd01da7">print</a>(<span class="stringliteral">&quot;all tests passed!&quot;</span>);}} <span class="keywordflow">while</span> (0)</div><div class="ttc" id="print_8h_html_a85d50a09cb925cd08d803c5a8fd01da7"><div class="ttname"><a href="print_8h.html#a85d50a09cb925cd08d803c5a8fd01da7">print</a></div><div class="ttdeci">void print(const char *str)</div><div class="ttdoc">print a string to the output stream </div><div class="ttdef"><b>Definition:</b> print.c:40</div></div>
-</div><!-- fragment -->
+</div><!-- fragment --><p>Macro placed in a function after all tests have been run </p>
+
 </div>
 </div>
 <a class="anchor" id="a3f02e40d250ab819c515702c0e59373c"></a>
@@ -156,7 +143,54 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> { <span class="keywordflow">if</span> (!(condition)) \</div><div class="line">    {<a class="code" href="print_8h.html#a85d50a09cb925cd08d803c5a8fd01da7">print</a>(ASSERT_MSG); tests_passed = <span class="keyword">false</span>;}} <span class="keywordflow">while</span> (0)</div><div class="ttc" id="print_8h_html_a85d50a09cb925cd08d803c5a8fd01da7"><div class="ttname"><a href="print_8h.html#a85d50a09cb925cd08d803c5a8fd01da7">print</a></div><div class="ttdeci">void print(const char *str)</div><div class="ttdoc">print a string to the output stream </div><div class="ttdef"><b>Definition:</b> print.c:40</div></div>
-</div><!-- fragment -->
+</div><!-- fragment --><p>Require <code>condition</code> to be true </p>
+
+</div>
+</div>
+<a class="anchor" id="a857490021cba81bf64a150aaedf6d84a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define REQUIRE_FLT_EQ</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">L, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">R, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">tol&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="unit__test_8h.html#a3f02e40d250ab819c515702c0e59373c">REQUIRE</a>(APPROX_ZERO((L) - (R), tol))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Require <code>L</code> and <code>R</code> to be within <code>tol</code> of each other </p>
+
+</div>
+</div>
+<a class="anchor" id="a68f824d33c675c8bb6e1337a14812a8d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define UNIT_TEST&#160;&#160;&#160;static bool tests_passed = true</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Macro placed in the global scope of each .c file, before END_TEST </p>
+
 </div>
 </div>
 </div><!-- contents -->

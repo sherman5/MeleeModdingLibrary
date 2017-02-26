@@ -1,0 +1,75 @@
+[OPTIONS]
+Compatibility=1.1
+Full-text search=Yes
+Contents file=index.hhc
+Default Window=main
+Default topic=index.html
+Index file=index.hhk
+Language=0x409 English (United States)
+Title=Melee Modding Library
+
+[WINDOWS]
+main="Melee Modding Library","index.hhc","index.hhk","index.html","index.html",,,,,0x23520,,0x10387e,,,,,,,,0
+
+[FILES]
+action__state_8h_source.html
+_a_i_8h_source.html
+controller_8h_source.html
+error_8h_source.html
+game__state_8h_source.html
+gctypes_8h_source.html
+inputs_8h_source.html
+logic_8h_source.html
+math_8h_source.html
+melee__info_8h_source.html
+native__functions_8h_source.html
+print_8h_source.html
+random_8h_source.html
+state__check_8h_source.html
+string_8h_source.html
+system_8h_source.html
+unit__test_8h_source.html
+version_8h_source.html
+action__state_8h.html
+_a_i_8h.html
+controller_8h.html
+error_8h.html
+game__state_8h.html
+gctypes_8h.html
+inputs_8h.html
+logic_8h.html
+math_8h.html
+melee__info_8h.html
+native__functions_8h.html
+print_8h.html
+random_8h.html
+state__check_8h.html
+string_8h.html
+system_8h.html
+unit__test_8h.html
+version_8h.html
+dir_68267d1309a1af8e8297ef4c3efbcdba.html
+index.html
+annotated.html
+classes.html
+functions.html
+functions_vars.html
+files.html
+globals.html
+globals_func.html
+globals_vars.html
+globals_enum.html
+globals_defs.html
+tab_a.png
+tab_b.png
+tab_h.png
+tab_s.png
+nav_h.png
+nav_f.png
+bc_s.png
+doxygen.png
+closed.png
+open.png
+bdwn.png
+sync_on.png
+sync_off.png

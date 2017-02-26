@@ -4,7 +4,7 @@
 
 #include "cpuLogic.h"
 
-static char heap[2000];
+static char heap[7000];
 static bool init_run = false;
 
 static void init()
@@ -19,6 +19,7 @@ static void loadDefaultLogic()
     addLogic(&cpuPlayer, &getOffGroundLogic);
     addLogic(&cpuPlayer, &hitDiLogic);
     addLogic(&cpuPlayer, &throwDiLogic);
+    addLogic(&cpuPlayer, &recoveryStartLogic);
 }
 
 void _main()

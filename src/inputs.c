@@ -18,7 +18,7 @@ Move _mv_shortHop = {.inputs = _raw_shortHop, .size = 2};
 
 RawInput _raw_tech[2] = 
 {
-    {0, 0, 0}, //overwritten when direction is set
+    OVERWRITE,
     {RELEASE, 26, NO_FLAGS}
 };
 Move _mv_tech = {.inputs = _raw_tech, .size = 2};
@@ -41,18 +41,23 @@ Move _mv_jab = {.inputs = _raw_aPress, .size = 2};
 
 RawInput _raw_hitDI[2] = 
 {
-    {0, 0, 0},
+    OVERWRITE,
     {RELEASE, 1, NO_FLAGS}
 };
 Move _mv_hitDI = {.inputs = _raw_hitDI, .size = 2};
 
 RawInput _raw_throwDI[1] = 
 {
-    {0, 0, 0},
+    OVERWRITE
 };
 Move _mv_throwDI = {.inputs = _raw_throwDI, .size = 1};
 
-
+RawInput _raw_UpB[2] = 
+{
+    {B_BUTTON | FULL_STICK | STICK_ANGLE(90.f), 0, NO_FLAGS},
+    OVERWRITE
+};
+Move _mv_UpB = {.inputs = _raw_UpB, .size = 2};
 
 
 

@@ -9,10 +9,15 @@
 
 #include "gctypes.h"
 
+//@{
+/** Controller bit masks */
 #define BUTTON_BITS 0x000F
 #define RADIUS_BITS 0x00F0
 #define ANGLE_BITS  0xFF00
+//@}
 
+//@{
+/** Button Flags */
 #define NO_BUTTON     0x00
 #define A_BUTTON      0x01
 #define B_BUTTON      0x02
@@ -31,7 +36,9 @@
 #define NO_STICK      0x00
 #define TILT_STICK    0x10
 #define FULL_STICK    0x20
+//@}
 
+/** Radius of stick that defines a tilt */
 #define TILT_RADIUS 0.5
 
 /**

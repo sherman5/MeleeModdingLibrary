@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['x',['x',['../struct_point.html#ad0da36b2558901e21e7a30f6c227a45e',1,'Point']]]
+  ['stickx',['stickX',['../controller_8h.html#ab543b39d52e35c1b2ac483c306974038',1,'Controller']]],
+  ['sticky',['stickY',['../controller_8h.html#a5bf14dfa90edd895ebfbab452f8a955e',1,'Controller']]]
 ];

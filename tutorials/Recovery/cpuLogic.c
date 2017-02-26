@@ -6,6 +6,7 @@
 
 #include "cpuLogic.h"
 #include "teching.h"
+#include "recovery.h"
 #include "DI.h"
 
 AI cpuPlayer = {.port = 2, .active = false,
@@ -57,6 +58,12 @@ Logic stopThrowDiLogic_2 =
 {
     {&pastFrame},
     {&clearAI, .arg1.p = &cpuPlayer}
+};
+
+Logic recoveryStartLogic = 
+{
+    {&recoverySituation, .arg1.u = 2},
+    {&recovery, .arg1.p = &cpuPlayer}
 };
 
 
