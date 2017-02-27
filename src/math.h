@@ -11,7 +11,11 @@
 
 /** approximate value of pi */
 #define M_PI        3.14159265358f
+
+/** approximate value of 2 * pi */
 #define M_2PI       6.28318530718f   
+
+/** approximate value of pi / 2 */
 #define M_HALF_PI   1.57079632679f
 
 /** approximate value of pi / 180 */
@@ -82,7 +86,7 @@ float recipSqrt(float x);
  *
  * @param x - floating-point value
  *
- * @return The value of @x rounded downward (as a floating-point value)
+ * @return The value of @p x rounded downward (as a floating-point value)
  *
  * @see http://www.cplusplus.com/reference/cmath/floor/
  */
@@ -96,7 +100,7 @@ float floor(float x);
  *
  * @param x - floating-point value
  *
- * @return The value of @x rounded upward (as a floating-point value)
+ * @return The value of @p x rounded upward (as a floating-point value)
  *
  * @see http://www.cplusplus.com/reference/cmath/floor/
  */
@@ -194,7 +198,7 @@ float tan(float x);
  * 
  * @param x - floating-point value in <tt> [-1, +1] </tt>
  *
- * @return inverse sine of @x, expressed in degress in range
+ * @return inverse sine of @p x, expressed in degress in range
  * <tt> [0, 90] </tt> and <tt> [270, 360) </tt>
  */
 float asin(float x);
@@ -204,7 +208,7 @@ float asin(float x);
  * 
  * @param x - floating-point value in <tt> [-1, +1] </tt>
  *
- * @return inverse cosine of @x, expressed in degress in range 
+ * @return inverse cosine of @p x, expressed in degress in range 
  * <tt> [0, 180] </tt>
 */
 float acos(float x);
@@ -214,7 +218,7 @@ float acos(float x);
  * 
  * @param x - floating-point value in <tt> [0, inf) </tt>
  *
- * @return inverse tangent of @x, expressed in degress in range
+ * @return inverse tangent of @p x, expressed in degress in range
  * <tt> [0, 90) </tt>
 */
 float atan(float x);

@@ -1,4 +1,4 @@
-#include "inputs.h"
+#include "moves.h"
 
 RawInput _raw_shNeutralB[4] = 
 {

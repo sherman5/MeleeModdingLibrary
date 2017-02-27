@@ -7,6 +7,7 @@
 #ifndef MML_ACTION_STATE
 #define MML_ACTION_STATE
 
+/** Melee Action States */
 typedef enum
 {
     _AS_DeadDown                =   0x0000,

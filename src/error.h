@@ -9,10 +9,12 @@
 
 #include "print.h"
 
+/** @cond */
 #define STRINGIFY(x) #x
 #define TOSTRING(x) STRINGIFY(x)
-#define ASSERT_MSG "assert failed: " __FILE__ ":" TOSTRING(__LINE__)
+/** @endcond */
 
-#define ERROR(x) error(__FILE__ ":" TOSTRING(__LINE__) ": " x);
+/** send error state and display error message */
+#define THROW_ERROR(x) error(__FILE__ ":" TOSTRING(__LINE__) ": " x);
 
 #endif

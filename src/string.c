@@ -57,11 +57,9 @@ char* itoa(s32 n, char* s)
     return s;
 }
 
-/*
-    memcpy and memset are defined in this way since sometimes the 
+/*  memcpy and memset are defined in this way since sometimes the 
     compiler calls these functions automatically and it assumes
-    the symbol is a function, not a function pointer
-*/
+    the symbol is a function, not a function pointer */
 
 void* memcpy(void* destination, const void* source, size_t num)
 {

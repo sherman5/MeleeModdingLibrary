@@ -1,10 +1,10 @@
 var searchData=
 [
-  ['deg_5fto_5frad',['DEG_TO_RAD',['../math_8h.html#a8ed7b6a1f199b6d2af90e642918cf271',1,'math.h']]],
-  ['dk_5fid',['DK_ID',['../melee__info_8h.html#ac956fc23c54abd05d42d4fc9d2d55bc1',1,'melee_info.h']]],
-  ['dpad_5fdown',['DPAD_DOWN',['../controller_8h.html#aa227bbb719bc75bd5e7cda3536a7da5c',1,'controller.h']]],
-  ['dpad_5fleft',['DPAD_LEFT',['../controller_8h.html#a4109c674950f167a866759eaf39dc4c4',1,'controller.h']]],
-  ['dpad_5fright',['DPAD_RIGHT',['../controller_8h.html#a1142011f319ee33d8b04f20d7c04cd6b',1,'controller.h']]],
-  ['dpad_5fup',['DPAD_UP',['../controller_8h.html#a58dae06ac7f1bd7d308cef31d0d444df',1,'controller.h']]],
-  ['dr_5fmario_5fid',['DR_MARIO_ID',['../melee__info_8h.html#a652ffe80331652984c3f3b74a2f8c721',1,'melee_info.h']]]
+  ['char_5fselect',['CHAR_SELECT',['../game__state_8h.html#a5963bf4bc324e2ca445a129ced05a1d1',1,'game_state.h']]],
+  ['cosine_5ffptr',['COSINE_FPTR',['../native__functions_8h.html#a38e4a0026626f8e2ed9c368d399a1e2d',1,'native_functions.h']]],
+  ['cstick_5fdown',['CSTICK_DOWN',['../controller_8h.html#ae2ac2e5d1765619532ad6a1b4b512898',1,'controller.h']]],
+  ['cstick_5fleft',['CSTICK_LEFT',['../controller_8h.html#a370ee9d0b3f3b57590c5238a48fedd7c',1,'controller.h']]],
+  ['cstick_5fright',['CSTICK_RIGHT',['../controller_8h.html#aba382980545a3dcad56e70cc081f84e7',1,'controller.h']]],
+  ['cstick_5fup',['CSTICK_UP',['../controller_8h.html#a070e26602a3212dccd5b8996f532e524',1,'controller.h']]],
+  ['current_5fframe',['CURRENT_FRAME',['../game__state_8h.html#a06fbdafea52b39af9a0d2e70b20b4735',1,'game_state.h']]]
 ];

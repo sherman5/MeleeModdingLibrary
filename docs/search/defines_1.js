@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['b_5fbutton',['B_BUTTON',['../controller_8h.html#a2454c318caf152737fd63bebddd58ea2',1,'controller.h']]],
-  ['bowser_5fid',['BOWSER_ID',['../melee__info_8h.html#a54cb6049795820473923e2894f069305',1,'melee_info.h']]],
-  ['button_5fbits',['BUTTON_BITS',['../controller_8h.html#a3359a04a053711a0cf3e8079177af3b2',1,'controller.h']]]
+  ['a_5fbutton',['A_BUTTON',['../controller_8h.html#a5ec59d5e4f6bfacfdf3aa6e7ed5c0373',1,'controller.h']]],
+  ['abs_5fval_5ffptr',['ABS_VAL_FPTR',['../native__functions_8h.html#af1eb56d4f85c6310fa3c7d16cee9c6f8',1,'native_functions.h']]],
+  ['angle_5fbits',['ANGLE_BITS',['../controller_8h.html#a1cde4f3ca38b11fd3ce151d09b9a9cee',1,'controller.h']]]
 ];

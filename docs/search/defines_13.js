@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['yoshi_5fid',['YOSHI_ID',['../melee__info_8h.html#ab3c2150eaab3842979e2457e9d07f62d',1,'melee_info.h']]],
-  ['young_5flink_5fid',['YOUNG_LINK_ID',['../melee__info_8h.html#aaeedb2f1db07bea407ecc8a89cec8391',1,'melee_info.h']]]
+  ['unit_5ftest',['UNIT_TEST',['../unit__test_8h.html#a68f824d33c675c8bb6e1337a14812a8d',1,'unit_test.h']]]
 ];

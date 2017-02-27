@@ -38,11 +38,13 @@
 #define ROY_ID             24
 //@}
 
-/** list of short hop lengths (i.e. number of frames before landing) **/
+/** short hop length (i.e. number of frames before landing) **/
 extern const u8 _sh_length[25];
 
+/** horizontal double jump distance */
 extern const u8 _dj_horizontal[25];
 
+/** vertical double jump distance */
 extern const u8 _dj_vertical[25];
 
 #endif

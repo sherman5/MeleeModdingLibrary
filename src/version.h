@@ -13,9 +13,9 @@
 #define MAJOR_MASK      0xFF000000
 #define MINOR_MASK      0x00FF0000
 #define REVISION_MASK   0x0000FFFF
-/** @endcond */
 
 extern u32 _mml_version;
+/** @endcond */
 
 /** Major (x.*.*) version number of @c libmml **/
 #define MML_VERSION_MAJOR       (((_mml_version & MAJOR_MASK) >> 24) & 0xFF)
@@ -28,5 +28,16 @@ extern u32 _mml_version;
 
 /** Check if version of library is compatible **/
 #define MML_VERSION_CHECK(maj, min)) ((maj == MML_VERSION_MAJOR) && (min <= MML_VERSION_MINOR))
+
+/** \mainpage 
+ *
+ * \section About
+ *
+ * Developers: Tom Sherman
+ *
+ * \section Information
+ *
+ * test
+ */
 
 #endif

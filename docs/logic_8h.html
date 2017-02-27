@@ -102,9 +102,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Data Structures</h2></td></tr>
 <tr class="memitem:union_function_arg"><td class="memItemLeft" align="right" valign="top">union &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logic_8h.html#union_function_arg">FunctionArg</a></td></tr>
+<tr class="memdesc:union_function_arg"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function Argument.  <a href="logic_8h.html#union_function_arg">More...</a><br /></td></tr>
 <tr class="separator:union_function_arg"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:struct_function"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logic_8h.html#struct_function">Function</a></td></tr>
-<tr class="separator:struct_function"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:struct_function_call"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logic_8h.html#struct_function_call">FunctionCall</a></td></tr>
+<tr class="separator:struct_function_call"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:struct_logic"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logic_8h.html#struct_logic">Logic</a></td></tr>
 <tr class="separator:struct_logic"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -120,47 +121,54 @@ Data Structures</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="textblock"><p><a class="el" href="logic_8h.html#struct_function">Function</a> Argument </p>
+<div class="textblock"><p>Function Argument. </p>
+<p>This union allows for a function to accept multiple data types as parameters. Since it is marked as a transparent_union it is always passed as a 32-bit integer in the standard registers. Thus, if a function has the signature <code> void foo(u32) </code> it is valid to call it as <code> foo(FunctionArg) </code>. However, <code> void bar(float) </code> would expect the parameter to be in a floating-point register, thus calling <code> bar(FunctionArg) </code> is not valid.</p>
+<dl class="section see"><dt>See also</dt><dd><a href="https://gcc.gnu.org/onlinedocs/gcc-3.3/gcc/Type-Attributes.html">https://gcc.gnu.org/onlinedocs/gcc-3.3/gcc/Type-Attributes.html</a> </dd></dl>
 </div><table class="fieldtable">
 <tr><th colspan="3">Data Fields</th></tr>
 <tr><td class="fieldtype">
-<a class="anchor" id="afedc1185b2a2b2a7601d0738c48432be"></a>f32</td>
+<a class="anchor" id="afedc1185b2a2b2a7601d0738c48432be"></a><a class="el" href="gctypes_8h.html#a5f6906312a689f27d70e9d086649d3fd">f32</a></td>
 <td class="fieldname">
 f</td>
 <td class="fielddoc">
+<p>32-bit floating-point value </p>
 </td></tr>
 <tr><td class="fieldtype">
 <a class="anchor" id="a117104b82864d3b23ec174af6d392709"></a>void *</td>
 <td class="fieldname">
 p</td>
 <td class="fielddoc">
+<p>pointer (32-bits) </p>
 </td></tr>
 <tr><td class="fieldtype">
-<a class="anchor" id="adc8cb031329f448965785fa2338b2181"></a>s32</td>
+<a class="anchor" id="adc8cb031329f448965785fa2338b2181"></a><a class="el" href="gctypes_8h.html#ae9b1af5c037e57a98884758875d3a7c4">s32</a></td>
 <td class="fieldname">
 s</td>
 <td class="fielddoc">
+<p>32-bit signed integer </p>
 </td></tr>
 <tr><td class="fieldtype">
-<a class="anchor" id="a8d1d08cfc32067810e9100c92f05bdda"></a>u32</td>
+<a class="anchor" id="a8d1d08cfc32067810e9100c92f05bdda"></a><a class="el" href="gctypes_8h.html#afaa62991928fb9fb18ff0db62a040aba">u32</a></td>
 <td class="fieldname">
 u</td>
 <td class="fielddoc">
+<p>32-bit unsigned integer </p>
 </td></tr>
 </table>
 
 </div>
 </div>
-<a name="struct_function" id="struct_function"></a>
+<a name="struct_function_call" id="struct_function_call"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">struct Function</td>
+          <td class="memname">struct FunctionCall</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="textblock"><p><a class="el" href="logic_8h.html#struct_function">Function</a> </p>
+<div class="textblock"><p>Describes a function call</p>
+<p>Allows for a function call to be stored in memory. Essentially, a function pointer with arguments. </p>
 </div><table class="fieldtable">
 <tr><th colspan="3">Data Fields</th></tr>
 <tr><td class="fieldtype">
@@ -168,18 +176,21 @@ u</td>
 <td class="fieldname">
 arg1</td>
 <td class="fielddoc">
+<p>first argument of function call </p>
 </td></tr>
 <tr><td class="fieldtype">
 <a class="anchor" id="aea54359b23afa4abeff85f6f04f7e275"></a><a class="el" href="logic_8h.html#union_function_arg">FunctionArg</a></td>
 <td class="fieldname">
 arg2</td>
 <td class="fielddoc">
+<p>second argument of function call </p>
 </td></tr>
 <tr><td class="fieldtype">
 <a class="anchor" id="aea3dcf0c8de30d192ee92494131c4996"></a>void *</td>
 <td class="fieldname">
 function</td>
 <td class="fielddoc">
+<p>function pointer </p>
 </td></tr>
 </table>
 
@@ -194,20 +205,23 @@ function</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="textblock"><p><a class="el" href="logic_8h.html#struct_logic">Logic</a> </p>
+<div class="textblock"><p>Describes simple if-then logic</p>
+<p>Essentially captures the behavior of an if statement in a compact struct. This allows for arrays of 'logic' (if-else chain) to be stored in memory and accessed at specific times. </p>
 </div><table class="fieldtable">
 <tr><th colspan="3">Data Fields</th></tr>
 <tr><td class="fieldtype">
-<a class="anchor" id="aae42c3dd5e236228bb8a32565b4c6a9c"></a><a class="el" href="logic_8h.html#struct_function">Function</a></td>
+<a class="anchor" id="a30a369c638ef6db89e8cbed4cf73fffb"></a><a class="el" href="logic_8h.html#struct_function_call">FunctionCall</a></td>
 <td class="fieldname">
 action</td>
 <td class="fielddoc">
+<p>function to call if condition returns true </p>
 </td></tr>
 <tr><td class="fieldtype">
-<a class="anchor" id="ac2e94a0f750da5165457334adb68ca8f"></a><a class="el" href="logic_8h.html#struct_function">Function</a></td>
+<a class="anchor" id="a4ba6a8cc6c75fefbd00cc1036efc2645"></a><a class="el" href="logic_8h.html#struct_function_call">FunctionCall</a></td>
 <td class="fieldname">
 condition</td>
 <td class="fielddoc">
+<p>function that returns bool </p>
 </td></tr>
 </table>
 

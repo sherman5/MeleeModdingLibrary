@@ -18,37 +18,24 @@
 
 /************************* gamestate.h ************************/
 
+/** u32 playerEntity(u32) */
 #define PLAYER_ENTITY_FPTR          VOID_PTR(0x80034110)
 
 /************************** random.h **************************/
 
+/** u32 randInt(u32) */
 #define RAND_INT_FPTR                  VOID_PTR(0x80380580) 
 
 /************************** system.h **************************/
 
-//#define MALLOC_FPTR     VOID_PTR(0x8037f1e4)
-
+/** handle_t OSCreateHeap(void*, void*) */
 #define OS_CREATE_HEAP_FPTR         VOID_PTR(0x803440e8)
 
+/** void* OSAllocFromHeap(handle_t, size_t) */
 #define OS_ALLOC_FROM_HEAP_FPTR     VOID_PTR(0x80343ef0)
 
+/** void OSFreeToHeap(handle_t, void*) */
 #define OS_FREE_TO_HEAP_FPTR        VOID_PTR(0x80343fec)
-
-#define OS_GET_ARENA_HI_FPTR        VOID_PTR(0x803444c8)
-
-#define OS_GET_ARENA_LO_FPTR        VOID_PTR(0x803444d0)
-
-#define OS_INIT_ALLOC_FPTR          VOID_PTR(0x80344078)
-
-#define OS_SET_ARENA_HI_FPTR        VOID_PTR(0x803444d8)
-
-#define OS_SET_ARENA_LO_FPTR        VOID_PTR(0x803444e0)
-
-//#define OS_SET_CURRENT_HEAP_FPTR    VOID_PTR(0x8034508c) // ?
-    
-//#define OS_ADD_TO_HEAP_FPTR         VOID_PTR()
-
-//#define OS_DUMP_HEAP_FPTR           VOID_PTR(0x80345334) // ?
 
 /************************** string.h **************************/
 

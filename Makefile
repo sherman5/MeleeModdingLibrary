@@ -10,7 +10,7 @@ AR = powerpc-eabi-ar
 OBJCPY = powerpc-eabi-objcopy
 
 # sources and header files (included in distribution)
-SRCS = src/AI.c src/controller.c src/game_state.c src/inputs.c \
+SRCS = src/AI.c src/controller.c src/game_state.c src/moves.c \
 src/math.c src/print.c src/random.c src/state_check.c \
 src/string.c src/system.c src/melee_info.c src/version.c
 
@@ -29,8 +29,8 @@ OBJS = $(OBJS_O0) $(OBJS_O1) $(OBJS_O2) $(OBJS_O3) $(OBJS_Os) $(OBJS_PAL)
 DEP = $(OBJS:.o=.d)
 
 # names of the libraries (one for each -O flag)
-LIBS = libmml.a libmml_O1.a libmml_O2.a libmml_O3.a libmml_Os.a \
-#libmml_PAL.a
+LIBS = libmml.a libmml_O1.a libmml_O2.a libmml_O3.a libmml_Os.a
+DIST_LIBS = libmml.a libmml_O1.a libmml_O2.a libmml_O3.a 
 
 # link, archive, and compile flags
 LDFLAGS = 
@@ -112,11 +112,11 @@ dist : libs
 # build the tar.gz version of the distribution
 tar : 
 	tar --transform='s|src|include/mml|' -czf $(VERSION).tar.gz \
-	$(HEADERS) tutorials/ $(LIBS)
+	$(HEADERS) tutorials/ $(DIST_LIBS)
 
 # build the .zip version of the distribution
 zip : 
-	zip $(VERSION).zip -r $(HEADERS) tutorials/ $(LIBS)
+	zip $(VERSION).zip -r $(HEADERS) tutorials/ $(DIST_LIBS)
 	for h in $(HEADERS:src/%.h=%.h) ; do \
 	  printf "@ src/$$h\n@=include/mml/$$h" | zipnote -w $(VERSION).zip ; \
 	done
@@ -144,8 +144,8 @@ test_controller : $(LIBS)
 test_game_state : $(LIBS)
 	wiimake $(ISO_FILE) tests/testGameState.ini $(MAKE_FLAGS)
 
-test_inputs : $(LIBS)
-	wiimake $(ISO_FILE) tests/testInputs.ini $(MAKE_FLAGS)
+test_moves : $(LIBS)
+	wiimake $(ISO_FILE) tests/testMoves.ini $(MAKE_FLAGS)
 
 test_math : $(LIBS)
 	wiimake $(ISO_FILE) tests/testMath.ini $(MAKE_FLAGS)
@@ -198,6 +198,11 @@ tutorial_DefensiveAI : dist
 docs :
 	echo "PROJECT_NUMBER =" $(MAJOR).$(MINOR).$(REVISION) >> doxygen.ini
 	doxygen doxygen.ini
+
+# create todo list
+.PHONY : todo_list
+todo_list : 
+	grep -r TODO src || true
 
 # clean targets
 .PHONY : clean clean_libs clean_deps clean_objects clean_dist clean_tests

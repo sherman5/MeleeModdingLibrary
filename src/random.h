@@ -14,20 +14,20 @@
  *
  * @return - Random floating point number in [0,1]
  */
-float rand(void);
+float rand();
 
 /**
- * @brief Sample uniformly from [@p a,@p b].
+ * @brief Sample uniformly from <tt> [a, b] </tt>.
  *
- * @return random floating point number in [@p a, @p b]
+ * @return random floating point number in <tt> [a, b] </tt>
  */
 float uniform(float a, float b);
 
 /**
  * @brief Return index of array according to given probabilities.
  *
- * @param probs[] - array of probabilities, must sum to 1
- *
+ * @param probs - array of probabilities, must sum to 1
+ * @param size - size of probability array 
  * @return index of array
  */
 unsigned sample(const float* probs, size_t size);

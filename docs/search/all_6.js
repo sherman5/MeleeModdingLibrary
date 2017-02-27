@@ -1,17 +1,29 @@
 var searchData=
 [
+  ['f',['f',['../logic_8h.html#afedc1185b2a2b2a7601d0738c48432be',1,'FunctionArg']]],
+  ['f32',['f32',['../gctypes_8h.html#a5f6906312a689f27d70e9d086649d3fd',1,'gctypes.h']]],
+  ['f64',['f64',['../gctypes_8h.html#a94dab5770726ccbef8c7d026cfbdf8e5',1,'gctypes.h']]],
   ['fabs',['fabs',['../math_8h.html#a0bc70d364c7f180aece2381faae7eafc',1,'math.h']]],
+  ['falco',['FALCO',['../_a_i_8h.html#a9048a2e314c97dfce03a07535084a9fd',1,'AI.h']]],
   ['falco_5fid',['FALCO_ID',['../melee__info_8h.html#ad6eca8f9d45dd2d8007dc016aa40e511',1,'melee_info.h']]],
+  ['falcon',['FALCON',['../_a_i_8h.html#a341ee75d09e0218d1a01178f6baab8a9',1,'AI.h']]],
   ['falcon_5fid',['FALCON_ID',['../melee__info_8h.html#a5eff433e038c61a06b7681ef99898cc3',1,'melee_info.h']]],
   ['fallendown',['fallenDown',['../state__check_8h.html#ab03f2a89463e1ef138526f7d0833412a',1,'state_check.c']]],
+  ['false',['false',['../gctypes_8h.html#a65e9886d74aaee76545e83dd09011727',1,'gctypes.h']]],
+  ['final',['FINAL',['../game__state_8h.html#a3bef058dfaa1001fd949575a5c096f7bafb43b8264ea4d3dd9957ba1b3fd3f3d5',1,'game_state.h']]],
+  ['flags',['flags',['../moves_8h.html#aa246fa433d167a7f6f8533227e40b76e',1,'RawInput']]],
   ['floor',['floor',['../math_8h.html#ada8a2be1464302cc6dda3b2ab19e15ad',1,'math.c']]],
   ['fmax',['fmax',['../math_8h.html#a52e85f021f908d292de396a9f6f442cf',1,'math.c']]],
   ['fmin',['fmin',['../math_8h.html#a7bff75e9292d7da0d5b6aa2f36d618db',1,'math.c']]],
+  ['fountain',['FOUNTAIN',['../game__state_8h.html#a3bef058dfaa1001fd949575a5c096f7baf7d41671b6d5bdd929e5f95e823eee18',1,'game_state.h']]],
+  ['fox',['FOX',['../_a_i_8h.html#a45d42d926ee05e83077980e151e6db9d',1,'AI.h']]],
   ['fox_5fid',['FOX_ID',['../melee__info_8h.html#a7e6b6409c26b8b17e7d387e21c8a18a0',1,'melee_info.h']]],
   ['fpow',['fpow',['../math_8h.html#a50c2a3bb7401c24b4a3ef1a2e7680a26',1,'math.c']]],
   ['frame',['frame',['../_a_i_8h.html#a9189c4df8efafef6f93fe84368cc4541',1,'ControllerInput']]],
+  ['frameoffset',['frameOffset',['../moves_8h.html#a88aaddd420ee755598a3f347bb6f4785',1,'RawInput']]],
   ['free',['free',['../system_8h.html#afbedc913aa4651b3c3b4b3aecd9b4711',1,'system.c']]],
   ['full_5fstick',['FULL_STICK',['../controller_8h.html#aa4bf290c42e5626f586f84d41be94cdb',1,'controller.h']]],
-  ['function',['Function',['../logic_8h.html#struct_function',1,'']]],
-  ['functionarg',['FunctionArg',['../logic_8h.html#union_function_arg',1,'']]]
+  ['function',['function',['../logic_8h.html#aea3dcf0c8de30d192ee92494131c4996',1,'FunctionCall']]],
+  ['functionarg',['FunctionArg',['../logic_8h.html#union_function_arg',1,'']]],
+  ['functioncall',['FunctionCall',['../logic_8h.html#struct_function_call',1,'']]]
 ];

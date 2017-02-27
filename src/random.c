@@ -1,3 +1,4 @@
+#include "error.h"
 #include "random.h"
 #include "native_functions.h"
 #include "gctypes.h"
@@ -33,5 +34,6 @@ unsigned sample(const float* probs, size_t size)
         total += probs[i];
         if (unif < total) { return i;}
     }
+    THROW_ERROR("invalid probabilities");
     return 0;
 }

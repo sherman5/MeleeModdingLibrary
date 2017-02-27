@@ -3,6 +3,7 @@
 #include <system.h>
 #include <print.h>
 #include <gctypes.h>
+#include <error.h>
 
 static char heap[15000];
 static bool init = false;
@@ -21,7 +22,7 @@ void _main()
         print("this is a test sentence to see how many characters fit");
         print("this is a test of multiple calls to print");
         print(str);
-/*        print("print first extra string");
+        print("print first extra string");
         print("print second extra string");
         print("print third extra string");
         print("print fourth");
@@ -47,6 +48,8 @@ void _main()
         print("line 28");
         print("line 29");
         print("line 30");
+        print("line 31");
+        /*THROW_ERROR("test error taking up multiple lines of output blah blah");
         print("line 31");*/
         init = true;
     }

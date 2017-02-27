@@ -22,10 +22,11 @@
 #define SHIELD_SIZE(p)      (_gameState.playerData[p]->shieldSize)
 #define HITSTUN(p)          (_gameState.playerData[p]->hitstun)
 #define BREAKOUT(p)         (_gameState.playerData[p]->breakoutCountdown)
+#define STAGE               _gameState.stage
 
 bool offstage(FunctionArg port)
 {
-    return fabs(X_COORD(port.u)) > _gameState.stage.ledge;        
+    return fabs(X_COORD(port.u)) > STAGE.ledge;        
 }
 
 bool inHitstun(FunctionArg port)
@@ -94,18 +95,16 @@ bool nearSurface(FunctionArg port)
     float x = fabs(X_COORD(port.u));
     float y = Y_COORD(port.u);
 
-    bool xSidePlat = (x > _gameState.stage.side.left
-        && x < _gameState.stage.side.right);
+    bool xSidePlat = x > STAGE.side.left && x < STAGE.side.right;
 
-    bool ySidePlat = (y > _gameState.stage.side.height
-        && y < _gameState.stage.side.height + TECH_HEIGHT);
+    bool ySidePlat = y > STAGE.side.height
+        && y < STAGE.side.height + TECH_HEIGHT;
 
-    bool topPlat = (x < _gameState.stage.top.right
-        && y > _gameState.stage.top.height
-        && y < _gameState.stage.top.height + TECH_HEIGHT);
+    bool topPlat = x < STAGE.top.right
+        && y > STAGE.top.height && y < STAGE.top.height + TECH_HEIGHT;
 
-    if (_gameState.stage.side.height < 1.f) {xSidePlat = false;}
-    if (_gameState.stage.top.height < 1.f) {topPlat = false;}
+    if (STAGE.side.height < 1.f) {xSidePlat = false;}
+    if (STAGE.top.height  < 1.f) {topPlat = false;}
 
     bool stage = !offstage(port) && y < TECH_HEIGHT;
 
@@ -122,20 +121,15 @@ bool techSituation(FunctionArg port)
            );
 }
 
-bool hitlagFrames(FunctionArg port, FunctionArg frames)
-{
-    return (u32) HITLAG(port.u) == frames.u;
-}
-
 bool recoverySituation(FunctionArg port)
 {
     return offstage(port) && !inHitstun(port)
         && !actionStateEq(port, _AS_CliffWait);
 }
 
-bool breakoutFrame(FunctionArg port, FunctionArg frame)
+bool breakoutFrame(FunctionArg port, FunctionArg frames)
 {
-    return (u32) BREAKOUT(port.u) == frame.u;
+    return (u32) BREAKOUT(port.u) == frames.u;
 }
 
 

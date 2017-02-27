@@ -55,30 +55,30 @@ static void checkInput(AI* ai)
     }
 }
 
-#define LOGIC_SIZE      ai->logicCapacity * sizeof(Logic)
+#define LOGIC_SIZE      (ai->logicCapacity * sizeof(Logic))
 void addLogic(AI* ai, Logic* logic)
 {
     if (ai->logicSize == ai->logicCapacity)
     {
-        ai->logicCapacity += 5;
+        ai->logicCapacity *= 2;
         ai->logicQueue = realloc(ai->logicQueue, LOGIC_SIZE);
     }
     memcpy(ai->logicQueue + ai->logicSize, logic, sizeof(Logic));
     ai->logicSize++;
 }
 
-#define MOVE_SIZE       move->size * sizeof(ControllerInput)
+#define INPUT_SIZE       (ai->inputCapacity * sizeof(ControllerInput))
 void addMove(AI* ai, Move* move)
 {
     if (move->size > ai->inputCapacity)
     {
-        ai->inputQueue = realloc(ai->inputQueue, MOVE_SIZE);
-        ai->inputCapacity = move->size;
+        ai->inputCapacity = 2 * move->size;
+        ai->inputQueue = realloc(ai->inputQueue, INPUT_SIZE);
     }
 
     for (unsigned i = 0; i < move->size; ++i)
     {
-        unsigned index = (move->size - 1) - i;
+        unsigned index = (move->size - 1) - i; //reverse order
         ai->inputQueue[i] = processRawInput(ai->port, move->inputs[index]);
     }
     ai->inputSize = move->size;
@@ -124,7 +124,6 @@ void updateAI(AI* ai)
         ai->active = true;
         initAI(ai);
         SLOT_TYPE(ai->port) = 0x00;
-        stockCount = STOCKS(ai->port);
         findOpponent(ai);
     }
     

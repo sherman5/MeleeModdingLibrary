@@ -10,16 +10,9 @@
 #include "gctypes.h"
 
 /** @cond */
-
 extern u32 (*OSCreateHeap)(void*, void*);
 extern void* (*OSAllocFromHeap)(u32, size_t);
 extern void (*OSFreeToHeap)(u32, void*);
-
-#if 0
-/** @endcond */
-
-/** @cond */
-#endif
 /** @endcond */
 
 /**
@@ -121,7 +114,8 @@ void* calloc(size_t num, size_t size);
  *
  * @see http://www.cplusplus.com/reference/cstdlib/realloc/
  */
-void* realloc(void* ptr, size_t new_size);
+void* realloc(void* ptr, size_t size)
+    __attribute__ ((warn_unused_result));
 
 /**
  * @brief Deallocate memory block

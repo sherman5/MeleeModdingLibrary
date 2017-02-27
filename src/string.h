@@ -226,17 +226,17 @@ size_t strlen(const char* str);
  * 
  * Converts an integer value to a null-terminated string using
  * base 10 and stores the result in the array given
- * by @p str.
+ * by @p s.
  *
- * @p str should be an array long enough to contain any possible value, 
+ * @p s should be an array long enough to contain any possible value, 
  * i.e. 33 bits in a 32-bit platform.
  *
- * @param value - Value to be converted to a string.
- * @param str - Array in memory where to store the resulting
+ * @param n - Value to be converted to a string.
+ * @param s - Array in memory where to store the resulting
  * null-terminated string.
  *
  * @return A pointer to the resulting null-terminated string,
- * same as parameter @p str. 
+ * same as parameter @p s. 
  *
  * @see http://www.cplusplus.com/reference/cstdlib/itoa/
  */

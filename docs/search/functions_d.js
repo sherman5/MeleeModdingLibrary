@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['offstage',['offstage',['../state__check_8h.html#a73b9a557ad5f60d5f4190e66e34967a1',1,'state_check.c']]],
-  ['onground',['onGround',['../state__check_8h.html#a5094d6153c8e08c30252d4641a376ede',1,'state_check.c']]]
+  ['pastframe',['pastFrame',['../state__check_8h.html#aee1d705b77f878952545abdfec19765f',1,'state_check.c']]],
+  ['playerdata',['playerData',['../game__state_8h.html#a2abf754a49d9ca0617637095b19408ba',1,'game_state.c']]],
+  ['print',['print',['../print_8h.html#a85d50a09cb925cd08d803c5a8fd01da7',1,'print.c']]]
 ];

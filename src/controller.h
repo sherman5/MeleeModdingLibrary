@@ -10,14 +10,14 @@
 #include "gctypes.h"
 
 //@{
-/** Controller bit masks */
+/** Controller bit mask */
 #define BUTTON_BITS 0x000F
 #define RADIUS_BITS 0x00F0
 #define ANGLE_BITS  0xFF00
 //@}
 
 //@{
-/** Button Flags */
+/** Button Flag */
 #define NO_BUTTON     0x00
 #define A_BUTTON      0x01
 #define B_BUTTON      0x02
@@ -75,6 +75,7 @@ void setController(Controller* controller, u16 state);
  *
  * @param controller - Pointer to a Controller struct.
  * @param port - Which player port to write to {1,2,3,4}
+ * @param pData - Write controller to PlayerData
  *
  * @return None
  */

@@ -17,7 +17,6 @@
  * debug menu).
  *
  * @param str - string to output
- *
  * @return none
  */
 void print(const char* str);
@@ -32,15 +31,27 @@ void print(const char* str);
 void clear();
 
 /**
- * @brief clear the output stream
+ * @brief "throw" an error
  *
- * This function clears any text on the output stream
+ * Print an error message and set _errorState to true
  *
+ * @param errMessage - error message to print
  * @return none
  */
 void error(const char* errMessage);
 
+/**
+ * @brief display print stream
+ *
+ * Create the display where print sends output, should never be
+ * called by user. The user should create a branch to this symbol 
+ * at 0x801a633c overwriting instruction 0x7c7f1b78 (SSBM v1.02)
+ *
+ * @return none
+ */
+void display();
+
 /** Only @c true if @c error has never been called **/
-extern bool _error_state;
+extern bool _errorState;
 
 #endif

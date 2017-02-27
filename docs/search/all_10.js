@@ -1,14 +1,22 @@
 var searchData=
 [
-  ['rad_5fto_5fdeg',['RAD_TO_DEG',['../math_8h.html#a77dd57594a038f87051b324cee42c531',1,'math.h']]],
-  ['radius_5fbits',['RADIUS_BITS',['../controller_8h.html#a01d64cf876576ed9d17018005eda2523',1,'controller.h']]],
-  ['rand',['rand',['../random_8h.html#ac7e7cfbc148e66c78d60faa816c76399',1,'random.c']]],
-  ['random_2eh',['random.h',['../random_8h.html',1,'']]],
-  ['realloc',['realloc',['../system_8h.html#a8703cc44a683e2d87a2bd765b8ec2adb',1,'system.c']]],
-  ['recip_5fsqrt_5ffptr',['RECIP_SQRT_FPTR',['../native__functions_8h.html#ac70f0540ee7d4b5655eda1d4e08dcaf4',1,'native_functions.h']]],
-  ['recipsqrt',['recipSqrt',['../math_8h.html#a989820d8d92331f09a5f344cfcdd62f2',1,'math.h']]],
-  ['recoverysituation',['recoverySituation',['../state__check_8h.html#aa1e93f4ac2fee84c0e2d74d0e0c5aea9',1,'state_check.c']]],
-  ['require',['REQUIRE',['../unit__test_8h.html#a3f02e40d250ab819c515702c0e59373c',1,'unit_test.h']]],
-  ['require_5fflt_5feq',['REQUIRE_FLT_EQ',['../unit__test_8h.html#a857490021cba81bf64a150aaedf6d84a',1,'unit_test.h']]],
-  ['roy_5fid',['ROY_ID',['../melee__info_8h.html#aa9ecbb8fe707acf832734dbde6eba4bd',1,'melee_info.h']]]
+  ['p',['p',['../logic_8h.html#a117104b82864d3b23ec174af6d392709',1,'FunctionArg']]],
+  ['pastframe',['pastFrame',['../state__check_8h.html#aee1d705b77f878952545abdfec19765f',1,'state_check.c']]],
+  ['peach',['PEACH',['../_a_i_8h.html#af96789c285aa5b40d948369c9867ba52',1,'AI.h']]],
+  ['peach_5fid',['PEACH_ID',['../melee__info_8h.html#a4aafa26416e57ab8e711f7f8b772b1b8',1,'melee_info.h']]],
+  ['pichu',['PICHU',['../_a_i_8h.html#a44aefe601adbb20f2007ed39dd9b1da8',1,'AI.h']]],
+  ['pichu_5fid',['PICHU_ID',['../melee__info_8h.html#aee8fa194a62676cda1c8a8bd00793344',1,'melee_info.h']]],
+  ['pikachu',['PIKACHU',['../_a_i_8h.html#a2d640ac305fa8dacac257a7c8bf24463',1,'AI.h']]],
+  ['pikachu_5fid',['PIKACHU_ID',['../melee__info_8h.html#ae7ce0945a6060a56d24f450135211c1e',1,'melee_info.h']]],
+  ['platform',['Platform',['../game__state_8h.html#struct_platform',1,'']]],
+  ['player_5fblock',['PLAYER_BLOCK',['../game__state_8h.html#a66765335086cf1c88e262a62212ab862',1,'game_state.h']]],
+  ['player_5fentity_5ffptr',['PLAYER_ENTITY_FPTR',['../native__functions_8h.html#aafe1d194de80dee7d248797914d75b26',1,'native_functions.h']]],
+  ['player_5fstate',['PLAYER_STATE',['../game__state_8h.html#a848e81401f132d036f45e4212b7b369b',1,'game_state.h']]],
+  ['playerdata',['PlayerData',['../game__state_8h.html#struct_player_data',1,'PlayerData'],['../game__state_8h.html#ae366a6cc30f628e5027bddc0eee2bcfc',1,'GameState::playerData()'],['../game__state_8h.html#a2abf754a49d9ca0617637095b19408ba',1,'playerData():&#160;game_state.c']]],
+  ['point',['Point',['../math_8h.html#struct_point',1,'']]],
+  ['port',['port',['../_a_i_8h.html#a1cef36ea7bcb39eb33ee9c064ef1aa39',1,'AI']]],
+  ['print',['print',['../print_8h.html#a85d50a09cb925cd08d803c5a8fd01da7',1,'print.c']]],
+  ['print_2eh',['print.h',['../print_8h.html',1,'']]],
+  ['puff',['PUFF',['../_a_i_8h.html#a3b9e84b997dc7e5c08fbb89d65a78e5b',1,'AI.h']]],
+  ['puff_5fid',['PUFF_ID',['../melee__info_8h.html#ad66264843d4135186fd7428fea66ce6a',1,'melee_info.h']]]
 ];

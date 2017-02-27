@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['ice_5fclimbers_5fid',['ICE_CLIMBERS_ID',['../melee__info_8h.html#a64b37b1962893d0d0f87e36553d79fb9',1,'melee_info.h']]],
-  ['itoa_5ffptr',['ITOA_FPTR',['../native__functions_8h.html#a7dadbcb6ef3a1ad78a303b828460ce52',1,'native_functions.h']]]
+  ['ganon',['GANON',['../_a_i_8h.html#aa7a5a69ae8f3522c82d6bee26557b7f5',1,'AI.h']]],
+  ['ganon_5fid',['GANON_ID',['../melee__info_8h.html#aca3d96d1c4fbbaf7d9b21ddc467a251e',1,'melee_info.h']]]
 ];

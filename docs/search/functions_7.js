@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['getheapsize',['getHeapSize',['../system_8h.html#ad7e29e81fdd34094d8734d1fc34144ba',1,'system.c']]]
+  ['hitlagframes',['hitlagFrames',['../state__check_8h.html#a5bc94a96352a1d6bfd8983173149d9dd',1,'state_check.h']]]
 ];

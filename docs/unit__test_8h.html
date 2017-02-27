@@ -107,7 +107,7 @@ Macros</h2></td></tr>
 <tr class="separator:a3f02e40d250ab819c515702c0e59373c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a857490021cba81bf64a150aaedf6d84a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unit__test_8h.html#a857490021cba81bf64a150aaedf6d84a">REQUIRE_FLT_EQ</a>(L,  R,  tol)&#160;&#160;&#160;<a class="el" href="unit__test_8h.html#a3f02e40d250ab819c515702c0e59373c">REQUIRE</a>(APPROX_ZERO((L) - (R), tol))</td></tr>
 <tr class="separator:a857490021cba81bf64a150aaedf6d84a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a68f824d33c675c8bb6e1337a14812a8d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unit__test_8h.html#a68f824d33c675c8bb6e1337a14812a8d">UNIT_TEST</a>&#160;&#160;&#160;static bool tests_passed = true</td></tr>
+<tr class="memitem:a68f824d33c675c8bb6e1337a14812a8d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unit__test_8h.html#a68f824d33c675c8bb6e1337a14812a8d">UNIT_TEST</a>&#160;&#160;&#160;static <a class="el" href="gctypes_8h.html#a6a912bf1d80625256884f11a0ea1d5fd">bool</a> tests_passed = <a class="el" href="gctypes_8h.html#a41f9c5fb8b08eb5dc3edce4dcb37fee7">true</a></td></tr>
 <tr class="separator:a68f824d33c675c8bb6e1337a14812a8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aefcd1ca1799d2395f7bbe3c50bcc8ff8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unit__test_8h.html#aefcd1ca1799d2395f7bbe3c50bcc8ff8">END_TEST</a></td></tr>
 <tr class="separator:aefcd1ca1799d2395f7bbe3c50bcc8ff8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -124,7 +124,7 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> { <span class="keywordflow">if</span> (tests_passed) \</div><div class="line">    {<a class="code" href="print_8h.html#a85d50a09cb925cd08d803c5a8fd01da7">print</a>(<span class="stringliteral">&quot;all tests passed!&quot;</span>);}} <span class="keywordflow">while</span> (0)</div><div class="ttc" id="print_8h_html_a85d50a09cb925cd08d803c5a8fd01da7"><div class="ttname"><a href="print_8h.html#a85d50a09cb925cd08d803c5a8fd01da7">print</a></div><div class="ttdeci">void print(const char *str)</div><div class="ttdoc">print a string to the output stream </div><div class="ttdef"><b>Definition:</b> print.c:40</div></div>
+<b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> { <span class="keywordflow">if</span> (tests_passed) \</div><div class="line">    {<a class="code" href="print_8h.html#a85d50a09cb925cd08d803c5a8fd01da7">print</a>(<span class="stringliteral">&quot;all tests passed!&quot;</span>);}} <span class="keywordflow">while</span> (0)</div><div class="ttc" id="print_8h_html_a85d50a09cb925cd08d803c5a8fd01da7"><div class="ttname"><a href="print_8h.html#a85d50a09cb925cd08d803c5a8fd01da7">print</a></div><div class="ttdeci">void print(const char *str)</div><div class="ttdoc">print a string to the output stream </div><div class="ttdef"><b>Definition:</b> print.c:47</div></div>
 </div><!-- fragment --><p>Macro placed in a function after all tests have been run </p>
 
 </div>
@@ -142,7 +142,7 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> { <span class="keywordflow">if</span> (!(condition)) \</div><div class="line">    {<a class="code" href="print_8h.html#a85d50a09cb925cd08d803c5a8fd01da7">print</a>(ASSERT_MSG); tests_passed = <span class="keyword">false</span>;}} <span class="keywordflow">while</span> (0)</div><div class="ttc" id="print_8h_html_a85d50a09cb925cd08d803c5a8fd01da7"><div class="ttname"><a href="print_8h.html#a85d50a09cb925cd08d803c5a8fd01da7">print</a></div><div class="ttdeci">void print(const char *str)</div><div class="ttdoc">print a string to the output stream </div><div class="ttdef"><b>Definition:</b> print.c:40</div></div>
+<b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> { <span class="keywordflow">if</span> (!(condition)) \</div><div class="line">    {<a class="code" href="print_8h.html#a85d50a09cb925cd08d803c5a8fd01da7">print</a>(ASSERT_MSG); tests_passed = <span class="keyword">false</span>;}} <span class="keywordflow">while</span> (0)</div><div class="ttc" id="print_8h_html_a85d50a09cb925cd08d803c5a8fd01da7"><div class="ttname"><a href="print_8h.html#a85d50a09cb925cd08d803c5a8fd01da7">print</a></div><div class="ttdeci">void print(const char *str)</div><div class="ttdoc">print a string to the output stream </div><div class="ttdef"><b>Definition:</b> print.c:47</div></div>
 </div><!-- fragment --><p>Require <code>condition</code> to be true </p>
 
 </div>
@@ -185,7 +185,7 @@ Macros</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define UNIT_TEST&#160;&#160;&#160;static bool tests_passed = true</td>
+          <td class="memname">#define UNIT_TEST&#160;&#160;&#160;static <a class="el" href="gctypes_8h.html#a6a912bf1d80625256884f11a0ea1d5fd">bool</a> tests_passed = <a class="el" href="gctypes_8h.html#a41f9c5fb8b08eb5dc3edce4dcb37fee7">true</a></td>
         </tr>
       </table>
 </div><div class="memdoc">

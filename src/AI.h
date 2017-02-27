@@ -7,6 +7,8 @@
 #ifndef MML_AI_H
 #define MML_AI_H
 
+//@{
+/** AI Character Bit Mask */
 #define DR_MARIO        (1 << 0)
 #define MARIO           (1 << 1)
 #define LUIGI           (1 << 2)
@@ -32,9 +34,10 @@
 #define MR_GNW          (1 << 22)
 #define MARTH           (1 << 23)
 #define ROY             (1 << 24)
+//@}
 
 #include "logic.h"
-#include "inputs.h"
+#include "moves.h"
 #include "controller.h"
 #include "gctypes.h"
 
@@ -49,28 +52,61 @@ typedef struct
 
 } ControllerInput;
 
+/** Holds all information about an AI */
 typedef struct
 {
-    Controller controller;
-    ControllerInput* inputQueue;
-    Logic* logicQueue;
-    size_t logicSize, inputSize;
-    size_t logicCapacity, inputCapacity;
-    u32 characters;
-    u32 port;
-    u32 opponent;
-    bool active;
+    Controller controller; /**< Controller this AI uses */
+    ControllerInput* inputQueue; /**< Array of inputs to execute */
+    Logic* logicQueue; /**< Array of logic to evaluate */
+    size_t logicSize, inputSize; /**< Size of logic/input arrays */
+    size_t logicCapacity, inputCapacity; /**< Capacity of arrays */
+    u32 characters; /**< Characters this AI can control */
+    u32 port; /**< Port this AI plays at */
+    u32 opponent; /**< Port of this AI's opponent */
+    bool active; /**< Whether or not this AI is active in the game */
         
 } AI;
 
+/**
+ * @brief Add single logic rule to AI
+ *
+ * @param ai - Pointer to AI struct
+ * @param logic - Point to Logic struct
+ * @return none
+ */
 void addLogic(AI* ai, Logic* logic);
 
+/**
+ * @brief Tell AI to execute a move 
+ *
+ * @param ai - Pointer to AI struct
+ * @param move - Pointer to Move struct
+ * @return none
+ */
 void addMove(AI* ai, Move* move);
 
+/**
+ * @brief Check logic rules and queued inputs 
+ *
+ * @param ai - Pointer to AI struct 
+ * @return  none 
+ */
 void updateAI(AI* ai);
 
+/**
+ * @brief Check if AI has no logic or inputs queued
+ *
+ * @param ai - Pointer to AI struct
+ * @return Return true if AI has no logic or inputs queued 
+ */
 bool needLogic(AI* ai);
 
+/** 
+ * @brief Clear all logic and inputs from AI (reset controller)
+ *
+ * @param ai - Pointer to AI struct
+ * @return none
+ */
 void clearAI(AI* ai);
 
 #endif

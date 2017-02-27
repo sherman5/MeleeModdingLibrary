@@ -1,39 +1,45 @@
 /**
- * @file inputs.h
+ * @file moves.h
  * @brief Common input sequences.
  *
  */
 
-#ifndef MML_INPUTS_H
-#define MML_INPUTS_H
+#ifndef MML_MOVES_H
+#define MML_MOVES_H
 
 #include "gctypes.h"
 #include "controller.h"
 
-/** represent an input in its minimal form **/
+/** represent an input in its minimal form */
 typedef struct __attribute__((packed))
 {
-    u16 controller;
-    s8 frameOffset;
-    u8 flags;
+    u16 controller; /**< controller state */
+    s8 frameOffset; /**< frame offset */
+    u8 flags; /**< input flags */
 
 } RawInput;
 
+/** Represents a single move (string of timed inputs) */
 typedef struct
 {
-    RawInput* inputs;
-    u32 size;
+    RawInput* inputs; /**< input array */
+    u32 size; /**< size of array */
 
 } Move;
 
-/** flags */
+//@{
+/** Input Flags */
 #define NO_FLAGS    0
 #define JUMPSQUAT   (1 << 0)
 #define SH_LENGTH   (1 << 1)
+//@}
 
+//@{
+/** Controller State Macros */
 #define RELEASE 0x0000
 #define STICK_ANGLE(x) ((((u8) (((x) / 360.f) * 255.f)) << 8) & 0xFF00)
 #define OVERWRITE    {0, 0, 0}
+//@}
 
 /** @cond **/
 extern RawInput _raw_shNeutralB[4];

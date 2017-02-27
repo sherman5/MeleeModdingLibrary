@@ -9,6 +9,8 @@
 
 #include <stdint.h>
 
+//@{
+/** standard types */
 typedef uint8_t u8;
 typedef uint16_t u16;
 typedef uint32_t u32;
@@ -41,5 +43,7 @@ typedef volatile bool vbool;
 #define __bool_true_false_are_defined 1
 
 #define NULL ((void*) 0)
+//@}
+
 
 #endif

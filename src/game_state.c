@@ -32,9 +32,9 @@ bool inGame()
 
 GameState _gameState = DEFAULT_GAMESTATE;
 
-u32 (*playerEntity)(unsigned) = PLAYER_ENTITY_FPTR;
+u32 (*playerEntity)(u32) = PLAYER_ENTITY_FPTR;
 
-PlayerData* playerData(unsigned id)
+PlayerData* playerData(u32 id)
 {
     u32 entity = playerEntity(id - 1);
     if (entity > 0)
