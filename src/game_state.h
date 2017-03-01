@@ -125,6 +125,13 @@ bool inGame();
 void updateGameState();
 
 /**
+ * Branch to this symbol when game ends, never call directly
+ * 
+ * @return none
+ */
+void endGame();
+
+/**
  * Get pointer to player's data
  * 
  * @param id - unsigned integer in {1,2,3,4}

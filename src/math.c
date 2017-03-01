@@ -74,10 +74,10 @@ float fpow(float base, u8 exp)
     return result;
 }
 
+static float (*native_sin)(float) = SINE_FPTR;
 float sin(float x)
 {
-    float (*native)(float) = SINE_FPTR;
-    return native(DEG_TO_RAD(x));
+    return native_sin(DEG_TO_RAD(x));
 }
 
 float cos(float x)

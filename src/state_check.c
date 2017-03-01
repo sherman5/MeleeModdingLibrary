@@ -44,7 +44,7 @@ bool inHitlag(FunctionArg port)
     return (u32) HITLAG(port.u) > 0;
 }
 
-bool hitlagFrame(FunctionArg port, FunctionArg frame)
+bool hitlagFrames(FunctionArg port, FunctionArg frame)
 {
     return (u32) HITLAG(port.u) == frame.u;
 }

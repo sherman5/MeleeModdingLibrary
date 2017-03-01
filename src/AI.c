@@ -67,7 +67,7 @@ void addLogic(AI* ai, Logic* logic)
     ai->logicSize++;
 }
 
-#define INPUT_SIZE       (ai->inputCapacity * sizeof(ControllerInput))
+#define INPUT_SIZE      (ai->inputCapacity * sizeof(ControllerInput))
 void addMove(AI* ai, Move* move)
 {
     if (move->size > ai->inputCapacity)
@@ -96,15 +96,6 @@ void clearAI(AI* ai)
     ai->controller = (Controller) {0, 0.f, 0.f, 0.f, 0.f};
 }
 
-static void initAI(AI* ai)
-{
-    clearAI(ai);
-    ai->logicCapacity = 0;
-    ai->inputCapacity = 0;
-    ai->logicQueue = NULL;
-    ai->inputQueue = NULL;
-}
-
 static void findOpponent(AI* ai)
 {
     if       (playerData(1) && ai->port != 1) {ai->opponent = 1;}
@@ -122,7 +113,7 @@ void updateAI(AI* ai)
         && ((ai->characters >> CHAR_SELECT(ai->port)) & 1))
     {
         ai->active = true;
-        initAI(ai);
+        clearAI(ai);
         SLOT_TYPE(ai->port) = 0x00;
         findOpponent(ai);
     }

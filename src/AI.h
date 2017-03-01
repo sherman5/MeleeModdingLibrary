@@ -67,6 +67,22 @@ typedef struct
         
 } AI;
 
+/** helps with ai initialization */
+#define INIT_AI(port_val, characters_val) \
+{ \
+    .controller = (Controller) {0, 0.f, 0.f, 0.f, 0.f}, \
+    .inputQueue = NULL, \
+    .logicQueue = NULL, \
+    .logicSize = 0, \
+    .inputSize = 0, \
+    .logicCapacity = 1, \
+    .inputCapacity = 0, \
+    .characters = characters_val, \
+    .port = port_val, \
+    .opponent = 0, \
+    .active = false \
+}
+
 /**
  * @brief Add single logic rule to AI
  *

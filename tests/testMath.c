@@ -1,12 +1,12 @@
-#include <unit_test.h>
-#include <system.h>
-#include <math.h>
-#include <string.h>
+//#include <unit_test.h>
+//#include <system.h>
+//#include <math.h>
+//#include <string.h>
 
-UNIT_TEST;
+//UNIT_TEST;
 
-#define RA_SIZE(x) (sizeof(x) / sizeof(x[0]))
-
+//#define RA_SIZE(x) (sizeof(x) / sizeof(x[0]))
+/*
 static bool init_run = false;
 static bool tests_run = false;
 static char heap[13000];
@@ -59,11 +59,13 @@ static int atan_indices[4] = {0, 1, 2, 3};
 
 static void init(void)
 {
-    initHeap(heap, heap + sizeof(heap));
+    //initHeap(heap, heap + sizeof(heap));
 }
-
+*/
 void _main(void)
 {
+    asin(30.f);
+#if 0
     if (!init_run) { init(); init_run = true;}
 
     if (!tests_run)
@@ -231,6 +233,7 @@ void _main(void)
         END_TEST;
         tests_run = true;
     }
+#endif
 }
 
 

@@ -1,7 +1,7 @@
 #include <mml/print.h>
 #include <mml/state_check.h>
 #include <mml/AI.h>
-#include <mml/inputs.h>
+#include <mml/moves.h>
 #include <mml/action_state.h>
 #include <mml/game_state.h>
 #include <mml/math.h>
@@ -22,9 +22,9 @@ static Point ledge;
 //attempt to recover with DJ, airdodge
 static bool closeRecovery(AI* ai)
 {
-    if (Y_COORD(ai->port) < -VERTICAL_DJ(ai->port)
-        || fabs(X_COORD(ai->port)) > ledge + HORIZONTAL_DJ(ai->port)
-        || JUMPS_USED(p) > 1)
+    if (-Y_COORD(ai->port) > VERTICAL_DJ(ai->port)
+        || fabs(X_COORD(ai->port)) > ledge.x + HORIZONTAL_DJ(ai->port)
+        || JUMPS_USED(ai->port) > 1)
     {
         return false;
     }

@@ -9,8 +9,7 @@
 #include "recovery.h"
 #include "DI.h"
 
-AI cpuPlayer = {.port = 2, .active = false,
-    .characters = FALCO | FOX | MARTH | FALCON};
+AI cpuPlayer = INIT_AI(2, FALCO | FOX | MARTH | FALCON);
 
 Logic hitTechLogic = 
 {

@@ -15,7 +15,7 @@
 static u32 _end_frame = 0xffffffff;
 static bool _in_game = false;
 
-void _endGame()
+void endGame()
 {
     _in_game = false;
     _end_frame = CURRENT_FRAME;

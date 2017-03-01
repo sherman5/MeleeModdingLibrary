@@ -8,6 +8,7 @@ var searchData=
   ['ingame',['inGame',['../game__state_8h.html#a5dd876749dfcb11bbd321314dfabd7fc',1,'game_state.c']]],
   ['inhitlag',['inHitlag',['../state__check_8h.html#a84a7e6247475e75a0a5917bfa75c1532',1,'state_check.c']]],
   ['inhitstun',['inHitstun',['../state__check_8h.html#a1810c259960443982cd73a7d7df6b553',1,'state_check.c']]],
+  ['init_5fai',['INIT_AI',['../_a_i_8h.html#a729554879315733b3760b7e5e2927495',1,'AI.h']]],
   ['initheap',['initHeap',['../system_8h.html#a8848565f840ad3ae3483237a47a92ca3',1,'system.c']]],
   ['inputcapacity',['inputCapacity',['../_a_i_8h.html#a02cf5917931e3d0e28867c01796f0715',1,'AI']]],
   ['inputqueue',['inputQueue',['../_a_i_8h.html#a98485465ebcea1bfc1d7b426255a1b83',1,'AI']]],
