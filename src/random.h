@@ -8,6 +8,7 @@
 #define MML_RANDOM_H
 
 #include "gctypes.h"
+#include "logic.h"
 
 /**
  * @brief Generate random number in [0,1].
@@ -31,5 +32,13 @@ float uniform(float a, float b);
  * @return index of array
  */
 unsigned sample(const float* probs, size_t size);
+
+/**
+ * @brief Single 'coin flip' with given probability
+ *
+ * @param prob - <tt> floating-point value in [0,1] </tt>
+ * @return Returns true with probability @p prob
+ */
+bool chance(FunctionArg prob);
 
 #endif

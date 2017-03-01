@@ -51,7 +51,4 @@ void error(const char* errMessage);
  */
 void display();
 
-/** Only @c true if @c error has never been called **/
-extern bool _errorState;
-
 #endif

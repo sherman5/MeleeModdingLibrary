@@ -6,6 +6,7 @@
 #include <mml/game_state.h>
 #include <mml/math.h>
 #include <mml/melee_info.h>
+#include <mml/random.h>
 
 #include "recovery.h"
 #include "cpuLogic.h"
@@ -16,21 +17,34 @@ static Point ledge;
 #define Y_COORD(p)          _gameState.playerData[p]->coordinates.y
 #define JUMPS_USED(p)       _gameState.playerData[p]->jumpsUsed
 
-#define HORIZONTAL_DJ(p)    _dj_horizontal[CHAR_SELECT(p)]
-#define VERTICAL_DJ(p)      _dj_vertical[CHAR_SELECT(p)]
+#define STAGE               _gameState.stage
+
+#define HORIZONTAL_DJ       ((s32) _dj_horizontal[CHAR_SELECT(ai->port)])
+#define VERTICAL_DJ         ((s32) _dj_vertical[CHAR_SELECT(ai->port)])
 
 //attempt to recover with DJ, airdodge
 static bool closeRecovery(AI* ai)
 {
-    if (-Y_COORD(ai->port) > VERTICAL_DJ(ai->port)
-        || fabs(X_COORD(ai->port)) > ledge.x + HORIZONTAL_DJ(ai->port)
-        || JUMPS_USED(ai->port) > 1)
+    float abs_x = fabs(X_COORD(ai->port));
+
+    if (Y_COORD(ai->port) < -VERTICAL_DJ
+        || abs_x > ledge.x + HORIZONTAL_DJ || JUMPS_USED(ai->port) > 1)
     {
         return false;
     }
+    else if (Y_COORD(ai->port) > STAGE.side.height - VERTICAL_DJ
+        && abs_x < STAGE.side.right + HORIZONTAL_DJ
+        && chance(0.5f))
+    {
+        //jump to platform
+    }
+    else if (chance(0.25f))
+    {
+        //jump airdodge to stage
+    }
     else
     {
-
+        //jump to ledge
     }
     
 } 

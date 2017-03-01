@@ -34,6 +34,12 @@ unsigned sample(const float* probs, size_t size)
         total += probs[i];
         if (unif < total) { return i;}
     }
-    THROW_ERROR("invalid probabilities");
+    THROW_ERROR(0, "invalid probabilities");
     return 0;
 }
+
+bool chance(FunctionArg prob)
+{
+    return rand() < prob.f;
+}
+

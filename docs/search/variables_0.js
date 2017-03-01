@@ -2,7 +2,7 @@ var searchData=
 [
   ['_5fdj_5fhorizontal',['_dj_horizontal',['../melee__info_8h.html#a24753d8dc7a2cbfa66390c6d30275e23',1,'melee_info.c']]],
   ['_5fdj_5fvertical',['_dj_vertical',['../melee__info_8h.html#a66c932d233d746b786ed12a779ae7eec',1,'melee_info.c']]],
-  ['_5ferrorstate',['_errorState',['../print_8h.html#a9b0da7ff9dbffaa385c49ac12e550cf9',1,'print.c']]],
+  ['_5ferrorstate',['_errorState',['../error_8h.html#ac7d80a3eb9f295abf7a00fd5411bf6ba',1,'error.c']]],
   ['_5fgamestate',['_gameState',['../game__state_8h.html#a9184e3124e566c11a361938b3a039eaa',1,'game_state.c']]],
   ['_5fmv_5fgetupattack',['_mv_getUpAttack',['../moves_8h.html#a0ce5e4b23a999064ddf6790cf8b2e3c9',1,'moves.c']]],
   ['_5fmv_5fhitdi',['_mv_hitDI',['../moves_8h.html#ab798d679abc310c88f95753218550ee2',1,'moves.c']]],

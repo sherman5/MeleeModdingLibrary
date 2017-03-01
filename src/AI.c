@@ -4,6 +4,7 @@
 #include "game_state.h"
 #include "melee_info.h"
 #include "string.h"
+#include "error.h"
 
 static ControllerInput processRawInput(u8 port, RawInput input)
 {
@@ -62,6 +63,10 @@ void addLogic(AI* ai, Logic* logic)
     {
         ai->logicCapacity *= 2;
         ai->logicQueue = realloc(ai->logicQueue, LOGIC_SIZE);
+        if (!ai->logicQueue)
+        {
+            THROW_ERROR(AI_ERR, "failed allocation: logic queue");
+        }    
     }
     memcpy(ai->logicQueue + ai->logicSize, logic, sizeof(Logic));
     ai->logicSize++;
@@ -74,6 +79,10 @@ void addMove(AI* ai, Move* move)
     {
         ai->inputCapacity = 2 * move->size;
         ai->inputQueue = realloc(ai->inputQueue, INPUT_SIZE);
+        if (!ai->inputQueue)
+        {
+            THROW_ERROR(AI_ERR, "failed allocation: input queue");
+        }
     }
 
     for (unsigned i = 0; i < move->size; ++i)

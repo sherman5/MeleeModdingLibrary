@@ -19,14 +19,6 @@
 bool offstage(FunctionArg port);
 
 /**
- * @brief Single 'coin flip' with given probability
- *
- * @param prob - <tt> floating-point value in [0,1] </tt>
- * @return Returns true with probability @p prob
- */
-bool chance(FunctionArg prob);
-
-/**
  * @brief Checks if player (specified by @p port) is in hitstun
  *
  * @param port - <tt> unsigned 32-bit integer </tt>

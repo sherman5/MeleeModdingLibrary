@@ -28,7 +28,6 @@ typedef struct
 #define SLOT_SIZE  (sizeof(MenuLine) + sizeof(DebugMenuSlot))
 
 /* initialize stream variables */
-bool _errorState = false;
 static MenuLine* stream = NULL;
 static DebugMenuSlot* menu = NULL;
 static size_t numLines = 0, maxLines = 0;
@@ -47,7 +46,7 @@ static DebugMenuSlot staticMenu[3] =
 void print(const char* str)
 {   
     /* stop printing once error is thrown */
-    if (_errorState) { return; }
+    if (ERROR_THROWN(PRINT_ERR)) { return; }
 
     /* calculate number of lines this string will use */
     size_t strLines = 1 + strlen(str) / LINE_SIZE;
@@ -56,7 +55,7 @@ void print(const char* str)
     maxLines = imin((getHeapSize() / 5) / SLOT_SIZE, MAX_LINES);
 
     /* don't print strings that are too large */
-    if (strLines > maxLines) {THROW_ERROR("string too large"); return;}
+    if (strLines > maxLines) {THROW_ERROR(0, "string too large"); return;}
 
     /* discard extra lines */
     if (numLines + strLines > maxLines)
@@ -78,7 +77,7 @@ void print(const char* str)
         /* check if allocation failed */
         if (!menu || !stream)
         {
-            THROW_ERROR("failed allocation");
+            THROW_ERROR(PRINT_ERR, "failed allocation");
             return;
         }
     }
@@ -109,13 +108,19 @@ void print(const char* str)
 #pragma GCC optimize ("-O0")
 void error(const char* errMessage)
 {
-    _errorState = true;
-    strncpy(staticLine1.text, errMessage, LINE_SIZE);
-    if (strlen(errMessage) > LINE_SIZE)
+    if (ERROR_THROWN(PRINT_ERR))
     {
-        strncpy(staticLine2.text, errMessage + LINE_SIZE, LINE_SIZE);
+        strncpy(staticLine1.text, errMessage, LINE_SIZE);
+        if (strlen(errMessage) > LINE_SIZE)
+        {
+            strncpy(staticLine2.text, errMessage + LINE_SIZE, LINE_SIZE);
+        }
+        numLines = 0;
     }
-    numLines = 0;
+    else
+    {
+        print(errMessage);
+    }
 }
 #pragma GCC pop_options
 

@@ -64,11 +64,6 @@ bool onGround(FunctionArg port)
     return !IN_AIR(port.u);
 }
 
-bool chance(FunctionArg prob)
-{
-    return rand() < prob.f;
-}
-
 bool actionStateEq(FunctionArg port, FunctionArg state)
 {
     return ACTION_STATE(port.u) == state.u;

@@ -14,6 +14,7 @@ var searchData=
   ['addmove',['addMove',['../_a_i_8h.html#a0b9c97be952c9ff965114fd4e94d8ec7',1,'AI.c']]],
   ['ai',['AI',['../_a_i_8h.html#struct_a_i',1,'']]],
   ['ai_2eh',['AI.h',['../_a_i_8h.html',1,'']]],
+  ['ai_5ferr',['AI_ERR',['../error_8h.html#a149a30bf968a5a8d976d31e70a181d1d',1,'error.h']]],
   ['angle',['angle',['../math_8h.html#a7873f9bf36a252b150a02b8d04942990',1,'math.c']]],
   ['angle_5fbits',['ANGLE_BITS',['../controller_8h.html#a1cde4f3ca38b11fd3ce151d09b9a9cee',1,'controller.h']]],
   ['arg1',['arg1',['../logic_8h.html#a9fd670f3f3ade58fcaa2ab29f0aa8a0e',1,'FunctionCall']]],
