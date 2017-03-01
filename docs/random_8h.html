@@ -96,6 +96,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>Random number generation.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="gctypes_8h_source.html">gctypes.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="logic_8h_source.html">logic.h</a>&quot;</code><br />
 </div>
 <p><a href="random_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -110,10 +111,38 @@ Functions</h2></td></tr>
 <tr class="memitem:a0d581c89e06d94c05ede295477b8be9d"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="random_8h.html#a0d581c89e06d94c05ede295477b8be9d">sample</a> (const float *probs, <a class="el" href="gctypes_8h.html#aedaf31b3f7716640e70205644b9b828e">size_t</a> size)</td></tr>
 <tr class="memdesc:a0d581c89e06d94c05ede295477b8be9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return index of array according to given probabilities.  <a href="#a0d581c89e06d94c05ede295477b8be9d">More...</a><br /></td></tr>
 <tr class="separator:a0d581c89e06d94c05ede295477b8be9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2c442ff73a4a49a25b5ead238d8b2da"><td class="memItemLeft" align="right" valign="top"><a class="el" href="gctypes_8h.html#a6a912bf1d80625256884f11a0ea1d5fd">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="random_8h.html#ab2c442ff73a4a49a25b5ead238d8b2da">chance</a> (<a class="el" href="logic_8h.html#union_function_arg">FunctionArg</a> prob)</td></tr>
+<tr class="memdesc:ab2c442ff73a4a49a25b5ead238d8b2da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Single 'coin flip' with given probability.  <a href="#ab2c442ff73a4a49a25b5ead238d8b2da">More...</a><br /></td></tr>
+<tr class="separator:ab2c442ff73a4a49a25b5ead238d8b2da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Random number generation. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="ab2c442ff73a4a49a25b5ead238d8b2da"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="gctypes_8h.html#a6a912bf1d80625256884f11a0ea1d5fd">bool</a> chance </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="logic_8h.html#union_function_arg">FunctionArg</a>&#160;</td>
+          <td class="paramname"><em>prob</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Single 'coin flip' with given probability. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">prob</td><td>- <code> floating-point value in [0,1] </code> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns true with probability <code>prob</code> </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="ac065bd1fd6625630a0de19c6e1c8ce0a"></a>
 <div class="memitem">
 <div class="memproto">

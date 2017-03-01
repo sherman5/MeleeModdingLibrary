@@ -106,6 +106,8 @@ Macros</h2></td></tr>
 <tr class="separator:a5960c60c0cdb3fcace0ee191e1ddda0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a60db3d3e5c5fb314c0d698922d0b7124"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="error_8h.html#a60db3d3e5c5fb314c0d698922d0b7124">ERROR_STATE</a>&#160;&#160;&#160;<a class="el" href="error_8h.html#ac7d80a3eb9f295abf7a00fd5411bf6ba">_errorState</a>;</td></tr>
 <tr class="separator:a60db3d3e5c5fb314c0d698922d0b7124"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0099faec25b2b4649490d7f562ade34e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="error_8h.html#a0099faec25b2b4649490d7f562ade34e">ERROR_THROWN</a>(code)&#160;&#160;&#160;(<a class="el" href="error_8h.html#ac7d80a3eb9f295abf7a00fd5411bf6ba">_errorState</a> &amp; (code))</td></tr>
+<tr class="separator:a0099faec25b2b4649490d7f562ade34e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adbffe66045224563fa6323b2a98d811d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="error_8h.html#adbffe66045224563fa6323b2a98d811d">PRINT_ERR</a>&#160;&#160;&#160;(1 &lt;&lt; 0)</td></tr>
 <tr class="separator:adbffe66045224563fa6323b2a98d811d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a149a30bf968a5a8d976d31e70a181d1d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="error_8h.html#a149a30bf968a5a8d976d31e70a181d1d">AI_ERR</a>&#160;&#160;&#160;(1 &lt;&lt; 1)</td></tr>
@@ -142,6 +144,23 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>true as soon as one error throw </p>
+
+</div>
+</div>
+<a class="anchor" id="a0099faec25b2b4649490d7f562ade34e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ERROR_THROWN</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">code</td><td>)</td>
+          <td>&#160;&#160;&#160;(<a class="el" href="error_8h.html#ac7d80a3eb9f295abf7a00fd5411bf6ba">_errorState</a> &amp; (code))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>check if error code has been thrown </p>
 
 </div>
 </div>

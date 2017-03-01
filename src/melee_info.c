@@ -38,10 +38,10 @@ const u8 _dj_horizontal[25] =
     0, //PEACH
     0, //YOSHI
     0, //DK
-    0, //FALCON
+    35, //FALCON
     0, //GANON
-    0, //FALCO
-    0, //FOX
+    30, //FALCO
+    30, //FOX
     0, //NESS
     0, //ICE_CLIMBERS
     0, //KIRBY
@@ -54,7 +54,7 @@ const u8 _dj_horizontal[25] =
     0, //PUFF
     0, //MEWTWO
     0, //MR_GNW
-    0, //MARTH
+    45, //MARTH
     0  //ROY
 };
 
@@ -67,10 +67,10 @@ const u8 _dj_vertical[25] =
     0, //PEACH
     0, //YOSHI
     0, //DK
-    0, //FALCON
+    22, //FALCON
     0, //GANON
-    0, //FALCO
-    0, //FOX
+    41, //FALCO
+    41, //FOX
     0, //NESS
     0, //ICE_CLIMBERS
     0, //KIRBY
@@ -83,8 +83,36 @@ const u8 _dj_vertical[25] =
     0, //PUFF
     0, //MEWTWO
     0, //MR_GNW
-    0, //MARTH
+    21, //MARTH
     0  //ROY
 };
 
+const u8 _char_height[25] = 
+{
+    12, //DR_MARIO
+    12, //MARIO
+    13, //LUIGI
+    23, //BOWSER
+    17, //PEACH
+    13, //YOSHI
+    20, //DK
+    23, //FALCON
+    26, //GANON
+    17, //FALCO
+    14, //FOX
+    11, //NESS
+    12, //ICE_CLIMBERS
+    9, //KIRBY
+    23, //SAMUS
+    19, //ZELDA
+    19, //LINK
+    15, //YOUNG_LINK
+    6, //PICHU
+    10, //PIKACHU
+    9, //PUFF
+    14, //MEWTWO
+    16, //MR_GNW
+    24, //MARTH
+    22  //ROY
+};
 

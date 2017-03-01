@@ -3,6 +3,7 @@
 #include <mml/state_check.h>
 #include <mml/action_state.h>
 #include <mml/gctypes.h>
+#include <mml/moves.h>
 
 #include "cpuLogic.h"
 #include "teching.h"
@@ -64,5 +65,34 @@ Logic recoveryStartLogic =
     {&recoverySituation, .arg1.u = 2},
     {&recovery, .arg1.p = &cpuPlayer}
 };
+
+Logic recoveryJumpLogic = 
+{
+    {&belowHeight, .arg1.u = 2, .arg2.f = 0.f},
+    {&addMove, .arg1.p = &cpuPlayer, .arg2.p = &_mv_doubleJump}
+};
+
+Logic clearWhenWaitLogic = 
+{
+    {&actionStateEq, .arg1.u = 2, .arg2.u = _AS_Wait},
+    {&clearAI, .arg1.p = &cpuPlayer}
+};
+
+Logic onLedgeLogic = 
+{
+    {&actionStateEq, .arg1.u = 2, .arg2.u = _AS_CliffWait},
+    {&ledgeOption, .arg1.p = &cpuPlayer}
+};    
+
+Logic respawnLogic = 
+{
+    {&actionStateEq, .arg1.u = 2, .arg2.u = _AS_RebirthWait},
+    {&addMove, .arg1.p = &cpuPlayer, .arg2.p = &_mv_shortHop}
+};
+
+
+
+
+
 
 

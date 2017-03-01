@@ -4,6 +4,7 @@
 #include <mml/action_state.h>
 #include <mml/game_state.h>
 #include <mml/math.h>
+#include <mml/random.h>
 
 #include "DI.h"
 #include "cpuLogic.h"

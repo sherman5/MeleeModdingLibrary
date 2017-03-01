@@ -20,6 +20,7 @@ static void loadDefaultLogic()
     addLogic(&cpuPlayer, &hitDiLogic);
     addLogic(&cpuPlayer, &throwDiLogic);
     addLogic(&cpuPlayer, &recoveryStartLogic);
+    addLogic(&cpuPlayer, &respawnLogic);
 }
 
 void _main()

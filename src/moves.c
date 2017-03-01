@@ -46,11 +46,12 @@ RawInput _raw_hitDI[2] =
 };
 Move _mv_hitDI = {.inputs = _raw_hitDI, .size = 2};
 
-RawInput _raw_throwDI[1] = 
+RawInput _raw_holdDirection[1] = 
 {
     OVERWRITE
 };
-Move _mv_throwDI = {.inputs = _raw_throwDI, .size = 1};
+const Move _mv_holdDirection = {.inputs = _raw_holdDirection, .size = 1};
+Move _mv_throwDI = {.inputs = _raw_holdDirection, .size = 1};
 
 RawInput _raw_UpB[2] = 
 {
@@ -59,6 +60,14 @@ RawInput _raw_UpB[2] =
 };
 Move _mv_UpB = {.inputs = _raw_UpB, .size = 2};
 
+RawInput _raw_doubleJump[1] = 
+{
+    OVERWRITE
+};
+Move _mv_doubleJump = {.inputs = _raw_doubleJump, .size = 1};
+
+Move _mv_ledgeDash = {.inputs = _raw_aPress, .size = 2};
+    
 
 
 

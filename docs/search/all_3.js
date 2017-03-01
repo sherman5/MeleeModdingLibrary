@@ -2,7 +2,7 @@ var searchData=
 [
   ['calloc',['calloc',['../system_8h.html#a7b3d8b7cea59b137b167878ec88eb8d6',1,'system.c']]],
   ['ceil',['ceil',['../math_8h.html#a65b86cc953409a678d94f6db9653fd98',1,'math.c']]],
-  ['chance',['chance',['../state__check_8h.html#ab2c442ff73a4a49a25b5ead238d8b2da',1,'state_check.c']]],
+  ['chance',['chance',['../random_8h.html#ab2c442ff73a4a49a25b5ead238d8b2da',1,'random.c']]],
   ['char_5fselect',['CHAR_SELECT',['../game__state_8h.html#a5963bf4bc324e2ca445a129ced05a1d1',1,'game_state.h']]],
   ['characters',['characters',['../_a_i_8h.html#a238a1ab7bceedeb7d2073fe980c73456',1,'AI']]],
   ['clear',['clear',['../print_8h.html#ac8bb3912a3ce86b15842e79d0b421204',1,'print.c']]],

@@ -57,11 +57,11 @@ static void checkInput(AI* ai)
 }
 
 #define LOGIC_SIZE      (ai->logicCapacity * sizeof(Logic))
-void addLogic(AI* ai, Logic* logic)
+void addLogic(AI* ai, const Logic* logic)
 {
     if (ai->logicSize == ai->logicCapacity)
     {
-        ai->logicCapacity *= 2;
+        ai->logicCapacity = ai->logicCapacity * 2 + 1;
         ai->logicQueue = realloc(ai->logicQueue, LOGIC_SIZE);
         if (!ai->logicQueue)
         {
@@ -73,7 +73,7 @@ void addLogic(AI* ai, Logic* logic)
 }
 
 #define INPUT_SIZE      (ai->inputCapacity * sizeof(ControllerInput))
-void addMove(AI* ai, Move* move)
+void addMove(AI* ai, const Move* move)
 {
     if (move->size > ai->inputCapacity)
     {
@@ -93,7 +93,7 @@ void addMove(AI* ai, Move* move)
     ai->inputSize = move->size;
 }
 
-bool needLogic(AI* ai)
+bool needLogic(const AI* ai)
 {
     return ai->logicSize == 0 && ai->inputSize == 0;
 }
@@ -116,7 +116,7 @@ static void findOpponent(AI* ai)
 void updateAI(AI* ai)
 {
     updateGameState();
-    
+
     if (!ai->active && inGame() && playerData(ai->port) 
         && SLOT_TYPE(ai->port) == 0x01 && _gameState.stage.ledge > 0
         && ((ai->characters >> CHAR_SELECT(ai->port)) & 1))

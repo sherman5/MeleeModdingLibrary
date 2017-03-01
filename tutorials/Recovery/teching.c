@@ -1,6 +1,7 @@
 #include <mml/state_check.h>
 #include <mml/AI.h>
 #include <mml/moves.h>
+#include <mml/random.h>
 #include <mml/action_state.h>
 
 #include "teching.h"

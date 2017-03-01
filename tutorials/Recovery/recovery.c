@@ -17,12 +17,13 @@ static Point ledge;
 #define Y_COORD(p)          _gameState.playerData[p]->coordinates.y
 #define JUMPS_USED(p)       _gameState.playerData[p]->jumpsUsed
 
+#define FACING_DIR(p)       _gameState.playerData[p]->facingDirection    
 #define STAGE               _gameState.stage
 
 #define HORIZONTAL_DJ       ((s32) _dj_horizontal[CHAR_SELECT(ai->port)])
 #define VERTICAL_DJ         ((s32) _dj_vertical[CHAR_SELECT(ai->port)])
 
-//attempt to recover with DJ, airdodge
+//attempt to recover with DJ
 static bool closeRecovery(AI* ai)
 {
     float abs_x = fabs(X_COORD(ai->port));
@@ -32,21 +33,30 @@ static bool closeRecovery(AI* ai)
     {
         return false;
     }
-    else if (Y_COORD(ai->port) > STAGE.side.height - VERTICAL_DJ
+    else if (Y_COORD(ai->port) > STAGE.side.height - VERTICAL_DJ + 25
         && abs_x < STAGE.side.right + HORIZONTAL_DJ
         && chance(0.5f))
     {
-        //jump to platform
-    }
-    else if (chance(0.25f))
-    {
-        //jump airdodge to stage
+        recoveryJumpLogic.condition.arg2.f = STAGE.side.height
+            - VERTICAL_DJ + 25;
     }
     else
     {
-        //jump to ledge
+        recoveryJumpLogic.condition.arg2.f = -VERTICAL_DJ;
     }
-    
+
+    float dir = X_COORD(ai->port) < 0 ? 0.f : 180.f;
+
+    SET_HOLD_DIR(dir);
+    addMove(ai, &_mv_holdDirection);
+
+    SET_DJ_DIR(dir);
+    addLogic(ai, &recoveryJumpLogic);
+    addLogic(ai, &hitDuringMoveLogic);
+    addLogic(ai, &clearWhenWaitLogic);
+    addLogic(ai, &onLedgeLogic);
+
+    return true;
 } 
 
 static void spacieRecovery(AI* ai)
@@ -86,4 +96,8 @@ void recovery(AI* ai)
     }
 }
 
-
+void ledgeOption(AI* ai)
+{
+    addMove(ai, &_mv_ledgeDash);
+    addLogic(ai, &clearWhenWaitLogic);
+}

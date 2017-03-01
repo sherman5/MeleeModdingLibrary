@@ -72,7 +72,7 @@ typedef struct
 { \
     .inputQueue = NULL, \
     .logicQueue = NULL, \
-    .logicCapacity = 1, \
+    .logicCapacity = 0, \
     .inputCapacity = 0, \
     .characters = characters_val, \
     .port = port_val, \
@@ -86,7 +86,7 @@ typedef struct
  * @param logic - Point to Logic struct
  * @return none
  */
-void addLogic(AI* ai, Logic* logic);
+void addLogic(AI* ai, const Logic* logic);
 
 /**
  * @brief Tell AI to execute a move 
@@ -95,7 +95,7 @@ void addLogic(AI* ai, Logic* logic);
  * @param move - Pointer to Move struct
  * @return none
  */
-void addMove(AI* ai, Move* move);
+void addMove(AI* ai, const Move* move);
 
 /**
  * @brief Check logic rules and queued inputs 
@@ -111,7 +111,7 @@ void updateAI(AI* ai);
  * @param ai - Pointer to AI struct
  * @return Return true if AI has no logic or inputs queued 
  */
-bool needLogic(AI* ai);
+bool needLogic(const AI* ai);
 
 /** 
  * @brief Clear all logic and inputs from AI (reset controller)

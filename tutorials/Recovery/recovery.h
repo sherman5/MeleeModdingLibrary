@@ -4,6 +4,7 @@
 #include <mml/AI.h>
 
 void recovery(AI* ai);
+void ledgeOption(AI* ai);
 
 #endif
 

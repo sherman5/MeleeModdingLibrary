@@ -7,6 +7,7 @@ var searchData=
   ['sample',['sample',['../random_8h.html#a0d581c89e06d94c05ede295477b8be9d',1,'random.c']]],
   ['samus',['SAMUS',['../_a_i_8h.html#a7c2a17b44ed15e13dc2b5c859bf727c6',1,'AI.h']]],
   ['samus_5fid',['SAMUS_ID',['../melee__info_8h.html#a71fb83505ac361906776123d17fa1090',1,'melee_info.h']]],
+  ['set_5fdj_5fdir',['SET_DJ_DIR',['../moves_8h.html#ad5c4c28f11156e4eefcc9eeba2bfceb1',1,'moves.h']]],
   ['set_5fhit_5fdi_5fdir',['SET_HIT_DI_DIR',['../moves_8h.html#a1a4e71e45acbce3879557f2b5e5b7384',1,'moves.h']]],
   ['set_5ftech_5fdir',['SET_TECH_DIR',['../moves_8h.html#ac1c6c817e3e46bd27a8ce5c8d1d0100d',1,'moves.h']]],
   ['set_5fthrow_5fdi_5fdir',['SET_THROW_DI_DIR',['../moves_8h.html#ab974adb14eef7e7ed46d7276b125f9cd',1,'moves.h']]],

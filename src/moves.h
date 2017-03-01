@@ -48,8 +48,9 @@ extern RawInput _raw_tech[2];
 extern RawInput _raw_spotDodge[3];
 extern RawInput _raw_aPress[2];
 extern RawInput _raw_hitDI[2];
-extern RawInput _raw_throwDI[1];
+extern RawInput _raw_holdDirection[1];
 extern RawInput _raw_UpB[2];
+extern RawInput _raw_doubleJump[1];
 /** @endcond **/
 
 /** Short Hop Neutral B. */
@@ -62,7 +63,8 @@ extern Move _mv_shortHop;
 extern Move _mv_tech;
 
 /** Set tech direction **/
-#define SET_TECH_DIR(x) _raw_tech[0] = (RawInput) {L_BUTTON | FULL_STICK | STICK_ANGLE(x), 0, NO_FLAGS}
+#define SET_TECH_DIR(x) _raw_tech[0] = \
+    (RawInput) {L_BUTTON | FULL_STICK | STICK_ANGLE(x), 0, NO_FLAGS}
 
 /** Spot Dodge */
 extern Move _mv_spotDodge;
@@ -77,18 +79,40 @@ extern Move _mv_jab;
 extern Move _mv_hitDI;
 
 /** Set the direction of DI for normal hits **/
-#define SET_HIT_DI_DIR(x) _raw_hitDI[0] = (RawInput) {FULL_STICK | STICK_ANGLE((x)), 0, NO_FLAGS}
+#define SET_HIT_DI_DIR(x) _raw_hitDI[0] = \
+    (RawInput) {FULL_STICK | STICK_ANGLE((x)), 0, NO_FLAGS}
 
-/** DI from throw */
+/** DI from throw @note INDEFINITE */
 extern Move _mv_throwDI;
 
 /** Set the direction of DI for throws **/
-#define SET_THROW_DI_DIR(x) _raw_throwDI[0] = (RawInput) {FULL_STICK | STICK_ANGLE((x)), 0, NO_FLAGS}
+#define SET_THROW_DI_DIR(x) _raw_holdDirection[0] = \
+    (RawInput) {FULL_STICK | STICK_ANGLE((x)), 0, NO_FLAGS}
 
-/** Up B **/
+/** Up B @note INDEFINITE */
 extern Move _mv_UpB;
 
 /** Set the direction for the Up B **/
-#define SET_UP_B_DIR(x) _raw_UpB[1] = (RawInput) {FULL_STICK | STICK_ANGLE((x)), 2, NO_FLAGS}
+#define SET_UP_B_DIR(x) _raw_UpB[1] = \
+    (RawInput) {FULL_STICK | STICK_ANGLE((x)), 2, NO_FLAGS}
+
+/** Double Jump with Direction @note INDEFINITE */
+extern Move _mv_doubleJump;
+
+/** Set the direction for the double jump */
+#define SET_DJ_DIR(x) _raw_doubleJump[0] = \
+    (RawInput) {X_BUTTON | FULL_STICK | STICK_ANGLE((x)), 0, NO_FLAGS}
+
+/** Ledgedash */
+extern Move _mv_ledgeDash;
+
+/** Hold Control Stick in Direction */
+extern const Move _mv_holdDirection;
+
+#define SET_HOLD_DIR(x) _raw_holdDirection[0] = \
+    (RawInput) {FULL_STICK | STICK_ANGLE((x)), 0, NO_FLAGS}
 
 #endif
+
+
+
