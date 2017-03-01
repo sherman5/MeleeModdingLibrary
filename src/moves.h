@@ -106,9 +106,10 @@ extern Move _mv_doubleJump;
 /** Ledgedash */
 extern Move _mv_ledgeDash;
 
-/** Hold Control Stick in Direction */
+/** Hold Control Stick in Direction @note INDEFINITE */
 extern const Move _mv_holdDirection;
 
+/** Set the direction of the control stick */
 #define SET_HOLD_DIR(x) _raw_holdDirection[0] = \
     (RawInput) {FULL_STICK | STICK_ANGLE((x)), 0, NO_FLAGS}
 

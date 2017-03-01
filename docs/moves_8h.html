@@ -121,6 +121,8 @@ Macros</h2></td></tr>
 <tr class="separator:a988a9244d27e14509b879430047a48bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad5c4c28f11156e4eefcc9eeba2bfceb1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="moves_8h.html#ad5c4c28f11156e4eefcc9eeba2bfceb1">SET_DJ_DIR</a>(x)</td></tr>
 <tr class="separator:ad5c4c28f11156e4eefcc9eeba2bfceb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab72101b6584c67a709bc82c8d2b7ed10"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="moves_8h.html#ab72101b6584c67a709bc82c8d2b7ed10">SET_HOLD_DIR</a>(x)</td></tr>
+<tr class="separator:ab72101b6584c67a709bc82c8d2b7ed10"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader"></div></td></tr>
 <tr class="memitem:a9cfcd032e38e55938e02821e97fe3660"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="moves_8h.html#a9cfcd032e38e55938e02821e97fe3660">NO_FLAGS</a>&#160;&#160;&#160;0</td></tr>
 <tr class="separator:a9cfcd032e38e55938e02821e97fe3660"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -158,6 +160,10 @@ Variables</h2></td></tr>
 <tr class="separator:aa63d63b5d0ed7a502a682fb82d3bc11a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a98b01721ca67e5f37ba33573d1da7283"><td class="memItemLeft" align="right" valign="top"><a class="el" href="moves_8h.html#struct_move">Move</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="moves_8h.html#a98b01721ca67e5f37ba33573d1da7283">_mv_doubleJump</a></td></tr>
 <tr class="separator:a98b01721ca67e5f37ba33573d1da7283"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a28dd81cffdc28d1ec9a18cba05e6e1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="moves_8h.html#struct_move">Move</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="moves_8h.html#a0a28dd81cffdc28d1ec9a18cba05e6e1">_mv_ledgeDash</a></td></tr>
+<tr class="separator:a0a28dd81cffdc28d1ec9a18cba05e6e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14b6f9d2caa4e95b2e369f845692e1c3"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="moves_8h.html#struct_move">Move</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="moves_8h.html#a14b6f9d2caa4e95b2e369f845692e1c3">_mv_holdDirection</a></td></tr>
+<tr class="separator:a14b6f9d2caa4e95b2e369f845692e1c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Common input sequences. </p>
@@ -325,6 +331,27 @@ size</td>
 
 </div>
 </div>
+<a class="anchor" id="ab72101b6584c67a709bc82c8d2b7ed10"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SET_HOLD_DIR</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">_raw_holdDirection[0] = \</div><div class="line">    (<a class="code" href="moves_8h.html#struct_raw_input">RawInput</a>) {<a class="code" href="controller_8h.html#aa4bf290c42e5626f586f84d41be94cdb">FULL_STICK</a> | <a class="code" href="moves_8h.html#a5f46cfcb78eee5fa165fda297ba865f5">STICK_ANGLE</a>((x)), 0, <a class="code" href="moves_8h.html#a9cfcd032e38e55938e02821e97fe3660">NO_FLAGS</a>}</div><div class="ttc" id="moves_8h_html_a5f46cfcb78eee5fa165fda297ba865f5"><div class="ttname"><a href="moves_8h.html#a5f46cfcb78eee5fa165fda297ba865f5">STICK_ANGLE</a></div><div class="ttdeci">#define STICK_ANGLE(x)</div><div class="ttdef"><b>Definition:</b> moves.h:40</div></div>
+<div class="ttc" id="controller_8h_html_aa4bf290c42e5626f586f84d41be94cdb"><div class="ttname"><a href="controller_8h.html#aa4bf290c42e5626f586f84d41be94cdb">FULL_STICK</a></div><div class="ttdeci">#define FULL_STICK</div><div class="ttdef"><b>Definition:</b> controller.h:38</div></div>
+<div class="ttc" id="moves_8h_html_struct_raw_input"><div class="ttname"><a href="moves_8h.html#struct_raw_input">RawInput</a></div><div class="ttdef"><b>Definition:</b> moves.h:14</div></div>
+<div class="ttc" id="moves_8h_html_a9cfcd032e38e55938e02821e97fe3660"><div class="ttname"><a href="moves_8h.html#a9cfcd032e38e55938e02821e97fe3660">NO_FLAGS</a></div><div class="ttdeci">#define NO_FLAGS</div><div class="ttdef"><b>Definition:</b> moves.h:32</div></div>
+</div><!-- fragment --><p>Set the direction of the control stick </p>
+
+</div>
+</div>
 <a class="anchor" id="ac1c6c817e3e46bd27a8ce5c8d1d0100d"></a>
 <div class="memitem">
 <div class="memproto">
@@ -360,7 +387,7 @@ size</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">_raw_throwDI[0] = \</div><div class="line">    (<a class="code" href="moves_8h.html#struct_raw_input">RawInput</a>) {<a class="code" href="controller_8h.html#aa4bf290c42e5626f586f84d41be94cdb">FULL_STICK</a> | <a class="code" href="moves_8h.html#a5f46cfcb78eee5fa165fda297ba865f5">STICK_ANGLE</a>((x)), 0, <a class="code" href="moves_8h.html#a9cfcd032e38e55938e02821e97fe3660">NO_FLAGS</a>}</div><div class="ttc" id="moves_8h_html_a5f46cfcb78eee5fa165fda297ba865f5"><div class="ttname"><a href="moves_8h.html#a5f46cfcb78eee5fa165fda297ba865f5">STICK_ANGLE</a></div><div class="ttdeci">#define STICK_ANGLE(x)</div><div class="ttdef"><b>Definition:</b> moves.h:40</div></div>
+<b>Value:</b><div class="fragment"><div class="line">_raw_holdDirection[0] = \</div><div class="line">    (<a class="code" href="moves_8h.html#struct_raw_input">RawInput</a>) {<a class="code" href="controller_8h.html#aa4bf290c42e5626f586f84d41be94cdb">FULL_STICK</a> | <a class="code" href="moves_8h.html#a5f46cfcb78eee5fa165fda297ba865f5">STICK_ANGLE</a>((x)), 0, <a class="code" href="moves_8h.html#a9cfcd032e38e55938e02821e97fe3660">NO_FLAGS</a>}</div><div class="ttc" id="moves_8h_html_a5f46cfcb78eee5fa165fda297ba865f5"><div class="ttname"><a href="moves_8h.html#a5f46cfcb78eee5fa165fda297ba865f5">STICK_ANGLE</a></div><div class="ttdeci">#define STICK_ANGLE(x)</div><div class="ttdef"><b>Definition:</b> moves.h:40</div></div>
 <div class="ttc" id="controller_8h_html_aa4bf290c42e5626f586f84d41be94cdb"><div class="ttname"><a href="controller_8h.html#aa4bf290c42e5626f586f84d41be94cdb">FULL_STICK</a></div><div class="ttdeci">#define FULL_STICK</div><div class="ttdef"><b>Definition:</b> controller.h:38</div></div>
 <div class="ttc" id="moves_8h_html_struct_raw_input"><div class="ttname"><a href="moves_8h.html#struct_raw_input">RawInput</a></div><div class="ttdef"><b>Definition:</b> moves.h:14</div></div>
 <div class="ttc" id="moves_8h_html_a9cfcd032e38e55938e02821e97fe3660"><div class="ttname"><a href="moves_8h.html#a9cfcd032e38e55938e02821e97fe3660">NO_FLAGS</a></div><div class="ttdeci">#define NO_FLAGS</div><div class="ttdef"><b>Definition:</b> moves.h:32</div></div>
@@ -459,6 +486,19 @@ size</td>
 
 </div>
 </div>
+<a class="anchor" id="a14b6f9d2caa4e95b2e369f845692e1c3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="moves_8h.html#struct_move">Move</a> _mv_holdDirection</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Hold Control Stick in Direction </p><dl class="section note"><dt>Note</dt><dd>INDEFINITE </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a920ef7bca88d74811e2973a8aa7ef887"></a>
 <div class="memitem">
 <div class="memproto">
@@ -469,6 +509,19 @@ size</td>
       </table>
 </div><div class="memdoc">
 <p>Jab </p>
+
+</div>
+</div>
+<a class="anchor" id="a0a28dd81cffdc28d1ec9a18cba05e6e1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="moves_8h.html#struct_move">Move</a> _mv_ledgeDash</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Ledgedash </p>
 
 </div>
 </div>
