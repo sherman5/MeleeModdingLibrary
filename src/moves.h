@@ -49,8 +49,10 @@ extern RawInput _raw_spotDodge[3];
 extern RawInput _raw_aPress[2];
 extern RawInput _raw_hitDI[2];
 extern RawInput _raw_holdDirection[1];
-extern RawInput _raw_UpB[2];
+extern RawInput _raw_upB[2];
+extern RawInput _raw_sideB[2];
 extern RawInput _raw_doubleJump[1];
+extern RawInput _raw_downB[2];
 /** @endcond **/
 
 /** Short Hop Neutral B. */
@@ -78,23 +80,30 @@ extern Move _mv_jab;
 /** DI from hit */
 extern Move _mv_hitDI;
 
-/** Set the direction of DI for normal hits **/
+/** Set the direction of DI for normal hits */
 #define SET_HIT_DI_DIR(x) _raw_hitDI[0] = \
     (RawInput) {FULL_STICK | STICK_ANGLE((x)), 0, NO_FLAGS}
 
 /** DI from throw @note INDEFINITE */
 extern Move _mv_throwDI;
 
-/** Set the direction of DI for throws **/
+/** Set the direction of DI for throws */
 #define SET_THROW_DI_DIR(x) _raw_holdDirection[0] = \
     (RawInput) {FULL_STICK | STICK_ANGLE((x)), 0, NO_FLAGS}
 
 /** Up B @note INDEFINITE */
-extern Move _mv_UpB;
+extern Move _mv_upB;
 
-/** Set the direction for the Up B **/
-#define SET_UP_B_DIR(x) _raw_UpB[1] = \
+/** Set the direction for the Up B */
+#define SET_UP_B_DIR(x) _raw_upB[1] = \
     (RawInput) {FULL_STICK | STICK_ANGLE((x)), 2, NO_FLAGS}
+
+/** Side B */
+extern Move _mv_sideB;
+
+/** Set the direction for the side B */
+#define SET_SIDE_B_DIR(x) _raw_sideB[0] = \
+    (RawInput) {B_BUTTON | FULL_STICK | STICK_ANGLE((x)), 0, NO_FLAGS}
 
 /** Double Jump with Direction @note INDEFINITE */
 extern Move _mv_doubleJump;
@@ -107,13 +116,14 @@ extern Move _mv_doubleJump;
 extern Move _mv_ledgeDash;
 
 /** Hold Control Stick in Direction @note INDEFINITE */
-extern const Move _mv_holdDirection;
+extern Move _mv_holdDirection;
 
 /** Set the direction of the control stick */
 #define SET_HOLD_DIR(x) _raw_holdDirection[0] = \
     (RawInput) {FULL_STICK | STICK_ANGLE((x)), 0, NO_FLAGS}
 
+/** Down B */
+extern Move _mv_downB;
+
 #endif
-
-
 

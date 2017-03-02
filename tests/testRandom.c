@@ -8,13 +8,13 @@
 UNIT_TEST;
 
 static bool init = false;
-static char heap[21000];
+static char heap[13000];
 
 static bool tests_run = false;
 
 static float min1 = 1.0, max1 = 0.0;
 static float min2 = 9.5, max2 = 9.3;
-static int min3 = 4, max3 = 0, sum = 0;
+static int min3 = 4, max3 = 0, sample_sum = 0, chance_sum = 0;
 
 void _init(void)
 {
@@ -48,7 +48,8 @@ void _main(void)
 
             min3 = imin(sample(probs, 5), min3);
             max3 = imax(sample(probs, 5), max3);
-            sum += sample(probs, 5);
+            sample_sum += sample(probs, 5);
+            if (chance(0.3f)) { chance_sum++; }
         }
         
         REQUIRE(min1 >= 0);
@@ -60,8 +61,11 @@ void _main(void)
         REQUIRE(min3 == 0);
         REQUIRE(max3 == 4);
 
-        REQUIRE(sum > 17650);
-        REQUIRE(sum < 18350);
+        REQUIRE(sample_sum > 17650);
+        REQUIRE(sample_sum < 18350);
+
+        REQUIRE(chance_sum > 2000);
+        REQUIRE(chance_sum < 4000);
 
         END_TEST;
         tests_run = true;

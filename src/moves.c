@@ -50,15 +50,15 @@ RawInput _raw_holdDirection[1] =
 {
     OVERWRITE
 };
-const Move _mv_holdDirection = {.inputs = _raw_holdDirection, .size = 1};
+Move _mv_holdDirection = {.inputs = _raw_holdDirection, .size = 1};
 Move _mv_throwDI = {.inputs = _raw_holdDirection, .size = 1};
 
-RawInput _raw_UpB[2] = 
+RawInput _raw_upB[2] = 
 {
     {B_BUTTON | FULL_STICK | STICK_ANGLE(90.f), 0, NO_FLAGS},
     OVERWRITE
 };
-Move _mv_UpB = {.inputs = _raw_UpB, .size = 2};
+Move _mv_upB = {.inputs = _raw_upB, .size = 2};
 
 RawInput _raw_doubleJump[1] = 
 {
@@ -68,8 +68,19 @@ Move _mv_doubleJump = {.inputs = _raw_doubleJump, .size = 1};
 
 Move _mv_ledgeDash = {.inputs = _raw_aPress, .size = 2};
     
+RawInput _raw_sideB[2] = 
+{
+    OVERWRITE,
+    {RELEASE, 2, NO_FLAGS}
+};
+Move _mv_sideB = {.inputs = _raw_sideB, .size = 2};
 
-
+RawInput _raw_downB[2] = 
+{
+    {B_BUTTON | FULL_STICK | STICK_ANGLE(270.f), 0, NO_FLAGS},
+    {RELEASE, 2, NO_FLAGS}
+};
+Move _mv_downB = {.inputs = _raw_downB, .size = 2};
 
 
 

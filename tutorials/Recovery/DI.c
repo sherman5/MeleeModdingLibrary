@@ -62,7 +62,7 @@ void throwDI(AI* player)
 
 void stopThrowDI(AI* player)
 {
-    stopThrowDiLogic_2.condition.arg1.u = CURRENT_FRAME + 10;
-    addLogic(player, &stopThrowDiLogic_2);
+    clearAfterFrameLogic.condition.arg1.u = CURRENT_FRAME + 10;
+    addLogic(player, &clearAfterFrameLogic);
 }
 

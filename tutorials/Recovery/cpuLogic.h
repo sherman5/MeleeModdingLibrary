@@ -11,12 +11,15 @@ extern Logic actAfterTechLogic;
 extern Logic hitDiLogic;
 extern Logic throwDiLogic;
 extern Logic stopThrowDiLogic;
-extern Logic stopThrowDiLogic_2;
+extern Logic clearAfterFrameLogic;
 extern Logic recoveryStartLogic;
 extern Logic recoveryJumpLogic;
 extern Logic clearWhenWaitLogic;
 extern Logic onLedgeLogic;
 extern Logic respawnLogic;
+extern Logic sideBLogic;
+extern Logic upBLogic;
+extern Logic addMoveAtHeightLogic;
 
 extern AI cpuPlayer;
 

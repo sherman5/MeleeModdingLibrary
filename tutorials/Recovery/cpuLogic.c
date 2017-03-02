@@ -54,7 +54,7 @@ Logic stopThrowDiLogic =
     {&stopThrowDI, .arg1.p = &cpuPlayer}
 };
 
-Logic stopThrowDiLogic_2 = 
+Logic clearAfterFrameLogic = 
 {
     {&pastFrame},
     {&clearAI, .arg1.p = &cpuPlayer}
@@ -64,12 +64,6 @@ Logic recoveryStartLogic =
 {
     {&recoverySituation, .arg1.u = 2},
     {&recovery, .arg1.p = &cpuPlayer}
-};
-
-Logic recoveryJumpLogic = 
-{
-    {&belowHeight, .arg1.u = 2, .arg2.f = 0.f},
-    {&addMove, .arg1.p = &cpuPlayer, .arg2.p = &_mv_doubleJump}
 };
 
 Logic clearWhenWaitLogic = 
@@ -90,8 +84,29 @@ Logic respawnLogic =
     {&addMove, .arg1.p = &cpuPlayer, .arg2.p = &_mv_shortHop}
 };
 
+Logic sideBLogic = 
+{
+    {&belowHeight, .arg1.u = 2, .arg2.f = 0.f},
+    {&addMove, .arg1.p = &cpuPlayer, .arg2.p = &_mv_sideB}
+};
 
+Logic upBLogic = 
+{
+    {&belowHeight, .arg1.u = 2, .arg2.f = 0.f},
+    {&addMove, .arg1.p = &cpuPlayer, .arg2.p = &_mv_upB}
+};
 
+Logic recoveryJumpLogic = 
+{
+    {&belowHeight, .arg1.u = 2, .arg2.f = 0.f},
+    {&addMove, .arg1.p = &cpuPlayer, .arg2.p = &_mv_doubleJump}
+};
+
+Logic addMoveAtHeightLogic = 
+{
+    {&belowHeight, .arg1.u = 2},
+    {&addMove, .arg1.p = &cpuPlayer}
+};
 
 
 

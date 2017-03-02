@@ -17,9 +17,9 @@ static void loadDefaultLogic()
 {
     addLogic(&cpuPlayer, &hitTechLogic);
     addLogic(&cpuPlayer, &getOffGroundLogic);
-    addLogic(&cpuPlayer, &hitDiLogic);
-    addLogic(&cpuPlayer, &throwDiLogic);
-    addLogic(&cpuPlayer, &recoveryStartLogic);
+//    addLogic(&cpuPlayer, &hitDiLogic);
+//    addLogic(&cpuPlayer, &throwDiLogic);
+//    addLogic(&cpuPlayer, &recoveryStartLogic);
     addLogic(&cpuPlayer, &respawnLogic);
 }
 

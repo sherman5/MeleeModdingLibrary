@@ -9,6 +9,12 @@ static bool init_run = false;
 
 AI player2 = {.port = 2, .active = false, .characters = FALCO | FOX};
 
+Logic respawnLogic = 
+{
+
+
+};
+
 void init()
 {
     initHeap(heap, heap + sizeof(heap));

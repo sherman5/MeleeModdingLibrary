@@ -1,86 +1,85 @@
-#include <mml/print.h>
 #include <mml/state_check.h>
 #include <mml/AI.h>
 #include <mml/moves.h>
-#include <mml/action_state.h>
 #include <mml/game_state.h>
 #include <mml/math.h>
 #include <mml/melee_info.h>
 #include <mml/random.h>
+#include <mml/gctypes.h>
 
 #include "recovery.h"
+#include "marthRecovery.h"
+#include "falconRecovery.h"
+#include "spacieRecovery.h"
 #include "cpuLogic.h"
 
-static Point ledge;
+Point ledge;
+Point coords;
+float abs_x;
+bool leftSide;
+float stageDir;
+u32 jumps;
+u32 character;
+s32 horizJump, vertJump;
+s32 charHeight;
 
-#define X_COORD(p)          _gameState.playerData[p]->coordinates.x
-#define Y_COORD(p)          _gameState.playerData[p]->coordinates.y
-#define JUMPS_USED(p)       _gameState.playerData[p]->jumpsUsed
+static void setGlobalVariables(AI* ai)
+{
+    ledge.x = _gameState.stage.ledge;
+    ledge.y = -10.f;
 
-#define FACING_DIR(p)       _gameState.playerData[p]->facingDirection    
-#define STAGE               _gameState.stage
+    coords.x = _gameState.playerData[ai->port]->coordinates.x;
+    coords.y = _gameState.playerData[ai->port]->coordinates.y;
+    abs_x = fabs(coords.x);
 
-#define HORIZONTAL_DJ       ((s32) _dj_horizontal[CHAR_SELECT(ai->port)])
-#define VERTICAL_DJ         ((s32) _dj_vertical[CHAR_SELECT(ai->port)])
+    leftSide = coords.x < 0;
+    stageDir = leftSide ? 0.f : 180.f;
 
-//attempt to recover with DJ
+    jumps = _gameState.playerData[ai->port]->jumpsUsed;
+
+    character = CHAR_SELECT(ai->port);
+
+    horizJump = ((s32) _dj_horizontal[character]);
+    vertJump = ((s32) _dj_vertical[character]);
+    charHeight = ((s32) _char_height[character]);
+}
+
 static bool closeRecovery(AI* ai)
 {
-    float abs_x = fabs(X_COORD(ai->port));
-
-    if (Y_COORD(ai->port) < -VERTICAL_DJ
-        || abs_x > ledge.x + HORIZONTAL_DJ || JUMPS_USED(ai->port) > 1)
+    if (coords.y < -(vertJump + charHeight)
+    || abs_x > ledge.x + horizJump
+    || jumps < 1)
     {
         return false;
     }
-    else if (Y_COORD(ai->port) > STAGE.side.height - VERTICAL_DJ + 25
-        && abs_x < STAGE.side.right + HORIZONTAL_DJ
-        && chance(0.5f))
+    else if (coords.y > _gameState.stage.side.height - vertJump
+    && abs_x < _gameState.stage.side.right + horizJump
+    && jumps > 0
+    && chance(0.5f))
     {
-        recoveryJumpLogic.condition.arg2.f = STAGE.side.height
-            - VERTICAL_DJ + 25;
+        addMoveAtHeightLogic.condition.arg2.f = _gameState.stage.side.height
+            - vertJump;
     }
     else
     {
-        recoveryJumpLogic.condition.arg2.f = -VERTICAL_DJ;
+        recoveryJumpLogic.condition.arg2.f = -(vertJump + charHeight);
     }
 
-    float dir = X_COORD(ai->port) < 0 ? 0.f : 180.f;
-
-    SET_HOLD_DIR(dir);
-    addMove(ai, &_mv_holdDirection);
-
-    SET_DJ_DIR(dir);
+    SET_DJ_DIR(stageDir);
     addLogic(ai, &recoveryJumpLogic);
-    addLogic(ai, &hitDuringMoveLogic);
-    addLogic(ai, &clearWhenWaitLogic);
-    addLogic(ai, &onLedgeLogic);
-
     return true;
 } 
 
-static void spacieRecovery(AI* ai)
-{
-}
-
-static void marthRecovery(AI* ai)
-{
-
-}
-
-static void falconRecovery(AI* ai)
-{
-
-}
-
 void recovery(AI* ai)
 {
-    ledge.x = _gameState.stage.ledge;
-    ledge.y = 0.f;
+    setGlobalVariables(ai);
+
+    SET_HOLD_DIR(stageDir);
+    addMove(ai, &_mv_holdDirection);
 
     if (!closeRecovery(ai))
     {
-        switch (CHAR_SELECT(ai->port))
+        switch (character)
         {
             case FALCO_ID:
             case FOX_ID:
@@ -90,7 +89,7 @@ void recovery(AI* ai)
                 marthRecovery(ai);
                 break;
             case FALCON_ID:
-                falconRecovery(ai);
+       //         falconRecovery(ai);
                 break;
         }
     }
