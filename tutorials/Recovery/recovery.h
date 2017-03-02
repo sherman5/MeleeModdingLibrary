@@ -4,18 +4,26 @@
 #include <mml/AI.h>
 #include <mml/math.h>
 
-void recovery(AI* ai);
+void recover(AI* ai);
 void ledgeOption(AI* ai);
+void doubleJump(AI* ai);
+void addCleanUpLogic(AI* ai);
 
-extern Point ledge;
-extern Point coords;
-extern float abs_x;
-extern bool leftSide;
-extern float stageDir;
-extern u32 jumps;
-extern u32 character;
-extern s32 horizJump, vertJump;
-extern s32 charHeight;
+typedef struct
+{
+    Point ledge;
+    Point coords;
+    float abs_x;
+    bool leftSide;
+    float stageDir;
+    u32 jumps;
+    u32 character;
+    s32 horizJump, vertJump;
+    s32 charHeight;
+
+} RecoveryInfo;
+
+extern RecoveryInfo rInfo;
 
 #endif
 

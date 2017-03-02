@@ -8,7 +8,7 @@
 #include "cpuLogic.h"
 
 #define SQUARE(x) ((x) * (x))
-
+/*
 static float getFireHeight(AI* ai, float length)
 {
     if (length < abs_x - ledge.x) {return coords.y;}
@@ -57,7 +57,7 @@ static void illusionRecovery(AI* ai)
     SET_SIDE_B_DIR(stageDir);
     addLogic(ai, &sideBLogic);
 }
-
+*/
 void spacieRecovery(AI* ai)
 {
 /*    float illusionLength = character == FALCO_ID ?
@@ -81,5 +81,7 @@ void spacieRecovery(AI* ai)
     else
     {
         fireRecovery(ai);
-    }  */
+    } */
 }
+
+

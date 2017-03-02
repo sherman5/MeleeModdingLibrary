@@ -13,73 +13,95 @@
 #include "spacieRecovery.h"
 #include "cpuLogic.h"
 
-Point ledge;
-Point coords;
-float abs_x;
-bool leftSide;
-float stageDir;
-u32 jumps;
-u32 character;
-s32 horizJump, vertJump;
-s32 charHeight;
+RecoveryInfo rInfo = {0};
+
+void addCleanUpLogic(AI* ai)
+{
+    addLogic(ai, &onLedgeLogic);    
+    addLogic(ai, &resetOnHitLogic);
+    addLogic(ai, &resetOnWaitLogic);
+    addLogic(ai, &resetOnDeathLogic);
+    addLogic(ai, &resetOnStageLogic);
+}
 
 static void setGlobalVariables(AI* ai)
 {
-    ledge.x = _gameState.stage.ledge;
-    ledge.y = -10.f;
+    rInfo.ledge.x = _gameState.stage.ledge;
+    rInfo.ledge.y = -10.f;
 
-    coords.x = _gameState.playerData[ai->port]->coordinates.x;
-    coords.y = _gameState.playerData[ai->port]->coordinates.y;
-    abs_x = fabs(coords.x);
+    rInfo.coords.x = _gameState.playerData[ai->port]->coordinates.x;
+    rInfo.coords.y = _gameState.playerData[ai->port]->coordinates.y;
+    rInfo.abs_x = fabs(rInfo.coords.x);
 
-    leftSide = coords.x < 0;
-    stageDir = leftSide ? 0.f : 180.f;
+    rInfo.leftSide = rInfo.coords.x < 0;
+    rInfo.stageDir = rInfo.leftSide ? 0.f : 180.f;
 
-    jumps = _gameState.playerData[ai->port]->jumpsUsed;
+    rInfo.jumps = 2 - (u32) _gameState.playerData[ai->port]->jumpsUsed;
 
-    character = CHAR_SELECT(ai->port);
+    rInfo.character = CHAR_SELECT(ai->port);
 
-    horizJump = ((s32) _dj_horizontal[character]);
-    vertJump = ((s32) _dj_vertical[character]);
-    charHeight = ((s32) _char_height[character]);
+    rInfo.horizJump = _dj_horizontal[rInfo.character];
+    rInfo.vertJump = _dj_vertical[rInfo.character];
+    rInfo.charHeight = _char_height[rInfo.character];
 }
+
+#define CANT_CLOSE_RECOVER  \
+    rInfo.jumps < 1 || \
+    rInfo.abs_x > rInfo.ledge.x + rInfo.horizJump || \
+    rInfo.coords.y < -(rInfo.vertJump + rInfo.charHeight)
+
+#define JUMP_TO_PLATFORM \
+    chance(0.5f) && \
+    rInfo.jumps > 0 && \
+    rInfo.abs_x < _gameState.stage.side.right + rInfo.horizJump && \
+    rInfo.coords.y > _gameState.stage.side.height - rInfo.vertJump
 
 static bool closeRecovery(AI* ai)
 {
-    if (coords.y < -(vertJump + charHeight)
-    || abs_x > ledge.x + horizJump
-    || jumps < 1)
+    if (CANT_CLOSE_RECOVER)
     {
         return false;
     }
-    else if (coords.y > _gameState.stage.side.height - vertJump
-    && abs_x < _gameState.stage.side.right + horizJump
-    && jumps > 0
-    && chance(0.5f))
+    else if (JUMP_TO_PLATFORM)
     {
-        addMoveAtHeightLogic.condition.arg2.f = _gameState.stage.side.height
-            - vertJump;
+        doubleJumpAtHeightLogic.condition.arg2.f = 
+            _gameState.stage.side.height - rInfo.vertJump;
     }
-    else
+    else //jump to ledge
     {
-        recoveryJumpLogic.condition.arg2.f = -(vertJump + charHeight);
+        doubleJumpAtHeightLogic.condition.arg2.f = 
+            -(rInfo.vertJump + rInfo.charHeight);
     }
 
-    SET_DJ_DIR(stageDir);
-    addLogic(ai, &recoveryJumpLogic);
+    SET_HOLD_DIR(rInfo.stageDir);
+    addMove(ai, &_mv_holdDirection);
+
+    addLogic(ai, &doubleJumpAtHeightLogic);
+    addCleanUpLogic(ai);
     return true;
-} 
+}
 
-void recovery(AI* ai)
+void doubleJump(AI* ai)
 {
     setGlobalVariables(ai);
 
-    SET_HOLD_DIR(stageDir);
-    addMove(ai, &_mv_holdDirection);
+    float dist = rInfo.abs_x - rInfo.ledge.x;
+    float dir = dist > 20.f ? rInfo.stageDir : 90.f;
+    SET_DJ_DIR(dir);
 
-    if (!closeRecovery(ai))
-    {
-        switch (character)
+    addMove(ai, &_mv_doubleJump);
+    resetAfterFrameLogic.condition.arg1.u = CURRENT_FRAME + 20;
+    addLogic(ai, &resetAfterFrameLogic);
+    addCleanUpLogic(ai);
+}
+
+void recover(AI* ai)
+{
+    setGlobalVariables(ai);
+
+/*    if (!closeRecovery(ai))
+    {*/
+        switch (rInfo.character)
         {
             case FALCO_ID:
             case FOX_ID:
@@ -89,14 +111,14 @@ void recovery(AI* ai)
                 marthRecovery(ai);
                 break;
             case FALCON_ID:
-       //         falconRecovery(ai);
+                falconRecovery(ai);
                 break;
         }
-    }
+    //}    
 }
 
 void ledgeOption(AI* ai)
 {
     addMove(ai, &_mv_ledgeDash);
-    addLogic(ai, &clearWhenWaitLogic);
+    addCleanUpLogic(ai);
 }

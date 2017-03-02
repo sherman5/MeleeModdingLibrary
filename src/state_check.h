@@ -19,6 +19,14 @@
 bool offstage(FunctionArg port);
 
 /**
+ * @brief Checks if player (specified by @p port) is onstage
+ *
+ * @param port - <tt> unsigned 32-bit integer </tt>
+ * @return Returns @c true if the player at @p port is onstage
+ */
+bool onstage(FunctionArg port);
+
+/**
  * @brief Checks if player (specified by @p port) is in hitstun
  *
  * @param port - <tt> unsigned 32-bit integer </tt>

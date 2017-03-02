@@ -26,7 +26,13 @@
 
 bool offstage(FunctionArg port)
 {
-    return fabs(X_COORD(port.u)) > STAGE.ledge;        
+    return !onstage(port);
+}
+
+bool onstage(FunctionArg port)
+{
+    return fabs(X_COORD(port.u)) < STAGE.ledge
+        && Y_COORD(port.u) > -4.f; //not 0 since yoshis        
 }
 
 bool inHitstun(FunctionArg port)

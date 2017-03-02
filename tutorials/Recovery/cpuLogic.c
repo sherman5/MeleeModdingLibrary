@@ -12,6 +12,18 @@
 
 AI cpuPlayer = INIT_AI(2, FALCO | FOX | MARTH | FALCON);
 
+Logic respawnLogic = 
+{
+    {&actionStateEq, .arg1.u = 2, .arg2.u = _AS_RebirthWait},
+    {&addMove, .arg1.p = &cpuPlayer, .arg2.p = &_mv_shortHop}
+};
+
+Logic resetOnDeathLogic = 
+{
+    {&actionStateEq, .arg1.u = 2, .arg2.u = _AS_Rebirth},
+    {&clearAI, .arg1.p = &cpuPlayer}
+};
+
 Logic hitTechLogic = 
 {
     {&techSituation, .arg1.u = 2},
@@ -24,9 +36,15 @@ Logic getOffGroundLogic =
     {&getUpFromGround, .arg1.p = &cpuPlayer}
 };
 
-Logic hitDuringMoveLogic = 
+Logic resetOnHitLogic = 
 {
     {&inHitlag, .arg1.u = 2},
+    {&clearAI, .arg1.p = &cpuPlayer}
+};
+
+Logic resetOnWaitLogic = 
+{
+    {&actionStateEq, .arg1.u = 2, _AS_Wait},
     {&clearAI, .arg1.p = &cpuPlayer}
 };
 
@@ -54,22 +72,22 @@ Logic stopThrowDiLogic =
     {&stopThrowDI, .arg1.p = &cpuPlayer}
 };
 
-Logic clearAfterFrameLogic = 
+Logic resetAfterFrameLogic = 
 {
     {&pastFrame},
     {&clearAI, .arg1.p = &cpuPlayer}
 };
 
-Logic recoveryStartLogic = 
+Logic resetOnStageLogic = 
 {
-    {&recoverySituation, .arg1.u = 2},
-    {&recovery, .arg1.p = &cpuPlayer}
+    {&onstage, .arg1.u = 2},
+    {&clearAI, .arg1.p = &cpuPlayer}
 };
 
-Logic clearWhenWaitLogic = 
+Logic recoveryLogic = 
 {
-    {&actionStateEq, .arg1.u = 2, .arg2.u = _AS_Wait},
-    {&clearAI, .arg1.p = &cpuPlayer}
+    {&recoverySituation, .arg1.u = 2},
+    {&recover, .arg1.p = &cpuPlayer}
 };
 
 Logic onLedgeLogic = 
@@ -78,12 +96,19 @@ Logic onLedgeLogic =
     {&ledgeOption, .arg1.p = &cpuPlayer}
 };    
 
-Logic respawnLogic = 
+Logic doubleJumpAtHeightLogic = 
 {
-    {&actionStateEq, .arg1.u = 2, .arg2.u = _AS_RebirthWait},
-    {&addMove, .arg1.p = &cpuPlayer, .arg2.p = &_mv_shortHop}
+    {&belowHeight, .arg1.u = 2},
+    {&doubleJump, .arg1.p = &cpuPlayer}
 };
 
+/*
+Logic doubleJumpAtHeight = 
+{
+    {&belowHeight, .arg1.u = 2},
+    {&double
+
+/*
 Logic sideBLogic = 
 {
     {&belowHeight, .arg1.u = 2, .arg2.f = 0.f},
@@ -102,10 +127,5 @@ Logic recoveryJumpLogic =
     {&addMove, .arg1.p = &cpuPlayer, .arg2.p = &_mv_doubleJump}
 };
 
-Logic addMoveAtHeightLogic = 
-{
-    {&belowHeight, .arg1.u = 2},
-    {&addMove, .arg1.p = &cpuPlayer}
-};
 
-
+*/

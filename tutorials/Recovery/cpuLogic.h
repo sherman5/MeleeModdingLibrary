@@ -1,25 +1,24 @@
-#ifndef USED_LOGIC_H
-#define USED_LOGIC_H
+#ifndef CPU_LOGIC_H
+#define CPU_LOGIC_H
 
 #include <mml/logic.h>
 #include <mml/AI.h>
 
 extern Logic respawnLogic;
+extern Logic resetOnDeathLogic;
 extern Logic hitTechLogic;
 extern Logic getOffGroundLogic;
-extern Logic hitDuringMoveLogic;
+extern Logic resetOnHitLogic;
+extern Logic resetOnWaitLogic;
 extern Logic actAfterTechLogic;
 extern Logic hitDiLogic;
 extern Logic throwDiLogic;
 extern Logic stopThrowDiLogic;
-extern Logic clearAfterFrameLogic;
-extern Logic recoveryStartLogic;
-extern Logic recoveryJumpLogic;
-extern Logic clearWhenWaitLogic;
+extern Logic resetAfterFrameLogic;
+extern Logic recoveryLogic;
 extern Logic onLedgeLogic;
-extern Logic sideBLogic;
-extern Logic upBLogic;
-extern Logic addMoveAtHeightLogic;
+extern Logic resetOnStageLogic;
+extern Logic doubleJumpAtHeightLogic;
 
 extern AI cpuPlayer;
 

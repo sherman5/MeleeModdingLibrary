@@ -67,7 +67,7 @@ const u8 _dj_vertical[25] =
     0, //PEACH
     0, //YOSHI
     0, //DK
-    22, //FALCON
+    13, //FALCON
     0, //GANON
     41, //FALCO
     41, //FOX
@@ -83,7 +83,7 @@ const u8 _dj_vertical[25] =
     0, //PUFF
     0, //MEWTWO
     0, //MR_GNW
-    21, //MARTH
+    15, //MARTH
     0  //ROY
 };
 
