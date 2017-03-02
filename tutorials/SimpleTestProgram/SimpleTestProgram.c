@@ -1,40 +1,30 @@
 #include <mml/AI.h>
 #include <mml/system.h>
-#include <mml/state_check.h>
-#include <mml/inputs.h>
 #include <mml/gctypes.h>
 
-static char heap[15000];
+#include "cpuLogic.h"
+
+static char heap[2000];
 static bool init_run = false;
 
-AI player2 = {.port = 2, .active = false, .characters = FALCO | FOX};
-
-Logic respawnLogic = 
-{
-
-
-};
-
-void init()
+static void init()
 {
     initHeap(heap, heap + sizeof(heap));
     init_run = true;
 }
 
-void loadDefaultLogic()
+static void loadDefaultLogic()
 {
-    addLogic(&player2,
-        (Function) {&chance, .arg1.f = 1.f / 120.f, 0},
-        (Function) {&addMove, .arg1.p = &player2, .arg2.p = &shNeutralB});
+    addLogic(&cpuPlayer, &respawnLogic);
 }
 
 void _main()
 {
     if (!init_run) { init(); }
 
-    if (player2.active && needLogic(&player2)) { loadDefaultLogic(); }
+    if (cpuPlayer.active && needLogic(&cpuPlayer)) { loadDefaultLogic(); }
 
-    updateAI(&player2);
+    updateAI(&cpuPlayer);
 }
 
 

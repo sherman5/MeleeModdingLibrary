@@ -3,9 +3,10 @@
 
 #include <mml/AI.h>
 
-void hitDI(AI* player);
-void throwDI(AI* player);
+void hitDI(AI* ai);
+void throwDI(AI* ai);
 void stopThrowDI();
+
 #endif
 
 

@@ -117,6 +117,8 @@ void updateAI(AI* ai)
 {
     updateGameState();
 
+    if (ERROR_THROWN(AI_ERR)) { return;}
+
     if (!ai->active && inGame() && playerData(ai->port) 
         && SLOT_TYPE(ai->port) == 0x01 && _gameState.stage.ledge > 0
         && ((ai->characters >> CHAR_SELECT(ai->port)) & 1))

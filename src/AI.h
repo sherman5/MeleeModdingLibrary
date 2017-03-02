@@ -72,6 +72,8 @@ typedef struct
 { \
     .inputQueue = NULL, \
     .logicQueue = NULL, \
+    .logicSize = 0, \
+    .inputSize = 0, \
     .logicCapacity = 0, \
     .inputCapacity = 0, \
     .characters = characters_val, \

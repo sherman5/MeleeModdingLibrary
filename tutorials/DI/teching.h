@@ -3,9 +3,9 @@
 
 #include <mml/AI.h>
 
-void hitTech(AI* player);
-void postTechOption(AI* player);
-void getUpFromGround(AI* player);
+void hitTech(AI* ai);
+void postTechOption(AI* ai);
+void getUpFromGround(AI* ai);
 
 #endif
 

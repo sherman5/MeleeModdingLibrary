@@ -1,7 +1,8 @@
 #include <mml/state_check.h>
 #include <mml/AI.h>
-#include <mml/inputs.h>
+#include <mml/moves.h>
 #include <mml/action_state.h>
+#include <mml/random.h>
 
 #include "teching.h"
 #include "cpuLogic.h"
@@ -22,44 +23,43 @@ static float getRandomTechDirection()
     }
 }
 
-void postTechOption(AI* player)
+void postTechOption(AI* ai)
 {
     if (chance(GET_UP_ATTACK_PROB))
     {
-        addMove(player, &jab);
+        addMove(ai, &_mv_jab);
     }
     else
     {
-        addMove(player, &spotDodge);
+        addMove(ai, &_mv_spotDodge);
     }
-    addLogic(player, &hitDuringMoveLogic);
+    addLogic(ai, &resetOnHitLogic);
+    addLogic(ai, &resetOnWaitLogic);
 }
 
-void hitTech(AI* player)
+void hitTech(AI* ai)
 {
+    addLogic(ai, &getOffGroundLogic);
+    addLogic(ai, &resetOnHitLogic);
+
     if (chance(HIT_TECH_PROB))
     {
         SET_TECH_DIR(getRandomTechDirection()); 
-        addMove(player, &tech);   
+        addMove(ai, &_mv_tech);   
 
-        addLogic(player, &actAfterTechLogic);
-        addLogic(player, &hitDuringMoveLogic);
-    }
-    else
-    {
-        addLogic(player, &getOffGroundLogic);
+        addLogic(ai, &actAfterTechLogic);
     }
 }
 
-void getUpFromGround(AI* player)
+void getUpFromGround(AI* ai)
 {
     if (chance(GET_UP_ATTACK_PROB))
     {
-        addMove(player, &getUpAttack);
+        addMove(ai, &_mv_getUpAttack);
     }
     else
     {
-        hitTech(player);
+        hitTech(ai);
     }
 }
 

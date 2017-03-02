@@ -1,17 +1,19 @@
-#ifndef USED_LOGIC_H
-#define USED_LOGIC_H
+#ifndef CPU_LOGIC_H
+#define CPU_LOGIC_H
 
 #include <mml/logic.h>
 #include <mml/AI.h>
 
+extern Logic respawnLogic;
 extern Logic hitTechLogic;
 extern Logic getOffGroundLogic;
-extern Logic hitDuringMoveLogic;
+extern Logic resetOnHitLogic;
+extern Logic resetOnWaitLogic;
 extern Logic actAfterTechLogic;
 extern Logic hitDiLogic;
 extern Logic throwDiLogic;
 extern Logic stopThrowDiLogic;
-extern Logic stopThrowDiLogic_2;
+extern Logic resetAfterFrameLogic;
 
 extern AI cpuPlayer;
 

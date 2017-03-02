@@ -1,9 +1,10 @@
 #include <mml/state_check.h>
 #include <mml/AI.h>
-#include <mml/inputs.h>
+#include <mml/moves.h>
 #include <mml/action_state.h>
 #include <mml/game_state.h>
 #include <mml/math.h>
+#include <mml/random.h>
 
 #include "DI.h"
 #include "cpuLogic.h"
@@ -61,7 +62,7 @@ void throwDI(AI* player)
 
 void stopThrowDI(AI* player)
 {
-    stopThrowDiLogic_2.condition.arg1.u = CURRENT_FRAME + 10;
-    addLogic(player, &stopThrowDiLogic_2);
+    resetAfterFrameLogic.condition.arg1.u = CURRENT_FRAME + 10;
+    addLogic(player, &resetAfterFrameLogic);
 }
 

@@ -4,6 +4,7 @@
 #include <mml/logic.h>
 #include <mml/AI.h>
 
+extern Logic respawnLogic;
 extern Logic hitTechLogic;
 extern Logic getOffGroundLogic;
 extern Logic hitDuringMoveLogic;
@@ -16,7 +17,6 @@ extern Logic recoveryStartLogic;
 extern Logic recoveryJumpLogic;
 extern Logic clearWhenWaitLogic;
 extern Logic onLedgeLogic;
-extern Logic respawnLogic;
 extern Logic sideBLogic;
 extern Logic upBLogic;
 extern Logic addMoveAtHeightLogic;

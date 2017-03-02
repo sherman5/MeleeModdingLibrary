@@ -44,11 +44,7 @@ void hitTech(AI* player)
         addMove(player, &_mv_tech);   
 
         addLogic(player, &actAfterTechLogic);
-        addLogic(player, &hitDuringMoveLogic);  
-    }
-    else
-    {
-        addLogic(player, &getOffGroundLogic);
+        addLogic(player, &hitDuringMoveLogic);
     }
 }
 
