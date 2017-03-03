@@ -12,14 +12,16 @@
 
 void exitHitstun(AI* ai)
 {
-    float minDelay = 30 - 3 * _gameState.playerData[ai->port]->aiLevel;
+    float minDelay = 20 - 2 * _gameState.playerData[ai->port]->aiLevel;
     u32 delay = (u32) uniform(minDelay, minDelay + 10.f);
 
-    actOutOfHitstunLogic.condition.arg1.u = CURRENT_FRAME;// + delay;
+    actOutOfHitstunLogic.condition.arg1.u = CURRENT_FRAME + delay;
     addLogic(ai, &actOutOfHitstunLogic);
 
     addLogic(ai, &onLedgeLogic);    
     addLogic(ai, &resetOnHitLogic);
+    addLogic(ai, &resetOnWaitLogic);
+    addLogic(ai, &resetOnGroundLogic);
     addLogic(ai, &resetOnDeathLogic);
     addLogic(&cpuPlayer, &hitTechLogic);
     addLogic(&cpuPlayer, &recoveryLogic);

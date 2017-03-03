@@ -26,6 +26,7 @@ void addCleanUpLogic(AI* ai)
 
 void doubleJump(AI* ai, float target)
 {
+    setGlobalVariables(ai);
     float dist = fmax(rInfo.dist, target - 30.f);
     dist = fmin(dist, target + 30.f);
 
@@ -100,9 +101,7 @@ static bool closeRecovery(AI* ai)
 
 void doubleJumpRecovery(AI* ai)
 {
-    setGlobalVariables(ai);
-
-    doubleJump(ai, 10.f);
+    doubleJump(ai, 5.f);
     
     resetAfterFrameLogic.condition.arg1.u = CURRENT_FRAME + 40;
     addLogic(ai, &resetAfterFrameLogic);

@@ -11,7 +11,7 @@ void falconRecovery(AI* ai)
 {
     if (rInfo.jumps > 0)
     {
-        doubleJump(ai, 30.f);
+        doubleJump(ai, 40.f);
         resetAfterFrameLogic.condition.arg1.u = CURRENT_FRAME + 20;
         addLogic(ai, &resetAfterFrameLogic);
     }
@@ -23,7 +23,10 @@ void falconRecovery(AI* ai)
     }
     else 
     {
-        SET_UP_B_DIR(rInfo.stageDir);
+        float dir = rInfo.dist > 30.f ? rInfo.stageDir : 90.f;
+        if (rInfo.dist < 0.f) {dir = rInfo.stageDir + 180.f;}
+
+        SET_UP_B_DIR(dir);
         addMove(ai, &_mv_upB);
     }
     addCleanUpLogic(ai);

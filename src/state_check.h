@@ -52,6 +52,15 @@ bool inHitlag(FunctionArg port);
 bool belowHeight(FunctionArg port, FunctionArg height);
 
 /**
+ * @brief Checks if player (specified by @p port) is above @p height
+ *
+ * @param port - <tt> unsigned 32-bit integer </tt>
+ * @param height - <tt> floating-point value </tt>
+ * @return Returns true if player is above @p height
+ */
+bool aboveHeight(FunctionArg port, FunctionArg height);
+
+/**
  * @brief Checks if player (specified by @p port) is in the air
  *
  * @param port - <tt> unsigned 32-bit integer </tt>

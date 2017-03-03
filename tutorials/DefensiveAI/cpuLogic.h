@@ -12,6 +12,7 @@ extern Logic getOffGroundLogic;
 extern Logic resetOnHitLogic;
 extern Logic resetOnWaitLogic;
 extern Logic actAfterTechLogic;
+extern Logic resetOnGroundLogic;
 
 extern Logic hitDiLogic;
 extern Logic throwDiLogic;
@@ -25,6 +26,8 @@ extern Logic doubleJumpRecoveryLogic;
 extern Logic illusionRecoveryLogic;
 extern Logic fireRecoveryLogic;
 extern Logic postFireLogic;
+extern Logic marthDoubleJumpLogic;
+extern Logic marthUpBLogic;
 
 extern Logic exitHitstunLogic;
 extern Logic actOutOfHitstunLogic;

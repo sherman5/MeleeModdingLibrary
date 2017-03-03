@@ -4,5 +4,7 @@
 #include <mml/AI.h>
 
 void marthRecovery(AI* ai);
+void marthUpB(AI* ai);
+void marthDoubleJump(AI* ai);
 
 #endif

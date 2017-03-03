@@ -12,3 +12,5 @@ counter_test/*
 build/*
 mml*
 html/*
+
+!tutorials/DefensiveAI/*.data

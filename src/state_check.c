@@ -65,6 +65,11 @@ bool belowHeight(FunctionArg port, FunctionArg height)
     return Y_COORD(port.u) < height.f;
 }
 
+bool aboveHeight(FunctionArg port, FunctionArg height)
+{
+    return Y_COORD(port.u) > height.f;
+}
+
 bool inAir(FunctionArg port)
 {
     return IN_AIR(port.u);

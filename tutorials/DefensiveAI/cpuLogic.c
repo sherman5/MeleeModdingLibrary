@@ -9,6 +9,7 @@
 #include "teching.h"
 #include "recovery.h"
 #include "spacieRecovery.h"
+#include "marthRecovery.h"
 #include "DI.h"
 #include "hitstun.h"
 
@@ -132,5 +133,23 @@ Logic actOutOfHitstunLogic =
 {
     {&pastFrame},
     {&actOutOfHitstun, .arg1.p = &cpuPlayer}
+};
+
+Logic marthDoubleJumpLogic = 
+{
+    {&belowHeight, .arg1.u = 2},
+    {&marthDoubleJump, .arg1.p = &cpuPlayer}
+};
+
+Logic marthUpBLogic = 
+{
+    {&belowHeight, .arg1.u = 2},
+    {&marthUpB, .arg1.p = &cpuPlayer}
+};
+
+Logic resetOnGroundLogic = 
+{
+    {&onGround, .arg1.u = 2},
+    {&clearAI, .arg1.p = &cpuPlayer}
 };
 
