@@ -166,11 +166,12 @@ test_system : $(LIBS)
 	wiimake $(ISO_FILE) tests/testSystem.ini $(MAKE_FLAGS)
 
 # tutorial targets
-.PHONY : tutorial_SimpleTestProgram
+.PHONY : tutorial_SimpleProgram tutorial_Teching tutorial_DI \
+tutorial_Recovery tutorial_DefensiveAI
 
-tutorial_SimpleTestProgram : dist
-	cd $(VERSION)/tutorials/SimpleTestProgram && \
-	wiimake ../../../$(ISO_FILE) SimpleTestProgram.ini $(MAKE_FLAGS) && \
+tutorial_SimpleProgram : dist
+	cd $(VERSION)/tutorials/SimpleProgram && \
+	wiimake ../../../$(ISO_FILE) SimpleProgram.ini $(MAKE_FLAGS) && \
 	cd ../../..
 
 tutorial_Teching : dist

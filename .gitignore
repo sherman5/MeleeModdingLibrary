@@ -14,3 +14,4 @@ mml*
 html/*
 
 !tutorials/DefensiveAI/*.data
+wiki/*

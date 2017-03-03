@@ -26,6 +26,7 @@ void addCleanUpLogic(AI* ai)
 
 void doubleJump(AI* ai, float target)
 {
+    setGlobalVariables(ai);
     float dist = fmax(rInfo.dist, target - 30.f);
     dist = fmin(dist, target + 30.f);
 
@@ -60,8 +61,8 @@ void setGlobalVariables(AI* ai)
 
 #define CANT_CLOSE_RECOVER  \
     rInfo.jumps < 1 || \
-    rInfo.abs_x > rInfo.ledge.x + rInfo.horizJump || \
-    rInfo.coords.y < -(rInfo.vertJump + rInfo.charHeight)
+    rInfo.dist > rInfo.horizJump || \
+    rInfo.coords.y < -(rInfo.vertJump + rInfo.charHeight - rInfo.ledge.y)
 
 #define JUMP_TO_PLATFORM \
     chance(0.5f) && \
@@ -87,7 +88,7 @@ static bool closeRecovery(AI* ai)
             -(rInfo.vertJump + rInfo.charHeight - rInfo.ledge.y);
     }
 
-    if (JUMP_TO_PLATFORM || rInfo.dist > 10.f)
+    if (JUMP_TO_PLATFORM || rInfo.dist > 20.f)
     {
         SET_HOLD_DIR(rInfo.stageDir);
         addMove(ai, &_mv_holdDirection);
@@ -100,9 +101,7 @@ static bool closeRecovery(AI* ai)
 
 void doubleJumpRecovery(AI* ai)
 {
-    setGlobalVariables(ai);
-
-    doubleJump(ai, 10.f);
+    doubleJump(ai, 5.f);
     
     resetAfterFrameLogic.condition.arg1.u = CURRENT_FRAME + 40;
     addLogic(ai, &resetAfterFrameLogic);

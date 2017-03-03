@@ -15,7 +15,6 @@ static void init()
 
 static void loadDefaultLogic()
 {
-    addLogic(&cpuPlayer, &exitHitstunLogic);
     addLogic(&cpuPlayer, &respawnLogic);
     addLogic(&cpuPlayer, &hitTechLogic);
     addLogic(&cpuPlayer, &getOffGroundLogic);
@@ -23,13 +22,14 @@ static void loadDefaultLogic()
     addLogic(&cpuPlayer, &throwDiLogic);
     addLogic(&cpuPlayer, &recoveryLogic);
     addLogic(&cpuPlayer, &onLedgeLogic);
+    addLogic(&cpuPlayer, &exitHitstunLogic);
 }
 
 void _main()
 {
     if (!init_run) { init(); }
 
-    if (cpuPlayer.active && needLogic(&cpuPlayer)) { loadDefaultLogic(); }
+    if (needLogic(&cpuPlayer)) { loadDefaultLogic(); }
 
     updateAI(&cpuPlayer);
 }

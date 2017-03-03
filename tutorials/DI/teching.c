@@ -46,7 +46,6 @@ void hitTech(AI* ai)
     {
         SET_TECH_DIR(getRandomTechDirection()); 
         addMove(ai, &_mv_tech);   
-
         addLogic(ai, &actAfterTechLogic);
     }
 }

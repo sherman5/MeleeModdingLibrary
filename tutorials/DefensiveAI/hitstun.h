@@ -1,5 +1,5 @@
 #ifndef HITSTUN_H
-#define HISTUN_H
+#define HITSTUN_H
 
 #include <mml/AI.h>
 

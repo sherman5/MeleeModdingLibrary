@@ -16,14 +16,9 @@ static float getKnockBackAngle(u32 port)
     u32 rawAngle = _gameState.playerData[port]->knockbackAngle;
     float direction = _gameState.playerData[port]->damageDirection;
 
-    if (rawAngle == SAKURAI_ANGLE)
-    {
-        return 45.f - (1.f + direction) * 90.f;
-    }
-    else
-    {
-        return (float) rawAngle - (1.f + direction) * 90.f;
-    }
+    if (rawAngle == SAKURAI_ANGLE) {rawAngle = 45;}
+
+    return (float) rawAngle - (1.f + direction) * 90.f;
 }
 
 #define AI_X     (_gameState.playerData[player->port]->coordinates.x)

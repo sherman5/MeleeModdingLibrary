@@ -61,8 +61,8 @@ void setGlobalVariables(AI* ai)
 
 #define CANT_CLOSE_RECOVER  \
     rInfo.jumps < 1 || \
-    rInfo.abs_x > rInfo.ledge.x + rInfo.horizJump || \
-    rInfo.coords.y < -(rInfo.vertJump + rInfo.charHeight)
+    rInfo.dist > rInfo.horizJump || \
+    rInfo.coords.y < -(rInfo.vertJump + rInfo.charHeight - rInfo.ledge.y)
 
 #define JUMP_TO_PLATFORM \
     chance(0.5f) && \
@@ -88,7 +88,7 @@ static bool closeRecovery(AI* ai)
             -(rInfo.vertJump + rInfo.charHeight - rInfo.ledge.y);
     }
 
-    if (JUMP_TO_PLATFORM || rInfo.dist > 10.f)
+    if (JUMP_TO_PLATFORM || rInfo.dist > 20.f)
     {
         SET_HOLD_DIR(rInfo.stageDir);
         addMove(ai, &_mv_holdDirection);

@@ -98,7 +98,7 @@ void addMove(AI* ai, const Move* move)
 
 bool needLogic(const AI* ai)
 {
-    return ai->logicSize == 0 && ai->inputSize == 0;
+    return ai->logicSize == 0 && ai->inputSize == 0 && ai->active;
 }
 
 void clearAI(AI* ai)

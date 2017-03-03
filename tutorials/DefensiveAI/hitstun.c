@@ -1,9 +1,5 @@
 #include <mml/state_check.h>
-#include <mml/AI.h>
-#include <mml/moves.h>
-#include <mml/action_state.h>
 #include <mml/game_state.h>
-#include <mml/math.h>
 #include <mml/random.h>
 
 #include "hitstun.h"
@@ -13,7 +9,7 @@
 void exitHitstun(AI* ai)
 {
     float minDelay = 20 - 2 * _gameState.playerData[ai->port]->aiLevel;
-    u32 delay = (u32) uniform(minDelay, minDelay + 10.f);
+    u32 delay = (u32) uniform(minDelay, minDelay + 5.f);
 
     actOutOfHitstunLogic.condition.arg1.u = CURRENT_FRAME + delay;
     addLogic(ai, &actOutOfHitstunLogic);
@@ -34,4 +30,5 @@ void actOutOfHitstun(AI* ai)
     addLogic(ai, &resetAfterFrameLogic);
     addLogic(ai, &onLedgeLogic);    
     addLogic(ai, &resetOnHitLogic);
+    addLogic(&cpuPlayer, &recoveryLogic);
 }

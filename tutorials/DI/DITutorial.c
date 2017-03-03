@@ -26,7 +26,7 @@ void _main()
 {
     if (!init_run) { init(); }
 
-    if (cpuPlayer.active && needLogic(&cpuPlayer)) { loadDefaultLogic(); }
+    if (needLogic(&cpuPlayer)) { loadDefaultLogic(); }
 
     updateAI(&cpuPlayer);
 }

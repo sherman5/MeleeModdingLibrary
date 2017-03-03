@@ -15,29 +15,7 @@
 
 AI cpuPlayer = INIT_AI(2, FALCO | FOX | MARTH | FALCON);
 
-Logic respawnLogic = 
-{
-    {&actionStateEq, .arg1.u = 2, .arg2.u = _AS_RebirthWait},
-    {&addMove, .arg1.p = &cpuPlayer, .arg2.p = &_mv_shortHop}
-};
-
-Logic resetOnDeathLogic = 
-{
-    {&actionStateEq, .arg1.u = 2, .arg2.u = _AS_Rebirth},
-    {&clearAI, .arg1.p = &cpuPlayer}
-};
-
-Logic hitTechLogic = 
-{
-    {&techSituation, .arg1.u = 2},
-    {&hitTech, .arg1.p = &cpuPlayer}
-};
-
-Logic getOffGroundLogic = 
-{
-    {&fallenDown, .arg1.u = 2},
-    {&getUpFromGround, .arg1.p = &cpuPlayer}
-};
+/* General */
 
 Logic resetOnHitLogic = 
 {
@@ -51,11 +29,53 @@ Logic resetOnWaitLogic =
     {&clearAI, .arg1.p = &cpuPlayer}
 };
 
+Logic resetAfterFrameLogic = 
+{
+    {&pastFrame},
+    {&clearAI, .arg1.p = &cpuPlayer}
+};
+
+Logic resetOnGroundLogic = 
+{
+    {&onGround, .arg1.u = 2},
+    {&clearAI, .arg1.p = &cpuPlayer}
+};
+
+Logic resetOnDeathLogic = 
+{
+    {&actionStateEq, .arg1.u = 2, .arg2.u = _AS_Rebirth},
+    {&clearAI, .arg1.p = &cpuPlayer}
+};
+
+/* Simple Program */
+
+Logic respawnLogic = 
+{
+    {&actionStateEq, .arg1.u = 2, .arg2.u = _AS_RebirthWait},
+    {&addMove, .arg1.p = &cpuPlayer, .arg2.p = &_mv_shortHop}
+};
+
+/* Teching */
+
+Logic hitTechLogic = 
+{
+    {&techSituation, .arg1.u = 2},
+    {&hitTech, .arg1.p = &cpuPlayer}
+};
+
+Logic getOffGroundLogic = 
+{
+    {&fallenDown, .arg1.u = 2},
+    {&getUpFromGround, .arg1.p = &cpuPlayer}
+};
+
 Logic actAfterTechLogic = 
 {
     {&actionStateEq, .arg1.u = 2, .arg2.u = _AS_Wait},
     {&postTechOption, .arg1.p = &cpuPlayer}
 };
+
+/* DI */
 
 Logic hitDiLogic = 
 {
@@ -75,11 +95,7 @@ Logic stopThrowDiLogic =
     {&stopThrowDI, .arg1.p = &cpuPlayer}
 };
 
-Logic resetAfterFrameLogic = 
-{
-    {&pastFrame},
-    {&clearAI, .arg1.p = &cpuPlayer}
-};
+/* Recovery */
 
 Logic resetOnStageLogic = 
 {
@@ -123,18 +139,6 @@ Logic postFireLogic =
     {&addCleanUpLogic, .arg1.p = &cpuPlayer}
 };
 
-Logic exitHitstunLogic = 
-{
-    {&hitstunFrames, .arg1.u = 2, .arg2.u = 1},
-    {&exitHitstun, .arg1.p = &cpuPlayer}
-};
-
-Logic actOutOfHitstunLogic = 
-{
-    {&pastFrame},
-    {&actOutOfHitstun, .arg1.p = &cpuPlayer}
-};
-
 Logic marthDoubleJumpLogic = 
 {
     {&belowHeight, .arg1.u = 2},
@@ -147,9 +151,23 @@ Logic marthUpBLogic =
     {&marthUpB, .arg1.p = &cpuPlayer}
 };
 
-Logic resetOnGroundLogic = 
+/* Hitstun */
+
+Logic exitHitstunLogic = 
 {
-    {&onGround, .arg1.u = 2},
-    {&clearAI, .arg1.p = &cpuPlayer}
+    {&hitstunFrames, .arg1.u = 2, .arg2.u = 1},
+    {&exitHitstun, .arg1.p = &cpuPlayer}
 };
+
+Logic actOutOfHitstunLogic = 
+{
+    {&pastFrame},
+    {&actOutOfHitstun, .arg1.p = &cpuPlayer}
+};
+
+
+
+
+
+
 

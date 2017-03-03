@@ -75,10 +75,17 @@ void marthRecovery(AI* ai)
         upBdist = -20.f;
         upBheight = -45.f;
 
-        float jumpHeight = rInfo.jumps > 0 ? -65.f : upBheight + 2.f;
-        marthDoubleJumpLogic.condition.arg2.f = jumpHeight;
+        if (rInfo.jumps > 0)
+        {
+            marthDoubleJumpLogic.condition.arg2.f = -65.f;
+            marthUpBLogic.condition.function = &aboveHeight;
+        }
+        else
+        {
+            marthDoubleJumpLogic.condition.arg2.f = -40.f;
+            marthUpBLogic.condition.function = &belowHeight;            
+        }
 
-        marthUpBLogic.condition.function = &aboveHeight;
         addLogic(ai, &marthDoubleJumpLogic);
         addCleanUpLogic(ai);
     }

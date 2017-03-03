@@ -15,11 +15,12 @@ static void fireRecovery(AI* ai)
 
     if (fireLength < rInfo.dist)
     {
-        fireRecoveryLogic.condition.arg2.f = rInfo.coords.y;
+        fireRecoveryLogic.condition.arg2.f = 20.f;
     }
     else 
     {
         float maxHeight = sqrt(SQUARE(fireLength) - SQUARE(rInfo.dist));
+        maxHeight = fmax(maxHeight - 10.f, 1.f);
         fireRecoveryLogic.condition.arg2.f = uniform(-maxHeight, maxHeight);
     }
 
@@ -109,10 +110,10 @@ void spacieFire(AI* ai)
 void spacieRecovery(AI* ai)
 {
     float illusionLength = rInfo.character == FALCO_ID ? 85.f : 95.f;
-    float illusionProb = 0.2f + (rInfo.jumps > 0 ? 0.2f : 0.f)
+    float illusionProb = 0.3f + (rInfo.jumps > 0 ? 0.2f : 0.f)
         + (rInfo.character == FALCO_ID ? 0.1f : 0.f);
 
-    if (rInfo.coords.y > rInfo.ledge.y - 14.f && illusionLength > rInfo.dist
+    if (rInfo.coords.y > rInfo.ledge.y - 13.f && illusionLength > rInfo.dist
         && chance(illusionProb))
     {
         illusionRecovery(ai, illusionLength);
