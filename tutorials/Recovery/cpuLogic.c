@@ -8,6 +8,7 @@
 #include "cpuLogic.h"
 #include "teching.h"
 #include "recovery.h"
+#include "spacieRecovery.h"
 #include "DI.h"
 
 AI cpuPlayer = INIT_AI(2, FALCO | FOX | MARTH | FALCON);
@@ -99,33 +100,24 @@ Logic onLedgeLogic =
 Logic doubleJumpAtHeightLogic = 
 {
     {&belowHeight, .arg1.u = 2},
-    {&doubleJump, .arg1.p = &cpuPlayer}
+    {&doubleJumpRecovery, .arg1.p = &cpuPlayer}
 };
 
-/*
-Logic doubleJumpAtHeight = 
+Logic illusionRecoveryLogic = 
 {
     {&belowHeight, .arg1.u = 2},
-    {&double
-
-/*
-Logic sideBLogic = 
-{
-    {&belowHeight, .arg1.u = 2, .arg2.f = 0.f},
-    {&addMove, .arg1.p = &cpuPlayer, .arg2.p = &_mv_sideB}
+    {&spacieIllusion, .arg1.p = &cpuPlayer}
 };
 
-Logic upBLogic = 
+Logic fireRecoveryLogic = 
 {
-    {&belowHeight, .arg1.u = 2, .arg2.f = 0.f},
-    {&addMove, .arg1.p = &cpuPlayer, .arg2.p = &_mv_upB}
+    {&belowHeight, .arg1.u = 2},
+    {&spacieFire, .arg1.p = &cpuPlayer}
 };
 
-Logic recoveryJumpLogic = 
+Logic postFireLogic = 
 {
-    {&belowHeight, .arg1.u = 2, .arg2.f = 0.f},
-    {&addMove, .arg1.p = &cpuPlayer, .arg2.p = &_mv_doubleJump}
+    {&pastFrame},
+    {&addCleanUpLogic, .arg1.p = &cpuPlayer}
 };
 
-
-*/

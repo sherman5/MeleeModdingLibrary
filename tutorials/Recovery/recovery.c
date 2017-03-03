@@ -24,14 +24,27 @@ void addCleanUpLogic(AI* ai)
     addLogic(ai, &resetOnStageLogic);
 }
 
+void doubleJump(AI* ai, float target)
+{
+    float dist = fmax(rInfo.dist, target - 30.f);
+    dist = fmin(dist, target + 30.f);
+
+    float dir = (dist - (target - 30.f)) * 180.f / 60.f;
+    dir = rInfo.leftSide ? 180.f - dir : dir;
+
+    SET_DJ_DIR(dir);
+    addMove(ai, &_mv_doubleJump);
+}
+
 static void setGlobalVariables(AI* ai)
 {
-    rInfo.ledge.x = _gameState.stage.ledge;
-    rInfo.ledge.y = -10.f;
+    rInfo.ledge.x = _gameState.stage.ledge.x;
+    rInfo.ledge.y = _gameState.stage.ledge.y;
 
     rInfo.coords.x = _gameState.playerData[ai->port]->coordinates.x;
     rInfo.coords.y = _gameState.playerData[ai->port]->coordinates.y;
     rInfo.abs_x = fabs(rInfo.coords.x);
+    rInfo.dist = rInfo.abs_x - rInfo.ledge.x;
 
     rInfo.leftSide = rInfo.coords.x < 0;
     rInfo.stageDir = rInfo.leftSide ? 0.f : 180.f;
@@ -81,15 +94,12 @@ static bool closeRecovery(AI* ai)
     return true;
 }
 
-void doubleJump(AI* ai)
+void doubleJumpRecovery(AI* ai)
 {
     setGlobalVariables(ai);
 
-    float dist = rInfo.abs_x - rInfo.ledge.x;
-    float dir = dist > 20.f ? rInfo.stageDir : 90.f;
-    SET_DJ_DIR(dir);
-
-    addMove(ai, &_mv_doubleJump);
+    doubleJump(ai, 0.f);
+    
     resetAfterFrameLogic.condition.arg1.u = CURRENT_FRAME + 20;
     addLogic(ai, &resetAfterFrameLogic);
     addCleanUpLogic(ai);

@@ -8,80 +8,110 @@
 #include "cpuLogic.h"
 
 #define SQUARE(x) ((x) * (x))
-/*
-static float getFireHeight(AI* ai, float length)
-{
-    if (length < abs_x - ledge.x) {return coords.y;}
-
-    float minHeight = sqrt(SQUARE(length) - SQUARE(abs_x - ledge.x));
-    
-}
-
-static float getFireAngle(AI* ai, float length, float height)
-{
-
-
-}
 
 static void fireRecovery(AI* ai)
 {
-    float fireLength = character == FALCO_ID ?
-        70.f : 90.f;
-    float height = getFireHeight(ai, fireLength);
-    float angle = getFireAngle(ai, fireLength, height);
-   
-    upBLogic.condition.arg2.f = height;
-    SET_UP_B_DIR(angle);
-    addLogic(ai, &upBLogic);
+    float fireLength = rInfo.character == FALCO_ID ? 70.f : 90.f;
+
+    if (fireLength < rInfo.dist)
+    {
+        fireRecoveryLogic.condition.arg2.f = rInfo.coords.y;
+    }
+    else 
+    {
+        float maxHeight = sqrt(SQUARE(fireLength) - SQUARE(rInfo.dist));
+        fireRecoveryLogic.condition.arg2.f = uniform(-maxHeight, maxHeight);
+    }
+
+    SET_HOLD_DIR(rInfo.stageDir);
+    addMove(ai, &_mv_holdDirection);
+
+    addLogic(ai, &fireRecoveryLogic);
+    addCleanUpLogic(ai);
 }
 
-static void illusionRecovery(AI* ai)
+static void illusionRecovery(AI* ai, float length)
 {
-    float height;
     float u = rand();
 
-    if (coords.y > _gameState.stage.side.height && u < 0.4f)
+    if (_gameState.stage.side.height > 1.f
+        && rInfo.coords.y > _gameState.stage.side.height
+        && rInfo.abs_x - _gameState.stage.side.left > length
+        && u < 0.5f)
     {
-        height = _gameState.stage.side.height;        
+        illusionRecoveryLogic.condition.arg2.f =
+            _gameState.stage.side.height - 1.f;        
     }
     else if (u < 0.8f)
     {
-        height = ledge.y;
+        u32 maxError = 18 - 2 * _gameState.playerData[ai->port]->aiLevel;
+
+        illusionRecoveryLogic.condition.arg2.f = rInfo.ledge.y - 15.f
+            + uniform(0.f, (float) maxError);
     }
     else
     {
-        height = uniform(ledge.y, coords.y);
+        illusionRecoveryLogic.condition.arg2.f = 
+            uniform(rInfo.ledge.y, rInfo.coords.y);
     }
 
-    sideBLogic.condition.arg2.f = height;
-    SET_SIDE_B_DIR(stageDir);
-    addLogic(ai, &sideBLogic);
+    SET_HOLD_DIR(rInfo.stageDir);
+    addMove(ai, &_mv_holdDirection);
+
+    addLogic(ai, &illusionRecoveryLogic);
+    addCleanUpLogic(ai);
 }
-*/
+
+void spacieIllusion(AI* ai)
+{
+    SET_SIDE_B_DIR(rInfo.stageDir);
+    addMove(ai, &_mv_sideB);
+    addCleanUpLogic(ai);
+}
+
+static float reflectAngle(float ang)
+{
+    ang = 180.f - ang;
+    return ang < 0.f ? ang + 360.f : ang;
+}
+
+#define LEDGE_PT    (Point) {rInfo.ledge.x, rInfo.ledge.y - 15.f}
+#define AI_PT   (Point) {rInfo.abs_x, rInfo.coords.y}
+void spacieFire(AI* ai)
+{
+    float ledgeAngle = angle(AI_PT, LEDGE_PT);
+
+    float ang = rInfo.leftSide ? reflectAngle(ledgeAngle) : ledgeAngle;
+    SET_UP_B_DIR(ang);
+    addMove(ai, &_mv_upB);
+    postFireLogic.condition.arg1.u = CURRENT_FRAME + 45;
+    addLogic(ai, &postFireLogic);
+    addCleanUpLogic(ai);
+}
+
 void spacieRecovery(AI* ai)
 {
-/*    float illusionLength = character == FALCO_ID ?
-        78.f : 87.f;
+    float illusionLength = rInfo.character == FALCO_ID ? 85.f : 95.f;
+    float illusionProb = 0.15f + (rInfo.jumps > 0 ? 0.2f : 0.f)
+        + (rInfo.character == FALCO_ID ? 0.1f : 0.f);
 
-    if (coords.y > ledge.y
-        && abs_x - illusionLength < ledge.x
-        && chance(0.25f))
+/*    if (rInfo.coords.y > rInfo.ledge.y - 14.f && illusionLength > rInfo.dist
+        && chance(illusionProb))
     {
-        illusionRecovery(ai);
+        illusionRecovery(ai, illusionLength);
     }
-    else if (jumps > 0)
+    else */if (rInfo.jumps > 0)
     {
-        SET_DJ_DIR(stageDir);
-        addMove(ai, &_mv_doubleJump);
-        addLogic(ai, &hitDuringMoveLogic);
+        doubleJump(ai, 40.f);
 
-        clearAfterFrameLogic.condition.arg1.u = CURRENT_FRAME + 10;
-        addLogic(ai, &clearAfterFrameLogic);
+        resetAfterFrameLogic.condition.arg1.u = CURRENT_FRAME + 10;
+        addLogic(ai, &resetAfterFrameLogic);
+        addCleanUpLogic(ai);
     }
     else
     {
         fireRecovery(ai);
-    } */
+    }
 }
 
 

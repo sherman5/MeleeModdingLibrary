@@ -39,14 +39,14 @@ typedef struct
 typedef struct
 {
     StageName name; /**< Name of Stage */
-    float ledge; /**< |x-coordinate| of character at ledge of the stage */
+    Point ledge; /**< coordinates of right ledge of stage */
     Platform side; /**< side platform */
     Platform top; /**< top platform */
 
 } Stage;
 
 /** Default Stage Value */
-#define DEFAULT_STAGE {0, 0.0, DEFAULT_PLATFORM, DEFAULT_PLATFORM}
+#define DEFAULT_STAGE {0, {0.f, 0.f}, DEFAULT_PLATFORM, DEFAULT_PLATFORM}
 
 /** struct holding player data (exists in melee code) */
 typedef struct

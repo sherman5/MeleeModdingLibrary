@@ -31,7 +31,7 @@ bool offstage(FunctionArg port)
 
 bool onstage(FunctionArg port)
 {
-    return fabs(X_COORD(port.u)) < STAGE.ledge
+    return fabs(X_COORD(port.u)) < STAGE.ledge.x
         && Y_COORD(port.u) > -4.f; //not 0 since yoshis        
 }
 

@@ -55,11 +55,13 @@ void updateGameState()
     _gameState.playerData[4] = playerData(4);
 
     _gameState.stage.name = STAGE_ID;
+
     switch (_gameState.stage.name)
     {
         case YOSHIS:
 
-            _gameState.stage.ledge = 56.f;
+            _gameState.stage.ledge.x = 56.f;
+            _gameState.stage.ledge.y = -3.f;
 
             _gameState.stage.side.left = 28.f;
             _gameState.stage.side.right = 59.5f;
@@ -73,7 +75,8 @@ void updateGameState()
 
         case FOUNTAIN:
 
-            _gameState.stage.ledge = 63.34f;
+            _gameState.stage.ledge.x = 63.34f;
+            _gameState.stage.ledge.y = 1.f;
 
             _gameState.stage.side.height = 0.f;
 
@@ -85,7 +88,8 @@ void updateGameState()
 
         case STADIUM:
 
-            _gameState.stage.ledge = 87.75f;
+            _gameState.stage.ledge.x = 87.75f;
+            _gameState.stage.ledge.y = 5.f;
 
             _gameState.stage.side.left = 25.f;
             _gameState.stage.side.right = 55.f;
@@ -97,7 +101,8 @@ void updateGameState()
 
         case BATTLEFIELD:
 
-            _gameState.stage.ledge = 68.4f;
+            _gameState.stage.ledge.x = 68.4f;
+            _gameState.stage.ledge.y = 6.f;
 
             _gameState.stage.side.left = 20.f;
             _gameState.stage.side.right = 57.6f;
@@ -111,7 +116,8 @@ void updateGameState()
 
         case FINAL:
 
-            _gameState.stage.ledge = 85.57f;
+            _gameState.stage.ledge.x = 85.57f;
+            _gameState.stage.ledge.y = 0.f;
 
             _gameState.stage.side.height = 0.f;
 
@@ -121,7 +127,8 @@ void updateGameState()
 
         case DREAMLAND:
 
-            _gameState.stage.ledge = 77.27f;
+            _gameState.stage.ledge.x = 77.27f;
+            _gameState.stage.ledge.y = 0.f;
 
             _gameState.stage.side.left = 31.7f;
             _gameState.stage.side.right = 63.07f;
@@ -135,7 +142,7 @@ void updateGameState()
 
         default:
 
-            _gameState.stage.ledge = 0.f;
+            _gameState.stage.ledge.x = 0.f;
             break;
     }
 }

@@ -6,7 +6,8 @@
 
 void recover(AI* ai);
 void ledgeOption(AI* ai);
-void doubleJump(AI* ai);
+void doubleJump(AI* ai, float target);
+void doubleJumpRecovery(AI* ai);
 void addCleanUpLogic(AI* ai);
 
 typedef struct
@@ -14,6 +15,7 @@ typedef struct
     Point ledge;
     Point coords;
     float abs_x;
+    float dist;
     bool leftSide;
     float stageDir;
     u32 jumps;

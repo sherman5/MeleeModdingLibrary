@@ -19,6 +19,9 @@ extern Logic recoveryLogic;
 extern Logic onLedgeLogic;
 extern Logic resetOnStageLogic;
 extern Logic doubleJumpAtHeightLogic;
+extern Logic illusionRecoveryLogic;
+extern Logic fireRecoveryLogic;
+extern Logic postFireLogic;
 
 extern AI cpuPlayer;
 

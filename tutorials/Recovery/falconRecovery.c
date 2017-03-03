@@ -11,13 +11,11 @@ void falconRecovery(AI* ai)
 {
     if (rInfo.jumps > 0)
     {
-        SET_DJ_DIR(rInfo.stageDir);
-        addMove(ai, &_mv_doubleJump);
+        doubleJump(ai, 30.f);
         resetAfterFrameLogic.condition.arg1.u = CURRENT_FRAME + 15;
         addLogic(ai, &resetAfterFrameLogic);
     }
-    else if (rInfo.coords.y > KICK_HEIGHT
-    && rInfo.abs_x - rInfo.ledge.x > KICK_DIST)
+    else if (rInfo.coords.y > KICK_HEIGHT && rInfo.dist > KICK_DIST)
     {
         addMove(ai, &_mv_downB);
         resetAfterFrameLogic.condition.arg1.u = CURRENT_FRAME + 60;
@@ -28,4 +26,5 @@ void falconRecovery(AI* ai)
         SET_UP_B_DIR(rInfo.stageDir);
         addMove(ai, &_mv_upB);
     }
+    addCleanUpLogic(ai);
 }

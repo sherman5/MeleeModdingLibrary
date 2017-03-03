@@ -41,6 +41,8 @@ void hitTech(AI* ai)
 {
     addLogic(ai, &getOffGroundLogic);
     addLogic(ai, &resetOnHitLogic);
+    addLogic(&cpuPlayer, &recoveryLogic);
+    addLogic(&cpuPlayer, &onLedgeLogic);
 
     if (chance(HIT_TECH_PROB))
     {
