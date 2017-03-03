@@ -32,13 +32,14 @@ typedef struct
 #define NO_FLAGS    0
 #define JUMPSQUAT   (1 << 0)
 #define SH_LENGTH   (1 << 1)
+#define LEDGEDASH   (1 << 2)
 //@}
 
 //@{
 /** Controller State Macros */
-#define RELEASE 0x0000
-#define STICK_ANGLE(x) ((((u8) (((x) / 360.f) * 255.f)) << 8) & 0xFF00)
-#define OVERWRITE    0
+#define RELEASE         0x0000
+#define OVERWRITE       0
+#define STICK_ANGLE(x)  ((((u8) (((x) / 360.f) * 255.f)) << 8) & 0xFF00)
 //@}
 
 /** @cond **/
@@ -53,6 +54,7 @@ extern RawInput _raw_upB[2];
 extern RawInput _raw_sideB[1];
 extern RawInput _raw_doubleJump[1];
 extern RawInput _raw_downB[2];
+extern RawInput _raw_ledgeDash[4];
 /** @endcond **/
 
 /** Short Hop Neutral B. */
@@ -114,6 +116,10 @@ extern Move _mv_doubleJump;
 
 /** Ledgedash */
 extern Move _mv_ledgeDash;
+
+/** Set angle for ledge dash */
+#define SET_LEDGEDASH_ANGLE(x) _raw_ledgeDash[2].controller = \
+    L_BUTTON | FULL_STICK | STICK_ANGLE((x))
 
 /** Hold Control Stick in Direction @note INDEFINITE */
 extern Move _mv_holdDirection;

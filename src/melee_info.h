@@ -47,6 +47,9 @@ extern const u8 _dj_horizontal[25];
 /** vertical double jump distance */
 extern const u8 _dj_vertical[25];
 
+/** the frame to press L */
+extern const u8 _ledgedash_frames[25];
+
 /** character height
  * @note measured as y-coordinate when hanging from ledge */
 extern const u8 _char_height[25];

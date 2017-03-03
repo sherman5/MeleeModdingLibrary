@@ -66,7 +66,14 @@ RawInput _raw_doubleJump[1] =
 };
 Move _mv_doubleJump = {.inputs = _raw_doubleJump, .size = 1};
 
-Move _mv_ledgeDash = {.inputs = _raw_aPress, .size = 2};
+RawInput _raw_ledgeDash[4] = 
+{
+    {FULL_STICK | STICK_ANGLE(270.f), 2, NO_FLAGS},
+    {X_BUTTON, 3, NO_FLAGS},
+    {OVERWRITE, 3, LEDGEDASH},
+    {RELEASE, 14, LEDGEDASH}
+};
+Move _mv_ledgeDash = {.inputs = _raw_ledgeDash, .size = 4};
     
 RawInput _raw_sideB[1] = 
 {

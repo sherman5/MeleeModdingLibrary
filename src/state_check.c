@@ -55,6 +55,11 @@ bool hitlagFrames(FunctionArg port, FunctionArg frame)
     return (u32) HITLAG(port.u) == frame.u;
 }
 
+bool hitstunFrames(FunctionArg port, FunctionArg frame)
+{
+    return (u32) HITSTUN(port.u) == frame.u;
+}
+
 bool belowHeight(FunctionArg port, FunctionArg height)
 {
     return Y_COORD(port.u) < height.f;

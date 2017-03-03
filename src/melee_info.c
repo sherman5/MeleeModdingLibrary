@@ -116,3 +116,33 @@ const u8 _char_height[25] =
     22  //ROY
 };
 
+const u8 _ledgedash_frames[25] = 
+{
+    0, //DR_MARIO
+    0, //MARIO
+    0, //LUIGI
+    0, //BOWSER
+    0, //PEACH
+    0, //YOSHI
+    0, //DK
+    12, //FALCON
+    0, //GANON
+    4, //FALCO
+    3, //FOX
+    0, //NESS
+    0, //ICE_CLIMBERS
+    0, //KIRBY
+    0, //SAMUS
+    0, //ZELDA
+    0, //LINK
+    0, //YOUNG_LINK
+    0, //PICHU
+    0, //PIKACHU
+    0, //PUFF
+    0, //MEWTWO
+    0, //MR_GNW
+    15, //MARTH
+    0  //ROY
+};
+
+

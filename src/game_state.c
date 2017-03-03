@@ -60,7 +60,7 @@ void updateGameState()
     {
         case YOSHIS:
 
-            _gameState.stage.ledge.x = 56.f;
+            _gameState.stage.ledge.x = 59.5f;
             _gameState.stage.ledge.y = -3.f;
 
             _gameState.stage.side.left = 28.f;

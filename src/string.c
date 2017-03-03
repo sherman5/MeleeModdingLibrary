@@ -61,15 +61,15 @@ char* itoa(s32 n, char* s)
     compiler calls these functions automatically and it assumes
     the symbol is a function, not a function pointer */
 
+static void* (*native_memcpy)(void*, const void*, size_t) = MEM_CPY_FPTR;
 void* memcpy(void* destination, const void* source, size_t num)
 {
-    void* (*f)(void*, const void*, size_t) = MEM_CPY_FPTR;
-    return f(destination, source, num);
+    return native_memcpy(destination, source, num);
 }
 
+static void* (*native_memset)(void*, int, size_t) = MEM_SET_FPTR;
 void* memset(void* ptr, int value, size_t num)
 {
-    void* (*f)(void*, int, size_t) = MEM_SET_FPTR;
-    return f(ptr, value, num);
+    return native_memset(ptr, value, num);
 }
 

@@ -15,10 +15,13 @@ static ControllerInput processRawInput(u8 port, RawInput input)
     {
         processed.frame += (u32) _gameState.playerData[port]->jumpSquat;
     }
-
     if (input.flags & SH_LENGTH)
     {
         processed.frame += _sh_length[CHAR_SELECT(port)];
+    }
+    if (input.flags & LEDGEDASH)
+    {
+        processed.frame += _ledgedash_frames[CHAR_SELECT(port)];
     }
 
     return processed;

@@ -80,16 +80,16 @@ float sin(float x)
     return native_sin(DEG_TO_RAD(x));
 }
 
+static float (*native_cosine)(float) = COSINE_FPTR;
 float cos(float x)
 {
-    float (*native)(float) = COSINE_FPTR;
-    return native(DEG_TO_RAD(x));
+    return native_cosine(DEG_TO_RAD(x));
 }
 
+static float (*native_tangent)(float) = TANGENT_FPTR;
 float tan(float x)
 {
-    float (*native)(float) = TANGENT_FPTR;
-    return native(DEG_TO_RAD(x));
+    return native_tangent(DEG_TO_RAD(x));
 }
 
 //http://http.developer.nvidia.com/Cg/asin.html

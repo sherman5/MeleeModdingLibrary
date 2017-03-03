@@ -26,6 +26,9 @@ extern Logic illusionRecoveryLogic;
 extern Logic fireRecoveryLogic;
 extern Logic postFireLogic;
 
+extern Logic exitHitstunLogic;
+extern Logic actOutOfHitstunLogic;
+
 extern AI cpuPlayer;
 
 #endif

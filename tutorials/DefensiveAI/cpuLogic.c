@@ -10,6 +10,7 @@
 #include "recovery.h"
 #include "spacieRecovery.h"
 #include "DI.h"
+#include "hitstun.h"
 
 AI cpuPlayer = INIT_AI(2, FALCO | FOX | MARTH | FALCON);
 
@@ -119,5 +120,17 @@ Logic postFireLogic =
 {
     {&pastFrame},
     {&addCleanUpLogic, .arg1.p = &cpuPlayer}
+};
+
+Logic exitHitstunLogic = 
+{
+    {&hitstunFrames, .arg1.u = 2, .arg2.u = 1},
+    {&exitHitstun, .arg1.p = &cpuPlayer}
+};
+
+Logic actOutOfHitstunLogic = 
+{
+    {&pastFrame},
+    {&actOutOfHitstun, .arg1.p = &cpuPlayer}
 };
 

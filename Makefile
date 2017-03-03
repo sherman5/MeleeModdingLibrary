@@ -190,7 +190,7 @@ tutorial_Recovery : dist
 
 tutorial_DefensiveAI : dist
 	cd $(VERSION)/tutorials/DefensiveAI && \
-	wiimake ../../../$(ISO_FILE) DefensiveAITutorial.ini $(MAKE_FLAGS) && \
+	wiimake ../../../$(ISO_FILE) DefensiveAI.ini $(MAKE_FLAGS) && \
 	cd ../../..
 
 # documentation target

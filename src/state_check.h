@@ -113,13 +113,23 @@ bool techSituation(FunctionArg port);
 
 /**
  * @brief Checks if player (specified by @p port) has exact number of 
- *  frames in hitlag remainign
+ *  frames in hitlag remaining
  *
  * @param port - <tt> unsigned 32-bit integer </tt>
  * @param frames - <tt> unsigned 32-bit integer </tt>
  * @return Returns true if player has @p frames of hitlag left
  */
-bool hitlagFrames(FunctionArg port, FunctionArg frames);
+bool hitlagFrames(FunctionArg port, FunctionArg frame);
+
+/**
+ * @brief Checks if player (specified by @p port) has exact number of 
+ *  frames in hitstun remaining
+ *
+ * @param port - <tt> unsigned 32-bit integer </tt>
+ * @param frames - <tt> unsigned 32-bit integer </tt>
+ * @return Returns true if player has @p frames of hitlag left
+ */
+bool hitstunFrames(FunctionArg port, FunctionArg frame);
 
 /**
  * @brief Checks if player (specified by @p port) needs to recover
