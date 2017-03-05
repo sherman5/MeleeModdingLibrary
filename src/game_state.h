@@ -23,7 +23,7 @@ typedef enum
 
 } StageName;
 
-/** Platform information */
+/** @brief Platform information */
 typedef struct
 {
     float height; /**< y-coordinate of character standing on platform */

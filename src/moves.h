@@ -10,7 +10,7 @@
 #include "gctypes.h"
 #include "controller.h"
 
-/** represent an input in its minimal form */
+/** @brief represent an input in its minimal form */
 typedef struct __attribute__((packed))
 {
     u16 controller; /**< controller state */
