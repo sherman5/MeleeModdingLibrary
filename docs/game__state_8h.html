@@ -120,7 +120,7 @@ Data Structures</h2></td></tr>
 Macros</h2></td></tr>
 <tr class="memitem:a547a5ee07171fc8e699c255cf1f94ae2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game__state_8h.html#a547a5ee07171fc8e699c255cf1f94ae2">DEFAULT_PLATFORM</a>&#160;&#160;&#160;{0.0, 0.0, 0.0}</td></tr>
 <tr class="separator:a547a5ee07171fc8e699c255cf1f94ae2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a988b369dca2214632e8ae7bda5f0a5ff"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game__state_8h.html#a988b369dca2214632e8ae7bda5f0a5ff">DEFAULT_STAGE</a>&#160;&#160;&#160;{0, 0.0, <a class="el" href="game__state_8h.html#a547a5ee07171fc8e699c255cf1f94ae2">DEFAULT_PLATFORM</a>, <a class="el" href="game__state_8h.html#a547a5ee07171fc8e699c255cf1f94ae2">DEFAULT_PLATFORM</a>}</td></tr>
+<tr class="memitem:a988b369dca2214632e8ae7bda5f0a5ff"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game__state_8h.html#a988b369dca2214632e8ae7bda5f0a5ff">DEFAULT_STAGE</a>&#160;&#160;&#160;{0, {0.f, 0.f}, <a class="el" href="game__state_8h.html#a547a5ee07171fc8e699c255cf1f94ae2">DEFAULT_PLATFORM</a>, <a class="el" href="game__state_8h.html#a547a5ee07171fc8e699c255cf1f94ae2">DEFAULT_PLATFORM</a>}</td></tr>
 <tr class="separator:a988b369dca2214632e8ae7bda5f0a5ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aba9ff025fed056da379554e467979656"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game__state_8h.html#aba9ff025fed056da379554e467979656">DEFAULT_GAMESTATE</a>&#160;&#160;&#160;{{0, 0, 0, 0, 0}, <a class="el" href="game__state_8h.html#a988b369dca2214632e8ae7bda5f0a5ff">DEFAULT_STAGE</a>}</td></tr>
 <tr class="separator:aba9ff025fed056da379554e467979656"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -222,11 +222,11 @@ right</td>
 </div><table class="fieldtable">
 <tr><th colspan="3">Data Fields</th></tr>
 <tr><td class="fieldtype">
-<a class="anchor" id="aa9ac1a9a372e73fa6dcd5d8302c7549f"></a>float</td>
+<a class="anchor" id="a461feb85b39e300ba75106c98e6e7080"></a><a class="el" href="math_8h.html#struct_point">Point</a></td>
 <td class="fieldname">
 ledge</td>
 <td class="fielddoc">
-<p>|x-coordinate| of character at ledge of the stage </p>
+<p>coordinates of right ledge of stage </p>
 </td></tr>
 <tr><td class="fieldtype">
 <a class="anchor" id="ae5de202db7a51a10da84622553c8c132"></a><a class="el" href="game__state_8h.html#a3bef058dfaa1001fd949575a5c096f7b">StageName</a></td>
@@ -535,7 +535,7 @@ stage</td>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define DEFAULT_STAGE&#160;&#160;&#160;{0, 0.0, <a class="el" href="game__state_8h.html#a547a5ee07171fc8e699c255cf1f94ae2">DEFAULT_PLATFORM</a>, <a class="el" href="game__state_8h.html#a547a5ee07171fc8e699c255cf1f94ae2">DEFAULT_PLATFORM</a>}</td>
+          <td class="memname">#define DEFAULT_STAGE&#160;&#160;&#160;{0, {0.f, 0.f}, <a class="el" href="game__state_8h.html#a547a5ee07171fc8e699c255cf1f94ae2">DEFAULT_PLATFORM</a>, <a class="el" href="game__state_8h.html#a547a5ee07171fc8e699c255cf1f94ae2">DEFAULT_PLATFORM</a>}</td>
         </tr>
       </table>
 </div><div class="memdoc">

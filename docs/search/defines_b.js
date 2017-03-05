@@ -1,6 +1,7 @@
 var searchData=
 [
   ['l_5fbutton',['L_BUTTON',['../controller_8h.html#a78883cb33621a5e24f4e56bcf8732020',1,'controller.h']]],
+  ['ledgedash',['LEDGEDASH',['../moves_8h.html#a529f467b48167a2e33a40a835561aaaa',1,'moves.h']]],
   ['link',['LINK',['../_a_i_8h.html#a32298be536f02aa8bbde57c0c970124e',1,'AI.h']]],
   ['link_5fid',['LINK_ID',['../melee__info_8h.html#a4ce2db0af572047b86ce911de6b6372d',1,'melee_info.h']]],
   ['luigi',['LUIGI',['../_a_i_8h.html#a1ba3226d974a364d7682f44614e311d9',1,'AI.h']]],
