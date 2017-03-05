@@ -32,6 +32,9 @@ DEP = $(OBJS:.o=.d)
 LIBS = libmml.a libmml_O1.a libmml_O2.a libmml_O3.a libmml_Os.a
 DIST_LIBS = libmml.a libmml_O1.a libmml_O2.a libmml_O3.a 
 
+DIST_TARGETS = $(HEADERS) $(DIST_LIBS) tutorials/*/*.c tutorials/*/*.h \
+tutorials/*/*.ini 
+
 # link, archive, and compile flags
 LDFLAGS = 
 AFLAGS = -cvr
@@ -112,11 +115,11 @@ dist : libs
 # build the tar.gz version of the distribution
 tar : 
 	tar --transform='s|src|include/mml|' -czf $(VERSION).tar.gz \
-	$(HEADERS) tutorials/ $(DIST_LIBS)
+	$(DIST_TARGETS)
 
 # build the .zip version of the distribution
 zip : 
-	zip $(VERSION).zip -r $(HEADERS) tutorials/ $(DIST_LIBS)
+	zip $(VERSION).zip -r $(DIST_TARGETS)
 	for h in $(HEADERS:src/%.h=%.h) ; do \
 	  printf "@ src/$$h\n@=include/mml/$$h" | zipnote -w $(VERSION).zip ; \
 	done
@@ -127,9 +130,9 @@ untar :
 	tar -xf $(VERSION).tar.gz -C $(VERSION)
 
 # test targets
-.PHONY : test_ai test_controller test_game_state test_inputs test_math \
-test_melee_info test_print test_random test_state_check test_string \
-test_system
+.PHONY : test_ai test_controller test_error test_game_state test_math \
+test_melee_info test_moves test_print test_random test_state_check \
+test_string test_system test_version
 
 # iso file to inject test code into
 
@@ -141,14 +144,20 @@ test_ai : $(LIBS)
 test_controller : $(LIBS)
 	wiimake $(ISO_FILE) tests/testController.ini $(MAKE_FLAGS)
 
+test_error : $(LIBS)
+	wiimake $(ISO_FILE) tests/testError.ini $(MAKE_FLAGS)
+
 test_game_state : $(LIBS)
 	wiimake $(ISO_FILE) tests/testGameState.ini $(MAKE_FLAGS)
 
-test_moves : $(LIBS)
-	wiimake $(ISO_FILE) tests/testMoves.ini $(MAKE_FLAGS)
-
 test_math : $(LIBS)
 	wiimake $(ISO_FILE) tests/testMath.ini $(MAKE_FLAGS)
+
+test_melee_info : $(LIBS)
+	wiimake $(ISO_FILE) tests/testMeleeInfo.ini $(MAKE_FLAGS)
+
+test_moves : $(LIBS)
+	wiimake $(ISO_FILE) tests/testMoves.ini $(MAKE_FLAGS)
 
 test_print : $(LIBS)
 	wiimake $(ISO_FILE) tests/testPrint.ini $(MAKE_FLAGS)
@@ -164,6 +173,9 @@ test_string : $(LIBS)
 
 test_system : $(LIBS)
 	wiimake $(ISO_FILE) tests/testSystem.ini $(MAKE_FLAGS)
+
+test_version : $(LIBS)
+	wiimake $(ISO_FILE) tests/testVersion.ini $(MAKE_FLAGS)
 
 # tutorial targets
 .PHONY : tutorial_SimpleProgram tutorial_Teching tutorial_DI \

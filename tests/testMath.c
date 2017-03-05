@@ -31,6 +31,7 @@ static float angles[16] =
     330.f
 };
 
+/* unit circle (doubled) */
 static Point pts[16] = 
 {
     {2.f,     0.f},
