@@ -33,8 +33,6 @@ extern u32 _mml_version;
  *
  * \section About
  *
- * Developers: Tom Sherman  
- *
  * Email: MeleeModdingLibrary@gmail.com
  *
  */

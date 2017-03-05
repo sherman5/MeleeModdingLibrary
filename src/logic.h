@@ -33,7 +33,7 @@ typedef union
 } FunctionArg __attribute__((__transparent_union__));
 
 /**
- * Describes a function call
+ * @brief Describes a function call
  *
  * Allows for a function call to be stored in memory. Essentially,
  * a function pointer with arguments.
@@ -47,7 +47,7 @@ typedef struct
 } FunctionCall;
 
 /**
- * Describes simple if-then logic
+ * @brief Describes simple if-then logic
  *
  * Essentially captures the behavior of an if statement in a compact
  * struct. This allows for arrays of 'logic' (if-else chain) to be stored

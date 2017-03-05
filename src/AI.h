@@ -52,7 +52,7 @@ typedef struct
 
 } ControllerInput;
 
-/** Holds all information about an AI */
+/** @brief Holds all information about an AI */
 typedef struct
 {
     Controller controller; /**< Controller this AI uses */

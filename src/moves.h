@@ -19,7 +19,7 @@ typedef struct __attribute__((packed))
 
 } RawInput;
 
-/** Represents a single move (string of timed inputs) */
+/** @brief Represents a single move (string of timed inputs) */
 typedef struct
 {
     RawInput* inputs; /**< input array */

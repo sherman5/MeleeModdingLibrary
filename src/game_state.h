@@ -35,7 +35,7 @@ typedef struct
 /** Default Platform Value */
 #define DEFAULT_PLATFORM {0.0, 0.0, 0.0}
 
-/** Stage Information */
+/** @brief Stage Information */
 typedef struct
 {
     StageName name; /**< Name of Stage */
@@ -48,7 +48,7 @@ typedef struct
 /** Default Stage Value */
 #define DEFAULT_STAGE {0, {0.f, 0.f}, DEFAULT_PLATFORM, DEFAULT_PLATFORM}
 
-/** struct holding player data (exists in melee code) */
+/** @brief struct holding player data */
 typedef struct
 {
     char pad1[0x10];
@@ -96,7 +96,7 @@ typedef struct
 
 } PlayerData;
 
-/** Describes State of Game */
+/** @brief In game variables */
 typedef struct
 {
     PlayerData* playerData[5]; /**< pointer to each player's data */
