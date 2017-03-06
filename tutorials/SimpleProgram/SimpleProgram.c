@@ -1,4 +1,4 @@
-#include <mml/AI.h>
+#include <mml/ai.h>
 #include <mml/system.h>
 #include <mml/gctypes.h>
 #include <mml/logic.h>

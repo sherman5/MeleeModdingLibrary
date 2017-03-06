@@ -33,8 +33,6 @@ void postTechOption(AI* ai)
     {
         addMove(ai, &_mv_spotDodge);
     }
-    addLogic(ai, &resetOnHitLogic);
-    addLogic(ai, &resetOnWaitLogic);
 }
 
 void hitTech(AI* ai)
