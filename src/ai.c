@@ -1,4 +1,4 @@
-#include "AI.h"
+#include "ai.h"
 #include "gctypes.h"
 #include "system.h"
 #include "game_state.h"

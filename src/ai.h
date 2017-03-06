@@ -1,5 +1,5 @@
 /**
- * @file AI.h
+ * @file ai.h
  * @brief Automated player
  *
  */

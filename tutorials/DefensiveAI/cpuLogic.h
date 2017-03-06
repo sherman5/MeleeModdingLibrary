@@ -2,7 +2,7 @@
 #define CPU_LOGIC_H
 
 #include <mml/logic.h>
-#include <mml/AI.h>
+#include <mml/ai.h>
 
 /* General */
 extern Logic resetOnHitLogic;
