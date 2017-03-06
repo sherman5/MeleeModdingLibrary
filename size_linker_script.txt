@@ -1,0 +1,827 @@
+SECTIONS {
+wiimake_section_1 :
+{
+	preserve_registers.o
+}
+_sizeof_section_1=SIZEOF(wiimake_section_1);
+wiimake_section_2 :
+{
+	inject_point_0.o
+}
+_sizeof_section_2=SIZEOF(wiimake_section_2);
+wiimake_section_3 :
+{
+	stack_setup_0.o
+}
+_sizeof_section_3=SIZEOF(wiimake_section_3);
+wiimake_section_4 :
+{
+	inject_point_1.o
+}
+_sizeof_section_4=SIZEOF(wiimake_section_4);
+wiimake_section_5 :
+{
+	stack_setup_1.o
+}
+_sizeof_section_5=SIZEOF(wiimake_section_5);
+wiimake_section_6 :
+{
+	tests/testMath.o (.data.tests_passed)
+}
+_sizeof_section_6=SIZEOF(wiimake_section_6);
+wiimake_section_7 :
+{
+	tests/testMath.o (.bss.init_run)
+}
+_sizeof_section_7=SIZEOF(wiimake_section_7);
+wiimake_section_8 :
+{
+	tests/testMath.o (.bss.tests_run)
+}
+_sizeof_section_8=SIZEOF(wiimake_section_8);
+wiimake_section_9 :
+{
+	tests/testMath.o (.bss.heap)
+}
+_sizeof_section_9=SIZEOF(wiimake_section_9);
+wiimake_section_10 :
+{
+	tests/testMath.o (.data.angles)
+}
+_sizeof_section_10=SIZEOF(wiimake_section_10);
+wiimake_section_11 :
+{
+	tests/testMath.o (.data.pts)
+}
+_sizeof_section_11=SIZEOF(wiimake_section_11);
+wiimake_section_12 :
+{
+	tests/testMath.o (.data.tan_indices)
+}
+_sizeof_section_12=SIZEOF(wiimake_section_12);
+wiimake_section_13 :
+{
+	tests/testMath.o (.data.asin_indices)
+}
+_sizeof_section_13=SIZEOF(wiimake_section_13);
+wiimake_section_14 :
+{
+	tests/testMath.o (.data.acos_indices)
+}
+_sizeof_section_14=SIZEOF(wiimake_section_14);
+wiimake_section_15 :
+{
+	tests/testMath.o (.data.atan_indices)
+}
+_sizeof_section_15=SIZEOF(wiimake_section_15);
+wiimake_section_16 :
+{
+	tests/testMath.o (.text.init)
+}
+_sizeof_section_16=SIZEOF(wiimake_section_16);
+wiimake_section_17 :
+{
+	tests/testMath.o (.rodata.str1.4)
+}
+_sizeof_section_17=SIZEOF(wiimake_section_17);
+wiimake_section_18 :
+{
+	tests/testMath.o (.rodata)
+}
+_sizeof_section_18=SIZEOF(wiimake_section_18);
+wiimake_section_19 :
+{
+	tests/testMath.o (.text._main)
+}
+_sizeof_section_19=SIZEOF(wiimake_section_19);
+wiimake_section_20 :
+{
+	tests/testMath.o (.rodata.cst4)
+}
+_sizeof_section_20=SIZEOF(wiimake_section_20);
+wiimake_section_21 :
+{
+	tests/testMath.o (.rodata.cst8)
+}
+_sizeof_section_21=SIZEOF(wiimake_section_21);
+wiimake_section_22 :
+{
+	tests/testMath.o (.gnu.attributes)
+}
+_sizeof_section_22=SIZEOF(wiimake_section_22);
+wiimake_section_23 :
+{
+	libmml_O1.a (.text.addLogic)
+}
+_sizeof_section_23=SIZEOF(wiimake_section_23);
+wiimake_section_24 :
+{
+	libmml_O1.a (.text.addMove)
+}
+_sizeof_section_24=SIZEOF(wiimake_section_24);
+wiimake_section_25 :
+{
+	libmml_O1.a (.text.needLogic)
+}
+_sizeof_section_25=SIZEOF(wiimake_section_25);
+wiimake_section_26 :
+{
+	libmml_O1.a (.text.clearAI)
+}
+_sizeof_section_26=SIZEOF(wiimake_section_26);
+wiimake_section_27 :
+{
+	libmml_O1.a (.text.updateAI)
+}
+_sizeof_section_27=SIZEOF(wiimake_section_27);
+wiimake_section_28 :
+{
+	libmml_O1.a (.rodata.cst4)
+}
+_sizeof_section_28=SIZEOF(wiimake_section_28);
+wiimake_section_29 :
+{
+	libmml_O1.a (.rodata.str1.4)
+}
+_sizeof_section_29=SIZEOF(wiimake_section_29);
+wiimake_section_30 :
+{
+	libmml_O1.a (.text.setController)
+}
+_sizeof_section_30=SIZEOF(wiimake_section_30);
+wiimake_section_31 :
+{
+	libmml_O1.a (.rodata.setController)
+}
+_sizeof_section_31=SIZEOF(wiimake_section_31);
+wiimake_section_32 :
+{
+	libmml_O1.a (.text.writeController)
+}
+_sizeof_section_32=SIZEOF(wiimake_section_32);
+wiimake_section_33 :
+{
+	libmml_O1.a (.rodata.cst4)
+}
+_sizeof_section_33=SIZEOF(wiimake_section_33);
+wiimake_section_34 :
+{
+	libmml_O1.a (controller.gnu.attributes)
+}
+_sizeof_section_34=SIZEOF(wiimake_section_34);
+wiimake_section_35 :
+{
+	libmml_O1.a (.text.endGame)
+}
+_sizeof_section_35=SIZEOF(wiimake_section_35);
+wiimake_section_36 :
+{
+	libmml_O1.a (.text.inGame)
+}
+_sizeof_section_36=SIZEOF(wiimake_section_36);
+wiimake_section_37 :
+{
+	libmml_O1.a (.text.playerData)
+}
+_sizeof_section_37=SIZEOF(wiimake_section_37);
+wiimake_section_38 :
+{
+	libmml_O1.a (.text.updateGameState)
+}
+_sizeof_section_38=SIZEOF(wiimake_section_38);
+wiimake_section_39 :
+{
+	libmml_O1.a (.rodata.updateGameState)
+}
+_sizeof_section_39=SIZEOF(wiimake_section_39);
+wiimake_section_40 :
+{
+	libmml_O1.a (.bss._in_game)
+}
+_sizeof_section_40=SIZEOF(wiimake_section_40);
+wiimake_section_41 :
+{
+	libmml_O1.a (.rodata.cst4)
+}
+_sizeof_section_41=SIZEOF(wiimake_section_41);
+wiimake_section_42 :
+{
+	libmml_O1.a (.sdata.playerEntity)
+}
+_sizeof_section_42=SIZEOF(wiimake_section_42);
+wiimake_section_43 :
+{
+	libmml_O1.a (.data._end_frame)
+}
+_sizeof_section_43=SIZEOF(wiimake_section_43);
+wiimake_section_44 :
+{
+	libmml_O1.a (.bss._gameState)
+}
+_sizeof_section_44=SIZEOF(wiimake_section_44);
+wiimake_section_45 :
+{
+	libmml_O1.a (.sbss._raw_sideB)
+}
+_sizeof_section_45=SIZEOF(wiimake_section_45);
+wiimake_section_46 :
+{
+	libmml_O1.a (.sdata._mv_upB)
+}
+_sizeof_section_46=SIZEOF(wiimake_section_46);
+wiimake_section_47 :
+{
+	libmml_O1.a (.sdata._mv_ledgeDash)
+}
+_sizeof_section_47=SIZEOF(wiimake_section_47);
+wiimake_section_48 :
+{
+	libmml_O1.a (.sdata._mv_shNeutralB)
+}
+_sizeof_section_48=SIZEOF(wiimake_section_48);
+wiimake_section_49 :
+{
+	libmml_O1.a (.sdata._mv_sideB)
+}
+_sizeof_section_49=SIZEOF(wiimake_section_49);
+wiimake_section_50 :
+{
+	libmml_O1.a (.sbss._raw_doubleJump)
+}
+_sizeof_section_50=SIZEOF(wiimake_section_50);
+wiimake_section_51 :
+{
+	libmml_O1.a (.sdata._raw_tech)
+}
+_sizeof_section_51=SIZEOF(wiimake_section_51);
+wiimake_section_52 :
+{
+	libmml_O1.a (.data._raw_ledgeDash)
+}
+_sizeof_section_52=SIZEOF(wiimake_section_52);
+wiimake_section_53 :
+{
+	libmml_O1.a (.sdata._raw_upB)
+}
+_sizeof_section_53=SIZEOF(wiimake_section_53);
+wiimake_section_54 :
+{
+	libmml_O1.a (.sdata._mv_holdDirection)
+}
+_sizeof_section_54=SIZEOF(wiimake_section_54);
+wiimake_section_55 :
+{
+	libmml_O1.a (.sbss._raw_holdDirection)
+}
+_sizeof_section_55=SIZEOF(wiimake_section_55);
+wiimake_section_56 :
+{
+	libmml_O1.a (.sdata._mv_spotDodge)
+}
+_sizeof_section_56=SIZEOF(wiimake_section_56);
+wiimake_section_57 :
+{
+	libmml_O1.a (.sdata._raw_downB)
+}
+_sizeof_section_57=SIZEOF(wiimake_section_57);
+wiimake_section_58 :
+{
+	libmml_O1.a (.sdata._mv_throwDI)
+}
+_sizeof_section_58=SIZEOF(wiimake_section_58);
+wiimake_section_59 :
+{
+	libmml_O1.a (.sdata._mv_jab)
+}
+_sizeof_section_59=SIZEOF(wiimake_section_59);
+wiimake_section_60 :
+{
+	libmml_O1.a (.data._raw_spotDodge)
+}
+_sizeof_section_60=SIZEOF(wiimake_section_60);
+wiimake_section_61 :
+{
+	libmml_O1.a (.sdata._mv_doubleJump)
+}
+_sizeof_section_61=SIZEOF(wiimake_section_61);
+wiimake_section_62 :
+{
+	libmml_O1.a (.data._raw_shNeutralB)
+}
+_sizeof_section_62=SIZEOF(wiimake_section_62);
+wiimake_section_63 :
+{
+	libmml_O1.a (.sdata._mv_hitDI)
+}
+_sizeof_section_63=SIZEOF(wiimake_section_63);
+wiimake_section_64 :
+{
+	libmml_O1.a (.sdata._mv_downB)
+}
+_sizeof_section_64=SIZEOF(wiimake_section_64);
+wiimake_section_65 :
+{
+	libmml_O1.a (.sdata._raw_aPress)
+}
+_sizeof_section_65=SIZEOF(wiimake_section_65);
+wiimake_section_66 :
+{
+	libmml_O1.a (.sdata._mv_getUpAttack)
+}
+_sizeof_section_66=SIZEOF(wiimake_section_66);
+wiimake_section_67 :
+{
+	libmml_O1.a (.sdata._mv_tech)
+}
+_sizeof_section_67=SIZEOF(wiimake_section_67);
+wiimake_section_68 :
+{
+	libmml_O1.a (.sdata._raw_hitDI)
+}
+_sizeof_section_68=SIZEOF(wiimake_section_68);
+wiimake_section_69 :
+{
+	libmml_O1.a (.sdata._mv_shortHop)
+}
+_sizeof_section_69=SIZEOF(wiimake_section_69);
+wiimake_section_70 :
+{
+	libmml_O1.a (.sdata._raw_shortHop)
+}
+_sizeof_section_70=SIZEOF(wiimake_section_70);
+wiimake_section_71 :
+{
+	libmml_O1.a (.text.floor)
+}
+_sizeof_section_71=SIZEOF(wiimake_section_71);
+wiimake_section_72 :
+{
+	libmml_O1.a (.text.ceil)
+}
+_sizeof_section_72=SIZEOF(wiimake_section_72);
+wiimake_section_73 :
+{
+	libmml_O1.a (.text.imax)
+}
+_sizeof_section_73=SIZEOF(wiimake_section_73);
+wiimake_section_74 :
+{
+	libmml_O1.a (.text.imin)
+}
+_sizeof_section_74=SIZEOF(wiimake_section_74);
+wiimake_section_75 :
+{
+	libmml_O1.a (.text.fmax)
+}
+_sizeof_section_75=SIZEOF(wiimake_section_75);
+wiimake_section_76 :
+{
+	libmml_O1.a (.text.fmin)
+}
+_sizeof_section_76=SIZEOF(wiimake_section_76);
+wiimake_section_77 :
+{
+	libmml_O1.a (.text.ipow)
+}
+_sizeof_section_77=SIZEOF(wiimake_section_77);
+wiimake_section_78 :
+{
+	libmml_O1.a (.text.fpow)
+}
+_sizeof_section_78=SIZEOF(wiimake_section_78);
+wiimake_section_79 :
+{
+	libmml_O1.a (.text.sin)
+}
+_sizeof_section_79=SIZEOF(wiimake_section_79);
+wiimake_section_80 :
+{
+	libmml_O1.a (.text.cos)
+}
+_sizeof_section_80=SIZEOF(wiimake_section_80);
+wiimake_section_81 :
+{
+	libmml_O1.a (.text.tan)
+}
+_sizeof_section_81=SIZEOF(wiimake_section_81);
+wiimake_section_82 :
+{
+	libmml_O1.a (.text.asin)
+}
+_sizeof_section_82=SIZEOF(wiimake_section_82);
+wiimake_section_83 :
+{
+	libmml_O1.a (.text.acos)
+}
+_sizeof_section_83=SIZEOF(wiimake_section_83);
+wiimake_section_84 :
+{
+	libmml_O1.a (.text.atan2)
+}
+_sizeof_section_84=SIZEOF(wiimake_section_84);
+wiimake_section_85 :
+{
+	libmml_O1.a (.text.atan)
+}
+_sizeof_section_85=SIZEOF(wiimake_section_85);
+wiimake_section_86 :
+{
+	libmml_O1.a (.text.angle)
+}
+_sizeof_section_86=SIZEOF(wiimake_section_86);
+wiimake_section_87 :
+{
+	libmml_O1.a (.text.magnitude)
+}
+_sizeof_section_87=SIZEOF(wiimake_section_87);
+wiimake_section_88 :
+{
+	libmml_O1.a (.text.distance)
+}
+_sizeof_section_88=SIZEOF(wiimake_section_88);
+wiimake_section_89 :
+{
+	libmml_O1.a (.rodata.cst4)
+}
+_sizeof_section_89=SIZEOF(wiimake_section_89);
+wiimake_section_90 :
+{
+	libmml_O1.a (.sdata.fabs)
+}
+_sizeof_section_90=SIZEOF(wiimake_section_90);
+wiimake_section_91 :
+{
+	libmml_O1.a (.sdata.recipSqrt)
+}
+_sizeof_section_91=SIZEOF(wiimake_section_91);
+wiimake_section_92 :
+{
+	libmml_O1.a (math.gnu.attributes)
+}
+_sizeof_section_92=SIZEOF(wiimake_section_92);
+wiimake_section_93 :
+{
+	libmml_O1.a (.text.error)
+}
+_sizeof_section_93=SIZEOF(wiimake_section_93);
+wiimake_section_94 :
+{
+	libmml_O1.a (.text.print)
+}
+_sizeof_section_94=SIZEOF(wiimake_section_94);
+wiimake_section_95 :
+{
+	libmml_O1.a (.text.clear)
+}
+_sizeof_section_95=SIZEOF(wiimake_section_95);
+wiimake_section_96 :
+{
+	libmml_O1.a (.text.display)
+}
+_sizeof_section_96=SIZEOF(wiimake_section_96);
+wiimake_section_97 :
+{
+	libmml_O1.a (.bss.staticLine2)
+}
+_sizeof_section_97=SIZEOF(wiimake_section_97);
+wiimake_section_98 :
+{
+	libmml_O1.a (.bss.staticLine1)
+}
+_sizeof_section_98=SIZEOF(wiimake_section_98);
+wiimake_section_99 :
+{
+	libmml_O1.a (.bss.numLines)
+}
+_sizeof_section_99=SIZEOF(wiimake_section_99);
+wiimake_section_100 :
+{
+	libmml_O1.a (.bss.maxLines)
+}
+_sizeof_section_100=SIZEOF(wiimake_section_100);
+wiimake_section_101 :
+{
+	libmml_O1.a (.bss.stream)
+}
+_sizeof_section_101=SIZEOF(wiimake_section_101);
+wiimake_section_102 :
+{
+	libmml_O1.a (.data.staticMenu)
+}
+_sizeof_section_102=SIZEOF(wiimake_section_102);
+wiimake_section_103 :
+{
+	libmml_O1.a (.rodata.str1.4)
+}
+_sizeof_section_103=SIZEOF(wiimake_section_103);
+wiimake_section_104 :
+{
+	libmml_O1.a (.bss.menu)
+}
+_sizeof_section_104=SIZEOF(wiimake_section_104);
+wiimake_section_105 :
+{
+	libmml_O1.a (.bss.capacity)
+}
+_sizeof_section_105=SIZEOF(wiimake_section_105);
+wiimake_section_106 :
+{
+	libmml_O1.a (.text.rand)
+}
+_sizeof_section_106=SIZEOF(wiimake_section_106);
+wiimake_section_107 :
+{
+	libmml_O1.a (.text.uniform)
+}
+_sizeof_section_107=SIZEOF(wiimake_section_107);
+wiimake_section_108 :
+{
+	libmml_O1.a (.text.sample)
+}
+_sizeof_section_108=SIZEOF(wiimake_section_108);
+wiimake_section_109 :
+{
+	libmml_O1.a (.text.chance)
+}
+_sizeof_section_109=SIZEOF(wiimake_section_109);
+wiimake_section_110 :
+{
+	libmml_O1.a (.rodata.cst4)
+}
+_sizeof_section_110=SIZEOF(wiimake_section_110);
+wiimake_section_111 :
+{
+	libmml_O1.a (.rodata.str1.4)
+}
+_sizeof_section_111=SIZEOF(wiimake_section_111);
+wiimake_section_112 :
+{
+	libmml_O1.a (random.gnu.attributes)
+}
+_sizeof_section_112=SIZEOF(wiimake_section_112);
+wiimake_section_113 :
+{
+	libmml_O1.a (.text.onstage)
+}
+_sizeof_section_113=SIZEOF(wiimake_section_113);
+wiimake_section_114 :
+{
+	libmml_O1.a (.text.offstage)
+}
+_sizeof_section_114=SIZEOF(wiimake_section_114);
+wiimake_section_115 :
+{
+	libmml_O1.a (.text.inHitstun)
+}
+_sizeof_section_115=SIZEOF(wiimake_section_115);
+wiimake_section_116 :
+{
+	libmml_O1.a (.text.pastFrame)
+}
+_sizeof_section_116=SIZEOF(wiimake_section_116);
+wiimake_section_117 :
+{
+	libmml_O1.a (.text.inHitlag)
+}
+_sizeof_section_117=SIZEOF(wiimake_section_117);
+wiimake_section_118 :
+{
+	libmml_O1.a (.text.hitlagFrames)
+}
+_sizeof_section_118=SIZEOF(wiimake_section_118);
+wiimake_section_119 :
+{
+	libmml_O1.a (.text.hitstunFrames)
+}
+_sizeof_section_119=SIZEOF(wiimake_section_119);
+wiimake_section_120 :
+{
+	libmml_O1.a (.text.belowHeight)
+}
+_sizeof_section_120=SIZEOF(wiimake_section_120);
+wiimake_section_121 :
+{
+	libmml_O1.a (.text.aboveHeight)
+}
+_sizeof_section_121=SIZEOF(wiimake_section_121);
+wiimake_section_122 :
+{
+	libmml_O1.a (.text.inAir)
+}
+_sizeof_section_122=SIZEOF(wiimake_section_122);
+wiimake_section_123 :
+{
+	libmml_O1.a (.text.onGround)
+}
+_sizeof_section_123=SIZEOF(wiimake_section_123);
+wiimake_section_124 :
+{
+	libmml_O1.a (.text.actionStateEq)
+}
+_sizeof_section_124=SIZEOF(wiimake_section_124);
+wiimake_section_125 :
+{
+	libmml_O1.a (.text.actionStateGeq)
+}
+_sizeof_section_125=SIZEOF(wiimake_section_125);
+wiimake_section_126 :
+{
+	libmml_O1.a (.text.actionStateLeq)
+}
+_sizeof_section_126=SIZEOF(wiimake_section_126);
+wiimake_section_127 :
+{
+	libmml_O1.a (.text.fallenDown)
+}
+_sizeof_section_127=SIZEOF(wiimake_section_127);
+wiimake_section_128 :
+{
+	libmml_O1.a (.text.nearSurface)
+}
+_sizeof_section_128=SIZEOF(wiimake_section_128);
+wiimake_section_129 :
+{
+	libmml_O1.a (.text.techSituation)
+}
+_sizeof_section_129=SIZEOF(wiimake_section_129);
+wiimake_section_130 :
+{
+	libmml_O1.a (.text.recoverySituation)
+}
+_sizeof_section_130=SIZEOF(wiimake_section_130);
+wiimake_section_131 :
+{
+	libmml_O1.a (.text.breakoutFrame)
+}
+_sizeof_section_131=SIZEOF(wiimake_section_131);
+wiimake_section_132 :
+{
+	libmml_O1.a (.rodata.cst4)
+}
+_sizeof_section_132=SIZEOF(wiimake_section_132);
+wiimake_section_133 :
+{
+	libmml_O1.a (state_check.gnu.attributes)
+}
+_sizeof_section_133=SIZEOF(wiimake_section_133);
+wiimake_section_134 :
+{
+	libmml_O1.a (.text.strcat)
+}
+_sizeof_section_134=SIZEOF(wiimake_section_134);
+wiimake_section_135 :
+{
+	libmml_O1.a (.text.itoa)
+}
+_sizeof_section_135=SIZEOF(wiimake_section_135);
+wiimake_section_136 :
+{
+	libmml_O1.a (.text.memcpy)
+}
+_sizeof_section_136=SIZEOF(wiimake_section_136);
+wiimake_section_137 :
+{
+	libmml_O1.a (.text.memset)
+}
+_sizeof_section_137=SIZEOF(wiimake_section_137);
+wiimake_section_138 :
+{
+	libmml_O1.a (.sdata.strncmp)
+}
+_sizeof_section_138=SIZEOF(wiimake_section_138);
+wiimake_section_139 :
+{
+	libmml_O1.a (.sdata.strcpy)
+}
+_sizeof_section_139=SIZEOF(wiimake_section_139);
+wiimake_section_140 :
+{
+	libmml_O1.a (.sdata.memcmp)
+}
+_sizeof_section_140=SIZEOF(wiimake_section_140);
+wiimake_section_141 :
+{
+	libmml_O1.a (.sdata.strlen)
+}
+_sizeof_section_141=SIZEOF(wiimake_section_141);
+wiimake_section_142 :
+{
+	libmml_O1.a (.sdata.strcmp)
+}
+_sizeof_section_142=SIZEOF(wiimake_section_142);
+wiimake_section_143 :
+{
+	libmml_O1.a (.sdata.memchr)
+}
+_sizeof_section_143=SIZEOF(wiimake_section_143);
+wiimake_section_144 :
+{
+	libmml_O1.a (.sdata.strchr)
+}
+_sizeof_section_144=SIZEOF(wiimake_section_144);
+wiimake_section_145 :
+{
+	libmml_O1.a (.sdata.strncpy)
+}
+_sizeof_section_145=SIZEOF(wiimake_section_145);
+wiimake_section_146 :
+{
+	libmml_O1.a (.text.initHeap)
+}
+_sizeof_section_146=SIZEOF(wiimake_section_146);
+wiimake_section_147 :
+{
+	libmml_O1.a (.text.limitGameMemory)
+}
+_sizeof_section_147=SIZEOF(wiimake_section_147);
+wiimake_section_148 :
+{
+	libmml_O1.a (.text.malloc)
+}
+_sizeof_section_148=SIZEOF(wiimake_section_148);
+wiimake_section_149 :
+{
+	libmml_O1.a (.text.calloc)
+}
+_sizeof_section_149=SIZEOF(wiimake_section_149);
+wiimake_section_150 :
+{
+	libmml_O1.a (.text.free)
+}
+_sizeof_section_150=SIZEOF(wiimake_section_150);
+wiimake_section_151 :
+{
+	libmml_O1.a (.text.realloc)
+}
+_sizeof_section_151=SIZEOF(wiimake_section_151);
+wiimake_section_152 :
+{
+	libmml_O1.a (.text.getHeapSize)
+}
+_sizeof_section_152=SIZEOF(wiimake_section_152);
+wiimake_section_153 :
+{
+	libmml_O1.a (.bss.heapHandle)
+}
+_sizeof_section_153=SIZEOF(wiimake_section_153);
+wiimake_section_154 :
+{
+	libmml_O1.a (.bss.init)
+}
+_sizeof_section_154=SIZEOF(wiimake_section_154);
+wiimake_section_155 :
+{
+	libmml_O1.a (.sdata.OSAllocFromHeap)
+}
+_sizeof_section_155=SIZEOF(wiimake_section_155);
+wiimake_section_156 :
+{
+	libmml_O1.a (.bss.heapSize)
+}
+_sizeof_section_156=SIZEOF(wiimake_section_156);
+wiimake_section_157 :
+{
+	libmml_O1.a (.sdata.OSCreateHeap)
+}
+_sizeof_section_157=SIZEOF(wiimake_section_157);
+wiimake_section_158 :
+{
+	libmml_O1.a (.sdata.OSFreeToHeap)
+}
+_sizeof_section_158=SIZEOF(wiimake_section_158);
+wiimake_section_159 :
+{
+	libmml_O1.a (.rodata._sh_length)
+}
+_sizeof_section_159=SIZEOF(wiimake_section_159);
+wiimake_section_160 :
+{
+	libmml_O1.a (.rodata._char_height)
+}
+_sizeof_section_160=SIZEOF(wiimake_section_160);
+wiimake_section_161 :
+{
+	libmml_O1.a (.rodata._ledgedash_frames)
+}
+_sizeof_section_161=SIZEOF(wiimake_section_161);
+wiimake_section_162 :
+{
+	libmml_O1.a (.rodata._dj_vertical)
+}
+_sizeof_section_162=SIZEOF(wiimake_section_162);
+wiimake_section_163 :
+{
+	libmml_O1.a (.rodata._dj_horizontal)
+}
+_sizeof_section_163=SIZEOF(wiimake_section_163);
+wiimake_section_164 :
+{
+	libmml_O1.a (.sdata._mml_version)
+}
+_sizeof_section_164=SIZEOF(wiimake_section_164);
+wiimake_section_165 :
+{
+	libmml_O1.a (.sbss._errorState)
+}
+_sizeof_section_165=SIZEOF(wiimake_section_165);
+}

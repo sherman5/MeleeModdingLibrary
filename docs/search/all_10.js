@@ -15,7 +15,7 @@ var searchData=
   ['playerdata',['PlayerData',['../game__state_8h.html#struct_player_data',1,'PlayerData'],['../game__state_8h.html#ae366a6cc30f628e5027bddc0eee2bcfc',1,'GameState::playerData()'],['../game__state_8h.html#a2abf754a49d9ca0617637095b19408ba',1,'playerData():&#160;game_state.c']]],
   ['point',['Point',['../math_8h.html#struct_point',1,'']]],
   ['port',['port',['../ai_8h.html#a1cef36ea7bcb39eb33ee9c064ef1aa39',1,'AI']]],
-  ['print',['print',['../print_8h.html#a85d50a09cb925cd08d803c5a8fd01da7',1,'print.c']]],
+  ['print',['print',['../group___calls_malloc.html#ga85d50a09cb925cd08d803c5a8fd01da7',1,'print(const char *str):&#160;print.c'],['../group___calls_malloc.html#ga85d50a09cb925cd08d803c5a8fd01da7',1,'print(const char *str):&#160;print.c']]],
   ['print_2eh',['print.h',['../print_8h.html',1,'']]],
   ['print_5ferr',['PRINT_ERR',['../error_8h.html#adbffe66045224563fa6323b2a98d811d',1,'error.h']]],
   ['puff',['PUFF',['../ai_8h.html#a3b9e84b997dc7e5c08fbb89d65a78e5b',1,'ai.h']]],

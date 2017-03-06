@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['character_20codes',['Character Codes',['../group__char__codes.html',1,'']]]
+  ['functions_20that_20allocate_20memory',['Functions that Allocate Memory',['../group___calls_malloc.html',1,'']]]
 ];

@@ -11,6 +11,7 @@
 
 /**
  * @brief print a string to the output stream
+ * @ingroup CallsMalloc
  * 
  * This function prints a string to an output stream
  * displayed on the designated window (tournament mode - replaces
@@ -32,6 +33,7 @@ void clear();
 
 /**
  * @brief "throw" an error
+ * @ingroup CallsMalloc
  *
  * Print an error message and set _errorState to true
  *

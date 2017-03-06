@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Melee Modding Library: Modules</title>
+<title>Melee Modding Library: Functions that Allocate Memory</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -77,15 +77,75 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">Modules</div>  </div>
+<div class="title">Functions that Allocate Memory</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock">Here is a list of all modules:</div><div class="directory">
-<table class="directory">
-<tr id="row_0_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a class="el" href="group___calls_malloc.html" target="_self">Functions that Allocate Memory</a></td><td class="desc"></td></tr>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga85d50a09cb925cd08d803c5a8fd01da7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___calls_malloc.html#ga85d50a09cb925cd08d803c5a8fd01da7">print</a> (const char *str)</td></tr>
+<tr class="memdesc:ga85d50a09cb925cd08d803c5a8fd01da7"><td class="mdescLeft">&#160;</td><td class="mdescRight">print a string to the output streamThis function prints a string to an output stream displayed on the designated window (tournament mode - replaces debug menu).  <a href="#ga85d50a09cb925cd08d803c5a8fd01da7">More...</a><br /></td></tr>
+<tr class="separator:ga85d50a09cb925cd08d803c5a8fd01da7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga600ac89163a3ee4d9e17288546b1ceed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___calls_malloc.html#ga600ac89163a3ee4d9e17288546b1ceed">error</a> (const char *errMessage)</td></tr>
+<tr class="memdesc:ga600ac89163a3ee4d9e17288546b1ceed"><td class="mdescLeft">&#160;</td><td class="mdescRight">"throw" an errorPrint an error message and set _errorState to true  <a href="#ga600ac89163a3ee4d9e17288546b1ceed">More...</a><br /></td></tr>
+<tr class="separator:ga600ac89163a3ee4d9e17288546b1ceed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-</div><!-- directory -->
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>These functions may call malloc, calloc, or realloc </p>
+<h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="ga600ac89163a3ee4d9e17288546b1ceed"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void error </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>errMessage</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>"throw" an errorPrint an error message and set _errorState to true </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">errMessage</td><td>- error message to print </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>none </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga85d50a09cb925cd08d803c5a8fd01da7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void print </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>str</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>print a string to the output streamThis function prints a string to an output stream displayed on the designated window (tournament mode - replaces debug menu). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>- string to output </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>none </dd></dl>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

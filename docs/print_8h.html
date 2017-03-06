@@ -40,6 +40,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -101,15 +102,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a85d50a09cb925cd08d803c5a8fd01da7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="print_8h.html#a85d50a09cb925cd08d803c5a8fd01da7">print</a> (const char *str)</td></tr>
-<tr class="memdesc:a85d50a09cb925cd08d803c5a8fd01da7"><td class="mdescLeft">&#160;</td><td class="mdescRight">print a string to the output stream  <a href="#a85d50a09cb925cd08d803c5a8fd01da7">More...</a><br /></td></tr>
-<tr class="separator:a85d50a09cb925cd08d803c5a8fd01da7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga85d50a09cb925cd08d803c5a8fd01da7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___calls_malloc.html#ga85d50a09cb925cd08d803c5a8fd01da7">print</a> (const char *str)</td></tr>
+<tr class="memdesc:ga85d50a09cb925cd08d803c5a8fd01da7"><td class="mdescLeft">&#160;</td><td class="mdescRight">print a string to the output streamThis function prints a string to an output stream displayed on the designated window (tournament mode - replaces debug menu).  <a href="group___calls_malloc.html#ga85d50a09cb925cd08d803c5a8fd01da7">More...</a><br /></td></tr>
+<tr class="separator:ga85d50a09cb925cd08d803c5a8fd01da7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac8bb3912a3ce86b15842e79d0b421204"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="print_8h.html#ac8bb3912a3ce86b15842e79d0b421204">clear</a> ()</td></tr>
 <tr class="memdesc:ac8bb3912a3ce86b15842e79d0b421204"><td class="mdescLeft">&#160;</td><td class="mdescRight">clear the output stream  <a href="#ac8bb3912a3ce86b15842e79d0b421204">More...</a><br /></td></tr>
 <tr class="separator:ac8bb3912a3ce86b15842e79d0b421204"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a600ac89163a3ee4d9e17288546b1ceed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="print_8h.html#a600ac89163a3ee4d9e17288546b1ceed">error</a> (const char *errMessage)</td></tr>
-<tr class="memdesc:a600ac89163a3ee4d9e17288546b1ceed"><td class="mdescLeft">&#160;</td><td class="mdescRight">"throw" an error  <a href="#a600ac89163a3ee4d9e17288546b1ceed">More...</a><br /></td></tr>
-<tr class="separator:a600ac89163a3ee4d9e17288546b1ceed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga600ac89163a3ee4d9e17288546b1ceed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___calls_malloc.html#ga600ac89163a3ee4d9e17288546b1ceed">error</a> (const char *errMessage)</td></tr>
+<tr class="memdesc:ga600ac89163a3ee4d9e17288546b1ceed"><td class="mdescLeft">&#160;</td><td class="mdescRight">"throw" an errorPrint an error message and set _errorState to true  <a href="group___calls_malloc.html#ga600ac89163a3ee4d9e17288546b1ceed">More...</a><br /></td></tr>
+<tr class="separator:ga600ac89163a3ee4d9e17288546b1ceed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e5b20fed15743656bb6d2e6a6ea6269"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="print_8h.html#a1e5b20fed15743656bb6d2e6a6ea6269">display</a> ()</td></tr>
 <tr class="memdesc:a1e5b20fed15743656bb6d2e6a6ea6269"><td class="mdescLeft">&#160;</td><td class="mdescRight">display print stream  <a href="#a1e5b20fed15743656bb6d2e6a6ea6269">More...</a><br /></td></tr>
 <tr class="separator:a1e5b20fed15743656bb6d2e6a6ea6269"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -151,58 +152,6 @@ Functions</h2></td></tr>
 
 <p>display print stream </p>
 <p>Create the display where print sends output, should never be called by user. The user should create a branch to this symbol at 0x801a633c overwriting instruction 0x7c7f1b78 (SSBM v1.02)</p>
-<dl class="section return"><dt>Returns</dt><dd>none </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="a600ac89163a3ee4d9e17288546b1ceed"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void error </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>errMessage</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>"throw" an error </p>
-<p>Print an error message and set _errorState to true</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">errMessage</td><td>- error message to print </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>none </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="a85d50a09cb925cd08d803c5a8fd01da7"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void print </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>str</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>print a string to the output stream </p>
-<p>This function prints a string to an output stream displayed on the designated window (tournament mode - replaces debug menu).</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">str</td><td>- string to output </td></tr>
-  </table>
-  </dd>
-</dl>
 <dl class="section return"><dt>Returns</dt><dd>none </dd></dl>
 
 </div>

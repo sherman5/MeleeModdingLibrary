@@ -37,4 +37,11 @@ extern u32 _mml_version;
  *
  */
 
+/**
+ * @defgroup CallsMalloc Functions that Allocate Memory
+ *
+ * These functions may call malloc, calloc, or realloc
+ * @{@}
+ */
+
 #endif
