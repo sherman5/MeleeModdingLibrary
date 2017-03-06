@@ -12,6 +12,11 @@ counter_test/*
 build/*
 mml*
 html/*
+ignored/*
 
 !tutorials/DefensiveAI/*.data
-wiki/*
+!tutorials/DI/*.data
+!tutorials/Recovery/*.data
+!tutorials/SimpleProgram/*.data
+!tutorials/Teching/*.data
+
