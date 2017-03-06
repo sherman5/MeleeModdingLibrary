@@ -5,9 +5,9 @@ var searchData=
   ['m_5fpi',['M_PI',['../math_8h.html#ae71449b1cc6e6250b91f539153a7a0d3',1,'math.h']]],
   ['magnitude',['magnitude',['../math_8h.html#aa472be54ff4dd70c96b82dbdf24331f5',1,'math.c']]],
   ['malloc',['malloc',['../system_8h.html#a7ac38fce3243a7dcf448301ee9ffd392',1,'system.c']]],
-  ['mario',['MARIO',['../_a_i_8h.html#a4d063ca1755e7483e4d0d5d22b0bf21e',1,'AI.h']]],
+  ['mario',['MARIO',['../ai_8h.html#a4d063ca1755e7483e4d0d5d22b0bf21e',1,'ai.h']]],
   ['mario_5fid',['MARIO_ID',['../melee__info_8h.html#a2fcfaa4426a8fc6ae05a9de29225b153',1,'melee_info.h']]],
-  ['marth',['MARTH',['../_a_i_8h.html#a2763e71ffbe7c0255be3126aac08233d',1,'AI.h']]],
+  ['marth',['MARTH',['../ai_8h.html#a2763e71ffbe7c0255be3126aac08233d',1,'ai.h']]],
   ['marth_5fid',['MARTH_ID',['../melee__info_8h.html#aa6d9b70b6f53ead0943cacc83eff36e1',1,'melee_info.h']]],
   ['math_2eh',['math.h',['../math_8h.html',1,'']]],
   ['melee_5finfo_2eh',['melee_info.h',['../melee__info_8h.html',1,'']]],
@@ -19,7 +19,7 @@ var searchData=
   ['memcmp',['memcmp',['../string_8h.html#a1e7d61eb280250fb55dce370ba1a1709',1,'string.h']]],
   ['memcpy',['memcpy',['../string_8h.html#a756c9204a58aa6f5c4923377c89f7088',1,'string.c']]],
   ['memset',['memset',['../string_8h.html#a4cb469bec7b722064b97a406346acb61',1,'string.c']]],
-  ['mewtwo',['MEWTWO',['../_a_i_8h.html#a9b44f33ffd4ea0464a76705c4fdbc61f',1,'AI.h']]],
+  ['mewtwo',['MEWTWO',['../ai_8h.html#a9b44f33ffd4ea0464a76705c4fdbc61f',1,'ai.h']]],
   ['mewtwo_5fid',['MEWTWO_ID',['../melee__info_8h.html#a86f552f052c876af795768b34e2841f2',1,'melee_info.h']]],
   ['mml_5fversion_5fcheck',['MML_VERSION_CHECK',['../version_8h.html#ad8ae96c2670570805eaa0aeced80e564',1,'version.h']]],
   ['mml_5fversion_5fmajor',['MML_VERSION_MAJOR',['../version_8h.html#a8607c5c6a24b67f2ab22ff62f579294d',1,'version.h']]],
@@ -27,6 +27,6 @@ var searchData=
   ['mml_5fversion_5frevision',['MML_VERSION_REVISION',['../version_8h.html#a8fd9a7f0588e90896ced5529a3e962cd',1,'version.h']]],
   ['move',['Move',['../moves_8h.html#struct_move',1,'']]],
   ['moves_2eh',['moves.h',['../moves_8h.html',1,'']]],
-  ['mr_5fgnw',['MR_GNW',['../_a_i_8h.html#aa792418b6fa639769e7661163a6a815c',1,'AI.h']]],
+  ['mr_5fgnw',['MR_GNW',['../ai_8h.html#aa792418b6fa639769e7661163a6a815c',1,'ai.h']]],
   ['mr_5fgnw_5fid',['MR_GNW_ID',['../melee__info_8h.html#a487b167b34f432d585b1859cabfb4a69',1,'melee_info.h']]]
 ];
