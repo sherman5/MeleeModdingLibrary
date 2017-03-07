@@ -49,8 +49,6 @@ void _main()
         print("line 29");
         print("line 30");
         print("line 31");
-/*        THROW_ERROR("test error taking up multiple lines of output blah blah");
-        print("line 31");*/
         init = true;
     }
 }
