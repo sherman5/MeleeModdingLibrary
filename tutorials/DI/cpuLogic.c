@@ -1,4 +1,4 @@
-#include <mml/AI.h>
+#include <mml/ai.h>
 #include <mml/logic.h>
 #include <mml/state_check.h>
 #include <mml/action_state.h>

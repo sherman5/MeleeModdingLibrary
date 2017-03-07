@@ -1,7 +1,7 @@
 #ifndef FALCON_RECOVERY
 #define FALCON_RECOVERY
 
-#include <mml/AI.h>
+#include <mml/ai.h>
 
 void falconRecovery(AI* ai);
 

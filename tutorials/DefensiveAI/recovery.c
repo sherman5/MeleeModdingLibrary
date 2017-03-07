@@ -1,5 +1,5 @@
 #include <mml/state_check.h>
-#include <mml/AI.h>
+#include <mml/ai.h>
 #include <mml/moves.h>
 #include <mml/game_state.h>
 #include <mml/math.h>

@@ -1,7 +1,7 @@
 #ifndef SPACIE_RECOVERY
 #define SPACIE_RECOVERY
 
-#include <mml/AI.h>
+#include <mml/ai.h>
 
 void spacieRecovery(AI* ai);
 void spacieIllusion(AI* ai);

@@ -1,5 +1,5 @@
 #include <mml/game_state.h>
-#include <mml/AI.h>
+#include <mml/ai.h>
 #include <mml/moves.h>
 #include <mml/random.h>
 #include <mml/state_check.h>
@@ -10,12 +10,12 @@
 
 #define SIDE_B_HEIGHT      0.f
 #define SIDE_B_DIST       70.f
-#define SWEET_SPOT_PROB  0.55f
+#define SWEET_SPOT_PROB  0.45f
 
 static RawInput raw_marthSideB[2] = 
 {
     {OVERWRITE, 0, NO_FLAGS},
-    {OVERWRITE, 15, NO_FLAGS}
+    {OVERWRITE, 15, NO_FLAGS},
 };
 static Move mv_marthSideB = {.inputs = raw_marthSideB, .size = 2};
 
@@ -30,7 +30,6 @@ static void marthSideB(AI* ai)
 
     resetAfterFrameLogic.condition.arg1.u = CURRENT_FRAME + 40;
     addLogic(ai, &resetAfterFrameLogic);
-    addCleanUpLogic(ai);
 }
 
 static float jumpDist = 0.f;
@@ -60,14 +59,16 @@ void marthRecovery(AI* ai)
     {
         marthSideB(ai);
     }
-    else if (chance(SWEET_SPOT_PROB) || rInfo.dist > 50.f)
+    else if (chance(SWEET_SPOT_PROB) || rInfo.dist > 60.f)
     {
         jumpDist = 25.f;
+        marthDoubleJumpLogic.condition.arg2.f = -60.f;
+
         upBdist = 0.f;
         upBheight = -63.f;
-        marthDoubleJumpLogic.condition.arg2.f = -60.f;
+        marthUpBLogic.condition.function = &belowHeight;            
+
         addLogic(ai, &marthDoubleJumpLogic);
-        addCleanUpLogic(ai);
     }
     else
     {
@@ -79,15 +80,15 @@ void marthRecovery(AI* ai)
         {
             marthDoubleJumpLogic.condition.arg2.f = -65.f;
             marthUpBLogic.condition.function = &aboveHeight;
+            addLogic(ai, &marthDoubleJumpLogic);
         }
         else
         {
-            marthDoubleJumpLogic.condition.arg2.f = -40.f;
+            marthUpBLogic.condition.arg2.f = upBheight;
             marthUpBLogic.condition.function = &belowHeight;            
+            addLogic(ai, &marthUpBLogic);
         }
-
-        addLogic(ai, &marthDoubleJumpLogic);
-        addCleanUpLogic(ai);
     }
+    addCleanUpLogic(ai);
 }
 

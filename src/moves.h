@@ -86,14 +86,14 @@ extern Move _mv_hitDI;
 #define SET_HIT_DI_DIR(x) _raw_hitDI[0].controller = \
     FULL_STICK | STICK_ANGLE((x))
 
-/** DI from throw @note INDEFINITE */
+/** DI from throw @ingroup IndefiniteMove */
 extern Move _mv_throwDI;
 
 /** Set the direction of DI for throws */
 #define SET_THROW_DI_DIR(x) _raw_holdDirection[0].controller = \
     FULL_STICK | STICK_ANGLE((x))
 
-/** Up B @note INDEFINITE */
+/** Up B @ingroup IndefiniteMove */
 extern Move _mv_upB;
 
 /** Set the direction for the Up B */
@@ -121,7 +121,7 @@ extern Move _mv_ledgeDash;
 #define SET_LEDGEDASH_ANGLE(x) _raw_ledgeDash[2].controller = \
     L_BUTTON | FULL_STICK | STICK_ANGLE((x))
 
-/** Hold Control Stick in Direction @note INDEFINITE */
+/** Hold Control Stick in Direction @ingroup IndefiniteMove */
 extern Move _mv_holdDirection;
 
 /** Set the direction of the control stick */

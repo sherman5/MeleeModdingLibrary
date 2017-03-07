@@ -44,4 +44,12 @@ extern u32 _mml_version;
  * @{@}
  */
 
+/**
+ * @defgroup IndefiniteMove Moves that have no expiration
+ *
+ * These moves will not terminate on their own
+ * @{@}
+ */
+
+
 #endif

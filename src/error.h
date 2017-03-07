@@ -14,7 +14,7 @@
 #define TOSTRING(x) STRINGIFY(x)
 /** @endcond */
 
-/** send error state and display error message */
+/** send error state and display error message @ingroup CallsMalloc */
 #define THROW_ERROR(code, msg) \
 do { \
     _errorState = _errorState | code; \

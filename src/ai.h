@@ -83,6 +83,7 @@ typedef struct
 
 /**
  * @brief Add single logic rule to AI
+ * @ingroup CallsMalloc
  *
  * @param ai - Pointer to AI struct
  * @param logic - Point to Logic struct
@@ -92,6 +93,7 @@ void addLogic(AI* ai, const Logic* logic);
 
 /**
  * @brief Tell AI to execute a move 
+ * @ingroup CallsMalloc
  *
  * @param ai - Pointer to AI struct
  * @param move - Pointer to Move struct

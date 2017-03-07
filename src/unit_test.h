@@ -20,7 +20,7 @@
 #define APPROX_ZERO(x, tol) (fabs(x) < tol)
 /** @endcond **/
 
-/** Require @p condition to be true **/
+/** Require @p condition to be true @ingroup CallsMalloc **/
 #define REQUIRE(condition) \
 do { \
     if (!(condition)) \
@@ -30,13 +30,19 @@ do { \
     } \
 } while (0)
 
-/** Require @p L and @p R to be within @p tol of each other */
+/**
+ * Require @p L and @p R to be within @p tol of each other
+ * @ingroup CallsMalloc
+ */
 #define REQUIRE_FLT_EQ(L, R, tol) REQUIRE(APPROX_ZERO((L) - (R), tol))
 
 /** Macro placed in the global scope of each .c file, before END_TEST **/ 
 #define UNIT_TEST static bool tests_passed = true
 
-/** Macro placed in a function after all tests have been run **/
+/**
+ * Macro placed in a function after all tests have been run
+ * @ingroup CallsMalloc
+ */
 #define END_TEST \
 do { \
     if (tests_passed) \

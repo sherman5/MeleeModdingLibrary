@@ -1,7 +1,7 @@
 #ifndef RECOVERY_H
 #define RECOVERY_H
 
-#include <mml/AI.h>
+#include <mml/ai.h>
 #include <mml/math.h>
 
 void recover(AI* ai);

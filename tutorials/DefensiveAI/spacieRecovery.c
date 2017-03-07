@@ -15,7 +15,7 @@ static void fireRecovery(AI* ai)
 
     if (fireLength < rInfo.dist)
     {
-        fireRecoveryLogic.condition.arg2.f = 20.f;
+        fireRecoveryLogic.condition.arg2.f = 30.f;
     }
     else 
     {
