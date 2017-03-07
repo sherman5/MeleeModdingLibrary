@@ -4,6 +4,7 @@ var searchData=
   ['pastframe',['pastFrame',['../state__check_8h.html#aee1d705b77f878952545abdfec19765f',1,'state_check.c']]],
   ['peach',['PEACH',['../ai_8h.html#af96789c285aa5b40d948369c9867ba52',1,'ai.h']]],
   ['peach_5fid',['PEACH_ID',['../melee__info_8h.html#a4aafa26416e57ab8e711f7f8b772b1b8',1,'melee_info.h']]],
+  ['percent',['percent',['../game__state_8h.html#aac167f3972a2f244f4b32c8ee5b89364',1,'PlayerData']]],
   ['pichu',['PICHU',['../ai_8h.html#a44aefe601adbb20f2007ed39dd9b1da8',1,'ai.h']]],
   ['pichu_5fid',['PICHU_ID',['../melee__info_8h.html#aee8fa194a62676cda1c8a8bd00793344',1,'melee_info.h']]],
   ['pikachu',['PIKACHU',['../ai_8h.html#a2d640ac305fa8dacac257a7c8bf24463',1,'ai.h']]],

@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['ledge',['ledge',['../game__state_8h.html#a461feb85b39e300ba75106c98e6e7080',1,'Stage']]],
-  ['left',['left',['../game__state_8h.html#a7d10b0c779bad3aabf067d52035f7052',1,'Platform']]],
-  ['logicqueue',['logicQueue',['../ai_8h.html#aac5387c0b835a900ce7e396548e0dea1',1,'AI']]]
+  ['inair',['inAir',['../game__state_8h.html#a539a7ad4f347d49ddfd539375d6ba7e4',1,'PlayerData']]],
+  ['inputcapacity',['inputCapacity',['../ai_8h.html#a02cf5917931e3d0e28867c01796f0715',1,'AI']]],
+  ['inputqueue',['inputQueue',['../ai_8h.html#a98485465ebcea1bfc1d7b426255a1b83',1,'AI']]],
+  ['inputs',['inputs',['../moves_8h.html#a43199d6a818bc32724e5c002b2cbbf19',1,'Move']]],
+  ['inputsize',['inputSize',['../ai_8h.html#a8dda1e8d72346e97f51bbf77e881c291',1,'AI']]]
 ];

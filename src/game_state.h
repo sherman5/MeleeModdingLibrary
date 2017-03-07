@@ -11,7 +11,7 @@
 #include "math.h"
 #include "action_state.h"
 
-/** Name of Stage and Internal ID) */
+/** Name of Stage and Internal ID */
 typedef enum
 {
     YOSHIS = 0x06, /**< Yoshi's Story */
@@ -51,48 +51,48 @@ typedef struct
 /** @brief struct holding player data */
 typedef struct
 {
-    char pad1[0x10];
-    u32 actionState;
+    /** @cond */char pad1[0x10];/** @endcond */
+    u32 actionState; /**< current action state of player */
 
-    char pad2[0x2c - 0x10 - sizeof(u32)];
-    float facingDirection;
+    /** @cond */char pad2[0x2c - 0x10 - sizeof(u32)];/** @endcond */
+    float facingDirection; /**< -1 facing left, 1 facing right */
 
-    char pad3[0xb0 - 0x2c - sizeof(float)];
-    Point coordinates;
+    /** @cond */char pad3[0xb0 - 0x2c - sizeof(float)];/** @endcond */
+    Point coordinates; /**< coordinates of player */
 
-    char pad4[0xc8 - 0xb0 - sizeof(Point)];
-    Point deltaCoordinates;
+    /** @cond */char pad4[0xc8 - 0xb0 - sizeof(Point)];/** @endcond */
+    Point deltaCoordinates; /**< change in coordinates from last frame */
 
-    char pad5[0xe0 - 0xc8 - sizeof(Point)];
-    bool inAir;
+    /** @cond */char pad5[0xe0 - 0xc8 - sizeof(Point)];/** @endcond */
+    bool inAir; /**< true if player is in air */
 
-    char pad6[0x148 - 0xe0 - sizeof(bool)];
-    float jumpSquat;
+    /** @cond */char pad6[0x148 - 0xe0 - sizeof(bool)];/** @endcond */
+    float jumpSquat; /**< frames of jumpsquat */
 
-    char pad7[0x1830 - 0x148 - sizeof(float)];
-    float percent;
+    /** @cond */char pad7[0x1830 - 0x148 - sizeof(float)];/** @endcond */
+    float percent; /**< percent of player */
 
-    char pad8[0x1844 - 0x1830 - sizeof(float)];
-    float damageDirection;
-    u32 knockbackAngle;
+    /** @cond */char pad8[0x1844 - 0x1830 - sizeof(float)];/** @endcond */
+    float damageDirection; /**< -1, 1 depending on direction sent */
+    u32 knockbackAngle; /**< angle of knockback [0, 360], 361 = sakurai */
 
-    char pad10[0x195c - 0x1848 - sizeof(u32)];
-    float hitlag;
+    /** @cond */char pad10[0x195c - 0x1848 - sizeof(u32)];/** @endcond */
+    float hitlag; /**< remaining frames of hitlag */
 
-    char pad11[0x1968 - 0x195c - sizeof(float)];
-    u8 jumpsUsed;
+    /** @cond */char pad11[0x1968 - 0x195c - sizeof(float)];/** @endcond */
+    u8 jumpsUsed; /**< number of jumps already used */
 
-    char pad12[0x1998 - 0x1968 - sizeof(u8)];
-    float shieldSize;
+    /** @cond */char pad12[0x1998 - 0x1968 - sizeof(u8)];/** @endcond */
+    float shieldSize; /**< size of shield */
     
-    char pad13[0x1a4c - 0x1998 - sizeof(float)];    
-    float breakoutCountdown;
+    /** @cond */char pad13[0x1a4c - 0x1998 - sizeof(float)];/** @endcond */
+    float breakoutCountdown; /**< frames until breakout of grab */
 
-    char pad14[0x1a9b - 0x1a4c - sizeof(float)];
-    u8 aiLevel;
+    /** @cond */char pad14[0x1a9b - 0x1a4c - sizeof(float)];/** @endcond */
+    u8 aiLevel; /**< cpu level selected on CSS */
 
-    char pad15[0x2340 - 0x1a9b - sizeof(u8)];
-    float hitstun;
+    /** @cond */char pad15[0x2340 - 0x1a9b - sizeof(u8)];/** @endcond */
+    float hitstun; /**< remaining frames of hitstun */
 
 } PlayerData;
 

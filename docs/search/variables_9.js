@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['opponent',['opponent',['../ai_8h.html#ac3b02072318dbf033ab5fc97b6973c14',1,'AI']]]
+  ['knockbackangle',['knockbackAngle',['../game__state_8h.html#ac2a49d33a233497bfa8c8717acd7b047',1,'PlayerData']]]
 ];

@@ -4,7 +4,7 @@ var searchData=
   ['ice_5fclimbers_5fid',['ICE_CLIMBERS_ID',['../melee__info_8h.html#a64b37b1962893d0d0f87e36553d79fb9',1,'melee_info.h']]],
   ['imax',['imax',['../math_8h.html#a2a9323871c69a2bc01307d7faeb89ff0',1,'math.c']]],
   ['imin',['imin',['../math_8h.html#a162c8687aeda7ba78f429df4ce22c379',1,'math.c']]],
-  ['inair',['inAir',['../state__check_8h.html#a6636df66ebc146a8a154988a36dbfc29',1,'state_check.c']]],
+  ['inair',['inAir',['../game__state_8h.html#a539a7ad4f347d49ddfd539375d6ba7e4',1,'PlayerData::inAir()'],['../state__check_8h.html#a6636df66ebc146a8a154988a36dbfc29',1,'inAir():&#160;state_check.c']]],
   ['ingame',['inGame',['../game__state_8h.html#a5dd876749dfcb11bbd321314dfabd7fc',1,'game_state.c']]],
   ['inhitlag',['inHitlag',['../state__check_8h.html#a84a7e6247475e75a0a5917bfa75c1532',1,'state_check.c']]],
   ['inhitstun',['inHitstun',['../state__check_8h.html#a1810c259960443982cd73a7d7df6b553',1,'state_check.c']]],

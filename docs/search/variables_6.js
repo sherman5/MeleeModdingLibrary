@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['inputcapacity',['inputCapacity',['../ai_8h.html#a02cf5917931e3d0e28867c01796f0715',1,'AI']]],
-  ['inputqueue',['inputQueue',['../ai_8h.html#a98485465ebcea1bfc1d7b426255a1b83',1,'AI']]],
-  ['inputs',['inputs',['../moves_8h.html#a43199d6a818bc32724e5c002b2cbbf19',1,'Move']]],
-  ['inputsize',['inputSize',['../ai_8h.html#a8dda1e8d72346e97f51bbf77e881c291',1,'AI']]]
+  ['height',['height',['../game__state_8h.html#a48083b65ac9a863566dc3e3fff09a5b4',1,'Platform']]],
+  ['hitlag',['hitlag',['../game__state_8h.html#aeabac9c664bbd89b43d8cd445b0d881e',1,'PlayerData']]],
+  ['hitstun',['hitstun',['../game__state_8h.html#a2b4f39c25bd32da726744bb06248c755',1,'PlayerData']]]
 ];

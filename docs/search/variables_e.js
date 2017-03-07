@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['u',['u',['../logic_8h.html#a8d1d08cfc32067810e9100c92f05bdda',1,'FunctionArg']]]
+  ['right',['right',['../game__state_8h.html#a6202f38a97a1c9eb0142baeb338cf1f1',1,'Platform']]]
 ];

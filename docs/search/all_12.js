@@ -17,6 +17,7 @@ var searchData=
   ['set_5fup_5fb_5fdir',['SET_UP_B_DIR',['../moves_8h.html#a988a9244d27e14509b879430047a48bc',1,'moves.h']]],
   ['setcontroller',['setController',['../controller_8h.html#aa98966014bf874807f17e60760047fb9',1,'controller.c']]],
   ['sh_5flength',['SH_LENGTH',['../moves_8h.html#a79ffed3be76d28e8ebf9938d633065a4',1,'moves.h']]],
+  ['shieldsize',['shieldSize',['../game__state_8h.html#abb17f54e01f013a1a160ab5e2d0109fb',1,'PlayerData']]],
   ['side',['side',['../game__state_8h.html#ac4dd3440fc84194ed44beb9c908002c5',1,'Stage']]],
   ['sign',['SIGN',['../math_8h.html#a8c5ff70b6b28cd0157c50a22406f92c4',1,'math.h']]],
   ['sin',['sin',['../math_8h.html#a15876915492b5aff219d1dd03ad66def',1,'math.c']]],
