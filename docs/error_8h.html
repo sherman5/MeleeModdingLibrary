@@ -103,8 +103,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a5960c60c0cdb3fcace0ee191e1ddda0b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="error_8h.html#a5960c60c0cdb3fcace0ee191e1ddda0b">THROW_ERROR</a>(code,  msg)</td></tr>
-<tr class="separator:a5960c60c0cdb3fcace0ee191e1ddda0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5960c60c0cdb3fcace0ee191e1ddda0b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___calls_malloc.html#ga5960c60c0cdb3fcace0ee191e1ddda0b">THROW_ERROR</a>(code,  msg)</td></tr>
+<tr class="separator:ga5960c60c0cdb3fcace0ee191e1ddda0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a60db3d3e5c5fb314c0d698922d0b7124"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="error_8h.html#a60db3d3e5c5fb314c0d698922d0b7124">ERROR_STATE</a>&#160;&#160;&#160;<a class="el" href="error_8h.html#ac7d80a3eb9f295abf7a00fd5411bf6ba">_errorState</a>;</td></tr>
 <tr class="separator:a60db3d3e5c5fb314c0d698922d0b7124"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0099faec25b2b4649490d7f562ade34e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="error_8h.html#a0099faec25b2b4649490d7f562ade34e">ERROR_THROWN</a>(code)&#160;&#160;&#160;(<a class="el" href="error_8h.html#ac7d80a3eb9f295abf7a00fd5411bf6ba">_errorState</a> &amp; (code))</td></tr>
@@ -175,35 +175,6 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>error in print stream </p>
-
-</div>
-</div>
-<a class="anchor" id="a5960c60c0cdb3fcace0ee191e1ddda0b"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define THROW_ERROR</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">code, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">msg&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> { <a class="code" href="error_8h.html#ac7d80a3eb9f295abf7a00fd5411bf6ba">\</a></div><div class="line"><a class="code" href="error_8h.html#ac7d80a3eb9f295abf7a00fd5411bf6ba">    _errorState</a> = <a class="code" href="error_8h.html#ac7d80a3eb9f295abf7a00fd5411bf6ba">_errorState</a> | code; <a class="code" href="group___calls_malloc.html#ga600ac89163a3ee4d9e17288546b1ceed">\</a></div><div class="line"><a class="code" href="group___calls_malloc.html#ga600ac89163a3ee4d9e17288546b1ceed">    error</a>(__FILE__ <span class="stringliteral">&quot;:&quot;</span> TOSTRING(__LINE__) <span class="stringliteral">&quot;: &quot;</span> msg); \</div><div class="line">} <span class="keywordflow">while</span> (0)</div><div class="ttc" id="group___calls_malloc_html_ga600ac89163a3ee4d9e17288546b1ceed"><div class="ttname"><a href="group___calls_malloc.html#ga600ac89163a3ee4d9e17288546b1ceed">error</a></div><div class="ttdeci">void error(const char *errMessage)</div><div class="ttdoc">&quot;throw&quot; an errorPrint an error message and set _errorState to true </div><div class="ttdef"><b>Definition:</b> print.c:109</div></div>
-<div class="ttc" id="error_8h_html_ac7d80a3eb9f295abf7a00fd5411bf6ba"><div class="ttname"><a href="error_8h.html#ac7d80a3eb9f295abf7a00fd5411bf6ba">_errorState</a></div><div class="ttdeci">u32 _errorState</div><div class="ttdef"><b>Definition:</b> error.c:3</div></div>
-</div><!-- fragment --><p>send error state and display error message </p>
 
 </div>
 </div>

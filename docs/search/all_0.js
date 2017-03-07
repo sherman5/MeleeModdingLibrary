@@ -11,7 +11,7 @@ var searchData=
   ['_5fmv_5fdownb',['_mv_downB',['../moves_8h.html#ab2593f197fbd00cfde67fa6e20c9cd24',1,'moves.c']]],
   ['_5fmv_5fgetupattack',['_mv_getUpAttack',['../moves_8h.html#a0ce5e4b23a999064ddf6790cf8b2e3c9',1,'moves.c']]],
   ['_5fmv_5fhitdi',['_mv_hitDI',['../moves_8h.html#ab798d679abc310c88f95753218550ee2',1,'moves.c']]],
-  ['_5fmv_5fholddirection',['_mv_holdDirection',['../moves_8h.html#a7a2bc2c543e5577e9a785c017c79dc51',1,'moves.c']]],
+  ['_5fmv_5fholddirection',['_mv_holdDirection',['../group___indefinite_move.html#ga7a2bc2c543e5577e9a785c017c79dc51',1,'_mv_holdDirection():&#160;moves.c'],['../group___indefinite_move.html#ga7a2bc2c543e5577e9a785c017c79dc51',1,'_mv_holdDirection():&#160;moves.c']]],
   ['_5fmv_5fjab',['_mv_jab',['../moves_8h.html#a920ef7bca88d74811e2973a8aa7ef887',1,'moves.c']]],
   ['_5fmv_5fledgedash',['_mv_ledgeDash',['../moves_8h.html#a0a28dd81cffdc28d1ec9a18cba05e6e1',1,'moves.c']]],
   ['_5fmv_5fshneutralb',['_mv_shNeutralB',['../moves_8h.html#ae435f5d1efaa48b3fb6473dc2f781d32',1,'moves.c']]],
@@ -19,7 +19,7 @@ var searchData=
   ['_5fmv_5fsideb',['_mv_sideB',['../moves_8h.html#a93088aabcb2a4cea704cb3c884470f1d',1,'moves.c']]],
   ['_5fmv_5fspotdodge',['_mv_spotDodge',['../moves_8h.html#a04ba9c7f575708c7415f0422b4f64d63',1,'moves.c']]],
   ['_5fmv_5ftech',['_mv_tech',['../moves_8h.html#a8cd2c43ef342c9c8c27a0dae5660ddc8',1,'moves.c']]],
-  ['_5fmv_5fthrowdi',['_mv_throwDI',['../moves_8h.html#a7ee049dcd16e5b9594437cc291c5d405',1,'moves.c']]],
-  ['_5fmv_5fupb',['_mv_upB',['../moves_8h.html#a882a960a422d9f734e2a83486694ef39',1,'moves.c']]],
+  ['_5fmv_5fthrowdi',['_mv_throwDI',['../group___indefinite_move.html#ga7ee049dcd16e5b9594437cc291c5d405',1,'_mv_throwDI():&#160;moves.c'],['../group___indefinite_move.html#ga7ee049dcd16e5b9594437cc291c5d405',1,'_mv_throwDI():&#160;moves.c']]],
+  ['_5fmv_5fupb',['_mv_upB',['../group___indefinite_move.html#ga882a960a422d9f734e2a83486694ef39',1,'_mv_upB():&#160;moves.c'],['../group___indefinite_move.html#ga882a960a422d9f734e2a83486694ef39',1,'_mv_upB():&#160;moves.c']]],
   ['_5fsh_5flength',['_sh_length',['../melee__info_8h.html#a3aea6312e96c30da420bd78a8d4904e7',1,'melee_info.c']]]
 ];

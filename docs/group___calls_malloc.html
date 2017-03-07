@@ -78,14 +78,32 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div class="header">
   <div class="summary">
+<a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">Functions that Allocate Memory</div>  </div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ga5960c60c0cdb3fcace0ee191e1ddda0b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___calls_malloc.html#ga5960c60c0cdb3fcace0ee191e1ddda0b">THROW_ERROR</a>(code,  msg)</td></tr>
+<tr class="separator:ga5960c60c0cdb3fcace0ee191e1ddda0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3f02e40d250ab819c515702c0e59373c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___calls_malloc.html#ga3f02e40d250ab819c515702c0e59373c">REQUIRE</a>(condition)</td></tr>
+<tr class="separator:ga3f02e40d250ab819c515702c0e59373c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga857490021cba81bf64a150aaedf6d84a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___calls_malloc.html#ga857490021cba81bf64a150aaedf6d84a">REQUIRE_FLT_EQ</a>(L,  R,  tol)&#160;&#160;&#160;<a class="el" href="group___calls_malloc.html#ga3f02e40d250ab819c515702c0e59373c">REQUIRE</a>(APPROX_ZERO((L) - (R), tol))</td></tr>
+<tr class="separator:ga857490021cba81bf64a150aaedf6d84a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaefcd1ca1799d2395f7bbe3c50bcc8ff8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___calls_malloc.html#gaefcd1ca1799d2395f7bbe3c50bcc8ff8">END_TEST</a></td></tr>
+<tr class="separator:gaefcd1ca1799d2395f7bbe3c50bcc8ff8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:gafeacd9b954896e475d0b463af16c7d0c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___calls_malloc.html#gafeacd9b954896e475d0b463af16c7d0c">addLogic</a> (<a class="el" href="ai_8h.html#struct_a_i">AI</a> *ai, const <a class="el" href="logic_8h.html#struct_logic">Logic</a> *logic)</td></tr>
+<tr class="memdesc:gafeacd9b954896e475d0b463af16c7d0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add single logic rule to <a class="el" href="ai_8h.html#struct_a_i" title="Holds all information about an AI. ">AI</a>.  <a href="#gafeacd9b954896e475d0b463af16c7d0c">More...</a><br /></td></tr>
+<tr class="separator:gafeacd9b954896e475d0b463af16c7d0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9ae9e98270bc1b79a347880de3d9586b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___calls_malloc.html#ga9ae9e98270bc1b79a347880de3d9586b">addMove</a> (<a class="el" href="ai_8h.html#struct_a_i">AI</a> *ai, const <a class="el" href="moves_8h.html#struct_move">Move</a> *move)</td></tr>
+<tr class="memdesc:ga9ae9e98270bc1b79a347880de3d9586b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tell <a class="el" href="ai_8h.html#struct_a_i" title="Holds all information about an AI. ">AI</a> to execute a move.  <a href="#ga9ae9e98270bc1b79a347880de3d9586b">More...</a><br /></td></tr>
+<tr class="separator:ga9ae9e98270bc1b79a347880de3d9586b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga85d50a09cb925cd08d803c5a8fd01da7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___calls_malloc.html#ga85d50a09cb925cd08d803c5a8fd01da7">print</a> (const char *str)</td></tr>
 <tr class="memdesc:ga85d50a09cb925cd08d803c5a8fd01da7"><td class="mdescLeft">&#160;</td><td class="mdescRight">print a string to the output streamThis function prints a string to an output stream displayed on the designated window (tournament mode - replaces debug menu).  <a href="#ga85d50a09cb925cd08d803c5a8fd01da7">More...</a><br /></td></tr>
 <tr class="separator:ga85d50a09cb925cd08d803c5a8fd01da7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -95,7 +113,174 @@ Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>These functions may call malloc, calloc, or realloc </p>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a class="anchor" id="gaefcd1ca1799d2395f7bbe3c50bcc8ff8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define END_TEST</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> { \</div><div class="line">    if (tests_passed) \</div><div class="line">    { <a class="code" href="group___calls_malloc.html#ga85d50a09cb925cd08d803c5a8fd01da7">\</a></div><div class="line"><a class="code" href="group___calls_malloc.html#ga85d50a09cb925cd08d803c5a8fd01da7">        print</a>(<span class="stringliteral">&quot;all tests passed!&quot;</span>); \</div><div class="line">    } \</div><div class="line">} <span class="keywordflow">while</span> (0)</div><div class="ttc" id="group___calls_malloc_html_ga85d50a09cb925cd08d803c5a8fd01da7"><div class="ttname"><a href="group___calls_malloc.html#ga85d50a09cb925cd08d803c5a8fd01da7">print</a></div><div class="ttdeci">void print(const char *str)</div><div class="ttdoc">print a string to the output streamThis function prints a string to an output stream displayed on the...</div><div class="ttdef"><b>Definition:</b> print.c:46</div></div>
+</div><!-- fragment --><p>Macro placed in a function after all tests have been run </p>
+
+</div>
+</div>
+<a class="anchor" id="ga3f02e40d250ab819c515702c0e59373c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define REQUIRE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">condition</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> { \</div><div class="line">    if (!(condition)) \</div><div class="line">    { <a class="code" href="group___calls_malloc.html#ga85d50a09cb925cd08d803c5a8fd01da7">\</a></div><div class="line"><a class="code" href="group___calls_malloc.html#ga85d50a09cb925cd08d803c5a8fd01da7">        print</a>(ASSERT_MSG); \</div><div class="line">        tests_passed = <span class="keyword">false</span>; \</div><div class="line">    } \</div><div class="line">} <span class="keywordflow">while</span> (0)</div><div class="ttc" id="group___calls_malloc_html_ga85d50a09cb925cd08d803c5a8fd01da7"><div class="ttname"><a href="group___calls_malloc.html#ga85d50a09cb925cd08d803c5a8fd01da7">print</a></div><div class="ttdeci">void print(const char *str)</div><div class="ttdoc">print a string to the output streamThis function prints a string to an output stream displayed on the...</div><div class="ttdef"><b>Definition:</b> print.c:46</div></div>
+</div><!-- fragment --><p>Require <code>condition</code> to be true </p>
+
+</div>
+</div>
+<a class="anchor" id="ga857490021cba81bf64a150aaedf6d84a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define REQUIRE_FLT_EQ</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">L, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">R, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">tol&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="group___calls_malloc.html#ga3f02e40d250ab819c515702c0e59373c">REQUIRE</a>(APPROX_ZERO((L) - (R), tol))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Require <code>L</code> and <code>R</code> to be within <code>tol</code> of each other </p>
+
+</div>
+</div>
+<a class="anchor" id="ga5960c60c0cdb3fcace0ee191e1ddda0b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define THROW_ERROR</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">code, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">msg&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> { <a class="code" href="error_8h.html#ac7d80a3eb9f295abf7a00fd5411bf6ba">\</a></div><div class="line"><a class="code" href="error_8h.html#ac7d80a3eb9f295abf7a00fd5411bf6ba">    _errorState</a> = <a class="code" href="error_8h.html#ac7d80a3eb9f295abf7a00fd5411bf6ba">_errorState</a> | code; <a class="code" href="group___calls_malloc.html#ga600ac89163a3ee4d9e17288546b1ceed">\</a></div><div class="line"><a class="code" href="group___calls_malloc.html#ga600ac89163a3ee4d9e17288546b1ceed">    error</a>(__FILE__ <span class="stringliteral">&quot;:&quot;</span> TOSTRING(__LINE__) <span class="stringliteral">&quot;: &quot;</span> msg); \</div><div class="line">} <span class="keywordflow">while</span> (0)</div><div class="ttc" id="group___calls_malloc_html_ga600ac89163a3ee4d9e17288546b1ceed"><div class="ttname"><a href="group___calls_malloc.html#ga600ac89163a3ee4d9e17288546b1ceed">error</a></div><div class="ttdeci">void error(const char *errMessage)</div><div class="ttdoc">&quot;throw&quot; an errorPrint an error message and set _errorState to true </div><div class="ttdef"><b>Definition:</b> print.c:109</div></div>
+<div class="ttc" id="error_8h_html_ac7d80a3eb9f295abf7a00fd5411bf6ba"><div class="ttname"><a href="error_8h.html#ac7d80a3eb9f295abf7a00fd5411bf6ba">_errorState</a></div><div class="ttdeci">u32 _errorState</div><div class="ttdef"><b>Definition:</b> error.c:3</div></div>
+</div><!-- fragment --><p>send error state and display error message </p>
+
+</div>
+</div>
 <h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="gafeacd9b954896e475d0b463af16c7d0c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void addLogic </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ai_8h.html#struct_a_i">AI</a> *&#160;</td>
+          <td class="paramname"><em>ai</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="logic_8h.html#struct_logic">Logic</a> *&#160;</td>
+          <td class="paramname"><em>logic</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Add single logic rule to <a class="el" href="ai_8h.html#struct_a_i" title="Holds all information about an AI. ">AI</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ai</td><td>- Pointer to <a class="el" href="ai_8h.html#struct_a_i" title="Holds all information about an AI. ">AI</a> struct </td></tr>
+    <tr><td class="paramname">logic</td><td>- <a class="el" href="math_8h.html#struct_point" title="Struct containing the coordinates of a point. ">Point</a> to <a class="el" href="logic_8h.html#struct_logic" title="Describes simple if-then logic. ">Logic</a> struct </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>none </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga9ae9e98270bc1b79a347880de3d9586b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void addMove </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ai_8h.html#struct_a_i">AI</a> *&#160;</td>
+          <td class="paramname"><em>ai</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="moves_8h.html#struct_move">Move</a> *&#160;</td>
+          <td class="paramname"><em>move</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tell <a class="el" href="ai_8h.html#struct_a_i" title="Holds all information about an AI. ">AI</a> to execute a move. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ai</td><td>- Pointer to <a class="el" href="ai_8h.html#struct_a_i" title="Holds all information about an AI. ">AI</a> struct </td></tr>
+    <tr><td class="paramname">move</td><td>- Pointer to <a class="el" href="moves_8h.html#struct_move" title="Represents a single move (string of timed inputs) ">Move</a> struct </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>none </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="ga600ac89163a3ee4d9e17288546b1ceed"></a>
 <div class="memitem">
 <div class="memproto">

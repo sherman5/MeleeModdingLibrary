@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Melee Modding Library: src/unit_test.h File Reference</title>
+<title>Melee Modding Library: Moves that have no expiration</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -40,9 +40,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li class="current"><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
-      <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -61,12 +61,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </li>
     </ul>
   </div>
-  <div id="navrow2" class="tabs2">
-    <ul class="tablist">
-      <li><a href="files.html"><span>File&#160;List</span></a></li>
-      <li><a href="globals.html"><span>Globals</span></a></li>
-    </ul>
-  </div>
+</div><!-- top -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -81,51 +76,62 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#define-members">Macros</a>  </div>
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
-<div class="title">unit_test.h File Reference</div>  </div>
+<div class="title">Moves that have no expiration</div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p>Macros for unit testing.  
-<a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="print_8h_source.html">print.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="math_8h_source.html">math.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="gctypes_8h_source.html">gctypes.h</a>&quot;</code><br />
-</div>
-<p><a href="unit__test_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:ga3f02e40d250ab819c515702c0e59373c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___calls_malloc.html#ga3f02e40d250ab819c515702c0e59373c">REQUIRE</a>(condition)</td></tr>
-<tr class="separator:ga3f02e40d250ab819c515702c0e59373c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga857490021cba81bf64a150aaedf6d84a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___calls_malloc.html#ga857490021cba81bf64a150aaedf6d84a">REQUIRE_FLT_EQ</a>(L,  R,  tol)&#160;&#160;&#160;<a class="el" href="group___calls_malloc.html#ga3f02e40d250ab819c515702c0e59373c">REQUIRE</a>(APPROX_ZERO((L) - (R), tol))</td></tr>
-<tr class="separator:ga857490021cba81bf64a150aaedf6d84a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a68f824d33c675c8bb6e1337a14812a8d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unit__test_8h.html#a68f824d33c675c8bb6e1337a14812a8d">UNIT_TEST</a>&#160;&#160;&#160;static <a class="el" href="gctypes_8h.html#a6a912bf1d80625256884f11a0ea1d5fd">bool</a> tests_passed = <a class="el" href="gctypes_8h.html#a41f9c5fb8b08eb5dc3edce4dcb37fee7">true</a></td></tr>
-<tr class="separator:a68f824d33c675c8bb6e1337a14812a8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaefcd1ca1799d2395f7bbe3c50bcc8ff8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___calls_malloc.html#gaefcd1ca1799d2395f7bbe3c50bcc8ff8">END_TEST</a></td></tr>
-<tr class="separator:gaefcd1ca1799d2395f7bbe3c50bcc8ff8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:ga7ee049dcd16e5b9594437cc291c5d405"><td class="memItemLeft" align="right" valign="top"><a class="el" href="moves_8h.html#struct_move">Move</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___indefinite_move.html#ga7ee049dcd16e5b9594437cc291c5d405">_mv_throwDI</a></td></tr>
+<tr class="separator:ga7ee049dcd16e5b9594437cc291c5d405"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga882a960a422d9f734e2a83486694ef39"><td class="memItemLeft" align="right" valign="top"><a class="el" href="moves_8h.html#struct_move">Move</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___indefinite_move.html#ga882a960a422d9f734e2a83486694ef39">_mv_upB</a></td></tr>
+<tr class="separator:ga882a960a422d9f734e2a83486694ef39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7a2bc2c543e5577e9a785c017c79dc51"><td class="memItemLeft" align="right" valign="top"><a class="el" href="moves_8h.html#struct_move">Move</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___indefinite_move.html#ga7a2bc2c543e5577e9a785c017c79dc51">_mv_holdDirection</a></td></tr>
+<tr class="separator:ga7a2bc2c543e5577e9a785c017c79dc51"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Macros for unit testing. </p>
-</div><h2 class="groupheader">Macro Definition Documentation</h2>
-<a class="anchor" id="a68f824d33c675c8bb6e1337a14812a8d"></a>
+<p>These moves will not terminate on their own </p>
+<h2 class="groupheader">Variable Documentation</h2>
+<a class="anchor" id="ga7a2bc2c543e5577e9a785c017c79dc51"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define UNIT_TEST&#160;&#160;&#160;static <a class="el" href="gctypes_8h.html#a6a912bf1d80625256884f11a0ea1d5fd">bool</a> tests_passed = <a class="el" href="gctypes_8h.html#a41f9c5fb8b08eb5dc3edce4dcb37fee7">true</a></td>
+          <td class="memname"><a class="el" href="moves_8h.html#struct_move">Move</a> _mv_holdDirection</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Macro placed in the global scope of each .c file, before END_TEST </p>
+<p>Hold Control Stick in Direction </p>
+
+</div>
+</div>
+<a class="anchor" id="ga7ee049dcd16e5b9594437cc291c5d405"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="moves_8h.html#struct_move">Move</a> _mv_throwDI</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>DI from throw </p>
+
+</div>
+</div>
+<a class="anchor" id="ga882a960a422d9f734e2a83486694ef39"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="moves_8h.html#struct_move">Move</a> _mv_upB</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Up B </p>
 
 </div>
 </div>
