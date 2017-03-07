@@ -3,8 +3,6 @@
 #include <math.h>
 #include <string.h>
 
-UNIT_TEST;
-
 #define RA_SIZE(x) (sizeof(x) / sizeof(x[0]))
 
 static bool init_run = false;
@@ -63,6 +61,7 @@ static void init(void)
     initHeap(heap, heap + sizeof(heap));
 }
 
+UNIT_TEST;
 static void test(void)
 {
     /** TEST SIGN **/
