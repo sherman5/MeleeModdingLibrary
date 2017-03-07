@@ -65,6 +65,7 @@ static void init(void)
 
 void _main(void)
 {
+
     if (!init_run) { init(); init_run = true;}
 
     if (!tests_run)
