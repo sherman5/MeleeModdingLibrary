@@ -9,7 +9,6 @@ var searchData=
   ['player_5fblock',['PLAYER_BLOCK',['../game__state_8h.html#a66765335086cf1c88e262a62212ab862',1,'game_state.h']]],
   ['player_5fentity_5ffptr',['PLAYER_ENTITY_FPTR',['../native__functions_8h.html#aafe1d194de80dee7d248797914d75b26',1,'native_functions.h']]],
   ['player_5fstate',['PLAYER_STATE',['../game__state_8h.html#a848e81401f132d036f45e4212b7b369b',1,'game_state.h']]],
-  ['print_5ferr',['PRINT_ERR',['../error_8h.html#adbffe66045224563fa6323b2a98d811d',1,'error.h']]],
   ['puff',['PUFF',['../ai_8h.html#a3b9e84b997dc7e5c08fbb89d65a78e5b',1,'ai.h']]],
   ['puff_5fid',['PUFF_ID',['../melee__info_8h.html#ad66264843d4135186fd7428fea66ce6a',1,'melee_info.h']]]
 ];

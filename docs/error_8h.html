@@ -95,7 +95,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p>print error message  
+<p>handle run-time errors  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="print_8h_source.html">print.h</a>&quot;</code><br />
 </div>
@@ -109,10 +109,71 @@ Macros</h2></td></tr>
 <tr class="separator:a60db3d3e5c5fb314c0d698922d0b7124"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0099faec25b2b4649490d7f562ade34e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="error_8h.html#a0099faec25b2b4649490d7f562ade34e">ERROR_THROWN</a>(code)&#160;&#160;&#160;(<a class="el" href="error_8h.html#ac7d80a3eb9f295abf7a00fd5411bf6ba">_errorState</a> &amp; (code))</td></tr>
 <tr class="separator:a0099faec25b2b4649490d7f562ade34e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adbffe66045224563fa6323b2a98d811d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="error_8h.html#adbffe66045224563fa6323b2a98d811d">PRINT_ERR</a>&#160;&#160;&#160;(1 &lt;&lt; 0)</td></tr>
-<tr class="separator:adbffe66045224563fa6323b2a98d811d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a149a30bf968a5a8d976d31e70a181d1d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="error_8h.html#a149a30bf968a5a8d976d31e70a181d1d">AI_ERR</a>&#160;&#160;&#160;(1 &lt;&lt; 1)</td></tr>
-<tr class="separator:a149a30bf968a5a8d976d31e70a181d1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:abe0e0e5d41bcdf7365b58faf284d55b1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="error_8h.html#abe0e0e5d41bcdf7365b58faf284d55b1">ERR_1</a>&#160;&#160;&#160;(1 &lt;&lt; 0)</td></tr>
+<tr class="separator:abe0e0e5d41bcdf7365b58faf284d55b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a012097e952ead190cc831d35441d1828"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="error_8h.html#a012097e952ead190cc831d35441d1828">ERR_2</a>&#160;&#160;&#160;(1 &lt;&lt; 1)</td></tr>
+<tr class="separator:a012097e952ead190cc831d35441d1828"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab90bfbd2a8eb7519c0d0dc5098b9a281"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="error_8h.html#ab90bfbd2a8eb7519c0d0dc5098b9a281">ERR_3</a>&#160;&#160;&#160;(1 &lt;&lt; 2)</td></tr>
+<tr class="separator:ab90bfbd2a8eb7519c0d0dc5098b9a281"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76e4c62cff81f41c203a1055c05f224d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="error_8h.html#a76e4c62cff81f41c203a1055c05f224d">ERR_4</a>&#160;&#160;&#160;(1 &lt;&lt; 3)</td></tr>
+<tr class="separator:a76e4c62cff81f41c203a1055c05f224d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d7a9415f9f39dcab0fd998d1b6abd32"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="error_8h.html#a8d7a9415f9f39dcab0fd998d1b6abd32">ERR_5</a>&#160;&#160;&#160;(1 &lt;&lt; 4)</td></tr>
+<tr class="separator:a8d7a9415f9f39dcab0fd998d1b6abd32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a787a962fcf3e7d2fe874c605cf0b97d7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="error_8h.html#a787a962fcf3e7d2fe874c605cf0b97d7">ERR_6</a>&#160;&#160;&#160;(1 &lt;&lt; 5)</td></tr>
+<tr class="separator:a787a962fcf3e7d2fe874c605cf0b97d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bba8a97454ca8c09e04e8a9c88ba6e6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="error_8h.html#a8bba8a97454ca8c09e04e8a9c88ba6e6">ERR_7</a>&#160;&#160;&#160;(1 &lt;&lt; 6)</td></tr>
+<tr class="separator:a8bba8a97454ca8c09e04e8a9c88ba6e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45f5fb50712d5336e0b90ecb11b51383"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="error_8h.html#a45f5fb50712d5336e0b90ecb11b51383">ERR_8</a>&#160;&#160;&#160;(1 &lt;&lt; 7)</td></tr>
+<tr class="separator:a45f5fb50712d5336e0b90ecb11b51383"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c2d6b2d90865a8010ddb14268662072"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="error_8h.html#a1c2d6b2d90865a8010ddb14268662072">ERR_9</a>&#160;&#160;&#160;(1 &lt;&lt; 8)</td></tr>
+<tr class="separator:a1c2d6b2d90865a8010ddb14268662072"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a805aa89fa27b9a21ddafc999bba0bb68"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="error_8h.html#a805aa89fa27b9a21ddafc999bba0bb68">ERR_10</a>&#160;&#160;&#160;(1 &lt;&lt; 9)</td></tr>
+<tr class="separator:a805aa89fa27b9a21ddafc999bba0bb68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b8665db5362fa1e49816b7e5a839863"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="error_8h.html#a7b8665db5362fa1e49816b7e5a839863">ERR_11</a>&#160;&#160;&#160;(1 &lt;&lt; 10)</td></tr>
+<tr class="separator:a7b8665db5362fa1e49816b7e5a839863"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6d13d5316dd231c323cf18998c7195e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="error_8h.html#ab6d13d5316dd231c323cf18998c7195e">ERR_12</a>&#160;&#160;&#160;(1 &lt;&lt; 11)</td></tr>
+<tr class="separator:ab6d13d5316dd231c323cf18998c7195e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57027f9c748ff6708774addce1746539"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="error_8h.html#a57027f9c748ff6708774addce1746539">ERR_13</a>&#160;&#160;&#160;(1 &lt;&lt; 12)</td></tr>
+<tr class="separator:a57027f9c748ff6708774addce1746539"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80b4f190b67f53f3c2dea7b01d966b6f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="error_8h.html#a80b4f190b67f53f3c2dea7b01d966b6f">ERR_14</a>&#160;&#160;&#160;(1 &lt;&lt; 13)</td></tr>
+<tr class="separator:a80b4f190b67f53f3c2dea7b01d966b6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae5dc676babeb0e2b4702f59835382f4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="error_8h.html#aae5dc676babeb0e2b4702f59835382f4">ERR_15</a>&#160;&#160;&#160;(1 &lt;&lt; 14)</td></tr>
+<tr class="separator:aae5dc676babeb0e2b4702f59835382f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1842caea0771e65e3219bb0278a181a4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="error_8h.html#a1842caea0771e65e3219bb0278a181a4">ERR_16</a>&#160;&#160;&#160;(1 &lt;&lt; 15)</td></tr>
+<tr class="separator:a1842caea0771e65e3219bb0278a181a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28dcf048ee64c2f1a38f80f71d28fc2a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="error_8h.html#a28dcf048ee64c2f1a38f80f71d28fc2a">ERR_17</a>&#160;&#160;&#160;(1 &lt;&lt; 16)</td></tr>
+<tr class="separator:a28dcf048ee64c2f1a38f80f71d28fc2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9d7613d1c0680c3a6aa46c219fcb283"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="error_8h.html#ac9d7613d1c0680c3a6aa46c219fcb283">ERR_18</a>&#160;&#160;&#160;(1 &lt;&lt; 17)</td></tr>
+<tr class="separator:ac9d7613d1c0680c3a6aa46c219fcb283"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc63f7ea363c63c45e8efa026c6024b9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="error_8h.html#acc63f7ea363c63c45e8efa026c6024b9">ERR_19</a>&#160;&#160;&#160;(1 &lt;&lt; 18)</td></tr>
+<tr class="separator:acc63f7ea363c63c45e8efa026c6024b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62c46bd16d82b73650b04cf33d88b85e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="error_8h.html#a62c46bd16d82b73650b04cf33d88b85e">ERR_20</a>&#160;&#160;&#160;(1 &lt;&lt; 19)</td></tr>
+<tr class="separator:a62c46bd16d82b73650b04cf33d88b85e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f36ca4ee7ec8e6b036463cdfb4f8e37"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="error_8h.html#a7f36ca4ee7ec8e6b036463cdfb4f8e37">ERR_21</a>&#160;&#160;&#160;(1 &lt;&lt; 20)</td></tr>
+<tr class="separator:a7f36ca4ee7ec8e6b036463cdfb4f8e37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a765e766c66b052360a0f0ef2b108d418"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="error_8h.html#a765e766c66b052360a0f0ef2b108d418">ERR_22</a>&#160;&#160;&#160;(1 &lt;&lt; 21)</td></tr>
+<tr class="separator:a765e766c66b052360a0f0ef2b108d418"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe7dc0131b0e477c85ce6f1ae81e583e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="error_8h.html#afe7dc0131b0e477c85ce6f1ae81e583e">ERR_23</a>&#160;&#160;&#160;(1 &lt;&lt; 22)</td></tr>
+<tr class="separator:afe7dc0131b0e477c85ce6f1ae81e583e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89111005bd52f88a676e395c2dc5b595"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="error_8h.html#a89111005bd52f88a676e395c2dc5b595">ERR_24</a>&#160;&#160;&#160;(1 &lt;&lt; 23)</td></tr>
+<tr class="separator:a89111005bd52f88a676e395c2dc5b595"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb0053735b7712b0f7fe1b568879826e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="error_8h.html#acb0053735b7712b0f7fe1b568879826e">ERR_25</a>&#160;&#160;&#160;(1 &lt;&lt; 24)</td></tr>
+<tr class="separator:acb0053735b7712b0f7fe1b568879826e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a402e8f8ce9e0d5f50415d6e7f9234f89"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="error_8h.html#a402e8f8ce9e0d5f50415d6e7f9234f89">ERR_26</a>&#160;&#160;&#160;(1 &lt;&lt; 25)</td></tr>
+<tr class="separator:a402e8f8ce9e0d5f50415d6e7f9234f89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a779a2cfcbc19b315d894998e3806f38a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="error_8h.html#a779a2cfcbc19b315d894998e3806f38a">ERR_27</a>&#160;&#160;&#160;(1 &lt;&lt; 26)</td></tr>
+<tr class="separator:a779a2cfcbc19b315d894998e3806f38a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4698896e1be73384ab032d4f6e5dd56"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="error_8h.html#aa4698896e1be73384ab032d4f6e5dd56">ERR_28</a>&#160;&#160;&#160;(1 &lt;&lt; 27)</td></tr>
+<tr class="separator:aa4698896e1be73384ab032d4f6e5dd56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ae86bfa2a5b1023325ab803195e26f1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="error_8h.html#a0ae86bfa2a5b1023325ab803195e26f1">ERR_29</a>&#160;&#160;&#160;(1 &lt;&lt; 28)</td></tr>
+<tr class="separator:a0ae86bfa2a5b1023325ab803195e26f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ad2467e024cf16be24d8571cea85092"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="error_8h.html#a9ad2467e024cf16be24d8571cea85092">ERR_30</a>&#160;&#160;&#160;(1 &lt;&lt; 29)</td></tr>
+<tr class="separator:a9ad2467e024cf16be24d8571cea85092"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee8ef3aac4cae8198c2a81433b536966"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="error_8h.html#aee8ef3aac4cae8198c2a81433b536966">ERR_31</a>&#160;&#160;&#160;(1 &lt;&lt; 30)</td></tr>
+<tr class="separator:aee8ef3aac4cae8198c2a81433b536966"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad40aa9441ad40db7654ad648667113b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="error_8h.html#aad40aa9441ad40db7654ad648667113b">ERR_32</a>&#160;&#160;&#160;(1 &lt;&lt; 31)</td></tr>
+<tr class="separator:aad40aa9441ad40db7654ad648667113b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -120,18 +181,421 @@ Variables</h2></td></tr>
 <tr class="separator:ac7d80a3eb9f295abf7a00fd5411bf6ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>print error message </p>
+<div class="textblock"><p>handle run-time errors </p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
-<a class="anchor" id="a149a30bf968a5a8d976d31e70a181d1d"></a>
+<a class="anchor" id="abe0e0e5d41bcdf7365b58faf284d55b1"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define AI_ERR&#160;&#160;&#160;(1 &lt;&lt; 1)</td>
+          <td class="memname">#define ERR_1&#160;&#160;&#160;(1 &lt;&lt; 0)</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>error in <a class="el" href="ai_8h.html#struct_a_i" title="Holds all information about an AI. ">AI</a> </p>
+<p>Error Code </p>
+
+</div>
+</div>
+<a class="anchor" id="a805aa89fa27b9a21ddafc999bba0bb68"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ERR_10&#160;&#160;&#160;(1 &lt;&lt; 9)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Error Code </p>
+
+</div>
+</div>
+<a class="anchor" id="a7b8665db5362fa1e49816b7e5a839863"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ERR_11&#160;&#160;&#160;(1 &lt;&lt; 10)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Error Code </p>
+
+</div>
+</div>
+<a class="anchor" id="ab6d13d5316dd231c323cf18998c7195e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ERR_12&#160;&#160;&#160;(1 &lt;&lt; 11)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Error Code </p>
+
+</div>
+</div>
+<a class="anchor" id="a57027f9c748ff6708774addce1746539"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ERR_13&#160;&#160;&#160;(1 &lt;&lt; 12)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Error Code </p>
+
+</div>
+</div>
+<a class="anchor" id="a80b4f190b67f53f3c2dea7b01d966b6f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ERR_14&#160;&#160;&#160;(1 &lt;&lt; 13)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Error Code </p>
+
+</div>
+</div>
+<a class="anchor" id="aae5dc676babeb0e2b4702f59835382f4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ERR_15&#160;&#160;&#160;(1 &lt;&lt; 14)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Error Code </p>
+
+</div>
+</div>
+<a class="anchor" id="a1842caea0771e65e3219bb0278a181a4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ERR_16&#160;&#160;&#160;(1 &lt;&lt; 15)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Error Code </p>
+
+</div>
+</div>
+<a class="anchor" id="a28dcf048ee64c2f1a38f80f71d28fc2a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ERR_17&#160;&#160;&#160;(1 &lt;&lt; 16)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Error Code </p>
+
+</div>
+</div>
+<a class="anchor" id="ac9d7613d1c0680c3a6aa46c219fcb283"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ERR_18&#160;&#160;&#160;(1 &lt;&lt; 17)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Error Code </p>
+
+</div>
+</div>
+<a class="anchor" id="acc63f7ea363c63c45e8efa026c6024b9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ERR_19&#160;&#160;&#160;(1 &lt;&lt; 18)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Error Code </p>
+
+</div>
+</div>
+<a class="anchor" id="a012097e952ead190cc831d35441d1828"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ERR_2&#160;&#160;&#160;(1 &lt;&lt; 1)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Error Code </p>
+
+</div>
+</div>
+<a class="anchor" id="a62c46bd16d82b73650b04cf33d88b85e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ERR_20&#160;&#160;&#160;(1 &lt;&lt; 19)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Error Code </p>
+
+</div>
+</div>
+<a class="anchor" id="a7f36ca4ee7ec8e6b036463cdfb4f8e37"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ERR_21&#160;&#160;&#160;(1 &lt;&lt; 20)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Error Code </p>
+
+</div>
+</div>
+<a class="anchor" id="a765e766c66b052360a0f0ef2b108d418"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ERR_22&#160;&#160;&#160;(1 &lt;&lt; 21)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Error Code </p>
+
+</div>
+</div>
+<a class="anchor" id="afe7dc0131b0e477c85ce6f1ae81e583e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ERR_23&#160;&#160;&#160;(1 &lt;&lt; 22)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Error Code </p>
+
+</div>
+</div>
+<a class="anchor" id="a89111005bd52f88a676e395c2dc5b595"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ERR_24&#160;&#160;&#160;(1 &lt;&lt; 23)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Error Code </p>
+
+</div>
+</div>
+<a class="anchor" id="acb0053735b7712b0f7fe1b568879826e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ERR_25&#160;&#160;&#160;(1 &lt;&lt; 24)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Error Code </p>
+
+</div>
+</div>
+<a class="anchor" id="a402e8f8ce9e0d5f50415d6e7f9234f89"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ERR_26&#160;&#160;&#160;(1 &lt;&lt; 25)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Error Code </p>
+
+</div>
+</div>
+<a class="anchor" id="a779a2cfcbc19b315d894998e3806f38a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ERR_27&#160;&#160;&#160;(1 &lt;&lt; 26)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Error Code </p>
+
+</div>
+</div>
+<a class="anchor" id="aa4698896e1be73384ab032d4f6e5dd56"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ERR_28&#160;&#160;&#160;(1 &lt;&lt; 27)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Error Code </p>
+
+</div>
+</div>
+<a class="anchor" id="a0ae86bfa2a5b1023325ab803195e26f1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ERR_29&#160;&#160;&#160;(1 &lt;&lt; 28)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Error Code </p>
+
+</div>
+</div>
+<a class="anchor" id="ab90bfbd2a8eb7519c0d0dc5098b9a281"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ERR_3&#160;&#160;&#160;(1 &lt;&lt; 2)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Error Code </p>
+
+</div>
+</div>
+<a class="anchor" id="a9ad2467e024cf16be24d8571cea85092"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ERR_30&#160;&#160;&#160;(1 &lt;&lt; 29)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Error Code </p>
+
+</div>
+</div>
+<a class="anchor" id="aee8ef3aac4cae8198c2a81433b536966"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ERR_31&#160;&#160;&#160;(1 &lt;&lt; 30)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Error Code </p>
+
+</div>
+</div>
+<a class="anchor" id="aad40aa9441ad40db7654ad648667113b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ERR_32&#160;&#160;&#160;(1 &lt;&lt; 31)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Error Code </p>
+
+</div>
+</div>
+<a class="anchor" id="a76e4c62cff81f41c203a1055c05f224d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ERR_4&#160;&#160;&#160;(1 &lt;&lt; 3)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Error Code </p>
+
+</div>
+</div>
+<a class="anchor" id="a8d7a9415f9f39dcab0fd998d1b6abd32"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ERR_5&#160;&#160;&#160;(1 &lt;&lt; 4)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Error Code </p>
+
+</div>
+</div>
+<a class="anchor" id="a787a962fcf3e7d2fe874c605cf0b97d7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ERR_6&#160;&#160;&#160;(1 &lt;&lt; 5)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Error Code </p>
+
+</div>
+</div>
+<a class="anchor" id="a8bba8a97454ca8c09e04e8a9c88ba6e6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ERR_7&#160;&#160;&#160;(1 &lt;&lt; 6)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Error Code </p>
+
+</div>
+</div>
+<a class="anchor" id="a45f5fb50712d5336e0b90ecb11b51383"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ERR_8&#160;&#160;&#160;(1 &lt;&lt; 7)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Error Code </p>
+
+</div>
+</div>
+<a class="anchor" id="a1c2d6b2d90865a8010ddb14268662072"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ERR_9&#160;&#160;&#160;(1 &lt;&lt; 8)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Error Code </p>
 
 </div>
 </div>
@@ -162,19 +626,6 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>check if error code has been thrown </p>
-
-</div>
-</div>
-<a class="anchor" id="adbffe66045224563fa6323b2a98d811d"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define PRINT_ERR&#160;&#160;&#160;(1 &lt;&lt; 0)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>error in print stream </p>
 
 </div>
 </div>

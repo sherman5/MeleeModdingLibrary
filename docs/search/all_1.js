@@ -15,7 +15,6 @@ var searchData=
   ['addmove',['addMove',['../group___calls_malloc.html#ga9ae9e98270bc1b79a347880de3d9586b',1,'addMove(AI *ai, const Move *move):&#160;ai.c'],['../group___calls_malloc.html#ga9ae9e98270bc1b79a347880de3d9586b',1,'addMove(AI *ai, const Move *move):&#160;ai.c']]],
   ['ai',['AI',['../ai_8h.html#struct_a_i',1,'']]],
   ['ai_2eh',['ai.h',['../ai_8h.html',1,'']]],
-  ['ai_5ferr',['AI_ERR',['../error_8h.html#a149a30bf968a5a8d976d31e70a181d1d',1,'error.h']]],
   ['ailevel',['aiLevel',['../game__state_8h.html#aae601f3ffc327aaccc7db81fdca4cc8d',1,'PlayerData']]],
   ['angle',['angle',['../math_8h.html#a7873f9bf36a252b150a02b8d04942990',1,'math.c']]],
   ['angle_5fbits',['ANGLE_BITS',['../controller_8h.html#a1cde4f3ca38b11fd3ce151d09b9a9cee',1,'controller.h']]],
