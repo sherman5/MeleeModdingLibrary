@@ -6,6 +6,8 @@
 #include "string.h"
 #include "error.h"
 
+static bool aiError = false;
+
 static ControllerInput processRawInput(u8 port, RawInput input)
 {
     ControllerInput processed = {.controller = input.controller,
@@ -68,7 +70,8 @@ void addLogic(AI* ai, const Logic* logic)
         ai->logicQueue = realloc(ai->logicQueue, LOGIC_SIZE);
         if (!ai->logicQueue)
         {
-            THROW_ERROR(AI_ERR, "failed allocation: logic queue");
+            THROW_ERROR(0, "failed allocation: logic queue");
+            aiError = true;
         }    
     }
     memcpy(ai->logicQueue + ai->logicSize, logic, sizeof(Logic));
@@ -84,7 +87,8 @@ void addMove(AI* ai, const Move* move)
         ai->inputQueue = realloc(ai->inputQueue, INPUT_SIZE);
         if (!ai->inputQueue)
         {
-            THROW_ERROR(AI_ERR, "failed allocation: input queue");
+            THROW_ERROR(0, "failed allocation: input queue");
+            aiError = true;
         }
     }
 
@@ -120,7 +124,7 @@ void updateAI(AI* ai)
 {
     updateGameState();
 
-    if (ERROR_THROWN(AI_ERR)) { return;}
+    if (aiError) { return;}
 
     if (!ai->active && inGame() && playerData(ai->port) 
         && SLOT_TYPE(ai->port) == 0x01 && _gameState.stage.ledge.x > 0

@@ -28,6 +28,7 @@ typedef struct
 #define SLOT_SIZE  (sizeof(MenuLine) + sizeof(DebugMenuSlot))
 
 /* initialize stream variables */
+static bool printError = false;
 static MenuLine* stream = NULL;
 static DebugMenuSlot* menu = NULL;
 static size_t numLines = 0, maxLines = 0;
@@ -46,7 +47,7 @@ static DebugMenuSlot staticMenu[3] =
 void print(const char* str)
 {   
     /* stop printing once error is thrown */
-    if (ERROR_THROWN(PRINT_ERR)) { return; }
+    if (printError) { return; }
 
     /* calculate number of lines this string will use */
     size_t strLines = 1 + strlen(str) / LINE_SIZE;
@@ -77,7 +78,8 @@ void print(const char* str)
         /* check if allocation failed */
         if (!menu || !stream)
         {
-            THROW_ERROR(PRINT_ERR, "failed allocation");
+            THROW_ERROR(0, "failed allocation");
+            printError = true;
             return;
         }
     }
@@ -108,7 +110,7 @@ void print(const char* str)
 #pragma GCC optimize ("-O0")
 void error(const char* errMessage)
 {
-    if (ERROR_THROWN(PRINT_ERR))
+    if (printError)
     {
         strncpy(staticLine1.text, errMessage, LINE_SIZE);
         if (strlen(errMessage) > LINE_SIZE)
