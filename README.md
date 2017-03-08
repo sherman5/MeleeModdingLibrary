@@ -4,4 +4,12 @@ The MeleeModdingLibrary (`libmml`) is a C library for creating Super Smash Bros 
 
 All questions and concerns should be addressed to <MeleeModdingLibrary@gmail.com> or [Discord](https://discord.gg/gJXR77v)
 
+## Setup
 
+1. Download latest relase (*.tar.gz or *.zip) [here](https://github.com/sherman5/MeleeModdingLibrary/releases). [More info](https://github.com/sherman5/MeleeModdingLibrary/wiki/FAQ#how-does-the-version-system-work) on what the version means.
+
+2. Extract files
+
+3. Link against `libmml.a` (or an [optimized version](https://github.com/sherman5/MeleeModdingLibrary/wiki/Reducing%20Code%20Size#compiler-optimization))
+
+4. Include `mml-1.0.0/include`
