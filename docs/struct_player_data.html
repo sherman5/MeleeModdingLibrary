@@ -40,6 +40,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -89,97 +90,288 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">PlayerData Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>struct holding player data  
+ <a href="struct_player_data.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="game__state_8h_source.html">game_state.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
-<tr class="memitem:afa0ba0b95ddb8233e262084f7a509547"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afa0ba0b95ddb8233e262084f7a509547"></a>
-char&#160;</td><td class="memItemRight" valign="bottom"><b>pad1</b> [0x10]</td></tr>
-<tr class="separator:afa0ba0b95ddb8233e262084f7a509547"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab3f5d05f9d2935cdb646d86060c284dc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab3f5d05f9d2935cdb646d86060c284dc"></a>
-u32&#160;</td><td class="memItemRight" valign="bottom"><b>actionState</b></td></tr>
+<tr class="memitem:ab3f5d05f9d2935cdb646d86060c284dc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="gctypes_8h.html#afaa62991928fb9fb18ff0db62a040aba">u32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_player_data.html#ab3f5d05f9d2935cdb646d86060c284dc">actionState</a></td></tr>
 <tr class="separator:ab3f5d05f9d2935cdb646d86060c284dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e69ba8b85bd4bb15ef0242abfb91f7f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3e69ba8b85bd4bb15ef0242abfb91f7f"></a>
-char&#160;</td><td class="memItemRight" valign="bottom"><b>pad2</b> [0x2c-0x10-sizeof(u32)]</td></tr>
-<tr class="separator:a3e69ba8b85bd4bb15ef0242abfb91f7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8743d29d16a4095b6bc5992da02df052"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8743d29d16a4095b6bc5992da02df052"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>facingDirection</b></td></tr>
+<tr class="memitem:a8743d29d16a4095b6bc5992da02df052"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_player_data.html#a8743d29d16a4095b6bc5992da02df052">facingDirection</a></td></tr>
 <tr class="separator:a8743d29d16a4095b6bc5992da02df052"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeea311881a1e1ea12810efa4a2fab48c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aeea311881a1e1ea12810efa4a2fab48c"></a>
-char&#160;</td><td class="memItemRight" valign="bottom"><b>pad3</b> [0xb0-0x2c-sizeof(float)]</td></tr>
-<tr class="separator:aeea311881a1e1ea12810efa4a2fab48c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac0a87e800ccb7f350952a6664aecb332"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac0a87e800ccb7f350952a6664aecb332"></a>
-<a class="el" href="struct_point.html">Point</a>&#160;</td><td class="memItemRight" valign="bottom"><b>coordinates</b></td></tr>
+<tr class="memitem:ac0a87e800ccb7f350952a6664aecb332"><td class="memItemLeft" align="right" valign="top"><a class="el" href="math_8h.html#struct_point">Point</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_player_data.html#ac0a87e800ccb7f350952a6664aecb332">coordinates</a></td></tr>
 <tr class="separator:ac0a87e800ccb7f350952a6664aecb332"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a84305213308691654f89e5726544b1a3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a84305213308691654f89e5726544b1a3"></a>
-char&#160;</td><td class="memItemRight" valign="bottom"><b>pad4</b> [0xc8-0xb0-sizeof(Point)]</td></tr>
-<tr class="separator:a84305213308691654f89e5726544b1a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ada36c7a47994ee0e9f02453fe5394617"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ada36c7a47994ee0e9f02453fe5394617"></a>
-<a class="el" href="struct_point.html">Point</a>&#160;</td><td class="memItemRight" valign="bottom"><b>deltaCoordinates</b></td></tr>
+<tr class="memitem:ada36c7a47994ee0e9f02453fe5394617"><td class="memItemLeft" align="right" valign="top"><a class="el" href="math_8h.html#struct_point">Point</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_player_data.html#ada36c7a47994ee0e9f02453fe5394617">deltaCoordinates</a></td></tr>
 <tr class="separator:ada36c7a47994ee0e9f02453fe5394617"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aee9a25ae4c322e2e16ee08bf5ca055a3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aee9a25ae4c322e2e16ee08bf5ca055a3"></a>
-char&#160;</td><td class="memItemRight" valign="bottom"><b>pad5</b> [0xe0-0xc8-sizeof(Point)]</td></tr>
-<tr class="separator:aee9a25ae4c322e2e16ee08bf5ca055a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a539a7ad4f347d49ddfd539375d6ba7e4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a539a7ad4f347d49ddfd539375d6ba7e4"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>inAir</b></td></tr>
+<tr class="memitem:a539a7ad4f347d49ddfd539375d6ba7e4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="gctypes_8h.html#a6a912bf1d80625256884f11a0ea1d5fd">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_player_data.html#a539a7ad4f347d49ddfd539375d6ba7e4">inAir</a></td></tr>
 <tr class="separator:a539a7ad4f347d49ddfd539375d6ba7e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ef7512ac7b7ce0663fc25b23fd07cb7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3ef7512ac7b7ce0663fc25b23fd07cb7"></a>
-char&#160;</td><td class="memItemRight" valign="bottom"><b>pad6</b> [0x148-0xe0-sizeof(bool)]</td></tr>
-<tr class="separator:a3ef7512ac7b7ce0663fc25b23fd07cb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a49b85c04f0f75462bf03e52e800a4ee8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a49b85c04f0f75462bf03e52e800a4ee8"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>jumpSquat</b></td></tr>
+<tr class="memitem:a49b85c04f0f75462bf03e52e800a4ee8"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_player_data.html#a49b85c04f0f75462bf03e52e800a4ee8">jumpSquat</a></td></tr>
 <tr class="separator:a49b85c04f0f75462bf03e52e800a4ee8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1dd47e53b8d5ae60bf70000efff41152"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1dd47e53b8d5ae60bf70000efff41152"></a>
-char&#160;</td><td class="memItemRight" valign="bottom"><b>pad7</b> [0x1830-0x148-sizeof(float)]</td></tr>
-<tr class="separator:a1dd47e53b8d5ae60bf70000efff41152"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac167f3972a2f244f4b32c8ee5b89364"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aac167f3972a2f244f4b32c8ee5b89364"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>percent</b></td></tr>
+<tr class="memitem:aa2617c18129ebe00c9943984e16cd958"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_player_data.html#aa2617c18129ebe00c9943984e16cd958">actionFrame</a></td></tr>
+<tr class="separator:aa2617c18129ebe00c9943984e16cd958"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac167f3972a2f244f4b32c8ee5b89364"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_player_data.html#aac167f3972a2f244f4b32c8ee5b89364">percent</a></td></tr>
 <tr class="separator:aac167f3972a2f244f4b32c8ee5b89364"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a96cae5f91e8a7f10801e6ebf6ce4c20e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a96cae5f91e8a7f10801e6ebf6ce4c20e"></a>
-char&#160;</td><td class="memItemRight" valign="bottom"><b>pad8</b> [0x1844-0x1830-sizeof(float)]</td></tr>
-<tr class="separator:a96cae5f91e8a7f10801e6ebf6ce4c20e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae1e015d5b0c757668724e59b3aebbb02"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae1e015d5b0c757668724e59b3aebbb02"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>damageDirection</b></td></tr>
+<tr class="memitem:ae1e015d5b0c757668724e59b3aebbb02"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_player_data.html#ae1e015d5b0c757668724e59b3aebbb02">damageDirection</a></td></tr>
 <tr class="separator:ae1e015d5b0c757668724e59b3aebbb02"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac2a49d33a233497bfa8c8717acd7b047"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac2a49d33a233497bfa8c8717acd7b047"></a>
-u32&#160;</td><td class="memItemRight" valign="bottom"><b>knockbackAngle</b></td></tr>
+<tr class="memitem:ac2a49d33a233497bfa8c8717acd7b047"><td class="memItemLeft" align="right" valign="top"><a class="el" href="gctypes_8h.html#afaa62991928fb9fb18ff0db62a040aba">u32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_player_data.html#ac2a49d33a233497bfa8c8717acd7b047">knockbackAngle</a></td></tr>
 <tr class="separator:ac2a49d33a233497bfa8c8717acd7b047"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3202e2d9c72ba410123666630df29ee0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3202e2d9c72ba410123666630df29ee0"></a>
-char&#160;</td><td class="memItemRight" valign="bottom"><b>pad10</b> [0x195c-0x1848-sizeof(u32)]</td></tr>
-<tr class="separator:a3202e2d9c72ba410123666630df29ee0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeabac9c664bbd89b43d8cd445b0d881e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aeabac9c664bbd89b43d8cd445b0d881e"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>hitlag</b></td></tr>
+<tr class="memitem:aeabac9c664bbd89b43d8cd445b0d881e"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_player_data.html#aeabac9c664bbd89b43d8cd445b0d881e">hitlag</a></td></tr>
 <tr class="separator:aeabac9c664bbd89b43d8cd445b0d881e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a08373ef3099a9e86a3dc03287127f67f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a08373ef3099a9e86a3dc03287127f67f"></a>
-char&#160;</td><td class="memItemRight" valign="bottom"><b>pad11</b> [0x1968-0x195c-sizeof(float)]</td></tr>
-<tr class="separator:a08373ef3099a9e86a3dc03287127f67f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2449fbf5369ec754882d151650cf4486"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2449fbf5369ec754882d151650cf4486"></a>
-u8&#160;</td><td class="memItemRight" valign="bottom"><b>jumpsUsed</b></td></tr>
+<tr class="memitem:a2449fbf5369ec754882d151650cf4486"><td class="memItemLeft" align="right" valign="top"><a class="el" href="gctypes_8h.html#a92c50087ca0e64fa93fc59402c55f8ca">u8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_player_data.html#a2449fbf5369ec754882d151650cf4486">jumpsUsed</a></td></tr>
 <tr class="separator:a2449fbf5369ec754882d151650cf4486"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ada81b166147f90c33c097db9515ef0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6ada81b166147f90c33c097db9515ef0"></a>
-char&#160;</td><td class="memItemRight" valign="bottom"><b>pad12</b> [0x1998-0x1968-sizeof(u8)]</td></tr>
-<tr class="separator:a6ada81b166147f90c33c097db9515ef0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb17f54e01f013a1a160ab5e2d0109fb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abb17f54e01f013a1a160ab5e2d0109fb"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>shieldSize</b></td></tr>
+<tr class="memitem:a7d5b6e5d330aafd052b1ee72f45878f3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="gctypes_8h.html#afaa62991928fb9fb18ff0db62a040aba">u32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_player_data.html#a7d5b6e5d330aafd052b1ee72f45878f3">bodyState</a></td></tr>
+<tr class="separator:a7d5b6e5d330aafd052b1ee72f45878f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb17f54e01f013a1a160ab5e2d0109fb"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_player_data.html#abb17f54e01f013a1a160ab5e2d0109fb">shieldSize</a></td></tr>
 <tr class="separator:abb17f54e01f013a1a160ab5e2d0109fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a11d78984c5bc1acbb556f5d95450aaed"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a11d78984c5bc1acbb556f5d95450aaed"></a>
-char&#160;</td><td class="memItemRight" valign="bottom"><b>pad13</b> [0x1a4c-0x1998-sizeof(float)]</td></tr>
-<tr class="separator:a11d78984c5bc1acbb556f5d95450aaed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a905aabfb033398610f5dc873a26f8a4e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a905aabfb033398610f5dc873a26f8a4e"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>breakoutCountdown</b></td></tr>
+<tr class="memitem:a905aabfb033398610f5dc873a26f8a4e"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_player_data.html#a905aabfb033398610f5dc873a26f8a4e">breakoutCountdown</a></td></tr>
 <tr class="separator:a905aabfb033398610f5dc873a26f8a4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5ab9eedfa1f193eb452ecd34b8efad00"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5ab9eedfa1f193eb452ecd34b8efad00"></a>
-char&#160;</td><td class="memItemRight" valign="bottom"><b>pad14</b> [0x1a9b-0x1a4c-sizeof(float)]</td></tr>
-<tr class="separator:a5ab9eedfa1f193eb452ecd34b8efad00"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae601f3ffc327aaccc7db81fdca4cc8d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aae601f3ffc327aaccc7db81fdca4cc8d"></a>
-u8&#160;</td><td class="memItemRight" valign="bottom"><b>aiLevel</b></td></tr>
+<tr class="memitem:aae601f3ffc327aaccc7db81fdca4cc8d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="gctypes_8h.html#a92c50087ca0e64fa93fc59402c55f8ca">u8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_player_data.html#aae601f3ffc327aaccc7db81fdca4cc8d">aiLevel</a></td></tr>
 <tr class="separator:aae601f3ffc327aaccc7db81fdca4cc8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2f006e088d31a43df831fb5cf188a4dc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2f006e088d31a43df831fb5cf188a4dc"></a>
-char&#160;</td><td class="memItemRight" valign="bottom"><b>pad15</b> [0x2340-0x1a9b-sizeof(u8)]</td></tr>
-<tr class="separator:a2f006e088d31a43df831fb5cf188a4dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b4f39c25bd32da726744bb06248c755"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2b4f39c25bd32da726744bb06248c755"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>hitstun</b></td></tr>
+<tr class="memitem:af8e6c52aba84bb47657d2abe97f96a08"><td class="memItemLeft" align="right" valign="top"><a class="el" href="gctypes_8h.html#afaa62991928fb9fb18ff0db62a040aba">u32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_player_data.html#af8e6c52aba84bb47657d2abe97f96a08">actionCounter</a></td></tr>
+<tr class="separator:af8e6c52aba84bb47657d2abe97f96a08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b4f39c25bd32da726744bb06248c755"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_player_data.html#a2b4f39c25bd32da726744bb06248c755">hitstun</a></td></tr>
 <tr class="separator:a2b4f39c25bd32da726744bb06248c755"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>struct holding player data </p>
+</div><h2 class="groupheader">Field Documentation</h2>
+<a class="anchor" id="ab3f5d05f9d2935cdb646d86060c284dc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="gctypes_8h.html#afaa62991928fb9fb18ff0db62a040aba">u32</a> actionState</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>current action state of player </p>
+
+</div>
+</div>
+<a class="anchor" id="a8743d29d16a4095b6bc5992da02df052"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float facingDirection</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>-1 facing left, 1 facing right </p>
+
+</div>
+</div>
+<a class="anchor" id="ac0a87e800ccb7f350952a6664aecb332"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="math_8h.html#struct_point">Point</a> coordinates</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>coordinates of player </p>
+
+</div>
+</div>
+<a class="anchor" id="ada36c7a47994ee0e9f02453fe5394617"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="math_8h.html#struct_point">Point</a> deltaCoordinates</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>change in coordinates from last frame </p>
+
+</div>
+</div>
+<a class="anchor" id="a539a7ad4f347d49ddfd539375d6ba7e4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="gctypes_8h.html#a6a912bf1d80625256884f11a0ea1d5fd">bool</a> inAir</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>true if player is in air </p>
+
+</div>
+</div>
+<a class="anchor" id="a49b85c04f0f75462bf03e52e800a4ee8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float jumpSquat</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>frames of jumpsquat </p>
+
+</div>
+</div>
+<a class="anchor" id="aa2617c18129ebe00c9943984e16cd958"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float actionFrame</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>resets to 1 with each new action state </p>
+
+</div>
+</div>
+<a class="anchor" id="aac167f3972a2f244f4b32c8ee5b89364"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float percent</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>percent of player </p>
+
+</div>
+</div>
+<a class="anchor" id="ae1e015d5b0c757668724e59b3aebbb02"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float damageDirection</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>-1, 1 depending on direction sent </p>
+
+</div>
+</div>
+<a class="anchor" id="ac2a49d33a233497bfa8c8717acd7b047"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="gctypes_8h.html#afaa62991928fb9fb18ff0db62a040aba">u32</a> knockbackAngle</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>angle of knockback [0, 360], 361 = sakurai </p>
+
+</div>
+</div>
+<a class="anchor" id="aeabac9c664bbd89b43d8cd445b0d881e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float hitlag</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>remaining frames of hitlag </p>
+
+</div>
+</div>
+<a class="anchor" id="a2449fbf5369ec754882d151650cf4486"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="gctypes_8h.html#a92c50087ca0e64fa93fc59402c55f8ca">u8</a> jumpsUsed</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>number of jumps already used </p>
+
+</div>
+</div>
+<a class="anchor" id="a7d5b6e5d330aafd052b1ee72f45878f3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="gctypes_8h.html#afaa62991928fb9fb18ff0db62a040aba">u32</a> bodyState</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>0 - normal, 1 - invulnerable, 2 - intangible </p>
+
+</div>
+</div>
+<a class="anchor" id="abb17f54e01f013a1a160ab5e2d0109fb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float shieldSize</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>size of shield </p>
+
+</div>
+</div>
+<a class="anchor" id="a905aabfb033398610f5dc873a26f8a4e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float breakoutCountdown</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>frames until breakout of grab </p>
+
+</div>
+</div>
+<a class="anchor" id="aae601f3ffc327aaccc7db81fdca4cc8d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="gctypes_8h.html#a92c50087ca0e64fa93fc59402c55f8ca">u8</a> aiLevel</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>cpu level selected on CSS </p>
+
+</div>
+</div>
+<a class="anchor" id="af8e6c52aba84bb47657d2abe97f96a08"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="gctypes_8h.html#afaa62991928fb9fb18ff0db62a040aba">u32</a> actionCounter</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>number of action states this match </p>
+
+</div>
+</div>
+<a class="anchor" id="a2b4f39c25bd32da726744bb06248c755"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float hitstun</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>remaining frames of hitstun </p>
+
+</div>
+</div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
 <li>src/<a class="el" href="game__state_8h_source.html">game_state.h</a></li>
 </ul>

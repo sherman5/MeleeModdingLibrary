@@ -119,31 +119,6 @@ Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Random number generation. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="ab2c442ff73a4a49a25b5ead238d8b2da"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="gctypes_8h.html#a6a912bf1d80625256884f11a0ea1d5fd">bool</a> chance </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="logic_8h.html#union_function_arg">FunctionArg</a>&#160;</td>
-          <td class="paramname"><em>prob</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Single 'coin flip' with given probability. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">prob</td><td>- <code> floating-point value in [0,1] </code> </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Returns true with probability <code>prob</code> </dd></dl>
-
-</div>
-</div>
 <a class="anchor" id="ac065bd1fd6625630a0de19c6e1c8ce0a"></a>
 <div class="memitem">
 <div class="memproto">
@@ -159,6 +134,35 @@ Functions</h2></td></tr>
 
 <p>Generate random number in [0,1]. </p>
 <dl class="section return"><dt>Returns</dt><dd>- Random floating point number in [0,1] </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a9c06f9da82e1c14605c2e40a360670ab"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float uniform </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sample uniformly from <code> [a, b] </code>. </p>
+<dl class="section return"><dt>Returns</dt><dd>random floating point number in <code> [a, b] </code> </dd></dl>
 
 </div>
 </div>
@@ -198,32 +202,28 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a9c06f9da82e1c14605c2e40a360670ab"></a>
+<a class="anchor" id="ab2c442ff73a4a49a25b5ead238d8b2da"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">float uniform </td>
+          <td class="memname"><a class="el" href="gctypes_8h.html#a6a912bf1d80625256884f11a0ea1d5fd">bool</a> chance </td>
           <td>(</td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>a</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype"><a class="el" href="logic_8h.html#union_function_arg">FunctionArg</a>&#160;</td>
+          <td class="paramname"><em>prob</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>b</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Sample uniformly from <code> [a, b] </code>. </p>
-<dl class="section return"><dt>Returns</dt><dd>random floating point number in <code> [a, b] </code> </dd></dl>
+<p>Single 'coin flip' with given probability. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">prob</td><td>- <code> floating-point value in [0,1] </code> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns true with probability <code>prob</code> </dd></dl>
 
 </div>
 </div>

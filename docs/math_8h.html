@@ -223,20 +223,16 @@ y</td>
 </div>
 </div>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a class="anchor" id="a8ed7b6a1f199b6d2af90e642918cf271"></a>
+<a class="anchor" id="ae71449b1cc6e6250b91f539153a7a0d3"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define DEG_TO_RAD</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">x</td><td>)</td>
-          <td>&#160;&#160;&#160;((x) * 0.01745329251f)</td>
+          <td class="memname">#define M_PI&#160;&#160;&#160;3.14159265358f</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>approximate value of pi / 180 </p>
+<p>approximate value of pi </p>
 
 </div>
 </div>
@@ -266,16 +262,20 @@ y</td>
 
 </div>
 </div>
-<a class="anchor" id="ae71449b1cc6e6250b91f539153a7a0d3"></a>
+<a class="anchor" id="a8ed7b6a1f199b6d2af90e642918cf271"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define M_PI&#160;&#160;&#160;3.14159265358f</td>
+          <td class="memname">#define DEG_TO_RAD</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x</td><td>)</td>
+          <td>&#160;&#160;&#160;((x) * 0.01745329251f)</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>approximate value of pi </p>
+<p>approximate value of pi / 180 </p>
 
 </div>
 </div>
@@ -314,245 +314,6 @@ y</td>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="ad3746d6ae34f39dc1929395d6af1ecb1"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">float acos </td>
-          <td>(</td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>x</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Arc cosine of <code>x</code>. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">x</td><td>- floating-point value in <code> [-1, +1] </code></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>inverse cosine of <code>x</code>, expressed in degress in range <code> [0, 180] </code> </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="a7873f9bf36a252b150a02b8d04942990"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">float angle </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="math_8h.html#struct_point">Point</a>&#160;</td>
-          <td class="paramname"><em>a</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="math_8h.html#struct_point">Point</a>&#160;</td>
-          <td class="paramname"><em>b</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Angle between two points. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">a</td><td>- <a class="el" href="math_8h.html#struct_point" title="Struct containing the coordinates of a point. ">Point</a> struct </td></tr>
-    <tr><td class="paramname">b</td><td>- <a class="el" href="math_8h.html#struct_point" title="Struct containing the coordinates of a point. ">Point</a> struct</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The angle between <code>a</code> and <code>b</code> in <code> [0, 360] </code> degrees </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="af7a153258c174c284724467debb9458c"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">float asin </td>
-          <td>(</td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>x</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Arc sine of <code>x</code>. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">x</td><td>- floating-point value in <code> [-1, +1] </code></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>inverse sine of <code>x</code>, expressed in degress in range <code> [0, 90] </code> and <code> [270, 360) </code> </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="aa1707595eec76a358520359b4f20267e"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">float atan </td>
-          <td>(</td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>x</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Arc tangent of <code>x</code>. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">x</td><td>- floating-point value in <code> [0, inf) </code></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>inverse tangent of <code>x</code>, expressed in degress in range <code> [0, 90) </code> </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="aaf4b636b09041878e1542054c73d81e9"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">float atan2 </td>
-          <td>(</td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>y</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>x</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Compute arc tangent with two parameters. </p>
-<p>Returns the arc tangent of <code>y</code> / <code>x</code>, expressed in degrees. To compute the value, the function takes into accout the sign of both arguments in order to determine the quadrant.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">y</td><td>- floating-point value </td></tr>
-    <tr><td class="paramname">x</td><td>- floating-point value</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>arc tangent of <code>y</code> / <code>x</code>, in interval [0, 360) degrees</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a href="http://www.cplusplus.com/reference/cmath/atan2/">http://www.cplusplus.com/reference/cmath/atan2/</a> </dd>
-<dd>
-<a href="http://www.embedded.com/design/other/4216719/Performing-efficient-arctangent-approximation">http://www.embedded.com/design/other/4216719/Performing-efficient-arctangent-approximation</a> </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="a65b86cc953409a678d94f6db9653fd98"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">float ceil </td>
-          <td>(</td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>x</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Round up value. </p>
-<p>Rounds <code>x</code> upward, returning the smallest integral value that is not less than @ x</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">x</td><td>- floating-point value</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The value of <code>x</code> rounded upward (as a floating-point value)</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a href="http://www.cplusplus.com/reference/cmath/floor/">http://www.cplusplus.com/reference/cmath/floor/</a> </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="a5e88e48c21b60ac9b58a322cf8a8bb67"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">float cos </td>
-          <td>(</td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>x</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Cosine of <code>x</code>, expressed in degrees. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">x</td><td>- floating-point value in <code> [0, 360) </code></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Cosine of <code>x</code> </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ad0f5356ed3a5123428bb77ae4c003200"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">float distance </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="math_8h.html#struct_point">Point</a>&#160;</td>
-          <td class="paramname"><em>a</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="math_8h.html#struct_point">Point</a>&#160;</td>
-          <td class="paramname"><em>b</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Distance between two points. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">a</td><td>- <a class="el" href="math_8h.html#struct_point" title="Struct containing the coordinates of a point. ">Point</a> struct </td></tr>
-    <tr><td class="paramname">b</td><td>- <a class="el" href="math_8h.html#struct_point" title="Struct containing the coordinates of a point. ">Point</a> struct</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The distance between <code>a</code> and <code>b</code> </dd></dl>
-
-</div>
-</div>
 <a class="anchor" id="a0bc70d364c7f180aece2381faae7eafc"></a>
 <div class="memitem">
 <div class="memproto">
@@ -575,6 +336,56 @@ y</td>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The absolute value of <code>x</code>. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a592e5b536e9e1b69f4520e9566521a17"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float sqrt </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Square root of <code>x</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>- floating-point value</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the square root of <code>x</code> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a989820d8d92331f09a5f344cfcdd62f2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float recipSqrt </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code> 1 / sqrt(x) </code> </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>- floating-point value</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the reciprical square root of <code>x</code> </dd></dl>
 
 </div>
 </div>
@@ -605,111 +416,30 @@ y</td>
 
 </div>
 </div>
-<a class="anchor" id="a52e85f021f908d292de396a9f6f442cf"></a>
+<a class="anchor" id="a65b86cc953409a678d94f6db9653fd98"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">float fmax </td>
+          <td class="memname">float ceil </td>
           <td>(</td>
           <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>a</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"><em>x</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>b</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Maximum of two floating-point values. </p>
+<p>Round up value. </p>
+<p>Rounds <code>x</code> upward, returning the smallest integral value that is not less than @ x</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">a</td><td>- floating-point value </td></tr>
-    <tr><td class="paramname">b</td><td>- floating-point value</td></tr>
+    <tr><td class="paramname">x</td><td>- floating-point value</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The larger value of <code>a</code> and <code>b</code> </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="a7bff75e9292d7da0d5b6aa2f36d618db"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">float fmin </td>
-          <td>(</td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>a</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>b</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Minimum of two floating-point values. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">a</td><td>- floating-point value </td></tr>
-    <tr><td class="paramname">b</td><td>- floating-point value</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The smaller value of <code>a</code> and <code>b</code> </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="a50c2a3bb7401c24b4a3ef1a2e7680a26"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">float fpow </td>
-          <td>(</td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>base</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="gctypes_8h.html#a92c50087ca0e64fa93fc59402c55f8ca">u8</a>&#160;</td>
-          <td class="paramname"><em>exp</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p><code>base</code> raised to the power of <code>exp</code> </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">base</td><td>- floating-point value </td></tr>
-    <tr><td class="paramname">exp</td><td>- 8-bit <code>signed</code> <code>int</code> </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><code>base</code> raised to the power of <code>exp</code> </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The value of <code>x</code> rounded upward (as a floating-point value)</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a href="http://www.cplusplus.com/reference/cmath/floor/">http://www.cplusplus.com/reference/cmath/floor/</a> </dd></dl>
 
 </div>
 </div>
@@ -785,6 +515,78 @@ y</td>
 
 </div>
 </div>
+<a class="anchor" id="a52e85f021f908d292de396a9f6f442cf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float fmax </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Maximum of two floating-point values. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>- floating-point value </td></tr>
+    <tr><td class="paramname">b</td><td>- floating-point value</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The larger value of <code>a</code> and <code>b</code> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a7bff75e9292d7da0d5b6aa2f36d618db"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float fmin </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Minimum of two floating-point values. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>- floating-point value </td></tr>
+    <tr><td class="paramname">b</td><td>- floating-point value</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The smaller value of <code>a</code> and <code>b</code> </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a2cc081a5b23bb487bf02d1299a78dc6f"></a>
 <div class="memitem">
 <div class="memproto">
@@ -821,54 +623,39 @@ y</td>
 
 </div>
 </div>
-<a class="anchor" id="aa472be54ff4dd70c96b82dbdf24331f5"></a>
+<a class="anchor" id="a50c2a3bb7401c24b4a3ef1a2e7680a26"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">float magnitude </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="math_8h.html#struct_point">Point</a>&#160;</td>
-          <td class="paramname"><em>pt</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Magnitude of point. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">pt</td><td>- <a class="el" href="math_8h.html#struct_point" title="Struct containing the coordinates of a point. ">Point</a> struct</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The distance of <code>pt</code> from (0,0)</dd></dl>
-<dl class="section note"><dt>Note</dt><dd>error is within 0.26 degrees </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="a989820d8d92331f09a5f344cfcdd62f2"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">float recipSqrt </td>
+          <td class="memname">float fpow </td>
           <td>(</td>
           <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>x</em></td><td>)</td>
+          <td class="paramname"><em>base</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="gctypes_8h.html#a92c50087ca0e64fa93fc59402c55f8ca">u8</a>&#160;</td>
+          <td class="paramname"><em>exp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p><code> 1 / sqrt(x) </code> </p>
+<p><code>base</code> raised to the power of <code>exp</code> </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">x</td><td>- floating-point value</td></tr>
+    <tr><td class="paramname">base</td><td>- floating-point value </td></tr>
+    <tr><td class="paramname">exp</td><td>- 8-bit <code>signed</code> <code>int</code> </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>the reciprical square root of <code>x</code> </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>base</code> raised to the power of <code>exp</code> </dd></dl>
 
 </div>
 </div>
@@ -897,12 +684,12 @@ y</td>
 
 </div>
 </div>
-<a class="anchor" id="a592e5b536e9e1b69f4520e9566521a17"></a>
+<a class="anchor" id="a5e88e48c21b60ac9b58a322cf8a8bb67"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">float sqrt </td>
+          <td class="memname">float cos </td>
           <td>(</td>
           <td class="paramtype">float&#160;</td>
           <td class="paramname"><em>x</em></td><td>)</td>
@@ -911,14 +698,14 @@ y</td>
       </table>
 </div><div class="memdoc">
 
-<p>Square root of <code>x</code>. </p>
+<p>Cosine of <code>x</code>, expressed in degrees. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">x</td><td>- floating-point value</td></tr>
+    <tr><td class="paramname">x</td><td>- floating-point value in <code> [0, 360) </code></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>the square root of <code>x</code> </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Cosine of <code>x</code> </dd></dl>
 
 </div>
 </div>
@@ -944,6 +731,219 @@ y</td>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Tangent of <code>x</code> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="af7a153258c174c284724467debb9458c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float asin </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Arc sine of <code>x</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>- floating-point value in <code> [-1, +1] </code></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>inverse sine of <code>x</code>, expressed in degress in range <code> [0, 90] </code> and <code> [270, 360) </code> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ad3746d6ae34f39dc1929395d6af1ecb1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float acos </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Arc cosine of <code>x</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>- floating-point value in <code> [-1, +1] </code></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>inverse cosine of <code>x</code>, expressed in degress in range <code> [0, 180] </code> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aa1707595eec76a358520359b4f20267e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float atan </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Arc tangent of <code>x</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>- floating-point value in <code> [0, inf) </code></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>inverse tangent of <code>x</code>, expressed in degress in range <code> [0, 90) </code> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aaf4b636b09041878e1542054c73d81e9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float atan2 </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compute arc tangent with two parameters. </p>
+<p>Returns the arc tangent of <code>y</code> / <code>x</code>, expressed in degrees. To compute the value, the function takes into accout the sign of both arguments in order to determine the quadrant.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">y</td><td>- floating-point value </td></tr>
+    <tr><td class="paramname">x</td><td>- floating-point value</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>arc tangent of <code>y</code> / <code>x</code>, in interval [0, 360) degrees</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a href="http://www.cplusplus.com/reference/cmath/atan2/">http://www.cplusplus.com/reference/cmath/atan2/</a> </dd>
+<dd>
+<a href="http://www.embedded.com/design/other/4216719/Performing-efficient-arctangent-approximation">http://www.embedded.com/design/other/4216719/Performing-efficient-arctangent-approximation</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aa472be54ff4dd70c96b82dbdf24331f5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float magnitude </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="math_8h.html#struct_point">Point</a>&#160;</td>
+          <td class="paramname"><em>pt</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Magnitude of point. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pt</td><td>- <a class="el" href="math_8h.html#struct_point" title="Struct containing the coordinates of a point. ">Point</a> struct</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The distance of <code>pt</code> from (0,0)</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>error is within 0.26 degrees </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ad0f5356ed3a5123428bb77ae4c003200"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float distance </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="math_8h.html#struct_point">Point</a>&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="math_8h.html#struct_point">Point</a>&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Distance between two points. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>- <a class="el" href="math_8h.html#struct_point" title="Struct containing the coordinates of a point. ">Point</a> struct </td></tr>
+    <tr><td class="paramname">b</td><td>- <a class="el" href="math_8h.html#struct_point" title="Struct containing the coordinates of a point. ">Point</a> struct</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The distance between <code>a</code> and <code>b</code> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a7873f9bf36a252b150a02b8d04942990"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float angle </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="math_8h.html#struct_point">Point</a>&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="math_8h.html#struct_point">Point</a>&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Angle between two points. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>- <a class="el" href="math_8h.html#struct_point" title="Struct containing the coordinates of a point. ">Point</a> struct </td></tr>
+    <tr><td class="paramname">b</td><td>- <a class="el" href="math_8h.html#struct_point" title="Struct containing the coordinates of a point. ">Point</a> struct</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The angle between <code>a</code> and <code>b</code> in <code> [0, 360] </code> degrees </dd></dl>
 
 </div>
 </div>

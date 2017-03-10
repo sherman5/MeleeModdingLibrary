@@ -151,42 +151,85 @@ Macros</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Pointers to in game functions. </p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
-<a class="anchor" id="af1eb56d4f85c6310fa3c7d16cee9c6f8"></a>
+<a class="anchor" id="ae40e82d767432abe028707bdab8f6245"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define ABS_VAL_FPTR&#160;&#160;&#160;<a class="el" href="native__functions_8h.html#ae40e82d767432abe028707bdab8f6245">VOID_PTR</a>(0x803261b4)</td>
+          <td class="memname">#define VOID_PTR</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x</td><td>)</td>
+          <td>&#160;&#160;&#160;((void*) (x))</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>float <a class="el" href="math_8h.html#a0bc70d364c7f180aece2381faae7eafc" title="Absolute value of x. ">fabs(float x)</a> </p>
+<p>Cast address to <code>void*</code> - make it a function pointer </p>
 
 </div>
 </div>
-<a class="anchor" id="a38e4a0026626f8e2ed9c368d399a1e2d"></a>
+<a class="anchor" id="aafe1d194de80dee7d248797914d75b26"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define COSINE_FPTR&#160;&#160;&#160;<a class="el" href="native__functions_8h.html#ae40e82d767432abe028707bdab8f6245">VOID_PTR</a>(0x80326200)</td>
+          <td class="memname">#define PLAYER_ENTITY_FPTR&#160;&#160;&#160;<a class="el" href="native__functions_8h.html#ae40e82d767432abe028707bdab8f6245">VOID_PTR</a>(0x80034110)</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>float cosine(float x) </p>
+<p>u32 playerEntity(u32) </p>
 
 </div>
 </div>
-<a class="anchor" id="a7dadbcb6ef3a1ad78a303b828460ce52"></a>
+<a class="anchor" id="a185904208661219bcc14e66bbd87cc97"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define ITOA_FPTR&#160;&#160;&#160;<a class="el" href="native__functions_8h.html#ae40e82d767432abe028707bdab8f6245">VOID_PTR</a>(0x803250c0)</td>
+          <td class="memname">#define RAND_INT_FPTR&#160;&#160;&#160;<a class="el" href="native__functions_8h.html#ae40e82d767432abe028707bdab8f6245">VOID_PTR</a>(0x80380580)</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>char* itoa(int32_t value, char* str, int base) </p>
+<p>u32 randInt(u32) </p>
+
+</div>
+</div>
+<a class="anchor" id="aba5292607f59f863c36f5ac998c9a328"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define OS_CREATE_HEAP_FPTR&#160;&#160;&#160;<a class="el" href="native__functions_8h.html#ae40e82d767432abe028707bdab8f6245">VOID_PTR</a>(0x803440e8)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>handle_t OSCreateHeap(void*, void*) </p>
+
+</div>
+</div>
+<a class="anchor" id="a87192633ed6bba732ef423a63cbd0882"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define OS_ALLOC_FROM_HEAP_FPTR&#160;&#160;&#160;<a class="el" href="native__functions_8h.html#ae40e82d767432abe028707bdab8f6245">VOID_PTR</a>(0x80343ef0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>void* OSAllocFromHeap(handle_t, size_t) </p>
+
+</div>
+</div>
+<a class="anchor" id="a7af5c3e4f78b5781c16952ac5faab657"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define OS_FREE_TO_HEAP_FPTR&#160;&#160;&#160;<a class="el" href="native__functions_8h.html#ae40e82d767432abe028707bdab8f6245">VOID_PTR</a>(0x80343fec)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>void OSFreeToHeap(handle_t, void*) </p>
 
 </div>
 </div>
@@ -242,97 +285,6 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a87192633ed6bba732ef423a63cbd0882"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define OS_ALLOC_FROM_HEAP_FPTR&#160;&#160;&#160;<a class="el" href="native__functions_8h.html#ae40e82d767432abe028707bdab8f6245">VOID_PTR</a>(0x80343ef0)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>void* OSAllocFromHeap(handle_t, size_t) </p>
-
-</div>
-</div>
-<a class="anchor" id="aba5292607f59f863c36f5ac998c9a328"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define OS_CREATE_HEAP_FPTR&#160;&#160;&#160;<a class="el" href="native__functions_8h.html#ae40e82d767432abe028707bdab8f6245">VOID_PTR</a>(0x803440e8)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>handle_t OSCreateHeap(void*, void*) </p>
-
-</div>
-</div>
-<a class="anchor" id="a7af5c3e4f78b5781c16952ac5faab657"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define OS_FREE_TO_HEAP_FPTR&#160;&#160;&#160;<a class="el" href="native__functions_8h.html#ae40e82d767432abe028707bdab8f6245">VOID_PTR</a>(0x80343fec)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>void OSFreeToHeap(handle_t, void*) </p>
-
-</div>
-</div>
-<a class="anchor" id="aafe1d194de80dee7d248797914d75b26"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define PLAYER_ENTITY_FPTR&#160;&#160;&#160;<a class="el" href="native__functions_8h.html#ae40e82d767432abe028707bdab8f6245">VOID_PTR</a>(0x80034110)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>u32 playerEntity(u32) </p>
-
-</div>
-</div>
-<a class="anchor" id="a185904208661219bcc14e66bbd87cc97"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define RAND_INT_FPTR&#160;&#160;&#160;<a class="el" href="native__functions_8h.html#ae40e82d767432abe028707bdab8f6245">VOID_PTR</a>(0x80380580)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>u32 randInt(u32) </p>
-
-</div>
-</div>
-<a class="anchor" id="ac70f0540ee7d4b5655eda1d4e08dcaf4"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define RECIP_SQRT_FPTR&#160;&#160;&#160;<a class="el" href="native__functions_8h.html#ae40e82d767432abe028707bdab8f6245">VOID_PTR</a>(0x80022df8);</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>float <a class="el" href="math_8h.html#a989820d8d92331f09a5f344cfcdd62f2" title=" 1 / sqrt(x)  ">recipSqrt(float x)</a> </p>
-
-</div>
-</div>
-<a class="anchor" id="a1c62f1c04c0dc63c640e24773f4c7d9c"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define SINE_FPTR&#160;&#160;&#160;<a class="el" href="native__functions_8h.html#ae40e82d767432abe028707bdab8f6245">VOID_PTR</a>(0x80326220)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>float <a class="el" href="math_8h.html#a15876915492b5aff219d1dd03ad66def" title="Sine of x, expressed in degrees. ">sin(float x)</a> </p>
-
-</div>
-</div>
 <a class="anchor" id="a285e91adfc855d47ed5738972772e3ed"></a>
 <div class="memitem">
 <div class="memproto">
@@ -359,6 +311,19 @@ Macros</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="af9814eb536ced3b653a116718b2de831"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define STRN_CMP_FPTR&#160;&#160;&#160;<a class="el" href="native__functions_8h.html#ae40e82d767432abe028707bdab8f6245">VOID_PTR</a>(0x803258a8)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>int <a class="el" href="string_8h.html#a6666865e6caf66fd05d4b8bd6c074cd2" title="Compare characters of two strings. ">strncmp(const char* str1, const char* str2, size_t num)</a> </p>
+
+</div>
+</div>
 <a class="anchor" id="ab741886615f874726d74383436b938f2"></a>
 <div class="memitem">
 <div class="memproto">
@@ -369,6 +334,19 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>char* <a class="el" href="string_8h.html#ac137d536ff0037b3856083cb8a1c19a7">strcpy(char* destination, const char* source)</a> </p>
+
+</div>
+</div>
+<a class="anchor" id="a3954c00ea816922953bb6501aff5c128"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define STRN_CPY_FPTR&#160;&#160;&#160;<a class="el" href="native__functions_8h.html#ae40e82d767432abe028707bdab8f6245">VOID_PTR</a>(0x80325a0c)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>char* <a class="el" href="string_8h.html#ac25b4990403370b02ac7f8403a6b3230" title="Copy characters from string. ">strncpy(char* destination, const char* source, size_t num)</a> </p>
 
 </div>
 </div>
@@ -398,29 +376,42 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="af9814eb536ced3b653a116718b2de831"></a>
+<a class="anchor" id="a7dadbcb6ef3a1ad78a303b828460ce52"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define STRN_CMP_FPTR&#160;&#160;&#160;<a class="el" href="native__functions_8h.html#ae40e82d767432abe028707bdab8f6245">VOID_PTR</a>(0x803258a8)</td>
+          <td class="memname">#define ITOA_FPTR&#160;&#160;&#160;<a class="el" href="native__functions_8h.html#ae40e82d767432abe028707bdab8f6245">VOID_PTR</a>(0x803250c0)</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>int <a class="el" href="string_8h.html#a6666865e6caf66fd05d4b8bd6c074cd2" title="Compare characters of two strings. ">strncmp(const char* str1, const char* str2, size_t num)</a> </p>
+<p>char* itoa(int32_t value, char* str, int base) </p>
 
 </div>
 </div>
-<a class="anchor" id="a3954c00ea816922953bb6501aff5c128"></a>
+<a class="anchor" id="a1c62f1c04c0dc63c640e24773f4c7d9c"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define STRN_CPY_FPTR&#160;&#160;&#160;<a class="el" href="native__functions_8h.html#ae40e82d767432abe028707bdab8f6245">VOID_PTR</a>(0x80325a0c)</td>
+          <td class="memname">#define SINE_FPTR&#160;&#160;&#160;<a class="el" href="native__functions_8h.html#ae40e82d767432abe028707bdab8f6245">VOID_PTR</a>(0x80326220)</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>char* <a class="el" href="string_8h.html#ac25b4990403370b02ac7f8403a6b3230" title="Copy characters from string. ">strncpy(char* destination, const char* source, size_t num)</a> </p>
+<p>float <a class="el" href="math_8h.html#a15876915492b5aff219d1dd03ad66def" title="Sine of x, expressed in degrees. ">sin(float x)</a> </p>
+
+</div>
+</div>
+<a class="anchor" id="a38e4a0026626f8e2ed9c368d399a1e2d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define COSINE_FPTR&#160;&#160;&#160;<a class="el" href="native__functions_8h.html#ae40e82d767432abe028707bdab8f6245">VOID_PTR</a>(0x80326200)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>float cosine(float x) </p>
 
 </div>
 </div>
@@ -437,20 +428,29 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ae40e82d767432abe028707bdab8f6245"></a>
+<a class="anchor" id="af1eb56d4f85c6310fa3c7d16cee9c6f8"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define VOID_PTR</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">x</td><td>)</td>
-          <td>&#160;&#160;&#160;((void*) (x))</td>
+          <td class="memname">#define ABS_VAL_FPTR&#160;&#160;&#160;<a class="el" href="native__functions_8h.html#ae40e82d767432abe028707bdab8f6245">VOID_PTR</a>(0x803261b4)</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Cast address to <code>void*</code> - make it a function pointer </p>
+<p>float <a class="el" href="math_8h.html#a0bc70d364c7f180aece2381faae7eafc" title="Absolute value of x. ">fabs(float x)</a> </p>
+
+</div>
+</div>
+<a class="anchor" id="ac70f0540ee7d4b5655eda1d4e08dcaf4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RECIP_SQRT_FPTR&#160;&#160;&#160;<a class="el" href="native__functions_8h.html#ae40e82d767432abe028707bdab8f6245">VOID_PTR</a>(0x80022df8);</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>float <a class="el" href="math_8h.html#a989820d8d92331f09a5f344cfcdd62f2" title=" 1 / sqrt(x)  ">recipSqrt(float x)</a> </p>
 
 </div>
 </div>

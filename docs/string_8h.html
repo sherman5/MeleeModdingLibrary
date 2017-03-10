@@ -140,44 +140,6 @@ Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Handle all string operations. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="a35421824dcbf91c218555d394466a4cc"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">char* itoa </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="gctypes_8h.html#ae9b1af5c037e57a98884758875d3a7c4">s32</a>&#160;</td>
-          <td class="paramname"><em>n</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>s</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Convert integer to string</p>
-<p>Converts an integer value to a null-terminated string using base 10 and stores the result in the array given by <code>s</code>.</p>
-<p><code>s</code> should be an array long enough to contain any possible value, i.e. 33 bits in a 32-bit platform.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">n</td><td>- Value to be converted to a string. </td></tr>
-    <tr><td class="paramname">s</td><td>- Array in memory where to store the resulting null-terminated string.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>A pointer to the resulting null-terminated string, same as parameter <code>s</code>.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a href="http://www.cplusplus.com/reference/cstdlib/itoa/">http://www.cplusplus.com/reference/cstdlib/itoa/</a> </dd></dl>
-
-</div>
-</div>
 <a class="anchor" id="a276c5d14b4ca8ffa447a0b30333074f1"></a>
 <div class="memitem">
 <div class="memproto">
@@ -267,6 +229,282 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Returns an integral value indicating the relationship between the content of the memory blocks: &lt;0 - first byte that does not match has lower value in ptr1 0 - contents of memory blocks are equal &gt;0 - first byte that does not match has higher value in ptr1</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a href="http://www.cplusplus.com/reference/cstring/memcmp/">http://www.cplusplus.com/reference/cstring/memcmp/</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a6f9b74a78f52900b76ed77c50e0c8b3a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* strchr </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>character</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Locate first occurrence of character in string. </p>
+<p>Returns a pointer to the first occurrence of <code>character</code> in the C string str.</p>
+<p>The terminating null-character is considered part of the C string. Therefore, it can also be located in order to retrieve a pointer to the end of a string.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>- C string </td></tr>
+    <tr><td class="paramname">character</td><td>- Character to be located. It is passed as its <code>int</code> promotion, but it is internally converted back to <code>char</code> for the comparison.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A pointer to the first occurrence of <code>character</code> in <code>str</code>. If the character is not found, the function returns a null pointer.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a href="http://www.cplusplus.com/reference/cstring/strchr/">http://www.cplusplus.com/reference/cstring/strchr/</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a6f3dcb20ff11ff9db5904c3cfb61a38c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int strcmp </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>str1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>str2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compare two strings. </p>
+<p>Compares the C string <code>str1</code> to the C string <code>str2</code>.</p>
+<p>This function starts comparing the first character of each string. If they are equal to each other, it continues with the following pairs until the characters differ or until a terminating null-character is reached.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str1</td><td>- C string to be compared </td></tr>
+    <tr><td class="paramname">str2</td><td>- C string to be compared</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns an integral value indicating the relationship between the strings &lt;0 - first character that does not match has lower value in ptr1 0 - contents of strings are equal &gt;0 - first character that does not match has higher value in ptr1</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a href="http://www.cplusplus.com/reference/cstring/strcmp/">http://www.cplusplus.com/reference/cstring/strcmp/</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a6666865e6caf66fd05d4b8bd6c074cd2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int strncmp </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>str1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>str2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="gctypes_8h.html#aedaf31b3f7716640e70205644b9b828e">size_t</a>&#160;</td>
+          <td class="paramname"><em>num</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compare characters of two strings. </p>
+<p>Compares up to <code>num</code> characters of the C string <code>str1</code> to those of the C string <code>str2</code>. This function starts comparing the first character of each string. If they are equal to each other, it continues with the following pairs until the characters differ, until a terminating null-character is reached, or until <code>num</code> characters match in both strings, whichever happens first.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str1</td><td>- C string to be compared </td></tr>
+    <tr><td class="paramname">str2</td><td>- C string to be compared </td></tr>
+    <tr><td class="paramname">num</td><td>- Maximum number of characters to compare</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns an integral value indicating the relationship between the strings &lt;0 - first character that does not match has lower value in ptr1 0 - contents of strings are equal &gt;0 - first character that does not match has higher value in ptr1</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a href="http://www.cplusplus.com/reference/cstring/strncmp/">http://www.cplusplus.com/reference/cstring/strncmp/</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ac137d536ff0037b3856083cb8a1c19a7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* strcpy </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>destination</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>source</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Copy string</p>
+<p>Copies the C string pointed by <code>source</code> into the array pointed by <code>destination</code>, including the terminating null character (and stopping at that point).</p>
+<p>To avoid overflows, the size of the array pointed by <code>destination</code> shall be long enough to contain the same C string as source (including the terminating null character), and should not overlap in memory with <code>source</code>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">destination</td><td>- Pointer to the destination array where the content is to be copied. </td></tr>
+    <tr><td class="paramname">source</td><td>- C string to be copied.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>destination is returned.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a href="http://www.cplusplus.com/reference/cstring/strcpy/">http://www.cplusplus.com/reference/cstring/strcpy/</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ac25b4990403370b02ac7f8403a6b3230"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* strncpy </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>destination</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>source</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="gctypes_8h.html#aedaf31b3f7716640e70205644b9b828e">size_t</a>&#160;</td>
+          <td class="paramname"><em>num</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Copy characters from string. </p>
+<p>Copies the first <code>num</code> characters of source to <code>destination</code>. If the end of the <code>source</code> C string (which is signaled by a null-character) is found before <code>num</code> characters have been copied, <code>destination</code> is padded with zeros until a total of <code>num</code> characters have been written to it.</p>
+<p>No null-character is implicitly appended at the end of <code>destination</code> if source is longer than <code>num</code>. Thus, in this case, <code>destination</code> shall not be considered a null terminated C string (reading it as such would overflow).</p>
+<p>destination and source shall not overlap</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">destination</td><td>- Pointer to the destination array where the content is to be copied. </td></tr>
+    <tr><td class="paramname">source</td><td>- C string to be copied. </td></tr>
+    <tr><td class="paramname">num</td><td>- Maximum number of characters to be copied from source.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>destination is returned.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a href="http://www.cplusplus.com/reference/cstring/strncpy/">http://www.cplusplus.com/reference/cstring/strncpy/</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a008e171a518fe0e0352f31b245e03875"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="gctypes_8h.html#aedaf31b3f7716640e70205644b9b828e">size_t</a> strlen </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>str</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get string length. </p>
+<p>Returns the length of the C string str.</p>
+<p>The length of a C string is determined by the terminating null-character: A C string is as long as the number of characters between the beginning of the string and the terminating null character (without including the terminating null character itself).</p>
+<p>This should not be confused with the size of the array that holds the string. For example:</p>
+<p><code>char</code> <code>mystr</code>[100]="test string";</p>
+<p>defines an array of characters with a size of 100 chars, but the C string with which mystr has been initialized has a length of only 11 characters. Therefore, while <code>sizeof(mystr)</code> evaluates to 100, <code>strlen(mystr)</code> returns 11.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>- C string.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The length of string. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a35421824dcbf91c218555d394466a4cc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* itoa </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="gctypes_8h.html#ae9b1af5c037e57a98884758875d3a7c4">s32</a>&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>s</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Convert integer to string</p>
+<p>Converts an integer value to a null-terminated string using base 10 and stores the result in the array given by <code>s</code>.</p>
+<p><code>s</code> should be an array long enough to contain any possible value, i.e. 33 bits in a 32-bit platform.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>- Value to be converted to a string. </td></tr>
+    <tr><td class="paramname">s</td><td>- Array in memory where to store the resulting null-terminated string.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A pointer to the resulting null-terminated string, same as parameter <code>s</code>.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a href="http://www.cplusplus.com/reference/cstdlib/itoa/">http://www.cplusplus.com/reference/cstdlib/itoa/</a> </dd></dl>
 
 </div>
 </div>
@@ -398,244 +636,6 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><code>destination</code> is returned.</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a href="http://www.cplusplus.com/reference/cstring/strcat/">http://www.cplusplus.com/reference/cstring/strcat/</a> </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="a6f9b74a78f52900b76ed77c50e0c8b3a"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">char* strchr </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>str</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>character</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Locate first occurrence of character in string. </p>
-<p>Returns a pointer to the first occurrence of <code>character</code> in the C string str.</p>
-<p>The terminating null-character is considered part of the C string. Therefore, it can also be located in order to retrieve a pointer to the end of a string.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">str</td><td>- C string </td></tr>
-    <tr><td class="paramname">character</td><td>- Character to be located. It is passed as its <code>int</code> promotion, but it is internally converted back to <code>char</code> for the comparison.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>A pointer to the first occurrence of <code>character</code> in <code>str</code>. If the character is not found, the function returns a null pointer.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a href="http://www.cplusplus.com/reference/cstring/strchr/">http://www.cplusplus.com/reference/cstring/strchr/</a> </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="a6f3dcb20ff11ff9db5904c3cfb61a38c"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int strcmp </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>str1</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>str2</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Compare two strings. </p>
-<p>Compares the C string <code>str1</code> to the C string <code>str2</code>.</p>
-<p>This function starts comparing the first character of each string. If they are equal to each other, it continues with the following pairs until the characters differ or until a terminating null-character is reached.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">str1</td><td>- C string to be compared </td></tr>
-    <tr><td class="paramname">str2</td><td>- C string to be compared</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Returns an integral value indicating the relationship between the strings &lt;0 - first character that does not match has lower value in ptr1 0 - contents of strings are equal &gt;0 - first character that does not match has higher value in ptr1</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a href="http://www.cplusplus.com/reference/cstring/strcmp/">http://www.cplusplus.com/reference/cstring/strcmp/</a> </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ac137d536ff0037b3856083cb8a1c19a7"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">char* strcpy </td>
-          <td>(</td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>destination</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>source</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Copy string</p>
-<p>Copies the C string pointed by <code>source</code> into the array pointed by <code>destination</code>, including the terminating null character (and stopping at that point).</p>
-<p>To avoid overflows, the size of the array pointed by <code>destination</code> shall be long enough to contain the same C string as source (including the terminating null character), and should not overlap in memory with <code>source</code>.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">destination</td><td>- Pointer to the destination array where the content is to be copied. </td></tr>
-    <tr><td class="paramname">source</td><td>- C string to be copied.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>destination is returned.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a href="http://www.cplusplus.com/reference/cstring/strcpy/">http://www.cplusplus.com/reference/cstring/strcpy/</a> </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="a008e171a518fe0e0352f31b245e03875"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="gctypes_8h.html#aedaf31b3f7716640e70205644b9b828e">size_t</a> strlen </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>str</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Get string length. </p>
-<p>Returns the length of the C string str.</p>
-<p>The length of a C string is determined by the terminating null-character: A C string is as long as the number of characters between the beginning of the string and the terminating null character (without including the terminating null character itself).</p>
-<p>This should not be confused with the size of the array that holds the string. For example:</p>
-<p><code>char</code> <code>mystr</code>[100]="test string";</p>
-<p>defines an array of characters with a size of 100 chars, but the C string with which mystr has been initialized has a length of only 11 characters. Therefore, while <code>sizeof(mystr)</code> evaluates to 100, <code>strlen(mystr)</code> returns 11.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">str</td><td>- C string.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The length of string. </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="a6666865e6caf66fd05d4b8bd6c074cd2"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int strncmp </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>str1</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>str2</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="gctypes_8h.html#aedaf31b3f7716640e70205644b9b828e">size_t</a>&#160;</td>
-          <td class="paramname"><em>num</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Compare characters of two strings. </p>
-<p>Compares up to <code>num</code> characters of the C string <code>str1</code> to those of the C string <code>str2</code>. This function starts comparing the first character of each string. If they are equal to each other, it continues with the following pairs until the characters differ, until a terminating null-character is reached, or until <code>num</code> characters match in both strings, whichever happens first.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">str1</td><td>- C string to be compared </td></tr>
-    <tr><td class="paramname">str2</td><td>- C string to be compared </td></tr>
-    <tr><td class="paramname">num</td><td>- Maximum number of characters to compare</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Returns an integral value indicating the relationship between the strings &lt;0 - first character that does not match has lower value in ptr1 0 - contents of strings are equal &gt;0 - first character that does not match has higher value in ptr1</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a href="http://www.cplusplus.com/reference/cstring/strncmp/">http://www.cplusplus.com/reference/cstring/strncmp/</a> </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ac25b4990403370b02ac7f8403a6b3230"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">char* strncpy </td>
-          <td>(</td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>destination</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>source</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="gctypes_8h.html#aedaf31b3f7716640e70205644b9b828e">size_t</a>&#160;</td>
-          <td class="paramname"><em>num</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Copy characters from string. </p>
-<p>Copies the first <code>num</code> characters of source to <code>destination</code>. If the end of the <code>source</code> C string (which is signaled by a null-character) is found before <code>num</code> characters have been copied, <code>destination</code> is padded with zeros until a total of <code>num</code> characters have been written to it.</p>
-<p>No null-character is implicitly appended at the end of <code>destination</code> if source is longer than <code>num</code>. Thus, in this case, <code>destination</code> shall not be considered a null terminated C string (reading it as such would overflow).</p>
-<p>destination and source shall not overlap</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">destination</td><td>- Pointer to the destination array where the content is to be copied. </td></tr>
-    <tr><td class="paramname">source</td><td>- C string to be copied. </td></tr>
-    <tr><td class="paramname">num</td><td>- Maximum number of characters to be copied from source.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>destination is returned.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a href="http://www.cplusplus.com/reference/cstring/strncpy/">http://www.cplusplus.com/reference/cstring/strncpy/</a> </dd></dl>
 
 </div>
 </div>

@@ -11,7 +11,6 @@ var searchData=
   ['controller',['Controller',['../controller_8h.html#struct_controller',1,'Controller'],['../ai_8h.html#ae15ef9aade3aea2288e6a8cbd5406758',1,'ControllerInput::controller()'],['../ai_8h.html#a872eb72dc091dfc922f3461989909363',1,'AI::controller()'],['../moves_8h.html#ae15ef9aade3aea2288e6a8cbd5406758',1,'RawInput::controller()']]],
   ['controller_2eh',['controller.h',['../controller_8h.html',1,'']]],
   ['controllerinput',['ControllerInput',['../ai_8h.html#struct_controller_input',1,'']]],
-  ['coordinates',['coordinates',['../game__state_8h.html#ac0a87e800ccb7f350952a6664aecb332',1,'PlayerData']]],
   ['cos',['cos',['../math_8h.html#a5e88e48c21b60ac9b58a322cf8a8bb67',1,'math.c']]],
   ['cosine_5ffptr',['COSINE_FPTR',['../native__functions_8h.html#a38e4a0026626f8e2ed9c368d399a1e2d',1,'native_functions.h']]],
   ['cstick_5fdown',['CSTICK_DOWN',['../controller_8h.html#ae2ac2e5d1765619532ad6a1b4b512898',1,'controller.h']]],
@@ -19,6 +18,6 @@ var searchData=
   ['cstick_5fright',['CSTICK_RIGHT',['../controller_8h.html#aba382980545a3dcad56e70cc081f84e7',1,'controller.h']]],
   ['cstick_5fup',['CSTICK_UP',['../controller_8h.html#a070e26602a3212dccd5b8996f532e524',1,'controller.h']]],
   ['cstickx',['CstickX',['../controller_8h.html#a7429e9bcd7b9ca314227695941ec3d69',1,'Controller']]],
-  ['csticky',['CstickY',['../controller_8h.html#a1562d14c5ef143bfdff66199226f7b9d',1,'Controller']]],
+  ['csticky',['CstickY',['../controller_8h.html#a1562d14c5ef143bfdff66199226f7b9d',1,'Controller::CstickY()'],['../game__state_8h.html#afd2dbd1e607987a9f8d082870db1e00d',1,'PlayerData::cStickY()']]],
   ['current_5fframe',['CURRENT_FRAME',['../game__state_8h.html#a06fbdafea52b39af9a0d2e70b20b4735',1,'game_state.h']]]
 ];

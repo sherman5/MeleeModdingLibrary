@@ -54,6 +54,11 @@ void updateGameState()
     _gameState.playerData[3] = playerData(3);
     _gameState.playerData[4] = playerData(4);
 
+    _gameState.playerBlock[1] = (PlayerBlock*) 0x80453080;
+    _gameState.playerBlock[2] = (PlayerBlock*) 0x80453f10;
+    _gameState.playerBlock[3] = (PlayerBlock*) 0x80454da0;
+    _gameState.playerBlock[4] = (PlayerBlock*) 0x80455c30;
+
     _gameState.stage.name = STAGE_ID;
 
     switch (_gameState.stage.name)

@@ -1,6 +1,7 @@
 var searchData=
 [
   ['l_5fbutton',['L_BUTTON',['../controller_8h.html#a78883cb33621a5e24f4e56bcf8732020',1,'controller.h']]],
+  ['lastposition',['lastPosition',['../game__state_8h.html#a76d10d132a9de6e7a692cf9c0c7273bf',1,'PlayerData']]],
   ['ledge',['ledge',['../game__state_8h.html#a461feb85b39e300ba75106c98e6e7080',1,'Stage']]],
   ['ledgedash',['LEDGEDASH',['../moves_8h.html#a529f467b48167a2e33a40a835561aaaa',1,'moves.h']]],
   ['left',['left',['../game__state_8h.html#a7d10b0c779bad3aabf067d52035f7052',1,'Platform']]],

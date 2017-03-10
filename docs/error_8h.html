@@ -183,12 +183,146 @@ Variables</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>handle run-time errors </p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a class="anchor" id="a60db3d3e5c5fb314c0d698922d0b7124"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ERROR_STATE&#160;&#160;&#160;<a class="el" href="error_8h.html#ac7d80a3eb9f295abf7a00fd5411bf6ba">_errorState</a>;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>true as soon as one error throw </p>
+
+</div>
+</div>
+<a class="anchor" id="a0099faec25b2b4649490d7f562ade34e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ERROR_THROWN</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">code</td><td>)</td>
+          <td>&#160;&#160;&#160;(<a class="el" href="error_8h.html#ac7d80a3eb9f295abf7a00fd5411bf6ba">_errorState</a> &amp; (code))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>check if error code has been thrown </p>
+
+</div>
+</div>
 <a class="anchor" id="abe0e0e5d41bcdf7365b58faf284d55b1"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">#define ERR_1&#160;&#160;&#160;(1 &lt;&lt; 0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Error Code </p>
+
+</div>
+</div>
+<a class="anchor" id="a012097e952ead190cc831d35441d1828"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ERR_2&#160;&#160;&#160;(1 &lt;&lt; 1)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Error Code </p>
+
+</div>
+</div>
+<a class="anchor" id="ab90bfbd2a8eb7519c0d0dc5098b9a281"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ERR_3&#160;&#160;&#160;(1 &lt;&lt; 2)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Error Code </p>
+
+</div>
+</div>
+<a class="anchor" id="a76e4c62cff81f41c203a1055c05f224d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ERR_4&#160;&#160;&#160;(1 &lt;&lt; 3)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Error Code </p>
+
+</div>
+</div>
+<a class="anchor" id="a8d7a9415f9f39dcab0fd998d1b6abd32"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ERR_5&#160;&#160;&#160;(1 &lt;&lt; 4)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Error Code </p>
+
+</div>
+</div>
+<a class="anchor" id="a787a962fcf3e7d2fe874c605cf0b97d7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ERR_6&#160;&#160;&#160;(1 &lt;&lt; 5)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Error Code </p>
+
+</div>
+</div>
+<a class="anchor" id="a8bba8a97454ca8c09e04e8a9c88ba6e6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ERR_7&#160;&#160;&#160;(1 &lt;&lt; 6)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Error Code </p>
+
+</div>
+</div>
+<a class="anchor" id="a45f5fb50712d5336e0b90ecb11b51383"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ERR_8&#160;&#160;&#160;(1 &lt;&lt; 7)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Error Code </p>
+
+</div>
+</div>
+<a class="anchor" id="a1c2d6b2d90865a8010ddb14268662072"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ERR_9&#160;&#160;&#160;(1 &lt;&lt; 8)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -326,19 +460,6 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a012097e952ead190cc831d35441d1828"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define ERR_2&#160;&#160;&#160;(1 &lt;&lt; 1)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Error Code </p>
-
-</div>
-</div>
 <a class="anchor" id="a62c46bd16d82b73650b04cf33d88b85e"></a>
 <div class="memitem">
 <div class="memproto">
@@ -469,19 +590,6 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ab90bfbd2a8eb7519c0d0dc5098b9a281"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define ERR_3&#160;&#160;&#160;(1 &lt;&lt; 2)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Error Code </p>
-
-</div>
-</div>
 <a class="anchor" id="a9ad2467e024cf16be24d8571cea85092"></a>
 <div class="memitem">
 <div class="memproto">
@@ -518,114 +626,6 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Error Code </p>
-
-</div>
-</div>
-<a class="anchor" id="a76e4c62cff81f41c203a1055c05f224d"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define ERR_4&#160;&#160;&#160;(1 &lt;&lt; 3)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Error Code </p>
-
-</div>
-</div>
-<a class="anchor" id="a8d7a9415f9f39dcab0fd998d1b6abd32"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define ERR_5&#160;&#160;&#160;(1 &lt;&lt; 4)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Error Code </p>
-
-</div>
-</div>
-<a class="anchor" id="a787a962fcf3e7d2fe874c605cf0b97d7"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define ERR_6&#160;&#160;&#160;(1 &lt;&lt; 5)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Error Code </p>
-
-</div>
-</div>
-<a class="anchor" id="a8bba8a97454ca8c09e04e8a9c88ba6e6"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define ERR_7&#160;&#160;&#160;(1 &lt;&lt; 6)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Error Code </p>
-
-</div>
-</div>
-<a class="anchor" id="a45f5fb50712d5336e0b90ecb11b51383"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define ERR_8&#160;&#160;&#160;(1 &lt;&lt; 7)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Error Code </p>
-
-</div>
-</div>
-<a class="anchor" id="a1c2d6b2d90865a8010ddb14268662072"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define ERR_9&#160;&#160;&#160;(1 &lt;&lt; 8)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Error Code </p>
-
-</div>
-</div>
-<a class="anchor" id="a60db3d3e5c5fb314c0d698922d0b7124"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define ERROR_STATE&#160;&#160;&#160;<a class="el" href="error_8h.html#ac7d80a3eb9f295abf7a00fd5411bf6ba">_errorState</a>;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>true as soon as one error throw </p>
-
-</div>
-</div>
-<a class="anchor" id="a0099faec25b2b4649490d7f562ade34e"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define ERROR_THROWN</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">code</td><td>)</td>
-          <td>&#160;&#160;&#160;(<a class="el" href="error_8h.html#ac7d80a3eb9f295abf7a00fd5411bf6ba">_errorState</a> &amp; (code))</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>check if error code has been thrown </p>
 
 </div>
 </div>

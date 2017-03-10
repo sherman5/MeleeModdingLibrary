@@ -146,17 +146,6 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:a3bef058dfaa1001fd949575a5c096f7b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game__state_8h.html#a3bef058dfaa1001fd949575a5c096f7b">StageName</a> { <br />
-&#160;&#160;<a class="el" href="game__state_8h.html#a3bef058dfaa1001fd949575a5c096f7ba2389caa81dbbe28766fb109fb5845779">YOSHIS</a> = 0x06, 
-<a class="el" href="game__state_8h.html#a3bef058dfaa1001fd949575a5c096f7baf7d41671b6d5bdd929e5f95e823eee18">FOUNTAIN</a> = 0x08, 
-<a class="el" href="game__state_8h.html#a3bef058dfaa1001fd949575a5c096f7ba5679f940524cd008f5964f077c4944e5">STADIUM</a> = 0x12, 
-<a class="el" href="game__state_8h.html#a3bef058dfaa1001fd949575a5c096f7bab1e24519544214baf649205a919da1a5">BATTLEFIELD</a> = 0x18, 
-<br />
-&#160;&#160;<a class="el" href="game__state_8h.html#a3bef058dfaa1001fd949575a5c096f7bafb43b8264ea4d3dd9957ba1b3fd3f3d5">FINAL</a> = 0x19, 
-<a class="el" href="game__state_8h.html#a3bef058dfaa1001fd949575a5c096f7ba6a9651d6b011d8b789b6898a6f496179">DREAMLAND</a> = 0x1a
-<br />
- }</td></tr>
-<tr class="separator:a3bef058dfaa1001fd949575a5c096f7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -227,18 +216,18 @@ right</td>
 </div><table class="fieldtable">
 <tr><th colspan="3">Data Fields</th></tr>
 <tr><td class="fieldtype">
-<a class="anchor" id="a461feb85b39e300ba75106c98e6e7080"></a><a class="el" href="math_8h.html#struct_point">Point</a></td>
-<td class="fieldname">
-ledge</td>
-<td class="fielddoc">
-<p>coordinates of right ledge of stage </p>
-</td></tr>
-<tr><td class="fieldtype">
 <a class="anchor" id="ae5de202db7a51a10da84622553c8c132"></a><a class="el" href="game__state_8h.html#a3bef058dfaa1001fd949575a5c096f7b">StageName</a></td>
 <td class="fieldname">
 name</td>
 <td class="fielddoc">
 <p>Name of <a class="el" href="game__state_8h.html#struct_stage" title="Stage Information. ">Stage</a> </p>
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a461feb85b39e300ba75106c98e6e7080"></a><a class="el" href="math_8h.html#struct_point">Point</a></td>
+<td class="fieldname">
+ledge</td>
+<td class="fielddoc">
+<p>coordinates of right ledge of stage </p>
 </td></tr>
 <tr><td class="fieldtype">
 <a class="anchor" id="ac4dd3440fc84194ed44beb9c908002c5"></a><a class="el" href="game__state_8h.html#struct_platform">Platform</a></td>
@@ -278,41 +267,6 @@ actionState</td>
 <p>current action state of player </p>
 </td></tr>
 <tr><td class="fieldtype">
-<a class="anchor" id="aae601f3ffc327aaccc7db81fdca4cc8d"></a><a class="el" href="gctypes_8h.html#a92c50087ca0e64fa93fc59402c55f8ca">u8</a></td>
-<td class="fieldname">
-aiLevel</td>
-<td class="fielddoc">
-<p>cpu level selected on CSS </p>
-</td></tr>
-<tr><td class="fieldtype">
-<a class="anchor" id="a905aabfb033398610f5dc873a26f8a4e"></a>float</td>
-<td class="fieldname">
-breakoutCountdown</td>
-<td class="fielddoc">
-<p>frames until breakout of grab </p>
-</td></tr>
-<tr><td class="fieldtype">
-<a class="anchor" id="ac0a87e800ccb7f350952a6664aecb332"></a><a class="el" href="math_8h.html#struct_point">Point</a></td>
-<td class="fieldname">
-coordinates</td>
-<td class="fielddoc">
-<p>coordinates of player </p>
-</td></tr>
-<tr><td class="fieldtype">
-<a class="anchor" id="ae1e015d5b0c757668724e59b3aebbb02"></a>float</td>
-<td class="fieldname">
-damageDirection</td>
-<td class="fielddoc">
-<p>-1, 1 depending on direction sent </p>
-</td></tr>
-<tr><td class="fieldtype">
-<a class="anchor" id="ada36c7a47994ee0e9f02453fe5394617"></a><a class="el" href="math_8h.html#struct_point">Point</a></td>
-<td class="fieldname">
-deltaCoordinates</td>
-<td class="fielddoc">
-<p>change in coordinates from last frame </p>
-</td></tr>
-<tr><td class="fieldtype">
 <a class="anchor" id="a8743d29d16a4095b6bc5992da02df052"></a>float</td>
 <td class="fieldname">
 facingDirection</td>
@@ -320,18 +274,76 @@ facingDirection</td>
 <p>-1 facing left, 1 facing right </p>
 </td></tr>
 <tr><td class="fieldtype">
-<a class="anchor" id="aeabac9c664bbd89b43d8cd445b0d881e"></a>float</td>
+<a class="anchor" id="a52073bc9a23a47de28060cac9cce34d3"></a>float</td>
 <td class="fieldname">
-hitlag</td>
+xSpeedSelfAir</td>
 <td class="fielddoc">
-<p>remaining frames of hitlag </p>
 </td></tr>
 <tr><td class="fieldtype">
-<a class="anchor" id="a2b4f39c25bd32da726744bb06248c755"></a>float</td>
+<a class="anchor" id="a29b8bafc9ed91e0c95cc63d85a207913"></a>float</td>
 <td class="fieldname">
-hitstun</td>
+ySpeedSelf</td>
 <td class="fielddoc">
-<p>remaining frames of hitstun </p>
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a6459bd9720a1436b66215b631c515ddb"></a>float</td>
+<td class="fieldname">
+zSpeedSelf</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a7c58bd9e571af7b763fc3a101a205e19"></a>float</td>
+<td class="fieldname">
+xSpeedAttack</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a0aa8981f7d518218988aad3aaf332226"></a>float</td>
+<td class="fieldname">
+ySpeedAttack</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a7965303846c7aa3be2735889d4c27fff"></a>float</td>
+<td class="fieldname">
+zSpeedAttack</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="ac0a87e800ccb7f350952a6664aecb332"></a><a class="el" href="math_8h.html#struct_point">Point</a></td>
+<td class="fieldname">
+coordinates</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="ad87e052f0e4014fa9e146b4619ab2cb6"></a>float</td>
+<td class="fieldname">
+zPosition</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="af2afa3b0481867fe393f67c94881f176"></a><a class="el" href="math_8h.html#struct_point">Point</a></td>
+<td class="fieldname">
+prevCoordinates</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="af72f3073f8b51f6bcbdd6ffd6661a192"></a>float</td>
+<td class="fieldname">
+zPrevious</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="ada36c7a47994ee0e9f02453fe5394617"></a><a class="el" href="math_8h.html#struct_point">Point</a></td>
+<td class="fieldname">
+deltaCoordinates</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="ab8470d4143a1327468c047f7a6e9a0ce"></a>float</td>
+<td class="fieldname">
+zDelta</td>
+<td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
 <a class="anchor" id="a539a7ad4f347d49ddfd539375d6ba7e4"></a><a class="el" href="gctypes_8h.html#a6a912bf1d80625256884f11a0ea1d5fd">bool</a></td>
@@ -341,25 +353,374 @@ inAir</td>
 <p>true if player is in air </p>
 </td></tr>
 <tr><td class="fieldtype">
+<a class="anchor" id="ab22ecee70d96f78c38ba5e3563c324d6"></a>float</td>
+<td class="fieldname">
+xSpeedSelfGround</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a00b5b045a046efdf0b1fddc3207bb5d5"></a>float</td>
+<td class="fieldname">
+walkInitialVelocity</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a8b72457b1a0778f9c52fbccb57bd7ab9"></a>float</td>
+<td class="fieldname">
+walkAcceleration</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="ac672abd4f5c9d164bd10d827e1c96c29"></a>float</td>
+<td class="fieldname">
+walkMaximumVelocity</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="aaa595f7dfaf7f1b08c837e2f9c2a02a6"></a>float</td>
+<td class="fieldname">
+slowWalkMax</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a22a65706f892353c9c59f41ea7d3dccb"></a>float</td>
+<td class="fieldname">
+midWalkPoint</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a40e63392d95bea184dd1c15240f3d19f"></a>float</td>
+<td class="fieldname">
+fastWalkMin</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="ae1b473f20b493d6d3e6fb293423201ff"></a>float</td>
+<td class="fieldname">
+groundFriction</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="afcb8dd41317a8d8653c059899b6b5e1f"></a>float</td>
+<td class="fieldname">
+dashInitialVelocity</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a77b0280ec2af8ce78232182709835a2e"></a>float</td>
+<td class="fieldname">
+dashAccelerationA</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a6e8b0044653e88111df9937708f5b528"></a>float</td>
+<td class="fieldname">
+dashAcceleationB</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a30cd7393f804596a4d2ee937def7f203"></a>float</td>
+<td class="fieldname">
+dashTerminalVelocity</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a6208a1d1a2f03496610b9da84924e3b7"></a>float</td>
+<td class="fieldname">
+runAnimationScaling</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a4aa8390848fa1bfa42102b77d7b640a1"></a>float</td>
+<td class="fieldname">
+runAcceleration</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a044055eb76de1a24b531fb978be068c4"></a>float</td>
+<td class="fieldname">
+groundedMaxHorizontalVelocity</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
 <a class="anchor" id="a49b85c04f0f75462bf03e52e800a4ee8"></a>float</td>
 <td class="fieldname">
 jumpSquat</td>
 <td class="fielddoc">
-<p>frames of jumpsquat </p>
 </td></tr>
 <tr><td class="fieldtype">
-<a class="anchor" id="a2449fbf5369ec754882d151650cf4486"></a><a class="el" href="gctypes_8h.html#a92c50087ca0e64fa93fc59402c55f8ca">u8</a></td>
+<a class="anchor" id="a8459458095bcd36c78e5ce19f12ec802"></a>float</td>
 <td class="fieldname">
-jumpsUsed</td>
+jumpHorizontalInitialVelocity</td>
 <td class="fielddoc">
-<p>number of jumps already used </p>
 </td></tr>
 <tr><td class="fieldtype">
-<a class="anchor" id="ac2a49d33a233497bfa8c8717acd7b047"></a><a class="el" href="gctypes_8h.html#afaa62991928fb9fb18ff0db62a040aba">u32</a></td>
+<a class="anchor" id="a636d8cd748cf8d58417cebc3917fc075"></a>float</td>
 <td class="fieldname">
-knockbackAngle</td>
+jumpVerticalInitialVelocity</td>
 <td class="fielddoc">
-<p>angle of knockback [0, 360], 361 = sakurai </p>
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a548ce9561a545d6066d5824205693412"></a>float</td>
+<td class="fieldname">
+groundToAirJumpMomentum</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a85e571deb3a364bd544d37ce62d801b5"></a>float</td>
+<td class="fieldname">
+jumpHorizontalMaxVelocity</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a3d48de0adf00b3b41ff1fc20ec58300f"></a>float</td>
+<td class="fieldname">
+hopVerticalInitialVelocity</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a50e48109640349da0127cd56b3d5e5c7"></a>float</td>
+<td class="fieldname">
+airJumpVerticalMultiplier</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="ad80eb26492576eb0676607b0d1262588"></a>float</td>
+<td class="fieldname">
+airJumpHorizontalMultiplier</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="acaafbc51217a3748c212e1d78079fdcb"></a>float</td>
+<td class="fieldname">
+numberOfJumps</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a31924e6c9b17aad7f861e818b8be5d8f"></a>float</td>
+<td class="fieldname">
+gravity</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a7ee556626071ca2b393bb6f92ec7e066"></a>float</td>
+<td class="fieldname">
+terminalVelocity</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a37a8b70bf933e71c4f130a42fb7d35ca"></a>float</td>
+<td class="fieldname">
+airMobilityA</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a9b4f43e2bb5bc9f8ab0ad246927a5d3e"></a>float</td>
+<td class="fieldname">
+airMobilityB</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a7cce30e77b3e40c067e6d67ab3759c47"></a>float</td>
+<td class="fieldname">
+maxHorizontalAirMobility</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a8017a97e35a9da7652d76a27c8200a0d"></a>float</td>
+<td class="fieldname">
+horizontalAirFriction</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a8a7a06d638c6983e18c504d8e35187ea"></a>float</td>
+<td class="fieldname">
+fastfallVelocity</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a41678b631c9139c175a3c29978ac338e"></a>float</td>
+<td class="fieldname">
+jab2inputWindow</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="abada9ef6bf461c78f5be348b72885a89"></a>float</td>
+<td class="fieldname">
+jab3inputWindow</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="ada40b4b1d475d11ff05384388fd27b0b"></a>float</td>
+<td class="fieldname">
+framesToChangeDirection</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a8128625c9e3fd04c27b82957732d8781"></a>float</td>
+<td class="fieldname">
+weight</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a97f3340ea108a1d3c20faac836c5ce6d"></a>float</td>
+<td class="fieldname">
+modelScaling</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="abb17f54e01f013a1a160ab5e2d0109fb"></a>float</td>
+<td class="fieldname">
+shieldSize</td>
+<td class="fielddoc">
+<p>size of shield </p>
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a090417244aeadafca063864b39960512"></a>float</td>
+<td class="fieldname">
+shieldBreakInitialVelocity</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a89eff64248b60bdb37296a777d3e28c8"></a>float</td>
+<td class="fieldname">
+rapidJabWindow</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a896d69941fa2ddf09af0e5cc9e7159e2"></a>float</td>
+<td class="fieldname">
+normalLandingLag</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="aecc9cb1044b2660e557a8c73aaa6f1f4"></a>float</td>
+<td class="fieldname">
+nairLandingLag</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a4e7067210eabb3178bd9c41ae9d4e0e5"></a>float</td>
+<td class="fieldname">
+fairLandingLag</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a82cb425f4274b20d476f7595c923ea45"></a>float</td>
+<td class="fieldname">
+bairLandingLag</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="acc3e3408bc0b4d32d78ef78b342a8631"></a>float</td>
+<td class="fieldname">
+uairLandingLag</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a8155bd9767cab73739fd7e0e5ef1772f"></a>float</td>
+<td class="fieldname">
+dairLandingLag</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a3cb2b5cacef5b22e8d97f8b031d16e20"></a>float</td>
+<td class="fieldname">
+wallJumpHorizontalVelocity</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a276221125836307f3d5e0158c7efd698"></a>float</td>
+<td class="fieldname">
+wallJumpVerticalVelocity</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="aa3ef56323c20e08a4f5f010676be71a2"></a>float</td>
+<td class="fieldname">
+analogStickX</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a869f0327e35e10f3f3fad80ddf545eba"></a>float</td>
+<td class="fieldname">
+analogStickY</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="ad220d46d7551ca071917ad1db4ae465d"></a>float</td>
+<td class="fieldname">
+prevAnalogStickX</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a51007d8a49cd68d7a5805f2b662bef52"></a>float</td>
+<td class="fieldname">
+prevAnalogStickY</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a592b045341efa9b3125a8c872f933c9a"></a>float</td>
+<td class="fieldname">
+cStickX</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="afd2dbd1e607987a9f8d082870db1e00d"></a>float</td>
+<td class="fieldname">
+cStickY</td>
+<td class="fielddoc">
+<p>-1.0 to 1.0 -1.0 to 1.0 </p>
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="acbf6d032370749b90b9507fa37acb3b4"></a>float</td>
+<td class="fieldname">
+analogTriggerData</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a3ceb7b9e6e138b5ada5fb6c68ddd74cb"></a><a class="el" href="gctypes_8h.html#afaa62991928fb9fb18ff0db62a040aba">u32</a></td>
+<td class="fieldname">
+digitalButtonData</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a3ac72596d62fbf38948621e96e450cb9"></a><a class="el" href="gctypes_8h.html#afaa62991928fb9fb18ff0db62a040aba">u32</a></td>
+<td class="fieldname">
+prevDigitalButtonData</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a76d10d132a9de6e7a692cf9c0c7273bf"></a>float</td>
+<td class="fieldname">
+lastPosition</td>
+<td class="fielddoc">
+<p>last position player landed at </p>
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a77c26179528f9e3020e680c7c421580a"></a><a class="el" href="gctypes_8h.html#a92c50087ca0e64fa93fc59402c55f8ca">u8</a></td>
+<td class="fieldname">
+platformID</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="aa82c28522d3e0a6d04a94bc24b5e138b"></a><a class="el" href="gctypes_8h.html#a92c50087ca0e64fa93fc59402c55f8ca">u8</a></td>
+<td class="fieldname">
+stageRelationID</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a00a5188a32e86747c09fefc4d8d5c715"></a><a class="el" href="gctypes_8h.html#a92c50087ca0e64fa93fc59402c55f8ca">u8</a></td>
+<td class="fieldname">
+stageTransformationID</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="aa2617c18129ebe00c9943984e16cd958"></a>float</td>
+<td class="fieldname">
+actionFrame</td>
+<td class="fielddoc">
+<p>resets to 1 with each new action state </p>
 </td></tr>
 <tr><td class="fieldtype">
 <a class="anchor" id="aac167f3972a2f244f4b32c8ee5b89364"></a>float</td>
@@ -369,11 +730,81 @@ percent</td>
 <p>percent of player </p>
 </td></tr>
 <tr><td class="fieldtype">
-<a class="anchor" id="abb17f54e01f013a1a160ab5e2d0109fb"></a>float</td>
+<a class="anchor" id="a290a118e8105d6226329cc06bb002b79"></a>float</td>
 <td class="fieldname">
-shieldSize</td>
+percentForDamageCalc</td>
 <td class="fielddoc">
-<p>size of shield </p>
+<p>percent for damage calculation </p>
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="af4205a31e9e4c496bd8576ff280182f7"></a><a class="el" href="gctypes_8h.html#afaa62991928fb9fb18ff0db62a040aba">u32</a></td>
+<td class="fieldname">
+damageApplied</td>
+<td class="fielddoc">
+<p>percentForDamageCalc cast to int </p>
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="ae1e015d5b0c757668724e59b3aebbb02"></a>float</td>
+<td class="fieldname">
+damageDirection</td>
+<td class="fielddoc">
+<p>-1, 1 depending on direction sent </p>
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="ac2a49d33a233497bfa8c8717acd7b047"></a><a class="el" href="gctypes_8h.html#afaa62991928fb9fb18ff0db62a040aba">u32</a></td>
+<td class="fieldname">
+knockbackAngle</td>
+<td class="fielddoc">
+<p>angle of knockback [0, 360], 361 = sakurai </p>
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="aeabac9c664bbd89b43d8cd445b0d881e"></a>float</td>
+<td class="fieldname">
+hitlag</td>
+<td class="fielddoc">
+<p>remaining frames of hitlag </p>
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a2449fbf5369ec754882d151650cf4486"></a><a class="el" href="gctypes_8h.html#a92c50087ca0e64fa93fc59402c55f8ca">u8</a></td>
+<td class="fieldname">
+jumpsUsed</td>
+<td class="fielddoc">
+<p>number of jumps already used </p>
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a7d5b6e5d330aafd052b1ee72f45878f3"></a><a class="el" href="gctypes_8h.html#afaa62991928fb9fb18ff0db62a040aba">u32</a></td>
+<td class="fieldname">
+bodyState</td>
+<td class="fielddoc">
+<p>0 - normal, 1 - invulnerable, 2 - intangible </p>
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a905aabfb033398610f5dc873a26f8a4e"></a>float</td>
+<td class="fieldname">
+breakoutCountdown</td>
+<td class="fielddoc">
+<p>frames until breakout of grab </p>
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="aae601f3ffc327aaccc7db81fdca4cc8d"></a><a class="el" href="gctypes_8h.html#a92c50087ca0e64fa93fc59402c55f8ca">u8</a></td>
+<td class="fieldname">
+aiLevel</td>
+<td class="fielddoc">
+<p>cpu level selected on CSS </p>
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="af8e6c52aba84bb47657d2abe97f96a08"></a><a class="el" href="gctypes_8h.html#afaa62991928fb9fb18ff0db62a040aba">u32</a></td>
+<td class="fieldname">
+actionCounter</td>
+<td class="fielddoc">
+<p>number of action states this match </p>
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a2b4f39c25bd32da726744bb06248c755"></a>float</td>
+<td class="fieldname">
+hitstun</td>
+<td class="fielddoc">
+<p>remaining frames of hitstun </p>
 </td></tr>
 </table>
 
@@ -410,49 +841,6 @@ stage</td>
 </div>
 </div>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a class="anchor" id="a5963bf4bc324e2ca445a129ced05a1d1"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define CHAR_SELECT</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">x</td><td>)</td>
-          <td>&#160;&#160;&#160;(*((<a class="el" href="gctypes_8h.html#a92c50087ca0e64fa93fc59402c55f8ca">u8</a>*) (0x803F0DE6 + 0x24 * (x))))</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Character Selection of each player (1-4) </p>
-
-</div>
-</div>
-<a class="anchor" id="a06fbdafea52b39af9a0d2e70b20b4735"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define CURRENT_FRAME&#160;&#160;&#160;(*((<a class="el" href="gctypes_8h.html#afaa62991928fb9fb18ff0db62a040aba">u32</a>*) 0x80479D60))</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Current Frame (32-bit) </p>
-
-</div>
-</div>
-<a class="anchor" id="aba9ff025fed056da379554e467979656"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define DEFAULT_GAMESTATE&#160;&#160;&#160;{{0, 0, 0, 0, 0}, <a class="el" href="game__state_8h.html#a988b369dca2214632e8ae7bda5f0a5ff">DEFAULT_STAGE</a>}</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Default <a class="el" href="game__state_8h.html#struct_game_state" title="In game variables. ">GameState</a> Value </p>
-
-</div>
-</div>
 <a class="anchor" id="a547a5ee07171fc8e699c255cf1f94ae2"></a>
 <div class="memitem">
 <div class="memproto">
@@ -479,6 +867,19 @@ stage</td>
 
 </div>
 </div>
+<a class="anchor" id="aba9ff025fed056da379554e467979656"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DEFAULT_GAMESTATE&#160;&#160;&#160;{{0, 0, 0, 0, 0}, <a class="el" href="game__state_8h.html#a988b369dca2214632e8ae7bda5f0a5ff">DEFAULT_STAGE</a>}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Default <a class="el" href="game__state_8h.html#struct_game_state" title="In game variables. ">GameState</a> Value </p>
+
+</div>
+</div>
 <a class="anchor" id="a66765335086cf1c88e262a62212ab862"></a>
 <div class="memitem">
 <div class="memproto">
@@ -493,6 +894,49 @@ stage</td>
       </table>
 </div><div class="memdoc">
 <p>Static Player Information </p>
+
+</div>
+</div>
+<a class="anchor" id="a5963bf4bc324e2ca445a129ced05a1d1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CHAR_SELECT</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x</td><td>)</td>
+          <td>&#160;&#160;&#160;(*((<a class="el" href="gctypes_8h.html#a92c50087ca0e64fa93fc59402c55f8ca">u8</a>*) (0x803F0DE6 + 0x24 * (x))))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Character Selection of each player (1-4) </p>
+
+</div>
+</div>
+<a class="anchor" id="a21b91bbb25c1b219c7f4d4765091b92f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define STAGE_ID&#160;&#160;&#160;(*((<a class="el" href="gctypes_8h.html#ace9d960e74685e2cd84b36132dbbf8aa">u16</a>*) 0x804D6CAD))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p><a class="el" href="game__state_8h.html#struct_stage" title="Stage Information. ">Stage</a> ID </p>
+
+</div>
+</div>
+<a class="anchor" id="a06fbdafea52b39af9a0d2e70b20b4735"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CURRENT_FRAME&#160;&#160;&#160;(*((<a class="el" href="gctypes_8h.html#afaa62991928fb9fb18ff0db62a040aba">u32</a>*) 0x80479D60))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Current Frame (32-bit) </p>
 
 </div>
 </div>
@@ -527,19 +971,6 @@ stage</td>
       </table>
 </div><div class="memdoc">
 <p>Type of player: 0x00 = HUMAN, 0x01 = CPU </p>
-
-</div>
-</div>
-<a class="anchor" id="a21b91bbb25c1b219c7f4d4765091b92f"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define STAGE_ID&#160;&#160;&#160;(*((<a class="el" href="gctypes_8h.html#ace9d960e74685e2cd84b36132dbbf8aa">u16</a>*) 0x804D6CAD))</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p><a class="el" href="game__state_8h.html#struct_stage" title="Stage Information. ">Stage</a> ID </p>
 
 </div>
 </div>
@@ -595,23 +1026,6 @@ stage</td>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="aeda119595fcc834db9cfec532a90cf79"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void endGame </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Branch to this symbol when game ends, never call directly</p>
-<dl class="section return"><dt>Returns</dt><dd>none </dd></dl>
-
-</div>
-</div>
 <a class="anchor" id="a5dd876749dfcb11bbd321314dfabd7fc"></a>
 <div class="memitem">
 <div class="memproto">
@@ -626,6 +1040,40 @@ stage</td>
 </div><div class="memdoc">
 <p>Determine if currently playing game</p>
 <dl class="section return"><dt>Returns</dt><dd>Returns true if game currently being played </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="accbefc878f661d3cff0d72d5661c1d54"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void updateGameState </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Update the global <a class="el" href="game__state_8h.html#struct_game_state" title="In game variables. ">GameState</a> variable</p>
+<dl class="section return"><dt>Returns</dt><dd>none </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aeda119595fcc834db9cfec532a90cf79"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void endGame </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Branch to this symbol when game ends, never call directly</p>
+<dl class="section return"><dt>Returns</dt><dd>none </dd></dl>
 
 </div>
 </div>
@@ -650,23 +1098,6 @@ stage</td>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Pointer to <a class="el" href="game__state_8h.html#struct_player_data" title="struct holding player data ">PlayerData</a> struct for this player </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="accbefc878f661d3cff0d72d5661c1d54"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void updateGameState </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Update the global <a class="el" href="game__state_8h.html#struct_game_state" title="In game variables. ">GameState</a> variable</p>
-<dl class="section return"><dt>Returns</dt><dd>none </dd></dl>
 
 </div>
 </div>

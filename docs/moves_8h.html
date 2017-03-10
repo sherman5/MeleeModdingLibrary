@@ -201,18 +201,18 @@ controller</td>
 <p>controller state </p>
 </td></tr>
 <tr><td class="fieldtype">
-<a class="anchor" id="aa246fa433d167a7f6f8533227e40b76e"></a><a class="el" href="gctypes_8h.html#a92c50087ca0e64fa93fc59402c55f8ca">u8</a></td>
-<td class="fieldname">
-flags</td>
-<td class="fielddoc">
-<p>input flags </p>
-</td></tr>
-<tr><td class="fieldtype">
 <a class="anchor" id="a88aaddd420ee755598a3f347bb6f4785"></a><a class="el" href="gctypes_8h.html#a9e382f207c65ca13ab4ae98363aeda80">s8</a></td>
 <td class="fieldname">
 frameOffset</td>
 <td class="fielddoc">
 <p>frame offset </p>
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="aa246fa433d167a7f6f8533227e40b76e"></a><a class="el" href="gctypes_8h.html#a92c50087ca0e64fa93fc59402c55f8ca">u8</a></td>
+<td class="fieldname">
+flags</td>
+<td class="fielddoc">
+<p>input flags </p>
 </td></tr>
 </table>
 
@@ -249,12 +249,38 @@ size</td>
 </div>
 </div>
 <h2 class="groupheader">Macro Definition Documentation</h2>
+<a class="anchor" id="a9cfcd032e38e55938e02821e97fe3660"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NO_FLAGS&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Input Flags </p>
+
+</div>
+</div>
 <a class="anchor" id="a66ed7fe7f09e74cb2c5e094f64be2e8a"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">#define JUMPSQUAT&#160;&#160;&#160;(1 &lt;&lt; 0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Input Flags </p>
+
+</div>
+</div>
+<a class="anchor" id="a79ffed3be76d28e8ebf9938d633065a4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SH_LENGTH&#160;&#160;&#160;(1 &lt;&lt; 1)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -275,16 +301,16 @@ size</td>
 
 </div>
 </div>
-<a class="anchor" id="a9cfcd032e38e55938e02821e97fe3660"></a>
+<a class="anchor" id="a5bd9a30fc22d9a737ee060d41a4ec479"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define NO_FLAGS&#160;&#160;&#160;0</td>
+          <td class="memname">#define RELEASE&#160;&#160;&#160;0x0000</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Input Flags </p>
+<p><a class="el" href="controller_8h.html#struct_controller" title="Represents the state of a controller. ">Controller</a> State Macros </p>
 
 </div>
 </div>
@@ -301,119 +327,20 @@ size</td>
 
 </div>
 </div>
-<a class="anchor" id="a5bd9a30fc22d9a737ee060d41a4ec479"></a>
+<a class="anchor" id="a5f46cfcb78eee5fa165fda297ba865f5"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define RELEASE&#160;&#160;&#160;0x0000</td>
+          <td class="memname">#define STICK_ANGLE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x</td><td>)</td>
+          <td>&#160;&#160;&#160;((((<a class="el" href="gctypes_8h.html#a92c50087ca0e64fa93fc59402c55f8ca">u8</a>) (((x) / 360.f) * 255.f)) &lt;&lt; 8) &amp; 0xFF00)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p><a class="el" href="controller_8h.html#struct_controller" title="Represents the state of a controller. ">Controller</a> State Macros </p>
-
-</div>
-</div>
-<a class="anchor" id="ad5c4c28f11156e4eefcc9eeba2bfceb1"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define SET_DJ_DIR</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">x</td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">_raw_doubleJump[0].<a class="code" href="moves_8h.html#ae15ef9aade3aea2288e6a8cbd5406758">controller</a> = <a class="code" href="controller_8h.html#afdb8ffccf7c918ee70c71d65bae4a61f">\</a></div><div class="line"><a class="code" href="controller_8h.html#afdb8ffccf7c918ee70c71d65bae4a61f">    X_BUTTON</a> | <a class="code" href="controller_8h.html#aa4bf290c42e5626f586f84d41be94cdb">FULL_STICK</a> | <a class="code" href="moves_8h.html#a5f46cfcb78eee5fa165fda297ba865f5">STICK_ANGLE</a>((x))</div><div class="ttc" id="controller_8h_html_afdb8ffccf7c918ee70c71d65bae4a61f"><div class="ttname"><a href="controller_8h.html#afdb8ffccf7c918ee70c71d65bae4a61f">X_BUTTON</a></div><div class="ttdeci">#define X_BUTTON</div><div class="ttdef"><b>Definition:</b> controller.h:24</div></div>
-<div class="ttc" id="moves_8h_html_a5f46cfcb78eee5fa165fda297ba865f5"><div class="ttname"><a href="moves_8h.html#a5f46cfcb78eee5fa165fda297ba865f5">STICK_ANGLE</a></div><div class="ttdeci">#define STICK_ANGLE(x)</div><div class="ttdef"><b>Definition:</b> moves.h:42</div></div>
-<div class="ttc" id="controller_8h_html_aa4bf290c42e5626f586f84d41be94cdb"><div class="ttname"><a href="controller_8h.html#aa4bf290c42e5626f586f84d41be94cdb">FULL_STICK</a></div><div class="ttdeci">#define FULL_STICK</div><div class="ttdef"><b>Definition:</b> controller.h:38</div></div>
-<div class="ttc" id="moves_8h_html_ae15ef9aade3aea2288e6a8cbd5406758"><div class="ttname"><a href="moves_8h.html#ae15ef9aade3aea2288e6a8cbd5406758">RawInput::controller</a></div><div class="ttdeci">u16 controller</div><div class="ttdef"><b>Definition:</b> moves.h:16</div></div>
-</div><!-- fragment --><p>Set the direction for the double jump </p>
-
-</div>
-</div>
-<a class="anchor" id="a1a4e71e45acbce3879557f2b5e5b7384"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define SET_HIT_DI_DIR</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">x</td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">_raw_hitDI[0].<a class="code" href="moves_8h.html#ae15ef9aade3aea2288e6a8cbd5406758">controller</a> = <a class="code" href="controller_8h.html#aa4bf290c42e5626f586f84d41be94cdb">\</a></div><div class="line"><a class="code" href="controller_8h.html#aa4bf290c42e5626f586f84d41be94cdb">    FULL_STICK</a> | <a class="code" href="moves_8h.html#a5f46cfcb78eee5fa165fda297ba865f5">STICK_ANGLE</a>((x))</div><div class="ttc" id="moves_8h_html_a5f46cfcb78eee5fa165fda297ba865f5"><div class="ttname"><a href="moves_8h.html#a5f46cfcb78eee5fa165fda297ba865f5">STICK_ANGLE</a></div><div class="ttdeci">#define STICK_ANGLE(x)</div><div class="ttdef"><b>Definition:</b> moves.h:42</div></div>
-<div class="ttc" id="controller_8h_html_aa4bf290c42e5626f586f84d41be94cdb"><div class="ttname"><a href="controller_8h.html#aa4bf290c42e5626f586f84d41be94cdb">FULL_STICK</a></div><div class="ttdeci">#define FULL_STICK</div><div class="ttdef"><b>Definition:</b> controller.h:38</div></div>
-<div class="ttc" id="moves_8h_html_ae15ef9aade3aea2288e6a8cbd5406758"><div class="ttname"><a href="moves_8h.html#ae15ef9aade3aea2288e6a8cbd5406758">RawInput::controller</a></div><div class="ttdeci">u16 controller</div><div class="ttdef"><b>Definition:</b> moves.h:16</div></div>
-</div><!-- fragment --><p>Set the direction of DI for normal hits </p>
-
-</div>
-</div>
-<a class="anchor" id="ab72101b6584c67a709bc82c8d2b7ed10"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define SET_HOLD_DIR</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">x</td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">_raw_holdDirection[0].<a class="code" href="moves_8h.html#ae15ef9aade3aea2288e6a8cbd5406758">controller</a> = <a class="code" href="controller_8h.html#aa4bf290c42e5626f586f84d41be94cdb">\</a></div><div class="line"><a class="code" href="controller_8h.html#aa4bf290c42e5626f586f84d41be94cdb">    FULL_STICK</a> | <a class="code" href="moves_8h.html#a5f46cfcb78eee5fa165fda297ba865f5">STICK_ANGLE</a>((x))</div><div class="ttc" id="moves_8h_html_a5f46cfcb78eee5fa165fda297ba865f5"><div class="ttname"><a href="moves_8h.html#a5f46cfcb78eee5fa165fda297ba865f5">STICK_ANGLE</a></div><div class="ttdeci">#define STICK_ANGLE(x)</div><div class="ttdef"><b>Definition:</b> moves.h:42</div></div>
-<div class="ttc" id="controller_8h_html_aa4bf290c42e5626f586f84d41be94cdb"><div class="ttname"><a href="controller_8h.html#aa4bf290c42e5626f586f84d41be94cdb">FULL_STICK</a></div><div class="ttdeci">#define FULL_STICK</div><div class="ttdef"><b>Definition:</b> controller.h:38</div></div>
-<div class="ttc" id="moves_8h_html_ae15ef9aade3aea2288e6a8cbd5406758"><div class="ttname"><a href="moves_8h.html#ae15ef9aade3aea2288e6a8cbd5406758">RawInput::controller</a></div><div class="ttdeci">u16 controller</div><div class="ttdef"><b>Definition:</b> moves.h:16</div></div>
-</div><!-- fragment --><p>Set the direction of the control stick </p>
-
-</div>
-</div>
-<a class="anchor" id="a545a6ae36fc00152e5f4d928e5687a4c"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define SET_LEDGEDASH_ANGLE</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">x</td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">_raw_ledgeDash[2].<a class="code" href="moves_8h.html#ae15ef9aade3aea2288e6a8cbd5406758">controller</a> = <a class="code" href="controller_8h.html#a78883cb33621a5e24f4e56bcf8732020">\</a></div><div class="line"><a class="code" href="controller_8h.html#a78883cb33621a5e24f4e56bcf8732020">    L_BUTTON</a> | <a class="code" href="controller_8h.html#aa4bf290c42e5626f586f84d41be94cdb">FULL_STICK</a> | <a class="code" href="moves_8h.html#a5f46cfcb78eee5fa165fda297ba865f5">STICK_ANGLE</a>((x))</div><div class="ttc" id="moves_8h_html_a5f46cfcb78eee5fa165fda297ba865f5"><div class="ttname"><a href="moves_8h.html#a5f46cfcb78eee5fa165fda297ba865f5">STICK_ANGLE</a></div><div class="ttdeci">#define STICK_ANGLE(x)</div><div class="ttdef"><b>Definition:</b> moves.h:42</div></div>
-<div class="ttc" id="controller_8h_html_a78883cb33621a5e24f4e56bcf8732020"><div class="ttname"><a href="controller_8h.html#a78883cb33621a5e24f4e56bcf8732020">L_BUTTON</a></div><div class="ttdeci">#define L_BUTTON</div><div class="ttdef"><b>Definition:</b> controller.h:26</div></div>
-<div class="ttc" id="controller_8h_html_aa4bf290c42e5626f586f84d41be94cdb"><div class="ttname"><a href="controller_8h.html#aa4bf290c42e5626f586f84d41be94cdb">FULL_STICK</a></div><div class="ttdeci">#define FULL_STICK</div><div class="ttdef"><b>Definition:</b> controller.h:38</div></div>
-<div class="ttc" id="moves_8h_html_ae15ef9aade3aea2288e6a8cbd5406758"><div class="ttname"><a href="moves_8h.html#ae15ef9aade3aea2288e6a8cbd5406758">RawInput::controller</a></div><div class="ttdeci">u16 controller</div><div class="ttdef"><b>Definition:</b> moves.h:16</div></div>
-</div><!-- fragment --><p>Set angle for ledge dash </p>
-
-</div>
-</div>
-<a class="anchor" id="aa8a367dce1d32330c153258c532db475"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define SET_SIDE_B_DIR</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">x</td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">_raw_sideB[0].<a class="code" href="moves_8h.html#ae15ef9aade3aea2288e6a8cbd5406758">controller</a> = <a class="code" href="controller_8h.html#a2454c318caf152737fd63bebddd58ea2">\</a></div><div class="line"><a class="code" href="controller_8h.html#a2454c318caf152737fd63bebddd58ea2">    B_BUTTON</a> | <a class="code" href="controller_8h.html#aa4bf290c42e5626f586f84d41be94cdb">FULL_STICK</a> | <a class="code" href="moves_8h.html#a5f46cfcb78eee5fa165fda297ba865f5">STICK_ANGLE</a>((x))</div><div class="ttc" id="controller_8h_html_a2454c318caf152737fd63bebddd58ea2"><div class="ttname"><a href="controller_8h.html#a2454c318caf152737fd63bebddd58ea2">B_BUTTON</a></div><div class="ttdeci">#define B_BUTTON</div><div class="ttdef"><b>Definition:</b> controller.h:23</div></div>
-<div class="ttc" id="moves_8h_html_a5f46cfcb78eee5fa165fda297ba865f5"><div class="ttname"><a href="moves_8h.html#a5f46cfcb78eee5fa165fda297ba865f5">STICK_ANGLE</a></div><div class="ttdeci">#define STICK_ANGLE(x)</div><div class="ttdef"><b>Definition:</b> moves.h:42</div></div>
-<div class="ttc" id="controller_8h_html_aa4bf290c42e5626f586f84d41be94cdb"><div class="ttname"><a href="controller_8h.html#aa4bf290c42e5626f586f84d41be94cdb">FULL_STICK</a></div><div class="ttdeci">#define FULL_STICK</div><div class="ttdef"><b>Definition:</b> controller.h:38</div></div>
-<div class="ttc" id="moves_8h_html_ae15ef9aade3aea2288e6a8cbd5406758"><div class="ttname"><a href="moves_8h.html#ae15ef9aade3aea2288e6a8cbd5406758">RawInput::controller</a></div><div class="ttdeci">u16 controller</div><div class="ttdef"><b>Definition:</b> moves.h:16</div></div>
-</div><!-- fragment --><p>Set the direction for the side B </p>
 
 </div>
 </div>
@@ -435,6 +362,26 @@ size</td>
 <div class="ttc" id="controller_8h_html_aa4bf290c42e5626f586f84d41be94cdb"><div class="ttname"><a href="controller_8h.html#aa4bf290c42e5626f586f84d41be94cdb">FULL_STICK</a></div><div class="ttdeci">#define FULL_STICK</div><div class="ttdef"><b>Definition:</b> controller.h:38</div></div>
 <div class="ttc" id="moves_8h_html_ae15ef9aade3aea2288e6a8cbd5406758"><div class="ttname"><a href="moves_8h.html#ae15ef9aade3aea2288e6a8cbd5406758">RawInput::controller</a></div><div class="ttdeci">u16 controller</div><div class="ttdef"><b>Definition:</b> moves.h:16</div></div>
 </div><!-- fragment --><p>Set tech direction </p>
+
+</div>
+</div>
+<a class="anchor" id="a1a4e71e45acbce3879557f2b5e5b7384"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SET_HIT_DI_DIR</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">_raw_hitDI[0].<a class="code" href="moves_8h.html#ae15ef9aade3aea2288e6a8cbd5406758">controller</a> = <a class="code" href="controller_8h.html#aa4bf290c42e5626f586f84d41be94cdb">\</a></div><div class="line"><a class="code" href="controller_8h.html#aa4bf290c42e5626f586f84d41be94cdb">    FULL_STICK</a> | <a class="code" href="moves_8h.html#a5f46cfcb78eee5fa165fda297ba865f5">STICK_ANGLE</a>((x))</div><div class="ttc" id="moves_8h_html_a5f46cfcb78eee5fa165fda297ba865f5"><div class="ttname"><a href="moves_8h.html#a5f46cfcb78eee5fa165fda297ba865f5">STICK_ANGLE</a></div><div class="ttdeci">#define STICK_ANGLE(x)</div><div class="ttdef"><b>Definition:</b> moves.h:42</div></div>
+<div class="ttc" id="controller_8h_html_aa4bf290c42e5626f586f84d41be94cdb"><div class="ttname"><a href="controller_8h.html#aa4bf290c42e5626f586f84d41be94cdb">FULL_STICK</a></div><div class="ttdeci">#define FULL_STICK</div><div class="ttdef"><b>Definition:</b> controller.h:38</div></div>
+<div class="ttc" id="moves_8h_html_ae15ef9aade3aea2288e6a8cbd5406758"><div class="ttname"><a href="moves_8h.html#ae15ef9aade3aea2288e6a8cbd5406758">RawInput::controller</a></div><div class="ttdeci">u16 controller</div><div class="ttdef"><b>Definition:</b> moves.h:16</div></div>
+</div><!-- fragment --><p>Set the direction of DI for normal hits </p>
 
 </div>
 </div>
@@ -478,115 +425,90 @@ size</td>
 
 </div>
 </div>
-<a class="anchor" id="a79ffed3be76d28e8ebf9938d633065a4"></a>
+<a class="anchor" id="aa8a367dce1d32330c153258c532db475"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define SH_LENGTH&#160;&#160;&#160;(1 &lt;&lt; 1)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Input Flags </p>
-
-</div>
-</div>
-<a class="anchor" id="a5f46cfcb78eee5fa165fda297ba865f5"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define STICK_ANGLE</td>
+          <td class="memname">#define SET_SIDE_B_DIR</td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">x</td><td>)</td>
-          <td>&#160;&#160;&#160;((((<a class="el" href="gctypes_8h.html#a92c50087ca0e64fa93fc59402c55f8ca">u8</a>) (((x) / 360.f) * 255.f)) &lt;&lt; 8) &amp; 0xFF00)</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p><a class="el" href="controller_8h.html#struct_controller" title="Represents the state of a controller. ">Controller</a> State Macros </p>
+<b>Value:</b><div class="fragment"><div class="line">_raw_sideB[0].<a class="code" href="moves_8h.html#ae15ef9aade3aea2288e6a8cbd5406758">controller</a> = <a class="code" href="controller_8h.html#a2454c318caf152737fd63bebddd58ea2">\</a></div><div class="line"><a class="code" href="controller_8h.html#a2454c318caf152737fd63bebddd58ea2">    B_BUTTON</a> | <a class="code" href="controller_8h.html#aa4bf290c42e5626f586f84d41be94cdb">FULL_STICK</a> | <a class="code" href="moves_8h.html#a5f46cfcb78eee5fa165fda297ba865f5">STICK_ANGLE</a>((x))</div><div class="ttc" id="controller_8h_html_a2454c318caf152737fd63bebddd58ea2"><div class="ttname"><a href="controller_8h.html#a2454c318caf152737fd63bebddd58ea2">B_BUTTON</a></div><div class="ttdeci">#define B_BUTTON</div><div class="ttdef"><b>Definition:</b> controller.h:23</div></div>
+<div class="ttc" id="moves_8h_html_a5f46cfcb78eee5fa165fda297ba865f5"><div class="ttname"><a href="moves_8h.html#a5f46cfcb78eee5fa165fda297ba865f5">STICK_ANGLE</a></div><div class="ttdeci">#define STICK_ANGLE(x)</div><div class="ttdef"><b>Definition:</b> moves.h:42</div></div>
+<div class="ttc" id="controller_8h_html_aa4bf290c42e5626f586f84d41be94cdb"><div class="ttname"><a href="controller_8h.html#aa4bf290c42e5626f586f84d41be94cdb">FULL_STICK</a></div><div class="ttdeci">#define FULL_STICK</div><div class="ttdef"><b>Definition:</b> controller.h:38</div></div>
+<div class="ttc" id="moves_8h_html_ae15ef9aade3aea2288e6a8cbd5406758"><div class="ttname"><a href="moves_8h.html#ae15ef9aade3aea2288e6a8cbd5406758">RawInput::controller</a></div><div class="ttdeci">u16 controller</div><div class="ttdef"><b>Definition:</b> moves.h:16</div></div>
+</div><!-- fragment --><p>Set the direction for the side B </p>
+
+</div>
+</div>
+<a class="anchor" id="ad5c4c28f11156e4eefcc9eeba2bfceb1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SET_DJ_DIR</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">_raw_doubleJump[0].<a class="code" href="moves_8h.html#ae15ef9aade3aea2288e6a8cbd5406758">controller</a> = <a class="code" href="controller_8h.html#afdb8ffccf7c918ee70c71d65bae4a61f">\</a></div><div class="line"><a class="code" href="controller_8h.html#afdb8ffccf7c918ee70c71d65bae4a61f">    X_BUTTON</a> | <a class="code" href="controller_8h.html#aa4bf290c42e5626f586f84d41be94cdb">FULL_STICK</a> | <a class="code" href="moves_8h.html#a5f46cfcb78eee5fa165fda297ba865f5">STICK_ANGLE</a>((x))</div><div class="ttc" id="controller_8h_html_afdb8ffccf7c918ee70c71d65bae4a61f"><div class="ttname"><a href="controller_8h.html#afdb8ffccf7c918ee70c71d65bae4a61f">X_BUTTON</a></div><div class="ttdeci">#define X_BUTTON</div><div class="ttdef"><b>Definition:</b> controller.h:24</div></div>
+<div class="ttc" id="moves_8h_html_a5f46cfcb78eee5fa165fda297ba865f5"><div class="ttname"><a href="moves_8h.html#a5f46cfcb78eee5fa165fda297ba865f5">STICK_ANGLE</a></div><div class="ttdeci">#define STICK_ANGLE(x)</div><div class="ttdef"><b>Definition:</b> moves.h:42</div></div>
+<div class="ttc" id="controller_8h_html_aa4bf290c42e5626f586f84d41be94cdb"><div class="ttname"><a href="controller_8h.html#aa4bf290c42e5626f586f84d41be94cdb">FULL_STICK</a></div><div class="ttdeci">#define FULL_STICK</div><div class="ttdef"><b>Definition:</b> controller.h:38</div></div>
+<div class="ttc" id="moves_8h_html_ae15ef9aade3aea2288e6a8cbd5406758"><div class="ttname"><a href="moves_8h.html#ae15ef9aade3aea2288e6a8cbd5406758">RawInput::controller</a></div><div class="ttdeci">u16 controller</div><div class="ttdef"><b>Definition:</b> moves.h:16</div></div>
+</div><!-- fragment --><p>Set the direction for the double jump </p>
+
+</div>
+</div>
+<a class="anchor" id="a545a6ae36fc00152e5f4d928e5687a4c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SET_LEDGEDASH_ANGLE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">_raw_ledgeDash[2].<a class="code" href="moves_8h.html#ae15ef9aade3aea2288e6a8cbd5406758">controller</a> = <a class="code" href="controller_8h.html#a78883cb33621a5e24f4e56bcf8732020">\</a></div><div class="line"><a class="code" href="controller_8h.html#a78883cb33621a5e24f4e56bcf8732020">    L_BUTTON</a> | <a class="code" href="controller_8h.html#aa4bf290c42e5626f586f84d41be94cdb">FULL_STICK</a> | <a class="code" href="moves_8h.html#a5f46cfcb78eee5fa165fda297ba865f5">STICK_ANGLE</a>((x))</div><div class="ttc" id="moves_8h_html_a5f46cfcb78eee5fa165fda297ba865f5"><div class="ttname"><a href="moves_8h.html#a5f46cfcb78eee5fa165fda297ba865f5">STICK_ANGLE</a></div><div class="ttdeci">#define STICK_ANGLE(x)</div><div class="ttdef"><b>Definition:</b> moves.h:42</div></div>
+<div class="ttc" id="controller_8h_html_a78883cb33621a5e24f4e56bcf8732020"><div class="ttname"><a href="controller_8h.html#a78883cb33621a5e24f4e56bcf8732020">L_BUTTON</a></div><div class="ttdeci">#define L_BUTTON</div><div class="ttdef"><b>Definition:</b> controller.h:26</div></div>
+<div class="ttc" id="controller_8h_html_aa4bf290c42e5626f586f84d41be94cdb"><div class="ttname"><a href="controller_8h.html#aa4bf290c42e5626f586f84d41be94cdb">FULL_STICK</a></div><div class="ttdeci">#define FULL_STICK</div><div class="ttdef"><b>Definition:</b> controller.h:38</div></div>
+<div class="ttc" id="moves_8h_html_ae15ef9aade3aea2288e6a8cbd5406758"><div class="ttname"><a href="moves_8h.html#ae15ef9aade3aea2288e6a8cbd5406758">RawInput::controller</a></div><div class="ttdeci">u16 controller</div><div class="ttdef"><b>Definition:</b> moves.h:16</div></div>
+</div><!-- fragment --><p>Set angle for ledge dash </p>
+
+</div>
+</div>
+<a class="anchor" id="ab72101b6584c67a709bc82c8d2b7ed10"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SET_HOLD_DIR</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">_raw_holdDirection[0].<a class="code" href="moves_8h.html#ae15ef9aade3aea2288e6a8cbd5406758">controller</a> = <a class="code" href="controller_8h.html#aa4bf290c42e5626f586f84d41be94cdb">\</a></div><div class="line"><a class="code" href="controller_8h.html#aa4bf290c42e5626f586f84d41be94cdb">    FULL_STICK</a> | <a class="code" href="moves_8h.html#a5f46cfcb78eee5fa165fda297ba865f5">STICK_ANGLE</a>((x))</div><div class="ttc" id="moves_8h_html_a5f46cfcb78eee5fa165fda297ba865f5"><div class="ttname"><a href="moves_8h.html#a5f46cfcb78eee5fa165fda297ba865f5">STICK_ANGLE</a></div><div class="ttdeci">#define STICK_ANGLE(x)</div><div class="ttdef"><b>Definition:</b> moves.h:42</div></div>
+<div class="ttc" id="controller_8h_html_aa4bf290c42e5626f586f84d41be94cdb"><div class="ttname"><a href="controller_8h.html#aa4bf290c42e5626f586f84d41be94cdb">FULL_STICK</a></div><div class="ttdeci">#define FULL_STICK</div><div class="ttdef"><b>Definition:</b> controller.h:38</div></div>
+<div class="ttc" id="moves_8h_html_ae15ef9aade3aea2288e6a8cbd5406758"><div class="ttname"><a href="moves_8h.html#ae15ef9aade3aea2288e6a8cbd5406758">RawInput::controller</a></div><div class="ttdeci">u16 controller</div><div class="ttdef"><b>Definition:</b> moves.h:16</div></div>
+</div><!-- fragment --><p>Set the direction of the control stick </p>
 
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
-<a class="anchor" id="a98b01721ca67e5f37ba33573d1da7283"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="moves_8h.html#struct_move">Move</a> _mv_doubleJump</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Double Jump with Direction </p><dl class="section note"><dt>Note</dt><dd>INDEFINITE </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ab2593f197fbd00cfde67fa6e20c9cd24"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="moves_8h.html#struct_move">Move</a> _mv_downB</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Down B </p>
-
-</div>
-</div>
-<a class="anchor" id="a0ce5e4b23a999064ddf6790cf8b2e3c9"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="moves_8h.html#struct_move">Move</a> _mv_getUpAttack</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Get Up Attack </p>
-
-</div>
-</div>
-<a class="anchor" id="ab798d679abc310c88f95753218550ee2"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="moves_8h.html#struct_move">Move</a> _mv_hitDI</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>DI from hit </p>
-
-</div>
-</div>
-<a class="anchor" id="a920ef7bca88d74811e2973a8aa7ef887"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="moves_8h.html#struct_move">Move</a> _mv_jab</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Jab </p>
-
-</div>
-</div>
-<a class="anchor" id="a0a28dd81cffdc28d1ec9a18cba05e6e1"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="moves_8h.html#struct_move">Move</a> _mv_ledgeDash</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Ledgedash </p>
-
-</div>
-</div>
 <a class="anchor" id="ae435f5d1efaa48b3fb6473dc2f781d32"></a>
 <div class="memitem">
 <div class="memproto">
@@ -613,16 +535,16 @@ size</td>
 
 </div>
 </div>
-<a class="anchor" id="a93088aabcb2a4cea704cb3c884470f1d"></a>
+<a class="anchor" id="a8cd2c43ef342c9c8c27a0dae5660ddc8"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="moves_8h.html#struct_move">Move</a> _mv_sideB</td>
+          <td class="memname"><a class="el" href="moves_8h.html#struct_move">Move</a> _mv_tech</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Side B </p>
+<p>Hit standard tech </p>
 
 </div>
 </div>
@@ -639,16 +561,94 @@ size</td>
 
 </div>
 </div>
-<a class="anchor" id="a8cd2c43ef342c9c8c27a0dae5660ddc8"></a>
+<a class="anchor" id="a0ce5e4b23a999064ddf6790cf8b2e3c9"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="moves_8h.html#struct_move">Move</a> _mv_tech</td>
+          <td class="memname"><a class="el" href="moves_8h.html#struct_move">Move</a> _mv_getUpAttack</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Hit standard tech </p>
+<p>Get Up Attack </p>
+
+</div>
+</div>
+<a class="anchor" id="a920ef7bca88d74811e2973a8aa7ef887"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="moves_8h.html#struct_move">Move</a> _mv_jab</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Jab </p>
+
+</div>
+</div>
+<a class="anchor" id="ab798d679abc310c88f95753218550ee2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="moves_8h.html#struct_move">Move</a> _mv_hitDI</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>DI from hit </p>
+
+</div>
+</div>
+<a class="anchor" id="a93088aabcb2a4cea704cb3c884470f1d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="moves_8h.html#struct_move">Move</a> _mv_sideB</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Side B </p>
+
+</div>
+</div>
+<a class="anchor" id="a98b01721ca67e5f37ba33573d1da7283"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="moves_8h.html#struct_move">Move</a> _mv_doubleJump</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Double Jump with Direction </p><dl class="section note"><dt>Note</dt><dd>INDEFINITE </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a0a28dd81cffdc28d1ec9a18cba05e6e1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="moves_8h.html#struct_move">Move</a> _mv_ledgeDash</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Ledgedash </p>
+
+</div>
+</div>
+<a class="anchor" id="ab2593f197fbd00cfde67fa6e20c9cd24"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="moves_8h.html#struct_move">Move</a> _mv_downB</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Down B </p>
 
 </div>
 </div>

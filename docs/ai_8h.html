@@ -205,18 +205,18 @@ Functions</h2></td></tr>
 </div><table class="fieldtable">
 <tr><th colspan="3">Data Fields</th></tr>
 <tr><td class="fieldtype">
-<a class="anchor" id="ae15ef9aade3aea2288e6a8cbd5406758"></a><a class="el" href="gctypes_8h.html#ace9d960e74685e2cd84b36132dbbf8aa">u16</a></td>
-<td class="fieldname">
-controller</td>
-<td class="fielddoc">
-<p>State of controller </p>
-</td></tr>
-<tr><td class="fieldtype">
 <a class="anchor" id="a9189c4df8efafef6f93fe84368cc4541"></a><a class="el" href="gctypes_8h.html#afaa62991928fb9fb18ff0db62a040aba">u32</a></td>
 <td class="fieldname">
 frame</td>
 <td class="fielddoc">
 <p>Frame on which to execute input </p>
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="ae15ef9aade3aea2288e6a8cbd5406758"></a><a class="el" href="gctypes_8h.html#ace9d960e74685e2cd84b36132dbbf8aa">u16</a></td>
+<td class="fieldname">
+controller</td>
+<td class="fielddoc">
+<p>State of controller </p>
 </td></tr>
 </table>
 
@@ -235,20 +235,6 @@ frame</td>
 </div><table class="fieldtable">
 <tr><th colspan="3">Data Fields</th></tr>
 <tr><td class="fieldtype">
-<a class="anchor" id="a03c996f9fcf0e10baeb3e700be0c409a"></a><a class="el" href="gctypes_8h.html#a6a912bf1d80625256884f11a0ea1d5fd">bool</a></td>
-<td class="fieldname">
-active</td>
-<td class="fielddoc">
-<p>Whether or not this <a class="el" href="ai_8h.html#struct_a_i" title="Holds all information about an AI. ">AI</a> is active in the game </p>
-</td></tr>
-<tr><td class="fieldtype">
-<a class="anchor" id="a238a1ab7bceedeb7d2073fe980c73456"></a><a class="el" href="gctypes_8h.html#afaa62991928fb9fb18ff0db62a040aba">u32</a></td>
-<td class="fieldname">
-characters</td>
-<td class="fielddoc">
-<p>Characters this <a class="el" href="ai_8h.html#struct_a_i" title="Holds all information about an AI. ">AI</a> can control </p>
-</td></tr>
-<tr><td class="fieldtype">
 <a class="anchor" id="a872eb72dc091dfc922f3461989909363"></a><a class="el" href="controller_8h.html#struct_controller">Controller</a></td>
 <td class="fieldname">
 controller</td>
@@ -256,31 +242,11 @@ controller</td>
 <p><a class="el" href="controller_8h.html#struct_controller" title="Represents the state of a controller. ">Controller</a> this <a class="el" href="ai_8h.html#struct_a_i" title="Holds all information about an AI. ">AI</a> uses </p>
 </td></tr>
 <tr><td class="fieldtype">
-<a class="anchor" id="a02cf5917931e3d0e28867c01796f0715"></a><a class="el" href="gctypes_8h.html#aedaf31b3f7716640e70205644b9b828e">size_t</a></td>
-<td class="fieldname">
-inputCapacity</td>
-<td class="fielddoc">
-<p>Capacity of arrays </p>
-</td></tr>
-<tr><td class="fieldtype">
 <a class="anchor" id="a98485465ebcea1bfc1d7b426255a1b83"></a><a class="el" href="ai_8h.html#struct_controller_input">ControllerInput</a> *</td>
 <td class="fieldname">
 inputQueue</td>
 <td class="fielddoc">
 <p>Array of inputs to execute </p>
-</td></tr>
-<tr><td class="fieldtype">
-<a class="anchor" id="a8dda1e8d72346e97f51bbf77e881c291"></a><a class="el" href="gctypes_8h.html#aedaf31b3f7716640e70205644b9b828e">size_t</a></td>
-<td class="fieldname">
-inputSize</td>
-<td class="fielddoc">
-<p>Size of logic/input arrays </p>
-</td></tr>
-<tr><td class="fieldtype">
-<a class="anchor" id="a394c6e0826b5a31145013a08d06f8fe4"></a><a class="el" href="gctypes_8h.html#aedaf31b3f7716640e70205644b9b828e">size_t</a></td>
-<td class="fieldname">
-logicCapacity</td>
-<td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
 <a class="anchor" id="aac5387c0b835a900ce7e396548e0dea1"></a><a class="el" href="logic_8h.html#struct_logic">Logic</a> *</td>
@@ -296,11 +262,31 @@ logicSize</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a class="anchor" id="ac3b02072318dbf033ab5fc97b6973c14"></a><a class="el" href="gctypes_8h.html#afaa62991928fb9fb18ff0db62a040aba">u32</a></td>
+<a class="anchor" id="a8dda1e8d72346e97f51bbf77e881c291"></a><a class="el" href="gctypes_8h.html#aedaf31b3f7716640e70205644b9b828e">size_t</a></td>
 <td class="fieldname">
-opponent</td>
+inputSize</td>
 <td class="fielddoc">
-<p>Port of this <a class="el" href="ai_8h.html#struct_a_i" title="Holds all information about an AI. ">AI</a>'s opponent </p>
+<p>Size of logic/input arrays </p>
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a394c6e0826b5a31145013a08d06f8fe4"></a><a class="el" href="gctypes_8h.html#aedaf31b3f7716640e70205644b9b828e">size_t</a></td>
+<td class="fieldname">
+logicCapacity</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a02cf5917931e3d0e28867c01796f0715"></a><a class="el" href="gctypes_8h.html#aedaf31b3f7716640e70205644b9b828e">size_t</a></td>
+<td class="fieldname">
+inputCapacity</td>
+<td class="fielddoc">
+<p>Capacity of arrays </p>
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a238a1ab7bceedeb7d2073fe980c73456"></a><a class="el" href="gctypes_8h.html#afaa62991928fb9fb18ff0db62a040aba">u32</a></td>
+<td class="fieldname">
+characters</td>
+<td class="fielddoc">
+<p>Characters this <a class="el" href="ai_8h.html#struct_a_i" title="Holds all information about an AI. ">AI</a> can control </p>
 </td></tr>
 <tr><td class="fieldtype">
 <a class="anchor" id="a1cef36ea7bcb39eb33ee9c064ef1aa39"></a><a class="el" href="gctypes_8h.html#afaa62991928fb9fb18ff0db62a040aba">u32</a></td>
@@ -309,175 +295,31 @@ port</td>
 <td class="fielddoc">
 <p>Port this <a class="el" href="ai_8h.html#struct_a_i" title="Holds all information about an AI. ">AI</a> plays at </p>
 </td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="ac3b02072318dbf033ab5fc97b6973c14"></a><a class="el" href="gctypes_8h.html#afaa62991928fb9fb18ff0db62a040aba">u32</a></td>
+<td class="fieldname">
+opponent</td>
+<td class="fielddoc">
+<p>Port of this <a class="el" href="ai_8h.html#struct_a_i" title="Holds all information about an AI. ">AI</a>'s opponent </p>
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a03c996f9fcf0e10baeb3e700be0c409a"></a><a class="el" href="gctypes_8h.html#a6a912bf1d80625256884f11a0ea1d5fd">bool</a></td>
+<td class="fieldname">
+active</td>
+<td class="fielddoc">
+<p>Whether or not this <a class="el" href="ai_8h.html#struct_a_i" title="Holds all information about an AI. ">AI</a> is active in the game </p>
+</td></tr>
 </table>
 
 </div>
 </div>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a class="anchor" id="a25bbf0d263c780d3379040bf765369e2"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BOWSER&#160;&#160;&#160;(1 &lt;&lt; 3)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p><a class="el" href="ai_8h.html#struct_a_i" title="Holds all information about an AI. ">AI</a> Character Bit Mask </p>
-
-</div>
-</div>
-<a class="anchor" id="a78970dd75cad4541ac7435082258c2ea"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define DK&#160;&#160;&#160;(1 &lt;&lt; 6)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p><a class="el" href="ai_8h.html#struct_a_i" title="Holds all information about an AI. ">AI</a> Character Bit Mask </p>
-
-</div>
-</div>
 <a class="anchor" id="a8cfc77cba8144f2bc2e74fb7a7584afb"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">#define DR_MARIO&#160;&#160;&#160;(1 &lt;&lt; 0)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p><a class="el" href="ai_8h.html#struct_a_i" title="Holds all information about an AI. ">AI</a> Character Bit Mask </p>
-
-</div>
-</div>
-<a class="anchor" id="a9048a2e314c97dfce03a07535084a9fd"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define FALCO&#160;&#160;&#160;(1 &lt;&lt; 9)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p><a class="el" href="ai_8h.html#struct_a_i" title="Holds all information about an AI. ">AI</a> Character Bit Mask </p>
-
-</div>
-</div>
-<a class="anchor" id="a341ee75d09e0218d1a01178f6baab8a9"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define FALCON&#160;&#160;&#160;(1 &lt;&lt; 7)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p><a class="el" href="ai_8h.html#struct_a_i" title="Holds all information about an AI. ">AI</a> Character Bit Mask </p>
-
-</div>
-</div>
-<a class="anchor" id="a45d42d926ee05e83077980e151e6db9d"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define FOX&#160;&#160;&#160;(1 &lt;&lt; 10)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p><a class="el" href="ai_8h.html#struct_a_i" title="Holds all information about an AI. ">AI</a> Character Bit Mask </p>
-
-</div>
-</div>
-<a class="anchor" id="aa7a5a69ae8f3522c82d6bee26557b7f5"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define GANON&#160;&#160;&#160;(1 &lt;&lt; 8)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p><a class="el" href="ai_8h.html#struct_a_i" title="Holds all information about an AI. ">AI</a> Character Bit Mask </p>
-
-</div>
-</div>
-<a class="anchor" id="ae08adea517fa8a981e019ee8aa823a83"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define ICE_CLIMBERS&#160;&#160;&#160;(1 &lt;&lt; 12)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p><a class="el" href="ai_8h.html#struct_a_i" title="Holds all information about an AI. ">AI</a> Character Bit Mask </p>
-
-</div>
-</div>
-<a class="anchor" id="a729554879315733b3760b7e5e2927495"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define INIT_AI</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">port_val, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">characters_val&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">{ \</div><div class="line">    .inputQueue = <a class="code" href="gctypes_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>, \</div><div class="line">    .logicQueue = <a class="code" href="gctypes_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>, \</div><div class="line">    .logicSize = 0, \</div><div class="line">    .inputSize = 0, \</div><div class="line">    .logicCapacity = 0, \</div><div class="line">    .inputCapacity = 0, \</div><div class="line">    .characters = characters_val, \</div><div class="line">    .port = port_val, \</div><div class="line">    .active = <span class="keyword">false</span> \</div><div class="line">}</div><div class="ttc" id="gctypes_8h_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="gctypes_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> gctypes.h:45</div></div>
-</div><!-- fragment --><p>helps with ai initialization </p>
-
-</div>
-</div>
-<a class="anchor" id="a9270f8e0b3866a58cfa3a7173da21abd"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define KIRBY&#160;&#160;&#160;(1 &lt;&lt; 13)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p><a class="el" href="ai_8h.html#struct_a_i" title="Holds all information about an AI. ">AI</a> Character Bit Mask </p>
-
-</div>
-</div>
-<a class="anchor" id="a32298be536f02aa8bbde57c0c970124e"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define LINK&#160;&#160;&#160;(1 &lt;&lt; 16)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p><a class="el" href="ai_8h.html#struct_a_i" title="Holds all information about an AI. ">AI</a> Character Bit Mask </p>
-
-</div>
-</div>
-<a class="anchor" id="a1ba3226d974a364d7682f44614e311d9"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define LUIGI&#160;&#160;&#160;(1 &lt;&lt; 2)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -498,12 +340,12 @@ port</td>
 
 </div>
 </div>
-<a class="anchor" id="a2763e71ffbe7c0255be3126aac08233d"></a>
+<a class="anchor" id="a1ba3226d974a364d7682f44614e311d9"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define MARTH&#160;&#160;&#160;(1 &lt;&lt; 23)</td>
+          <td class="memname">#define LUIGI&#160;&#160;&#160;(1 &lt;&lt; 2)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -511,12 +353,12 @@ port</td>
 
 </div>
 </div>
-<a class="anchor" id="a9b44f33ffd4ea0464a76705c4fdbc61f"></a>
+<a class="anchor" id="a25bbf0d263c780d3379040bf765369e2"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define MEWTWO&#160;&#160;&#160;(1 &lt;&lt; 21)</td>
+          <td class="memname">#define BOWSER&#160;&#160;&#160;(1 &lt;&lt; 3)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -524,12 +366,90 @@ port</td>
 
 </div>
 </div>
-<a class="anchor" id="aa792418b6fa639769e7661163a6a815c"></a>
+<a class="anchor" id="af96789c285aa5b40d948369c9867ba52"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define MR_GNW&#160;&#160;&#160;(1 &lt;&lt; 22)</td>
+          <td class="memname">#define PEACH&#160;&#160;&#160;(1 &lt;&lt; 4)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p><a class="el" href="ai_8h.html#struct_a_i" title="Holds all information about an AI. ">AI</a> Character Bit Mask </p>
+
+</div>
+</div>
+<a class="anchor" id="a6a404189274b097f2b1d7d6bde0d490d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define YOSHI&#160;&#160;&#160;(1 &lt;&lt; 5)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p><a class="el" href="ai_8h.html#struct_a_i" title="Holds all information about an AI. ">AI</a> Character Bit Mask </p>
+
+</div>
+</div>
+<a class="anchor" id="a78970dd75cad4541ac7435082258c2ea"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DK&#160;&#160;&#160;(1 &lt;&lt; 6)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p><a class="el" href="ai_8h.html#struct_a_i" title="Holds all information about an AI. ">AI</a> Character Bit Mask </p>
+
+</div>
+</div>
+<a class="anchor" id="a341ee75d09e0218d1a01178f6baab8a9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FALCON&#160;&#160;&#160;(1 &lt;&lt; 7)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p><a class="el" href="ai_8h.html#struct_a_i" title="Holds all information about an AI. ">AI</a> Character Bit Mask </p>
+
+</div>
+</div>
+<a class="anchor" id="aa7a5a69ae8f3522c82d6bee26557b7f5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GANON&#160;&#160;&#160;(1 &lt;&lt; 8)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p><a class="el" href="ai_8h.html#struct_a_i" title="Holds all information about an AI. ">AI</a> Character Bit Mask </p>
+
+</div>
+</div>
+<a class="anchor" id="a9048a2e314c97dfce03a07535084a9fd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FALCO&#160;&#160;&#160;(1 &lt;&lt; 9)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p><a class="el" href="ai_8h.html#struct_a_i" title="Holds all information about an AI. ">AI</a> Character Bit Mask </p>
+
+</div>
+</div>
+<a class="anchor" id="a45d42d926ee05e83077980e151e6db9d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FOX&#160;&#160;&#160;(1 &lt;&lt; 10)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -550,12 +470,77 @@ port</td>
 
 </div>
 </div>
-<a class="anchor" id="af96789c285aa5b40d948369c9867ba52"></a>
+<a class="anchor" id="ae08adea517fa8a981e019ee8aa823a83"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define PEACH&#160;&#160;&#160;(1 &lt;&lt; 4)</td>
+          <td class="memname">#define ICE_CLIMBERS&#160;&#160;&#160;(1 &lt;&lt; 12)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p><a class="el" href="ai_8h.html#struct_a_i" title="Holds all information about an AI. ">AI</a> Character Bit Mask </p>
+
+</div>
+</div>
+<a class="anchor" id="a9270f8e0b3866a58cfa3a7173da21abd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define KIRBY&#160;&#160;&#160;(1 &lt;&lt; 13)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p><a class="el" href="ai_8h.html#struct_a_i" title="Holds all information about an AI. ">AI</a> Character Bit Mask </p>
+
+</div>
+</div>
+<a class="anchor" id="a7c2a17b44ed15e13dc2b5c859bf727c6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SAMUS&#160;&#160;&#160;(1 &lt;&lt; 14)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p><a class="el" href="ai_8h.html#struct_a_i" title="Holds all information about an AI. ">AI</a> Character Bit Mask </p>
+
+</div>
+</div>
+<a class="anchor" id="a679e73b2901b530b96ff3d7959ba77ee"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ZELDA&#160;&#160;&#160;(1 &lt;&lt; 15)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p><a class="el" href="ai_8h.html#struct_a_i" title="Holds all information about an AI. ">AI</a> Character Bit Mask </p>
+
+</div>
+</div>
+<a class="anchor" id="a32298be536f02aa8bbde57c0c970124e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LINK&#160;&#160;&#160;(1 &lt;&lt; 16)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p><a class="el" href="ai_8h.html#struct_a_i" title="Holds all information about an AI. ">AI</a> Character Bit Mask </p>
+
+</div>
+</div>
+<a class="anchor" id="a6c35a11967b2516c865556f7149c0f72"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define YOUNG_LINK&#160;&#160;&#160;(1 &lt;&lt; 17)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -602,6 +587,45 @@ port</td>
 
 </div>
 </div>
+<a class="anchor" id="a9b44f33ffd4ea0464a76705c4fdbc61f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MEWTWO&#160;&#160;&#160;(1 &lt;&lt; 21)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p><a class="el" href="ai_8h.html#struct_a_i" title="Holds all information about an AI. ">AI</a> Character Bit Mask </p>
+
+</div>
+</div>
+<a class="anchor" id="aa792418b6fa639769e7661163a6a815c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MR_GNW&#160;&#160;&#160;(1 &lt;&lt; 22)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p><a class="el" href="ai_8h.html#struct_a_i" title="Holds all information about an AI. ">AI</a> Character Bit Mask </p>
+
+</div>
+</div>
+<a class="anchor" id="a2763e71ffbe7c0255be3126aac08233d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MARTH&#160;&#160;&#160;(1 &lt;&lt; 23)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p><a class="el" href="ai_8h.html#struct_a_i" title="Holds all information about an AI. ">AI</a> Character Bit Mask </p>
+
+</div>
+</div>
 <a class="anchor" id="aef8fac1ff47c93ea245a83fb380fbfec"></a>
 <div class="memitem">
 <div class="memproto">
@@ -615,65 +639,41 @@ port</td>
 
 </div>
 </div>
-<a class="anchor" id="a7c2a17b44ed15e13dc2b5c859bf727c6"></a>
+<a class="anchor" id="a729554879315733b3760b7e5e2927495"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define SAMUS&#160;&#160;&#160;(1 &lt;&lt; 14)</td>
+          <td class="memname">#define INIT_AI</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">port_val, </td>
         </tr>
-      </table>
-</div><div class="memdoc">
-<p><a class="el" href="ai_8h.html#struct_a_i" title="Holds all information about an AI. ">AI</a> Character Bit Mask </p>
-
-</div>
-</div>
-<a class="anchor" id="a6a404189274b097f2b1d7d6bde0d490d"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
         <tr>
-          <td class="memname">#define YOSHI&#160;&#160;&#160;(1 &lt;&lt; 5)</td>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">characters_val&#160;</td>
         </tr>
-      </table>
-</div><div class="memdoc">
-<p><a class="el" href="ai_8h.html#struct_a_i" title="Holds all information about an AI. ">AI</a> Character Bit Mask </p>
-
-</div>
-</div>
-<a class="anchor" id="a6c35a11967b2516c865556f7149c0f72"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
         <tr>
-          <td class="memname">#define YOUNG_LINK&#160;&#160;&#160;(1 &lt;&lt; 17)</td>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p><a class="el" href="ai_8h.html#struct_a_i" title="Holds all information about an AI. ">AI</a> Character Bit Mask </p>
-
-</div>
-</div>
-<a class="anchor" id="a679e73b2901b530b96ff3d7959ba77ee"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define ZELDA&#160;&#160;&#160;(1 &lt;&lt; 15)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p><a class="el" href="ai_8h.html#struct_a_i" title="Holds all information about an AI. ">AI</a> Character Bit Mask </p>
+<b>Value:</b><div class="fragment"><div class="line">{ \</div><div class="line">    .inputQueue = <a class="code" href="gctypes_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>, \</div><div class="line">    .logicQueue = <a class="code" href="gctypes_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>, \</div><div class="line">    .logicSize = 0, \</div><div class="line">    .inputSize = 0, \</div><div class="line">    .logicCapacity = 0, \</div><div class="line">    .inputCapacity = 0, \</div><div class="line">    .characters = characters_val, \</div><div class="line">    .port = port_val, \</div><div class="line">    .active = <span class="keyword">false</span> \</div><div class="line">}</div><div class="ttc" id="gctypes_8h_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="gctypes_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> gctypes.h:45</div></div>
+</div><!-- fragment --><p>helps with ai initialization </p>
 
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="ae4f9a635021c4118c4254b8d49c3b4e0"></a>
+<a class="anchor" id="ab5787b889bc2bd27dcd837ab0def78b6"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void clearAI </td>
+          <td class="memname">void updateAI </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="ai_8h.html#struct_a_i">AI</a> *&#160;</td>
           <td class="paramname"><em>ai</em></td><td>)</td>
@@ -682,7 +682,7 @@ port</td>
       </table>
 </div><div class="memdoc">
 
-<p>Clear all logic and inputs from <a class="el" href="ai_8h.html#struct_a_i" title="Holds all information about an AI. ">AI</a> (reset controller) </p>
+<p>Check logic rules and queued inputs. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">ai</td><td>- Pointer to <a class="el" href="ai_8h.html#struct_a_i" title="Holds all information about an AI. ">AI</a> struct </td></tr>
@@ -718,12 +718,12 @@ port</td>
 
 </div>
 </div>
-<a class="anchor" id="ab5787b889bc2bd27dcd837ab0def78b6"></a>
+<a class="anchor" id="ae4f9a635021c4118c4254b8d49c3b4e0"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void updateAI </td>
+          <td class="memname">void clearAI </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="ai_8h.html#struct_a_i">AI</a> *&#160;</td>
           <td class="paramname"><em>ai</em></td><td>)</td>
@@ -732,7 +732,7 @@ port</td>
       </table>
 </div><div class="memdoc">
 
-<p>Check logic rules and queued inputs. </p>
+<p>Clear all logic and inputs from <a class="el" href="ai_8h.html#struct_a_i" title="Holds all information about an AI. ">AI</a> (reset controller) </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">ai</td><td>- Pointer to <a class="el" href="ai_8h.html#struct_a_i" title="Holds all information about an AI. ">AI</a> struct </td></tr>

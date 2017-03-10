@@ -189,20 +189,6 @@ buttons</td>
 <p>A-0100, B-0200, X-0400, Z-0010, L-0040 </p>
 </td></tr>
 <tr><td class="fieldtype">
-<a class="anchor" id="a7429e9bcd7b9ca314227695941ec3d69"></a><a class="el" href="gctypes_8h.html#a5f6906312a689f27d70e9d086649d3fd">f32</a></td>
-<td class="fieldname">
-CstickX</td>
-<td class="fielddoc">
-<p>x coordinate of c-stick </p>
-</td></tr>
-<tr><td class="fieldtype">
-<a class="anchor" id="a1562d14c5ef143bfdff66199226f7b9d"></a><a class="el" href="gctypes_8h.html#a5f6906312a689f27d70e9d086649d3fd">f32</a></td>
-<td class="fieldname">
-CstickY</td>
-<td class="fielddoc">
-<p>y coordinate of c-stick </p>
-</td></tr>
-<tr><td class="fieldtype">
 <a class="anchor" id="ab543b39d52e35c1b2ac483c306974038"></a><a class="el" href="gctypes_8h.html#a5f6906312a689f27d70e9d086649d3fd">f32</a></td>
 <td class="fieldname">
 stickX</td>
@@ -216,21 +202,48 @@ stickY</td>
 <td class="fielddoc">
 <p>y coordinate of control stick </p>
 </td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a7429e9bcd7b9ca314227695941ec3d69"></a><a class="el" href="gctypes_8h.html#a5f6906312a689f27d70e9d086649d3fd">f32</a></td>
+<td class="fieldname">
+CstickX</td>
+<td class="fielddoc">
+<p>x coordinate of c-stick </p>
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a1562d14c5ef143bfdff66199226f7b9d"></a><a class="el" href="gctypes_8h.html#a5f6906312a689f27d70e9d086649d3fd">f32</a></td>
+<td class="fieldname">
+CstickY</td>
+<td class="fielddoc">
+<p>y coordinate of c-stick </p>
+</td></tr>
 </table>
 
 </div>
 </div>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a class="anchor" id="a5ec59d5e4f6bfacfdf3aa6e7ed5c0373"></a>
+<a class="anchor" id="a3359a04a053711a0cf3e8079177af3b2"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define A_BUTTON&#160;&#160;&#160;0x01</td>
+          <td class="memname">#define BUTTON_BITS&#160;&#160;&#160;0x000F</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Button Flag </p>
+<p><a class="el" href="controller_8h.html#struct_controller" title="Represents the state of a controller. ">Controller</a> bit mask </p>
+
+</div>
+</div>
+<a class="anchor" id="a01d64cf876576ed9d17018005eda2523"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RADIUS_BITS&#160;&#160;&#160;0x00F0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p><a class="el" href="controller_8h.html#struct_controller" title="Represents the state of a controller. ">Controller</a> bit mask </p>
 
 </div>
 </div>
@@ -247,6 +260,32 @@ stickY</td>
 
 </div>
 </div>
+<a class="anchor" id="adb8526f5c97746625152403b857b0b11"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NO_BUTTON&#160;&#160;&#160;0x00</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Button Flag </p>
+
+</div>
+</div>
+<a class="anchor" id="a5ec59d5e4f6bfacfdf3aa6e7ed5c0373"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define A_BUTTON&#160;&#160;&#160;0x01</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Button Flag </p>
+
+</div>
+</div>
 <a class="anchor" id="a2454c318caf152737fd63bebddd58ea2"></a>
 <div class="memitem">
 <div class="memproto">
@@ -260,25 +299,12 @@ stickY</td>
 
 </div>
 </div>
-<a class="anchor" id="a3359a04a053711a0cf3e8079177af3b2"></a>
+<a class="anchor" id="afdb8ffccf7c918ee70c71d65bae4a61f"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BUTTON_BITS&#160;&#160;&#160;0x000F</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p><a class="el" href="controller_8h.html#struct_controller" title="Represents the state of a controller. ">Controller</a> bit mask </p>
-
-</div>
-</div>
-<a class="anchor" id="ae2ac2e5d1765619532ad6a1b4b512898"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define CSTICK_DOWN&#160;&#160;&#160;0x0c</td>
+          <td class="memname">#define X_BUTTON&#160;&#160;&#160;0x03</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -286,12 +312,12 @@ stickY</td>
 
 </div>
 </div>
-<a class="anchor" id="a370ee9d0b3f3b57590c5238a48fedd7c"></a>
+<a class="anchor" id="af51f09b23575997e584b98bfd965c21e"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define CSTICK_LEFT&#160;&#160;&#160;0x0d</td>
+          <td class="memname">#define Z_BUTTON&#160;&#160;&#160;0x04</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -299,12 +325,12 @@ stickY</td>
 
 </div>
 </div>
-<a class="anchor" id="aba382980545a3dcad56e70cc081f84e7"></a>
+<a class="anchor" id="a78883cb33621a5e24f4e56bcf8732020"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define CSTICK_RIGHT&#160;&#160;&#160;0x0e</td>
+          <td class="memname">#define L_BUTTON&#160;&#160;&#160;0x05</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -312,12 +338,25 @@ stickY</td>
 
 </div>
 </div>
-<a class="anchor" id="a070e26602a3212dccd5b8996f532e524"></a>
+<a class="anchor" id="ab341b8680b89a9888189982451117fbf"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define CSTICK_UP&#160;&#160;&#160;0x0b</td>
+          <td class="memname">#define START_BUTTON&#160;&#160;&#160;0x06</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Button Flag </p>
+
+</div>
+</div>
+<a class="anchor" id="a58dae06ac7f1bd7d308cef31d0d444df"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DPAD_UP&#160;&#160;&#160;0x07</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -364,12 +403,12 @@ stickY</td>
 
 </div>
 </div>
-<a class="anchor" id="a58dae06ac7f1bd7d308cef31d0d444df"></a>
+<a class="anchor" id="a070e26602a3212dccd5b8996f532e524"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define DPAD_UP&#160;&#160;&#160;0x07</td>
+          <td class="memname">#define CSTICK_UP&#160;&#160;&#160;0x0b</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -377,12 +416,12 @@ stickY</td>
 
 </div>
 </div>
-<a class="anchor" id="aa4bf290c42e5626f586f84d41be94cdb"></a>
+<a class="anchor" id="ae2ac2e5d1765619532ad6a1b4b512898"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define FULL_STICK&#160;&#160;&#160;0x20</td>
+          <td class="memname">#define CSTICK_DOWN&#160;&#160;&#160;0x0c</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -390,12 +429,12 @@ stickY</td>
 
 </div>
 </div>
-<a class="anchor" id="a78883cb33621a5e24f4e56bcf8732020"></a>
+<a class="anchor" id="a370ee9d0b3f3b57590c5238a48fedd7c"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define L_BUTTON&#160;&#160;&#160;0x05</td>
+          <td class="memname">#define CSTICK_LEFT&#160;&#160;&#160;0x0d</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -403,12 +442,12 @@ stickY</td>
 
 </div>
 </div>
-<a class="anchor" id="adb8526f5c97746625152403b857b0b11"></a>
+<a class="anchor" id="aba382980545a3dcad56e70cc081f84e7"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define NO_BUTTON&#160;&#160;&#160;0x00</td>
+          <td class="memname">#define CSTICK_RIGHT&#160;&#160;&#160;0x0e</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -429,25 +468,25 @@ stickY</td>
 
 </div>
 </div>
-<a class="anchor" id="a01d64cf876576ed9d17018005eda2523"></a>
+<a class="anchor" id="a59d30780b9b242184372ef8da27f6c6f"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define RADIUS_BITS&#160;&#160;&#160;0x00F0</td>
+          <td class="memname">#define TILT_STICK&#160;&#160;&#160;0x10</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p><a class="el" href="controller_8h.html#struct_controller" title="Represents the state of a controller. ">Controller</a> bit mask </p>
+<p>Button Flag </p>
 
 </div>
 </div>
-<a class="anchor" id="ab341b8680b89a9888189982451117fbf"></a>
+<a class="anchor" id="aa4bf290c42e5626f586f84d41be94cdb"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define START_BUTTON&#160;&#160;&#160;0x06</td>
+          <td class="memname">#define FULL_STICK&#160;&#160;&#160;0x20</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -465,45 +504,6 @@ stickY</td>
       </table>
 </div><div class="memdoc">
 <p>Radius of stick that defines a tilt </p>
-
-</div>
-</div>
-<a class="anchor" id="a59d30780b9b242184372ef8da27f6c6f"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define TILT_STICK&#160;&#160;&#160;0x10</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Button Flag </p>
-
-</div>
-</div>
-<a class="anchor" id="afdb8ffccf7c918ee70c71d65bae4a61f"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define X_BUTTON&#160;&#160;&#160;0x03</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Button Flag </p>
-
-</div>
-</div>
-<a class="anchor" id="af51f09b23575997e584b98bfd965c21e"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define Z_BUTTON&#160;&#160;&#160;0x04</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Button Flag </p>
 
 </div>
 </div>

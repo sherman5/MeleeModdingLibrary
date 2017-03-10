@@ -125,90 +125,6 @@ Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>System level functions. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="a7b3d8b7cea59b137b167878ec88eb8d6"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void* calloc </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="gctypes_8h.html#aedaf31b3f7716640e70205644b9b828e">size_t</a>&#160;</td>
-          <td class="paramname"><em>num</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="gctypes_8h.html#aedaf31b3f7716640e70205644b9b828e">size_t</a>&#160;</td>
-          <td class="paramname"><em>size</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Allocate and zero-initialize array. </p>
-<p>Allocates a block of memory for an array of <code>num</code> elements, each of them <code>size</code> bytes long, and initializes all its bits to zero.</p>
-<p>The effective result is the allocation of a zero-initialized memory block of <code></code>(num*size) bytes.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">num</td><td>- Number of elements to allocate </td></tr>
-    <tr><td class="paramname">size</td><td>- Size of each element</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>On success, a pointer to the memory block allocated by the function. If the function failed to allocate the requested block of memory, a null pointer is returned.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a href="http://www.cplusplus.com/reference/cstdlib/calloc/">http://www.cplusplus.com/reference/cstdlib/calloc/</a> </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="afbedc913aa4651b3c3b4b3aecd9b4711"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void free </td>
-          <td>(</td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>ptr</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Deallocate memory block. </p>
-<p>A block of memory previously allocated by a call to <code>malloc</code> or <code>realloc</code> is deallocated, making it available again for further allocations.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">ptr</td><td>- Pointer to a memory block previously allocated with <code>malloc</code> or <code>realloc</code>.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>none</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a href="http://www.cplusplus.com/reference/cstdlib/free/">http://www.cplusplus.com/reference/cstdlib/free/</a> </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ad7e29e81fdd34094d8734d1fc34144ba"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="gctypes_8h.html#aedaf31b3f7716640e70205644b9b828e">size_t</a> getHeapSize </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Get the size of the heap</p>
-<p>Returns the size (in bytes) of the heap that was allocated with <code>initHeap</code>.</p>
-<dl class="section return"><dt>Returns</dt><dd>size of the heap in bytes. </dd></dl>
-
-</div>
-</div>
 <a class="anchor" id="a8848565f840ad3ae3483237a47a92ca3"></a>
 <div class="memitem">
 <div class="memproto">
@@ -242,6 +158,24 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>none </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ad7e29e81fdd34094d8734d1fc34144ba"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="gctypes_8h.html#aedaf31b3f7716640e70205644b9b828e">size_t</a> getHeapSize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get the size of the heap</p>
+<p>Returns the size (in bytes) of the heap that was allocated with <code>initHeap</code>.</p>
+<dl class="section return"><dt>Returns</dt><dd>size of the heap in bytes. </dd></dl>
 
 </div>
 </div>
@@ -299,6 +233,45 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a7b3d8b7cea59b137b167878ec88eb8d6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void* calloc </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="gctypes_8h.html#aedaf31b3f7716640e70205644b9b828e">size_t</a>&#160;</td>
+          <td class="paramname"><em>num</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="gctypes_8h.html#aedaf31b3f7716640e70205644b9b828e">size_t</a>&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Allocate and zero-initialize array. </p>
+<p>Allocates a block of memory for an array of <code>num</code> elements, each of them <code>size</code> bytes long, and initializes all its bits to zero.</p>
+<p>The effective result is the allocation of a zero-initialized memory block of <code></code>(num*size) bytes.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">num</td><td>- Number of elements to allocate </td></tr>
+    <tr><td class="paramname">size</td><td>- Size of each element</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>On success, a pointer to the memory block allocated by the function. If the function failed to allocate the requested block of memory, a null pointer is returned.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a href="http://www.cplusplus.com/reference/cstdlib/calloc/">http://www.cplusplus.com/reference/cstdlib/calloc/</a> </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a1a6b5e8d2f1c37e5b43e4345586075be"></a>
 <div class="memitem">
 <div class="memproto">
@@ -334,6 +307,33 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A pointer to the reallocated memory block, which may be either the same as <code>ptr</code> or a new location. A null-pointer indicates either that <code>size</code> was zero (an thus ptr was deallocated), or that the function did not allocate storage (and thus the block pointed by <code>ptr</code> was not modified).</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a href="http://www.cplusplus.com/reference/cstdlib/realloc/">http://www.cplusplus.com/reference/cstdlib/realloc/</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="afbedc913aa4651b3c3b4b3aecd9b4711"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void free </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>ptr</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Deallocate memory block. </p>
+<p>A block of memory previously allocated by a call to <code>malloc</code> or <code>realloc</code> is deallocated, making it available again for further allocations.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ptr</td><td>- Pointer to a memory block previously allocated with <code>malloc</code> or <code>realloc</code>.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>none</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a href="http://www.cplusplus.com/reference/cstdlib/free/">http://www.cplusplus.com/reference/cstdlib/free/</a> </dd></dl>
 
 </div>
 </div>
