@@ -41,6 +41,7 @@
 /** Radius of stick that defines a tilt */
 #define TILT_RADIUS 0.3
 
+//TODO: match up with game struct
 /**
  * @brief Represents the state of a controller.
  */

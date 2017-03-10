@@ -98,7 +98,7 @@ typedef struct
     float runAnimationScaling;
     float runAcceleration;
     float groundedMaxHorizontalVelocity;
-    float jumpSquat;
+    float jumpSquat; /**< frames of jump squat */
     float jumpHorizontalInitialVelocity;
     float jumpVerticalInitialVelocity;
     float groundToAirJumpMomentum;
@@ -106,7 +106,7 @@ typedef struct
     float hopVerticalInitialVelocity;
     float airJumpVerticalMultiplier;
     float airJumpHorizontalMultiplier;
-    float numberOfJumps;
+    float numberOfJumps; /**< maximum number of jumps */
     float gravity;
     float terminalVelocity;
     float airMobilityA;
@@ -138,17 +138,19 @@ typedef struct
     float wallJumpVerticalVelocity;
 
     /**@cond */PAD(analogStick, 0x620, 0x218, float);/**@endcond */    
-    float analogStickX;
-    float analogStickY;
-    float prevAnalogStickX;
-    float prevAnalogStickY;
+    float analogStickX; /**< used to determine tilt vs smash */
+    float analogStickY;/**< used to determine tilt vs smash */
+    float prevAnalogStickX; /**< used to determine tilt vs smash */
+    float prevAnalogStickY; /**< used to determine tilt vs smash */
     
     /**@cond */PAD(cStick, 0x638, 0x62c, float);/**@endcond */    
     float cStickX; /** -1.0 to 1.0 */
     float cStickY; /**< -1.0 to 1.0 */
 
-    /**@cond */PAD(controller, 0x650, 0x63c, float);/**@endcond */    
+    /**@cond */PAD(analogTrigger, 0x650, 0x63c, float);/**@endcond */    
     float analogTriggerData;
+
+    /**@cond */PAD(digitalButton, 0x65c, 0x650, float);/**@endcond */    
     u32 digitalButtonData;
     u32 prevDigitalButtonData;
 
@@ -156,7 +158,7 @@ typedef struct
     float lastPosition; /**< last position player landed at */
 
     /**@cond */PAD(platformID, 0x83f, 0x830, float);/**@endcond */    
-    u8 platformID;
+    u8 platformID; /**< platform character was last on */
 
     /**@cond */PAD(stageRelation, 0x842, 0x83f, u8);/**@endcond */    
     u8 stageRelationID;
@@ -207,10 +209,10 @@ typedef struct
     /**@cond */PAD(comboCount, 0x2090, 0x206c, u32);/**@endcond */        
     u16 comboCount;
 
-    /**@cond */PAD(wallride, 0x210C, 0x2090, u16);/**@endcond */        
+    /**@cond */PAD(wallride, 0x210c, 0x2090, u16);/**@endcond */        
     u8 wallrideCounter;
 
-    /**@cond */PAD(wallAndSmash, 0x2110, 0x2090, u8);/**@endcond */        
+    /**@cond */PAD(wallAndSmash, 0x2110, 0x210c, u8);/**@endcond */        
     float wallLocation;
     u32 smashAttackState;
     u32 smashChargeFrame;
@@ -228,16 +230,16 @@ typedef struct
 /** @brief variables contained in "player block" */
 typedef struct
 {
-    u32 playerState;
-    u32 playerCharacter;
-    u32 slotType;
+    u32 playerState; /**< in game = 2, otherwise = 0 */
+    u32 playerCharacter; /**< character external ID */
+    u32 slotType; /**< human = 0, cpu = 1, demo = 2 */ 
     u16 transformed;
 
     /**@cond */PAD(costumeID, 0x44, 0x0c, u16);/**@endcond */        
-    u8 costumeID;
+    u8 costumeID; /**< false = 0, true = 1 */
     u8 controllerIndex;
     u8 subcolorID;
-    u8 teamID;
+    u8 teamID; /**< red = 0, blue = 1, green = 2 */
     u8 playerID;
     
     /**@cond */PAD(falls, 0x68, 0x48, u8);/**@endcond */        
@@ -252,7 +254,7 @@ typedef struct
 
     /**@cond */PAD(selfDeaths, 0x8d, 0x84, u32);/**@endcond */        
     u8 selfDeaths;
-    u8 stocks;
+    u8 stocks; /**< remaining stocks */
 
 } PlayerBlock;
 
