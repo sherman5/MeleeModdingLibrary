@@ -179,31 +179,51 @@ test_version : $(LIBS)
 
 # tutorial targets
 .PHONY : tutorial_SimpleProgram tutorial_Teching tutorial_DI \
+tutorial_Recovery tutorial_DefensiveAI tutorial_data
+
+TUTORIALS = tutorial_SimpleProgram tutorial_Teching tutorial_DI \
 tutorial_Recovery tutorial_DefensiveAI
+
+tutorial_data : $(TUTORIALS)
+	cp $(VERSION)/tutorials/SimpleProgram/SimpleProgram.data \
+		tutorials/SimpleProgram/SimpleProgram.data && \
+	cp $(VERSION)/tutorials/Teching/TechingTutorial.data \
+		tutorials/Teching/TechingTutorial.data && \
+	cp $(VERSION)/tutorials/DI/DITutorial.data \
+		tutorials/DI/DITutorial.data && \
+	cp $(VERSION)/tutorials/Recovery/RecoveryTutorial.data \
+		tutorials/Recovery/RecoveryTutorial.data && \
+	cp $(VERSION)/tutorials/DefensiveAI/DefensiveAI.data \
+		tutorials/DefensiveAI/DefensiveAI.data
 
 tutorial_SimpleProgram : dist
 	cd $(VERSION)/tutorials/SimpleProgram && \
 	wiimake ../../../$(ISO_FILE) SimpleProgram.ini $(MAKE_FLAGS) && \
+	wiimake-isotool ../../../$(ISO_FILE) --save SimpleProgram.data && \
 	cd ../../..
 
 tutorial_Teching : dist
 	cd $(VERSION)/tutorials/Teching && \
 	wiimake ../../../$(ISO_FILE) TechingTutorial.ini $(MAKE_FLAGS) && \
+	wiimake-isotool ../../../$(ISO_FILE) --save TechingTutorial.data && \
 	cd ../../..
 
 tutorial_DI : dist
 	cd $(VERSION)/tutorials/DI && \
 	wiimake ../../../$(ISO_FILE) DITutorial.ini $(MAKE_FLAGS) && \
+	wiimake-isotool ../../../$(ISO_FILE) --save DITutorial.data && \
 	cd ../../..
 
 tutorial_Recovery : dist
 	cd $(VERSION)/tutorials/Recovery && \
 	wiimake ../../../$(ISO_FILE) RecoveryTutorial.ini $(MAKE_FLAGS) && \
+	wiimake-isotool ../../../$(ISO_FILE) --save RecoveryTutorial.data && \
 	cd ../../..
 
 tutorial_DefensiveAI : dist
 	cd $(VERSION)/tutorials/DefensiveAI && \
 	wiimake ../../../$(ISO_FILE) DefensiveAI.ini $(MAKE_FLAGS) && \
+	wiimake-isotool ../../../$(ISO_FILE) --save DefensiveAI.data && \
 	cd ../../..
 
 # documentation target
