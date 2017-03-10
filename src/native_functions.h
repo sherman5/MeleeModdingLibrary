@@ -78,16 +78,34 @@
 /************************** math.h ****************************/
 
 /** float sin(float x) */
-#define SINE_FPTR       VOID_PTR(0x80326220)
+#define SIN_FPTR       VOID_PTR(0x80326220)
 
-/** float cosine(float x) */
-#define COSINE_FPTR     VOID_PTR(0x80326200)
+/** float cos(float x) */
+#define COS_FPTR     VOID_PTR(0x80326200)
 
 /** float tan(float x) */
-#define TANGENT_FPTR    VOID_PTR(0x803261bc)
+#define TAN_FPTR    VOID_PTR(0x803261bc)
+
+/** float acos(float x) */
+#define ACOS_FPTR       VOID_PTR(0x80022d1c)
+
+/** float asin(float x) */
+#define ASIN_FPTR       VOID_PTR(0x80022dbc)
+
+/** float atan(float x) */
+#define ATAN_FPTR       VOID_PTR(0x80022e68)
+
+/** float atan2(float y, float x) */
+#define ATAN2_FPTR      VOID_PTR(0x80022c30)
+
+/** float exp(float x) */
+#define EXP_FPTR        VOID_PTR(0x8000ce50)
+
+/** float log(float x) */
+#define LOG_FPTR        VOID_PTR(0x803265a8)
 
 /** float fabs(float x) */
-#define ABS_VAL_FPTR    VOID_PTR(0x803261b4)
+#define FABS_FPTR       VOID_PTR(0x803261b4)
 
 /** float recipSqrt(float x) */
 #define RECIP_SQRT_FPTR VOID_PTR(0x80022df8);

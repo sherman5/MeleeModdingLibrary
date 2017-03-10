@@ -16,12 +16,22 @@
 #define M_2PI       6.28318530718f   
 
 /** approximate value of pi / 2 */
-#define M_HALF_PI   1.57079632679f
+#define M_PI_OVER_2 1.57079632679f
+#define M_HALF_PI   M_PI_OVER_2 //TODO: REMOVE
 
-/** approximate value of pi / 180 */
+/** approximate value of pi / 3 */
+#define M_PI_OVER_3   1.047197551f
+
+/** approximate value of pi / 4 */
+#define M_PI_OVER_4   0.785398163f
+
+/** approximate value of pi / 6 */
+#define M_PI_OVER_6   0.523598776f
+
+/** degree to radian conversion */
 #define DEG_TO_RAD(x) ((x) * 0.01745329251f)
 
-/** approximate value of 180 / pi */
+/** radian to degree conversion */
 #define RAD_TO_DEG(x) ((x) * 57.2957795131f)
 
 /** sign of value **/
@@ -40,12 +50,105 @@ typedef struct
 /** @cond */
 extern float (*fabs)(float x);
 extern float (*recipSqrt)(float x);
+extern float (*exp)(float x);
+extern float (*log)(float x);
+
+extern float (*native_sin)(float x);
+extern float (*native_cos)(float x);
+extern float (*native_tan)(float x);
+extern float (*native_acos)(float x);
+extern float (*native_asin)(float x);
+extern float (*native_atan)(float x);
+extern float (*native_atan2)(float y, float x);
 
 __inline__ __attribute__((always_inline)) float sqrt(float x)
     {return x == 0 ? 0 : 1 / recipSqrt(x);}
 
 #if 0
 /// @endcond
+
+/**
+ * @brief native function for @c sin
+ *
+ * @param x - 
+ *
+ * @return
+ */
+float native_sin(float x);
+
+/**
+ * @brief native function for @c cos
+ *
+ * @param x - 
+ *
+ * @return
+ */
+float native_cos(float x);
+
+/**
+ * @brief native function for @c tan
+ *
+ * @param x - 
+ *
+ * @return
+ */
+float native_tan(float x);
+
+/**
+ * @brief native function for @c asin
+ *
+ * @param x - 
+ *
+ * @return
+ */
+float native_asin(float x);
+
+
+/**
+ * @brief native function for @c acos
+ *
+ * @param x - 
+ *
+ * @return
+ */
+float native_acos(float x);
+
+/**
+ * @brief native function for @c atan
+ *
+ * @param x - 
+ *
+ * @return
+ */
+float native_atan(float x);
+
+/**
+ * @brief native function for @c atan2
+ *
+ * @param y -
+ * @param x - 
+ *
+ * @return
+ */
+float native_atan2(float y, float x);
+
+/**
+ * @brief @c e to the power @p x
+ *
+ * @param x - floating-point value
+ *
+ * @return @c e raised the power @p x
+ */
+float exp(float x);
+
+/**
+ * @brief natural log
+ *
+ * @param x - floating-point value, must be positive
+ *
+ * @return the natural log of @p x
+ */
+float log(float x);
 
 /**
  * @brief Absolute value of @p x.

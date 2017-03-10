@@ -2,8 +2,19 @@
 #include "native_functions.h"
 #include "gctypes.h"
 
-float (*recipSqrt)(float x) = RECIP_SQRT_FPTR;
-float (*fabs)(float x) = ABS_VAL_FPTR;
+/*************************** built in functions **************************/
+float (*recipSqrt)(float x)             = RECIP_SQRT_FPTR;
+float (*fabs)(float x)                  = FABS_FPTR;
+float (*exp)(float x)                   = EXP_FPTR;
+float (*log)(float x)                   = LOG_FPTR;
+float (*native_sin)(float x)            = SIN_FPTR;
+float (*native_cos)(float x)            = COS_FPTR;
+float (*native_tan)(float x)            = TAN_FPTR;
+float (*native_acos)(float x)           = ACOS_FPTR;
+float (*native_asin)(float x)           = ASIN_FPTR;
+float (*native_atan)(float x)           = ATAN_FPTR;
+float (*native_atan2)(float y, float x) = ATAN2_FPTR;
+/*************************************************************************/
 
 // see http://stackoverflow.com/a/6437076
 float floor(float x)
@@ -74,19 +85,16 @@ float fpow(float base, u8 exp)
     return result;
 }
 
-static float (*native_sin)(float) = SINE_FPTR;
 float sin(float x)
 {
     return native_sin(DEG_TO_RAD(x));
 }
 
-static float (*native_cosine)(float) = COSINE_FPTR;
 float cos(float x)
 {
     return native_cosine(DEG_TO_RAD(x));
 }
 
-static float (*native_tangent)(float) = TANGENT_FPTR;
 float tan(float x)
 {
     return native_tangent(DEG_TO_RAD(x));
