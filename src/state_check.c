@@ -80,19 +80,19 @@ bool onGround(FunctionArg port)
     return !IN_AIR(port.u);
 }
 
-bool actionStateEq(FunctionArg port, FunctionArg state)
+bool actionStateEq(FunctionArg port, ActionState state)
 {
-    return ACTION_STATE(port.u) == state.u;
+    return ACTION_STATE(port.u) == state;
 }
 
-bool actionStateGeq(FunctionArg port, FunctionArg state)
+bool actionStateGeq(FunctionArg port, ActionState state)
 {
-    return ACTION_STATE(port.u) >= state.u;
+    return ACTION_STATE(port.u) >= state;
 }
 
-bool actionStateLeq(FunctionArg port, FunctionArg state)
+bool actionStateLeq(FunctionArg port, ActionState state)
 {
-    return ACTION_STATE(port.u) <= state.u;
+    return ACTION_STATE(port.u) <= state;
 }
 
 bool fallenDown(FunctionArg port)

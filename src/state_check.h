@@ -7,6 +7,7 @@
 #ifndef MML_STATE_CHECK_H
 #define MML_STATE_CHECK_H
 
+#include "action_state.h"
 #include "gctypes.h"
 #include "logic.h"
 
@@ -83,7 +84,7 @@ bool onGround(FunctionArg port);
  * @param state - <tt> unsigned 32-bit integer (ActionState) </tt>
  * @return Returns true if player's action state equals @p state
  */
-bool actionStateEq(FunctionArg port, FunctionArg state);
+bool actionStateEq(FunctionArg port, ActionState state);
 
 /**
  * @brief Checks the players (specified by @p port) action state
@@ -92,7 +93,7 @@ bool actionStateEq(FunctionArg port, FunctionArg state);
  * @param state - <tt> unsigned 32-bit integer (ActionState) </tt>
  * @return Returns true if player's action state greater than @p state
  */
-bool actionStateGeq(FunctionArg port, FunctionArg state);
+bool actionStateGeq(FunctionArg port, ActionState state);
 
 /**
  * @brief Checks the players (specified by @p port) action state
@@ -101,7 +102,7 @@ bool actionStateGeq(FunctionArg port, FunctionArg state);
  * @param state - <tt> unsigned 32-bit integer (ActionState) </tt>
  * @return Returns true if player's action state is less than @p state
  */
-bool actionStateLeq(FunctionArg port, FunctionArg state);
+bool actionStateLeq(FunctionArg port, ActionState state);
 
 /**
  * @brief Checks if player (specified by @p port) is near a surface
