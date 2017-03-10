@@ -117,6 +117,9 @@ Data Structures</h2></td></tr>
 <tr class="memitem:struct_player_data"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game__state_8h.html#struct_player_data">PlayerData</a></td></tr>
 <tr class="memdesc:struct_player_data"><td class="mdescLeft">&#160;</td><td class="mdescRight">struct holding player data  <a href="game__state_8h.html#struct_player_data">More...</a><br /></td></tr>
 <tr class="separator:struct_player_data"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:struct_player_block"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game__state_8h.html#struct_player_block">PlayerBlock</a></td></tr>
+<tr class="memdesc:struct_player_block"><td class="mdescLeft">&#160;</td><td class="mdescRight">Variables in static player block.  <a href="game__state_8h.html#struct_player_block">More...</a><br /></td></tr>
+<tr class="separator:struct_player_block"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:struct_game_state"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game__state_8h.html#struct_game_state">GameState</a></td></tr>
 <tr class="memdesc:struct_game_state"><td class="mdescLeft">&#160;</td><td class="mdescRight">In game variables.  <a href="game__state_8h.html#struct_game_state">More...</a><br /></td></tr>
 <tr class="separator:struct_game_state"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -127,22 +130,14 @@ Macros</h2></td></tr>
 <tr class="separator:a547a5ee07171fc8e699c255cf1f94ae2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a988b369dca2214632e8ae7bda5f0a5ff"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game__state_8h.html#a988b369dca2214632e8ae7bda5f0a5ff">DEFAULT_STAGE</a>&#160;&#160;&#160;{0, {0.f, 0.f}, <a class="el" href="game__state_8h.html#a547a5ee07171fc8e699c255cf1f94ae2">DEFAULT_PLATFORM</a>, <a class="el" href="game__state_8h.html#a547a5ee07171fc8e699c255cf1f94ae2">DEFAULT_PLATFORM</a>}</td></tr>
 <tr class="separator:a988b369dca2214632e8ae7bda5f0a5ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aba9ff025fed056da379554e467979656"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game__state_8h.html#aba9ff025fed056da379554e467979656">DEFAULT_GAMESTATE</a>&#160;&#160;&#160;{{0, 0, 0, 0, 0}, <a class="el" href="game__state_8h.html#a988b369dca2214632e8ae7bda5f0a5ff">DEFAULT_STAGE</a>}</td></tr>
+<tr class="memitem:aba9ff025fed056da379554e467979656"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game__state_8h.html#aba9ff025fed056da379554e467979656">DEFAULT_GAMESTATE</a>&#160;&#160;&#160;{{0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, <a class="el" href="game__state_8h.html#a988b369dca2214632e8ae7bda5f0a5ff">DEFAULT_STAGE</a>}</td></tr>
 <tr class="separator:aba9ff025fed056da379554e467979656"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a66765335086cf1c88e262a62212ab862"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game__state_8h.html#a66765335086cf1c88e262a62212ab862">PLAYER_BLOCK</a>(x)&#160;&#160;&#160;(0x804521F0 + 0xE90 * (x))</td></tr>
-<tr class="separator:a66765335086cf1c88e262a62212ab862"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5963bf4bc324e2ca445a129ced05a1d1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game__state_8h.html#a5963bf4bc324e2ca445a129ced05a1d1">CHAR_SELECT</a>(x)&#160;&#160;&#160;(*((<a class="el" href="gctypes_8h.html#a92c50087ca0e64fa93fc59402c55f8ca">u8</a>*) (0x803F0DE6 + 0x24 * (x))))</td></tr>
 <tr class="separator:a5963bf4bc324e2ca445a129ced05a1d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a21b91bbb25c1b219c7f4d4765091b92f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game__state_8h.html#a21b91bbb25c1b219c7f4d4765091b92f">STAGE_ID</a>&#160;&#160;&#160;(*((<a class="el" href="gctypes_8h.html#ace9d960e74685e2cd84b36132dbbf8aa">u16</a>*) 0x804D6CAD))</td></tr>
 <tr class="separator:a21b91bbb25c1b219c7f4d4765091b92f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a06fbdafea52b39af9a0d2e70b20b4735"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game__state_8h.html#a06fbdafea52b39af9a0d2e70b20b4735">CURRENT_FRAME</a>&#160;&#160;&#160;(*((<a class="el" href="gctypes_8h.html#afaa62991928fb9fb18ff0db62a040aba">u32</a>*) 0x80479D60))</td></tr>
 <tr class="separator:a06fbdafea52b39af9a0d2e70b20b4735"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a848e81401f132d036f45e4212b7b369b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game__state_8h.html#a848e81401f132d036f45e4212b7b369b">PLAYER_STATE</a>(x)&#160;&#160;&#160;(*((<a class="el" href="gctypes_8h.html#afaa62991928fb9fb18ff0db62a040aba">u32</a>*) (<a class="el" href="game__state_8h.html#a66765335086cf1c88e262a62212ab862">PLAYER_BLOCK</a>(x) + 0x00)))</td></tr>
-<tr class="separator:a848e81401f132d036f45e4212b7b369b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aede5774637d3841be97609b71bf4363d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game__state_8h.html#aede5774637d3841be97609b71bf4363d">SLOT_TYPE</a>(x)&#160;&#160;&#160;(*((<a class="el" href="gctypes_8h.html#afaa62991928fb9fb18ff0db62a040aba">u32</a>*) (<a class="el" href="game__state_8h.html#a66765335086cf1c88e262a62212ab862">PLAYER_BLOCK</a>(x) + 0x08)))</td></tr>
-<tr class="separator:aede5774637d3841be97609b71bf4363d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aff77b3afbef987e1d30a224582be758f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game__state_8h.html#aff77b3afbef987e1d30a224582be758f">STOCKS</a>(x)&#160;&#160;&#160;(*((<a class="el" href="gctypes_8h.html#afaa62991928fb9fb18ff0db62a040aba">u32</a>*) (<a class="el" href="game__state_8h.html#a66765335086cf1c88e262a62212ab862">PLAYER_BLOCK</a>(x) + 0x8e)))</td></tr>
-<tr class="separator:aff77b3afbef987e1d30a224582be758f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -569,11 +564,10 @@ modelScaling</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a class="anchor" id="abb17f54e01f013a1a160ab5e2d0109fb"></a>float</td>
+<a class="anchor" id="acc8184a00af14282e65f2b7af7428d0a"></a>float</td>
 <td class="fieldname">
-shieldSize</td>
+maxShieldSize</td>
 <td class="fielddoc">
-<p>size of shield </p>
 </td></tr>
 <tr><td class="fieldtype">
 <a class="anchor" id="a090417244aeadafca063864b39960512"></a>float</td>
@@ -758,6 +752,12 @@ knockbackAngle</td>
 <p>angle of knockback [0, 360], 361 = sakurai </p>
 </td></tr>
 <tr><td class="fieldtype">
+<a class="anchor" id="a9eba6dedec109b92da0661195a1392a6"></a>float</td>
+<td class="fieldname">
+forceApplied</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
 <a class="anchor" id="aeabac9c664bbd89b43d8cd445b0d881e"></a>float</td>
 <td class="fieldname">
 hitlag</td>
@@ -779,11 +779,43 @@ bodyState</td>
 <p>0 - normal, 1 - invulnerable, 2 - intangible </p>
 </td></tr>
 <tr><td class="fieldtype">
+<a class="anchor" id="a6be06bc962be86dafd383371b7560c6f"></a>float</td>
+<td class="fieldname">
+ledgeInvincibility</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="abe6f6be5cfea264ba526b07140b1e6ba"></a>float</td>
+<td class="fieldname">
+haloInvincinility</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="abb17f54e01f013a1a160ab5e2d0109fb"></a>float</td>
+<td class="fieldname">
+shieldSize</td>
+<td class="fielddoc">
+<p>size of shield </p>
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a0a0c78e295681d771c448ba2cb50d466"></a>float</td>
+<td class="fieldname">
+lightshieldAmount</td>
+<td class="fielddoc">
+<p>1 = hard shield, 0.071429 = z-shield </p>
+</td></tr>
+<tr><td class="fieldtype">
 <a class="anchor" id="a905aabfb033398610f5dc873a26f8a4e"></a>float</td>
 <td class="fieldname">
 breakoutCountdown</td>
 <td class="fielddoc">
 <p>frames until breakout of grab </p>
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="afc4d28b7c6af859dfba97641a05c8894"></a><a class="el" href="gctypes_8h.html#a92c50087ca0e64fa93fc59402c55f8ca">u8</a></td>
+<td class="fieldname">
+aiType</td>
+<td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
 <a class="anchor" id="aae601f3ffc327aaccc7db81fdca4cc8d"></a><a class="el" href="gctypes_8h.html#a92c50087ca0e64fa93fc59402c55f8ca">u8</a></td>
@@ -800,6 +832,54 @@ actionCounter</td>
 <p>number of action states this match </p>
 </td></tr>
 <tr><td class="fieldtype">
+<a class="anchor" id="a8155c62db22765a0833f8710be54433b"></a><a class="el" href="gctypes_8h.html#ace9d960e74685e2cd84b36132dbbf8aa">u16</a></td>
+<td class="fieldname">
+comboCount</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a0990902ee1bc84d7697c9533d5e0d33e"></a><a class="el" href="gctypes_8h.html#a92c50087ca0e64fa93fc59402c55f8ca">u8</a></td>
+<td class="fieldname">
+wallrideCounter</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="ae01c76fd66ae47e9d4269fce5d7b5877"></a>float</td>
+<td class="fieldname">
+wallLocation</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="abddc54715d450517b76b8a96c343ead6"></a><a class="el" href="gctypes_8h.html#afaa62991928fb9fb18ff0db62a040aba">u32</a></td>
+<td class="fieldname">
+smashAttackState</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="aafb5668590b663bea072f17c90a34e31"></a><a class="el" href="gctypes_8h.html#afaa62991928fb9fb18ff0db62a040aba">u32</a></td>
+<td class="fieldname">
+smashChargeFrame</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a6d9cc8427f958dc89ddc12d13973c865"></a>float</td>
+<td class="fieldname">
+smashChargeFrameMax</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a41862dc84c0ae8c356bbc4bbd9a41e9c"></a>float</td>
+<td class="fieldname">
+smashChargeStrength</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a55e2c8c482d683e494ea37a232596497"></a><a class="el" href="gctypes_8h.html#a92c50087ca0e64fa93fc59402c55f8ca">u8</a></td>
+<td class="fieldname">
+canWallJump</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
 <a class="anchor" id="a2b4f39c25bd32da726744bb06248c755"></a>float</td>
 <td class="fieldname">
 hitstun</td>
@@ -808,6 +888,19 @@ hitstun</td>
 </td></tr>
 </table>
 
+</div>
+</div>
+<a name="struct_player_block" id="struct_player_block"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct PlayerBlock</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="textblock"><p>Variables in static player block. </p>
+</div>
 </div>
 </div>
 <a name="struct_game_state" id="struct_game_state"></a>
@@ -827,7 +920,14 @@ hitstun</td>
 <td class="fieldname">
 playerData[5]</td>
 <td class="fielddoc">
-<p>pointer to each player's data </p>
+<p>pointer to player's data </p>
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a189a7fd66f9166e95d7b6e79d107ebd9"></a><a class="el" href="game__state_8h.html#struct_player_block">PlayerBlock</a> *</td>
+<td class="fieldname">
+playerBlock[5]</td>
+<td class="fielddoc">
+<p>pointer to player's static block </p>
 </td></tr>
 <tr><td class="fieldtype">
 <a class="anchor" id="a883f9b9e0d3b0efbf982dc8c1d814ccc"></a><a class="el" href="game__state_8h.html#struct_stage">Stage</a></td>
@@ -872,28 +972,11 @@ stage</td>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define DEFAULT_GAMESTATE&#160;&#160;&#160;{{0, 0, 0, 0, 0}, <a class="el" href="game__state_8h.html#a988b369dca2214632e8ae7bda5f0a5ff">DEFAULT_STAGE</a>}</td>
+          <td class="memname">#define DEFAULT_GAMESTATE&#160;&#160;&#160;{{0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, <a class="el" href="game__state_8h.html#a988b369dca2214632e8ae7bda5f0a5ff">DEFAULT_STAGE</a>}</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Default <a class="el" href="game__state_8h.html#struct_game_state" title="In game variables. ">GameState</a> Value </p>
-
-</div>
-</div>
-<a class="anchor" id="a66765335086cf1c88e262a62212ab862"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define PLAYER_BLOCK</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">x</td><td>)</td>
-          <td>&#160;&#160;&#160;(0x804521F0 + 0xE90 * (x))</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Static Player Information </p>
 
 </div>
 </div>
@@ -937,57 +1020,6 @@ stage</td>
       </table>
 </div><div class="memdoc">
 <p>Current Frame (32-bit) </p>
-
-</div>
-</div>
-<a class="anchor" id="a848e81401f132d036f45e4212b7b369b"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define PLAYER_STATE</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">x</td><td>)</td>
-          <td>&#160;&#160;&#160;(*((<a class="el" href="gctypes_8h.html#afaa62991928fb9fb18ff0db62a040aba">u32</a>*) (<a class="el" href="game__state_8h.html#a66765335086cf1c88e262a62212ab862">PLAYER_BLOCK</a>(x) + 0x00)))</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>State of player: 0x02 = in game, 0x00 = otherwise </p>
-
-</div>
-</div>
-<a class="anchor" id="aede5774637d3841be97609b71bf4363d"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define SLOT_TYPE</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">x</td><td>)</td>
-          <td>&#160;&#160;&#160;(*((<a class="el" href="gctypes_8h.html#afaa62991928fb9fb18ff0db62a040aba">u32</a>*) (<a class="el" href="game__state_8h.html#a66765335086cf1c88e262a62212ab862">PLAYER_BLOCK</a>(x) + 0x08)))</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Type of player: 0x00 = HUMAN, 0x01 = CPU </p>
-
-</div>
-</div>
-<a class="anchor" id="aff77b3afbef987e1d30a224582be758f"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define STOCKS</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">x</td><td>)</td>
-          <td>&#160;&#160;&#160;(*((<a class="el" href="gctypes_8h.html#afaa62991928fb9fb18ff0db62a040aba">u32</a>*) (<a class="el" href="game__state_8h.html#a66765335086cf1c88e262a62212ab862">PLAYER_BLOCK</a>(x) + 0x8e)))</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Remaining stocks for each player (1-4) </p>
 
 </div>
 </div>

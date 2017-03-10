@@ -5,6 +5,7 @@ var searchData=
   ['ledge',['ledge',['../game__state_8h.html#a461feb85b39e300ba75106c98e6e7080',1,'Stage']]],
   ['ledgedash',['LEDGEDASH',['../moves_8h.html#a529f467b48167a2e33a40a835561aaaa',1,'moves.h']]],
   ['left',['left',['../game__state_8h.html#a7d10b0c779bad3aabf067d52035f7052',1,'Platform']]],
+  ['lightshieldamount',['lightshieldAmount',['../game__state_8h.html#a0a0c78e295681d771c448ba2cb50d466',1,'PlayerData']]],
   ['limitgamememory',['limitGameMemory',['../system_8h.html#a3602498b5d35b0248468801ffb7b3c92',1,'system.c']]],
   ['link',['LINK',['../ai_8h.html#a32298be536f02aa8bbde57c0c970124e',1,'ai.h']]],
   ['link_5fid',['LINK_ID',['../melee__info_8h.html#a4ce2db0af572047b86ce911de6b6372d',1,'melee_info.h']]],
