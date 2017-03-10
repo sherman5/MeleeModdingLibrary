@@ -52,7 +52,7 @@ typedef struct
 #define PAD(name, addr, prev, prev_type) char pad_ ## name[addr - prev - sizeof(prev_type)]
 /** @endcond */
 
-/** @brief struct holding player data */
+/** @brief variables contained in "player data" */
 typedef struct
 {
     /**@cond */char pad_actionState[0x10];/**@endcond */
@@ -225,7 +225,7 @@ typedef struct
 
 } PlayerData;
 
-/** @brief Variables in static player block */
+/** @brief variables contained in "player block" */
 typedef struct
 {
     u32 playerState;
