@@ -20,6 +20,10 @@ do { \
     error(__FILE__ ":" TOSTRING(__LINE__) ": " msg); \
 } while (0)
 
+/** display error message @ingroup CallsMalloc */
+#define ERROR_MSG(msg) error(__FILE__ ":" TOSTRING(__LINE__) \
+    ": " msg)
+
 /** true as soon as one error throw */
 #define ERROR_STATE _errorState;
 
