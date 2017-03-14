@@ -21,6 +21,7 @@
  * @return none
  */
 void print(const char* str);
+void printInt(const char* str, u32 n);
 
 /**
  * @brief clear the output stream

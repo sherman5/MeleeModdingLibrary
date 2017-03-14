@@ -56,7 +56,7 @@ void print(const char* str)
     maxLines = imin((getHeapSize() / 5) / SLOT_SIZE, MAX_LINES);
 
     /* don't print strings that are too large */
-    if (strLines > maxLines) {THROW_ERROR(0, "string too large"); return;}
+    if (strLines > maxLines) {ERROR_MSG("string too large"); return;}
 
     /* discard extra lines */
     if (numLines + strLines > maxLines)
@@ -78,8 +78,8 @@ void print(const char* str)
         /* check if allocation failed */
         if (!menu || !stream)
         {
-            THROW_ERROR(0, "failed allocation");
             printError = true;
+            ERROR_MSG("failed allocation");
             return;
         }
     }
@@ -105,11 +105,26 @@ void print(const char* str)
     memcpy(menu + numLines, &tempSlot, sizeof(DebugMenuSlot));
 }
 
+void printInt(const char* str, u32 n)
+{
+    char buffer[128];
+    char numString[16];
+    strcat(buffer, str);
+    itoa(n, numString);
+    strcat(buffer, numString);
+    print(buffer);
+}
+
 //TODO: solve the array out of bounds error (happens with -O3)
 #pragma GCC push_options
 #pragma GCC optimize ("-O0")
 void error(const char* errMessage)
 {
+    if (!printError)
+    {
+        print(errMessage);
+    }
+
     if (printError)
     {
         strncpy(staticLine1.text, errMessage, LINE_SIZE);
@@ -118,10 +133,6 @@ void error(const char* errMessage)
             strncpy(staticLine2.text, errMessage + LINE_SIZE, LINE_SIZE);
         }
         numLines = 0;
-    }
-    else
-    {
-        print(errMessage);
     }
 }
 #pragma GCC pop_options
