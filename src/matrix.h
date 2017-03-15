@@ -79,7 +79,33 @@ void populateVec(Vector* vec, void* func);
  */
 void populateMat(Matrix* mat, void* func);
 
+/**
+ * @brief Multiplication of the form <tt> y = Ax </tt>
+ *
+ * This function multiplies <tt> Ax </tt> and stores the result in @c y.
+ *
+ * @param y - pointer to Vector struct
+ * @param A - pointer to Matrix struct
+ * @param x - pointer to Vector struct
+ *
+ * @return none
+ *
+ * @note This function uses specific optimizations for the Wii hardware
+ * @see http://wiibrew.org/wiki/Paired_single
+ */
 void matrixVectorProduct(Vector* y, const Matrix* A, const Vector* x);
+
+/**
+ * @brief Calculates the dot product of two vectors.
+ *
+ * @param u - pointer to a Vector struct
+ * @param v - pointer to a Vector struct
+ *
+ * @return The standard dot product of @c u and @c v.
+ *
+ * @note This function uses specific optimizations for the Wii hardware
+ * @see http://wiibrew.org/wiki/Paired_single
+ */
 float vectorDotProd(const Vector* u, const Vector* v);
 
 #endif
