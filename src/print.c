@@ -109,6 +109,10 @@ void printInt(const char* str, u32 n)
 {
     char buffer[128];
     char numString[16];
+
+    memset(buffer, 0, sizeof(buffer));
+    memset(numString, 0, sizeof(numString));
+
     strcat(buffer, str);
     itoa(n, numString);
     strcat(buffer, numString);
