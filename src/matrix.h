@@ -12,6 +12,9 @@
 
 #include "gctypes.h"
 
+/** @brief Set to true when a error occurs in a matrix operation **/
+extern bool _matrixError;
+
 /** @brief A vector of 32-bit floating-point values */
 typedef struct
 {

@@ -3,6 +3,8 @@
 #include "system.h"
 #include "error.h"
 
+bool _matrixError = false;
+
 bool initMatrix(Matrix* mat, size_t numRows, size_t numCols)
 {
     mat->data = calloc(numRows, sizeof(float*));
@@ -110,6 +112,7 @@ void matrixVectorProduct(Vector* y, const Matrix* A, const Vector* x)
     {
         ERROR_MSG("incompatible dimensions for matrix-vector"
             " multiplication");
+        _matrixError = true;
     }
     else
     {
@@ -125,6 +128,7 @@ float vectorDotProd(const Vector* u, const Vector* v)
     if (u->size != v->size)
     {
         ERROR_MSG("incompatible dimensions for vector dot product");
+        _matrixError = true;
         return 0.f;
     }
     else
