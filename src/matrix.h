@@ -3,6 +3,10 @@
  * @brief Support for matrix and vector operations
  */
 
+/** @example matrixExample.c
+ * This demonstrates the basic uses of matrix.h
+ */
+
 #ifndef MML_MATRIX_H
 #define MML_MATRIX_H
 
