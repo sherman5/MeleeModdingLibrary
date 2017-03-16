@@ -5,6 +5,8 @@
 
 #define RA_SIZE(x) (sizeof(x) / sizeof(x[0]))
 
+UNIT_TEST;
+
 static bool init_run = false;
 static bool tests_run = false;
 static char heap[13000];
@@ -47,7 +49,7 @@ static Point pts[16] =
     {0.f,     -2.f},
     {1.f,     -1.732f},
     {1.414f,  -1.414f},
-    {1.732f,  -1.f}
+    {1.732f,  -1.f},
 };
 
 static int tan_indices[14] = {0, 1, 2, 3, 5, 6, 7, 8, 9,
@@ -61,8 +63,7 @@ static void init(void)
     initHeap(heap, heap + sizeof(heap));
 }
 
-UNIT_TEST;
-static void test(void)
+static void test_basic(void)
 {
     /** TEST SIGN **/
     REQUIRE(SIGN(-1.5f) == -1);
@@ -74,13 +75,6 @@ static void test(void)
     REQUIRE(fabs(-5.5f) == 5.5f);
     REQUIRE(fabs(17.2f) == 17.2f);
     REQUIRE(fabs(0.f)   == 0.f);
-
-    /** TEST SQRT (and recipSqrt) **/
-    REQUIRE_FLT_EQ(sqrt(2.f),     1.414f,    0.001f);
-    REQUIRE_FLT_EQ(sqrt(0.f),     0.f,       0.001f);
-    REQUIRE_FLT_EQ(sqrt(0.005f),  0.0707f,   0.001f);
-    REQUIRE_FLT_EQ(sqrt(88.f),    9.3808f,   0.001f);
-    REQUIRE_FLT_EQ(sqrt(54610.f), 233.6878f, 0.001f);
 
     /** TEST FLOOR **/
     REQUIRE(floor(-5.5f) == -6.0f);
@@ -126,6 +120,26 @@ static void test(void)
     REQUIRE(fmin(-1.4f, 1.4f)  == -1.4f);
     REQUIRE(fmin(7.4f, 23.4f)  == 7.4f);
 
+    /** TEST IMOD **/
+    REQUIRE(imod(7, 3)  == 1);
+    REQUIRE(imod(5, 13) == 5);
+    REQUIRE(imod(-7, 3) == 2);
+
+    /** TEST FMOD **/
+    REQUIRE(fmod(380.f, 360.f)  == 20.f);
+    REQUIRE(fmod(200.f, 360.f)  == 200.f);
+    REQUIRE(fmod(-45.f, 360.f)  == 315.f);
+}
+
+static void test_power(void)
+{
+    /** TEST SQRT (and recipSqrt) **/
+    REQUIRE_FLT_EQ(sqrt(2.f),     1.414f,    0.001f);
+    REQUIRE_FLT_EQ(sqrt(0.f),     0.f,       0.001f);
+    REQUIRE_FLT_EQ(sqrt(0.005f),  0.0707f,   0.001f);
+    REQUIRE_FLT_EQ(sqrt(88.f),    9.3808f,   0.001f);
+    REQUIRE_FLT_EQ(sqrt(54610.f), 233.6878f, 0.001f);
+
     /** TEST IPOW **/
     REQUIRE(ipow(0, 5)   ==  0);
     REQUIRE(ipow(1, 14)  ==  1);
@@ -143,6 +157,23 @@ static void test(void)
     REQUIRE_FLT_EQ(fpow(7.2f, 4),    2687.3856f, 0.001f);
     REQUIRE_FLT_EQ(fpow(1.2f, 2.3f), 1.44f,      0.001f);
 
+    /** TEST EXP **/
+    REQUIRE_FLT_EQ(exp(1.f),    2.718f,     0.001f);
+    REQUIRE_FLT_EQ(exp(0.f),    1.f,        0.001f);
+    REQUIRE_FLT_EQ(exp(-5.f),   0.007f,     0.001f);
+    REQUIRE_FLT_EQ(exp(9.f),    8103.084f,  0.001f);
+    REQUIRE_FLT_EQ(exp(0.5f),   1.649f,     0.001f);
+
+    /** TEST LOG **/
+    REQUIRE_FLT_EQ(log(exp(1.f)),  1.f,     0.001f);
+    REQUIRE_FLT_EQ(log(0.5f),     -0.693f,  0.001f);
+    REQUIRE_FLT_EQ(log(2.3f),      0.833f,  0.001f);
+    REQUIRE_FLT_EQ(log(80.5f),     4.388f,  0.001f);
+    REQUIRE_FLT_EQ(log(272.f),     5.606f,  0.001f);
+}
+
+static void test_trig(void)
+{
     /** TEST SIN **/
     float sinERR = 0.f;
     for (unsigned i = 0; i < RA_SIZE(angles); ++i)
@@ -176,7 +207,7 @@ static void test(void)
         int j = asin_indices[i];
         asinERR = fmax(asinERR, fabs(asin(pts[j].y / 2.f) - angles[j]));
     }
-    REQUIRE(asinERR < 0.1f);
+    REQUIRE(asinERR < 0.01f);
 
     /** TEST ACOS **/
     float acosERR = 0.f;
@@ -185,7 +216,7 @@ static void test(void)
         int j = acos_indices[i];
         acosERR = fmax(acosERR, fabs(acos(pts[j].x / 2.f) - angles[j]));
     }
-    REQUIRE(acosERR < 0.1f);
+    REQUIRE(acosERR < 0.01f);
 
     /** TEST ATAN **/
     float atanERR = 0.f;
@@ -195,17 +226,20 @@ static void test(void)
         float val = pts[j].y / pts[j].x;
         atanERR = fmax(atanERR, fabs(atan(val) - angles[j]));
     }
-    REQUIRE(atanERR < 0.3f);
+    REQUIRE(atanERR < 0.01f);
 
     /** TEST ATAN2 **/
     float atan2ERR = 0.f;
-    for (unsigned i = 0; i < RA_SIZE(angles); ++i)
+    for (unsigned i = 1; i < RA_SIZE(angles); ++i)
     {
         atan2ERR = fmax(atan2ERR,
             fabs(atan2(pts[i].y, pts[i].x) - angles[i]));
     }
-    REQUIRE(atan2ERR < 0.3f);
+    REQUIRE(atan2ERR < 0.01f);
+}
 
+static void test_points(void)
+{
     /** TEST POINTS **/
     Point origin = {0.0, 0.0};
     Point a = {3.0, 4.0};
@@ -220,17 +254,23 @@ static void test(void)
     REQUIRE_FLT_EQ(distance(origin, b), magnitude(b), 0.001);
 
     /** TEST ANGLE **/
-    REQUIRE_FLT_EQ(angle(a, b), 201.93, 0.01);
-    REQUIRE_FLT_EQ(angle(b, a), 21.93, 0.01);
-
-    END_TEST;
+    REQUIRE_FLT_EQ(angle(a, b), 201.80, 0.01);
+    REQUIRE_FLT_EQ(angle(b, a), 21.80, 0.01);
 }
 
 void _main(void)
 {
     if (!init_run) { init(); init_run = true;}
 
-    if (!tests_run) { test(); tests_run = true;}
+    if (!tests_run)
+    {
+        test_basic();
+        test_power();
+        test_trig();
+        test_points();
+        tests_run = true;
+        END_TEST;
+    }
 }
 
 
