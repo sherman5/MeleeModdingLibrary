@@ -1,7 +1,6 @@
 /**
  * @file game_state.h
  * @brief Track the state of in game variables.
- *
  */
 
 #ifndef MML_GAME_STATE_H
@@ -139,12 +138,12 @@ typedef struct
 
     /**@cond */PAD(analogStick, 0x620, 0x218, float);/**@endcond */    
     float analogStickX; /**< used to determine tilt vs smash */
-    float analogStickY;/**< used to determine tilt vs smash */
+    float analogStickY; /**< used to determine tilt vs smash */
     float prevAnalogStickX; /**< used to determine tilt vs smash */
     float prevAnalogStickY; /**< used to determine tilt vs smash */
     
     /**@cond */PAD(cStick, 0x638, 0x62c, float);/**@endcond */    
-    float cStickX; /** -1.0 to 1.0 */
+    float cStickX; /**< -1.0 to 1.0 */
     float cStickY; /**< -1.0 to 1.0 */
 
     /**@cond */PAD(analogTrigger, 0x650, 0x63c, float);/**@endcond */    
@@ -222,7 +221,7 @@ typedef struct
     /**@cond */PAD(walljump, 0x2224, 0x2120, float);/**@endcond */        
     u8 canWallJump;
 
-    /**@cond */PAD(hitstun, 0x2340, 2224, u8);/**@endcond */        
+    /**@cond */PAD(hitstun, 0x2340, 0x2224, u8);/**@endcond */        
     float hitstun; /**< remaining frames of hitstun */
 
 } PlayerData;
@@ -287,7 +286,7 @@ typedef struct
     /** Current Frame (32-bit) */
     #define CURRENT_FRAME   (*((u32*) 0x80479D60))
 
-    //TODO: REMOVE
+    //TODO: remove for v2
     #define PLAYER_BLOCK(x)     ((u32) _gameState.playerBlock[(x)])
     #define PLAYER_STATE(x)     _gameState.playerBlock[(x)]->playerState
     #define SLOT_TYPE(x)        _gameState.playerBlock[(x)]->slotType
