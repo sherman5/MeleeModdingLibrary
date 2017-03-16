@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['writecontroller',['writeController',['../controller_8h.html#aa9bba595c4ae3917ede7a4567147da4c',1,'controller.c']]]
+  ['vectordotprod',['vectorDotProd',['../matrix_8h.html#a05632e1cf5a9ace8cf77b6b6fc449f2f',1,'matrix.c']]]
 ];

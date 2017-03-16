@@ -2,6 +2,7 @@ var searchData=
 [
   ['default_5fgamestate',['DEFAULT_GAMESTATE',['../game__state_8h.html#aba9ff025fed056da379554e467979656',1,'game_state.h']]],
   ['default_5fplatform',['DEFAULT_PLATFORM',['../game__state_8h.html#a547a5ee07171fc8e699c255cf1f94ae2',1,'game_state.h']]],
+  ['default_5fprofile',['DEFAULT_PROFILE',['../profile_8h.html#a1d8c7f8091c172556b2db2f2d83596ff',1,'profile.h']]],
   ['default_5fstage',['DEFAULT_STAGE',['../game__state_8h.html#a988b369dca2214632e8ae7bda5f0a5ff',1,'game_state.h']]],
   ['deg_5fto_5frad',['DEG_TO_RAD',['../math_8h.html#a8ed7b6a1f199b6d2af90e642918cf271',1,'math.h']]],
   ['dk',['DK',['../ai_8h.html#a78970dd75cad4541ac7435082258c2ea',1,'ai.h']]],

@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Melee Modding Library
-   &#160;<span id="projectnumber">1.0.0</span>
+   &#160;<span id="projectnumber">1.1.0</span>
    </div>
    <div id="projectbrief">A C library for modding Super Smash Bros Melee</div>
   </td>
@@ -89,6 +89,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 Macros</h2></td></tr>
 <tr class="memitem:ga5960c60c0cdb3fcace0ee191e1ddda0b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___calls_malloc.html#ga5960c60c0cdb3fcace0ee191e1ddda0b">THROW_ERROR</a>(code,  msg)</td></tr>
 <tr class="separator:ga5960c60c0cdb3fcace0ee191e1ddda0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga53cf0ce013d4c7336b4ff71a360cf89a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___calls_malloc.html#ga53cf0ce013d4c7336b4ff71a360cf89a">ERROR_MSG</a>(msg)</td></tr>
+<tr class="separator:ga53cf0ce013d4c7336b4ff71a360cf89a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga3f02e40d250ab819c515702c0e59373c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___calls_malloc.html#ga3f02e40d250ab819c515702c0e59373c">REQUIRE</a>(condition)</td></tr>
 <tr class="separator:ga3f02e40d250ab819c515702c0e59373c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga857490021cba81bf64a150aaedf6d84a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___calls_malloc.html#ga857490021cba81bf64a150aaedf6d84a">REQUIRE_FLT_EQ</a>(L,  R,  tol)&#160;&#160;&#160;<a class="el" href="group___calls_malloc.html#ga3f02e40d250ab819c515702c0e59373c">REQUIRE</a>(APPROX_ZERO((L) - (R), tol))</td></tr>
@@ -104,11 +106,17 @@ Functions</h2></td></tr>
 <tr class="memitem:ga9ae9e98270bc1b79a347880de3d9586b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___calls_malloc.html#ga9ae9e98270bc1b79a347880de3d9586b">addMove</a> (<a class="el" href="ai_8h.html#struct_a_i">AI</a> *ai, const <a class="el" href="moves_8h.html#struct_move">Move</a> *move)</td></tr>
 <tr class="memdesc:ga9ae9e98270bc1b79a347880de3d9586b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tell <a class="el" href="ai_8h.html#struct_a_i" title="Holds all information about an AI. ">AI</a> to execute a move.  <a href="#ga9ae9e98270bc1b79a347880de3d9586b">More...</a><br /></td></tr>
 <tr class="separator:ga9ae9e98270bc1b79a347880de3d9586b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadca1849461ec10ea162dfbedc4af4791"><td class="memItemLeft" align="right" valign="top"><a class="el" href="gctypes_8h.html#a6a912bf1d80625256884f11a0ea1d5fd">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___calls_malloc.html#gadca1849461ec10ea162dfbedc4af4791">initVector</a> (<a class="el" href="matrix_8h.html#struct_vector">Vector</a> *vec, <a class="el" href="gctypes_8h.html#aedaf31b3f7716640e70205644b9b828e">size_t</a> size)</td></tr>
+<tr class="memdesc:gadca1849461ec10ea162dfbedc4af4791"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize a <a class="el" href="matrix_8h.html#struct_vector" title="A vector of 32-bit floating-point values. ">Vector</a>.  <a href="#gadca1849461ec10ea162dfbedc4af4791">More...</a><br /></td></tr>
+<tr class="separator:gadca1849461ec10ea162dfbedc4af4791"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga01101ca4efe13ff117f345632f72a6ab"><td class="memItemLeft" align="right" valign="top"><a class="el" href="gctypes_8h.html#a6a912bf1d80625256884f11a0ea1d5fd">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___calls_malloc.html#ga01101ca4efe13ff117f345632f72a6ab">initMatrix</a> (<a class="el" href="matrix_8h.html#struct_matrix">Matrix</a> *mat, <a class="el" href="gctypes_8h.html#aedaf31b3f7716640e70205644b9b828e">size_t</a> numRows, <a class="el" href="gctypes_8h.html#aedaf31b3f7716640e70205644b9b828e">size_t</a> numCols)</td></tr>
+<tr class="memdesc:ga01101ca4efe13ff117f345632f72a6ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize a matrix.  <a href="#ga01101ca4efe13ff117f345632f72a6ab">More...</a><br /></td></tr>
+<tr class="separator:ga01101ca4efe13ff117f345632f72a6ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga85d50a09cb925cd08d803c5a8fd01da7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___calls_malloc.html#ga85d50a09cb925cd08d803c5a8fd01da7">print</a> (const char *str)</td></tr>
 <tr class="memdesc:ga85d50a09cb925cd08d803c5a8fd01da7"><td class="mdescLeft">&#160;</td><td class="mdescRight">print a string to the output streamThis function prints a string to an output stream displayed on the designated window (tournament mode - replaces debug menu).  <a href="#ga85d50a09cb925cd08d803c5a8fd01da7">More...</a><br /></td></tr>
 <tr class="separator:ga85d50a09cb925cd08d803c5a8fd01da7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga600ac89163a3ee4d9e17288546b1ceed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___calls_malloc.html#ga600ac89163a3ee4d9e17288546b1ceed">error</a> (const char *errMessage)</td></tr>
-<tr class="memdesc:ga600ac89163a3ee4d9e17288546b1ceed"><td class="mdescLeft">&#160;</td><td class="mdescRight">"throw" an errorPrint an error message and set _errorState to true  <a href="#ga600ac89163a3ee4d9e17288546b1ceed">More...</a><br /></td></tr>
+<tr class="memdesc:ga600ac89163a3ee4d9e17288546b1ceed"><td class="mdescLeft">&#160;</td><td class="mdescRight">print error messagePrint an error message  <a href="#ga600ac89163a3ee4d9e17288546b1ceed">More...</a><br /></td></tr>
 <tr class="separator:ga600ac89163a3ee4d9e17288546b1ceed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -137,9 +145,27 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> { <a class="code" href="error_8h.html#ac7d80a3eb9f295abf7a00fd5411bf6ba">\</a></div><div class="line"><a class="code" href="error_8h.html#ac7d80a3eb9f295abf7a00fd5411bf6ba">    _errorState</a> = <a class="code" href="error_8h.html#ac7d80a3eb9f295abf7a00fd5411bf6ba">_errorState</a> | code; <a class="code" href="group___calls_malloc.html#ga600ac89163a3ee4d9e17288546b1ceed">\</a></div><div class="line"><a class="code" href="group___calls_malloc.html#ga600ac89163a3ee4d9e17288546b1ceed">    error</a>(__FILE__ <span class="stringliteral">&quot;:&quot;</span> TOSTRING(__LINE__) <span class="stringliteral">&quot;: &quot;</span> msg); \</div><div class="line">} <span class="keywordflow">while</span> (0)</div><div class="ttc" id="group___calls_malloc_html_ga600ac89163a3ee4d9e17288546b1ceed"><div class="ttname"><a href="group___calls_malloc.html#ga600ac89163a3ee4d9e17288546b1ceed">error</a></div><div class="ttdeci">void error(const char *errMessage)</div><div class="ttdoc">&quot;throw&quot; an errorPrint an error message and set _errorState to true </div><div class="ttdef"><b>Definition:</b> print.c:111</div></div>
+<b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> { <a class="code" href="error_8h.html#ac7d80a3eb9f295abf7a00fd5411bf6ba">\</a></div><div class="line"><a class="code" href="error_8h.html#ac7d80a3eb9f295abf7a00fd5411bf6ba">    _errorState</a> = <a class="code" href="error_8h.html#ac7d80a3eb9f295abf7a00fd5411bf6ba">_errorState</a> | code; <a class="code" href="group___calls_malloc.html#ga600ac89163a3ee4d9e17288546b1ceed">\</a></div><div class="line"><a class="code" href="group___calls_malloc.html#ga600ac89163a3ee4d9e17288546b1ceed">    error</a>(__FILE__ <span class="stringliteral">&quot;:&quot;</span> TOSTRING(__LINE__) <span class="stringliteral">&quot;: &quot;</span> msg); \</div><div class="line">} <span class="keywordflow">while</span> (0)</div><div class="ttc" id="group___calls_malloc_html_ga600ac89163a3ee4d9e17288546b1ceed"><div class="ttname"><a href="group___calls_malloc.html#ga600ac89163a3ee4d9e17288546b1ceed">error</a></div><div class="ttdeci">void error(const char *errMessage)</div><div class="ttdoc">print error messagePrint an error message </div><div class="ttdef"><b>Definition:</b> print.c:131</div></div>
 <div class="ttc" id="error_8h_html_ac7d80a3eb9f295abf7a00fd5411bf6ba"><div class="ttname"><a href="error_8h.html#ac7d80a3eb9f295abf7a00fd5411bf6ba">_errorState</a></div><div class="ttdeci">u32 _errorState</div><div class="ttdef"><b>Definition:</b> error.c:3</div></div>
 </div><!-- fragment --><p>send error state and display error message </p>
+
+</div>
+</div>
+<a class="anchor" id="ga53cf0ce013d4c7336b4ff71a360cf89a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ERROR_MSG</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">msg</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line"><a class="code" href="group___calls_malloc.html#ga600ac89163a3ee4d9e17288546b1ceed">error</a>(__FILE__ <span class="stringliteral">&quot;:&quot;</span> TOSTRING(__LINE__) \</div><div class="line">    <span class="stringliteral">&quot;: &quot;</span> msg)</div><div class="ttc" id="group___calls_malloc_html_ga600ac89163a3ee4d9e17288546b1ceed"><div class="ttname"><a href="group___calls_malloc.html#ga600ac89163a3ee4d9e17288546b1ceed">error</a></div><div class="ttdeci">void error(const char *errMessage)</div><div class="ttdoc">print error messagePrint an error message </div><div class="ttdef"><b>Definition:</b> print.c:131</div></div>
+</div><!-- fragment --><p>display error message </p>
 
 </div>
 </div>
@@ -156,7 +182,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> { \</div><div class="line">    if (!(condition)) \</div><div class="line">    { <a class="code" href="group___calls_malloc.html#ga85d50a09cb925cd08d803c5a8fd01da7">\</a></div><div class="line"><a class="code" href="group___calls_malloc.html#ga85d50a09cb925cd08d803c5a8fd01da7">        print</a>(ASSERT_MSG); \</div><div class="line">        tests_passed = <span class="keyword">false</span>; \</div><div class="line">    } \</div><div class="line">} <span class="keywordflow">while</span> (0)</div><div class="ttc" id="group___calls_malloc_html_ga85d50a09cb925cd08d803c5a8fd01da7"><div class="ttname"><a href="group___calls_malloc.html#ga85d50a09cb925cd08d803c5a8fd01da7">print</a></div><div class="ttdeci">void print(const char *str)</div><div class="ttdoc">print a string to the output streamThis function prints a string to an output stream displayed on the...</div><div class="ttdef"><b>Definition:</b> print.c:47</div></div>
+<b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> { \</div><div class="line">    if (!(condition)) \</div><div class="line">    { <a class="code" href="group___calls_malloc.html#ga85d50a09cb925cd08d803c5a8fd01da7">\</a></div><div class="line"><a class="code" href="group___calls_malloc.html#ga85d50a09cb925cd08d803c5a8fd01da7">        print</a>(ASSERT_MSG); \</div><div class="line">        _tests_passed = <span class="keyword">false</span>; \</div><div class="line">    } \</div><div class="line">} <span class="keywordflow">while</span> (0)</div><div class="ttc" id="group___calls_malloc_html_ga85d50a09cb925cd08d803c5a8fd01da7"><div class="ttname"><a href="group___calls_malloc.html#ga85d50a09cb925cd08d803c5a8fd01da7">print</a></div><div class="ttdeci">void print(const char *str)</div><div class="ttdoc">print a string to the output streamThis function prints a string to an output stream displayed on the...</div><div class="ttdef"><b>Definition:</b> print.c:52</div></div>
 </div><!-- fragment --><p>Require <code>condition</code> to be true </p>
 
 </div>
@@ -203,7 +229,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> { \</div><div class="line">    if (tests_passed) \</div><div class="line">    { <a class="code" href="group___calls_malloc.html#ga85d50a09cb925cd08d803c5a8fd01da7">\</a></div><div class="line"><a class="code" href="group___calls_malloc.html#ga85d50a09cb925cd08d803c5a8fd01da7">        print</a>(<span class="stringliteral">&quot;all tests passed!&quot;</span>); \</div><div class="line">    } \</div><div class="line">} <span class="keywordflow">while</span> (0)</div><div class="ttc" id="group___calls_malloc_html_ga85d50a09cb925cd08d803c5a8fd01da7"><div class="ttname"><a href="group___calls_malloc.html#ga85d50a09cb925cd08d803c5a8fd01da7">print</a></div><div class="ttdeci">void print(const char *str)</div><div class="ttdoc">print a string to the output streamThis function prints a string to an output stream displayed on the...</div><div class="ttdef"><b>Definition:</b> print.c:47</div></div>
+<b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> { \</div><div class="line">    if (_tests_passed) \</div><div class="line">    { <a class="code" href="group___calls_malloc.html#ga85d50a09cb925cd08d803c5a8fd01da7">\</a></div><div class="line"><a class="code" href="group___calls_malloc.html#ga85d50a09cb925cd08d803c5a8fd01da7">        print</a>(<span class="stringliteral">&quot;all tests passed!&quot;</span>); \</div><div class="line">    } \</div><div class="line">} <span class="keywordflow">while</span> (0)</div><div class="ttc" id="group___calls_malloc_html_ga85d50a09cb925cd08d803c5a8fd01da7"><div class="ttname"><a href="group___calls_malloc.html#ga85d50a09cb925cd08d803c5a8fd01da7">print</a></div><div class="ttdeci">void print(const char *str)</div><div class="ttdoc">print a string to the output streamThis function prints a string to an output stream displayed on the...</div><div class="ttdef"><b>Definition:</b> print.c:52</div></div>
 </div><!-- fragment --><p>Macro placed in a function after all tests have been run </p>
 
 </div>
@@ -281,6 +307,85 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="gadca1849461ec10ea162dfbedc4af4791"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="gctypes_8h.html#a6a912bf1d80625256884f11a0ea1d5fd">bool</a> initVector </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="matrix_8h.html#struct_vector">Vector</a> *&#160;</td>
+          <td class="paramname"><em>vec</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="gctypes_8h.html#aedaf31b3f7716640e70205644b9b828e">size_t</a>&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialize a <a class="el" href="matrix_8h.html#struct_vector" title="A vector of 32-bit floating-point values. ">Vector</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vec</td><td>- pointer to a <a class="el" href="matrix_8h.html#struct_vector" title="A vector of 32-bit floating-point values. ">Vector</a> struct </td></tr>
+    <tr><td class="paramname">size</td><td>- number of values in the vector</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>false</code> if memory allocation fails, <code>true</code> otherwise </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga01101ca4efe13ff117f345632f72a6ab"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="gctypes_8h.html#a6a912bf1d80625256884f11a0ea1d5fd">bool</a> initMatrix </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="matrix_8h.html#struct_matrix">Matrix</a> *&#160;</td>
+          <td class="paramname"><em>mat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="gctypes_8h.html#aedaf31b3f7716640e70205644b9b828e">size_t</a>&#160;</td>
+          <td class="paramname"><em>numRows</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="gctypes_8h.html#aedaf31b3f7716640e70205644b9b828e">size_t</a>&#160;</td>
+          <td class="paramname"><em>numCols</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialize a matrix. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mat</td><td>- pointer to a <a class="el" href="matrix_8h.html#struct_matrix" title="A matrix of 32-bit floating-point values. ">Matrix</a> struct </td></tr>
+    <tr><td class="paramname">numRows</td><td>- number of rows in the matrix </td></tr>
+    <tr><td class="paramname">numCols</td><td>- number of columns in the matrix</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>false</code> if memory allocation fails, <code>true</code> otherwise </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="ga85d50a09cb925cd08d803c5a8fd01da7"></a>
 <div class="memitem">
 <div class="memproto">
@@ -320,14 +425,15 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>"throw" an errorPrint an error message and set _errorState to true </p>
+<p>print error messagePrint an error message </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">errMessage</td><td>- error message to print </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>none </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>none</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>this will still print the error if the print stream has failed to allocate memory </dd></dl>
 
 </div>
 </div>

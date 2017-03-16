@@ -1,8 +1,11 @@
 var searchData=
 [
   ['m_5f2pi',['M_2PI',['../math_8h.html#a4aa2c43b09c1300c334821f5507d6f71',1,'math.h']]],
-  ['m_5fhalf_5fpi',['M_HALF_PI',['../math_8h.html#ab926709ee14f39a2f7a844e19f6c2fcc',1,'math.h']]],
   ['m_5fpi',['M_PI',['../math_8h.html#ae71449b1cc6e6250b91f539153a7a0d3',1,'math.h']]],
+  ['m_5fpi_5fover_5f2',['M_PI_OVER_2',['../math_8h.html#a9e429dd136ddefe959deaa2f487026e5',1,'math.h']]],
+  ['m_5fpi_5fover_5f3',['M_PI_OVER_3',['../math_8h.html#a976c9f2428c3bb9787a27a7fc13980b4',1,'math.h']]],
+  ['m_5fpi_5fover_5f4',['M_PI_OVER_4',['../math_8h.html#ac2d6e3586755b56b206e01bcc119b797',1,'math.h']]],
+  ['m_5fpi_5fover_5f6',['M_PI_OVER_6',['../math_8h.html#a90d571b3bd92c577401f9a090d7a57cf',1,'math.h']]],
   ['mario',['MARIO',['../ai_8h.html#a4d063ca1755e7483e4d0d5d22b0bf21e',1,'ai.h']]],
   ['mario_5fid',['MARIO_ID',['../melee__info_8h.html#a2fcfaa4426a8fc6ae05a9de29225b153',1,'melee_info.h']]],
   ['marth',['MARTH',['../ai_8h.html#a2763e71ffbe7c0255be3126aac08233d',1,'ai.h']]],

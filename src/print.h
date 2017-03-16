@@ -30,7 +30,7 @@ extern int (*sprintf)(char* str, const char* format, ...);
 //int printf(const char* format, ...);
 
 #if 0
-/** @endcond */
+/// @endcond
 
 /**
  * @brief write formatted data to string

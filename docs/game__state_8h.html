@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Melee Modding Library
-   &#160;<span id="projectnumber">1.0.0</span>
+   &#160;<span id="projectnumber">1.1.0</span>
    </div>
    <div id="projectbrief">A C library for modding Super Smash Bros Melee</div>
   </td>
@@ -115,10 +115,10 @@ Data Structures</h2></td></tr>
 <tr class="memdesc:struct_stage"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="game__state_8h.html#struct_stage" title="Stage Information. ">Stage</a> Information.  <a href="game__state_8h.html#struct_stage">More...</a><br /></td></tr>
 <tr class="separator:struct_stage"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:struct_player_data"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game__state_8h.html#struct_player_data">PlayerData</a></td></tr>
-<tr class="memdesc:struct_player_data"><td class="mdescLeft">&#160;</td><td class="mdescRight">struct holding player data  <a href="game__state_8h.html#struct_player_data">More...</a><br /></td></tr>
+<tr class="memdesc:struct_player_data"><td class="mdescLeft">&#160;</td><td class="mdescRight">variables contained in "player data"  <a href="game__state_8h.html#struct_player_data">More...</a><br /></td></tr>
 <tr class="separator:struct_player_data"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:struct_player_block"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game__state_8h.html#struct_player_block">PlayerBlock</a></td></tr>
-<tr class="memdesc:struct_player_block"><td class="mdescLeft">&#160;</td><td class="mdescRight">Variables in static player block.  <a href="game__state_8h.html#struct_player_block">More...</a><br /></td></tr>
+<tr class="memdesc:struct_player_block"><td class="mdescLeft">&#160;</td><td class="mdescRight">variables contained in "player block"  <a href="game__state_8h.html#struct_player_block">More...</a><br /></td></tr>
 <tr class="separator:struct_player_block"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:struct_game_state"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game__state_8h.html#struct_game_state">GameState</a></td></tr>
 <tr class="memdesc:struct_game_state"><td class="mdescLeft">&#160;</td><td class="mdescRight">In game variables.  <a href="game__state_8h.html#struct_game_state">More...</a><br /></td></tr>
@@ -251,7 +251,7 @@ top</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="textblock"><p>struct holding player data </p>
+<div class="textblock"><p>variables contained in "player data" </p>
 </div><table class="fieldtable">
 <tr><th colspan="3">Data Fields</th></tr>
 <tr><td class="fieldtype">
@@ -442,6 +442,7 @@ groundedMaxHorizontalVelocity</td>
 <td class="fieldname">
 jumpSquat</td>
 <td class="fielddoc">
+<p>frames of jump squat </p>
 </td></tr>
 <tr><td class="fieldtype">
 <a class="anchor" id="a8459458095bcd36c78e5ce19f12ec802"></a>float</td>
@@ -490,6 +491,7 @@ airJumpHorizontalMultiplier</td>
 <td class="fieldname">
 numberOfJumps</td>
 <td class="fielddoc">
+<p>maximum number of jumps </p>
 </td></tr>
 <tr><td class="fieldtype">
 <a class="anchor" id="a31924e6c9b17aad7f861e818b8be5d8f"></a>float</td>
@@ -634,37 +636,42 @@ wallJumpVerticalVelocity</td>
 <td class="fieldname">
 analogStickX</td>
 <td class="fielddoc">
+<p>used to determine tilt vs smash </p>
 </td></tr>
 <tr><td class="fieldtype">
 <a class="anchor" id="a869f0327e35e10f3f3fad80ddf545eba"></a>float</td>
 <td class="fieldname">
 analogStickY</td>
 <td class="fielddoc">
+<p>used to determine tilt vs smash </p>
 </td></tr>
 <tr><td class="fieldtype">
 <a class="anchor" id="ad220d46d7551ca071917ad1db4ae465d"></a>float</td>
 <td class="fieldname">
 prevAnalogStickX</td>
 <td class="fielddoc">
+<p>used to determine tilt vs smash </p>
 </td></tr>
 <tr><td class="fieldtype">
 <a class="anchor" id="a51007d8a49cd68d7a5805f2b662bef52"></a>float</td>
 <td class="fieldname">
 prevAnalogStickY</td>
 <td class="fielddoc">
+<p>used to determine tilt vs smash </p>
 </td></tr>
 <tr><td class="fieldtype">
 <a class="anchor" id="a592b045341efa9b3125a8c872f933c9a"></a>float</td>
 <td class="fieldname">
 cStickX</td>
 <td class="fielddoc">
+<p>-1.0 to 1.0 </p>
 </td></tr>
 <tr><td class="fieldtype">
 <a class="anchor" id="afd2dbd1e607987a9f8d082870db1e00d"></a>float</td>
 <td class="fieldname">
 cStickY</td>
 <td class="fielddoc">
-<p>-1.0 to 1.0 -1.0 to 1.0 </p>
+<p>-1.0 to 1.0 </p>
 </td></tr>
 <tr><td class="fieldtype">
 <a class="anchor" id="acbf6d032370749b90b9507fa37acb3b4"></a>float</td>
@@ -696,6 +703,7 @@ lastPosition</td>
 <td class="fieldname">
 platformID</td>
 <td class="fielddoc">
+<p>platform character was last on </p>
 </td></tr>
 <tr><td class="fieldtype">
 <a class="anchor" id="aa82c28522d3e0a6d04a94bc24b5e138b"></a><a class="el" href="gctypes_8h.html#a92c50087ca0e64fa93fc59402c55f8ca">u8</a></td>
@@ -899,8 +907,131 @@ hitstun</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="textblock"><p>Variables in static player block. </p>
-</div>
+<div class="textblock"><p>variables contained in "player block" </p>
+</div><table class="fieldtable">
+<tr><th colspan="3">Data Fields</th></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="ab2581442660acc832bb81d8844b2f1c8"></a><a class="el" href="gctypes_8h.html#afaa62991928fb9fb18ff0db62a040aba">u32</a></td>
+<td class="fieldname">
+playerState</td>
+<td class="fielddoc">
+<p>in game = 2, otherwise = 0 </p>
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a0771a8a96c748529ca73282a1c7b16cd"></a><a class="el" href="gctypes_8h.html#afaa62991928fb9fb18ff0db62a040aba">u32</a></td>
+<td class="fieldname">
+playerCharacter</td>
+<td class="fielddoc">
+<p>character external ID </p>
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a456f05ef1d0c542869661c49f08667f1"></a><a class="el" href="gctypes_8h.html#afaa62991928fb9fb18ff0db62a040aba">u32</a></td>
+<td class="fieldname">
+slotType</td>
+<td class="fielddoc">
+<p>human = 0, cpu = 1, demo = 2 </p>
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="ad6ed294524584fd9ce9c8b9cda37babb"></a><a class="el" href="gctypes_8h.html#ace9d960e74685e2cd84b36132dbbf8aa">u16</a></td>
+<td class="fieldname">
+transformed</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="abd5fc57ae28cb0207029f38450fbc9d4"></a><a class="el" href="gctypes_8h.html#a92c50087ca0e64fa93fc59402c55f8ca">u8</a></td>
+<td class="fieldname">
+costumeID</td>
+<td class="fielddoc">
+<p>false = 0, true = 1 </p>
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="af181c657be3cbd23f4050113ba522fa8"></a><a class="el" href="gctypes_8h.html#a92c50087ca0e64fa93fc59402c55f8ca">u8</a></td>
+<td class="fieldname">
+controllerIndex</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="af3520db9c467bc37824d849ca73d3dce"></a><a class="el" href="gctypes_8h.html#a92c50087ca0e64fa93fc59402c55f8ca">u8</a></td>
+<td class="fieldname">
+subcolorID</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="aed82063d11fe7c9545a65f3cbc87c867"></a><a class="el" href="gctypes_8h.html#a92c50087ca0e64fa93fc59402c55f8ca">u8</a></td>
+<td class="fieldname">
+teamID</td>
+<td class="fielddoc">
+<p>red = 0, blue = 1, green = 2 </p>
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a924d1c1fe4d830ba738afdb2ca4a957e"></a><a class="el" href="gctypes_8h.html#a92c50087ca0e64fa93fc59402c55f8ca">u8</a></td>
+<td class="fieldname">
+playerID</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a8f0c542914d3a0bd099542fa8660fa02"></a><a class="el" href="gctypes_8h.html#afaa62991928fb9fb18ff0db62a040aba">u32</a></td>
+<td class="fieldname">
+deaths</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a63e67db32249a90e4f9c313c20c8447c"></a><a class="el" href="gctypes_8h.html#afaa62991928fb9fb18ff0db62a040aba">u32</a></td>
+<td class="fieldname">
+nanaDeaths</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a5a4798a898dad44efe4b71590ef3db80"></a><a class="el" href="gctypes_8h.html#afaa62991928fb9fb18ff0db62a040aba">u32</a></td>
+<td class="fieldname">
+p1Kills</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="aba30d4f04ea7e9896535f45ee4ba3017"></a><a class="el" href="gctypes_8h.html#afaa62991928fb9fb18ff0db62a040aba">u32</a></td>
+<td class="fieldname">
+p2Kills</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a61e3e314d5688a55d513ad0ef2a45488"></a><a class="el" href="gctypes_8h.html#afaa62991928fb9fb18ff0db62a040aba">u32</a></td>
+<td class="fieldname">
+p3Kills</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a55d7300c622536790a194f55f2833e22"></a><a class="el" href="gctypes_8h.html#afaa62991928fb9fb18ff0db62a040aba">u32</a></td>
+<td class="fieldname">
+p4Kills</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a8e09aa54d3c5d7ab2f247f675182e4f8"></a><a class="el" href="gctypes_8h.html#afaa62991928fb9fb18ff0db62a040aba">u32</a></td>
+<td class="fieldname">
+p5Kills</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a95e7ec786d6b6fd4226e1400101ddd3e"></a><a class="el" href="gctypes_8h.html#afaa62991928fb9fb18ff0db62a040aba">u32</a></td>
+<td class="fieldname">
+p6Kills</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a7c369f0d29c46ae6b33eb7f70a644de1"></a><a class="el" href="gctypes_8h.html#a92c50087ca0e64fa93fc59402c55f8ca">u8</a></td>
+<td class="fieldname">
+selfDeaths</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="ac764456add9234590a1f9faaaeb054c1"></a><a class="el" href="gctypes_8h.html#a92c50087ca0e64fa93fc59402c55f8ca">u8</a></td>
+<td class="fieldname">
+stocks</td>
+<td class="fielddoc">
+<p>remaining stocks </p>
+</td></tr>
+</table>
+
 </div>
 </div>
 <a name="struct_game_state" id="struct_game_state"></a>
@@ -1129,7 +1260,7 @@ stage</td>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Pointer to <a class="el" href="game__state_8h.html#struct_player_data" title="struct holding player data ">PlayerData</a> struct for this player </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to <a class="el" href="game__state_8h.html#struct_player_data" title="variables contained in &quot;player data&quot; ">PlayerData</a> struct for this player </dd></dl>
 
 </div>
 </div>

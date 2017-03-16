@@ -9,6 +9,8 @@ var searchData=
   ['limitgamememory',['limitGameMemory',['../system_8h.html#a3602498b5d35b0248468801ffb7b3c92',1,'system.c']]],
   ['link',['LINK',['../ai_8h.html#a32298be536f02aa8bbde57c0c970124e',1,'ai.h']]],
   ['link_5fid',['LINK_ID',['../melee__info_8h.html#a4ce2db0af572047b86ce911de6b6372d',1,'melee_info.h']]],
+  ['log',['log',['../math_8h.html#ad04ff2fafc7559725e22b969af498b7d',1,'math.h']]],
+  ['log_5ffptr',['LOG_FPTR',['../native__functions_8h.html#a9245e16e74439ad09db50e5adc9df07e',1,'native_functions.h']]],
   ['logic',['Logic',['../logic_8h.html#struct_logic',1,'']]],
   ['logic_2eh',['logic.h',['../logic_8h.html',1,'']]],
   ['logicqueue',['logicQueue',['../ai_8h.html#aac5387c0b835a900ce7e396548e0dea1',1,'AI']]],

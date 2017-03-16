@@ -31,7 +31,7 @@ extern u32 (*OSGetSystemTime)(void);
 extern u32 (*OSTimeToSystemTime)(void);
 
 #if 0
-/** @endcond */
+/// @endcond
 
 #endif
 

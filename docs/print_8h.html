@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Melee Modding Library
-   &#160;<span id="projectnumber">1.0.0</span>
+   &#160;<span id="projectnumber">1.1.0</span>
    </div>
    <div id="projectbrief">A C library for modding Super Smash Bros Melee</div>
   </td>
@@ -102,6 +102,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a3082155ec11e7229f7a20439b31a169e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="print_8h.html#a3082155ec11e7229f7a20439b31a169e">sprintf</a> (char *str, const char *format,...)</td></tr>
+<tr class="memdesc:a3082155ec11e7229f7a20439b31a169e"><td class="mdescLeft">&#160;</td><td class="mdescRight">write formatted data to string  <a href="#a3082155ec11e7229f7a20439b31a169e">More...</a><br /></td></tr>
+<tr class="separator:a3082155ec11e7229f7a20439b31a169e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga85d50a09cb925cd08d803c5a8fd01da7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___calls_malloc.html#ga85d50a09cb925cd08d803c5a8fd01da7">print</a> (const char *str)</td></tr>
 <tr class="memdesc:ga85d50a09cb925cd08d803c5a8fd01da7"><td class="mdescLeft">&#160;</td><td class="mdescRight">print a string to the output streamThis function prints a string to an output stream displayed on the designated window (tournament mode - replaces debug menu).  <a href="group___calls_malloc.html#ga85d50a09cb925cd08d803c5a8fd01da7">More...</a><br /></td></tr>
 <tr class="separator:ga85d50a09cb925cd08d803c5a8fd01da7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -109,7 +112,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:ac8bb3912a3ce86b15842e79d0b421204"><td class="mdescLeft">&#160;</td><td class="mdescRight">clear the output stream  <a href="#ac8bb3912a3ce86b15842e79d0b421204">More...</a><br /></td></tr>
 <tr class="separator:ac8bb3912a3ce86b15842e79d0b421204"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga600ac89163a3ee4d9e17288546b1ceed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___calls_malloc.html#ga600ac89163a3ee4d9e17288546b1ceed">error</a> (const char *errMessage)</td></tr>
-<tr class="memdesc:ga600ac89163a3ee4d9e17288546b1ceed"><td class="mdescLeft">&#160;</td><td class="mdescRight">"throw" an errorPrint an error message and set _errorState to true  <a href="group___calls_malloc.html#ga600ac89163a3ee4d9e17288546b1ceed">More...</a><br /></td></tr>
+<tr class="memdesc:ga600ac89163a3ee4d9e17288546b1ceed"><td class="mdescLeft">&#160;</td><td class="mdescRight">print error messagePrint an error message  <a href="group___calls_malloc.html#ga600ac89163a3ee4d9e17288546b1ceed">More...</a><br /></td></tr>
 <tr class="separator:ga600ac89163a3ee4d9e17288546b1ceed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e5b20fed15743656bb6d2e6a6ea6269"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="print_8h.html#a1e5b20fed15743656bb6d2e6a6ea6269">display</a> ()</td></tr>
 <tr class="memdesc:a1e5b20fed15743656bb6d2e6a6ea6269"><td class="mdescLeft">&#160;</td><td class="mdescRight">display print stream  <a href="#a1e5b20fed15743656bb6d2e6a6ea6269">More...</a><br /></td></tr>
@@ -118,6 +121,51 @@ Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Print output. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="a3082155ec11e7229f7a20439b31a169e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int sprintf </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>format</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>write formatted data to string </p>
+<p>Composes a string with the same text that would be printed if <code>format</code> was used on <code>printf</code>, but instead of being printed, the content is stored as a C string in the buffer pointed by <code>str</code>.</p>
+<p>The size of the buffer should be large enough to contain the entire resulting string</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>- Pointer to a buffer where the resulting C string is stored </td></tr>
+    <tr><td class="paramname">format</td><td>- C string</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>On success, the total number of character written. On failure, a negative number is returned</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a href="http://www.cplusplus.com/reference/cstdio/sprintf/">http://www.cplusplus.com/reference/cstdio/sprintf/</a> </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="ac8bb3912a3ce86b15842e79d0b421204"></a>
 <div class="memitem">
 <div class="memproto">

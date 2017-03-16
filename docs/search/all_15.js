@@ -1,6 +1,8 @@
 var searchData=
 [
   ['vbool',['vbool',['../gctypes_8h.html#a1cf436799bc2aefb3047ee8818e44cd2',1,'gctypes.h']]],
+  ['vector',['Vector',['../matrix_8h.html#struct_vector',1,'']]],
+  ['vectordotprod',['vectorDotProd',['../matrix_8h.html#a05632e1cf5a9ace8cf77b6b6fc449f2f',1,'matrix.c']]],
   ['version_2eh',['version.h',['../version_8h.html',1,'']]],
   ['vf32',['vf32',['../gctypes_8h.html#a217e077eede9f751422c92930f504edf',1,'gctypes.h']]],
   ['vf64',['vf64',['../gctypes_8h.html#a1bf9b7e9a4fc2bbc15af0889519ef77a',1,'gctypes.h']]],

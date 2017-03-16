@@ -33,5 +33,6 @@ var searchData=
   ['err_5f8',['ERR_8',['../error_8h.html#a45f5fb50712d5336e0b90ecb11b51383',1,'error.h']]],
   ['err_5f9',['ERR_9',['../error_8h.html#a1c2d6b2d90865a8010ddb14268662072',1,'error.h']]],
   ['error_5fstate',['ERROR_STATE',['../error_8h.html#a60db3d3e5c5fb314c0d698922d0b7124',1,'error.h']]],
-  ['error_5fthrown',['ERROR_THROWN',['../error_8h.html#a0099faec25b2b4649490d7f562ade34e',1,'error.h']]]
+  ['error_5fthrown',['ERROR_THROWN',['../error_8h.html#a0099faec25b2b4649490d7f562ade34e',1,'error.h']]],
+  ['exp_5ffptr',['EXP_FPTR',['../native__functions_8h.html#aee9ec78d07d65bcaddf62698b64ea774',1,'native_functions.h']]]
 ];

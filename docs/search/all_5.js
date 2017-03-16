@@ -2,6 +2,7 @@ var searchData=
 [
   ['end_5ftest',['END_TEST',['../group___calls_malloc.html#gaefcd1ca1799d2395f7bbe3c50bcc8ff8',1,'unit_test.h']]],
   ['endgame',['endGame',['../game__state_8h.html#aeda119595fcc834db9cfec532a90cf79',1,'game_state.c']]],
+  ['endtrial',['endTrial',['../profile_8h.html#a8aae37a7e7fa5f85958ca30807cae136',1,'profile.c']]],
   ['err_5f1',['ERR_1',['../error_8h.html#abe0e0e5d41bcdf7365b58faf284d55b1',1,'error.h']]],
   ['err_5f10',['ERR_10',['../error_8h.html#a805aa89fa27b9a21ddafc999bba0bb68',1,'error.h']]],
   ['err_5f11',['ERR_11',['../error_8h.html#a7b8665db5362fa1e49816b7e5a839863',1,'error.h']]],
@@ -36,6 +37,9 @@ var searchData=
   ['err_5f9',['ERR_9',['../error_8h.html#a1c2d6b2d90865a8010ddb14268662072',1,'error.h']]],
   ['error',['error',['../group___calls_malloc.html#ga600ac89163a3ee4d9e17288546b1ceed',1,'error(const char *errMessage):&#160;print.c'],['../group___calls_malloc.html#ga600ac89163a3ee4d9e17288546b1ceed',1,'error(const char *errMessage):&#160;print.c']]],
   ['error_2eh',['error.h',['../error_8h.html',1,'']]],
+  ['error_5fmsg',['ERROR_MSG',['../group___calls_malloc.html#ga53cf0ce013d4c7336b4ff71a360cf89a',1,'error.h']]],
   ['error_5fstate',['ERROR_STATE',['../error_8h.html#a60db3d3e5c5fb314c0d698922d0b7124',1,'error.h']]],
-  ['error_5fthrown',['ERROR_THROWN',['../error_8h.html#a0099faec25b2b4649490d7f562ade34e',1,'error.h']]]
+  ['error_5fthrown',['ERROR_THROWN',['../error_8h.html#a0099faec25b2b4649490d7f562ade34e',1,'error.h']]],
+  ['exp',['exp',['../math_8h.html#a9b5b75b78eff58c7f376e3ce51e9fdfd',1,'math.h']]],
+  ['exp_5ffptr',['EXP_FPTR',['../native__functions_8h.html#aee9ec78d07d65bcaddf62698b64ea774',1,'native_functions.h']]]
 ];
