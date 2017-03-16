@@ -1,7 +1,8 @@
 # version of library
+# TODO: change standard library to -O1
 MAJOR = 1
 MINOR = 1
-REVISION = 0
+REVISION = 1
 VERSION = mml-$(MAJOR).$(MINOR).$(REVISION)
 
 # GNU tools

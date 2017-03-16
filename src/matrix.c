@@ -106,15 +106,31 @@ static float fastDotProduct(const float* u, const float* v, size_t size)
  
 void matrixVectorProduct(Vector* y, const Matrix* A, const Vector* x)
 {
-    for (unsigned i = 0; i < A->nCol; ++i)
+    if (A->nCol != x->size || y->size != x->size)
     {
-        y->data[i] = fastDotProduct(A->data[i], x->data, x->size); 
+        ERROR_MSG("incompatible dimensions for matrix-vector"
+            " multiplication");
+    }
+    else
+    {
+        for (unsigned i = 0; i < A->nRow; ++i)
+        {
+            y->data[i] = fastDotProduct(A->data[i], x->data, x->size); 
+        }
     }
 }
 
 float vectorDotProd(const Vector* u, const Vector* v)
 {
-    return fastDotProduct(u->data, v->data, u->size);
+    if (u->size != v->size)
+    {
+        ERROR_MSG("incompatible dimensions for vector dot product");
+        return 0.f;
+    }
+    else
+    {
+        return fastDotProduct(u->data, v->data, u->size);
+    }
 }
 #pragma GCC pop_options
 
