@@ -4,6 +4,11 @@
 #include "math.h"
 #include "gctypes.h"
 #include "error.h"
+#include "native_functions.h"
+
+//#include <stdarg.h>
+
+int (*sprintf)(char* str, const char* format, ...) = SPRINTF_FPTR;
 
 #define LINE_SIZE 60
 #define MAX_LINES 27
@@ -105,19 +110,20 @@ void print(const char* str)
     memcpy(menu + numLines, &tempSlot, sizeof(DebugMenuSlot));
 }
 
-void printInt(const char* str, u32 n)
+/*
+int (*vsprintf)(char * s, const char * format, va_list arg)
+    = (void*) 0x80323dc8;
+
+int printf(const char* format, ...)
 {
-    char buffer[128];
-    char numString[16];
-
-    memset(buffer, 0, sizeof(buffer));
-    memset(numString, 0, sizeof(numString));
-
-    strcat(buffer, str);
-    itoa(n, numString);
-    strcat(buffer, numString);
+    char buffer[512];
+    va_list argptr;
+    va_start(argptr, format);
+    int result = vsprintf(buffer, format, argptr);
+    va_end(argptr);
     print(buffer);
-}
+    return result;
+}*/
 
 //TODO: solve the array out of bounds error (happens with -O3)
 #pragma GCC push_options

@@ -9,6 +9,51 @@
 
 #include "gctypes.h"
 
+/** @cond */
+extern int (*sprintf)(char* str, const char* format, ...);
+
+/**
+ * @brief print to the output stream
+ * @ingroup CallsMalloc
+ * 
+ * Writes the C string pointed by @p format to the output stream. If
+ * @p format includes format specifiers (subsequences beginning with %),
+ * the additional arguments following @p format are formatted and inserted
+ * in the resulting string replacing their respective specifiers.
+ *
+ * @param format - C string
+ * @return On success, the total number of character written. On
+ *  failure, a negative number is returned
+ *
+ * @see http://www.cplusplus.com/reference/cstdio/printf/
+ */
+//int printf(const char* format, ...);
+
+#if 0
+/** @endcond */
+
+/**
+ * @brief write formatted data to string
+ * 
+ * Composes a string with the same text that would be printed if @p format
+ * was used on @c printf, but instead of being printed, the content is
+ * stored as a C string in the buffer pointed by @p str.
+ *
+ * The size of the buffer should be large enough to contain the entire
+ * resulting string
+ *
+ * @param str - Pointer to a buffer where the resulting C string is stored
+ * @param format - C string
+ *
+ * @return On success, the total number of character written. On
+ *  failure, a negative number is returned
+ *
+ * @see http://www.cplusplus.com/reference/cstdio/sprintf/
+ */
+int sprintf(char* str, const char* format, ...);
+
+#endif
+
 /**
  * @brief print a string to the output stream
  * @ingroup CallsMalloc
@@ -21,7 +66,6 @@
  * @return none
  */
 void print(const char* str);
-void printInt(const char* str, u32 n);
 
 /**
  * @brief clear the output stream
@@ -33,13 +77,16 @@ void printInt(const char* str, u32 n);
 void clear();
 
 /**
- * @brief "throw" an error
+ * @brief print error message
  * @ingroup CallsMalloc
  *
- * Print an error message and set _errorState to true
+ * Print an error message
  *
  * @param errMessage - error message to print
  * @return none
+ *
+ * @note this will still print the error if the print stream has failed
+ *  to allocate memory
  */
 void error(const char* errMessage);
 

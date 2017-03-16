@@ -72,19 +72,21 @@
 /** uint32_t strtoul(const char* str, char** endptr, int base) */
 #define STR_TO_UL_FPTR  VOID_PTR(0x80325b24)
 
-/** char* itoa(int32_t value, char* str, int base) */
-#define ITOA_FPTR       VOID_PTR(0x803250c0)
+/************************** print.h ***************************/
+
+/** int sprintf(char* str, const char* format, ...) */
+#define SPRINTF_FPTR    VOID_PTR(0x80323cf4)
 
 /************************** math.h ****************************/
 
 /** float sin(float x) */
-#define SIN_FPTR       VOID_PTR(0x80326220)
+#define SIN_FPTR        VOID_PTR(0x80326220)
 
 /** float cos(float x) */
-#define COS_FPTR     VOID_PTR(0x80326200)
+#define COS_FPTR        VOID_PTR(0x80326200)
 
 /** float tan(float x) */
-#define TAN_FPTR    VOID_PTR(0x803261bc)
+#define TAN_FPTR        VOID_PTR(0x803261bc)
 
 /** float acos(float x) */
 #define ACOS_FPTR       VOID_PTR(0x80022d1c)
@@ -109,6 +111,20 @@
 
 /** float recipSqrt(float x) */
 #define RECIP_SQRT_FPTR VOID_PTR(0x80022df8);
+
+/************************** profile.h *************************/
+
+/** u32 OSGetTime() */
+#define OS_GET_TIME_FPTR            VOID_PTR(0x8034c3f0)
+
+/** u32 OSGetTick() */
+#define OS_GET_TICK_FPTR            VOID_PTR(0x8034c408)
+
+/** u32 OSGetSystemTime() */
+#define OS_GET_SYSTEM_TIME_FPTR     VOID_PTR(0x8034c410)
+
+/** u32 OSGetTick() */
+#define OS_TIME_TO_SYSTEM_TIME_FPTR VOID_PTR(0x8034c474)
 
 #endif // #ifdef PAL
 #endif // #ifndef MML_NATIVE_FUNCTIONS_H
