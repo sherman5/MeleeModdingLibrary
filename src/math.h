@@ -17,7 +17,7 @@
 
 /** approximate value of pi / 2 */
 #define M_PI_OVER_2 1.57079632679f
-#define M_HALF_PI   M_PI_OVER_2 //TODO: REMOVE
+#define M_HALF_PI   M_PI_OVER_2 //TODO: remove for v2
 
 /** approximate value of pi / 3 */
 #define M_PI_OVER_3   1.047197551f
@@ -61,76 +61,8 @@ extern float (*native_asin)(float x);
 extern float (*native_atan)(float x);
 extern float (*native_atan2)(float y, float x);
 
-__inline__ __attribute__((always_inline)) float sqrt(float x)
-    {return x == 0 ? 0 : 1 / recipSqrt(x);}
-
 #if 0
 /// @endcond
-
-/**
- * @brief native function for @c sin
- *
- * @param x - 
- *
- * @return
- */
-float native_sin(float x);
-
-/**
- * @brief native function for @c cos
- *
- * @param x - 
- *
- * @return
- */
-float native_cos(float x);
-
-/**
- * @brief native function for @c tan
- *
- * @param x - 
- *
- * @return
- */
-float native_tan(float x);
-
-/**
- * @brief native function for @c asin
- *
- * @param x - 
- *
- * @return
- */
-float native_asin(float x);
-
-
-/**
- * @brief native function for @c acos
- *
- * @param x - 
- *
- * @return
- */
-float native_acos(float x);
-
-/**
- * @brief native function for @c atan
- *
- * @param x - 
- *
- * @return
- */
-float native_atan(float x);
-
-/**
- * @brief native function for @c atan2
- *
- * @param y -
- * @param x - 
- *
- * @return
- */
-float native_atan2(float y, float x);
 
 /**
  * @brief @c e to the power @p x
@@ -158,15 +90,6 @@ float log(float x);
  * @return The absolute value of @p x.
  */
 float fabs(float x);
-
-/**
- * @brief Square root of @p x
- *
- * @param x - floating-point value
- * 
- * @return the square root of @p x
- */
-float sqrt(float x);
 
 /**
  * @brief <tt> 1 / sqrt(x) </tt>
@@ -250,6 +173,26 @@ float fmax(float a, float b);
 float fmin(float a, float b);
 
 /**
+ * @brief Mod operator for integers
+ *
+ * @param a - @c signed @c int
+ * @param b - @c signed @c int
+ * 
+ * @return <tt> a mod b </tt>
+ */
+int imod(int a, int b);
+
+/**
+ * @brief Mod operator for floats
+ *
+ * @param a - floating-point value
+ * @param b - floating-point value
+ * 
+ * @return <tt> a mod b </tt>
+ */
+float fmod(float a, float b);
+
+/**
  * @brief @p base raised to the power of @p exp
  *
  * @param base - 16-bit @c signed @c int
@@ -268,6 +211,15 @@ s32 ipow(s16 base, u8 exp);
  * @return @p base raised to the power of @p exp
  */
 float fpow(float base, u8 exp);
+
+/**
+ * @brief Square root of @p x
+ *
+ * @param x - floating-point value
+ * 
+ * @return the square root of @p x
+ */
+float sqrt(float x);
 
 /**
  * @brief Sine of @p x, expressed in degrees
