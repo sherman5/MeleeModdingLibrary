@@ -1,6 +1,6 @@
 # version of library
 MAJOR = 1
-MINOR = 0
+MINOR = 1
 REVISION = 0
 VERSION = mml-$(MAJOR).$(MINOR).$(REVISION)
 
@@ -11,8 +11,9 @@ OBJCPY = powerpc-eabi-objcopy
 
 # sources and header files (included in distribution)
 SRCS = src/ai.c src/controller.c src/game_state.c src/moves.c \
-src/math.c src/print.c src/random.c src/state_check.c \
-src/string.c src/system.c src/melee_info.c src/version.c src/error.c
+src/math.c src/print.c src/random.c src/state_check.c src/matrix.c \
+src/string.c src/system.c src/melee_info.c src/version.c src/error.c \
+src/profile.c
 
 HEADERS = $(SRCS:.c=.h) src/gctypes.h src/native_functions.h \
 src/unit_test.h src/logic.h src/action_state.h
@@ -152,6 +153,9 @@ test_game_state : $(LIBS)
 
 test_math : $(LIBS)
 	wiimake $(ISO_FILE) tests/testMath.ini $(MAKE_FLAGS)
+
+test_matrix : $(LIBS)
+	wiimake $(ISO_FILE) tests/testMatrix.ini $(MAKE_FLAGS)
 
 test_melee_info : $(LIBS)
 	wiimake $(ISO_FILE) tests/testMeleeInfo.ini $(MAKE_FLAGS)

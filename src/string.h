@@ -241,6 +241,7 @@ size_t strlen(const char* str);
  * @see http://www.cplusplus.com/reference/cstdlib/itoa/
  */
 char* itoa(s32 n, char* s);
+char* ftoa(float f, char* s);
 
 /**
  * @brief Copy block of memory

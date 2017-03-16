@@ -24,6 +24,7 @@ char* strcat(char* destination, const char* source)
 
 /* https://en.wikibooks.org/wiki/C_Programming/C_Reference/stdlib.h/itoa */
 
+//TODO: remove for v2
 static void reverse(char s[])
 {
     int i, j;
@@ -37,6 +38,7 @@ static void reverse(char s[])
     }
 }
 
+//TODO: remove for v2
 char* itoa(s32 n, char* s)
 {
     int i = 0, sign;

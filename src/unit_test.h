@@ -26,7 +26,7 @@ do { \
     if (!(condition)) \
     { \
         print(ASSERT_MSG); \
-        tests_passed = false; \
+        _tests_passed = false; \
     } \
 } while (0)
 
@@ -37,7 +37,7 @@ do { \
 #define REQUIRE_FLT_EQ(L, R, tol) REQUIRE(APPROX_ZERO((L) - (R), tol))
 
 /** Macro placed in the global scope of each .c file, before END_TEST **/ 
-#define UNIT_TEST static bool tests_passed = true
+#define UNIT_TEST static bool _tests_passed = true
 
 /**
  * Macro placed in a function after all tests have been run
@@ -45,7 +45,7 @@ do { \
  */
 #define END_TEST \
 do { \
-    if (tests_passed) \
+    if (_tests_passed) \
     { \
         print("all tests passed!"); \
     } \

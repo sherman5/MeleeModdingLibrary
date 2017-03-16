@@ -1,7 +1,6 @@
 /**
  * @file controller.h
  * @brief Emulate a player's controller.
- *
  */
 
 #ifndef MML_CONTROLLER_H
@@ -42,9 +41,7 @@
 #define TILT_RADIUS 0.3
 
 //TODO: match up with game struct
-/**
- * @brief Represents the state of a controller.
- */
+/** @brief Represents the state of a controller. */
 typedef struct
 {
     u32 buttons; /**< A-0100, B-0200, X-0400, Z-0010, L-0040 */

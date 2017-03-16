@@ -30,7 +30,11 @@ void endTrial(Profile* prof)
 
 void printProfile(Profile* prof)
 {
-    printInt("Average Ticks:   ", prof->avgTicks);
-    printInt("Max Ticks:   ", prof->maxTicks);
-    printInt("Min Ticks:   ", prof->minTicks);
+    char buffer[96];
+    sprintf(buffer, "Average Ticks: %d", prof->avgTicks);
+    print(buffer);
+    sprintf(buffer, "Max Ticks: %d", prof->maxTicks);
+    print(buffer);
+    sprintf(buffer, "Min Ticks:   ", prof->minTicks);
+    print(buffer);
 }
