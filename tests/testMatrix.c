@@ -112,7 +112,7 @@ void _main(void)
         END_TEST;
     }
 
-    if (allocSuccess && tests_passed)
+    if (allocSuccess && _tests_passed)
     {
         testSpeed();
     }
