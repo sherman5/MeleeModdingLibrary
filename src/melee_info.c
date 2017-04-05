@@ -145,4 +145,33 @@ const u8 _ledgedash_frames[25] =
     0  //ROY
 };
 
+const u8 _dash_frames[25] = 
+{
+    10, //DR_MARIO
+    10, //MARIO
+    10, //LUIGI
+    13, //BOWSER
+    15, //PEACH
+    13, //YOSHI
+    15, //DK
+    12, //FALCON
+    15, //GANON
+    11, //FALCO
+    11, //FOX
+    13, //NESS
+    13, //ICE_CLIMBERS
+    12, //KIRBY
+    8, //SAMUS
+    15, //ZELDA
+    12, //LINK
+    12, //YOUNG_LINK
+    13, //PICHU
+    13, //PIKACHU
+    12, //PUFF
+    18, //MEWTWO
+    8, //MR_GNW
+    15, //MARTH
+    15  //ROY
+};
+
 
