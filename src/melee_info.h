@@ -54,7 +54,4 @@ extern const u8 _ledgedash_frames[25];
  * @note measured as y-coordinate when hanging from ledge */
 extern const u8 _char_height[25];
 
-/** number of frames before dash turns to run */
-extern const u8 _dash_frames[25];
-
 #endif
