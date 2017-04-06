@@ -5,7 +5,7 @@ var searchData=
   ['f32',['f32',['../gctypes_8h.html#a5f6906312a689f27d70e9d086649d3fd',1,'gctypes.h']]],
   ['f64',['f64',['../gctypes_8h.html#a94dab5770726ccbef8c7d026cfbdf8e5',1,'gctypes.h']]],
   ['fabs',['fabs',['../math_8h.html#a0bc70d364c7f180aece2381faae7eafc',1,'math.h']]],
-  ['fabs_5ffptr',['FABS_FPTR',['../native__functions_8h.html#af4f9a7e959ec85fdc55cc2a9f6e931be',1,'native_functions.h']]],
+  ['fabs_5ffptr',['FABS_FPTR',['../native__functions__102_8h.html#af4f9a7e959ec85fdc55cc2a9f6e931be',1,'native_functions_102.h']]],
   ['facingdirection',['facingDirection',['../game__state_8h.html#a8743d29d16a4095b6bc5992da02df052',1,'PlayerData']]],
   ['falco',['FALCO',['../ai_8h.html#a9048a2e314c97dfce03a07535084a9fd',1,'ai.h']]],
   ['falco_5fid',['FALCO_ID',['../melee__info_8h.html#ad6eca8f9d45dd2d8007dc016aa40e511',1,'melee_info.h']]],

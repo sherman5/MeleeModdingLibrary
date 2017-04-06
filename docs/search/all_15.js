@@ -6,7 +6,7 @@ var searchData=
   ['version_2eh',['version.h',['../version_8h.html',1,'']]],
   ['vf32',['vf32',['../gctypes_8h.html#a217e077eede9f751422c92930f504edf',1,'gctypes.h']]],
   ['vf64',['vf64',['../gctypes_8h.html#a1bf9b7e9a4fc2bbc15af0889519ef77a',1,'gctypes.h']]],
-  ['void_5fptr',['VOID_PTR',['../native__functions_8h.html#ae40e82d767432abe028707bdab8f6245',1,'native_functions.h']]],
+  ['void_5fptr',['VOID_PTR',['../native__functions__102_8h.html#ae40e82d767432abe028707bdab8f6245',1,'native_functions_102.h']]],
   ['vs16',['vs16',['../gctypes_8h.html#a84c4ebe721fa065d9bd514ce8d76c455',1,'gctypes.h']]],
   ['vs32',['vs32',['../gctypes_8h.html#a6c6cf6e3aedfd399080c6f52c2870063',1,'gctypes.h']]],
   ['vs8',['vs8',['../gctypes_8h.html#a108e1a5e4c3e8322825ef7dcd45966ca',1,'gctypes.h']]],

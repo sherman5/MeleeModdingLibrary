@@ -12,7 +12,7 @@ var searchData=
   ['controller_2eh',['controller.h',['../controller_8h.html',1,'']]],
   ['controllerinput',['ControllerInput',['../ai_8h.html#struct_controller_input',1,'']]],
   ['cos',['cos',['../math_8h.html#a5e88e48c21b60ac9b58a322cf8a8bb67',1,'math.c']]],
-  ['cos_5ffptr',['COS_FPTR',['../native__functions_8h.html#ad38949faaf35f54242d2591344b88b9e',1,'native_functions.h']]],
+  ['cos_5ffptr',['COS_FPTR',['../native__functions__102_8h.html#ad38949faaf35f54242d2591344b88b9e',1,'native_functions_102.h']]],
   ['costumeid',['costumeID',['../game__state_8h.html#abd5fc57ae28cb0207029f38450fbc9d4',1,'PlayerBlock']]],
   ['cstick_5fdown',['CSTICK_DOWN',['../controller_8h.html#ae2ac2e5d1765619532ad6a1b4b512898',1,'controller.h']]],
   ['cstick_5fleft',['CSTICK_LEFT',['../controller_8h.html#a370ee9d0b3f3b57590c5238a48fedd7c',1,'controller.h']]],

@@ -2,6 +2,8 @@ var searchData=
 [
   ['name',['name',['../game__state_8h.html#ae5de202db7a51a10da84622553c8c132',1,'Stage']]],
   ['native_5ffunctions_2eh',['native_functions.h',['../native__functions_8h.html',1,'']]],
+  ['native_5ffunctions_5f102_2eh',['native_functions_102.h',['../native__functions__102_8h.html',1,'']]],
+  ['native_5ffunctions_5fpal_2eh',['native_functions_PAL.h',['../native__functions___p_a_l_8h.html',1,'']]],
   ['ncol',['nCol',['../matrix_8h.html#ae5ecfa41efd6460f1b729bacb05064dd',1,'Matrix']]],
   ['nearsurface',['nearSurface',['../state__check_8h.html#a44e1e6f7798c6415155bac244f7693ab',1,'state_check.c']]],
   ['needlogic',['needLogic',['../ai_8h.html#afe13089386db70ba6de7f825dda44585',1,'ai.c']]],

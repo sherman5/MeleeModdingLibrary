@@ -3,7 +3,7 @@ var searchData=
   ['a_5fbutton',['A_BUTTON',['../controller_8h.html#a5ec59d5e4f6bfacfdf3aa6e7ed5c0373',1,'controller.h']]],
   ['aboveheight',['aboveHeight',['../state__check_8h.html#af2ef6864182306a6fbae1b8e72387c06',1,'state_check.c']]],
   ['acos',['acos',['../math_8h.html#ad3746d6ae34f39dc1929395d6af1ecb1',1,'math.c']]],
-  ['acos_5ffptr',['ACOS_FPTR',['../native__functions_8h.html#a0907789b2b234a3e47f0b87b1ceeba7e',1,'native_functions.h']]],
+  ['acos_5ffptr',['ACOS_FPTR',['../native__functions__102_8h.html#a0907789b2b234a3e47f0b87b1ceeba7e',1,'native_functions_102.h']]],
   ['action',['action',['../logic_8h.html#a30a369c638ef6db89e8cbed4cf73fffb',1,'Logic']]],
   ['action_5fstate_2eh',['action_state.h',['../action__state_8h.html',1,'']]],
   ['actioncounter',['actionCounter',['../game__state_8h.html#af8e6c52aba84bb47657d2abe97f96a08',1,'PlayerData']]],
@@ -25,10 +25,10 @@ var searchData=
   ['arg1',['arg1',['../logic_8h.html#a9fd670f3f3ade58fcaa2ab29f0aa8a0e',1,'FunctionCall']]],
   ['arg2',['arg2',['../logic_8h.html#aea54359b23afa4abeff85f6f04f7e275',1,'FunctionCall']]],
   ['asin',['asin',['../math_8h.html#af7a153258c174c284724467debb9458c',1,'math.c']]],
-  ['asin_5ffptr',['ASIN_FPTR',['../native__functions_8h.html#a0ea76dec04f09d81b9c29ae269d4b676',1,'native_functions.h']]],
+  ['asin_5ffptr',['ASIN_FPTR',['../native__functions__102_8h.html#a0ea76dec04f09d81b9c29ae269d4b676',1,'native_functions_102.h']]],
   ['atan',['atan',['../math_8h.html#aa1707595eec76a358520359b4f20267e',1,'math.c']]],
   ['atan2',['atan2',['../math_8h.html#aaf4b636b09041878e1542054c73d81e9',1,'math.c']]],
-  ['atan2_5ffptr',['ATAN2_FPTR',['../native__functions_8h.html#abb0ca8e3176eb9550c12273737b11e48',1,'native_functions.h']]],
-  ['atan_5ffptr',['ATAN_FPTR',['../native__functions_8h.html#aee3517da14269ba936df280d04f676fe',1,'native_functions.h']]],
+  ['atan2_5ffptr',['ATAN2_FPTR',['../native__functions__102_8h.html#abb0ca8e3176eb9550c12273737b11e48',1,'native_functions_102.h']]],
+  ['atan_5ffptr',['ATAN_FPTR',['../native__functions__102_8h.html#aee3517da14269ba936df280d04f676fe',1,'native_functions_102.h']]],
   ['avgticks',['avgTicks',['../profile_8h.html#ad64028c7224c976de6e6923c529c6852',1,'Profile']]]
 ];
