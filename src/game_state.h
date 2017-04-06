@@ -153,7 +153,11 @@ typedef struct
     u32 digitalButtonData;
     u32 prevDigitalButtonData;
 
-    /**@cond */PAD(lastPosition, 0x830, 0x660, u32);/**@endcond */    
+    /**@cond */PAD(cardinalFrameCounter, 0x670, 0x660, u32);/**@ndcond */
+    u8 cardinalXFrames;
+    u8 cardinalYFrames;
+
+    /**@cond */PAD(lastPosition, 0x830, 0x672, u8);/**@endcond */    
     float lastPosition; /**< last position player landed at */
 
     /**@cond */PAD(platformID, 0x83f, 0x830, float);/**@endcond */    
