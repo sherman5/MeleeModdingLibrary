@@ -55,81 +55,66 @@ extern RawInput _raw_sideB[1];
 extern RawInput _raw_doubleJump[1];
 extern RawInput _raw_downB[2];
 extern RawInput _raw_ledgeDash[4];
+extern RawInput _raw_wavedash[3];
+extern RawInput _raw_dash[2];
 /** @endcond **/
 
-/** Short Hop Neutral B. */
-extern Move _mv_shNeutralB;
-
-/** Short Hop */
-extern Move _mv_shortHop;
-
-/** Hit standard tech */
-extern Move _mv_tech;
+extern Move _mv_shNeutralB; /**< Short Hop Neutral B. */
+extern Move _mv_shortHop; /**< Short Hop */
+extern Move _mv_tech; /**< Hit standard tech */
+extern Move _mv_spotDodge; /**< Spot Dodge */
+extern Move _mv_getUpAttack; /**< Get Up Attack */
+extern Move _mv_jab; /**< Jab */
+extern Move _mv_hitDI; /**< DI from hit */
+extern Move _mv_throwDI; /**< DI from throw @ingroup IndefiniteMove */
+extern Move _mv_upB; /**< Up B @ingroup IndefiniteMove */
+extern Move _mv_sideB; /**< Side B */
+extern Move _mv_downB; /**< Down B */
+extern Move _mv_wavedash; /**< Wavedash at an angle */
+extern Move _mv_doubleJump; /**< DJ towards direction @note INDEFINITE */
+extern Move _mv_holdDirection; /**< Hold stick @ingroup IndefiniteMove */
+extern Move _mv_ledgeDash; /**< Ledgedash */
+extern Move _mv_dash; /**< Dash Dance (one dash input) */
 
 /** Set tech direction **/
 #define SET_TECH_DIR(x) _raw_tech[0].controller = \
     L_BUTTON | FULL_STICK | STICK_ANGLE(x)
 
-/** Spot Dodge */
-extern Move _mv_spotDodge;
-
-/** Get Up Attack */
-extern Move _mv_getUpAttack;
-
-/** Jab */
-extern Move _mv_jab;
-
-/** DI from hit */
-extern Move _mv_hitDI;
-
 /** Set the direction of DI for normal hits */
 #define SET_HIT_DI_DIR(x) _raw_hitDI[0].controller = \
-    FULL_STICK | STICK_ANGLE((x))
-
-/** DI from throw @ingroup IndefiniteMove */
-extern Move _mv_throwDI;
+    FULL_STICK | STICK_ANGLE(x)
 
 /** Set the direction of DI for throws */
 #define SET_THROW_DI_DIR(x) _raw_holdDirection[0].controller = \
-    FULL_STICK | STICK_ANGLE((x))
-
-/** Up B @ingroup IndefiniteMove */
-extern Move _mv_upB;
+    FULL_STICK | STICK_ANGLE(x)
 
 /** Set the direction for the Up B */
 #define SET_UP_B_DIR(x) _raw_upB[1].controller = \
-    FULL_STICK | STICK_ANGLE((x))
-
-/** Side B */
-extern Move _mv_sideB;
+    FULL_STICK | STICK_ANGLE(x)
 
 /** Set the direction for the side B */
 #define SET_SIDE_B_DIR(x) _raw_sideB[0].controller = \
-    B_BUTTON | FULL_STICK | STICK_ANGLE((x))
-
-/** Double Jump with Direction @note INDEFINITE */
-extern Move _mv_doubleJump;
+    B_BUTTON | FULL_STICK | STICK_ANGLE(x)
 
 /** Set the direction for the double jump */
 #define SET_DJ_DIR(x) _raw_doubleJump[0].controller = \
-    X_BUTTON | FULL_STICK | STICK_ANGLE((x))
-
-/** Ledgedash */
-extern Move _mv_ledgeDash;
+    X_BUTTON | FULL_STICK | STICK_ANGLE(x)
 
 /** Set angle for ledge dash */
 #define SET_LEDGEDASH_ANGLE(x) _raw_ledgeDash[2].controller = \
-    L_BUTTON | FULL_STICK | STICK_ANGLE((x))
-
-/** Hold Control Stick in Direction @ingroup IndefiniteMove */
-extern Move _mv_holdDirection;
+    L_BUTTON | FULL_STICK | STICK_ANGLE(x)
 
 /** Set the direction of the control stick */
 #define SET_HOLD_DIR(x) _raw_holdDirection[0].controller = \
-    FULL_STICK | STICK_ANGLE((x))
+    FULL_STICK | STICK_ANGLE(x)
 
-/** Down B */
-extern Move _mv_downB;
+/** Set direction of wavedash */
+#define SET_WAVEDASH_DIR(x) _raw_wavedash[1].controller = \
+    L_BUTTON | FULL_STICK | STICK_ANGLE(x)
+
+/** Set direction of dash */
+#define SET_DASH_DIR(x) _raw_dash[0].controller = \
+    FULL_STICK | STICK_ANGLE(x)
 
 #endif
 

@@ -12,21 +12,45 @@
 
 #endif
 
+u32 (*numPlayers)() = (void*) 0x8016b558;
+
 static u32 _end_frame = 0xffffffff;
 static bool _in_game = false;
 
 void endGame()
 {
-    _in_game = false;
-    _end_frame = CURRENT_FRAME;
+//    _in_game = false;
+//    _end_frame = CURRENT_FRAME;
 }
 
 bool inGame()
 {
-    if (!_in_game && IN_GAME && CURRENT_FRAME < _end_frame)
+/*    if (!_in_game && IN_GAME && CURRENT_FRAME < _end_frame)
     {
         _in_game = true;    
     }
+    return _in_game;*/  
+//   bool res = IN_GAME;
+//    bool res = (playerData(1) || playerData(2) || playerData(3)
+//        || playerData(4));
+//    bool res = numPlayers() > 0;
+
+    if (!_in_game && IN_GAME)
+    {
+        _in_game = true;
+    }
+    else if (_in_game && CURRENT_FRAME < _end_frame)
+    {
+        _in_game = false;
+    }
+
+    if (_in_game)
+    {
+        _end_frame = CURRENT_FRAME;
+    }    
+
+    *((u32*) 0x80001810) = _in_game ? 0xAAAA : 0xFFFF;
+    
     return _in_game;
 }
 

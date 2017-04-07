@@ -109,7 +109,7 @@ void clearAI(AI* ai)
 {
     ai->logicSize = 0;  
     ai->inputSize = 0;
-    ai->controller = (Controller) {0, 0.f, 0.f, 0.f, 0.f};
+    ai->controller = DEFAULT_CONTROLLER;
 }
 
 static void findOpponent(AI* ai)

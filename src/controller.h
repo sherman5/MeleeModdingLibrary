@@ -40,19 +40,26 @@
 /** Radius of stick that defines a tilt */
 #define TILT_RADIUS 0.3
 
-//TODO: match up with game struct
-/** @brief Represents the state of a controller. */
+/** @brief Emulates a GameCube controller */
 typedef struct
 {
     u32 buttons; /**< A-0100, B-0200, X-0400, Z-0010, L-0040 */
+    u32 prevButtons; /**< Buttons on previous frame */
+    
+    float stickX; /**< x coordinate of control stick */
+    float stickY; /**< y coordinate of control stick */
 
-    f32 stickX; /**< x coordinate of control stick */
-    f32 stickY; /**< y coordinate of control stick */
+    float prevStickX; /**< previous x-coord of control stick */
+    float prevStickY; /**< previous y-coord of control stick */
 
-    f32 CstickX; /**< x coordinate of c-stick */
-    f32 CstickY; /**< y coordinate of c-stick */
+    float cStickX; /**< x coordinate of c-stick */
+    float cStickY; /**< y coordinate of c-stick */
+
+    u32 lastUpdate; /**< frame that buttons were updated on */
 
 } Controller;
+
+#define DEFAULT_CONTROLLER ((Controller) {0,0,0.f,0.f,0.f,0.f,0.f,0.f,0})
 
 /**
  * @brief Set the state of the controller.

@@ -1,6 +1,16 @@
 # Change Log
 This documents all differences between versions of the library
 
+## [2.0.0] - ?
+
+### Added
+
+- memcard support
+
+### Changed
+
+- default library compiled with -O1
+
 ## [1.1.1] - 3/16/17
 
 ### Added

@@ -30,6 +30,7 @@ void limitGameMemory(void* limit)
     *((void**) ARENA_HI_ADDRESS) = limit;
 }
 
+//TODO: 8037f1e4 - malloc
 void* malloc(size_t size)
 {
     if (!init) {return NULL;}

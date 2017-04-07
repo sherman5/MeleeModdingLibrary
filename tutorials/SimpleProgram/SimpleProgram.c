@@ -32,7 +32,7 @@ void _main()
 {
     if (!init_run) { init(); }
 
-    if (needLogic(&cpuPlayer)) { loadDefaultLogic(); }
+    if (needLogic(&cpuPlayer)) {loadDefaultLogic();}
 
     updateAI(&cpuPlayer);
 }
