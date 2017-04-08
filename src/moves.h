@@ -29,10 +29,11 @@ typedef struct
 
 //@{
 /** Input Flags */
-#define NO_FLAGS    0
-#define JUMPSQUAT   (1 << 0)
-#define SH_LENGTH   (1 << 1)
-#define LEDGEDASH   (1 << 2)
+#define NO_FLAGS                0
+#define JUMPSQUAT               (1 << 0)
+#define SH_LENGTH               (1 << 1)
+#define LEDGEDASH               (1 << 2)
+#define RESET_STICK_COUNTER     (1 << 3)
 //@}
 
 //@{

@@ -290,12 +290,6 @@ typedef struct
     /** Current Frame (32-bit) */
     #define CURRENT_FRAME   (*((u32*) 0x80479D60))
 
-    //TODO: remove for v2
-    #define PLAYER_BLOCK(x)     ((u32) _gameState.playerBlock[(x)])
-    #define PLAYER_STATE(x)     _gameState.playerBlock[(x)]->playerState
-    #define SLOT_TYPE(x)        _gameState.playerBlock[(x)]->slotType
-    #define STOCKS(x)           _gameState.playerBlock[(x)]->stocks
-
 #endif
 
 /** global GameState variable */
