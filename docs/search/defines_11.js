@@ -2,6 +2,7 @@ var searchData=
 [
   ['samus',['SAMUS',['../ai_8h.html#a7c2a17b44ed15e13dc2b5c859bf727c6',1,'ai.h']]],
   ['samus_5fid',['SAMUS_ID',['../melee__info_8h.html#a71fb83505ac361906776123d17fa1090',1,'melee_info.h']]],
+  ['set_5fdash_5fdir',['SET_DASH_DIR',['../moves_8h.html#a9bd363297c18a769fae7cf725b49c5ee',1,'moves.h']]],
   ['set_5fdj_5fdir',['SET_DJ_DIR',['../moves_8h.html#ad5c4c28f11156e4eefcc9eeba2bfceb1',1,'moves.h']]],
   ['set_5fhit_5fdi_5fdir',['SET_HIT_DI_DIR',['../moves_8h.html#a1a4e71e45acbce3879557f2b5e5b7384',1,'moves.h']]],
   ['set_5fhold_5fdir',['SET_HOLD_DIR',['../moves_8h.html#ab72101b6584c67a709bc82c8d2b7ed10',1,'moves.h']]],

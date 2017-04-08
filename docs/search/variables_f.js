@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['right',['right',['../game__state_8h.html#a6202f38a97a1c9eb0142baeb338cf1f1',1,'Platform']]]
+  ['queue',['queue',['../input__queue_8h.html#aade3b2c2714870e8e248331603c407b9',1,'InputQueue']]]
 ];

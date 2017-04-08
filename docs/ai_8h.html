@@ -103,14 +103,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <code>#include &quot;<a class="el" href="moves_8h_source.html">moves.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="controller_8h_source.html">controller.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="gctypes_8h_source.html">gctypes.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="input__queue_8h_source.html">input_queue.h</a>&quot;</code><br />
 </div>
 <p><a href="ai_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Data Structures</h2></td></tr>
-<tr class="memitem:struct_controller_input"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ai_8h.html#struct_controller_input">ControllerInput</a></td></tr>
-<tr class="memdesc:struct_controller_input"><td class="mdescLeft">&#160;</td><td class="mdescRight">A single controller input made by the <a class="el" href="ai_8h.html#struct_a_i" title="Holds all information about an AI. ">AI</a>.  <a href="ai_8h.html#struct_controller_input">More...</a><br /></td></tr>
-<tr class="separator:struct_controller_input"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:struct_a_i"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ai_8h.html#struct_a_i">AI</a></td></tr>
 <tr class="memdesc:struct_a_i"><td class="mdescLeft">&#160;</td><td class="mdescRight">Holds all information about an <a class="el" href="ai_8h.html#struct_a_i" title="Holds all information about an AI. ">AI</a>.  <a href="ai_8h.html#struct_a_i">More...</a><br /></td></tr>
 <tr class="separator:struct_a_i"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -176,9 +174,6 @@ Functions</h2></td></tr>
 <tr class="memitem:gafeacd9b954896e475d0b463af16c7d0c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___calls_malloc.html#gafeacd9b954896e475d0b463af16c7d0c">addLogic</a> (<a class="el" href="ai_8h.html#struct_a_i">AI</a> *ai, const <a class="el" href="logic_8h.html#struct_logic">Logic</a> *logic)</td></tr>
 <tr class="memdesc:gafeacd9b954896e475d0b463af16c7d0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add single logic rule to <a class="el" href="ai_8h.html#struct_a_i" title="Holds all information about an AI. ">AI</a>.  <a href="group___calls_malloc.html#gafeacd9b954896e475d0b463af16c7d0c">More...</a><br /></td></tr>
 <tr class="separator:gafeacd9b954896e475d0b463af16c7d0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9ae9e98270bc1b79a347880de3d9586b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___calls_malloc.html#ga9ae9e98270bc1b79a347880de3d9586b">addMove</a> (<a class="el" href="ai_8h.html#struct_a_i">AI</a> *ai, const <a class="el" href="moves_8h.html#struct_move">Move</a> *move)</td></tr>
-<tr class="memdesc:ga9ae9e98270bc1b79a347880de3d9586b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tell <a class="el" href="ai_8h.html#struct_a_i" title="Holds all information about an AI. ">AI</a> to execute a move.  <a href="group___calls_malloc.html#ga9ae9e98270bc1b79a347880de3d9586b">More...</a><br /></td></tr>
-<tr class="separator:ga9ae9e98270bc1b79a347880de3d9586b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab5787b889bc2bd27dcd837ab0def78b6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ai_8h.html#ab5787b889bc2bd27dcd837ab0def78b6">updateAI</a> (<a class="el" href="ai_8h.html#struct_a_i">AI</a> *ai)</td></tr>
 <tr class="memdesc:ab5787b889bc2bd27dcd837ab0def78b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check logic rules and queued inputs.  <a href="#ab5787b889bc2bd27dcd837ab0def78b6">More...</a><br /></td></tr>
 <tr class="separator:ab5787b889bc2bd27dcd837ab0def78b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -192,37 +187,6 @@ Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Automated player. </p>
 </div><hr/><h2 class="groupheader">Data Structure Documentation</h2>
-<a name="struct_controller_input" id="struct_controller_input"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct ControllerInput</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="textblock"><p>A single controller input made by the <a class="el" href="ai_8h.html#struct_a_i" title="Holds all information about an AI. ">AI</a>. </p>
-<dl class="section note"><dt>Note</dt><dd>size = 8 bytes (accounting for padding) </dd></dl>
-</div><table class="fieldtable">
-<tr><th colspan="3">Data Fields</th></tr>
-<tr><td class="fieldtype">
-<a class="anchor" id="a9189c4df8efafef6f93fe84368cc4541"></a><a class="el" href="gctypes_8h.html#afaa62991928fb9fb18ff0db62a040aba">u32</a></td>
-<td class="fieldname">
-frame</td>
-<td class="fielddoc">
-<p>Frame on which to execute input </p>
-</td></tr>
-<tr><td class="fieldtype">
-<a class="anchor" id="ae15ef9aade3aea2288e6a8cbd5406758"></a><a class="el" href="gctypes_8h.html#ace9d960e74685e2cd84b36132dbbf8aa">u16</a></td>
-<td class="fieldname">
-controller</td>
-<td class="fielddoc">
-<p>State of controller </p>
-</td></tr>
-</table>
-
-</div>
-</div>
 <a name="struct_a_i" id="struct_a_i"></a>
 <div class="memitem">
 <div class="memproto">
@@ -236,18 +200,11 @@ controller</td>
 </div><table class="fieldtable">
 <tr><th colspan="3">Data Fields</th></tr>
 <tr><td class="fieldtype">
-<a class="anchor" id="a872eb72dc091dfc922f3461989909363"></a><a class="el" href="controller_8h.html#struct_controller">Controller</a></td>
-<td class="fieldname">
-controller</td>
-<td class="fielddoc">
-<p><a class="el" href="controller_8h.html#struct_controller" title="Represents the state of a controller. ">Controller</a> this <a class="el" href="ai_8h.html#struct_a_i" title="Holds all information about an AI. ">AI</a> uses </p>
-</td></tr>
-<tr><td class="fieldtype">
-<a class="anchor" id="a98485465ebcea1bfc1d7b426255a1b83"></a><a class="el" href="ai_8h.html#struct_controller_input">ControllerInput</a> *</td>
+<a class="anchor" id="aaa054677d9d20be131ce8c356fd525bf"></a><a class="el" href="input__queue_8h.html#struct_input_queue">InputQueue</a></td>
 <td class="fieldname">
 inputQueue</td>
 <td class="fielddoc">
-<p>Array of inputs to execute </p>
+<p>Manages inputs </p>
 </td></tr>
 <tr><td class="fieldtype">
 <a class="anchor" id="aac5387c0b835a900ce7e396548e0dea1"></a><a class="el" href="logic_8h.html#struct_logic">Logic</a> *</td>
@@ -261,24 +218,12 @@ logicQueue</td>
 <td class="fieldname">
 logicSize</td>
 <td class="fielddoc">
-</td></tr>
-<tr><td class="fieldtype">
-<a class="anchor" id="a8dda1e8d72346e97f51bbf77e881c291"></a><a class="el" href="gctypes_8h.html#aedaf31b3f7716640e70205644b9b828e">size_t</a></td>
-<td class="fieldname">
-inputSize</td>
-<td class="fielddoc">
 <p>Size of logic/input arrays </p>
 </td></tr>
 <tr><td class="fieldtype">
 <a class="anchor" id="a394c6e0826b5a31145013a08d06f8fe4"></a><a class="el" href="gctypes_8h.html#aedaf31b3f7716640e70205644b9b828e">size_t</a></td>
 <td class="fieldname">
 logicCapacity</td>
-<td class="fielddoc">
-</td></tr>
-<tr><td class="fieldtype">
-<a class="anchor" id="a02cf5917931e3d0e28867c01796f0715"></a><a class="el" href="gctypes_8h.html#aedaf31b3f7716640e70205644b9b828e">size_t</a></td>
-<td class="fieldname">
-inputCapacity</td>
 <td class="fielddoc">
 <p>Capacity of arrays </p>
 </td></tr>
@@ -308,7 +253,7 @@ opponent</td>
 <td class="fieldname">
 active</td>
 <td class="fielddoc">
-<p>Whether or not this <a class="el" href="ai_8h.html#struct_a_i" title="Holds all information about an AI. ">AI</a> is active in the game </p>
+<p><a class="el" href="ai_8h.html#struct_a_i" title="Holds all information about an AI. ">AI</a> is active in the game </p>
 </td></tr>
 </table>
 
@@ -663,7 +608,8 @@ active</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">{ \</div><div class="line">    .inputQueue = <a class="code" href="gctypes_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>, \</div><div class="line">    .logicQueue = <a class="code" href="gctypes_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>, \</div><div class="line">    .logicSize = 0, \</div><div class="line">    .inputSize = 0, \</div><div class="line">    .logicCapacity = 0, \</div><div class="line">    .inputCapacity = 0, \</div><div class="line">    .characters = characters_val, \</div><div class="line">    .port = port_val, \</div><div class="line">    .active = <span class="keyword">false</span> \</div><div class="line">}</div><div class="ttc" id="gctypes_8h_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="gctypes_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> gctypes.h:45</div></div>
+<b>Value:</b><div class="fragment"><div class="line">{ \</div><div class="line">    .inputQueue = <a class="code" href="input__queue_8h.html#adee64e9937d9345b3d6bfe9706053ddf">INIT_INPUT_QUEUE</a>(port_val), \</div><div class="line">    .logicQueue = <a class="code" href="gctypes_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>, \</div><div class="line">    .logicSize = 0, \</div><div class="line">    .inputSize = 0, \</div><div class="line">    .logicCapacity = 0, \</div><div class="line">    .characters = characters_val, \</div><div class="line">    .port = port_val, \</div><div class="line">    .active = <span class="keyword">false</span> \</div><div class="line">}</div><div class="ttc" id="input__queue_8h_html_adee64e9937d9345b3d6bfe9706053ddf"><div class="ttname"><a href="input__queue_8h.html#adee64e9937d9345b3d6bfe9706053ddf">INIT_INPUT_QUEUE</a></div><div class="ttdeci">#define INIT_INPUT_QUEUE(port)</div><div class="ttdef"><b>Definition:</b> input_queue.h:37</div></div>
+<div class="ttc" id="gctypes_8h_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="gctypes_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> gctypes.h:45</div></div>
 </div><!-- fragment --><p>helps with ai initialization </p>
 
 </div>

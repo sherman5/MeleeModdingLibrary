@@ -23,7 +23,7 @@ var searchData=
   ['fox',['FOX',['../ai_8h.html#a45d42d926ee05e83077980e151e6db9d',1,'ai.h']]],
   ['fox_5fid',['FOX_ID',['../melee__info_8h.html#a7e6b6409c26b8b17e7d387e21c8a18a0',1,'melee_info.h']]],
   ['fpow',['fpow',['../math_8h.html#a50c2a3bb7401c24b4a3ef1a2e7680a26',1,'math.c']]],
-  ['frame',['frame',['../ai_8h.html#a9189c4df8efafef6f93fe84368cc4541',1,'ControllerInput']]],
+  ['frame',['frame',['../input__queue_8h.html#a9189c4df8efafef6f93fe84368cc4541',1,'ControllerInput']]],
   ['frameoffset',['frameOffset',['../moves_8h.html#a88aaddd420ee755598a3f347bb6f4785',1,'RawInput']]],
   ['free',['free',['../system_8h.html#afbedc913aa4651b3c3b4b3aecd9b4711',1,'system.c']]],
   ['full_5fstick',['FULL_STICK',['../controller_8h.html#aa4bf290c42e5626f586f84d41be94cdb',1,'controller.h']]],

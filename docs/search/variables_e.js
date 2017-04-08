@@ -8,7 +8,10 @@ var searchData=
   ['playercharacter',['playerCharacter',['../game__state_8h.html#a0771a8a96c748529ca73282a1c7b16cd',1,'PlayerBlock']]],
   ['playerdata',['playerData',['../game__state_8h.html#ae366a6cc30f628e5027bddc0eee2bcfc',1,'GameState']]],
   ['playerstate',['playerState',['../game__state_8h.html#ab2581442660acc832bb81d8844b2f1c8',1,'PlayerBlock']]],
-  ['port',['port',['../ai_8h.html#a1cef36ea7bcb39eb33ee9c064ef1aa39',1,'AI']]],
+  ['port',['port',['../ai_8h.html#a1cef36ea7bcb39eb33ee9c064ef1aa39',1,'AI::port()'],['../input__queue_8h.html#a93a340e516c0d6c60f5826ee5f498e21',1,'InputQueue::port()']]],
   ['prevanalogstickx',['prevAnalogStickX',['../game__state_8h.html#ad220d46d7551ca071917ad1db4ae465d',1,'PlayerData']]],
-  ['prevanalogsticky',['prevAnalogStickY',['../game__state_8h.html#a51007d8a49cd68d7a5805f2b662bef52',1,'PlayerData']]]
+  ['prevanalogsticky',['prevAnalogStickY',['../game__state_8h.html#a51007d8a49cd68d7a5805f2b662bef52',1,'PlayerData']]],
+  ['prevbuttons',['prevButtons',['../controller_8h.html#ad2a15a2c807fb3f37fd9922b08ec2cc6',1,'Controller']]],
+  ['prevstickx',['prevStickX',['../controller_8h.html#a7f1515dfe3174735999ff18ca3395b58',1,'Controller']]],
+  ['prevsticky',['prevStickY',['../controller_8h.html#af438196c4b19d2aec4801c5bf385c036',1,'Controller']]]
 ];

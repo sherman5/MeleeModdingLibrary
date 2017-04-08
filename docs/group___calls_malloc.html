@@ -104,9 +104,12 @@ Functions</h2></td></tr>
 <tr class="memitem:gafeacd9b954896e475d0b463af16c7d0c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___calls_malloc.html#gafeacd9b954896e475d0b463af16c7d0c">addLogic</a> (<a class="el" href="ai_8h.html#struct_a_i">AI</a> *ai, const <a class="el" href="logic_8h.html#struct_logic">Logic</a> *logic)</td></tr>
 <tr class="memdesc:gafeacd9b954896e475d0b463af16c7d0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add single logic rule to <a class="el" href="ai_8h.html#struct_a_i" title="Holds all information about an AI. ">AI</a>.  <a href="#gafeacd9b954896e475d0b463af16c7d0c">More...</a><br /></td></tr>
 <tr class="separator:gafeacd9b954896e475d0b463af16c7d0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9ae9e98270bc1b79a347880de3d9586b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___calls_malloc.html#ga9ae9e98270bc1b79a347880de3d9586b">addMove</a> (<a class="el" href="ai_8h.html#struct_a_i">AI</a> *ai, const <a class="el" href="moves_8h.html#struct_move">Move</a> *move)</td></tr>
-<tr class="memdesc:ga9ae9e98270bc1b79a347880de3d9586b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tell <a class="el" href="ai_8h.html#struct_a_i" title="Holds all information about an AI. ">AI</a> to execute a move.  <a href="#ga9ae9e98270bc1b79a347880de3d9586b">More...</a><br /></td></tr>
-<tr class="separator:ga9ae9e98270bc1b79a347880de3d9586b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1e82053b22d7787ec17002326ff36f34"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___calls_malloc.html#ga1e82053b22d7787ec17002326ff36f34">addInput</a> (<a class="el" href="input__queue_8h.html#struct_input_queue">InputQueue</a> *queue, const <a class="el" href="moves_8h.html#struct_raw_input">RawInput</a> input)</td></tr>
+<tr class="memdesc:ga1e82053b22d7787ec17002326ff36f34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add single input to queue.  <a href="#ga1e82053b22d7787ec17002326ff36f34">More...</a><br /></td></tr>
+<tr class="separator:ga1e82053b22d7787ec17002326ff36f34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4d9a6dc8233395a497832a4f74754b21"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___calls_malloc.html#ga4d9a6dc8233395a497832a4f74754b21">addMove</a> (<a class="el" href="input__queue_8h.html#struct_input_queue">InputQueue</a> *queue, const <a class="el" href="moves_8h.html#struct_move">Move</a> *move)</td></tr>
+<tr class="memdesc:ga4d9a6dc8233395a497832a4f74754b21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add entire move to queue.  <a href="#ga4d9a6dc8233395a497832a4f74754b21">More...</a><br /></td></tr>
+<tr class="separator:ga4d9a6dc8233395a497832a4f74754b21"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gadca1849461ec10ea162dfbedc4af4791"><td class="memItemLeft" align="right" valign="top"><a class="el" href="gctypes_8h.html#a6a912bf1d80625256884f11a0ea1d5fd">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___calls_malloc.html#gadca1849461ec10ea162dfbedc4af4791">initVector</a> (<a class="el" href="matrix_8h.html#struct_vector">Vector</a> *vec, <a class="el" href="gctypes_8h.html#aedaf31b3f7716640e70205644b9b828e">size_t</a> size)</td></tr>
 <tr class="memdesc:gadca1849461ec10ea162dfbedc4af4791"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize a <a class="el" href="matrix_8h.html#struct_vector" title="A vector of 32-bit floating-point values. ">Vector</a>.  <a href="#gadca1849461ec10ea162dfbedc4af4791">More...</a><br /></td></tr>
 <tr class="separator:gadca1849461ec10ea162dfbedc4af4791"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -272,15 +275,51 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ga9ae9e98270bc1b79a347880de3d9586b"></a>
+<a class="anchor" id="ga1e82053b22d7787ec17002326ff36f34"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void addInput </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="input__queue_8h.html#struct_input_queue">InputQueue</a> *&#160;</td>
+          <td class="paramname"><em>queue</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="moves_8h.html#struct_raw_input">RawInput</a>&#160;</td>
+          <td class="paramname"><em>input</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Add single input to queue. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">queue</td><td>- Pointer to <a class="el" href="input__queue_8h.html#struct_input_queue" title="Manages a list of inputs. ">InputQueue</a> struct </td></tr>
+    <tr><td class="paramname">input</td><td>- Pointer to <a class="el" href="moves_8h.html#struct_raw_input" title="represent an input in its minimal form ">RawInput</a> struct </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>none </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga4d9a6dc8233395a497832a4f74754b21"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void addMove </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="ai_8h.html#struct_a_i">AI</a> *&#160;</td>
-          <td class="paramname"><em>ai</em>, </td>
+          <td class="paramtype"><a class="el" href="input__queue_8h.html#struct_input_queue">InputQueue</a> *&#160;</td>
+          <td class="paramname"><em>queue</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -296,10 +335,10 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Tell <a class="el" href="ai_8h.html#struct_a_i" title="Holds all information about an AI. ">AI</a> to execute a move. </p>
+<p>Add entire move to queue. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">ai</td><td>- Pointer to <a class="el" href="ai_8h.html#struct_a_i" title="Holds all information about an AI. ">AI</a> struct </td></tr>
+    <tr><td class="paramname">queue</td><td>- Pointer to <a class="el" href="input__queue_8h.html#struct_input_queue" title="Manages a list of inputs. ">InputQueue</a> struct </td></tr>
     <tr><td class="paramname">move</td><td>- Pointer to <a class="el" href="moves_8h.html#struct_move" title="Represents a single move (string of timed inputs) ">Move</a> struct </td></tr>
   </table>
   </dd>

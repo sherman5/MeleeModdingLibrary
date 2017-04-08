@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['stage',['Stage',['../game__state_8h.html#struct_stage',1,'']]]
+  ['rawinput',['RawInput',['../moves_8h.html#struct_raw_input',1,'']]]
 ];

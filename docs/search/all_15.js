@@ -1,16 +1,12 @@
 var searchData=
 [
-  ['vbool',['vbool',['../gctypes_8h.html#a1cf436799bc2aefb3047ee8818e44cd2',1,'gctypes.h']]],
-  ['vector',['Vector',['../matrix_8h.html#struct_vector',1,'']]],
-  ['vectordotprod',['vectorDotProd',['../matrix_8h.html#a05632e1cf5a9ace8cf77b6b6fc449f2f',1,'matrix.c']]],
-  ['version_2eh',['version.h',['../version_8h.html',1,'']]],
-  ['vf32',['vf32',['../gctypes_8h.html#a217e077eede9f751422c92930f504edf',1,'gctypes.h']]],
-  ['vf64',['vf64',['../gctypes_8h.html#a1bf9b7e9a4fc2bbc15af0889519ef77a',1,'gctypes.h']]],
-  ['void_5fptr',['VOID_PTR',['../native__functions__102_8h.html#ae40e82d767432abe028707bdab8f6245',1,'native_functions_102.h']]],
-  ['vs16',['vs16',['../gctypes_8h.html#a84c4ebe721fa065d9bd514ce8d76c455',1,'gctypes.h']]],
-  ['vs32',['vs32',['../gctypes_8h.html#a6c6cf6e3aedfd399080c6f52c2870063',1,'gctypes.h']]],
-  ['vs8',['vs8',['../gctypes_8h.html#a108e1a5e4c3e8322825ef7dcd45966ca',1,'gctypes.h']]],
-  ['vu16',['vu16',['../gctypes_8h.html#a677aa1edce4bbb53741b1cc24eb4c035',1,'gctypes.h']]],
-  ['vu32',['vu32',['../gctypes_8h.html#abcdd5d61f51cb4c472ac6637916cf72a',1,'gctypes.h']]],
-  ['vu8',['vu8',['../gctypes_8h.html#a1a2a3100a902c32a55d8b08915bce044',1,'gctypes.h']]]
+  ['u',['u',['../logic_8h.html#a8d1d08cfc32067810e9100c92f05bdda',1,'FunctionArg']]],
+  ['u16',['u16',['../gctypes_8h.html#ace9d960e74685e2cd84b36132dbbf8aa',1,'gctypes.h']]],
+  ['u32',['u32',['../gctypes_8h.html#afaa62991928fb9fb18ff0db62a040aba',1,'gctypes.h']]],
+  ['u8',['u8',['../gctypes_8h.html#a92c50087ca0e64fa93fc59402c55f8ca',1,'gctypes.h']]],
+  ['uniform',['uniform',['../random_8h.html#a9c06f9da82e1c14605c2e40a360670ab',1,'random.c']]],
+  ['unit_5ftest',['UNIT_TEST',['../unit__test_8h.html#a68f824d33c675c8bb6e1337a14812a8d',1,'unit_test.h']]],
+  ['unit_5ftest_2eh',['unit_test.h',['../unit__test_8h.html',1,'']]],
+  ['updateai',['updateAI',['../ai_8h.html#ab5787b889bc2bd27dcd837ab0def78b6',1,'ai.c']]],
+  ['updategamestate',['updateGameState',['../game__state_8h.html#accbefc878f661d3cff0d72d5661c1d54',1,'game_state.c']]]
 ];

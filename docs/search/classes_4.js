@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['logic',['Logic',['../logic_8h.html#struct_logic',1,'']]]
+  ['inputqueue',['InputQueue',['../input__queue_8h.html#struct_input_queue',1,'']]]
 ];
