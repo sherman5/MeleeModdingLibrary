@@ -8,7 +8,7 @@
 
 static bool aiError = false;
 
-static ControllerInput processRawInput(u8 port, RawInput input)
+/*static ControllerInput processRawInput(u8 port, RawInput input)
 {
     ControllerInput processed = {.controller = input.controller,
         .frame = CURRENT_FRAME + input.frameOffset};
@@ -27,7 +27,7 @@ static ControllerInput processRawInput(u8 port, RawInput input)
     }
 
     return processed;
-}
+}*/
 
 #define COND_FPTR       ai->logicQueue[i].condition.function
 #define ACTION_FPTR     ai->logicQueue[i].action.function
@@ -51,7 +51,7 @@ static void checkLogic(AI* ai)
     }
 } 
 
-#define CONTR_INPUT     ai->inputQueue[ai->inputSize - 1]
+/*#define CONTR_INPUT     ai->inputQueue[ai->inputSize - 1]
 static void checkInput(AI* ai)
 {
     if (CURRENT_FRAME >= CONTR_INPUT.frame)
@@ -59,7 +59,7 @@ static void checkInput(AI* ai)
         setController(&ai->controller, CONTR_INPUT.controller);
         ai->inputSize--;
     }
-}
+}*/
 
 #define LOGIC_SIZE      (ai->logicCapacity * sizeof(Logic))
 void addLogic(AI* ai, const Logic* logic)
@@ -81,35 +81,19 @@ void addLogic(AI* ai, const Logic* logic)
 #define INPUT_SIZE      (ai->inputCapacity * sizeof(ControllerInput))
 void addMove(AI* ai, const Move* move)
 {
-    if (move->size > ai->inputCapacity)
-    {
-        ai->inputCapacity = 2 * move->size;
-        ai->inputQueue = realloc(ai->inputQueue, INPUT_SIZE);
-        if (!ai->inputQueue)
-        {
-            THROW_ERROR(0, "failed allocation: input queue");
-            aiError = true;
-        }
-    }
-
-    for (unsigned i = 0; i < move->size; ++i)
-    {
-        unsigned index = (move->size - 1) - i; //reverse order
-        ai->inputQueue[i] = processRawInput(ai->port, move->inputs[index]);
-    }
-    ai->inputSize = move->size;
+    addMoveToQueue(&ai->inputQueue, move);
 }
 
 bool needLogic(const AI* ai)
 {
-    return ai->logicSize == 0 && ai->inputSize == 0 && ai->active;
+    return ai->logicSize == 0 && ai->inputQueue.size == 0 && ai->active;
 }
 
 void clearAI(AI* ai)
 {
     ai->logicSize = 0;  
-    ai->inputSize = 0;
-    ai->controller = (Controller) {0, 0.f, 0.f, 0.f, 0.f};
+    ai->inputQueue.size = 0;
+    ai->inputQueue.controller = DEFAULT_CONTROLLER;
 }
 
 static void findOpponent(AI* ai)
@@ -141,15 +125,14 @@ void updateAI(AI* ai)
         ai->active = false;
         clearAI(ai);
         SLOT_TYPE(ai->port) = 0x01;
-        writeController(&ai->controller, ai->port, false);
+        writeController(&ai->inputQueue.controller, ai->port, false);
     }
 
     if (ai->active)
     {
         checkLogic(ai);
-        if (ai->inputSize > 0) {checkInput(ai);}
-
-        writeController(&ai->controller, ai->port, true);
+        processInputQueue(&ai->inputQueue);
+        writeController(&ai->inputQueue.controller, ai->port, true);
     }
 }
 

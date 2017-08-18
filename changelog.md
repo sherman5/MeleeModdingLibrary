@@ -1,6 +1,17 @@
 # Change Log
 This documents all differences between versions of the library
 
+## [2.0.0] - ?
+
+### Added
+
+- analogCardinalXFrames, analogCardinalYFrames added to player data
+
+### Changed
+
+- default library compiled with -O1
+- input_queue separated from ai, which now handles only logic
+
 ## [1.1.1] - 3/16/17
 
 ### Added

@@ -88,5 +88,20 @@ RawInput _raw_downB[2] =
 };
 Move _mv_downB = {.inputs = _raw_downB, .size = 2};
 
+RawInput _raw_wavedash[3] = 
+{
+    {X_BUTTON, 0, NO_FLAGS},
+    {OVERWRITE, 0, JUMPSQUAT},
+    {RELEASE, 2, JUMPSQUAT}
+};
+Move _mv_wavedash = {.inputs = _raw_wavedash, .size = 3};
+    
+RawInput _raw_dash[2] = 
+{
+    {OVERWRITE, 0, NO_FLAGS},
+    {RELEASE, 20, NO_FLAGS}
+};
+Move _mv_dash = {.inputs = _raw_dash, .size = 2};
+
 
 

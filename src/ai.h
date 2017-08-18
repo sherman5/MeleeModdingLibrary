@@ -40,26 +40,16 @@
 #include "moves.h"
 #include "controller.h"
 #include "gctypes.h"
-
-/**
- * @brief A single controller input made by the AI 
- * @note size = 8 bytes (accounting for padding)
- */
-typedef struct
-{
-    u32 frame;          /**< Frame on which to execute input */
-    u16 controller;     /**< State of controller */
-
-} ControllerInput;
+#include "input_queue.h"
 
 /** @brief Holds all information about an AI */
 typedef struct
 {
     Controller controller; /**< Controller this AI uses */
-    ControllerInput* inputQueue; /**< Array of inputs to execute */
+    InputQueue inputQueue; /**< Array of inputs to execute */
     Logic* logicQueue; /**< Array of logic to evaluate */
-    size_t logicSize, inputSize; /**< Size of logic/input arrays */
-    size_t logicCapacity, inputCapacity; /**< Capacity of arrays */
+    size_t logicSize; /**< Size of logic/input arrays */
+    size_t logicCapacity; /**< Capacity of arrays */
     u32 characters; /**< Characters this AI can control */
     u32 port; /**< Port this AI plays at */
     u32 opponent; /**< Port of this AI's opponent */
@@ -70,12 +60,10 @@ typedef struct
 /** helps with ai initialization */
 #define INIT_AI(port_val, characters_val) \
 { \
-    .inputQueue = NULL, \
+    .inputQueue = INIT_INPUT_QUEUE(port_val), \
     .logicQueue = NULL, \
     .logicSize = 0, \
-    .inputSize = 0, \
     .logicCapacity = 0, \
-    .inputCapacity = 0, \
     .characters = characters_val, \
     .port = port_val, \
     .active = false \

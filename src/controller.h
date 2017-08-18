@@ -54,6 +54,9 @@ typedef struct
 
 } Controller;
 
+/** Default Controller struct */
+#define DEFAULT_CONTROLLER ((Controller) {0, 0.f, 0.f, 0.f, 0.f})
+
 /**
  * @brief Set the state of the controller.
  *

@@ -1,8 +1,7 @@
 # version of library
-# TODO: change standard library to -O1
-MAJOR = 1
-MINOR = 1
-REVISION = 1
+MAJOR = 2
+MINOR = 0
+REVISION = 0
 VERSION = mml-$(MAJOR).$(MINOR).$(REVISION)
 
 # GNU tools
@@ -14,10 +13,11 @@ OBJCPY = powerpc-eabi-objcopy
 SRCS = src/ai.c src/controller.c src/game_state.c src/moves.c \
 src/math.c src/print.c src/random.c src/state_check.c src/matrix.c \
 src/string.c src/system.c src/melee_info.c src/version.c src/error.c \
-src/profile.c
+src/profile.c src/input_queue.c
 
 HEADERS = $(SRCS:.c=.h) src/gctypes.h src/native_functions.h \
-src/unit_test.h src/logic.h src/action_state.h
+src/unit_test.h src/logic.h src/action_state.h \
+src/native_functions_102.h src/native_functions_PAL.h
 
 # object files and their dependencies
 OBJS_O0 = $(SRCS:src/%.c=build/%_O0.o)
@@ -31,8 +31,8 @@ OBJS = $(OBJS_O0) $(OBJS_O1) $(OBJS_O2) $(OBJS_O3) $(OBJS_Os) $(OBJS_PAL)
 DEP = $(OBJS:.o=.d)
 
 # names of the libraries (one for each -O flag)
-LIBS = libmml.a libmml_O1.a libmml_O2.a libmml_O3.a libmml_Os.a
-DIST_LIBS = libmml.a libmml_O1.a libmml_O2.a libmml_O3.a 
+LIBS = libmml.a libmml_O0.a libmml_O2.a libmml_O3.a libmml_Os.a
+DIST_LIBS = libmml.a libmml_O0.a libmml_O2.a libmml_O3.a 
 
 DIST_TARGETS = $(HEADERS) $(DIST_LIBS) tutorials/*/*.c tutorials/*/*.h \
 tutorials/*/*.ini 
@@ -48,8 +48,8 @@ CFLAGS = -Wall -Wextra -std=c99 -fno-builtin \
 SECTIONS = .comment
 
 # library targets (need to set optimizer flag)
-libmml.a : $(OBJS_O0) 
-libmml_O1.a : $(OBJS_O1)
+libmml.a : $(OBJS_O1) 
+libmml_O0.a : $(OBJS_O0)
 libmml_O2.a : $(OBJS_O2)
 libmml_O3.a : $(OBJS_O3) 
 libmml_Os.a : $(OBJS_Os) 
@@ -161,8 +161,8 @@ test_matrix : $(LIBS)
 test_melee_info : $(LIBS)
 	wiimake $(ISO_FILE) tests/testMeleeInfo.ini $(MAKE_FLAGS)
 
-test_moves : $(LIBS)
-	wiimake $(ISO_FILE) tests/testMoves.ini $(MAKE_FLAGS)
+test_move : $(LIBS)
+	wiimake $(ISO_FILE) tests/testMove.ini $(MAKE_FLAGS)
 
 test_print : $(LIBS)
 	wiimake $(ISO_FILE) tests/testPrint.ini $(MAKE_FLAGS)
