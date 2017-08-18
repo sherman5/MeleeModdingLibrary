@@ -8,27 +8,6 @@
 
 static bool aiError = false;
 
-/*static ControllerInput processRawInput(u8 port, RawInput input)
-{
-    ControllerInput processed = {.controller = input.controller,
-        .frame = CURRENT_FRAME + input.frameOffset};
-
-    if (input.flags & JUMPSQUAT)
-    {
-        processed.frame += (u32) _gameState.playerData[port]->jumpSquat;
-    }
-    if (input.flags & SH_LENGTH)
-    {
-        processed.frame += _sh_length[CHAR_SELECT(port)];
-    }
-    if (input.flags & LEDGEDASH)
-    {
-        processed.frame += _ledgedash_frames[CHAR_SELECT(port)];
-    }
-
-    return processed;
-}*/
-
 #define COND_FPTR       ai->logicQueue[i].condition.function
 #define ACTION_FPTR     ai->logicQueue[i].action.function
 #define COND_ARG_1      ai->logicQueue[i].condition.arg1
@@ -50,16 +29,6 @@ static void checkLogic(AI* ai)
         }
     }
 } 
-
-/*#define CONTR_INPUT     ai->inputQueue[ai->inputSize - 1]
-static void checkInput(AI* ai)
-{
-    if (CURRENT_FRAME >= CONTR_INPUT.frame)
-    {
-        setController(&ai->controller, CONTR_INPUT.controller);
-        ai->inputSize--;
-    }
-}*/
 
 #define LOGIC_SIZE      (ai->logicCapacity * sizeof(Logic))
 void addLogic(AI* ai, const Logic* logic)
@@ -132,7 +101,6 @@ void updateAI(AI* ai)
     {
         checkLogic(ai);
         processInputQueue(&ai->inputQueue);
-        writeController(&ai->inputQueue.controller, ai->port, true);
     }
 }
 
