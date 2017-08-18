@@ -95,13 +95,4 @@ RawInput _raw_wavedash[3] =
     {RELEASE, 2, JUMPSQUAT}
 };
 Move _mv_wavedash = {.inputs = _raw_wavedash, .size = 3};
-    
-RawInput _raw_dash[2] = 
-{
-    {OVERWRITE, 0, NO_FLAGS},
-    {RELEASE, 20, NO_FLAGS}
-};
-Move _mv_dash = {.inputs = _raw_dash, .size = 2};
-
-
-
+   

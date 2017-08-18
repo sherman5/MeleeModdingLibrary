@@ -231,6 +231,12 @@ tutorial_DefensiveAI : dist
 	wiimake-isotool ../../../$(ISO_FILE) --save DefensiveAI.data && \
 	cd ../../..
 
+tutorial_DashDancing : dist
+	cd $(VERSION)/tutorials/DashDancing && \
+	wiimake ../../../$(ISO_FILE) DashDancing.ini $(MAKE_FLAGS) && \
+	wiimake-isotool ../../../$(ISO_FILE) --save DashDancing.data && \
+	cd ../../..
+
 # documentation target
 .PHONY : docs
 docs :

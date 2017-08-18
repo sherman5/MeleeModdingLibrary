@@ -57,7 +57,6 @@ extern RawInput _raw_doubleJump[1];
 extern RawInput _raw_downB[2];
 extern RawInput _raw_ledgeDash[4];
 extern RawInput _raw_wavedash[3];
-extern RawInput _raw_dash[2];
 /** @endcond **/
 
 extern Move _mv_shNeutralB; /**< Short Hop Neutral B. */
@@ -75,7 +74,6 @@ extern Move _mv_wavedash; /**< Wavedash at an angle */
 extern Move _mv_doubleJump; /**< DJ towards direction @note INDEFINITE */
 extern Move _mv_holdDirection; /**< Hold stick @ingroup IndefiniteMove */
 extern Move _mv_ledgeDash; /**< Ledgedash */
-extern Move _mv_dash; /**< Dash Dance (one dash input) */
 
 /** Set tech direction **/
 #define SET_TECH_DIR(x) _raw_tech[0].controller = \
@@ -112,10 +110,6 @@ extern Move _mv_dash; /**< Dash Dance (one dash input) */
 /** Set direction of wavedash */
 #define SET_WAVEDASH_DIR(x) _raw_wavedash[1].controller = \
     L_BUTTON | FULL_STICK | STICK_ANGLE(x)
-
-/** Set direction of dash */
-#define SET_DASH_DIR(x) _raw_dash[0].controller = \
-    FULL_STICK | STICK_ANGLE(x)
 
 #endif
 
