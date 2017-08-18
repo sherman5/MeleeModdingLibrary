@@ -62,7 +62,6 @@ typedef struct
     .inputQueue = INIT_INPUT_QUEUE(port_val), \
     .logicQueue = NULL, \
     .logicSize = 0, \
-    .inputSize = 0, \
     .logicCapacity = 0, \
     .characters = characters_val, \
     .port = port_val, \
@@ -78,6 +77,16 @@ typedef struct
  * @return none
  */
 void addLogic(AI* ai, const Logic* logic);
+
+/**
+ * @brief Add a move to the ai
+ * @ingroup CallsMalloc
+ *
+ * @param ai - Pointer to AI struct
+ * @param move - Pointer to Move struct
+ * @return none
+ */
+void addMove(AI* ai, const Move* move);
 
 /**
  * @brief Check logic rules and queued inputs 

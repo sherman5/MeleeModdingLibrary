@@ -47,6 +47,11 @@ void addLogic(AI* ai, const Logic* logic)
     ai->logicSize++;
 }
 
+void addMove(AI* ai, const Move* move)
+{
+    addMoveToQueue(&ai->inputQueue, move);
+}
+
 bool needLogic(const AI* ai)
 {
     return ai->logicSize == 0 && ai->inputQueue.size == 0 && ai->active;

@@ -1,12 +1,14 @@
 #include "input_queue.h"
 #include "game_state.h"
 #include "error.h"
+#include "melee_info.h"
+#include "system.h"
 
 static ControllerInput processRawInput(u8 port, RawInput input)
 {
-    ControllerInput processed = {.controller = input.controller,
+    ControllerInput processed = {.state = input.controller,
         .frame = CURRENT_FRAME + input.frameOffset,
-        .resetCounter = 0};
+        .resetStickCount = 0};
 
     if (input.flags & JUMPSQUAT)
     {
@@ -22,7 +24,7 @@ static ControllerInput processRawInput(u8 port, RawInput input)
     }
     if (input.flags & RESET_STICK_COUNTER)
     {
-        processed.resetCounter = 1;
+        processed.resetStickCount = 1;
     }
 
     return processed;
@@ -32,7 +34,7 @@ void addInput(InputQueue* queue, const RawInput input)
 {
     if (queue->size == queue->capacity)
     {
-        queue->capacity = 2 * queue->capacity;
+        queue->capacity = 2 * queue->capacity + 1;
         queue->queue = realloc(queue->queue, queue->capacity
             * sizeof(ControllerInput));
 
@@ -45,10 +47,10 @@ void addInput(InputQueue* queue, const RawInput input)
     if (queue->queue)
     {
         ControllerInput procInput = processRawInput(queue->port, input);
-        unsigned index = queue->size - 1;
-        while (queue[index].frame < procInput.frame && index >= 0)
+        int index = queue->size - 1;
+        while (index >= 0 && queue->queue[index].frame < procInput.frame)
         {
-            queue[index + 1] = queue[index];
+            queue->queue[index + 1] = queue->queue[index];
             index--;
         }
         queue->queue[index + 1] = procInput;
@@ -56,7 +58,7 @@ void addInput(InputQueue* queue, const RawInput input)
     }
 }
 
-void addMove(InputQueue* queue, const Move* move)
+void addMoveToQueue(InputQueue* queue, const Move* move)
 {
     for (unsigned i = 0; i < move->size; ++i)
     {
@@ -69,7 +71,7 @@ void processInputQueue(InputQueue* queue)
 {
     if (queue->size > 0)
     {
-        ControllerInput* input = &queue->queue[queue->size - 1]
+        ControllerInput* input = &queue->queue[queue->size - 1];
         if (CURRENT_FRAME >= input->frame)
         {
             setController(&queue->controller, input->state);

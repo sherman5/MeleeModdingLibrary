@@ -19,22 +19,22 @@ static bool _in_game = false;
 
 void endGame()
 {
-//    _in_game = false;
-//    _end_frame = CURRENT_FRAME;
+    _in_game = false;
+    _end_frame = CURRENT_FRAME;
 }
 
 bool inGame()
 {
-/*    if (!_in_game && IN_GAME && CURRENT_FRAME < _end_frame)
+    if (!_in_game && IN_GAME && CURRENT_FRAME < _end_frame)
     {
         _in_game = true;    
     }
-    return _in_game;*/  
+    return _in_game;
 //   bool res = IN_GAME;
 //    bool res = (playerData(1) || playerData(2) || playerData(3)
 //        || playerData(4));
 //    bool res = numPlayers() > 0;
-
+/*
     if (!_in_game && IN_GAME)
     {
         _in_game = true;
@@ -51,7 +51,7 @@ bool inGame()
 
     *((u32*) 0x80001810) = _in_game ? 0xAAAA : 0xFFFF;
     
-    return _in_game;
+    return _in_game;*/
 }
 
 GameState _gameState = DEFAULT_GAMESTATE;

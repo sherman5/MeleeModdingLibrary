@@ -13,7 +13,7 @@ OBJCPY = powerpc-eabi-objcopy
 SRCS = src/ai.c src/controller.c src/game_state.c src/moves.c \
 src/math.c src/print.c src/random.c src/state_check.c src/matrix.c \
 src/string.c src/system.c src/melee_info.c src/version.c src/error.c \
-src/profile.c src/memcard.c
+src/profile.c src/memcard.c src/input_queue.c
 
 HEADERS = $(SRCS:.c=.h) src/gctypes.h src/native_functions.h \
 src/unit_test.h src/logic.h src/action_state.h src/native_functions_102.h \
@@ -229,6 +229,12 @@ tutorial_DefensiveAI : dist
 	cd $(VERSION)/tutorials/DefensiveAI && \
 	wiimake ../../../$(ISO_FILE) DefensiveAI.ini $(MAKE_FLAGS) && \
 	wiimake-isotool ../../../$(ISO_FILE) --save DefensiveAI.data && \
+	cd ../../..
+
+tutorial_DashDancing : dist
+	cd $(VERSION)/tutorials/DashDancing && \
+	wiimake ../../../$(ISO_FILE) DashDancing.ini $(MAKE_FLAGS) && \
+	wiimake-isotool ../../../$(ISO_FILE) --save DashDancing.data && \
 	cd ../../..
 
 # documentation target

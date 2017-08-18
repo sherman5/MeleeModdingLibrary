@@ -54,7 +54,7 @@ void addInput(InputQueue* queue, const RawInput input);
  * @param move - Pointer to Move struct
  * @return none
  */
-void addMove(InputQueue* queue, const Move* move);
+void addMoveToQueue(InputQueue* queue, const Move* move);
 
 /**
  * @brief Check if any inputs need to be written
