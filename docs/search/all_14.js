@@ -1,12 +1,12 @@
 var searchData=
 [
-  ['u',['u',['../logic_8h.html#a8d1d08cfc32067810e9100c92f05bdda',1,'FunctionArg']]],
-  ['u16',['u16',['../gctypes_8h.html#ace9d960e74685e2cd84b36132dbbf8aa',1,'gctypes.h']]],
-  ['u32',['u32',['../gctypes_8h.html#afaa62991928fb9fb18ff0db62a040aba',1,'gctypes.h']]],
-  ['u8',['u8',['../gctypes_8h.html#a92c50087ca0e64fa93fc59402c55f8ca',1,'gctypes.h']]],
-  ['uniform',['uniform',['../random_8h.html#a9c06f9da82e1c14605c2e40a360670ab',1,'random.c']]],
-  ['unit_5ftest',['UNIT_TEST',['../unit__test_8h.html#a68f824d33c675c8bb6e1337a14812a8d',1,'unit_test.h']]],
-  ['unit_5ftest_2eh',['unit_test.h',['../unit__test_8h.html',1,'']]],
-  ['updateai',['updateAI',['../ai_8h.html#ab5787b889bc2bd27dcd837ab0def78b6',1,'ai.c']]],
-  ['updategamestate',['updateGameState',['../game__state_8h.html#accbefc878f661d3cff0d72d5661c1d54',1,'game_state.c']]]
+  ['tan',['tan',['../math_8h.html#a26971409112830841bd7c7a0d7681b8a',1,'math.c']]],
+  ['tan_5ffptr',['TAN_FPTR',['../native__functions__102_8h.html#a7d5d8b328b5f6353d7aa52528f8ac67a',1,'native_functions_102.h']]],
+  ['teamid',['teamID',['../game__state_8h.html#aed82063d11fe7c9545a65f3cbc87c867',1,'PlayerBlock']]],
+  ['techsituation',['techSituation',['../state__check_8h.html#af83510c6e744bd411b5611716c04afc8',1,'state_check.c']]],
+  ['throw_5ferror',['THROW_ERROR',['../group___calls_malloc.html#ga5960c60c0cdb3fcace0ee191e1ddda0b',1,'error.h']]],
+  ['tilt_5fradius',['TILT_RADIUS',['../controller_8h.html#a7e6a0bcb5ec0e3a5b61ea05f89c59ef3',1,'controller.h']]],
+  ['tilt_5fstick',['TILT_STICK',['../controller_8h.html#a59d30780b9b242184372ef8da27f6c6f',1,'controller.h']]],
+  ['top',['top',['../game__state_8h.html#a29f7b1486fc9cf6b382f07d69e3ac91e',1,'Stage']]],
+  ['true',['true',['../gctypes_8h.html#a41f9c5fb8b08eb5dc3edce4dcb37fee7',1,'gctypes.h']]]
 ];

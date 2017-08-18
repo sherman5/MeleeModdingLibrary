@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['x',['x',['../math_8h.html#ad0da36b2558901e21e7a30f6c227a45e',1,'Point']]]
+  ['u',['u',['../logic_8h.html#a8d1d08cfc32067810e9100c92f05bdda',1,'FunctionArg']]]
 ];

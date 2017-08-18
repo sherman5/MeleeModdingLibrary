@@ -1,20 +1,4 @@
 var searchData=
 [
-  ['rad_5fto_5fdeg',['RAD_TO_DEG',['../math_8h.html#a77dd57594a038f87051b324cee42c531',1,'math.h']]],
-  ['radius_5fbits',['RADIUS_BITS',['../controller_8h.html#a01d64cf876576ed9d17018005eda2523',1,'controller.h']]],
-  ['rand',['rand',['../random_8h.html#ac065bd1fd6625630a0de19c6e1c8ce0a',1,'random.c']]],
-  ['rand_5fint_5ffptr',['RAND_INT_FPTR',['../native__functions_8h.html#a185904208661219bcc14e66bbd87cc97',1,'native_functions.h']]],
-  ['random_2eh',['random.h',['../random_8h.html',1,'']]],
-  ['rawinput',['RawInput',['../moves_8h.html#struct_raw_input',1,'']]],
-  ['realloc',['realloc',['../system_8h.html#a1a6b5e8d2f1c37e5b43e4345586075be',1,'system.c']]],
-  ['recip_5fsqrt_5ffptr',['RECIP_SQRT_FPTR',['../native__functions_8h.html#ac70f0540ee7d4b5655eda1d4e08dcaf4',1,'native_functions.h']]],
-  ['recipsqrt',['recipSqrt',['../math_8h.html#a989820d8d92331f09a5f344cfcdd62f2',1,'math.h']]],
-  ['recoverysituation',['recoverySituation',['../state__check_8h.html#aa1e93f4ac2fee84c0e2d74d0e0c5aea9',1,'state_check.c']]],
-  ['release',['RELEASE',['../moves_8h.html#a5bd9a30fc22d9a737ee060d41a4ec479',1,'moves.h']]],
-  ['require',['REQUIRE',['../group___calls_malloc.html#ga3f02e40d250ab819c515702c0e59373c',1,'unit_test.h']]],
-  ['require_5fflt_5feq',['REQUIRE_FLT_EQ',['../group___calls_malloc.html#ga857490021cba81bf64a150aaedf6d84a',1,'unit_test.h']]],
-  ['right',['right',['../game__state_8h.html#a6202f38a97a1c9eb0142baeb338cf1f1',1,'Platform']]],
-  ['row_5fvector',['ROW_VECTOR',['../matrix_8h.html#a1eaa2a04e81b5f946460152faac7402f',1,'matrix.h']]],
-  ['roy',['ROY',['../ai_8h.html#aef8fac1ff47c93ea245a83fb380fbfec',1,'ai.h']]],
-  ['roy_5fid',['ROY_ID',['../melee__info_8h.html#aa9ecbb8fe707acf832734dbde6eba4bd',1,'melee_info.h']]]
+  ['queue',['queue',['../input__queue_8h.html#aade3b2c2714870e8e248331603c407b9',1,'InputQueue']]]
 ];

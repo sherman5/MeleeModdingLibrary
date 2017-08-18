@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['default_5fcontroller',['DEFAULT_CONTROLLER',['../controller_8h.html#a7ee8fe79cf2f53801993f91a0a69da34',1,'controller.h']]],
   ['default_5fgamestate',['DEFAULT_GAMESTATE',['../game__state_8h.html#aba9ff025fed056da379554e467979656',1,'game_state.h']]],
   ['default_5fplatform',['DEFAULT_PLATFORM',['../game__state_8h.html#a547a5ee07171fc8e699c255cf1f94ae2',1,'game_state.h']]],
   ['default_5fprofile',['DEFAULT_PROFILE',['../profile_8h.html#a1d8c7f8091c172556b2db2f2d83596ff',1,'profile.h']]],
