@@ -204,37 +204,31 @@ tutorial_data : $(TUTORIALS)
 tutorial_SimpleProgram : dist
 	cd $(VERSION)/tutorials/SimpleProgram && \
 	wiimake ../../../$(ISO_FILE) SimpleProgram.ini $(MAKE_FLAGS) && \
-	wiimake-isotool ../../../$(ISO_FILE) --save SimpleProgram.data && \
 	cd ../../..
 
 tutorial_Teching : dist
 	cd $(VERSION)/tutorials/Teching && \
 	wiimake ../../../$(ISO_FILE) TechingTutorial.ini $(MAKE_FLAGS) && \
-	wiimake-isotool ../../../$(ISO_FILE) --save TechingTutorial.data && \
 	cd ../../..
 
 tutorial_DI : dist
 	cd $(VERSION)/tutorials/DI && \
 	wiimake ../../../$(ISO_FILE) DITutorial.ini $(MAKE_FLAGS) && \
-	wiimake-isotool ../../../$(ISO_FILE) --save DITutorial.data && \
 	cd ../../..
 
 tutorial_Recovery : dist
 	cd $(VERSION)/tutorials/Recovery && \
 	wiimake ../../../$(ISO_FILE) RecoveryTutorial.ini $(MAKE_FLAGS) && \
-	wiimake-isotool ../../../$(ISO_FILE) --save RecoveryTutorial.data && \
 	cd ../../..
 
 tutorial_DefensiveAI : dist
 	cd $(VERSION)/tutorials/DefensiveAI && \
 	wiimake ../../../$(ISO_FILE) DefensiveAI.ini $(MAKE_FLAGS) && \
-	wiimake-isotool ../../../$(ISO_FILE) --save DefensiveAI.data && \
 	cd ../../..
 
 tutorial_DashDancing : dist
 	cd $(VERSION)/tutorials/DashDancing && \
 	wiimake ../../../$(ISO_FILE) DashDancing.ini $(MAKE_FLAGS) && \
-	wiimake-isotool ../../../$(ISO_FILE) --save DashDancing.data && \
 	cd ../../..
 
 # documentation target
@@ -247,6 +241,11 @@ docs :
 .PHONY : todo_list
 todo_list : 
 	grep -r TODO src || true
+
+# restore iso to vanilla state
+restore_iso : 
+	rm -f $(ISO_FILE)
+	cp VanillaMelee102.iso $(ISO_FILE)
 
 # clean targets
 .PHONY : clean clean_libs clean_deps clean_objects clean_dist clean_tests
